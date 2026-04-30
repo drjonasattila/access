@@ -1,0 +1,52 @@
+{
+  "safetyRules": [
+    {
+      "flag": "pregnancy",
+      "blockedHerbs": ["mustard seed", "clove", "he shou wu", "black pepper"],
+      "note": "Strong heating spices avoided — pregnancy noted. Check all herbs with your midwife or clinician.",
+      "avoidList": ["he shou wu"],
+      "description": "Blocks strong heating and stimulating herbs. He shou wu also added to avoid list."
+    },
+    {
+      "flag": "gastritis",
+      "blockedHerbs": ["black pepper", "mustard seed", "clove"],
+      "note": "Strong stimulating spices avoided — digestive sensitivity noted.",
+      "avoidList": [],
+      "description": "Blocks spices that can irritate gastric mucosa."
+    },
+    {
+      "flag": "hypertension",
+      "blockedHerbs": ["black pepper", "mustard seed", "clove"],
+      "note": "Strong stimulating spices avoided — cardiovascular sensitivity noted.",
+      "avoidList": [],
+      "description": "Blocks spices with significant cardiovascular stimulation."
+    },
+    {
+      "flag": "palpitations_flag",
+      "blockedHerbs": ["black pepper", "mustard seed", "clove"],
+      "note": "Strong stimulating spices avoided — digestive or cardiovascular sensitivity noted.",
+      "avoidList": [],
+      "description": "Safety-level restriction for significant/clinical palpitations. Distinct from 'palpitations' symptom modifier which is a formula-level adjustment. A patient may have both simultaneously.",
+      "distinctFrom": "palpitations (symptom modifier)"
+    },
+    {
+      "flag": "anticoagulants",
+      "blockedHerbs": [],
+      "note": "If turmeric or high-dose ginger are ever added, check with your clinician first — these may interact with blood thinners.",
+      "avoidList": ["high-dose turmeric or ginger without clinician guidance"],
+      "description": "No herbs blocked at this layer. Generates clinician-check note. Turmeric and high-dose ginger flagged in avoid list."
+    },
+    {
+      "flag": "none",
+      "blockedHerbs": [],
+      "note": null,
+      "avoidList": [],
+      "description": "No restrictions."
+    }
+  ],
+  "notes": {
+    "processingOrder": "Safety flags are applied to the FINAL herb list (Step 12), after all formula generation, modifier application, and secondary pattern integration. Safety always overrides formula logic.",
+    "palpitationsDistinction": "'palpitations' in symptoms[] triggers the symptom modifier (Step 11). 'palpitations_flag' in safety_flags[] triggers the safety restriction (Step 12). These are independent and may both be active simultaneously.",
+    "combinedFlags": "If multiple safety flags are active, all blocked herb sets are merged. If both pregnancy and palpitations_flag are active, the combined blocked set is: mustard seed, clove, he shou wu, black pepper."
+  }
+}

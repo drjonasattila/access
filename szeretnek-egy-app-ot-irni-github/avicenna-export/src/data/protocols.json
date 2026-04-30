@@ -1,0 +1,184 @@
+{
+  "PROTOCOLS": {
+    "damp_cold": {
+      "principle": "Warm, drain, move, dry",
+      "field_effects": [
+        "Warms the body's fluid-holding spaces",
+        "Reduces heaviness and morning stiffness",
+        "Clears foggy thinking related to cold dampness"
+      ],
+      "light": [
+        { "name": "Cardamom",       "amount": "6–8 pods",    "role": "aromatic mover" },
+        { "name": "Coriander seed", "amount": "½ tsp",       "role": "gently drains damp" },
+        { "name": "Cinnamon",       "amount": "small piece",  "role": "warming support" }
+      ],
+      "medium": [
+        { "name": "Cardamom",       "amount": "8–10 pods",   "role": "aromatic mover" },
+        { "name": "Coriander seed", "amount": "1 tsp",       "role": "drains damp" },
+        { "name": "Cumin",          "amount": "½ tsp",       "role": "warms digestion" },
+        { "name": "Cinnamon",       "amount": "small stick",  "role": "warming support" },
+        { "name": "Black pepper",   "amount": "3–4 grains",  "role": "activates circulation" }
+      ],
+      "strong": [
+        { "name": "Cardamom",       "amount": "10 pods",     "role": "aromatic mover" },
+        { "name": "Coriander seed", "amount": "1 tsp",       "role": "drains damp" },
+        { "name": "Cumin",          "amount": "1 tsp",       "role": "warms digestion" },
+        { "name": "Cinnamon",       "amount": "1 stick",     "role": "warming support" },
+        { "name": "Mustard seed",   "amount": "¼ tsp",       "role": "breaks stagnation" }
+      ]
+    },
+    "damp_heat": {
+      "principle": "Cool, drain, move aromatically",
+      "field_effects": [
+        "Clears overheated dampness",
+        "Softens irritability and restlessness",
+        "Restores flow without overheating"
+      ],
+      "light": [
+        { "name": "Mint",           "amount": "small handful", "role": "cools and moves" },
+        { "name": "Coriander seed", "amount": "½ tsp",         "role": "drains damp gently" },
+        { "name": "Rose petals",    "amount": "1 tsp",         "role": "cools heat" }
+      ],
+      "medium": [
+        { "name": "Mint",           "amount": "handful",       "role": "cools and moves" },
+        { "name": "Coriander seed", "amount": "1 tsp",         "role": "drains overheated damp" },
+        { "name": "Burdock root",   "amount": "1 tsp",         "role": "clears heat" },
+        { "name": "Rose petals",    "amount": "1 tsp",         "role": "cools and softens" }
+      ],
+      "strong": [
+        { "name": "Mint",           "amount": "large handful", "role": "cools and disperses" },
+        { "name": "Coriander seed", "amount": "1 tsp",         "role": "drains damp" },
+        { "name": "Burdock root",   "amount": "1½ tsp",        "role": "clears heat" },
+        { "name": "Rose petals",    "amount": "1½ tsp",        "role": "cools" },
+        { "name": "Fennel seed",    "amount": "½ tsp",         "role": "aromatic mover" }
+      ]
+    },
+    "dry_heat": {
+      "principle": "Moisten, cool, rebuild fluids",
+      "field_effects": [
+        "Restores fluid reservoir",
+        "Cools dry heat gently",
+        "Supports tissue responsiveness"
+      ],
+      "light": [
+        { "name": "Goji berry",  "amount": "1 tbsp",        "role": "rebuilds fluid" },
+        { "name": "Rose petals", "amount": "1 tsp",         "role": "cools and soothes" },
+        { "name": "Honey",       "amount": "½ tsp",         "role": "moistens" }
+      ],
+      "medium": [
+        { "name": "Goji berry",  "amount": "1–2 tbsp",      "role": "rebuilds fluid" },
+        { "name": "Spirulina",   "amount": "½ tsp",         "role": "structural fluid support" },
+        { "name": "Rose petals", "amount": "1 tsp",         "role": "cools" },
+        { "name": "Mint",        "amount": "small handful", "role": "cools gently" }
+      ],
+      "strong": [
+        { "name": "Goji berry",  "amount": "2 tbsp",        "role": "fluid reservoir" },
+        { "name": "Spirulina",   "amount": "1 tsp",         "role": "deep fluid support" },
+        { "name": "Shatavari",   "amount": "½ tsp",         "role": "nourishes" },
+        { "name": "Rose petals", "amount": "1 tsp",         "role": "cools" },
+        { "name": "Mint",        "amount": "handful",       "role": "descends heat" }
+      ]
+    },
+    "dry_cold": {
+      "principle": "Moisten, gently warm, restore fluids",
+      "field_effects": [
+        "Rebuilds cold-dry tissue fluids",
+        "Warms gently without over-drying",
+        "Supports resilience and moisture"
+      ],
+      "light": [
+        { "name": "Soaked chia seed", "amount": "1 tsp",       "role": "restores fluid" },
+        { "name": "Honey",            "amount": "½ tsp",       "role": "moistens and warms" },
+        { "name": "Cardamom",         "amount": "4 pods",      "role": "gentle warmth" }
+      ],
+      "medium": [
+        { "name": "Soaked chia seed", "amount": "1½ tsp",      "role": "restores fluid" },
+        { "name": "Goji berry",       "amount": "1 tbsp",      "role": "nourishes" },
+        { "name": "Dates",            "amount": "2 pieces",    "role": "moistens and warms" },
+        { "name": "Cardamom",         "amount": "6 pods",      "role": "gentle aromatic warmth" }
+      ],
+      "strong": [
+        { "name": "Soaked chia seed", "amount": "2 tsp",       "role": "restores fluid" },
+        { "name": "Goji berry",       "amount": "1–2 tbsp",    "role": "nourishes deeply" },
+        { "name": "Dates",            "amount": "2–3 pieces",  "role": "moistens" },
+        { "name": "Cardamom",         "amount": "8 pods",      "role": "warms gently" },
+        { "name": "Cinnamon",         "amount": "small piece", "role": "gentle warmth without drying" }
+      ]
+    },
+    "undercharged": {
+      "principle": "Build organising force",
+      "field_effects": [
+        "Supports mitochondrial signalling",
+        "Restores organisational coherence",
+        "Rebuilds energy reserves gradually"
+      ],
+      "light": [
+        { "name": "Astragalus", "amount": "1 tsp",               "role": "supports vitality" },
+        { "name": "Ginger",     "amount": "1 slice",             "role": "activates gently" }
+      ],
+      "medium": [
+        { "name": "Astragalus", "amount": "1–2 tsp",             "role": "builds organising force" },
+        { "name": "Ginseng",    "amount": "small piece / ½ tsp", "role": "deep vitality support" },
+        { "name": "Ginger",     "amount": "2 slices",            "role": "activates circulation" }
+      ],
+      "strong": [
+        { "name": "Astragalus", "amount": "2 tsp",               "role": "builds organising force" },
+        { "name": "Ginseng",    "amount": "1 tsp",               "role": "deep vitality" },
+        { "name": "Ginger",     "amount": "2–3 slices",          "role": "warms and activates" },
+        { "name": "Cinnamon",   "amount": "small piece",         "role": "supports warmth and coherence" }
+      ]
+    },
+    "overcharged": {
+      "principle": "Cool, settle, discharge excess",
+      "field_effects": [
+        "Reduces chaotic activation",
+        "Settles upper-field tension",
+        "Restores coherence and calm"
+      ],
+      "light": [
+        { "name": "Mint",           "amount": "small handful", "role": "cools and calms" },
+        { "name": "Coriander seed", "amount": "½ tsp",         "role": "settles gently" },
+        { "name": "Rose petals",    "amount": "1 tsp",         "role": "soothes" }
+      ],
+      "medium": [
+        { "name": "Mint",           "amount": "handful",       "role": "cools and disperses" },
+        { "name": "Coriander seed", "amount": "1 tsp",         "role": "settles excess" },
+        { "name": "Rose petals",    "amount": "1 tsp",         "role": "calms field tension" }
+      ],
+      "strong": [
+        { "name": "Mint",           "amount": "large handful", "role": "strong cooling" },
+        { "name": "Coriander seed", "amount": "1 tsp",         "role": "settles excess" },
+        { "name": "Rose petals",    "amount": "1½ tsp",        "role": "calms" },
+        { "name": "Fennel seed",    "amount": "½ tsp",         "role": "gently moves without heating" }
+      ]
+    }
+  },
+  "SECONDARY_HERBS": {
+    "undercharged": [
+      { "name": "Astragalus",  "amount": "1 tsp",          "role": "supports organising force" },
+      { "name": "Ginger",      "amount": "1 slice",        "role": "gentle activation" }
+    ],
+    "overcharged": [
+      { "name": "Mint",        "amount": "small handful",  "role": "settles excess" },
+      { "name": "Rose petals", "amount": "1 tsp",          "role": "calms" }
+    ]
+  },
+  "PRIMARY_CONFLICTS": {
+    "dry_heat":    ["ginger", "cinnamon", "mustard seed", "black pepper", "cumin"],
+    "dry_cold":    ["mustard seed", "black pepper"],
+    "overcharged": ["ginger", "cinnamon", "mustard seed", "black pepper", "cumin", "ginseng"]
+  },
+  "NEUTRAL_BASELINE": {
+    "principle": "Gentle baseline — no strong terrain distortion detected",
+    "ingredients": [
+      { "name": "Cardamom",       "amount": "6 pods", "role": "gentle aromatic baseline" },
+      { "name": "Coriander seed", "amount": "½ tsp",  "role": "light balancer" },
+      { "name": "Honey",          "amount": "½ tsp",  "role": "optional — adds gentle warmth" }
+    ],
+    "field_effects": [
+      "Gentle tonic baseline",
+      "Supports mild digestion and warmth",
+      "No strong corrective direction — reassess after a few days"
+    ]
+  }
+}

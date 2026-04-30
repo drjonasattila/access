@@ -1,0 +1,31 @@
+{
+  "secondaryHerbs": {
+    "undercharged": [
+      { "name": "Astragalus",  "amount": "1 tsp",          "role": "supports organising force" },
+      { "name": "Ginger",      "amount": "1 slice",        "role": "gentle activation" }
+    ],
+    "overcharged": [
+      { "name": "Mint",        "amount": "small handful",  "role": "settles excess" },
+      { "name": "Rose petals", "amount": "1 tsp",          "role": "calms" }
+    ]
+  },
+  "primaryConflicts": {
+    "dry_heat": {
+      "blockedHerbs": ["ginger", "cinnamon", "mustard seed", "black pepper", "cumin"],
+      "reason": "These are warming/heating herbs that conflict with the moisten+cool direction of dry_heat"
+    },
+    "dry_cold": {
+      "blockedHerbs": ["mustard seed", "black pepper"],
+      "reason": "These are overly drying herbs that conflict with the moisten+warm direction of dry_cold"
+    },
+    "overcharged": {
+      "blockedHerbs": ["ginger", "cinnamon", "mustard seed", "black pepper", "cumin", "ginseng"],
+      "reason": "These are stimulating/heating herbs that conflict with the cool+settle direction of overcharged"
+    }
+  },
+  "rules": {
+    "maxSecondaryHerbs": 2,
+    "conflictCheck": "Before adding any secondary herb, check if its name (lowercase) is in PRIMARY_CONFLICTS[primary_pattern].blockedHerbs. If so, omit and document.",
+    "documentation": "Document each omission and addition in debug_trace"
+  }
+}

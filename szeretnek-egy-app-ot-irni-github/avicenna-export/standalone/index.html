@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avicenna — Wellness Protocol</title>
+<style>
+/* ── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --c-bg:         #f7f4ee;
+  --c-surface:    #ffffff;
+  --c-border:     #d8d0c0;
+  --c-text:       #1a1510;
+  --c-text-2:     #5a5040;
+  --c-text-3:     #9a8f7e;
+  --c-accent:     #6b4c1e;
+  --c-accent-lt:  #f0e8d8;
+  --c-safe:       #8b2020;
+  --c-safe-lt:    #fdf0f0;
+  --c-effect:     #1a4a2e;
+  --c-effect-lt:  #ecf5ee;
+  --c-mod:        #1a3a5a;
+  --c-mod-lt:     #ecf0f8;
+  --c-avoid:      #5a2010;
+  --c-avoid-lt:   #fdf0ea;
+  --radius:       6px;
+  --shadow-sm:    0 1px 3px rgba(0,0,0,.08);
+  --shadow-md:    0 3px 10px rgba(0,0,0,.10);
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────────── */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  background: var(--c-bg);
+  color: var(--c-text);
+  min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+.av-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px 60px;
+}
+
+/* ── Page header ─────────────────────────────────────────────────────────────── */
+.av-header {
+  padding: 40px 0 28px;
+  border-bottom: 1px solid var(--c-border);
+  margin-bottom: 32px;
+}
+.av-header-brand {
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: .2em;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.av-header-title {
+  font-size: 28px;
+  font-weight: normal;
+  color: var(--c-text);
+  margin-bottom: 4px;
+}
+.av-header-sub {
+  font-size: 14px;
+  color: var(--c-text-2);
+  font-style: italic;
+}
+
+/* ── Form ───────────────────────────────────────────────────────────────────── */
+.av-form { display: flex; flex-direction: column; gap: 0; }
+
+.av-field-group {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--c-border);
+}
+.av-field-group:last-of-type { border-bottom: none; }
+
+.av-field-label {
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+  margin-bottom: 12px;
+}
+
+/* Radio options */
+.av-options { display: flex; flex-direction: column; gap: 8px; }
+
+.av-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--c-text-2);
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: all .15s;
+}
+.av-option:hover { border-color: var(--c-border); background: var(--c-surface); }
+.av-option input[type="radio"] { accent-color: var(--c-accent); width: 16px; height: 16px; flex-shrink: 0; }
+.av-option:has(input:checked) {
+  border-color: var(--c-accent);
+  background: var(--c-accent-lt);
+  color: var(--c-text);
+}
+
+/* Checkboxes */
+.av-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+@media (max-width: 420px) { .av-checks { grid-template-columns: 1fr; } }
+
+.av-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--c-text-2);
+  padding: 7px 10px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  transition: all .15s;
+}
+.av-check:hover { border-color: var(--c-accent); }
+.av-check input[type="checkbox"] { accent-color: var(--c-accent); width: 14px; height: 14px; flex-shrink: 0; }
+.av-check:has(input:checked) {
+  border-color: var(--c-accent);
+  background: var(--c-accent-lt);
+  color: var(--c-text);
+}
+.av-check--safety { border-color: #e8d0c0; }
+.av-check--safety:has(input:checked) { border-color: var(--c-safe); background: var(--c-safe-lt); }
+
+/* Validation message */
+.av-validation-msg {
+  font-size: 13px;
+  color: var(--c-safe);
+  padding: 8px 12px;
+  background: var(--c-safe-lt);
+  border-radius: var(--radius);
+  border: 1px solid #e8c0c0;
+  display: none;
+}
+
+/* Submit button */
+.av-btn-primary {
+  margin-top: 24px;
+  padding: 14px 24px;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  background: var(--c-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all .2s;
+  box-shadow: var(--shadow-sm);
+}
+.av-btn-primary:hover {
+  background: #5a3a12;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Output ─────────────────────────────────────────────────────────────────── */
+#av-output-container { display: none; margin-top: 40px; }
+
+.av-output {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.av-out-header {
+  padding: 24px;
+  background: var(--c-accent);
+  color: #fff;
+}
+.av-out-pattern {
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .8;
+  margin-bottom: 4px;
+}
+.av-out-strength {
+  font-size: 14px;
+  opacity: .85;
+  font-style: italic;
+}
+
+.av-out-section {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--c-border);
+}
+.av-out-section:last-child { border-bottom: none; }
+
+.av-out-section--safety { background: var(--c-safe-lt); }
+.av-out-section--disclaimer {
+  font-size: 12px;
+  color: var(--c-text-3);
+  font-style: italic;
+  background: var(--c-bg);
+}
+
+.av-out-label {
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: 12px;
+}
+
+/* Ingredient list */
+.av-ingredient-list { display: flex; flex-direction: column; gap: 8px; }
+
+.av-ingredient {
+  display: grid;
+  grid-template-columns: 160px 100px 1fr;
+  gap: 8px;
+  align-items: start;
+  padding: 10px 12px;
+  background: var(--c-bg);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--c-accent);
+  font-size: 14px;
+}
+@media (max-width: 500px) {
+  .av-ingredient { grid-template-columns: 1fr; gap: 2px; }
+}
+
+.av-ing-name   { font-weight: bold; color: var(--c-text); }
+.av-ing-amount { font-family: 'Courier New', monospace; font-size: 12px; color: var(--c-accent); }
+.av-ing-role   { font-style: italic; color: var(--c-text-2); }
+
+/* Preparation */
+.av-out-prep { font-size: 15px; color: var(--c-text); line-height: 1.7; margin-bottom: 8px; }
+.av-out-timing { font-size: 13px; font-weight: bold; color: var(--c-text-2); margin-bottom: 4px; }
+.av-out-note { font-size: 13px; color: var(--c-text-3); font-style: italic; }
+
+/* Tags */
+.av-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.av-tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--c-bg);
+  color: var(--c-text-2);
+  border: 1px solid var(--c-border);
+}
+.av-tag--effect { background: var(--c-effect-lt); color: var(--c-effect); border-color: #b8d4c0; }
+.av-tag--mod    { background: var(--c-mod-lt);    color: var(--c-mod);    border-color: #b8c8e0; }
+.av-tag--avoid  { background: var(--c-avoid-lt);  color: var(--c-avoid);  border-color: #e0c0b0; }
+
+.av-out-empty        { font-style: italic; color: var(--c-text-3); font-size: 14px; }
+.av-out-empty-inline { font-style: italic; color: var(--c-text-3); font-size: 13px; }
+
+/* Safety notes */
+.av-safety-note {
+  padding: 10px 12px;
+  background: var(--c-safe-lt);
+  border: 1px solid #e8c0c0;
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--c-safe);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.av-safety-note:last-child { margin-bottom: 0; }
+
+/* Follow-up questions */
+.av-followup-q {
+  padding: 10px 14px;
+  background: var(--c-accent-lt);
+  border: 1px solid #d8c8a8;
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--c-text-2);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.av-followup-q:last-child { margin-bottom: 0; }
+
+/* Debug trace */
+.av-debug-trace {
+  margin: 8px 24px 16px;
+  font-size: 11px;
+}
+.av-debug-trace summary {
+  cursor: pointer;
+  color: var(--c-text-3);
+  font-family: 'Courier New', monospace;
+  padding: 4px 0;
+}
+.av-debug-content {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--c-text-3);
+  padding: 8px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  margin-top: 6px;
+  line-height: 1.8;
+  overflow-x: auto;
+}
+
+/* Reset button */
+.av-btn-secondary {
+  display: block;
+  width: calc(100% - 48px);
+  margin: 0 24px 24px;
+  padding: 10px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  background: transparent;
+  color: var(--c-text-3);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all .15s;
+}
+.av-btn-secondary:hover { border-color: var(--c-accent); color: var(--c-text); }
+</style>
+</head>
+<body>
+
+<div class="av-page">
+
+  <header class="av-header">
+    <div class="av-header-brand">Avicenna · Wellness Layer · Build 1.0</div>
+    <h1 class="av-header-title">Your Terrain Protocol</h1>
+    <p class="av-header-sub">A simple, adaptive formula based on your current state</p>
+  </header>
+
+  <!-- Form container -->
+  <div id="av-form-container"></div>
+
+  <!-- Output container -->
+  <div id="av-output-container"></div>
+
+</div>
+
+<!-- ── ENGINE ───────────────────────────────────────────────────────────────── -->
+<script>
+/*
+ * ENGINE MODULE (inline — from engine/engine.js)
+ * In a modular build, this would be: <script src="engine/engine.js">
+ */
+
+const PROTOCOLS = {
+  damp_cold: {
+    principle: "Warm, drain, move, dry",
+    field_effects: ["Warms the body's fluid-holding spaces","Reduces heaviness and morning stiffness","Clears foggy thinking related to cold dampness"],
+    light:  [{name:"Cardamom",amount:"6–8 pods",role:"aromatic mover"},{name:"Coriander seed",amount:"½ tsp",role:"gently drains damp"},{name:"Cinnamon",amount:"small piece",role:"warming support"}],
+    medium: [{name:"Cardamom",amount:"8–10 pods",role:"aromatic mover"},{name:"Coriander seed",amount:"1 tsp",role:"drains damp"},{name:"Cumin",amount:"½ tsp",role:"warms digestion"},{name:"Cinnamon",amount:"small stick",role:"warming support"},{name:"Black pepper",amount:"3–4 grains",role:"activates circulation"}],
+    strong: [{name:"Cardamom",amount:"10 pods",role:"aromatic mover"},{name:"Coriander seed",amount:"1 tsp",role:"drains damp"},{name:"Cumin",amount:"1 tsp",role:"warms digestion"},{name:"Cinnamon",amount:"1 stick",role:"warming support"},{name:"Mustard seed",amount:"¼ tsp",role:"breaks stagnation"}]
+  },
+  damp_heat: {
+    principle: "Cool, drain, move aromatically",
+    field_effects: ["Clears overheated dampness","Softens irritability and restlessness","Restores flow without overheating"],
+    light:  [{name:"Mint",amount:"small handful",role:"cools and moves"},{name:"Coriander seed",amount:"½ tsp",role:"drains damp gently"},{name:"Rose petals",amount:"1 tsp",role:"cools heat"}],
+    medium: [{name:"Mint",amount:"handful",role:"cools and moves"},{name:"Coriander seed",amount:"1 tsp",role:"drains overheated damp"},{name:"Burdock root",amount:"1 tsp",role:"clears heat"},{name:"Rose petals",amount:"1 tsp",role:"cools and softens"}],
+    strong: [{name:"Mint",amount:"large handful",role:"cools and disperses"},{name:"Coriander seed",amount:"1 tsp",role:"drains damp"},{name:"Burdock root",amount:"1½ tsp",role:"clears heat"},{name:"Rose petals",amount:"1½ tsp",role:"cools"},{name:"Fennel seed",amount:"½ tsp",role:"aromatic mover"}]
+  },
+  dry_heat: {
+    principle: "Moisten, cool, rebuild fluids",
+    field_effects: ["Restores fluid reservoir","Cools dry heat gently","Supports tissue responsiveness"],
+    light:  [{name:"Goji berry",amount:"1 tbsp",role:"rebuilds fluid"},{name:"Rose petals",amount:"1 tsp",role:"cools and soothes"},{name:"Honey",amount:"½ tsp",role:"moistens"}],
+    medium: [{name:"Goji berry",amount:"1–2 tbsp",role:"rebuilds fluid"},{name:"Spirulina",amount:"½ tsp",role:"structural fluid support"},{name:"Rose petals",amount:"1 tsp",role:"cools"},{name:"Mint",amount:"small handful",role:"cools gently"}],
+    strong: [{name:"Goji berry",amount:"2 tbsp",role:"fluid reservoir"},{name:"Spirulina",amount:"1 tsp",role:"deep fluid support"},{name:"Shatavari",amount:"½ tsp",role:"nourishes"},{name:"Rose petals",amount:"1 tsp",role:"cools"},{name:"Mint",amount:"handful",role:"descends heat"}]
+  },
+  dry_cold: {
+    principle: "Moisten, gently warm, restore fluids",
+    field_effects: ["Rebuilds cold-dry tissue fluids","Warms gently without over-drying","Supports resilience and moisture"],
+    light:  [{name:"Soaked chia seed",amount:"1 tsp",role:"restores fluid"},{name:"Honey",amount:"½ tsp",role:"moistens and warms"},{name:"Cardamom",amount:"4 pods",role:"gentle warmth"}],
+    medium: [{name:"Soaked chia seed",amount:"1½ tsp",role:"restores fluid"},{name:"Goji berry",amount:"1 tbsp",role:"nourishes"},{name:"Dates",amount:"2 pieces",role:"moistens and warms"},{name:"Cardamom",amount:"6 pods",role:"gentle aromatic warmth"}],
+    strong: [{name:"Soaked chia seed",amount:"2 tsp",role:"restores fluid"},{name:"Goji berry",amount:"1–2 tbsp",role:"nourishes deeply"},{name:"Dates",amount:"2–3 pieces",role:"moistens"},{name:"Cardamom",amount:"8 pods",role:"warms gently"},{name:"Cinnamon",amount:"small piece",role:"gentle warmth without drying"}]
+  },
+  undercharged: {
+    principle: "Build organising force",
+    field_effects: ["Supports mitochondrial signalling","Restores organisational coherence","Rebuilds energy reserves gradually"],
+    light:  [{name:"Astragalus",amount:"1 tsp",role:"supports vitality"},{name:"Ginger",amount:"1 slice",role:"activates gently"}],
+    medium: [{name:"Astragalus",amount:"1–2 tsp",role:"builds organising force"},{name:"Ginseng",amount:"small piece / ½ tsp",role:"deep vitality support"},{name:"Ginger",amount:"2 slices",role:"activates circulation"}],
+    strong: [{name:"Astragalus",amount:"2 tsp",role:"builds organising force"},{name:"Ginseng",amount:"1 tsp",role:"deep vitality"},{name:"Ginger",amount:"2–3 slices",role:"warms and activates"},{name:"Cinnamon",amount:"small piece",role:"supports warmth and coherence"}]
+  },
+  overcharged: {
+    principle: "Cool, settle, discharge excess",
+    field_effects: ["Reduces chaotic activation","Settles upper-field tension","Restores coherence and calm"],
+    light:  [{name:"Mint",amount:"small handful",role:"cools and calms"},{name:"Coriander seed",amount:"½ tsp",role:"settles gently"},{name:"Rose petals",amount:"1 tsp",role:"soothes"}],
+    medium: [{name:"Mint",amount:"handful",role:"cools and disperses"},{name:"Coriander seed",amount:"1 tsp",role:"settles excess"},{name:"Rose petals",amount:"1 tsp",role:"calms field tension"}],
+    strong: [{name:"Mint",amount:"large handful",role:"strong cooling"},{name:"Coriander seed",amount:"1 tsp",role:"settles excess"},{name:"Rose petals",amount:"1½ tsp",role:"calms"},{name:"Fennel seed",amount:"½ tsp",role:"gently moves without heating"}]
+  }
+};
+
+const SECONDARY_HERBS = {
+  undercharged: [{name:"Astragalus",amount:"1 tsp",role:"supports organising force"},{name:"Ginger",amount:"1 slice",role:"gentle activation"}],
+  overcharged:  [{name:"Mint",amount:"small handful",role:"settles excess"},{name:"Rose petals",amount:"1 tsp",role:"calms"}]
+};
+
+const PRIMARY_CONFLICTS = {
+  dry_heat:    ["ginger","cinnamon","mustard seed","black pepper","cumin"],
+  dry_cold:    ["mustard seed","black pepper"],
+  overcharged: ["ginger","cinnamon","mustard seed","black pepper","cumin","ginseng"]
+};
+
+const NEUTRAL_BASELINE = {
+  principle: "Gentle baseline — no strong terrain distortion detected",
+  ingredients: [{name:"Cardamom",amount:"6 pods",role:"gentle aromatic baseline"},{name:"Coriander seed",amount:"½ tsp",role:"light balancer"},{name:"Honey",amount:"½ tsp",role:"optional — adds gentle warmth"}],
+  field_effects: ["Gentle tonic baseline","Supports mild digestion and warmth","No strong corrective direction — reassess after a few days"]
+};
+
+function identifyPattern(t, m, e) {
+  if (t==="cold"&&m==="damp")  return "damp_cold";
+  if (t==="heat"&&m==="damp")  return "damp_heat";
+  if (t==="heat"&&m==="dry")   return "dry_heat";
+  if (t==="cold"&&m==="dry")   return "dry_cold";
+  if (t==="neutral"&&e==="undercharged") return "undercharged";
+  if (t==="neutral"&&e==="overcharged")  return "overcharged";
+  if (t==="neutral"&&m==="neutral")      return "neutral_baseline";
+  return "mixed_pattern";
+}
+
+function inferDominant(t, m, e, syms) {
+  if (e==="overcharged"||syms.includes("irritability")||syms.includes("palpitations"))
+    return t==="heat"&&m==="dry" ? "dry_heat" : t==="heat" ? "damp_heat" : "overcharged";
+  if (m==="damp"||syms.includes("bloating")||syms.includes("brain_fog"))
+    return t==="heat" ? "damp_heat" : "damp_cold";
+  if (m==="dry") return t==="cold" ? "dry_cold" : "dry_heat";
+  return "damp_cold";
+}
+
+function resolveStrength(si, frailty) {
+  const map = {mild:"light",moderate:"medium",strong:"strong"};
+  let s = map[si]||"light";
+  if (frailty) { if(s==="strong") s="medium"; else if(s==="medium") s="light"; else s="frailty_floor"; }
+  return s;
+}
+
+function applySafetyFlags(herbs, flags) {
+  const blocked = new Set();
+  const notes = [];
+  if (flags.includes("pregnancy")) {
+    ["mustard seed","clove","he shou wu","black pepper"].forEach(h=>blocked.add(h));
+    notes.push("Strong heating spices avoided — pregnancy noted. Check all herbs with your midwife or clinician.");
+  }
+  if (flags.includes("gastritis")||flags.includes("palpitations_flag")||flags.includes("hypertension")) {
+    ["black pepper","mustard seed","clove"].forEach(h=>blocked.add(h));
+    notes.push("Strong stimulating spices avoided — digestive or cardiovascular sensitivity noted.");
+  }
+  if (flags.includes("anticoagulants"))
+    notes.push("If turmeric or high-dose ginger are ever added, check with your clinician first.");
+  return { herbs: herbs.filter(h=>!blocked.has(h.name.toLowerCase())), notes };
+}
+
+function applyDigestiveSensitivity(herbs, sensitivity, pattern) {
+  if (sensitivity!=="high") return {herbs, applied:false};
+  const remove = new Set(["black pepper","mustard seed","clove","ginger"]);
+  let filtered = herbs.filter(h=>!remove.has(h.name.toLowerCase()));
+  if (filtered.length<2) {
+    filtered.push({name:"Fennel seed",amount:"½ tsp",role:"gentle aromatic fallback"});
+    if (pattern==="damp_cold") filtered.push({name:"Anise",amount:"¼ tsp",role:"gentle warming aromatic"});
+  }
+  return {herbs:filtered, applied:true};
+}
+
+function integrateSecondary(herbs, primary_pattern, energy_state, trace) {
+  if (energy_state==="neutral"||primary_pattern===energy_state) return herbs;
+  const secHerbs = SECONDARY_HERBS[energy_state];
+  if (!secHerbs) return herbs;
+  const blocked = (PRIMARY_CONFLICTS[primary_pattern]||[]);
+  let added = 0;
+  secHerbs.forEach(h=>{
+    if (added>=2) return;
+    if (blocked.includes(h.name.toLowerCase())) { trace.push(`Secondary "${h.name}" omitted — conflicts with ${primary_pattern}`); return; }
+    herbs.push({...h}); added++;
+    trace.push(`Secondary "${h.name}" added`);
+  });
+  return herbs;
+}
+
+const MOD_PRI = {palpitations:1,irritability:2,brain_fog:1,bloating:1,dry_mouth:2,cold_hands_feet:2,loose_stool:3,constipation_dry:2};
+
+function applyModifiers(herbs, symptoms, pattern, frailty) {
+  const applied=[], avoid=[], followUps=[];
+  const hasLoose = symptoms.includes("loose_stool");
+  const hasConst = symptoms.includes("constipation_dry");
+  if (hasLoose&&hasConst) followUps.push("You selected both loose stool and constipation — which tendency is more frequent? This will help refine the formula.");
+  const active = symptoms.filter(s=>MOD_PRI[s]!==undefined).filter(s=>!(s==="loose_stool"&&hasConst)&&!(s==="constipation_dry"&&hasLoose)).sort((a,b)=>(MOD_PRI[a]||9)-(MOD_PRI[b]||9));
+  const maxMods = frailty?1:2;
+  const toApply = active.slice(0,maxMods);
+  if (active.length>maxMods) followUps.push(`${active.length-maxMods} modifier(s) deferred to keep formula simple: ${active.slice(maxMods).join(", ").replace(/_/g," ")}.`);
+  toApply.forEach(sym=>{
+    switch(sym){
+      case "dry_mouth":
+        herbs=herbs.filter(h=>!["black pepper","mustard seed","clove"].includes(h.name.toLowerCase()));
+        if (!herbs.find(h=>h.name.toLowerCase()==="honey")) herbs.push({name:"Honey",amount:"½ tsp",role:"moistens"});
+        applied.push("dry mouth — drying spices removed, honey added"); break;
+      case "bloating":
+        if (!herbs.find(h=>h.name.toLowerCase().includes("cardamom"))) herbs.push({name:"Cardamom",amount:"6 pods",role:"aromatic — relieves bloating"});
+        applied.push("bloating — aromatic movers prioritised"); break;
+      case "cold_hands_feet":
+        if (pattern!=="overcharged") { if (!herbs.find(h=>h.name.toLowerCase()==="ginger")) herbs.push({name:"Ginger",amount:"2 slices",role:"warms periphery"}); else if (!herbs.find(h=>h.name.toLowerCase()==="cinnamon")) herbs.push({name:"Cinnamon",amount:"small piece",role:"warms periphery"}); applied.push("cold hands/feet — warming herb added"); }
+        else applied.push("cold hands/feet — skipped, overcharged state"); break;
+      case "irritability":
+        herbs=herbs.filter(h=>!["black pepper","mustard seed"].includes(h.name.toLowerCase()));
+        if (!herbs.find(h=>h.name.toLowerCase()==="rose petals")) herbs.push({name:"Rose petals",amount:"1 tsp",role:"calms and soothes"});
+        applied.push("irritability — rose added, stimulating spices reduced"); break;
+      case "brain_fog":
+        if (!herbs.find(h=>h.name.toLowerCase().includes("cardamom"))) herbs.push({name:"Cardamom",amount:"6 pods",role:"aromatic clarity"});
+        applied.push("brain fog — aromatic clarity herbs prioritised"); break;
+      case "loose_stool":
+        herbs=herbs.filter(h=>!["chia seed","basil seed","soaked chia seed"].includes(h.name.toLowerCase()));
+        applied.push("loose stool — seed moisteners removed"); break;
+      case "constipation_dry":
+        if (!herbs.find(h=>h.name.toLowerCase().includes("chia"))) herbs.push({name:"Soaked chia seed",amount:"1 tsp",role:"adds moisture gently"});
+        applied.push("dry constipation — chia added for moisture"); break;
+      case "palpitations":
+        herbs=herbs.filter(h=>!["ginseng","mustard seed","black pepper","clove"].includes(h.name.toLowerCase()));
+        if (!herbs.find(h=>h.name.toLowerCase()==="rose petals")) herbs.push({name:"Rose petals",amount:"1 tsp",role:"calms"});
+        avoid.push("strong stimulants (ginseng, pepper, mustard)");
+        applied.push("palpitations — stimulants removed, rose added"); break;
+    }
+  });
+  return {herbs, applied, avoid, followUps};
+}
+
+function dedup(herbs) {
+  const seen = new Map();
+  herbs.forEach(h=>{
+    const k = h.name.toLowerCase();
+    if (!seen.has(k)) seen.set(k,{...h});
+    else { const ex=seen.get(k); if (!ex.role.includes(h.role)) ex.role+=` + ${h.role}`; }
+  });
+  return Array.from(seen.values());
+}
+
+function cap(herbs, frailty) { return herbs.slice(0, frailty?3:5); }
+
+function getPrep(pattern, herbs) {
+  const delicate = herbs.some(h=>["mint","rose petals","rose"].includes(h.name.toLowerCase()));
+  const seed = herbs.some(h=>h.name.toLowerCase().includes("chia"));
+  let prep = "Simmer gently in 400ml water for 10–15 minutes. Strain and drink warm.";
+  if (delicate) prep = "Simmer harder ingredients for 10 minutes. Remove from heat, add mint or rose, steep 3 minutes. Strain and drink warm.";
+  if (seed) prep += " Soak chia seeds for 10 minutes before adding.";
+  if (pattern==="dry_heat"||pattern==="dry_cold") prep = "Combine in warm (not boiling) water. Steep 8–10 minutes. Do not over-boil. Drink warm or at room temperature.";
+  return prep;
+}
+
+function generateProtocol(input) {
+  const {thermal,moisture,energy_state,frailty,digestive_sensitivity,symptom_intensity,symptoms=[],safety_flags=[]} = input;
+  const trace=[], mods=[], avoidArr=[], fqs=[];
+  let safety_notes=[];
+  const raw = identifyPattern(thermal,moisture,energy_state);
+  trace.push(`Pattern: ${raw}`);
+
+  // Neutral baseline
+  if (raw==="neutral_baseline") {
+    fqs.push("Which of these feels most true today: more tired and slow / more hot and restless / more heavy and foggy / more dry and depleted?");
+    let ings=[...NEUTRAL_BASELINE.ingredients];
+    const sf=applySafetyFlags(ings,safety_flags); ings=sf.herbs; safety_notes=sf.notes;
+    ings=cap(ings,frailty);
+    return {primary_pattern:"neutral_baseline",secondary_pattern:null,formula_strength:"baseline",ingredients:ings,preparation:getPrep("neutral_baseline",ings),timing:"Morning. Use for a few days, then reassess.",modifications_applied:["neutral state — gentle baseline protocol"],avoid:[],field_effects:NEUTRAL_BASELINE.field_effects,follow_up_questions:fqs,safety_notes,debug_trace:trace};
+  }
+
+  let primary = raw;
+  if (raw==="mixed_pattern") {
+    primary = inferDominant(thermal,moisture,energy_state,symptoms);
+    mods.push("mixed signals detected — closest pattern selected, light formula applied");
+    fqs.push("Your signals are mixed. Which feels more prominent: the cold/heavy feeling, or the hot/restless feeling?");
+    trace.push(`Mixed → inferred ${primary}`);
+  }
+
+  let strength = resolveStrength(symptom_intensity,frailty);
+  if (strength==="frailty_floor") mods.push("frailty floor — light formula, maximum 3 ingredients");
+  if (raw==="mixed_pattern") strength="light";
+  trace.push(`Strength: ${strength}`);
+
+  const protocol = PROTOCOLS[primary];
+  const baseKey = strength==="frailty_floor"?"light":strength;
+  let herbs = JSON.parse(JSON.stringify(protocol[baseKey]||protocol["light"]));
+
+  // Digestive sensitivity
+  const ds = applyDigestiveSensitivity(herbs,digestive_sensitivity,primary);
+  herbs=ds.herbs;
+  if (ds.applied) mods.push("digestive sensitivity high — strong spices removed");
+
+  // OC + cold conflict
+  if (energy_state==="overcharged"&&thermal==="cold") {
+    herbs=[{name:"Cardamom",amount:"8 pods",role:"aromatic mover"},{name:"Coriander seed",amount:"1 tsp",role:"moves gently"},{name:"Anise",amount:"½ tsp",role:"aromatic, not heating"},{name:"Mint",amount:"small handful",role:"cools overcharged field"}];
+    mods.push("overcharged-cold conflict — aromatic movers only, heating suppressed");
+    trace.push("OC+cold conflict resolved");
+  }
+
+  // Secondary
+  const secondary = (energy_state!=="neutral"&&primary!==energy_state)?energy_state:null;
+  if (secondary) herbs = integrateSecondary(herbs,primary,energy_state,trace);
+
+  // Modifiers
+  const modResult = applyModifiers(herbs,symptoms,primary,frailty);
+  herbs=modResult.herbs; mods.push(...modResult.applied); avoidArr.push(...modResult.avoid); fqs.push(...modResult.followUps);
+
+  // Safety
+  const sf=applySafetyFlags(herbs,safety_flags); herbs=sf.herbs; safety_notes=sf.notes;
+
+  // Dedup + cap
+  herbs=dedup(herbs); herbs=cap(herbs,frailty);
+  if (herbs.length<2) fqs.push("Your formula is very limited by current sensitivities. Could you share more about what you can tolerate?");
+
+  if (energy_state==="overcharged") avoidArr.push("strong heating spices (cinnamon, ginger, pepper, mustard)");
+  if (safety_flags.includes("pregnancy")) avoidArr.push("he shou wu");
+  if (safety_flags.includes("anticoagulants")) avoidArr.push("high-dose turmeric or ginger without clinician guidance");
+
+  return {
+    primary_pattern: primary,
+    secondary_pattern: secondary,
+    formula_strength: strength==="frailty_floor"?"minimal (frailty)":strength,
+    ingredients: herbs,
+    preparation: getPrep(primary,herbs),
+    timing: ["undercharged","damp_cold"].includes(primary)?"Morning or early afternoon. Not late evening.":"Morning or afternoon.",
+    modifications_applied: mods,
+    avoid: [...new Set(avoidArr)],
+    field_effects: protocol.field_effects,
+    follow_up_questions: [...new Set(fqs)],
+    safety_notes,
+    debug_trace: trace
+  };
+}
+
+window.AvicennaEngine = { generateProtocol, PROTOCOLS, identifyPattern };
+</script>
+
+<!-- ── INPUT FORM ────────────────────────────────────────────────────────────── -->
+<script>
+const FIELDS = {
+  thermal:               { label:"Thermal tendency",            options:[{value:"cold",label:"Cold — feel cold, worse in cold"},{value:"neutral",label:"Neutral — no strong tendency"},{value:"heat",label:"Heat — feel hot, burning, restless"}] },
+  moisture:              { label:"Moisture state",              options:[{value:"damp",label:"Damp — heavy, bloated, foggy"},{value:"neutral",label:"Neutral — neither clearly"},{value:"dry",label:"Dry — dry skin, thirsty, depleted"}] },
+  energy_state:          { label:"Energy state",                options:[{value:"undercharged",label:"Low — exhausted, slow, depleted"},{value:"neutral",label:"Moderate — neither extreme"},{value:"overcharged",label:"Overactive — wired, agitated, hypersensitive"}] },
+  symptom_intensity:     { label:"How strong are your symptoms?",options:[{value:"mild",label:"Mild — noticeable"},{value:"moderate",label:"Moderate — affecting daily life"},{value:"strong",label:"Strong — significantly disruptive"}] },
+  digestive_sensitivity: { label:"Digestive sensitivity",       options:[{value:"low",label:"Tolerates most things well"},{value:"medium",label:"Somewhat sensitive"},{value:"high",label:"Very sensitive — reacts easily"}] }
+};
+const SYMPTOMS = [{value:"bloating",label:"Bloating"},{value:"brain_fog",label:"Brain fog"},{value:"cold_hands_feet",label:"Cold hands / feet"},{value:"dry_mouth",label:"Dry mouth"},{value:"irritability",label:"Irritability"},{value:"loose_stool",label:"Loose stool"},{value:"constipation_dry",label:"Constipation / dry"},{value:"palpitations",label:"Palpitations / anxiety"}];
+const SAFETY = [{value:"pregnancy",label:"Pregnancy"},{value:"gastritis",label:"Gastritis / ulcers"},{value:"hypertension",label:"High blood pressure"},{value:"palpitations_flag",label:"Significant palpitations"},{value:"anticoagulants",label:"Blood thinners"}];
+
+const formState = {thermal:null,moisture:null,energy_state:null,symptom_intensity:null,digestive_sensitivity:null,frailty:false,symptoms:[],safety_flags:[]};
+
+function buildForm() {
+  const fieldHtml = Object.entries(FIELDS).map(([k,f])=>`
+    <div class="av-field-group">
+      <div class="av-field-label">${f.label}</div>
+      <div class="av-options">${f.options.map(o=>`<label class="av-option"><input type="radio" name="${k}" value="${o.value}" onchange="formState['${k}']='${o.value}'"><span>${o.label}</span></label>`).join("")}</div>
+    </div>`).join("");
+
+  const symHtml = `<div class="av-field-group"><div class="av-field-label">Current symptoms (select all that apply)</div><div class="av-checks">${SYMPTOMS.map(s=>`<label class="av-check"><input type="checkbox" value="${s.value}" onchange="toggleArr(formState.symptoms,'${s.value}')"><span>${s.label}</span></label>`).join("")}</div></div>`;
+
+  const safeHtml = `<div class="av-field-group"><div class="av-field-label">Any of these apply? (optional)</div><div class="av-checks">${SAFETY.map(s=>`<label class="av-check av-check--safety"><input type="checkbox" value="${s.value}" onchange="toggleArr(formState.safety_flags,'${s.value}')"><span>${s.label}</span></label>`).join("")}</div></div>`;
+
+  const frailtyHtml = `<div class="av-field-group"><div class="av-field-label">General resilience</div><label class="av-check"><input type="checkbox" onchange="formState.frailty=this.checked"><span>Low resilience — easily fatigued, sensitive to change</span></label></div>`;
+
+  document.getElementById("av-form-container").innerHTML = `
+    <form class="av-form" onsubmit="return false;">
+      ${fieldHtml}
+      ${frailtyHtml}
+      ${symHtml}
+      ${safeHtml}
+      <div class="av-validation-msg" id="av-val-msg"></div>
+      <button class="av-btn-primary" type="button" onclick="submitForm()">Generate my protocol</button>
+    </form>`;
+}
+
+function toggleArr(arr, val) {
+  const i=arr.indexOf(val); if(i===-1) arr.push(val); else arr.splice(i,1);
+}
+
+function submitForm() {
+  const required = ["thermal","moisture","energy_state","symptom_intensity","digestive_sensitivity"];
+  const missing = required.filter(k=>!formState[k]);
+  const msg = document.getElementById("av-val-msg");
+  if (missing.length) {
+    msg.style.display="block";
+    msg.textContent="Please complete: "+missing.map(k=>FIELDS[k]?.label||k).join(", ");
+    return;
+  }
+  msg.style.display="none";
+  const output = window.AvicennaEngine.generateProtocol({...formState});
+  renderOutput(output);
+}
+
+buildForm();
+</script>
+
+<!-- ── OUTPUT ────────────────────────────────────────────────────────────────── -->
+<script>
+function esc(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function tc(s)  { return s.replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase()); }
+
+function renderOutput(p) {
+  const ingHtml = (p.ingredients||[]).map(i=>`<div class="av-ingredient"><div class="av-ing-name">${esc(i.name)}</div><div class="av-ing-amount">${esc(i.amount)}</div><div class="av-ing-role">${esc(i.role)}</div></div>`).join("");
+  const tags = (arr,cls)=>(arr&&arr.length)?arr.map(x=>`<span class="av-tag ${cls}">${esc(x)}</span>`).join(""):`<span class="av-out-empty-inline">None</span>`;
+  const safetyHtml = p.safety_notes&&p.safety_notes.length?`<div class="av-out-section av-out-section--safety"><div class="av-out-label">Safety notes</div>${p.safety_notes.map(n=>`<div class="av-safety-note">${esc(n)}</div>`).join("")}</div>`:"";
+  const fqHtml = p.follow_up_questions&&p.follow_up_questions.length?`<div class="av-out-section"><div class="av-out-label">To refine further</div>${p.follow_up_questions.map(q=>`<div class="av-followup-q">${esc(q)}</div>`).join("")}</div>`:"";
+  const traceHtml = p.debug_trace?`<details class="av-debug-trace"><summary>Rule trace (debug / QA only)</summary><div class="av-debug-content">${p.debug_trace.map(t=>`<div>${esc(t)}</div>`).join("")}</div></details>`:"";
+
+  const container = document.getElementById("av-output-container");
+  container.innerHTML = `<div class="av-output">
+    <div class="av-out-header">
+      <div class="av-out-pattern">${tc(p.primary_pattern||"")}${p.secondary_pattern?" + "+tc(p.secondary_pattern):""}</div>
+      <div class="av-out-strength">Formula strength: ${esc(p.formula_strength||"light")}</div>
+    </div>
+    <div class="av-out-section"><div class="av-out-label">Your formula — ${(p.ingredients||[]).length} ingredients</div><div class="av-ingredient-list">${ingHtml}</div></div>
+    <div class="av-out-section"><div class="av-out-label">Preparation</div><div class="av-out-prep">${esc(p.preparation||"")}</div><div class="av-out-timing">Timing: ${esc(p.timing||"")}</div><div class="av-out-note">Use once daily initially. Increase only if well tolerated.</div></div>
+    <div class="av-out-section"><div class="av-out-label">What this supports</div><div class="av-tags">${tags(p.field_effects,"av-tag--effect")}</div></div>
+    <div class="av-out-section"><div class="av-out-label">Adjustments applied</div><div class="av-tags">${tags(p.modifications_applied,"av-tag--mod")}</div></div>
+    <div class="av-out-section"><div class="av-out-label">Avoid for now</div><div class="av-tags">${tags(p.avoid,"av-tag--avoid")}</div></div>
+    ${safetyHtml}${fqHtml}
+    <div class="av-out-section av-out-section--disclaimer">This is a wellness guide, not a medical prescription. If you have a health condition or take medications, check with your clinician before starting any new protocol.</div>
+    ${traceHtml}
+    <button class="av-btn-secondary" onclick="resetApp()">← Start again</button>
+  </div>`;
+  container.style.display="block";
+  container.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function resetApp() {
+  Object.assign(formState,{thermal:null,moisture:null,energy_state:null,symptom_intensity:null,digestive_sensitivity:null,frailty:false,symptoms:[],safety_flags:[]});
+  document.getElementById("av-output-container").style.display="none";
+  buildForm();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+
+<!-- ── TEST RUNNER (available in console: runTests()) ──────────────────────── -->
+<script>
+const TEST_CASES=[
+  {id:"TC01",desc:"Damp-cold + undercharged",input:{thermal:"cold",moisture:"damp",energy_state:"undercharged",frailty:false,digestive_sensitivity:"medium",symptom_intensity:"moderate",symptoms:["bloating","brain_fog","cold_hands_feet"],safety_flags:[]},expect:{primary:"damp_cold",secondary:"undercharged",max_ings:5}},
+  {id:"TC02",desc:"Dry-heat + overcharged — no heating herbs",input:{thermal:"heat",moisture:"dry",energy_state:"overcharged",frailty:false,digestive_sensitivity:"low",symptom_intensity:"moderate",symptoms:["irritability"],safety_flags:[]},expect:{primary:"dry_heat",must_not:["Ginger","Cinnamon","Mustard seed"]}},
+  {id:"TC03",desc:"Frailty cap — max 3 ingredients",input:{thermal:"cold",moisture:"damp",energy_state:"neutral",frailty:true,digestive_sensitivity:"medium",symptom_intensity:"moderate",symptoms:[],safety_flags:[]},expect:{primary:"damp_cold",max_ings:3}},
+  {id:"TC04",desc:"Overcharged + cold — aromatic movers only",input:{thermal:"cold",moisture:"neutral",energy_state:"overcharged",frailty:false,digestive_sensitivity:"low",symptom_intensity:"moderate",symptoms:[],safety_flags:[]},expect:{must_include:["Mint"],must_not:["Ginger","Cinnamon"]}},
+  {id:"TC05",desc:"High digestive sensitivity — no strong spices",input:{thermal:"cold",moisture:"damp",energy_state:"neutral",frailty:false,digestive_sensitivity:"high",symptom_intensity:"strong",symptoms:["bloating"],safety_flags:[]},expect:{must_not:["Black pepper","Mustard seed","Clove"]}},
+  {id:"TC06",desc:"Pregnancy safety flag",input:{thermal:"cold",moisture:"damp",energy_state:"undercharged",frailty:false,digestive_sensitivity:"medium",symptom_intensity:"mild",symptoms:[],safety_flags:["pregnancy"]},expect:{must_not:["Mustard seed","Black pepper"],safety_note_min:1}},
+  {id:"TC07",desc:"Neutral baseline + clarification question",input:{thermal:"neutral",moisture:"neutral",energy_state:"neutral",frailty:false,digestive_sensitivity:"low",symptom_intensity:"mild",symptoms:[],safety_flags:[]},expect:{primary:"neutral_baseline",fq_min:1}}
+];
+
+function runTests() {
+  if (!window.AvicennaEngine) { console.error("Engine not loaded."); return; }
+  let passed=0, failed=0;
+  TEST_CASES.forEach(tc=>{
+    const out = window.AvicennaEngine.generateProtocol(tc.input);
+    const errs=[];
+    const ings=(out.ingredients||[]).map(i=>i.name.toLowerCase());
+    if (tc.expect.primary&&out.primary_pattern!==tc.expect.primary) errs.push(`primary: expected ${tc.expect.primary}, got ${out.primary_pattern}`);
+    if (tc.expect.secondary!==undefined&&out.secondary_pattern!==tc.expect.secondary) errs.push(`secondary: expected ${tc.expect.secondary}, got ${out.secondary_pattern}`);
+    if (tc.expect.max_ings&&out.ingredients.length>tc.expect.max_ings) errs.push(`ingredients ${out.ingredients.length} > max ${tc.expect.max_ings}`);
+    (tc.expect.must_include||[]).forEach(n=>{ if (!ings.includes(n.toLowerCase())) errs.push(`must include: ${n}`); });
+    (tc.expect.must_not||[]).forEach(n=>{ if (ings.includes(n.toLowerCase())) errs.push(`must NOT include: ${n}`); });
+    if (tc.expect.safety_note_min&&(out.safety_notes||[]).length<tc.expect.safety_note_min) errs.push(`safety notes ${(out.safety_notes||[]).length} < min ${tc.expect.safety_note_min}`);
+    if (tc.expect.fq_min&&(out.follow_up_questions||[]).length<tc.expect.fq_min) errs.push(`follow-up questions ${(out.follow_up_questions||[]).length} < min ${tc.expect.fq_min}`);
+    const pass=errs.length===0; if(pass) passed++; else failed++;
+    console[pass?"log":"error"](`${pass?"✓":"✗"} ${tc.id}: ${tc.desc}${errs.length?" — "+errs.join("; "):""}`);
+  });
+  console.log(`\n═══ ${passed}/${TEST_CASES.length} passed, ${failed} failed ═══`);
+}
+
+window.runTests = runTests;
+console.log("Avicenna Wellness Layer loaded. Run runTests() to test the engine.");
+</script>
+
+</body>
+</html>

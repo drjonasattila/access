@@ -1,0 +1,203 @@
+{
+  "testCases": [
+    {
+      "id": "TC01",
+      "description": "Classic damp-cold + undercharged secondary",
+      "input": {
+        "thermal": "cold",
+        "moisture": "damp",
+        "energy_state": "undercharged",
+        "frailty": false,
+        "digestive_sensitivity": "medium",
+        "symptom_intensity": "moderate",
+        "symptoms": ["bloating", "brain_fog", "cold_hands_feet"],
+        "safety_flags": []
+      },
+      "expected": {
+        "primary_pattern": "damp_cold",
+        "secondary_pattern": "undercharged",
+        "formula_strength": "medium",
+        "max_ingredients": 5,
+        "must_include": [],
+        "must_not_include": [],
+        "safety_note_min": 0,
+        "follow_up_max": 1
+      }
+    },
+    {
+      "id": "TC02",
+      "description": "Dry-heat + overcharged — no heating herbs in output",
+      "input": {
+        "thermal": "heat",
+        "moisture": "dry",
+        "energy_state": "overcharged",
+        "frailty": false,
+        "digestive_sensitivity": "low",
+        "symptom_intensity": "moderate",
+        "symptoms": ["irritability"],
+        "safety_flags": []
+      },
+      "expected": {
+        "primary_pattern": "dry_heat",
+        "secondary_pattern": "overcharged",
+        "must_not_include": ["Ginger", "Cinnamon", "Mustard seed", "Black pepper"],
+        "safety_note_min": 0
+      }
+    },
+    {
+      "id": "TC03",
+      "description": "Frailty cap — maximum 3 ingredients enforced",
+      "input": {
+        "thermal": "cold",
+        "moisture": "damp",
+        "energy_state": "neutral",
+        "frailty": true,
+        "digestive_sensitivity": "medium",
+        "symptom_intensity": "moderate",
+        "symptoms": [],
+        "safety_flags": []
+      },
+      "expected": {
+        "primary_pattern": "damp_cold",
+        "max_ingredients": 3,
+        "formula_strength": "light"
+      }
+    },
+    {
+      "id": "TC04",
+      "description": "Overcharged + cold conflict — aromatic movers only, no heating herbs",
+      "input": {
+        "thermal": "cold",
+        "moisture": "neutral",
+        "energy_state": "overcharged",
+        "frailty": false,
+        "digestive_sensitivity": "low",
+        "symptom_intensity": "moderate",
+        "symptoms": [],
+        "safety_flags": []
+      },
+      "expected": {
+        "must_include": ["Mint"],
+        "must_not_include": ["Ginger", "Cinnamon", "Black pepper", "Mustard seed"],
+        "modifications_must_contain": ["overcharged-cold conflict"]
+      }
+    },
+    {
+      "id": "TC05",
+      "description": "High digestive sensitivity — strong spices removed, fallback applied",
+      "input": {
+        "thermal": "cold",
+        "moisture": "damp",
+        "energy_state": "neutral",
+        "frailty": false,
+        "digestive_sensitivity": "high",
+        "symptom_intensity": "strong",
+        "symptoms": ["bloating"],
+        "safety_flags": []
+      },
+      "expected": {
+        "primary_pattern": "damp_cold",
+        "must_not_include": ["Black pepper", "Mustard seed", "Clove", "Ginger"],
+        "modifications_must_contain": ["digestive sensitivity"]
+      }
+    },
+    {
+      "id": "TC06",
+      "description": "Pregnancy safety flag — heating spices blocked, safety note present",
+      "input": {
+        "thermal": "cold",
+        "moisture": "damp",
+        "energy_state": "undercharged",
+        "frailty": false,
+        "digestive_sensitivity": "medium",
+        "symptom_intensity": "mild",
+        "symptoms": [],
+        "safety_flags": ["pregnancy"]
+      },
+      "expected": {
+        "primary_pattern": "damp_cold",
+        "must_not_include": ["Mustard seed", "Black pepper", "Clove"],
+        "safety_note_min": 1
+      }
+    },
+    {
+      "id": "TC07",
+      "description": "Neutral baseline — gentle protocol returned, clarification question generated",
+      "input": {
+        "thermal": "neutral",
+        "moisture": "neutral",
+        "energy_state": "neutral",
+        "frailty": false,
+        "digestive_sensitivity": "low",
+        "symptom_intensity": "mild",
+        "symptoms": [],
+        "safety_flags": []
+      },
+      "expected": {
+        "primary_pattern": "neutral_baseline",
+        "secondary_pattern": null,
+        "formula_strength": "baseline",
+        "follow_up_min": 1
+      }
+    },
+    {
+      "id": "TC08",
+      "description": "palpitations symptom modifier — stimulants removed, rose petals added",
+      "input": {
+        "thermal": "heat",
+        "moisture": "damp",
+        "energy_state": "neutral",
+        "frailty": false,
+        "digestive_sensitivity": "low",
+        "symptom_intensity": "moderate",
+        "symptoms": ["palpitations"],
+        "safety_flags": []
+      },
+      "expected": {
+        "must_include": ["Rose petals"],
+        "must_not_include": ["Ginseng", "Mustard seed", "Black pepper"],
+        "safety_note_min": 0,
+        "note": "palpitations is a symptom modifier (Step 11), not a safety restriction"
+      }
+    },
+    {
+      "id": "TC09",
+      "description": "palpitations_flag safety flag — spices blocked at safety level, note generated",
+      "input": {
+        "thermal": "cold",
+        "moisture": "damp",
+        "energy_state": "neutral",
+        "frailty": false,
+        "digestive_sensitivity": "low",
+        "symptom_intensity": "moderate",
+        "symptoms": [],
+        "safety_flags": ["palpitations_flag"]
+      },
+      "expected": {
+        "must_not_include": ["Black pepper", "Mustard seed", "Clove"],
+        "safety_note_min": 1,
+        "note": "palpitations_flag is a safety restriction (Step 12), independent from palpitations symptom modifier"
+      }
+    },
+    {
+      "id": "TC10",
+      "description": "Both palpitations (symptom) and palpitations_flag (safety) simultaneously",
+      "input": {
+        "thermal": "heat",
+        "moisture": "damp",
+        "energy_state": "neutral",
+        "frailty": false,
+        "digestive_sensitivity": "low",
+        "symptom_intensity": "moderate",
+        "symptoms": ["palpitations"],
+        "safety_flags": ["palpitations_flag"]
+      },
+      "expected": {
+        "must_include": ["Rose petals"],
+        "must_not_include": ["Black pepper", "Mustard seed", "Clove", "Ginseng"],
+        "safety_note_min": 1,
+        "note": "Both fire independently and correctly simultaneously"
+      }
+    }
+  ]
+}

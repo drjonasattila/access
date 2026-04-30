@@ -1,0 +1,78 @@
+{
+  "patternMapping": {
+    "description": "Maps thermal + moisture + energy_state combinations to pattern keys",
+    "rules": [
+      { "thermal": "cold",    "moisture": "damp",    "energy_state": "any",          "pattern": "damp_cold" },
+      { "thermal": "heat",    "moisture": "damp",    "energy_state": "any",          "pattern": "damp_heat" },
+      { "thermal": "heat",    "moisture": "dry",     "energy_state": "any",          "pattern": "dry_heat" },
+      { "thermal": "cold",    "moisture": "dry",     "energy_state": "any",          "pattern": "dry_cold" },
+      { "thermal": "neutral", "moisture": "neutral", "energy_state": "undercharged", "pattern": "undercharged" },
+      { "thermal": "neutral", "moisture": "neutral", "energy_state": "overcharged",  "pattern": "overcharged" },
+      { "thermal": "neutral", "moisture": "neutral", "energy_state": "neutral",      "pattern": "neutral_baseline" },
+      { "thermal": "any",     "moisture": "any",     "energy_state": "any",          "pattern": "mixed_pattern", "fallback": true }
+    ]
+  },
+  "mixedPatternInference": {
+    "description": "When mixed_pattern is detected, infer the dominant pattern from symptoms and signals",
+    "rules": [
+      {
+        "condition": "energy_state === overcharged OR symptoms includes irritability OR symptoms includes palpitations",
+        "then": {
+          "if": "thermal === heat AND moisture === dry",
+          "result": "dry_heat",
+          "elseIf": "thermal === heat",
+          "result2": "damp_heat",
+          "else": "overcharged"
+        }
+      },
+      {
+        "condition": "moisture === damp OR symptoms includes bloating OR symptoms includes brain_fog",
+        "then": {
+          "if": "thermal === heat",
+          "result": "damp_heat",
+          "else": "damp_cold"
+        }
+      },
+      {
+        "condition": "moisture === dry",
+        "then": {
+          "if": "thermal === cold",
+          "result": "dry_cold",
+          "else": "dry_heat"
+        }
+      },
+      {
+        "condition": "fallback",
+        "result": "damp_cold"
+      }
+    ]
+  },
+  "formulaStrengthMapping": {
+    "mild":     "light",
+    "moderate": "medium",
+    "strong":   "strong"
+  },
+  "frailtyStrengthReduction": {
+    "strong":          "medium",
+    "medium":          "light",
+    "light":           "frailty_floor",
+    "frailty_floor":   { "action": "use light formula at reduced quantity", "maxIngredients": 3 }
+  },
+  "formulaCaps": {
+    "default": 5,
+    "frailty": 3,
+    "secondaryPatternMax": 2,
+    "modifierMax": { "default": 2, "frailty": 1 }
+  },
+  "overchargedColdConflict": {
+    "condition": "energy_state === overcharged AND thermal === cold",
+    "action": "replace base formula with aromatic movers only",
+    "herbs": [
+      { "name": "Cardamom",       "amount": "8 pods",        "role": "aromatic mover — not heating" },
+      { "name": "Coriander seed", "amount": "1 tsp",         "role": "moves gently — not heating" },
+      { "name": "Anise",          "amount": "½ tsp",         "role": "aromatic, not heating" },
+      { "name": "Mint",           "amount": "small handful", "role": "cools overcharged field" }
+    ],
+    "modification": "overcharged-cold conflict — aromatic movers only, heating suppressed"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "neutralBaseline": {
+    "principle": "Gentle baseline — no strong terrain distortion detected",
+    "ingredients": [
+      { "name": "Cardamom",       "amount": "6 pods", "role": "gentle aromatic baseline" },
+      { "name": "Coriander seed", "amount": "½ tsp",  "role": "light balancer" },
+      { "name": "Honey",          "amount": "½ tsp",  "role": "optional — adds gentle warmth" }
+    ],
+    "field_effects": [
+      "Gentle tonic baseline",
+      "Supports mild digestion and warmth",
+      "No strong corrective direction — reassess after a few days"
+    ],
+    "followUpQuestion": "Which of these feels most true today: more tired and slow / more hot and restless / more heavy and foggy / more dry and depleted?",
+    "timing": "Morning. Use for a few days, then reassess.",
+    "modification": "neutral state — gentle baseline protocol",
+    "notes": "Returned when all three axes (thermal, moisture, energy_state) are neutral. Skips the main processing pipeline from Step 7 onward. Safety flags and frailty cap still apply."
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "modifierPriority": {
+    "palpitations":     1,
+    "irritability":     2,
+    "brain_fog":        1,
+    "bloating":         1,
+    "dry_mouth":        2,
+    "cold_hands_feet":  2,
+    "loose_stool":      3,
+    "constipation_dry": 2
+  },
+  "maxModifiers": {
+    "default": 2,
+    "frailty": 1
+  },
+  "modifierRules": [
+    {
+      "symptom": "palpitations",
+      "priority": 1,
+      "type": "symptom_modifier",
+      "note": "Formula-level adjustment only. For safety-level restriction use palpitations_flag in safety_flags.",
+      "removeHerbs": ["ginseng", "mustard seed", "black pepper", "clove"],
+      "addHerbs": [{ "name": "Rose petals", "amount": "1 tsp", "role": "calms" }],
+      "addToAvoid": ["strong stimulants (ginseng, pepper, mustard)"],
+      "description": "palpitations — stimulants removed, rose added"
+    },
+    {
+      "symptom": "irritability",
+      "priority": 2,
+      "removeHerbs": ["black pepper", "mustard seed"],
+      "addHerbs": [{ "name": "Rose petals", "amount": "1 tsp", "role": "calms and soothes" }],
+      "addToAvoid": [],
+      "description": "irritability — rose added, stimulating spices reduced"
+    },
+    {
+      "symptom": "brain_fog",
+      "priority": 1,
+      "removeHerbs": [],
+      "addHerbs": [{ "name": "Cardamom", "amount": "6 pods", "role": "aromatic clarity" }],
+      "addIfAbsent": "cardamom",
+      "addToAvoid": [],
+      "description": "brain fog — aromatic clarity herbs prioritised"
+    },
+    {
+      "symptom": "bloating",
+      "priority": 1,
+      "removeHerbs": [],
+      "addHerbs": [{ "name": "Cardamom", "amount": "6 pods", "role": "aromatic — relieves bloating" }],
+      "addIfAbsent": "cardamom",
+      "addToAvoid": [],
+      "description": "bloating — aromatic movers prioritised"
+    },
+    {
+      "symptom": "dry_mouth",
+      "priority": 2,
+      "removeHerbs": ["black pepper", "mustard seed", "clove"],
+      "addHerbs": [{ "name": "Honey", "amount": "½ tsp", "role": "moistens" }],
+      "addIfAbsent": "honey",
+      "addToAvoid": [],
+      "description": "dry mouth — drying spices removed, honey added"
+    },
+    {
+      "symptom": "cold_hands_feet",
+      "priority": 2,
+      "removeHerbs": [],
+      "addHerbs": [
+        { "name": "Ginger",   "amount": "2 slices",   "role": "warms periphery", "preferFirst": true },
+        { "name": "Cinnamon", "amount": "small piece", "role": "warms periphery", "fallback": true }
+      ],
+      "conditionalOnPattern": "not overcharged",
+      "addToAvoid": [],
+      "description": "cold hands/feet — warming herb added (skipped if overcharged)"
+    },
+    {
+      "symptom": "loose_stool",
+      "priority": 3,
+      "removeHerbs": ["chia seed", "basil seed", "soaked chia seed"],
+      "addHerbs": [],
+      "addToAvoid": [],
+      "contradicts": "constipation_dry",
+      "description": "loose stool — seed moisteners removed"
+    },
+    {
+      "symptom": "constipation_dry",
+      "priority": 2,
+      "removeHerbs": [],
+      "addHerbs": [{ "name": "Soaked chia seed", "amount": "1 tsp", "role": "adds moisture gently" }],
+      "addIfAbsent": "chia",
+      "addToAvoid": [],
+      "contradicts": "loose_stool",
+      "description": "dry constipation — chia added for moisture"
+    }
+  ],
+  "contradictoryPairs": [
+    {
+      "symptoms": ["loose_stool", "constipation_dry"],
+      "action": "apply_neither",
+      "followUpQuestion": "You selected both loose stool and constipation — which tendency is more frequent? This will help refine the formula."
+    }
+  ],
+  "notes": {
+    "processingOrder": "Modifiers applied at Step 11, after secondary pattern integration, before safety flags. Priority 1 = highest. Sorted ascending (1 first), capped at maxModifiers.",
+    "deferredModifiers": "If >maxModifiers conditions present, excess modifiers deferred. Follow-up question generated listing deferred modifiers.",
+    "palpitationsNote": "'palpitations' here is a symptom modifier at Step 11. 'palpitations_flag' in safety_flags is a safety restriction at Step 12. Both may fire simultaneously."
+  }
+}
