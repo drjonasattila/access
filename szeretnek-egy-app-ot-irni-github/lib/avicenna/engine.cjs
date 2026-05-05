@@ -64,17 +64,43 @@ function hasHerb(herbs, nameOrFragment) {
 function applyDigestiveSensitivity(herbs, sensitivity, pattern) {
   if (sensitivity !== "high") return { herbs, applied: false };
 
-  const remove = new Set(["black pepper", "mustard seed", "clove", "ginger"]);
-  const filtered = herbs.filter((herb) => !remove.has(herbKey(herb)));
+  // 1. Csak a legdurvább irritánsok teljes tiltása
+  const hardIrritants = new Set(["black pepper", "mustard seed"]);
+  let filtered = herbs.map(herb => {
+    const name = herbKey(herb);
+    
+    // 2. Gyömbér finomítása: Nyersről sültre/szárítottra váltunk
+    if (name.includes("ginger")) {
+      return { 
+        ...herb, 
+        name: "Dry/Toasted Ginger", 
+        role: "deep warmth without raw acridity",
+        amount: "thin slice/pinch" 
+      };
+    }
+    return herb;
+  }).filter(herb => !hardIrritants.has(herbKey(herb)));
 
-  if (filtered.length < 2) {
-    filtered.push({ name: "Fennel seed", amount: "1/2 tsp", role: "gentle aromatic fallback" });
-    if (pattern === "damp_cold") {
-      filtered.push({ name: "Anise", amount: "1/4 tsp", role: "gentle warming aromatic" });
+  // 3. Szegfűszeg és egyéb erősek cseréje gyengédebb mozgatóra (Kardamom)
+  if (hasHerb(filtered, "clove")) {
+    filtered = filtered.filter(h => !herbKey(h).includes("clove"));
+    if (!hasHerb(filtered, "cardamom")) {
+      filtered.push({ name: "Cardamom", amount: "3 pods", role: "gentle aromatic mover" });
     }
   }
 
+  // 4. Kötelező nyálkahártya-védelem (Fennel)
+  if (!hasHerb(filtered, "fennel seed")) {
+    filtered.push({ 
+      name: "Fennel seed", 
+      amount: "1 tsp", 
+      role: "protection and carminative support" 
+    });
+  }
+
   return { herbs: filtered, applied: true };
+}
+
 }
 
 function integrateSecondary(herbs, primaryPattern, energyState, trace) {
