@@ -92,7 +92,7 @@ function applyDigestiveSensitivity(herbs, sensitivity, pattern) {
   // 4. Kötelező nyálkahártya-védelem (Fennel)
   if (!hasHerb(filtered, "fennel seed")) {
     filtered.push({ 
-      name: "Fennel seed", 
+      name: "fennel seed", 
       amount: "1 tsp", 
       role: "protection and carminative support" 
     });
