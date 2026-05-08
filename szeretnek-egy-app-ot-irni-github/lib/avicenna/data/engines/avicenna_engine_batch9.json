@@ -1,0 +1,963 @@
+{
+  "batch": 2,
+  "source_files": [
+    "neuropathia_flow_chart_app_pdf.pdf",
+    "OA_RA_decision_tree_pdf.pdf",
+    "Pelvic_pain_pdf.pdf"
+  ],
+
+  "patterns": [
+
+    {
+      "name": "neuropathy_signal_overload_central_sensitization",
+      "aliases": ["neural noise excess", "central sensitization", "noise buffering deficit"],
+      "failure_mode": "A",
+      "triggers": [
+        "burning pain quality",
+        "pain worse at night",
+        "allodynia (light touch causes pain)",
+        "gabapentin partial response only",
+        "sleep disturbance from pain"
+      ],
+      "symptoms": [
+        "burning nerve pain",
+        "night-dominant pain",
+        "touch sensitivity / allodynia",
+        "sleep disturbance",
+        "cognitive fog on medication"
+      ],
+      "backend_flags": [
+        "signal_overload: true",
+        "central_sensitization: elevated",
+        "noise_buffering: insufficient",
+        "EZ_grid: destabilized"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Spirulina", "role": "primary noise buffering, neural grounding", "notes": "noise layer — first line" },
+          { "name": "Melatonin", "role": "night stabilisation, dampens nocturnal signal amplification", "notes": "ONLY if overstimulated at night; evening dosing strictly" },
+          { "name": "Magnesium", "role": "membrane stabilisation, reduces neuronal excitability", "notes": "noise layer adjunct" },
+          { "name": "Astaxanthin", "role": "neuroprotection, antioxidant", "notes": "protection layer" },
+          { "name": "Vitamin D + Nigella", "role": "membrane fluidity, anti-inflammatory", "notes": "morning dosing; protection layer" }
+        ],
+        "preparation": "oral",
+        "device": "none specified; avoid aggressive stimulation",
+        "avoid": ["stacking multiple adaptogens", "strong stimulants", "aggressive detox or cooling agents"]
+      }
+    },
+
+    {
+      "name": "neuropathy_microcirculatory_failure",
+      "aliases": ["nerve ischemia", "peripheral flow failure", "empty neuropathy"],
+      "failure_mode": "B",
+      "triggers": [
+        "numbness dominant over burning",
+        "cold extremities (hands/feet)",
+        "diabetic neuropathy diagnosis",
+        "swelling in extremities",
+        "heavy deep aching pain"
+      ],
+      "symptoms": [
+        "numbness",
+        "cold hands/feet",
+        "swelling",
+        "heavy aching",
+        "balance issues"
+      ],
+      "backend_flags": [
+        "microcirculation: failing",
+        "nerve_nutrition: impaired",
+        "EZ_grid: depleted",
+        "flow_pattern: empty"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "MyBlood", "role": "primary microcirculation restoration", "notes": "flow layer — first line" },
+          { "name": "Ginger", "role": "warming, improves peripheral flow", "notes": "only if cold extremities present; moderate dose" },
+          { "name": "Garlic", "role": "anti-sludging, flow restoration", "notes": "particularly indicated in diabetic / thick blood context" },
+          { "name": "Astaxanthin", "role": "vascular protection", "notes": "protection layer" },
+          { "name": "Vitamin D + Nigella", "role": "membrane support", "notes": "morning" }
+        ],
+        "preparation": "oral",
+        "device": "none specified",
+        "avoid": ["aggressive cooling", "stacking adaptogens"]
+      }
+    },
+
+    {
+      "name": "neuropathy_metabolic_mitochondrial_fatigue",
+      "aliases": ["structural metabolic deficit", "mitochondrial fatigue neuropathy", "congested neuropathy"],
+      "failure_mode": "C",
+      "triggers": [
+        "fatigue dominant",
+        "muscle weakness",
+        "history of chemotherapy",
+        "poor recovery from illness or exertion",
+        "antidepressant currently in use"
+      ],
+      "symptoms": [
+        "fatigue",
+        "muscle weakness",
+        "poor recovery",
+        "dry skin",
+        "night sweats"
+      ],
+      "backend_flags": [
+        "mitochondrial_function: depleted",
+        "structural_support: needed",
+        "stimulation_risk: premature_stimulation_if_energised_too_early"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Spirulina", "role": "mitochondrial support, metabolic grounding", "notes": "low-to-moderate dose; do not overstimulate" },
+          { "name": "Astaxanthin", "role": "mitochondrial antioxidant protection", "notes": "" },
+          { "name": "Vitamin D + Nigella", "role": "structural membrane support", "notes": "morning" },
+          { "name": "Magnesium", "role": "mitochondrial cofactor", "notes": "" }
+        ],
+        "preparation": "oral; start low, build slowly",
+        "device": "none — avoid premature stimulation devices",
+        "avoid": ["premature stimulation", "high-dose adaptogens early", "stacking interventions"]
+      }
+    },
+
+    {
+      "name": "OA_yin_joint_degenerative",
+      "aliases": ["yin joint", "degenerative joint failure", "structural depletion"],
+      "triggers": [
+        "cold joint to touch",
+        "joint stiffness improves with movement",
+        "morning stiffness",
+        "pain worsens with load",
+        "cold weather worsens symptoms",
+        "NSAID only partially effective",
+        "slow gradual onset",
+        "no fever",
+        "one or two joints affected",
+        "local problem only (no systemic signs)"
+      ],
+      "symptoms": [
+        "cold joint",
+        "morning stiffness",
+        "pain improves with 'warming up'",
+        "load-triggered pain",
+        "cold sensitivity",
+        "dull non-inflamed pain"
+      ],
+      "backend_flags": [
+        "thermal_state: cold_stiff",
+        "inflammation: absent",
+        "structure: depleted",
+        "pattern_class: yin_depletion_structural_failure"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "DuoLife Collagen", "role": "structural tissue rebuilding — PRIMARY", "notes": "introduce ONLY when no active inflammation; building phase only" },
+          { "name": "MyBlood", "role": "restore local circulation", "notes": "normal dose in building phase" },
+          { "name": "ProCardiol", "role": "vascular drive maintenance", "notes": "if improvement plateaus or relapses on load" },
+          { "name": "Astragalus", "role": "Qi tonification, fatigue and structural weakness", "notes": "morning; if fatigue + weak posture" }
+        ],
+        "preparation": "oral",
+        "device": "none specified for OA building phase",
+        "do_not": ["aggressive anti-inflammatories as sole treatment", "pain suppression only without rebuilding"]
+      }
+    },
+
+    {
+      "name": "RA_yang_joint_inflammatory",
+      "aliases": ["yang joint", "inflammatory joint failure", "excess heat joint"],
+      "triggers": [
+        "joint warm/hot to touch",
+        "visible swelling",
+        "pain at rest",
+        "pain worse at night",
+        "NSAID or steroid rapidly effective",
+        "general fatigue + inflammatory signs",
+        "fluctuating flares",
+        "multiple joints affected simultaneously",
+        "autoimmune diagnosis",
+        "steroid or DMARD use"
+      ],
+      "symptoms": [
+        "hot swollen joint",
+        "rest pain",
+        "night pain",
+        "systemic fatigue",
+        "fever or low-grade temperature elevation",
+        "bilateral or multi-joint involvement"
+      ],
+      "backend_flags": [
+        "thermal_state: hot_swollen",
+        "inflammation: active",
+        "pattern_class: yang_overload_excess_heat",
+        "structure: secondarily_damaged"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "ProImmunoR", "role": "immune modulation — cautious use only", "notes": "use with care; do not stimulate" },
+          { "name": "Melatonin", "role": "evening calming if overstimulated", "notes": "only if needed at night" },
+          { "name": "Spirulina", "role": "mitochondrial grounding, anti-inflammatory base", "notes": "" },
+          { "name": "Astaxanthin", "role": "antioxidant, reduce inflammatory load", "notes": "" }
+        ],
+        "preparation": "oral",
+        "device": "none in active inflammatory phase",
+        "do_not": [
+          "stimulate",
+          "strong circulatory stimulants",
+          "build structure during active inflammation",
+          "collagen in this phase"
+        ],
+        "principle": "Reduce noise. Stabilise environment. Support recovery — NOT stimulation. Structure only later."
+      }
+    },
+
+    {
+      "name": "pelvic_cold_heat_field_dissociation",
+      "aliases": [
+        "Shaoyin KD-HT disconnection",
+        "lower burner depletion",
+        "adrenal fatigue field phenomenon",
+        "vertical cold-heat dissociation",
+        "pelvic EZ grid collapse"
+      ],
+      "triggers": [
+        "pelvic pain with concurrent adrenal fatigue signs",
+        "low back pain + cold lower limbs + mental overdrive",
+        "insomnia / eye strain (upper heat) + pelvic congestion (lower cold)",
+        "sympathetic overdrive with pelvic stagnation",
+        "menstrual pain",
+        "PCOS or ovarian cyst",
+        "hip or SI joint pain without clear mechanical cause",
+        "greater trochanteric bursitis",
+        "symptoms modulated by posture, breath, or emotional state"
+      ],
+      "symptoms": [
+        "pelvic pain",
+        "cold lower limbs",
+        "pelvic congestion",
+        "fatigue",
+        "mental overdrive / insomnia",
+        "eye strain",
+        "dysmenorrhoea",
+        "greater trochanteric bursitis",
+        "hip arthritis features",
+        "SI joint pain",
+        "symphysis pubis dysfunction",
+        "PCOS features"
+      ],
+      "pathomechanism": [
+        "adrenal fatigue → mitochondrial collapse",
+        "EZ grid weakens → low coherence cold in pelvis",
+        "compensatory heat rises to upper body (LV Yang / Shaoyang overdrive)",
+        "pelvic fascia + microvascular network stagnates",
+        "Shaoyin HT-KD axis disconnects",
+        "Taiyang pathologies emerge (bladder meridian: tension headache, low back pain, PRES, IIH)"
+      ],
+      "backend_flags": [
+        "vertical_dissociation: upper_heat_lower_cold",
+        "adrenal_fatigue: true",
+        "EZ_grid_pelvic: collapsed",
+        "shaoyin_axis: disconnected",
+        "mitochondrial_coherence: low",
+        "zeta_potential: low",
+        "rouleaux: elevated",
+        "venous_resistance: elevated",
+        "capillary_drainage: impaired"
+      ],
+      "interventions": {
+        "step_1_hydrate_EZ": {
+          "herbs": [
+            { "name": "Tai Zi Shen (Prince's Shen / Pseudostellaria)", "role": "EZ grid hydration, Qi-Yin tonification", "notes": "" },
+            { "name": "Sheng Di Huang (Rehmannia raw)", "role": "Blood and Yin restoration, heat reduction", "notes": "rebuilds EZ water density" },
+            { "name": "Gou Qi Zi (Lycium / Goji)", "role": "Liver-Kidney Yin, blood nourishment", "notes": "replenishes light-information-carrying blood" },
+            { "name": "He Shou Wu (Polygonum)", "role": "Jing-Yin-Blood strengthening", "notes": "field: brightens the water body" },
+            { "name": "Bai He (Lily bulb)", "role": "EZ stabilisation, lung-heart Yin", "notes": "" }
+          ],
+          "minerals": ["Magnesium", "Silica-rich teas (Horsetail)", "Bone broth"],
+          "water": "Hydrogen water, spring vortexed water; avoid microplastics"
+        },
+        "step_2_anchor_yang_lower_fire": {
+          "herbs": [
+            { "name": "He Huan Pi (Albizia bark)", "role": "emotional trauma release, pericardium opener, Shaoyin gate", "notes": "grounding spirit; soothe insomnia" },
+            { "name": "Bai Zi Ren (Biota seed)", "role": "spirit grounding, insomnia", "notes": "" },
+            { "name": "Wu Wei Zi (Schisandra)", "role": "contain scattered Qi, Heart-Kidney holding", "notes": "antioxidant, membrane stabiliser, adaptogen" },
+            { "name": "Zhi Mu", "role": "floating Yang containment, heat clearing", "notes": "" },
+            { "name": "Tian Men Dong (Asparagus root)", "role": "deep Kidney Yin, internal heat settling", "notes": "" },
+            { "name": "Rou Gui (Cinnamon bark)", "role": "gentle Yang anchoring downward", "notes": "small dose; anchors fire into water" }
+          ],
+          "acupuncture_points": ["Ki 1", "Sp 6", "Du 4", "Bl 23-26", "CV 4-6"]
+        },
+        "step_3_restore_pelvic_vector_flow": {
+          "device": [
+            "Laser or manual therapy: sacrotuberous ligament, inguinal line, obturator fascia",
+            "Hip internal-external rotation drills",
+            "Pelvic floor breathwork — reverse Kegel / Mingmen pulsing"
+          ],
+          "acupuncture_points": ["Du 1", "BL 35"]
+        },
+        "step_4_calm_upper_field": {
+          "lifestyle": [
+            "Reduce EMF exposure",
+            "Resolve emotional loops",
+            "Yin-rich sleep rituals",
+            "Morning barefoot Qi Gong",
+            "Grounding practices"
+          ]
+        },
+        "shaoyin_sink_reboot_formula": {
+          "description": "General Shaoyin-Yin-Heart bridge formula",
+          "composition": [
+            { "herb": "Yuan Zhi (Polygala)", "dose": "5g", "role": "Heart-Kidney harmonisation, mind-spirit bridge — primary 'cable repair'" },
+            { "herb": "Fu Shen / Poria with root", "dose": "10g", "role": "Heart calming, water field stabilisation, restores internal gel elasticity" },
+            { "herb": "Wu Wei Zi (Schisandra)", "dose": "5g", "role": "Qi consolidation, Heart-Kidney energy holding" },
+            { "herb": "Dan Shen (Salvia miltiorrhiza)", "dose": "10g", "role": "Blood-light circulation, heart muscle perfusion, transforms stagnant field" },
+            { "herb": "Bai Shao Yao (White Peony)", "dose": "10g", "role": "Liver blood softening, fascia relaxation, Shaoyang-Jueyin slip correction" },
+            { "herb": "Sheng Di Huang (Rehmannia raw)", "dose": "10g", "role": "Blood and Yin refresh, heat clearance" },
+            { "herb": "Gou Qi Zi (Lycium)", "dose": "10g", "role": "Liver-Kidney Yin, blood nourishment" },
+            { "herb": "He Huan Pi (Albizia)", "dose": "10g", "role": "Traumatic pericardial closure release, post-trauma Shaoyin gate opening" },
+            { "herb": "Mai Men Dong (Ophiopogon)", "dose": "10g", "role": "Heart-Lung Yin, returns Yin to Shaoyin via lung field" },
+            { "herb": "Zhi Gan Cao (Honey-fried Licorice)", "dose": "5g", "role": "Heart rhythm harmonisation, electrical synchrony stabilisation" },
+            { "herb": "Rou Gui (Cinnamon bark)", "dose": "5g", "role": "Yang anchoring downward into Kidney" }
+          ],
+          "goal": "Shaoyin sink reactivation, restore internal light-water flow, release Taiyang congestion"
+        }
+      }
+    },
+
+    {
+      "name": "shaoyin_yin_builder_kidney",
+      "aliases": ["Kidney Yin restoration", "internal water field rebuilding"],
+      "triggers": [
+        "chronic Shaoyin weakness",
+        "deep fatigue",
+        "structural depletion without active heat"
+      ],
+      "symptoms": [
+        "deep fatigue",
+        "night sweats",
+        "dry skin",
+        "structural weakness"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Sheng Di Huang", "role": "Blood and Yin refresh, rebuilds EZ water density", "notes": "" },
+          { "name": "Xuan Shen (Scrophularia)", "role": "deep Yin cooling, toxin clearing, water component rebuilding", "notes": "" },
+          { "name": "Gou Qi Zi", "role": "Liver-Kidney Yin, eye nourishment", "notes": "" },
+          { "name": "He Shou Wu", "role": "Jing-Yin-Blood, brightens water body field", "notes": "" },
+          { "name": "Mai Men Dong", "role": "Heart-Lung Yin, returns Yin via lung", "notes": "" },
+          { "name": "Tian Men Dong", "role": "deep Kidney Yin, internal heat settling from within", "notes": "" }
+        ],
+        "preparation": "decoction or concentrated granules",
+        "device": "uncertain"
+      }
+    },
+
+    {
+      "name": "shaoyin_heart_kidney_bridge_builders",
+      "aliases": ["HT-KD axis restoration", "Shaoyin reconnection", "vertical axis repair"],
+      "triggers": [
+        "chronic degenerative conditions",
+        "HT-KD dissociation",
+        "adrenal fatigue with vertical field disconnection"
+      ],
+      "symptoms": [
+        "insomnia",
+        "palpitations",
+        "anxiety with fatigue",
+        "disconnection sensation"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Yuan Zhi (Polygala)", "role": "HT-KD harmonisation — 'cable repair' between heart and kidney", "notes": "primary bridge herb; neural-etheric bridge" },
+          { "name": "Fu Shen / Poria with root", "role": "Heart calming, water field stability", "notes": "restores internal gel elasticity" },
+          { "name": "Wu Wei Zi (Schisandra)", "role": "Qi consolidation, Heart-Kidney energy retention", "notes": "antioxidant, membrane stabiliser" },
+          { "name": "Dan Shen (Salvia miltiorrhiza)", "role": "Blood circulation, heart perfusion, stagnant field transformation", "notes": "" },
+          { "name": "He Huan Pi (Albizia)", "role": "Emotional trauma release, Shaoyin gate opener", "notes": "" },
+          { "name": "Zhi Gan Cao", "role": "Electrical synchrony, heart rhythm harmonisation", "notes": "" },
+          { "name": "Ren Shen / Tai Zi Shen", "role": "Qi-light generation, Heart-Kidney axis tonification", "notes": "fills central battery" }
+        ],
+        "preparation": "decoction or granules",
+        "device": "uncertain"
+      }
+    },
+
+    {
+      "name": "liver_kidney_yin_coherence_jueyin_shaoyin",
+      "aliases": ["Jueyin-Shaoyin alignment", "Liver-Kidney Yin coherence"],
+      "triggers": [
+        "chronic conditions with Liver-Kidney separation",
+        "Shaoyang-Jueyin slippage",
+        "combined blood and Yin depletion"
+      ],
+      "symptoms": [
+        "dryness",
+        "tendon stiffness",
+        "blood deficiency signs",
+        "menstrual irregularity"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Bai Shao Yao (White Peony)", "role": "Liver blood softening, fascia relaxation, Shaoyang-Jueyin slip correction", "notes": "" },
+          { "name": "Dang Gui (Angelica sinensis)", "role": "Blood and Yin circulation, Liver-Kidney connector", "notes": "primary female Shaoyin bridge" },
+          { "name": "Yu Jin (Curcuma root)", "role": "Qi-Blood passage opener, heat clearing, trauma releasing", "notes": "brightens liver line" },
+          { "name": "Dan Pi / Mu Dan Pi (Moutan bark)", "role": "Hidden heat clearance, blood stasis resolution", "notes": "calms Liver Yang toward Shaoyin" }
+        ],
+        "preparation": "decoction or granules",
+        "device": "uncertain"
+      }
+    },
+
+    {
+      "name": "neurogenic_claudication_spinal_EZ_collapse",
+      "aliases": ["lumbar spinal stenosis field model", "spinal grid failure", "Shaoyang-Du line collapse"],
+      "triggers": [
+        "leg pain/numbness/weakness on walking or standing",
+        "improves with sitting forward (flexion)",
+        "bilateral or asymmetric distribution",
+        "lumbar spinal stenosis on MRI",
+        "MRI stenosis but poor symptom correlation (field collapse model)",
+        "cold lower limbs",
+        "mental overthinking / Qi pulled upward",
+        "Du meridian tightness or perineal discomfort",
+        "symptoms modifiable by posture, breath, or emotional state"
+      ],
+      "symptoms": [
+        "leg pain on walking/standing",
+        "leg numbness/weakness",
+        "relief with sitting or flexion",
+        "often bilateral",
+        "Du meridian tightness"
+      ],
+      "backend_flags": [
+        "grid_collapse_site: spinal_fascia_EZ",
+        "system_element: Shaoyang_Du_line",
+        "main_block: axial_signal_conduction_failure",
+        "associated_pattern: Shaoyang_stagnation_plus_Taiyang_collapse"
+      ],
+      "interventions": {
+        "step_1_hydrate_fascia_field": {
+          "herbs": [
+            { "name": "Tai Zi Shen", "role": "EZ grid hydration", "notes": "" },
+            { "name": "Huang Jing (Polygonatum)", "role": "spinal EZ restoration", "notes": "" },
+            { "name": "Sheng Di Huang", "role": "Yin-Blood refresh", "notes": "" },
+            { "name": "Mai Men Dong", "role": "lung-cardiac Yin, systemic hydration", "notes": "" },
+            { "name": "Gou Qi Zi", "role": "Liver-Kidney Yin base", "notes": "" }
+          ],
+          "adjuncts": ["Bone broths", "Electrolytes", "Hydrogen / structured water"]
+        },
+        "step_2_restore_fascia_elasticity": {
+          "herbs": [
+            { "name": "Chai Hu (Bupleurum)", "role": "Shaoyang harmoniser, fascia opening", "notes": "" },
+            { "name": "Bai Shao Yao", "role": "Liver blood, fascia relaxation", "notes": "" },
+            { "name": "Ge Gen (Kudzu root)", "role": "upper-lumbar opening, neck-back release", "notes": "" },
+            { "name": "Fang Feng (Siler)", "role": "wind-damp clearing, fascia opening", "notes": "" }
+          ],
+          "device": "Laser acupuncture or Tuina: BL-23 to BL-40"
+        },
+        "step_3_strengthen_base_grid": {
+          "herbs": [
+            { "name": "Rou Gui (Cinnamon bark)", "role": "Kidney Yang support", "notes": "" },
+            { "name": "Du Zhong (Eucommia)", "role": "Kidney Yang, spinal structural support", "notes": "" },
+            { "name": "Bu Gu Zhi (Psoralea)", "role": "Kidney Yang, bone-marrow strengthening", "notes": "" }
+          ],
+          "device": "Moxa on Mingmen (Du 4) and BL 52"
+        },
+        "step_4_open_sacral_field": {
+          "device": ["Du 1, BL 35 acupuncture", "Pelvic floor breathwork", "Reverse Kegel practices", "Slow spinal wave movements"],
+          "field_medicine": ["Microcurrent or 830nm laser along Du Mai", "Structured water", "Mineral supplementation", "Breath-holding exercises for sacral pump + CV-GV axis"]
+        },
+        "movement": "Flexion-based postures, fascia release, spinal decompression"
+      }
+    },
+
+    {
+      "name": "vascular_claudication_peripheral_EZ_collapse",
+      "aliases": ["peripheral artery disease field model", "Yin deficiency + Blood stasis", "capillary-endothelial EZ failure"],
+      "triggers": [
+        "cramping/tight pain in calves, thighs, buttocks on walking",
+        "predictably triggered by walking a specific distance",
+        "resolves quickly with rest",
+        "atherosclerosis diagnosis",
+        "glycocalyx damage signs"
+      ],
+      "symptoms": [
+        "exercise-induced leg cramping",
+        "calf / thigh / buttock pain",
+        "quick resolution with rest",
+        "cold legs"
+      ],
+      "backend_flags": [
+        "grid_collapse_site: capillary_endothelial_EZ",
+        "system_element: Yin_collaterals_blood_pathways",
+        "main_block: peripheral_charge_and_oxygen_delivery_failure",
+        "associated_pattern: Yin_deficiency_blood_stasis"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Dan Shen (Salvia miltiorrhiza)", "role": "blood-EZ field restoration, cardiac perfusion", "notes": "transforms stagnant field" },
+          { "name": "Hong Hua (Safflower)", "role": "blood circulation opening", "notes": "" },
+          { "name": "Chuan Xiong (Ligusticum)", "role": "blood mover, field brightener", "notes": "" },
+          { "name": "He Shou Wu", "role": "blood EZ rebuilding", "notes": "" },
+          { "name": "Sang Zhi (Mulberry twig)", "role": "open fascia in limbs", "notes": "" },
+          { "name": "Niu Xi (Achyranthes)", "role": "downward blood and Qi movement, leg channels", "notes": "" },
+          { "name": "Ji Xue Teng (Spatholobus)", "role": "blood tonification and circulation", "notes": "" },
+          { "name": "Ren Shen", "role": "Qi generation, drive restoration", "notes": "" },
+          { "name": "Dang Gui", "role": "blood nourishment and circulation", "notes": "" },
+          { "name": "Wu Wei Zi", "role": "Qi retention, mitochondrial support", "notes": "" },
+          { "name": "Cang Zhu (Atractylodes)", "role": "dampness clearing in lower limbs", "notes": "" },
+          { "name": "Ze Xie (Alisma)", "role": "dampness draining", "notes": "" },
+          { "name": "Yi Yi Ren (Coix seed)", "role": "dampness resolving, tissue clarifying", "notes": "" }
+        ],
+        "device": "Laser: Sp 6, Liv 3, Ki 3, GB 34 (muscle-grid tuning)",
+        "movement": "Gentle Yang-invigorating walking, warm baths, leg Qi stimulation (tapping, dry brushing)"
+      }
+    },
+
+    {
+      "name": "non_specific_mechanical_back_pain_du_meridian_stagnation",
+      "aliases": ["NSMBP field model", "Du meridian Qi stagnation", "spinal fascia micro-inflammation"],
+      "triggers": [
+        "back pain without identifiable structural pathology",
+        "pain persists post-acute phase",
+        "imaging does not correlate with pain intensity",
+        "pain shifts location",
+        "non-dermatomal pain radiation",
+        "stiffness on waking (slow fascia rehydration)",
+        "emotional overlay: shock, chronic fear, loss of direction",
+        "sympathetic overdrive",
+        "poor mitochondrial recharge"
+      ],
+      "symptoms": [
+        "non-specific low back pain",
+        "morning stiffness",
+        "shifting pain location",
+        "non-dermatomal radiation",
+        "autonomic imbalance signs"
+      ],
+      "backend_flags": [
+        "Du_meridian: Qi_stagnant",
+        "fascia_swelling: micro_present",
+        "ligament_micro_instability: true",
+        "EZ_disruption: biophotonic_coherence_impaired",
+        "emotional_overlay: possible"
+      ],
+      "interventions": {
+        "move_qi_relieve_swelling": [
+          { "name": "Chuan Xiong (Ligusticum)", "role": "Qi-Blood mover", "notes": "lightly warming Shaoyang/BL herb" },
+          { "name": "Qiang Huo (Notopterygium)", "role": "upper back / neck wind-damp, Du channel opener", "notes": "" },
+          { "name": "Du Huo (Angelica pubescens)", "role": "lower back wind-damp, Bladder channel", "notes": "" },
+          { "name": "Bai Zhi (Angelica dahurica)", "role": "wind clearing, fascia opening", "notes": "" },
+          { "name": "Fang Feng (Siler)", "role": "wind-damp, fascia release", "notes": "" }
+        ],
+        "ligament_fascia_repair": [
+          { "name": "Xu Duan (Dipsacus)", "role": "ligament repair, spinal structural support", "notes": "" },
+          { "name": "Gu Sui Bu (Drynaria)", "role": "bone and fascia repair", "notes": "" },
+          { "name": "Du Zhong (Eucommia)", "role": "Kidney Yang, spinal structural support", "notes": "" },
+          { "name": "Sang Ji Sheng (Loranthus)", "role": "Liver-Kidney strengthening, sinew nourishing", "notes": "" }
+        ],
+        "calm_du_mai": [
+          { "name": "He Huan Pi", "role": "spirit grounding, trauma release", "notes": "" },
+          { "name": "Yuan Zhi", "role": "neural-etheric bridge repair", "notes": "" },
+          { "name": "Ye Jiao Teng (Polygonum vine)", "role": "nourish blood, calm spirit, open channels at night", "notes": "" },
+          { "name": "Fu Shen / Poria", "role": "heart calming, water field stability", "notes": "" }
+        ],
+        "acupuncture": ["GV-3", "GV-4", "BL-23", "BL-52", "Huatuojiaji points along affected vertebrae"],
+        "device": [
+          "Gentle spinal traction + warming moxa",
+          "Craniosacral therapy or fascia decompression",
+          "Microcurrent or 830nm laser along Du Mai"
+        ],
+        "lifestyle": ["Structured water", "Mineral supplementation", "Breath-holding for sacral pump + CV-GV axis"]
+      }
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "diabetic neuropathy",
+      "associated_patterns": ["neuropathy_microcirculatory_failure", "neuropathy_metabolic_mitochondrial_fatigue"],
+      "notes": "Primary driver: nerve ischemia from microcirculatory failure + metabolic depletion. Garlic especially indicated (thick blood / diabetic context). Flow layer first; protection layer added."
+    },
+    {
+      "diagnosis": "chemotherapy-induced neuropathy",
+      "associated_patterns": ["neuropathy_metabolic_mitochondrial_fatigue", "neuropathy_microcirculatory_failure"],
+      "notes": "Chemo depletes mitochondrial function (failure mode C dominant) + damages microcirculation (B secondary). Avoid premature stimulation. Build metabolic base first."
+    },
+    {
+      "diagnosis": "post-surgical nerve pain",
+      "associated_patterns": ["neuropathy_microcirculatory_failure", "neuropathy_signal_overload_central_sensitization"],
+      "notes": "Mixed pattern: local flow disruption + sensitized central processing post-surgery. Sequence: flow restoration then noise buffering."
+    },
+    {
+      "diagnosis": "radiculopathy",
+      "associated_patterns": ["neurogenic_claudication_spinal_EZ_collapse", "non_specific_mechanical_back_pain_du_meridian_stagnation"],
+      "notes": "Nerve root compression + fascia-EZ field collapse. Distinction from idiopathic: positional component, dermatomal distribution. EZ field support plus spinal herbs."
+    },
+    {
+      "diagnosis": "idiopathic neuropathy",
+      "associated_patterns": ["neuropathy_signal_overload_central_sensitization", "neuropathy_microcirculatory_failure", "neuropathy_metabolic_mitochondrial_fatigue"],
+      "notes": "No clear structural cause. Failure-mode profiling required (A, B, C weighting). Score all three failure modes and treat dominant first."
+    },
+    {
+      "diagnosis": "osteoarthritis (OA)",
+      "associated_patterns": ["OA_yin_joint_degenerative"],
+      "notes": "Structural depletion, no active inflammation. Build: Collagen → MyBlood → ProCardiol. Never introduce Collagen during active inflammation. Cold-stiff phenotype."
+    },
+    {
+      "diagnosis": "rheumatoid arthritis (RA)",
+      "associated_patterns": ["RA_yang_joint_inflammatory"],
+      "notes": "Active immune-inflammatory excess. Stabilise and reduce noise first. Never stimulate. Collagen contraindicated during active phase. Structure only later."
+    },
+    {
+      "diagnosis": "mixed OA-RA",
+      "associated_patterns": ["mixed_joint_inflammatory_edge", "mixed_joint_transitional", "mixed_joint_building_phase"],
+      "notes": "Phase-dependent — see Batch 1. Key error: building on active inflammation. Assess phase before every intervention."
+    },
+    {
+      "diagnosis": "dysmenorrhoea (painful menstruation)",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Uterine field lacks downward Yang support. Blood stagnation + cold EZ → uterine spasm. Not primarily hormonal. Field rehydration + Shaoyin sink restoration needed."
+    },
+    {
+      "diagnosis": "PCOS / polycystic ovarian syndrome",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Fluid enclosure not primarily hormonal — field stagnation + cold matrix in pelvic EZ grid. Pelvic EZ rehydration and Shaoyin reconnection required."
+    },
+    {
+      "diagnosis": "greater trochanteric bursitis",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation", "shaoyang_downstream_fascia_overload"],
+      "notes": "Fascia-bound fluid, poor lateral drainage, GB-Dai Mai axis frozen. Two possible entry points: pelvic field collapse or Shaoyang downstream overload."
+    },
+    {
+      "diagnosis": "sacroiliac joint pain",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Central axis instability. Ligaments fail to hold due to loss of field tension (EZ collapse), not purely mechanical instability."
+    },
+    {
+      "diagnosis": "symphysis pubis dysfunction",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Anterior pelvic ring collapse — simultaneous fascia + ligament + EZ weakening. Treat as pelvic field collapse."
+    },
+    {
+      "diagnosis": "hip osteoarthritis",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation", "OA_yin_joint_degenerative"],
+      "notes": "Field model: joint fluid becomes 'dead water' — low zeta, high friction, chronic micro-stress. Also maps to OA yin joint. Treat pelvic EZ field first if pelvic context present."
+    },
+    {
+      "diagnosis": "pudendal neuralgia",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Grid collapse at pelvic level — EZ breakdown in urogenital fascia."
+    },
+    {
+      "diagnosis": "prostatitis (non-bacterial / chronic)",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Same grid collapse, different anatomical window. Field medicine approach: pelvic EZ grid restoration."
+    },
+    {
+      "diagnosis": "adrenal fatigue",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation", "shaoyin_heart_kidney_bridge_builders"],
+      "notes": "Core upstream driver of pelvic field collapse. Mitochondrial collapse → EZ grid failure → lower burner cold → upper body compensatory heat. Treat as Shaoyin-KD depletion."
+    },
+    {
+      "diagnosis": "neurogenic claudication / lumbar spinal stenosis (LSS)",
+      "associated_patterns": ["neurogenic_claudication_spinal_EZ_collapse"],
+      "notes": "Field model: severity of symptoms correlates with EZ field coherence, NOT anatomical stenosis degree. A hydrated, resilient EZ grid can buffer even significant compression. Asymptomatic stenosis = intact EZ field. Severe symptoms with mild MRI = EZ collapsed."
+    },
+    {
+      "diagnosis": "vascular claudication / peripheral artery disease",
+      "associated_patterns": ["vascular_claudication_peripheral_EZ_collapse"],
+      "notes": "Real dysfunction often EZ layer collapse on endothelium (glycocalyx damage → disturbed ion/proton flow) as much as anatomical stenosis. Treat blood-EZ field + Yin collaterals."
+    },
+    {
+      "diagnosis": "non-specific mechanical back pain (NSMBP)",
+      "associated_patterns": ["non_specific_mechanical_back_pain_du_meridian_stagnation"],
+      "notes": "Western model fails to explain persistence, imaging mismatch, or shifting pain. Integrative: Du meridian Qi stagnation + ligament micro-inflammation + fascial swelling disrupting EZ. Emotional root (fear, shock) common. Field model explains symptoms without visible structural damage."
+    },
+    {
+      "diagnosis": "tension headache",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Taiyang pathology secondary to Shaoyin dissociation — Taiyang (Bladder meridian) congests when Shaoyin cannot absorb energy."
+    },
+    {
+      "diagnosis": "intracranial hypertension (IIH) / PRES",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation"],
+      "notes": "Taiyang pathology: Shaoyin sink cannot absorb energy → Taiyang overdistends (Bladder meridian: venous-CSF dynamics disturbed). Treat Shaoyin sink first."
+    },
+    {
+      "diagnosis": "hypertension",
+      "associated_patterns": ["pelvic_cold_heat_field_dissociation", "vascular_blood_stasis_migraine"],
+      "notes": "Blood must carry compensatory magnetic field load when mitochondrial function drops (adrenal fatigue). Blood sludging + rouleaux formation → increased viscosity → hypertension. Address mitochondrial base and EZ grid."
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "R_B2_001",
+      "condition": "neuropathy failure mode profiling: burning + night worsening + allodynia + gabapentin partial",
+      "action": "classify as failure mode A (signal overload) — treat with noise buffering layer: Spirulina + Magnesium + Melatonin (if night)"
+    },
+    {
+      "id": "R_B2_002",
+      "condition": "neuropathy failure mode profiling: numbness + cold extremities + swelling + heavy aching",
+      "action": "classify as failure mode B (microcirculatory failure) — treat with flow layer: MyBlood + Ginger (if cold) + Garlic (if diabetic/thick)"
+    },
+    {
+      "id": "R_B2_003",
+      "condition": "neuropathy failure mode profiling: fatigue + weakness + chemo history + poor recovery",
+      "action": "classify as failure mode C (mitochondrial fatigue) — structural + metabolic support: Spirulina low dose + Astaxanthin + Vitamin D+Nigella; avoid premature stimulation"
+    },
+    {
+      "id": "R_B2_004",
+      "condition": "neuropathy: reassessment at 10-21 days shows noise reduced",
+      "action": "shift primary focus from noise buffering to flow restoration (failure mode A → B priority shift)"
+    },
+    {
+      "id": "R_B2_005",
+      "condition": "neuropathy: reassessment shows flow improved",
+      "action": "shift primary focus to structural protection layer"
+    },
+    {
+      "id": "R_B2_006",
+      "condition": "neuropathy: medication helps pain but causes cognitive fog",
+      "action": "flag tachyphylaxia / excessive noise suppression; add noise buffering environmental support; do not escalate dose"
+    },
+    {
+      "id": "R_B2_007",
+      "condition": "neuropathy: medication helped initially then stopped working",
+      "action": "flag tachyphylaxia; assess system capacity (A/B/C failure mode); stabilise before escalating"
+    },
+    {
+      "id": "R_B2_008",
+      "condition": "neuropathy: medication helps pain but sleep still poor",
+      "action": "add Melatonin (if overstimulated at night) + Spirulina; sleep is separate layer from pain suppression"
+    },
+    {
+      "id": "R_B2_009",
+      "condition": "joint: hot, red, swollen",
+      "action": "treat as RA (yang joint) pattern — reduce noise, stabilise; DO NOT build structure, DO NOT stimulate"
+    },
+    {
+      "id": "R_B2_010",
+      "condition": "joint: cold, stiff, degenerative, no systemic signs",
+      "action": "treat as OA (yin joint) pattern — build structure (Collagen → MyBlood → ProCardiol)"
+    },
+    {
+      "id": "R_B2_011",
+      "condition": "joint: mixed (some heat, some stiffness)",
+      "action": "calm first, build later — apply phase sequencing from Batch 1 mixed OA-RA rules"
+    },
+    {
+      "id": "R_B2_012",
+      "condition": "ALWAYS",
+      "action": "never build structure (Collagen) into active inflammation — universal joint rule"
+    },
+    {
+      "id": "R_B2_013",
+      "condition": "pelvic pain present",
+      "action": "always check for concurrent signs of adrenal fatigue and low back pain — pelvic pain is not a local problem"
+    },
+    {
+      "id": "R_B2_014",
+      "condition": "pelvic pain + cold lower limbs + mental overdrive/insomnia",
+      "action": "classify as cold-heat vertical dissociation — treat Shaoyin sink first, not locally"
+    },
+    {
+      "id": "R_B2_015",
+      "condition": "pelvic pain treatment: NSAID prescribed",
+      "action": "flag: NSAID insufficient alone — vertical field not addressed; add EZ rehydration + Shaoyin bridge support"
+    },
+    {
+      "id": "R_B2_016",
+      "condition": "pelvic pain treatment: hormonal therapy prescribed",
+      "action": "flag: PCOS/dysmenorrhoea not primarily hormonal — add pelvic EZ grid restoration alongside"
+    },
+    {
+      "id": "R_B2_017",
+      "condition": "pelvic pain treatment: warming herbs only prescribed",
+      "action": "flag: warming herbs alone insufficient — vertical axis must be reconnected; Shaoyin sink reactivation required"
+    },
+    {
+      "id": "R_B2_018",
+      "condition": "steroid injection given for pelvic/spinal pain",
+      "action": "flag: steroids temporarily restore EZ integrity but do not reweave fascia-water-electric scaffold; add pelvic EZ rebuilding protocol alongside; repeated injections → Yin exhaustion"
+    },
+    {
+      "id": "R_B2_019",
+      "condition": "LSS on MRI but symptoms mild or absent",
+      "action": "classify as intact fascia-EZ field — do not over-treat structurally; focus on EZ maintenance"
+    },
+    {
+      "id": "R_B2_020",
+      "condition": "mild LSS on MRI but debilitating neurogenic claudication",
+      "action": "classify as EZ field collapse — treat EZ rehydration + spinal fascia restoration; not primarily a surgical problem"
+    },
+    {
+      "id": "R_B2_021",
+      "condition": "neurogenic claudication: symptoms worsen when upright / improve with flexion",
+      "action": "flexion-based postures prescribed; spinal EZ field opens with flexion and collapses with extension — use this for therapeutic positioning"
+    },
+    {
+      "id": "R_B2_022",
+      "condition": "neurogenic claudication: cold lower limbs + mental overthinking + Du meridian tightness",
+      "action": "classify as EZ field signs — begin spinal EZ rehydration protocol (Tai Zi Shen, Huang Jing, Sheng Di, etc.)"
+    },
+    {
+      "id": "R_B2_023",
+      "condition": "vascular claudication: cramping resolves quickly with rest + predictable distance trigger",
+      "action": "classify as vascular claudication — treat blood-EZ field restoration; Dan Shen + Hong Hua + Chuan Xiong + Niu Xi"
+    },
+    {
+      "id": "R_B2_024",
+      "condition": "NSMBP: pain persists post-acute, imaging mismatch, shifting pain, emotional overlay",
+      "action": "classify as Du meridian Qi stagnation + fascial swelling; treat EZ disruption + emotional root; not purely mechanical"
+    },
+    {
+      "id": "R_B2_025",
+      "condition": "NSMBP: stiffness on waking",
+      "action": "flag as fascia slow to rehydrate — EZ disruption; prioritise fascia field hydration herbs"
+    },
+    {
+      "id": "R_B2_026",
+      "condition": "neuropathy: all three failure modes present",
+      "action": "calculate weighted score per mode (A%, B%, C%); treat highest-weight mode first; sequence to secondary"
+    },
+    {
+      "id": "R_B2_027",
+      "condition": "neuropathy: do not stack multiple adaptogens",
+      "action": "maximum one adaptogen layer at a time; sequence, do not stack"
+    },
+    {
+      "id": "R_B2_028",
+      "condition": "adrenal fatigue confirmed or suspected",
+      "action": "treat as primary upstream driver — Shaoyin sink reactivation before local pelvic or structural treatment"
+    }
+  ],
+
+  "input_variables": [
+    { "name": "pain_quality_neuropathy", "type": "multi_select", "values": ["burning", "electric_shooting", "tingling", "numbness", "deep_aching"] },
+    { "name": "pain_distribution", "type": "multi_select", "values": ["hands", "feet", "one_side_only", "follows_nerve_path", "patchy_changing"] },
+    { "name": "pain_timing_neuropathy", "type": "multi_select", "values": ["worse_at_night", "worse_at_rest", "worse_after_activity", "constant"] },
+    { "name": "sensory_functional_impact", "type": "multi_select", "values": ["sleep_disturbance", "touch_sensitivity", "cold_sensitivity", "balance_issues", "muscle_weakness"] },
+    { "name": "neuropathy_diagnosis", "type": "enum", "values": ["diabetic", "post_surgical", "chemotherapy_induced", "radiculopathy", "idiopathic"] },
+    { "name": "current_medication_neuropathy", "type": "multi_select", "values": ["gabapentin", "pregabalin", "antidepressant", "opioid", "none"] },
+    { "name": "medication_experience", "type": "enum", "values": ["helps_but_foggy", "helps_then_stops", "partial_breakthrough", "helps_pain_not_sleep", "no_help"] },
+    { "name": "body_signals", "type": "multi_select", "values": ["cold_feet_hands", "swelling", "dry_skin", "night_sweats", "fatigue"] },
+    { "name": "neuropathy_failure_mode_A_score", "type": "percentage", "notes": "signal overload / central sensitization weight 0-100%" },
+    { "name": "neuropathy_failure_mode_B_score", "type": "percentage", "notes": "microcirculatory failure weight 0-100%" },
+    { "name": "neuropathy_failure_mode_C_score", "type": "percentage", "notes": "metabolic/mitochondrial fatigue weight 0-100%" },
+    { "name": "joint_thermal_state", "type": "enum", "values": ["hot_red_swollen", "cold_stiff_empty", "mixed", "neutral"] },
+    { "name": "joint_response_to_treatment", "type": "enum", "values": ["NSAID_steroid_rapid_response", "NSAID_partial", "movement_improves", "cold_worsens"] },
+    { "name": "systemic_signs_joint", "type": "multi_select", "values": ["general_fatigue", "fever", "multiple_joints", "autoimmune_diagnosis", "steroid_DMARD_use"] },
+    { "name": "pelvic_pain_present", "type": "boolean" },
+    { "name": "adrenal_fatigue_signs", "type": "multi_select", "values": ["mental_overdrive", "insomnia", "cold_lower_limbs", "pelvic_congestion", "fatigue", "eye_strain"] },
+    { "name": "vertical_dissociation_pattern", "type": "boolean", "notes": "upper heat + lower cold simultaneously" },
+    { "name": "claudication_type", "type": "enum", "values": ["neurogenic", "vascular", "mixed", "unknown"] },
+    { "name": "neurogenic_claudication_signs", "type": "multi_select", "values": ["improves_with_flexion", "bilateral_leg_symptoms", "Du_tightness", "perineal_discomfort", "symptom_modifiable_by_posture_breath_emotion"] },
+    { "name": "EZ_field_collapse_signs", "type": "multi_select", "values": ["cold_lower_limbs", "mental_overthinking", "Du_meridian_tightness", "posture_breath_modifiable_symptoms"] },
+    { "name": "MRI_structural_severity", "type": "enum", "values": ["severe_stenosis_no_symptoms", "mild_stenosis_severe_symptoms", "moderate_matched", "none"], "notes": "mismatch signals EZ field collapse" },
+    { "name": "NSMBP_features", "type": "multi_select", "values": ["imaging_mismatch", "post_acute_persistence", "shifting_pain", "non_dermatomal_radiation", "morning_stiffness_fascia", "emotional_overlay"] },
+    { "name": "shaoyin_disconnection_signs", "type": "multi_select", "values": ["insomnia", "palpitations", "anxiety_with_fatigue", "upper_heat_lower_cold"] }
+  ],
+
+  "screening_flow": {
+    "name": "Neuropathy Flow — 9-Screen App Logic",
+    "screens": [
+      { "id": 1, "name": "Entry Point", "collects": ["pain_quality_neuropathy", "pain_distribution"] },
+      { "id": 2, "name": "Sensory and Functional Impact", "collects": ["sensory_functional_impact"], "purpose": "differentiate peripheral nerve / central sensitization / fascia-microcirculation contribution" },
+      { "id": 3, "name": "Medical Context", "collects": ["neuropathy_diagnosis", "current_medication_neuropathy"] },
+      { "id": 4, "name": "Why It Is Not Working", "collects": ["medication_experience"], "purpose": "reveals tachyphylaxia / excessive noise suppression / environmental support deficit" },
+      { "id": 5, "name": "Body Signals + Optional Tongue", "collects": ["body_signals"], "purpose": "differentiate empty vs congested neuropathy; dry vs damp background" },
+      { "id": 6, "name": "Reasoning Core (hidden from user)", "purpose": "calculate failure mode profile (A/B/C weighted scores); output: primary focus + secondary support" },
+      { "id": 7, "name": "Strategy Output", "purpose": "present: primary focus / secondary support / Base44 modules by layer (noise / flow / protection)" },
+      { "id": 8, "name": "What to Avoid Now", "purpose": "display contraindications: stacking adaptogens / stimulants / aggressive detox" },
+      { "id": 9, "name": "Reassessment Loop", "timing": "10-21 days", "collects": ["pain_intensity", "sleep_quality", "numbness_vs_burning", "medication_tolerance"], "action": "re-weight failure modes; shift intervention layer if signal has changed" }
+    ]
+  },
+
+  "herb_library_new_entries": [
+    { "name": "Yuan Zhi (Polygala)", "primary_role": "HT-KD bridge, neural-etheric cable repair", "meridians": ["Heart", "Kidney", "Lung"], "caution": "uncertain" },
+    { "name": "Fu Shen / Poria with root", "primary_role": "Heart calming, water field stabilisation", "meridians": ["Heart", "Spleen"], "caution": "uncertain" },
+    { "name": "Wu Wei Zi (Schisandra)", "primary_role": "Qi consolidation, Heart-Kidney holding, adaptogen", "meridians": ["Heart", "Kidney", "Lung"], "caution": "uncertain" },
+    { "name": "Dan Shen (Salvia miltiorrhiza)", "primary_role": "Blood-light circulation, heart perfusion, stagnation transformation", "meridians": ["Heart", "Liver"], "caution": "uncertain" },
+    { "name": "He Huan Pi (Albizia bark)", "primary_role": "Emotional trauma release, Shaoyin gate opener, spirit grounding", "meridians": ["Heart", "Liver"], "caution": "uncertain" },
+    { "name": "Zhi Gan Cao (Honey-fried Licorice)", "primary_role": "Electrical synchrony, heart rhythm harmonisation", "meridians": ["Heart", "Spleen", "Lung"], "caution": "uncertain" },
+    { "name": "Ren Shen / Tai Zi Shen", "primary_role": "Qi-light generation, central battery recharge", "meridians": ["Heart", "Lung", "Spleen", "Kidney"], "caution": "uncertain" },
+    { "name": "Sheng Di Huang (Rehmannia raw)", "primary_role": "Blood and Yin refresh, EZ water density restoration", "meridians": ["Heart", "Kidney", "Liver"], "caution": "uncertain" },
+    { "name": "Xuan Shen (Scrophularia)", "primary_role": "Deep Yin cooling, toxin clearing, water component rebuilding", "meridians": ["Kidney", "Stomach"], "caution": "uncertain" },
+    { "name": "Gou Qi Zi (Lycium/Goji)", "primary_role": "Liver-Kidney Yin, blood nourishment, eye/light field support", "meridians": ["Liver", "Kidney"], "caution": "uncertain" },
+    { "name": "He Shou Wu (Polygonum)", "primary_role": "Jing-Yin-Blood strengthening, water body brightening", "meridians": ["Liver", "Kidney"], "caution": "uncertain" },
+    { "name": "Mai Men Dong (Ophiopogon)", "primary_role": "Heart-Lung Yin, systemic hydration, returns Yin via lung", "meridians": ["Heart", "Lung", "Stomach"], "caution": "uncertain" },
+    { "name": "Tian Men Dong (Asparagus root)", "primary_role": "Deep Kidney Yin, internal heat settling", "meridians": ["Kidney", "Lung"], "caution": "uncertain" },
+    { "name": "Bai Shao Yao (White Peony)", "primary_role": "Liver blood softening, fascia relaxation, Shaoyang-Jueyin correction", "meridians": ["Liver", "Spleen"], "caution": "uncertain" },
+    { "name": "Dang Gui (Angelica sinensis)", "primary_role": "Blood and Yin circulation, Liver-Kidney connector, female Shaoyin bridge", "meridians": ["Liver", "Heart", "Spleen"], "caution": "uncertain" },
+    { "name": "Yu Jin (Curcuma root)", "primary_role": "Qi-Blood passage, heat clearing, trauma releasing, liver line brightener", "meridians": ["Liver", "Heart", "Lung"], "caution": "uncertain" },
+    { "name": "Dan Pi / Mu Dan Pi (Moutan bark)", "primary_role": "Hidden heat clearance, blood stasis, calms Liver Yang", "meridians": ["Liver", "Heart", "Kidney"], "caution": "uncertain" },
+    { "name": "Rou Gui (Cinnamon bark)", "primary_role": "Yang anchoring downward into Kidney, fire-water bridge", "meridians": ["Kidney", "Spleen", "Heart"], "caution": "small dose only; warming — contraindicated with dry component in formula" },
+    { "name": "Huang Jing (Polygonatum)", "primary_role": "Spinal EZ restoration, Lung-Kidney Yin", "meridians": ["Lung", "Spleen", "Kidney"], "caution": "uncertain" },
+    { "name": "Ge Gen (Kudzu root)", "primary_role": "Upper-lumbar opening, neck-back release, Taiyang-Yangming interface", "meridians": ["Spleen", "Stomach"], "caution": "uncertain" },
+    { "name": "Chai Hu (Bupleurum)", "primary_role": "Shaoyang harmoniser, fascia opening, Qi regulation", "meridians": ["Liver", "Gallbladder"], "caution": "uncertain" },
+    { "name": "Fang Feng (Siler)", "primary_role": "Wind-damp clearing, fascia opening", "meridians": ["Bladder", "Liver", "Spleen"], "caution": "uncertain" },
+    { "name": "Du Zhong (Eucommia)", "primary_role": "Kidney Yang, spinal structural support", "meridians": ["Kidney", "Liver"], "caution": "uncertain" },
+    { "name": "Bu Gu Zhi (Psoralea)", "primary_role": "Kidney Yang, bone-marrow strengthening", "meridians": ["Kidney", "Spleen"], "caution": "uncertain" },
+    { "name": "Xu Duan (Dipsacus)", "primary_role": "Ligament and bone repair, spinal structural support", "meridians": ["Liver", "Kidney"], "caution": "uncertain" },
+    { "name": "Gu Sui Bu (Drynaria)", "primary_role": "Bone and fascia repair", "meridians": ["Kidney", "Liver"], "caution": "uncertain" },
+    { "name": "Sang Ji Sheng (Loranthus)", "primary_role": "Liver-Kidney strengthening, sinew nourishing, Blood tonification", "meridians": ["Liver", "Kidney"], "caution": "uncertain" },
+    { "name": "Qiang Huo (Notopterygium)", "primary_role": "Upper back/neck wind-damp, Du channel opener", "meridians": ["Bladder", "Kidney"], "caution": "uncertain" },
+    { "name": "Du Huo (Angelica pubescens)", "primary_role": "Lower back wind-damp, Bladder channel", "meridians": ["Kidney", "Bladder"], "caution": "uncertain" },
+    { "name": "Bai Zhi (Angelica dahurica)", "primary_role": "Wind clearing, fascia opening, frontal headache", "meridians": ["Lung", "Stomach", "Large Intestine"], "caution": "uncertain" },
+    { "name": "Chuan Xiong (Ligusticum)", "primary_role": "Qi-Blood mover, blood circulation, field brightener", "meridians": ["Liver", "Gallbladder", "Pericardium"], "caution": "uncertain" },
+    { "name": "Hong Hua (Safflower)", "primary_role": "Blood circulation opening, stasis resolution", "meridians": ["Heart", "Liver"], "caution": "uncertain" },
+    { "name": "Sang Zhi (Mulberry twig)", "primary_role": "Open fascia in limbs, wind-damp in channels", "meridians": ["Liver"], "caution": "uncertain" },
+    { "name": "Niu Xi (Achyranthes)", "primary_role": "Downward blood-Qi movement, leg channels, Blood stasis resolution", "meridians": ["Liver", "Kidney"], "caution": "uncertain" },
+    { "name": "Ji Xue Teng (Spatholobus)", "primary_role": "Blood tonification and circulation, sinew nourishing", "meridians": ["Liver"], "caution": "uncertain" },
+    { "name": "Ye Jiao Teng (Polygonum vine)", "primary_role": "Nourish blood, calm spirit, open channels at night", "meridians": ["Heart", "Liver"], "caution": "uncertain" },
+    { "name": "He Shou Wu", "primary_role": "Jing-Yin-Blood, water body brightening", "meridians": ["Liver", "Kidney"], "caution": "uncertain" },
+    { "name": "Dan Shen", "primary_role": "Blood and heart field restoration", "meridians": ["Heart", "Liver"], "caution": "uncertain" },
+    { "name": "Bai He (Lily bulb)", "primary_role": "EZ stabilisation, Heart-Lung Yin", "meridians": ["Heart", "Lung"], "caution": "uncertain" },
+    { "name": "Zhi Mu (Anemarrhena)", "primary_role": "Floating Yang containment, Kidney Yin cooling", "meridians": ["Lung", "Stomach", "Kidney"], "caution": "uncertain" },
+    { "name": "Bai Zi Ren (Biota seed)", "primary_role": "Spirit grounding, insomnia, Heart nourishment", "meridians": ["Heart", "Kidney", "Large Intestine"], "caution": "uncertain" },
+    { "name": "Cang Zhu (Atractylodes)", "primary_role": "Dampness clearing, Spleen activating", "meridians": ["Spleen", "Stomach"], "caution": "uncertain" },
+    { "name": "Ze Xie (Alisma)", "primary_role": "Dampness draining, water metabolism", "meridians": ["Kidney", "Bladder"], "caution": "uncertain" },
+    { "name": "Yi Yi Ren (Coix seed)", "primary_role": "Dampness resolving, tissue clarifying, Spleen supporting", "meridians": ["Spleen", "Stomach", "Lung"], "caution": "uncertain" },
+    { "name": "Magnesium", "primary_role": "Membrane stabilisation, neuronal excitability reduction, mitochondrial cofactor", "notes": "noise layer; metabolic layer" }
+  ],
+
+  "field_medicine_concepts": [
+    {
+      "concept": "EZ_grid (Exclusion Zone water grid)",
+      "definition": "Structured water layer forming around fascia, endoneurium, and endothelium; buffers mechanical stress; enables bioelectric signal transmission; coherent EZ = resilient; collapsed EZ = amplified pain even from minor compression",
+      "clinical_relevance": "EZ collapse = pain without visible structural damage; EZ intact = asymptomatic despite MRI stenosis"
+    },
+    {
+      "concept": "pelvic_EZ_grid",
+      "definition": "Peripelvic fascia + microvascular + lymphatic + neural field unit; torus-like resonator; components: central axis (Du Mai), lateral grid (iliopsoas, pelvic floor, gluteus), ring stabilizers (SI fascia, round ligament, inguinal field)",
+      "clinical_relevance": "collapse → pain appears at weakest anatomical node: L5-S1, psoas spasm, pudendal neuralgia, hip arthritis, prostatitis — same collapse, different windows"
+    },
+    {
+      "concept": "vertical_cold_heat_dissociation",
+      "definition": "Shaoyin HT-KD disconnection: upper body accumulates compensatory heat (LV Yang / Shaoyang overdrive); lower body enters cold stagnation (pelvic EZ collapse); not a temperature problem — a coherence problem",
+      "clinical_relevance": "explains upper symptoms (insomnia, eye strain, palpitations) co-existing with lower symptoms (cold pelvis, pelvic pain, cold limbs)"
+    },
+    {
+      "concept": "steroid_as_emergency_EZ_restoration",
+      "definition": "Corticosteroids temporarily restore EZ integrity by: reducing local nitric oxide → less EZ disintegration; inhibiting inflammation = reduced Brownian chaos; mild kosmotropic effect via phospholipid membrane. BUT: do not reweave fascia-water-electric scaffold; freeze disintegration only; repeated use → Yin exhaustion",
+      "engine_rule": "if_steroid_given: add pelvic/spinal EZ rebuilding protocol alongside; do NOT rely on steroids as sole field restoration"
+    },
+    {
+      "concept": "fascia_as_EZ_superconductor",
+      "definition": "Spine/fascia = fascia-bound fluid-electromagnetic antenna; dural sleeves + arachnoid + EZ water = liquid-crystalline transmission cable; conducts Qi, bioelectric charge, proprioceptive feedback; stenosis alone insufficient without EZ collapse to cause symptoms",
+      "clinical_relevance": "explains imaging-symptom mismatch in LSS and NSMBP"
+    }
+  ],
+
+  "notes": [
+    "Batch 2 introduces three major new clinical domains: (1) neuropathy failure-mode profiling (A/B/C weighted scoring), (2) OA vs RA decision tree, (3) pelvic pain as cold-heat vertical field dissociation.",
+    "The neuropathy flow includes a 9-screen app logic structure that maps directly to input variable collection and failure-mode scoring.",
+    "The OA/RA decision tree is the upstream classifier for all joint patterns — it must fire before any joint intervention is selected.",
+    "Pelvic pain module introduces the largest TCM herb library in any batch so far — 40+ new herbs, all structured with roles and meridian targets.",
+    "The Shaoyin Sink Reboot formula is a complete 11-herb formulation — engine should store as a named compound formula object.",
+    "EZ field concepts (pelvic EZ grid, vertical dissociation, steroid as emergency EZ restoration, fascia as superconductor) are foundational field medicine constructs used across multiple patterns — stored as shared concept library.",
+    "Magnesium added as a non-herbal supplement to the noise buffering and metabolic layers.",
+    "All herb entries in herb_library_new_entries are new to Batch 2 — no duplicates from Batch 1 (MyGastrin, MyBlood, etc.) unless a new functional role is specified.",
+    "Claudication differentiation (neurogenic vs vascular) is a new subdomain not present in Batch 1 — critical for spinal/peripheral pain triage."
+  ]
+}

@@ -13,6 +13,8 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - Batch 6 structured source data in `lib/avicenna/data/engines/headacheEngine.batch6.json`
 - Batch 7 headache/pain extension data in `lib/avicenna/data/engines/avicenna_engine_batch7.json`
 - Batch 8 GI-migraine-neck, CGRP support, medication-capacity, and mixed joint phase data in `lib/avicenna/data/engines/avicenna_engine_batch8.json`
+- Batch 9 neuropathy, joint, pelvic/Shaoyin, claudication, back-pain data in `lib/avicenna/data/engines/avicenna_engine_batch9.json`
+- Batch 9 herb and field medicine concept libraries in `lib/avicenna/data/libraries/`
 - Engine regression checks in `scripts/test-engine.cjs`
 - Headache engine checks in `scripts/test-headache-engine.cjs`
 - Original Claude export preserved in `avicenna-export/`

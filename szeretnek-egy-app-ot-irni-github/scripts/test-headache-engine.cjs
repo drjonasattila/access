@@ -182,4 +182,99 @@ const offLabelAntipsychotic = evaluateHeadache({
 
 assert.ok(offLabelAntipsychotic.rules_triggered_by_id.some((rule) => rule.id === "R020"));
 
-console.log("Headache engine tests passed: 17/17");
+const neuropathyA = evaluateHeadache({
+  pain_quality_neuropathy: ["burning"],
+  pain_timing_neuropathy: ["worse_at_night"],
+  sensory_functional_impact: ["touch_sensitivity"],
+  current_medication_neuropathy: ["gabapentin"],
+  medication_experience: "partial_breakthrough",
+  internal_audit: true
+});
+
+assert.equal(neuropathyA.batch9_neuropathy.dominant_mode, "A_signal_overload");
+assert.equal(neuropathyA.batch9_matched_patterns[0], "neuropathy_signal_overload_central_sensitization");
+assert.ok(neuropathyA.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_001"));
+
+const neuropathyAllModes = evaluateHeadache({
+  pain_quality_neuropathy: ["burning", "numbness", "deep_aching"],
+  pain_timing_neuropathy: ["worse_at_night"],
+  sensory_functional_impact: ["touch_sensitivity", "muscle_weakness"],
+  body_signals: ["cold_feet_hands", "swelling", "fatigue"],
+  neuropathy_diagnosis: "chemotherapy_induced",
+  energy_state: "very_low",
+  internal_audit: true
+});
+
+assert.equal(neuropathyAllModes.batch9_neuropathy.all_three_present, true);
+assert.ok(neuropathyAllModes.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_026"));
+
+const jointRA = evaluateHeadache({
+  joint_thermal_state: "hot_red_swollen",
+  systemic_signs_joint: ["general_fatigue"],
+  internal_audit: true
+});
+
+assert.equal(jointRA.batch9_joint_classifier.classifier, "RA_yang_joint_inflammatory");
+assert.ok(jointRA.contraindications.includes("Collagen_into_active_inflammation"));
+assert.ok(jointRA.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_009"));
+
+const jointOA = evaluateHeadache({
+  joint_thermal_state: "cold_stiff_empty",
+  joint_response_to_treatment: "movement_improves",
+  pain_timing: "load_only",
+  internal_audit: true
+});
+
+assert.equal(jointOA.batch9_joint_classifier.classifier, "OA_yin_joint_degenerative");
+assert.deepEqual(jointOA.batch9_joint_classifier.intervention_sequence, ["Collagen", "MyBlood", "ProCardiol"]);
+assert.ok(jointOA.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_010"));
+
+const pelvic = evaluateHeadache({
+  pelvic_pain_present: true,
+  adrenal_fatigue_signs: ["cold_lower_limbs", "mental_overdrive", "insomnia"],
+  internal_audit: true
+});
+
+assert.equal(pelvic.batch9_pelvic_shaoyin.pattern, "pelvic_cold_heat_field_dissociation");
+assert.equal(pelvic.batch9_pelvic_shaoyin.vertical_dissociation_status, "present");
+assert.ok(pelvic.batch9_pelvic_shaoyin.shaoyin_sink_reboot_formula.composition.length === 11);
+assert.ok(pelvic.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_014"));
+
+const neurogenicClaudication = evaluateHeadache({
+  claudication_type: "neurogenic",
+  neurogenic_claudication_signs: ["improves_with_flexion", "bilateral_leg_symptoms"],
+  MRI_structural_severity: "mild_stenosis_severe_symptoms",
+  internal_audit: true
+});
+
+assert.equal(neurogenicClaudication.batch9_claudication.classifier, "neurogenic");
+assert.equal(neurogenicClaudication.batch9_claudication.MRI_mismatch_status, "mild_imaging_severe_symptoms");
+assert.ok(neurogenicClaudication.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_020"));
+
+const vascularClaudication = evaluateHeadache({
+  claudication_type: "vascular",
+  vascular_claudication_signs: ["calf_thigh_buttock_cramping", "predictable_walking_distance", "resolves_quickly_with_rest"],
+  internal_audit: true
+});
+
+assert.equal(vascularClaudication.batch9_claudication.classifier, "vascular");
+assert.ok(vascularClaudication.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_023"));
+
+const mechanicalBackPain = evaluateHeadache({
+  NSMBP_features: ["imaging_mismatch", "post_acute_persistence", "shifting_pain", "emotional_overlay", "morning_stiffness_fascia"],
+  internal_audit: true
+});
+
+assert.equal(mechanicalBackPain.batch9_mechanical_back_pain.pattern, "non_specific_mechanical_back_pain_du_meridian_stagnation");
+assert.ok(mechanicalBackPain.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_024"));
+assert.ok(mechanicalBackPain.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_025"));
+
+const batch9RedFlag = evaluateHeadache({
+  rapidly_progressive_weakness: true,
+  pain_quality_neuropathy: ["burning"]
+});
+
+assert.equal(batch9RedFlag.stopped, true);
+assert.deepEqual(batch9RedFlag.batch9_intervention_hierarchy, []);
+
+console.log("Headache engine tests passed: 26/26");

@@ -1,0 +1,50 @@
+{
+  "source": "avicenna_engine_batch9.json",
+  "entries": [
+    {
+      "id": "EZ_grid",
+      "title": "EZ_grid (Exclusion Zone water grid)",
+      "source_batch": 9,
+      "clinician_panel_only": true,
+      "concept": "EZ_grid (Exclusion Zone water grid)",
+      "definition": "Structured water layer forming around fascia, endoneurium, and endothelium; buffers mechanical stress; enables bioelectric signal transmission; coherent EZ = resilient; collapsed EZ = amplified pain even from minor compression",
+      "clinical_relevance": "EZ collapse = pain without visible structural damage; EZ intact = asymptomatic despite MRI stenosis"
+    },
+    {
+      "id": "pelvic_EZ_grid",
+      "title": "pelvic_EZ_grid",
+      "source_batch": 9,
+      "clinician_panel_only": true,
+      "concept": "pelvic_EZ_grid",
+      "definition": "Peripelvic fascia + microvascular + lymphatic + neural field unit; torus-like resonator; components: central axis (Du Mai), lateral grid (iliopsoas, pelvic floor, gluteus), ring stabilizers (SI fascia, round ligament, inguinal field)",
+      "clinical_relevance": "collapse → pain appears at weakest anatomical node: L5-S1, psoas spasm, pudendal neuralgia, hip arthritis, prostatitis — same collapse, different windows"
+    },
+    {
+      "id": "vertical_cold_heat_dissociation",
+      "title": "vertical_cold_heat_dissociation",
+      "source_batch": 9,
+      "clinician_panel_only": true,
+      "concept": "vertical_cold_heat_dissociation",
+      "definition": "Shaoyin HT-KD disconnection: upper body accumulates compensatory heat (LV Yang / Shaoyang overdrive); lower body enters cold stagnation (pelvic EZ collapse); not a temperature problem — a coherence problem",
+      "clinical_relevance": "explains upper symptoms (insomnia, eye strain, palpitations) co-existing with lower symptoms (cold pelvis, pelvic pain, cold limbs)"
+    },
+    {
+      "id": "steroid_as_emergency_EZ_restoration",
+      "title": "steroid_as_emergency_EZ_restoration",
+      "source_batch": 9,
+      "clinician_panel_only": true,
+      "concept": "steroid_as_emergency_EZ_restoration",
+      "definition": "Corticosteroids temporarily restore EZ integrity by: reducing local nitric oxide → less EZ disintegration; inhibiting inflammation = reduced Brownian chaos; mild kosmotropic effect via phospholipid membrane. BUT: do not reweave fascia-water-electric scaffold; freeze disintegration only; repeated use → Yin exhaustion",
+      "engine_rule": "if_steroid_given: add pelvic/spinal EZ rebuilding protocol alongside; do NOT rely on steroids as sole field restoration"
+    },
+    {
+      "id": "fascia_as_EZ_superconductor",
+      "title": "fascia_as_EZ_superconductor",
+      "source_batch": 9,
+      "clinician_panel_only": true,
+      "concept": "fascia_as_EZ_superconductor",
+      "definition": "Spine/fascia = fascia-bound fluid-electromagnetic antenna; dural sleeves + arachnoid + EZ water = liquid-crystalline transmission cable; conducts Qi, bioelectric charge, proprioceptive feedback; stenosis alone insufficient without EZ collapse to cause symptoms",
+      "clinical_relevance": "explains imaging-symptom mismatch in LSS and NSMBP"
+    }
+  ]
+}

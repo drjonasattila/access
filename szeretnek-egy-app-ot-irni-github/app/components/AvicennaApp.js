@@ -174,6 +174,41 @@ const headacheInitialInput = {
   cgrp_qol_impairment: false,
   cgrp_patient_feels_unsafe: false,
   ginger_tea_prescribed: false,
+  pain_quality_neuropathy: [],
+  pain_distribution: [],
+  pain_timing_neuropathy: [],
+  sensory_functional_impact: [],
+  neuropathy_diagnosis: "",
+  current_medication_neuropathy: [],
+  medication_experience: "",
+  neuropathy_noise_reduced: false,
+  neuropathy_flow_improved: false,
+  rapidly_progressive_weakness: false,
+  bowel_bladder_dysfunction: false,
+  saddle_anaesthesia: false,
+  acute_limb_ischemia: false,
+  severe_infection: false,
+  unexplained_systemic_illness: false,
+  joint_thermal_state: "",
+  joint_response_to_treatment: "",
+  systemic_signs_joint: [],
+  joint_hot_swollen_systemic_illness: false,
+  pelvic_pain_present: false,
+  adrenal_fatigue_signs: [],
+  vertical_dissociation_pattern: false,
+  low_back_pain: false,
+  pelvic_NSAID_prescribed: false,
+  pelvic_hormonal_therapy_prescribed: false,
+  pelvic_warming_herbs_only: false,
+  steroid_injection_pelvic_spinal: false,
+  claudication_type: "unknown",
+  neurogenic_claudication_signs: [],
+  vascular_claudication_signs: [],
+  EZ_field_collapse_signs: [],
+  MRI_structural_severity: "none",
+  NSMBP_features: [],
+  shaoyin_disconnection_signs: [],
+  acute_vascular_compromise: false,
   internal_audit: false
 };
 
@@ -442,6 +477,71 @@ const batch8FieldGroups = [
   }
 ];
 
+const batch9FieldGroups = [
+  {
+    key: "neuropathy_diagnosis",
+    label: "Neuropathy context",
+    options: [
+      ["diabetic", "Diabetic", "Diabetic neuropathy context"],
+      ["post_surgical", "Post-surgical", "After procedure or injury"],
+      ["chemotherapy_induced", "Chemo-related", "Post-chemotherapy context"],
+      ["radiculopathy", "Radiculopathy", "Nerve-root background"],
+      ["idiopathic", "Unclear", "No clear label"]
+    ]
+  },
+  {
+    key: "medication_experience",
+    label: "Neuropathy medication experience",
+    options: [
+      ["helps_but_foggy", "Foggy relief", "Helps pain but causes cognitive fog"],
+      ["helps_then_stops", "Fades", "Helped initially then stopped"],
+      ["partial_breakthrough", "Partial", "Partial response / breakthrough symptoms"],
+      ["helps_pain_not_sleep", "Pain only", "Pain improves but sleep remains poor"],
+      ["no_help", "No help", "No clear help"]
+    ]
+  },
+  {
+    key: "joint_thermal_state",
+    label: "OA / RA joint classifier",
+    options: [
+      ["hot_red_swollen", "Hot / red / swollen", "Inflammatory joint signal"],
+      ["cold_stiff_empty", "Cold / stiff", "Degenerative depletion signal"],
+      ["mixed", "Mixed", "Heat and stiffness overlap"],
+      ["neutral", "Neutral", "No clear thermal signal"]
+    ]
+  },
+  {
+    key: "joint_response_to_treatment",
+    label: "Joint response",
+    options: [
+      ["NSAID_steroid_rapid_response", "Rapid anti-inflammatory response", "NSAID/steroid works rapidly"],
+      ["NSAID_partial", "Partial NSAID", "Partially helpful"],
+      ["movement_improves", "Movement improves", "Warms up with movement"],
+      ["cold_worsens", "Cold worsens", "Cold weather increases pain"]
+    ]
+  },
+  {
+    key: "claudication_type",
+    label: "Claudication triage",
+    options: [
+      ["neurogenic", "Neurogenic", "Worse standing/walking, better sitting/flexion"],
+      ["vascular", "Vascular", "Predictable distance, quick rest relief"],
+      ["mixed", "Mixed", "Both branches possible"],
+      ["unknown", "Unknown", "Let the engine infer"]
+    ]
+  },
+  {
+    key: "MRI_structural_severity",
+    label: "MRI / symptom match",
+    options: [
+      ["severe_stenosis_no_symptoms", "Severe MRI, mild symptoms", "Field seems resilient"],
+      ["mild_stenosis_severe_symptoms", "Mild MRI, severe symptoms", "Field collapse possibility"],
+      ["moderate_matched", "Matched", "Symptoms and imaging broadly match"],
+      ["none", "No MRI context", "Not assessed"]
+    ]
+  }
+];
+
 const headacheMultiGroups = [
   {
     key: "sensory_features",
@@ -529,6 +629,139 @@ const headacheMultiGroups = [
   }
 ];
 
+const batch9MultiGroups = [
+  {
+    key: "pain_quality_neuropathy",
+    title: "Neuropathy pain quality",
+    items: [
+      ["burning", "Burning"],
+      ["electric_shooting", "Electric / shooting"],
+      ["tingling", "Tingling"],
+      ["numbness", "Numbness"],
+      ["deep_aching", "Deep aching"]
+    ]
+  },
+  {
+    key: "pain_distribution",
+    title: "Neuropathy distribution",
+    items: [
+      ["hands", "Hands"],
+      ["feet", "Feet"],
+      ["one_side_only", "One side only"],
+      ["follows_nerve_path", "Follows nerve path"],
+      ["patchy_changing", "Patchy / changing"]
+    ]
+  },
+  {
+    key: "pain_timing_neuropathy",
+    title: "Neuropathy timing",
+    items: [
+      ["worse_at_night", "Worse at night"],
+      ["worse_at_rest", "Worse at rest"],
+      ["worse_after_activity", "Worse after activity"],
+      ["constant", "Constant"]
+    ]
+  },
+  {
+    key: "sensory_functional_impact",
+    title: "Sensory and functional impact",
+    items: [
+      ["sleep_disturbance", "Sleep disturbance"],
+      ["touch_sensitivity", "Touch sensitivity / allodynia"],
+      ["cold_sensitivity", "Cold sensitivity"],
+      ["balance_issues", "Balance issues"],
+      ["muscle_weakness", "Muscle weakness"]
+    ]
+  },
+  {
+    key: "current_medication_neuropathy",
+    title: "Neuropathy medication context",
+    items: [
+      ["gabapentin", "Gabapentin"],
+      ["pregabalin", "Pregabalin"],
+      ["antidepressant", "Antidepressant"],
+      ["opioid", "Opioid"],
+      ["none", "None"]
+    ]
+  },
+  {
+    key: "systemic_signs_joint",
+    title: "Joint systemic signs",
+    items: [
+      ["general_fatigue", "General fatigue"],
+      ["fever", "Fever"],
+      ["multiple_joints", "Multiple joints"],
+      ["autoimmune_diagnosis", "Autoimmune diagnosis"],
+      ["steroid_DMARD_use", "Steroid / DMARD use"]
+    ]
+  },
+  {
+    key: "adrenal_fatigue_signs",
+    title: "Pelvic / Shaoyin vertical signs",
+    items: [
+      ["mental_overdrive", "Mental overdrive"],
+      ["insomnia", "Insomnia"],
+      ["cold_lower_limbs", "Cold lower limbs"],
+      ["pelvic_congestion", "Pelvic congestion"],
+      ["fatigue", "Fatigue"],
+      ["eye_strain", "Eye strain"]
+    ]
+  },
+  {
+    key: "neurogenic_claudication_signs",
+    title: "Neurogenic claudication signs",
+    items: [
+      ["improves_with_flexion", "Improves sitting / flexion"],
+      ["bilateral_leg_symptoms", "Bilateral/asymmetric leg symptoms"],
+      ["Du_tightness", "Du line tightness"],
+      ["perineal_discomfort", "Perineal discomfort"],
+      ["symptom_modifiable_by_posture_breath_emotion", "Modifiable by posture/breath/emotion"]
+    ]
+  },
+  {
+    key: "vascular_claudication_signs",
+    title: "Vascular claudication signs",
+    items: [
+      ["calf_thigh_buttock_cramping", "Calf/thigh/buttock cramping"],
+      ["predictable_walking_distance", "Predictable walking distance"],
+      ["resolves_quickly_with_rest", "Quick rest relief"],
+      ["atherosclerosis_endothelial_signs", "Atherosclerosis / endothelial signs"]
+    ]
+  },
+  {
+    key: "EZ_field_collapse_signs",
+    title: "Spinal / EZ field signs",
+    items: [
+      ["cold_lower_limbs", "Cold lower limbs"],
+      ["mental_overthinking", "Mental overthinking"],
+      ["Du_meridian_tightness", "Du meridian tightness"],
+      ["posture_breath_modifiable_symptoms", "Posture/breath modifiable symptoms"]
+    ]
+  },
+  {
+    key: "NSMBP_features",
+    title: "Non-specific back-pain features",
+    items: [
+      ["imaging_mismatch", "Imaging mismatch"],
+      ["post_acute_persistence", "Post-acute persistence"],
+      ["shifting_pain", "Shifting pain"],
+      ["non_dermatomal_radiation", "Non-dermatomal radiation"],
+      ["morning_stiffness_fascia", "Morning stiffness"],
+      ["emotional_overlay", "Emotional overlay"]
+    ]
+  },
+  {
+    key: "shaoyin_disconnection_signs",
+    title: "Shaoyin disconnection signs",
+    items: [
+      ["insomnia", "Insomnia"],
+      ["palpitations", "Palpitations"],
+      ["anxiety_with_fatigue", "Anxiety with fatigue"],
+      ["upper_heat_lower_cold", "Upper heat + lower cold"]
+    ]
+  }
+];
+
 const headacheSafetyFlags = [
   ["thunderclap_headache", "Thunderclap headache"],
   ["new_neurological_deficit", "New neurological deficit"],
@@ -543,7 +776,14 @@ const headacheSafetyFlags = [
   ["acute_headache_episode", "Acute headache episode"],
   ["acute_gi_fever_inflammation", "Acute GI fever / inflammation"],
   ["isolated_traumatic_neck_pain", "Isolated traumatic neck pain"],
-  ["purely_mechanical_injury", "Purely mechanical injury"]
+  ["purely_mechanical_injury", "Purely mechanical injury"],
+  ["rapidly_progressive_weakness", "Rapidly progressive weakness"],
+  ["bowel_bladder_dysfunction", "Bowel / bladder dysfunction"],
+  ["saddle_anaesthesia", "Saddle anaesthesia"],
+  ["acute_limb_ischemia", "Possible acute limb ischemia"],
+  ["severe_infection", "Severe infection signs"],
+  ["unexplained_systemic_illness", "Unexplained systemic illness"],
+  ["acute_vascular_compromise", "Possible acute vascular compromise"]
 ];
 
 const headacheAdvancedFlags = [
@@ -589,7 +829,17 @@ const headacheAdvancedFlags = [
   ["cgrp_severe_uncontrolled", "Severe uncontrolled migraine"],
   ["cgrp_qol_impairment", "Quality-of-life impairment"],
   ["cgrp_patient_feels_unsafe", "Patient feels unsafe"],
-  ["ginger_tea_prescribed", "Ginger tea in plan"]
+  ["ginger_tea_prescribed", "Ginger tea in plan"],
+  ["neuropathy_noise_reduced", "Neuropathy noise reduced"],
+  ["neuropathy_flow_improved", "Neuropathy flow improved"],
+  ["joint_hot_swollen_systemic_illness", "Hot swollen joint + systemic illness"],
+  ["pelvic_pain_present", "Pelvic pain present"],
+  ["vertical_dissociation_pattern", "Vertical cold-heat dissociation"],
+  ["low_back_pain", "Low back pain"],
+  ["pelvic_NSAID_prescribed", "NSAID pelvic context"],
+  ["pelvic_hormonal_therapy_prescribed", "Hormonal pelvic context"],
+  ["pelvic_warming_herbs_only", "Warming herbs only pelvic context"],
+  ["steroid_injection_pelvic_spinal", "Steroid injection pelvic/spinal"]
 ];
 
 const shaoyangClusterItems = [
@@ -753,7 +1003,7 @@ function ModeTabs({ mode, onChange }) {
         type="button"
         onClick={() => onChange("headache")}
       >
-        Headache patterns
+        Pain patterns
       </button>
     </nav>
   );
@@ -818,6 +1068,13 @@ function HeadacheResult({ result, advanced, onReset }) {
           <p>Joint phase: {result.joint_phase_logic?.active ? `${result.joint_phase_logic.phase} / ${result.joint_phase_logic.goal}` : "not assessed"}</p>
           <p>CGRP support: {result.cgrp_support?.status || "not assessed"}</p>
           <p>Medication capacity: {result.medication_capacity?.status || "not assessed"} / {result.medication_capacity?.dominant_branch || "none"}</p>
+          <p>Batch 9 domains: {(result.batch9_detected_domains || []).length ? result.batch9_detected_domains.join(", ") : "none"}</p>
+          <p>Batch 9 patterns: {(result.batch9_matched_patterns || []).length ? result.batch9_matched_patterns.join(", ") : "none"}</p>
+          <p>Neuropathy A/B/C: {result.batch9_neuropathy?.active ? `${result.batch9_neuropathy.dominant_mode} / ${JSON.stringify(result.batch9_neuropathy.percentages)}` : "not assessed"}</p>
+          <p>OA/RA classifier: {result.batch9_joint_classifier?.active ? result.batch9_joint_classifier.classifier : "not assessed"}</p>
+          <p>Pelvic vertical axis: {result.batch9_pelvic_shaoyin?.active ? result.batch9_pelvic_shaoyin.vertical_dissociation_status : "not assessed"}</p>
+          <p>Claudication: {result.batch9_claudication?.active ? `${result.batch9_claudication.classifier} / ${result.batch9_claudication.MRI_mismatch_status}` : "not assessed"}</p>
+          <p>Back-pain layer: {result.batch9_mechanical_back_pain?.active ? result.batch9_mechanical_back_pain.pattern : "not assessed"}</p>
           <p>Detected phase: {result.current_phase}</p>
           <p>Dominant layer: {result.dominant_layer}</p>
           <p>Embryological layer: {result.embryological_layer}</p>
@@ -828,6 +1085,8 @@ function HeadacheResult({ result, advanced, onReset }) {
           <p>Berberine: {result.berberine_switch.status} - {result.berberine_switch.next_step}</p>
           <p>Shaoyang collapse cluster: {result.shaoyang_collapse_cluster.present ? result.shaoyang_collapse_cluster.signs.join(", ") : "absent"}</p>
           <TagSection title="Batch 8 triggered rules" items={(result.rules_triggered_by_id || []).map((rule) => `${rule.id}: ${rule.action}`)} tone="mod" empty="None triggered" />
+          <TagSection title="Batch 9 avoid now" items={result.batch9_what_to_avoid_now || []} tone="avoid" empty="None flagged" />
+          <TagSection title="Batch 9 triggered rules" items={(result.batch9_rules_triggered_by_id || []).map((rule) => `${rule.id}: ${rule.action}`)} tone="mod" empty="None triggered" />
           <section>
             <h2>Batch 8 intervention sequence</h2>
             {(result.batch8_intervention_sequence || []).length ? (
@@ -840,6 +1099,35 @@ function HeadacheResult({ result, advanced, onReset }) {
               <p className="av-muted">None</p>
             )}
           </section>
+          <section>
+            <h2>Batch 9 intervention hierarchy</h2>
+            {(result.batch9_intervention_hierarchy || []).length ? (
+              result.batch9_intervention_hierarchy.map((step, index) => (
+                <span key={`${step.pattern}-${step.step || index}`}>
+                  {step.pattern}: {(step.items || []).join(", ")} {step.sequence_note ? `(${step.sequence_note})` : ""}
+                </span>
+              ))
+            ) : (
+              <p className="av-muted">None</p>
+            )}
+          </section>
+          {result.batch9_pelvic_shaoyin?.shaoyin_sink_reboot_formula && (
+            <section>
+              <h2>Shaoyin Sink Reboot Formula</h2>
+              <p>{result.batch9_pelvic_shaoyin.shaoyin_sink_reboot_formula.description}</p>
+              {result.batch9_pelvic_shaoyin.shaoyin_sink_reboot_formula.composition.map((item) => (
+                <span key={item.herb}>{item.herb}: {item.role}</span>
+              ))}
+            </section>
+          )}
+          {(result.batch9_field_medicine_concepts || []).length > 0 && (
+            <section>
+              <h2>Field medicine concepts</h2>
+              {result.batch9_field_medicine_concepts.map((concept) => (
+                <span key={concept.id}>{concept.id}: {concept.clinical_relevance || concept.engine_rule}</span>
+              ))}
+            </section>
+          )}
           <TagSection title="Drug-terrain conflicts" items={result.drug_terrain_conflicts} tone="avoid" empty="None flagged" />
           <TagSection title="Contraindications" items={result.contraindications} tone="avoid" empty="None flagged" />
           <section>
@@ -928,7 +1216,7 @@ function HeadacheEngineSection() {
     <div className="av-workspace av-headache-workspace">
       <form className="av-form" onSubmit={submit}>
         <section className="av-section">
-          <h2>Headache / migraine pattern engine</h2>
+          <h2>Headache / pain pattern engine</h2>
           <p className="av-muted">
             This is an educational pattern-recognition tool and not a medical diagnosis.
             Seek urgent care for red flag symptoms. Medication changes must be discussed with a clinician.
@@ -1004,7 +1292,40 @@ function HeadacheEngineSection() {
           </section>
         ))}
 
+        {batch9FieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
         {headacheMultiGroups.map((group) => (
+          <ToggleList
+            key={group.key}
+            title={group.title}
+            items={group.items}
+            selected={input[group.key]}
+            onToggle={(value) => toggleArray(group.key, value)}
+          />
+        ))}
+
+        {batch9MultiGroups.map((group) => (
           <ToggleList
             key={group.key}
             title={group.title}

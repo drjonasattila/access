@@ -1,6 +1,9 @@
 const headacheData = require("./data/engines/headacheEngine.batch6.json");
 const batch7Data = require("./data/engines/avicenna_engine_batch7.json");
 const batch8Data = require("./data/engines/avicenna_engine_batch8.json");
+const batch9Data = require("./data/engines/avicenna_engine_batch9.json");
+const batch9HerbLibrary = require("./data/libraries/herbLibrary.batch9.json");
+const batch9FieldMedicineConcepts = require("./data/libraries/fieldMedicineConcepts.batch9.json");
 
 const batch8Patterns = Array.isArray(batch8Data.patterns) ? batch8Data.patterns : Object.values(batch8Data.patterns || {});
 const batch8Rules = Array.isArray(batch8Data.rules) ? batch8Data.rules : Object.values(batch8Data.rules || {});
@@ -8,6 +11,9 @@ const batch8DecisionAxes = Array.isArray(batch8Data.decision_axes)
   ? batch8Data.decision_axes
   : Object.values(batch8Data.decision_axes || {});
 const BATCH8_RULE_BY_ID = Object.fromEntries(batch8Rules.map((rule) => [rule.id, rule]));
+const batch9Patterns = Array.isArray(batch9Data.patterns) ? batch9Data.patterns : Object.values(batch9Data.patterns || {});
+const batch9Rules = Array.isArray(batch9Data.rules) ? batch9Data.rules : Object.values(batch9Data.rules || {});
+const BATCH9_RULE_BY_ID = Object.fromEntries(batch9Rules.map((rule) => [rule.id, rule]));
 
 const AXES = [
   "nerve_first_score",
@@ -84,6 +90,18 @@ const PATIENT_LABELS = {
   mixed_joint_building_phase: "Mixed joint building phase",
   cgrp_suppression_structural_deficit: "CGRP support and rebuild pattern",
   medication_exhaustion_state: "Medication exhaustion and capacity pattern",
+  neuropathy_signal_overload_central_sensitization: "Neuropathy signal-overload pattern",
+  neuropathy_microcirculatory_failure: "Neuropathy microcirculatory pattern",
+  neuropathy_metabolic_mitochondrial_fatigue: "Neuropathy metabolic-fatigue pattern",
+  OA_yin_joint_degenerative: "OA / Yin joint degenerative pattern",
+  RA_yang_joint_inflammatory: "RA / Yang joint inflammatory pattern",
+  pelvic_cold_heat_field_dissociation: "Pelvic vertical cold-heat dissociation pattern",
+  shaoyin_yin_builder_kidney: "Shaoyin Yin builder layer",
+  shaoyin_heart_kidney_bridge_builders: "Shaoyin Heart-Kidney bridge layer",
+  liver_kidney_yin_coherence_jueyin_shaoyin: "Liver-Kidney Yin coherence layer",
+  neurogenic_claudication_spinal_EZ_collapse: "Neurogenic claudication spinal EZ pattern",
+  vascular_claudication_peripheral_EZ_collapse: "Vascular claudication peripheral EZ pattern",
+  non_specific_mechanical_back_pain_du_meridian_stagnation: "Du meridian mechanical back-pain pattern",
   insufficient_pattern_evidence: "Unclear headache terrain"
 };
 
@@ -97,7 +115,14 @@ const RED_FLAG_LABELS = {
   new_over_50: "new headache after age 50",
   progressive: "progressive worsening",
   head_trauma: "recent head trauma",
-  exertional: "exertional headache"
+  exertional: "exertional headache",
+  rapidly_progressive_weakness: "rapidly progressive weakness",
+  bowel_bladder_dysfunction: "bowel or bladder dysfunction",
+  saddle_anaesthesia: "saddle anaesthesia",
+  acute_limb_ischemia: "possible acute limb ischemia",
+  severe_infection: "severe infection signs",
+  unexplained_systemic_illness: "unexplained systemic illness",
+  acute_vascular_compromise: "possible acute vascular compromise"
 };
 
 const CORE_PHRASES = [
@@ -111,7 +136,13 @@ const CORE_PHRASES = [
   "If mixed -> sequence, don't stack.",
   "If unsure -> wait one phase longer.",
   "Medications reduce oscillation; Base44 restores system capacity.",
-  "Never use medication in isolation - assess system capacity and run structural support alongside."
+  "Never use medication in isolation - assess system capacity and run structural support alongside.",
+  "Score neuropathy failure modes A/B/C and treat the dominant layer first.",
+  "Never build structure into active inflammation.",
+  "Pelvic pain is not only local - check the vertical axis.",
+  "MRI severity does not always equal symptom severity.",
+  "Sequence, don't stack.",
+  "Reassess at 10-21 days and re-weight the dominant failure mode."
 ];
 
 function list(value) {
@@ -230,6 +261,41 @@ function normaliseInput(input = {}) {
     cgrp_qol_impairment: bool(input.cgrp_qol_impairment),
     cgrp_patient_feels_unsafe: bool(input.cgrp_patient_feels_unsafe),
     ginger_tea_prescribed: bool(input.ginger_tea_prescribed),
+    pain_quality_neuropathy: list(input.pain_quality_neuropathy),
+    pain_distribution: list(input.pain_distribution),
+    pain_timing_neuropathy: list(input.pain_timing_neuropathy),
+    sensory_functional_impact: list(input.sensory_functional_impact),
+    neuropathy_diagnosis: input.neuropathy_diagnosis || "",
+    current_medication_neuropathy: list(input.current_medication_neuropathy),
+    medication_experience: input.medication_experience || "",
+    neuropathy_noise_reduced: bool(input.neuropathy_noise_reduced),
+    neuropathy_flow_improved: bool(input.neuropathy_flow_improved),
+    rapidly_progressive_weakness: bool(input.rapidly_progressive_weakness),
+    bowel_bladder_dysfunction: bool(input.bowel_bladder_dysfunction),
+    saddle_anaesthesia: bool(input.saddle_anaesthesia),
+    acute_limb_ischemia: bool(input.acute_limb_ischemia),
+    severe_infection: bool(input.severe_infection),
+    unexplained_systemic_illness: bool(input.unexplained_systemic_illness),
+    joint_thermal_state: input.joint_thermal_state || input.thermal_state_joint || "",
+    joint_response_to_treatment: input.joint_response_to_treatment || "",
+    systemic_signs_joint: list(input.systemic_signs_joint),
+    joint_hot_swollen_systemic_illness: bool(input.joint_hot_swollen_systemic_illness),
+    pelvic_pain_present: bool(input.pelvic_pain_present),
+    adrenal_fatigue_signs: list(input.adrenal_fatigue_signs),
+    vertical_dissociation_pattern: bool(input.vertical_dissociation_pattern),
+    low_back_pain: bool(input.low_back_pain),
+    pelvic_NSAID_prescribed: bool(input.pelvic_NSAID_prescribed),
+    pelvic_hormonal_therapy_prescribed: bool(input.pelvic_hormonal_therapy_prescribed),
+    pelvic_warming_herbs_only: bool(input.pelvic_warming_herbs_only),
+    steroid_injection_pelvic_spinal: bool(input.steroid_injection_pelvic_spinal),
+    claudication_type: input.claudication_type || "unknown",
+    neurogenic_claudication_signs: list(input.neurogenic_claudication_signs),
+    vascular_claudication_signs: list(input.vascular_claudication_signs),
+    EZ_field_collapse_signs: list(input.EZ_field_collapse_signs),
+    MRI_structural_severity: input.MRI_structural_severity || "none",
+    NSMBP_features: list(input.NSMBP_features),
+    shaoyin_disconnection_signs: list(input.shaoyin_disconnection_signs),
+    acute_vascular_compromise: bool(input.acute_vascular_compromise),
     internal_audit: bool(input.internal_audit)
   };
 }
@@ -258,8 +324,26 @@ function batch8Rule(id) {
   return BATCH8_RULE_BY_ID[id] || { id, condition: "", action: "" };
 }
 
+function batch9Pattern(name) {
+  return batch9Patterns.find((item) => item.name === name) || {};
+}
+
+function batch9Rule(id) {
+  return BATCH9_RULE_BY_ID[id] || { id, condition: "", action: "" };
+}
+
 function triggeredBatch8Rule(id, reason = "") {
   const rule = batch8Rule(id);
+  return {
+    id: rule.id,
+    condition: rule.condition,
+    action: rule.action,
+    reason
+  };
+}
+
+function triggeredBatch9Rule(id, reason = "") {
+  const rule = batch9Rule(id);
   return {
     id: rule.id,
     condition: rule.condition,
@@ -413,6 +497,13 @@ function safetyStop(input) {
   if (input.thunderclap_headache) redFlags.push("thunderclap");
   if (input.new_neurological_deficit) redFlags.push("neuro_deficit");
   if (input.red_flag_present || input.red_flag_type.length) redFlags.push(...input.red_flag_type);
+  if (input.rapidly_progressive_weakness) redFlags.push("rapidly_progressive_weakness");
+  if (input.bowel_bladder_dysfunction) redFlags.push("bowel_bladder_dysfunction");
+  if (input.saddle_anaesthesia) redFlags.push("saddle_anaesthesia");
+  if (input.acute_limb_ischemia) redFlags.push("acute_limb_ischemia");
+  if (input.severe_infection) redFlags.push("severe_infection");
+  if (input.unexplained_systemic_illness) redFlags.push("unexplained_systemic_illness");
+  if (input.acute_vascular_compromise) redFlags.push("acute_vascular_compromise");
   const uniqueFlags = [...new Set(redFlags)].filter(Boolean);
   if (!uniqueFlags.length) return null;
   return {
@@ -1343,6 +1434,569 @@ function evaluateBatch8(input, stopped) {
   };
 }
 
+function addFailureMode(scores, mode, points, inputName, reason) {
+  scores[mode].score += points;
+  scores[mode].contributing_inputs.push({ input: inputName, points, reason });
+}
+
+function hasNeuropathyContext(input) {
+  return Boolean(
+    input.pain_quality_neuropathy.length
+    || input.pain_distribution.length
+    || input.pain_timing_neuropathy.length
+    || input.sensory_functional_impact.length
+    || input.neuropathy_diagnosis
+    || input.current_medication_neuropathy.length
+    || input.medication_experience
+  );
+}
+
+function scoreNeuropathyFailureModes(input) {
+  const rules = [];
+  const cautions = [];
+  const contraindications = [];
+  const scores = {
+    A_signal_overload: { score: 0, contributing_inputs: [] },
+    B_microcirculatory_failure: { score: 0, contributing_inputs: [] },
+    C_metabolic_mitochondrial_fatigue: { score: 0, contributing_inputs: [] }
+  };
+
+  const hasBurningNightAllodyniaGabapentin = Boolean(
+    input.pain_quality_neuropathy.includes("burning")
+    && input.pain_timing_neuropathy.includes("worse_at_night")
+    && input.sensory_functional_impact.includes("touch_sensitivity")
+    && (input.current_medication_neuropathy.includes("gabapentin") || input.current_medication_neuropathy.includes("pregabalin"))
+    && input.medication_experience === "partial_breakthrough"
+  );
+  if (input.pain_quality_neuropathy.includes("burning")) addFailureMode(scores, "A_signal_overload", 2, "burning", "burning pain quality");
+  if (input.pain_quality_neuropathy.includes("electric_shooting")) addFailureMode(scores, "A_signal_overload", 1, "electric_shooting", "shooting signal load");
+  if (input.pain_timing_neuropathy.includes("worse_at_night")) addFailureMode(scores, "A_signal_overload", 2, "worse_at_night", "night amplification");
+  if (input.sensory_functional_impact.includes("touch_sensitivity")) addFailureMode(scores, "A_signal_overload", 2, "touch_sensitivity", "allodynia / touch sensitivity");
+  if (input.sensory_functional_impact.includes("sleep_disturbance")) addFailureMode(scores, "A_signal_overload", 1, "sleep_disturbance", "sleep disruption from pain");
+  if (hasBurningNightAllodyniaGabapentin) {
+    addFailureMode(scores, "A_signal_overload", 3, "gabapentin_partial_pattern", "Batch 9 Mode A hard pattern");
+    rules.push(triggeredBatch9Rule("R_B2_001", "burning + night worsening + allodynia + gabapentin partial"));
+  }
+
+  const hasNumbColdSwellingHeavy = Boolean(
+    input.pain_quality_neuropathy.includes("numbness")
+    && (input.body_signals.includes("cold_feet_hands") || input.body_signals.includes("cold_hands_feet"))
+    && input.body_signals.includes("swelling")
+    && input.pain_quality_neuropathy.includes("deep_aching")
+  );
+  if (input.pain_quality_neuropathy.includes("numbness")) addFailureMode(scores, "B_microcirculatory_failure", 2, "numbness", "numbness dominant over burning");
+  if (input.body_signals.includes("cold_feet_hands") || input.body_signals.includes("cold_hands_feet")) {
+    addFailureMode(scores, "B_microcirculatory_failure", 2, "cold_extremities", "cold hands/feet");
+  }
+  if (input.body_signals.includes("swelling")) addFailureMode(scores, "B_microcirculatory_failure", 2, "swelling", "extremity swelling");
+  if (input.pain_quality_neuropathy.includes("deep_aching")) addFailureMode(scores, "B_microcirculatory_failure", 2, "deep_aching", "heavy deep aching");
+  if (input.neuropathy_diagnosis === "diabetic") addFailureMode(scores, "B_microcirculatory_failure", 2, "diabetic", "diabetic neuropathy context");
+  if (input.sensory_functional_impact.includes("balance_issues")) addFailureMode(scores, "B_microcirculatory_failure", 1, "balance_issues", "large-fiber / flow context");
+  if (hasNumbColdSwellingHeavy) {
+    addFailureMode(scores, "B_microcirculatory_failure", 3, "numb_cold_swelling_heavy", "Batch 9 Mode B hard pattern");
+    rules.push(triggeredBatch9Rule("R_B2_002", "numbness + cold extremities + swelling + heavy aching"));
+  }
+
+  const hasFatigueWeakChemoPoorRecovery = Boolean(
+    (input.body_signals.includes("fatigue") || ["exhausted", "low", "very_low", "flat"].includes(input.energy_state))
+    && input.sensory_functional_impact.includes("muscle_weakness")
+    && (input.neuropathy_diagnosis === "chemotherapy_induced" || input.post_chemo_window)
+    && (input.treatment_response === "helps_pain_but_drains" || ["exhausted", "very_low", "flat"].includes(input.energy_state))
+  );
+  if (input.body_signals.includes("fatigue") || ["exhausted", "low", "very_low", "flat"].includes(input.energy_state)) {
+    addFailureMode(scores, "C_metabolic_mitochondrial_fatigue", 2, "fatigue", "fatigue dominant");
+  }
+  if (input.sensory_functional_impact.includes("muscle_weakness")) addFailureMode(scores, "C_metabolic_mitochondrial_fatigue", 2, "muscle_weakness", "muscle weakness");
+  if (input.neuropathy_diagnosis === "chemotherapy_induced" || input.post_chemo_window) {
+    addFailureMode(scores, "C_metabolic_mitochondrial_fatigue", 3, "chemo_history", "chemotherapy/post-chemo context");
+  }
+  if (input.body_signals.includes("dry_skin") || input.body_signals.includes("night_sweats")) {
+    addFailureMode(scores, "C_metabolic_mitochondrial_fatigue", 1, "dry_or_night_sweats", "depletion signs");
+  }
+  if (input.current_medication_neuropathy.includes("antidepressant") || input.current_medications.includes("antidepressant")) {
+    addFailureMode(scores, "C_metabolic_mitochondrial_fatigue", 1, "antidepressant", "medication-terrain energy marker");
+  }
+  if (hasFatigueWeakChemoPoorRecovery) {
+    addFailureMode(scores, "C_metabolic_mitochondrial_fatigue", 3, "fatigue_weak_chemo_poor_recovery", "Batch 9 Mode C hard pattern");
+    rules.push(triggeredBatch9Rule("R_B2_003", "fatigue + weakness + chemo history + poor recovery"));
+  }
+
+  if (input.medication_experience === "helps_but_foggy") {
+    cautions.push("Medication helps but causes cognitive fog: interpret as possible excessive noise suppression; do not escalate inside this tool.");
+    rules.push(triggeredBatch9Rule("R_B2_006", "medication helps pain but causes cognitive fog"));
+  }
+  if (input.medication_experience === "helps_then_stops") {
+    cautions.push("Medication helped initially then stopped: assess system capacity before escalation.");
+    rules.push(triggeredBatch9Rule("R_B2_007", "medication helped initially then stopped working"));
+  }
+  if (input.medication_experience === "helps_pain_not_sleep") {
+    cautions.push("Sleep remains a separate regulation layer even when pain improves.");
+    rules.push(triggeredBatch9Rule("R_B2_008", "pain relief without sleep restoration"));
+  }
+  if (input.neuropathy_noise_reduced) rules.push(triggeredBatch9Rule("R_B2_004", "10-21 day reassessment: noise reduced"));
+  if (input.neuropathy_flow_improved) rules.push(triggeredBatch9Rule("R_B2_005", "10-21 day reassessment: flow improved"));
+  if (input.multiple_adaptogens_stacking) {
+    contraindications.push("neuropathy_adaptogen_stacking");
+    rules.push(triggeredBatch9Rule("R_B2_027", "multiple adaptogens selected in neuropathy context"));
+  }
+
+  const ordered = Object.entries(scores)
+    .map(([mode, value]) => ({ mode, ...value }))
+    .sort((a, b) => b.score - a.score);
+  const total = ordered.reduce((sum, item) => sum + item.score, 0);
+  const percentages = Object.fromEntries(ordered.map((item) => [
+    item.mode,
+    total ? Math.round((item.score / total) * 100) : 0
+  ]));
+  const allThreePresent = ordered.every((item) => item.score > 0);
+  if (allThreePresent) rules.push(triggeredBatch9Rule("R_B2_026", "A/B/C failure modes all scored above zero"));
+
+  const patternMap = {
+    A_signal_overload: "neuropathy_signal_overload_central_sensitization",
+    B_microcirculatory_failure: "neuropathy_microcirculatory_failure",
+    C_metabolic_mitochondrial_fatigue: "neuropathy_metabolic_mitochondrial_fatigue"
+  };
+  const dominant = ordered[0] || { mode: "A_signal_overload", score: 0 };
+  const secondary = ordered[1] || { mode: "B_microcirculatory_failure", score: 0 };
+
+  return {
+    active: hasNeuropathyContext(input),
+    screening_flow: batch9Data.screening_flow,
+    scores,
+    percentages,
+    all_three_present: allThreePresent,
+    dominant_mode: dominant.score > 0 ? dominant.mode : "not_assessed",
+    secondary_mode: secondary.score > 0 ? secondary.mode : "not_assessed",
+    dominant_pattern: dominant.score > 0 ? patternMap[dominant.mode] : "",
+    secondary_pattern: secondary.score > 0 ? patternMap[secondary.mode] : "",
+    strategy: dominant.score > 0
+      ? `Treat ${dominant.mode.replace(/_/g, " ")} first; sequence to ${secondary.mode.replace(/_/g, " ")} after reassessment.`
+      : "Collect neuropathy 9-screen inputs before selecting a dominant failure mode.",
+    reassessment_timing: "10-21 days",
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    rules: uniqueRules(rules)
+  };
+}
+
+function classifyBatch9Joint(input, batch8) {
+  const rules = [];
+  const contraindications = [];
+  const cautions = [];
+  const active = Boolean(
+    input.joint_thermal_state
+    || input.joint_response_to_treatment
+    || input.systemic_signs_joint.length
+    || input.joint_heat_swelling
+    || input.evening_worsening
+    || batch8?.joint_phase_logic?.active
+  );
+  if (!active) {
+    return {
+      active: false,
+      classifier: "not_assessed",
+      pattern: "",
+      phase_sequence_source: "",
+      intervention_sequence: [],
+      contraindications,
+      cautions,
+      rules
+    };
+  }
+
+  rules.push(triggeredBatch9Rule("R_B2_012", "joint classifier active"));
+  const systemic = input.systemic_signs_joint;
+  const raSignals = [
+    input.joint_thermal_state === "hot_red_swollen",
+    input.joint_heat_swelling,
+    input.pain_timing === "rest_night",
+    input.joint_response_to_treatment === "NSAID_steroid_rapid_response",
+    systemic.some((item) => ["general_fatigue", "fever", "multiple_joints", "autoimmune_diagnosis", "steroid_DMARD_use"].includes(item)),
+    input.joint_hot_swollen_systemic_illness
+  ].filter(Boolean).length;
+  const oaSignals = [
+    input.joint_thermal_state === "cold_stiff_empty",
+    input.joint_response_to_treatment === "movement_improves",
+    input.joint_response_to_treatment === "cold_worsens",
+    input.pain_timing === "load_only",
+    input.movement_improves_joint,
+    input.pain_empty_not_inflamed,
+    !systemic.length && !input.joint_heat_swelling
+  ].filter(Boolean).length;
+
+  let classifier = "mixed";
+  let patternName = "";
+  if (input.joint_thermal_state === "mixed" || (raSignals > 0 && oaSignals > 0)) {
+    classifier = "mixed";
+    patternName = batch8?.joint_phase_logic?.pattern || "mixed_joint_inflammatory_edge";
+    rules.push(triggeredBatch9Rule("R_B2_011", "mixed heat/stiffness joint signals"));
+    cautions.push("Mixed joint state uses Batch 8 phase sequencing: calm first, flow later, build last.");
+  } else if (raSignals > 0) {
+    classifier = "RA_yang_joint_inflammatory";
+    patternName = "RA_yang_joint_inflammatory";
+    rules.push(triggeredBatch9Rule("R_B2_009", "hot/red/swollen or systemic inflammatory joint signals"));
+  } else if (oaSignals > 0) {
+    classifier = "OA_yin_joint_degenerative";
+    patternName = "OA_yin_joint_degenerative";
+    rules.push(triggeredBatch9Rule("R_B2_010", "cold/stiff/load-triggered joint without systemic signs"));
+  }
+
+  if (classifier === "RA_yang_joint_inflammatory" || input.joint_heat_swelling || input.joint_thermal_state === "hot_red_swollen") {
+    contraindications.push("Collagen_into_active_inflammation");
+    contraindications.push("structural_building_during_active_joint_heat");
+    contraindications.push("joint_stimulation_during_active_inflammation");
+    cautions.push("Never build structure with Collagen into active inflammation.");
+  }
+  if (input.joint_hot_swollen_systemic_illness || systemic.includes("fever")) {
+    cautions.push("Hot swollen joint with systemic signs requires clinician review.");
+  }
+
+  const sequence = classifier === "OA_yin_joint_degenerative"
+    ? ["Collagen", "MyBlood", "ProCardiol"]
+    : classifier === "RA_yang_joint_inflammatory"
+      ? ["stabilise inflammation", "do not stimulate", "defer structural building"]
+      : ["calm first", "flow later", "build last"];
+
+  return {
+    active,
+    classifier,
+    pattern: patternName,
+    phase_sequence_source: classifier === "mixed" ? "Batch 8 mixed joint phase sequencing" : "Batch 9 upstream joint classifier",
+    intervention_sequence: sequence,
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    rules: uniqueRules(rules)
+  };
+}
+
+function evaluatePelvicShaoyin(input) {
+  const rules = [];
+  const contraindications = [];
+  const cautions = [];
+  const active = Boolean(
+    input.pelvic_pain_present
+    || input.vertical_dissociation_pattern
+    || input.adrenal_fatigue_signs.length
+    || input.shaoyin_disconnection_signs.length
+  );
+  if (!active) {
+    return {
+      active: false,
+      pattern: "",
+      vertical_dissociation_status: "not_assessed",
+      shaoyin_sink_reboot_formula: null,
+      intervention_sequence: [],
+      contraindications,
+      cautions,
+      rules
+    };
+  }
+
+  if (input.pelvic_pain_present) rules.push(triggeredBatch9Rule("R_B2_013", "pelvic pain present"));
+  const lowerCold = input.adrenal_fatigue_signs.includes("cold_lower_limbs") || input.shaoyin_disconnection_signs.includes("upper_heat_lower_cold");
+  const upperOverdrive = input.adrenal_fatigue_signs.includes("mental_overdrive")
+    || input.adrenal_fatigue_signs.includes("insomnia")
+    || input.shaoyin_disconnection_signs.includes("insomnia")
+    || input.shaoyin_disconnection_signs.includes("anxiety_with_fatigue");
+  const verticalDissociation = input.vertical_dissociation_pattern || (input.pelvic_pain_present && lowerCold && upperOverdrive);
+  if (verticalDissociation) rules.push(triggeredBatch9Rule("R_B2_014", "pelvic pain + lower cold + upper overdrive/insomnia"));
+  if (input.pelvic_NSAID_prescribed) rules.push(triggeredBatch9Rule("R_B2_015", "NSAID pelvic pain context"));
+  if (input.pelvic_hormonal_therapy_prescribed) rules.push(triggeredBatch9Rule("R_B2_016", "hormonal pelvic pain context"));
+  if (input.pelvic_warming_herbs_only) rules.push(triggeredBatch9Rule("R_B2_017", "warming-only pelvic strategy"));
+  if (input.steroid_injection_pelvic_spinal) {
+    rules.push(triggeredBatch9Rule("R_B2_018", "steroid injection for pelvic/spinal pain"));
+    cautions.push("Steroid injection may temporarily reduce local disorganisation, but does not rebuild the fascia-water-electric scaffold; repeated injections may worsen Yin depletion.");
+  }
+  if (input.adrenal_fatigue_signs.length || input.shaoyin_disconnection_signs.includes("upper_heat_lower_cold")) {
+    rules.push(triggeredBatch9Rule("R_B2_028", "adrenal fatigue or Shaoyin disconnection suspected"));
+  }
+
+  const patternName = verticalDissociation ? "pelvic_cold_heat_field_dissociation" : "shaoyin_heart_kidney_bridge_builders";
+  const pelvicPattern = batch9Pattern("pelvic_cold_heat_field_dissociation");
+  const formula = pelvicPattern.interventions?.shaoyin_sink_reboot_formula || null;
+  return {
+    active,
+    pattern: patternName,
+    vertical_dissociation_status: verticalDissociation ? "present" : "screened_not_dominant",
+    shaoyin_sink_reboot_formula: formula,
+    intervention_sequence: [
+      "Hydrate EZ",
+      "Anchor Yang / lower fire",
+      "Restore pelvic vector flow",
+      "Calm upper field"
+    ],
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    rules: uniqueRules(rules)
+  };
+}
+
+function differentiateClaudication(input) {
+  const rules = [];
+  const cautions = [];
+  const contraindications = [];
+  const active = Boolean(
+    input.claudication_type !== "unknown"
+    || input.neurogenic_claudication_signs.length
+    || input.vascular_claudication_signs.length
+    || input.EZ_field_collapse_signs.length
+    || input.MRI_structural_severity !== "none"
+  );
+  if (!active) {
+    return {
+      active: false,
+      classifier: "not_assessed",
+      pattern: "",
+      MRI_mismatch_status: "not_assessed",
+      intervention_sequence: [],
+      contraindications,
+      cautions,
+      rules
+    };
+  }
+
+  const neurogenicSignals = [
+    input.claudication_type === "neurogenic",
+    input.neurogenic_claudication_signs.includes("improves_with_flexion"),
+    input.neurogenic_claudication_signs.includes("bilateral_leg_symptoms"),
+    input.neurogenic_claudication_signs.includes("Du_tightness"),
+    input.neurogenic_claudication_signs.includes("symptom_modifiable_by_posture_breath_emotion"),
+    input.EZ_field_collapse_signs.includes("Du_meridian_tightness"),
+    input.EZ_field_collapse_signs.includes("posture_breath_modifiable_symptoms")
+  ].filter(Boolean).length;
+  const vascularSignals = [
+    input.claudication_type === "vascular",
+    input.vascular_claudication_signs.includes("calf_thigh_buttock_cramping"),
+    input.vascular_claudication_signs.includes("predictable_walking_distance"),
+    input.vascular_claudication_signs.includes("resolves_quickly_with_rest"),
+    input.vascular_claudication_signs.includes("atherosclerosis_endothelial_signs")
+  ].filter(Boolean).length;
+
+  let classifier = "mixed";
+  let patternName = "";
+  if (input.claudication_type === "mixed" || (neurogenicSignals > 0 && vascularSignals > 0)) {
+    classifier = "mixed";
+    patternName = "neurogenic_claudication_spinal_EZ_collapse";
+  } else if (vascularSignals > 0) {
+    classifier = "vascular";
+    patternName = "vascular_claudication_peripheral_EZ_collapse";
+    rules.push(triggeredBatch9Rule("R_B2_023", "predictable cramping distance and quick rest relief"));
+  } else if (neurogenicSignals > 0) {
+    classifier = "neurogenic";
+    patternName = "neurogenic_claudication_spinal_EZ_collapse";
+  }
+
+  if (input.neurogenic_claudication_signs.includes("improves_with_flexion")) {
+    rules.push(triggeredBatch9Rule("R_B2_021", "upright worse / flexion better"));
+  }
+  if (
+    input.EZ_field_collapse_signs.includes("cold_lower_limbs")
+    && input.EZ_field_collapse_signs.includes("mental_overthinking")
+    && input.EZ_field_collapse_signs.includes("Du_meridian_tightness")
+  ) {
+    rules.push(triggeredBatch9Rule("R_B2_022", "cold lower limbs + overthinking + Du tightness"));
+  }
+
+  let mismatch = "not_flagged";
+  if (input.MRI_structural_severity === "severe_stenosis_no_symptoms") {
+    mismatch = "severe_imaging_mild_symptoms";
+    rules.push(triggeredBatch9Rule("R_B2_019", "severe stenosis but mild/no symptoms"));
+    cautions.push("MRI severity does not always equal symptom severity; do not over-treat structurally when the fascia-EZ field appears intact.");
+  }
+  if (input.MRI_structural_severity === "mild_stenosis_severe_symptoms") {
+    mismatch = "mild_imaging_severe_symptoms";
+    rules.push(triggeredBatch9Rule("R_B2_020", "mild stenosis but debilitating symptoms"));
+    cautions.push("Mild imaging with severe symptoms suggests field-collapse logic; prioritise EZ rehydration and spinal fascia restoration.");
+  }
+
+  const sequence = classifier === "vascular"
+    ? ["blood-EZ field restoration", "gentle walking support", "endothelial/capillary support"]
+    : ["EZ rehydration", "spinal fascia restoration", "flexion-based positioning", "sacral field opening"];
+
+  return {
+    active,
+    classifier,
+    pattern: patternName,
+    MRI_mismatch_status: mismatch,
+    intervention_sequence: sequence,
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    rules: uniqueRules(rules)
+  };
+}
+
+function evaluateMechanicalBackPain(input) {
+  const rules = [];
+  const active = Boolean(input.NSMBP_features.length);
+  if (!active) {
+    return {
+      active: false,
+      pattern: "",
+      intervention_sequence: [],
+      rules
+    };
+  }
+  const coreSigns = ["imaging_mismatch", "post_acute_persistence", "shifting_pain", "non_dermatomal_radiation", "emotional_overlay"];
+  if (coreSigns.some((item) => input.NSMBP_features.includes(item))) {
+    rules.push(triggeredBatch9Rule("R_B2_024", "non-specific back pain features present"));
+  }
+  if (input.NSMBP_features.includes("morning_stiffness_fascia")) {
+    rules.push(triggeredBatch9Rule("R_B2_025", "morning stiffness / fascia slow rehydration"));
+  }
+  return {
+    active,
+    pattern: "non_specific_mechanical_back_pain_du_meridian_stagnation",
+    intervention_sequence: [
+      "move Qi / relieve swelling layer",
+      "ligament/fascia repair layer",
+      "calm Du Mai layer",
+      "acupuncture/device/lifestyle support"
+    ],
+    rules: uniqueRules(rules)
+  };
+}
+
+function batch9InterventionSequence(patternName) {
+  if (!patternName) return [];
+  const source = batch9Pattern(patternName);
+  const interventions = source.interventions || {};
+  const steps = [];
+  if (Array.isArray(interventions.herbs)) {
+    steps.push({
+      pattern: patternName,
+      items: interventions.herbs.map((item) => item.name),
+      device: interventions.device || "",
+      sequence_note: interventions.preparation || interventions.principle || ""
+    });
+  }
+  Object.entries(interventions).forEach(([key, value]) => {
+    if (!value || key === "herbs") return;
+    if (Array.isArray(value)) {
+      steps.push({
+        pattern: patternName,
+        step: key,
+        items: value.map((item) => item.name || item),
+        sequence_note: ""
+      });
+    } else if (Array.isArray(value.herbs)) {
+      steps.push({
+        pattern: patternName,
+        step: key,
+        items: value.herbs.map((item) => item.name),
+        sequence_note: value.goal || value.water || value.device || ""
+      });
+    } else if (Array.isArray(value.composition)) {
+      steps.push({
+        pattern: patternName,
+        step: key,
+        items: value.composition.map((item) => item.herb),
+        sequence_note: value.goal || value.description || ""
+      });
+    }
+  });
+  return steps;
+}
+
+function evaluateBatch9(input, stopped, batch8) {
+  const empty = {
+    active: false,
+    primary_domain: "not_evaluated",
+    detected_domains: [],
+    matched_patterns: [],
+    neuropathy: {
+      active: false,
+      screening_flow: batch9Data.screening_flow,
+      scores: {},
+      percentages: {},
+      all_three_present: false,
+      dominant_mode: "not_evaluated",
+      secondary_mode: "not_evaluated",
+      dominant_pattern: "",
+      secondary_pattern: "",
+      strategy: "",
+      reassessment_timing: "10-21 days",
+      contraindications: [],
+      cautions: [],
+      rules: []
+    },
+    joint_classifier: { active: false, classifier: "not_evaluated", pattern: "", intervention_sequence: [], contraindications: [], cautions: [], rules: [] },
+    pelvic_shaoyin: { active: false, pattern: "", vertical_dissociation_status: "not_evaluated", shaoyin_sink_reboot_formula: null, intervention_sequence: [], contraindications: [], cautions: [], rules: [] },
+    claudication: { active: false, classifier: "not_evaluated", pattern: "", MRI_mismatch_status: "not_evaluated", intervention_sequence: [], contraindications: [], cautions: [], rules: [] },
+    mechanical_back_pain: { active: false, pattern: "", intervention_sequence: [], rules: [] },
+    herb_library: batch9HerbLibrary.entries,
+    field_medicine_concepts: batch9FieldMedicineConcepts.entries,
+    intervention_hierarchy: [],
+    what_to_avoid_now: [],
+    reassessment_timing: "10-21 days",
+    contraindications: [],
+    cautions: [],
+    rules_triggered_by_id: []
+  };
+  if (stopped) return empty;
+
+  const neuropathy = scoreNeuropathyFailureModes(input);
+  const joint = classifyBatch9Joint(input, batch8);
+  const pelvic = evaluatePelvicShaoyin(input);
+  const claudication = differentiateClaudication(input);
+  const backPain = evaluateMechanicalBackPain(input);
+  const modules = [
+    ["neuropathy", neuropathy, neuropathy.dominant_pattern],
+    ["joint", joint, joint.pattern],
+    ["pelvic", pelvic, pelvic.pattern],
+    ["claudication", claudication, claudication.pattern],
+    ["back_pain", backPain, backPain.pattern]
+  ];
+  const activeModules = modules.filter(([, module]) => module.active);
+  const matchedPatterns = [...new Set(activeModules.map(([, , patternName]) => patternName).filter(Boolean))];
+  const rules = uniqueRules(activeModules.flatMap(([, module]) => module.rules || []));
+  const contraindications = [
+    ...neuropathy.contraindications,
+    ...joint.contraindications,
+    ...pelvic.contraindications,
+    ...claudication.contraindications
+  ];
+  const cautions = [
+    ...neuropathy.cautions,
+    ...joint.cautions,
+    ...pelvic.cautions,
+    ...claudication.cautions
+  ];
+  const whatToAvoid = [
+    ...contraindications,
+    ...(neuropathy.active ? ["stacking multiple adaptogens", "strong stimulants", "aggressive detox/cooling logic"] : []),
+    ...(joint.classifier === "RA_yang_joint_inflammatory" ? ["Collagen during active inflammation", "joint stimulation during active heat"] : []),
+    ...(pelvic.active ? ["local-only pelvic interpretation"] : []),
+    ...(claudication.active ? ["assuming MRI severity alone explains symptoms"] : [])
+  ];
+  const hierarchy = [
+    ...matchedPatterns.flatMap(batch9InterventionSequence),
+    ...(joint.active ? [{ pattern: joint.pattern || "joint_classifier", items: joint.intervention_sequence, sequence_note: joint.phase_sequence_source }] : []),
+    ...(pelvic.active ? [{ pattern: pelvic.pattern, items: pelvic.intervention_sequence, sequence_note: "Pelvic pain is not only local - check the vertical axis." }] : []),
+    ...(claudication.active ? [{ pattern: claudication.pattern, items: claudication.intervention_sequence, sequence_note: claudication.MRI_mismatch_status }] : []),
+    ...(backPain.active ? [{ pattern: backPain.pattern, items: backPain.intervention_sequence, sequence_note: "Du meridian stagnation model" }] : [])
+  ];
+
+  return {
+    active: activeModules.length > 0,
+    primary_domain: activeModules[0]?.[0] || "not_assessed",
+    detected_domains: activeModules.map(([domain]) => domain),
+    matched_patterns: matchedPatterns,
+    neuropathy,
+    joint_classifier: joint,
+    pelvic_shaoyin: pelvic,
+    claudication,
+    mechanical_back_pain: backPain,
+    herb_library: batch9HerbLibrary.entries,
+    field_medicine_concepts: batch9FieldMedicineConcepts.entries,
+    intervention_hierarchy: hierarchy,
+    what_to_avoid_now: [...new Set(whatToAvoid)],
+    reassessment_timing: "10-21 days",
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    rules_triggered_by_id: rules
+  };
+}
+
 function patientOutput({
   stopped,
   stop,
@@ -1357,7 +2011,8 @@ function patientOutput({
   phase,
   berberine,
   laser,
-  batch8
+  batch8,
+  batch9
 }) {
   if (stopped) {
     return {
@@ -1374,9 +2029,12 @@ function patientOutput({
     };
   }
 
-  const label = PATIENT_LABELS[matchingPattern] || PATIENT_LABELS[dominantPattern] || "Headache terrain pattern";
+  const batch9Label = PATIENT_LABELS[batch9?.matched_patterns?.[0]];
+  const label = batch9Label || PATIENT_LABELS[matchingPattern] || PATIENT_LABELS[dominantPattern] || "Pain terrain pattern";
   const support = [];
-  support.push(`Current phase: ${phase.name.replace(/_/g, " ")} - ${phase.goal.replace(/_/g, " ")}.`);
+  if (!batch9?.active) {
+    support.push(`Current phase: ${phase.name.replace(/_/g, " ")} - ${phase.goal.replace(/_/g, " ")}.`);
+  }
   const batch8FirstSequence = (batch8?.intervention_sequence || []).find((step) => (step.items || []).length);
   if (batch8?.matching_pattern && batch8FirstSequence) {
     support.push(`Batch 8 sequence focus: ${batch8FirstSequence.items.join(", ")}.`);
@@ -1391,6 +2049,7 @@ function patientOutput({
     || batch8?.cgrp_support?.active
     || (batch8?.medication_capacity?.active && !batch8.medication_capacity.can_process_load)
     || batch8?.joint_phase_logic?.phase === "inflammatory_edge"
+    || batch9?.active
   );
   if (laser.status !== "defer" && !batch8BlocksEarlyLaser) {
     support.push(`Laser layer logic: ${laser.recommendation}`);
@@ -1422,10 +2081,27 @@ function patientOutput({
   if (batch8?.medication_capacity?.active) {
     support.push(`System capacity check: ${batch8.medication_capacity.system_capacity_question}`);
   }
+  if (batch9?.neuropathy?.active) {
+    support.push(`Neuropathy failure-mode profile: ${batch9.neuropathy.dominant_mode.replace(/_/g, " ")} is treated first, then re-weighted at ${batch9.neuropathy.reassessment_timing}.`);
+  }
+  if (batch9?.joint_classifier?.active) {
+    support.push(`Joint classifier: ${batch9.joint_classifier.classifier.replace(/_/g, " ")}. Never build structure into active inflammation.`);
+  }
+  if (batch9?.pelvic_shaoyin?.active) {
+    support.push("Pelvic pain is not only local - this screen checks the vertical cold-heat / Shaoyin axis before local-only support.");
+  }
+  if (batch9?.claudication?.active) {
+    support.push(`Claudication triage: ${batch9.claudication.classifier.replace(/_/g, " ")} pattern. MRI severity does not always equal symptom severity.`);
+  }
+  if (batch9?.mechanical_back_pain?.active) {
+    support.push("Back-pain layer: non-specific mechanical pain is interpreted through Du meridian stagnation and fascia/EZ rehydration logic when imaging and symptoms mismatch.");
+  }
 
   return {
     title: label,
-    summary: "This pattern may reflect a headache terrain where nerve, fascia, gut, vessel, and energy-recovery signals overlap. This is an educational pattern-recognition tool, not a medical diagnosis.",
+    summary: batch9?.active
+      ? "This pattern may reflect a pain terrain where nerve, fascia, circulation, energy recovery, structural load, and vertical regulation signals overlap. This is an educational pattern-recognition tool, not a medical diagnosis."
+      : "This pattern may reflect a headache terrain where nerve, fascia, gut, vessel, and energy-recovery signals overlap. This is an educational pattern-recognition tool, not a medical diagnosis.",
     support,
     avoid: safety.contraindications,
     safety_notes: [
@@ -1459,11 +2135,20 @@ function evaluateHeadache(inputPayload = {}) {
   const progression = progressionModel(input, layer);
   const safety = applyRules(input, scores, membrane, input.internal_audit, currentPhase, berberine);
   const batch8 = evaluateBatch8(input, Boolean(stop));
+  const batch9 = evaluateBatch9(input, Boolean(stop), batch8);
   safety.contraindications.push(...batch8.contraindications);
   safety.cautions.push(...batch8.cautions);
   safety.drugTerrainConflicts.push(...batch8.drug_terrain_conflicts);
+  safety.contraindications.push(...batch9.contraindications);
+  safety.cautions.push(...batch9.cautions);
   if (input.internal_audit) {
     safety.ruleTrace.push(...batch8.rules_triggered_by_id.map((rule) => ({
+      id: rule.id,
+      condition: rule.condition,
+      action: rule.action,
+      reason: rule.reason
+    })));
+    safety.ruleTrace.push(...batch9.rules_triggered_by_id.map((rule) => ({
       id: rule.id,
       condition: rule.condition,
       action: rule.action,
@@ -1542,7 +2227,7 @@ function evaluateHeadache(inputPayload = {}) {
 
   return {
     engine: "headache_migraine_pattern_engine",
-    source: ["headacheEngine.batch6.json", "avicenna_engine_batch7.json", "avicenna_engine_batch8.json"],
+    source: ["headacheEngine.batch6.json", "avicenna_engine_batch7.json", "avicenna_engine_batch8.json", "avicenna_engine_batch9.json"],
     stopped: Boolean(stop),
     stop,
     axis_scores: scores,
@@ -1588,7 +2273,19 @@ function evaluateHeadache(inputPayload = {}) {
     medication_capacity: batch8.medication_capacity,
     cervicogenic_protocol: batch8.cervicogenic_protocol,
     batch8_intervention_sequence: stop ? [] : batch8.intervention_sequence,
-    rules_triggered_by_id: batch8.rules_triggered_by_id,
+    batch9_pain_extension: batch9,
+    batch9_detected_domains: batch9.detected_domains,
+    batch9_matched_patterns: batch9.matched_patterns,
+    batch9_neuropathy: batch9.neuropathy,
+    batch9_joint_classifier: batch9.joint_classifier,
+    batch9_pelvic_shaoyin: batch9.pelvic_shaoyin,
+    batch9_claudication: batch9.claudication,
+    batch9_mechanical_back_pain: batch9.mechanical_back_pain,
+    batch9_intervention_hierarchy: stop ? [] : batch9.intervention_hierarchy,
+    batch9_what_to_avoid_now: batch9.what_to_avoid_now,
+    batch8_rules_triggered_by_id: batch8.rules_triggered_by_id,
+    batch9_rules_triggered_by_id: batch9.rules_triggered_by_id,
+    rules_triggered_by_id: uniqueRules([...batch8.rules_triggered_by_id, ...batch9.rules_triggered_by_id]),
     intervention_hierarchy: hierarchy,
     contraindications: safety.contraindications,
     drug_terrain_conflicts: safety.drugTerrainConflicts,
@@ -1607,7 +2304,8 @@ function evaluateHeadache(inputPayload = {}) {
       phase,
       berberine,
       laser,
-      batch8
+      batch8,
+      batch9
     }),
     clinician: {
       axis_scores: scores,
@@ -1627,7 +2325,22 @@ function evaluateHeadache(inputPayload = {}) {
       medication_exhaustion_state: batch8.medication_capacity,
       cervicogenic_protocol: batch8.cervicogenic_protocol,
       batch8_intervention_sequence: stop ? [] : batch8.intervention_sequence,
-      rules_triggered_by_id: batch8.rules_triggered_by_id,
+      batch9_detected_domains: batch9.detected_domains,
+      batch9_matched_patterns: batch9.matched_patterns,
+      neuropathy_failure_mode_scores: batch9.neuropathy.scores,
+      neuropathy_failure_mode_percentages: batch9.neuropathy.percentages,
+      OA_RA_joint_classifier: batch9.joint_classifier,
+      pelvic_vertical_dissociation: batch9.pelvic_shaoyin,
+      claudication_differentiation: batch9.claudication,
+      mechanical_back_pain_du_meridian: batch9.mechanical_back_pain,
+      batch9_intervention_hierarchy: stop ? [] : batch9.intervention_hierarchy,
+      batch9_what_to_avoid_now: batch9.what_to_avoid_now,
+      batch9_reassessment_timing: batch9.reassessment_timing,
+      batch9_field_medicine_concepts: batch9.field_medicine_concepts,
+      batch9_herb_library: batch9.herb_library,
+      batch8_rules_triggered_by_id: batch8.rules_triggered_by_id,
+      batch9_rules_triggered_by_id: batch9.rules_triggered_by_id,
+      rules_triggered_by_id: uniqueRules([...batch8.rules_triggered_by_id, ...batch9.rules_triggered_by_id]),
       embryological_layer: meta.embryological_layer,
       tcm_channel: meta.tcm_channel,
       intervention_hierarchy: hierarchy,
@@ -1641,10 +2354,14 @@ function evaluateHeadache(inputPayload = {}) {
       rule_trace: safety.ruleTrace
     },
     output_contract: headacheData.output_screens,
-    notes: [...headacheData.notes, ...batch7Data.notes, ...CORE_PHRASES],
+    notes: [...headacheData.notes, ...batch7Data.notes, ...batch9Data.notes, ...CORE_PHRASES],
     batch7_patterns: batch7Data.patterns,
     batch8_patterns: batch8Patterns,
-    batch8_decision_axes: batch8DecisionAxes
+    batch8_decision_axes: batch8DecisionAxes,
+    batch9_patterns: batch9Patterns,
+    batch9_screening_flow: batch9Data.screening_flow,
+    batch9_herb_library: batch9HerbLibrary.entries,
+    batch9_field_medicine_concepts: batch9FieldMedicineConcepts.entries
   };
 }
 
@@ -1654,5 +2371,6 @@ module.exports = {
   headacheData,
   batch7Data,
   batch8Data,
+  batch9Data,
   AXES
 };
