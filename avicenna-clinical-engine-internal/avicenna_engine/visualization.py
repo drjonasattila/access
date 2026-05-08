@@ -15,4 +15,6 @@ class VisualizationSpec:
             "five_element_node_panel_data": self.kb.five_element_node_panel_data,
             "metabolic_rhythm_card": self.kb.metabolic_rhythm_card,
             "frontend_patient_language": self.kb.frontend_patient_language,
+            "segmental_organ_map": self.kb.segmental_organ_map,
+            "degenerative_progression_model": self.kb.degenerative_progression_model,
         }

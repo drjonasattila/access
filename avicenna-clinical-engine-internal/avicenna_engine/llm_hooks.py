@@ -20,6 +20,11 @@ LLM_CASE_EXTRACTION_SCHEMA: dict[str, Any] = {
         "response_to_cold": "better, worse, neutral, unknown",
         "tongue_coating": "white, yellow, greasy, peeled, unknown",
         "stasis_confidence": "low, medium, high",
+        "spinal_level": "C5_T2, T4_T6, T7_T10, L1_L3, or specific level",
+        "organ_resonance": "lung, heart_pericardium, liver_gallbladder, kidney, or unknown",
+        "degenerative_stage": "early, intermediate, late, end_stage, or unknown",
+        "ren_mai_tone": "low, normal, unknown",
+        "movement_effect_on_pain": "extension_worse, rotation_helpful, warmth_helpful, unknown",
     },
     "labs": {
         "CRP": "numeric or elevated/normal",
@@ -47,6 +52,8 @@ LLM_CASE_EXTRACTION_SCHEMA: dict[str, Any] = {
         "current_medications": ["opioid, ketamine, gabapentin, pregabalin, NSAID, steroid, etc."],
         "tens_response": "helps_only_while_on, durable_relief, worsens, unknown",
         "medication_exit_trigger_count": "integer count of medication-transition warning signals",
+        "red_flag_present": "boolean; spinal and urgent medical red flags must be preserved",
+        "pbm_available": "boolean",
     },
 }
 
@@ -194,6 +201,49 @@ def build_llm_context(result: EngineResult) -> dict[str, Any]:
             "success_metrics": result.stabilization.success_metrics,
             "suppression_warnings": result.stabilization.suppression_warnings,
             "conceptual_cautions": result.stabilization.conceptual_cautions,
+        },
+        "spinal": {
+            "active": result.spinal.active,
+            "red_flags": result.spinal.red_flags,
+            "referral_required": result.spinal.referral_required,
+            "probable_patterns": result.spinal.probable_patterns,
+            "degenerative_stage": (
+                {
+                    "stage": result.spinal.degenerative_stage.stage,
+                    "pattern": result.spinal.degenerative_stage.pattern,
+                    "tissue": result.spinal.degenerative_stage.tissue,
+                    "interpretation": result.spinal.degenerative_stage.interpretation,
+                    "action": result.spinal.degenerative_stage.action,
+                    "confidence": result.spinal.degenerative_stage.confidence,
+                }
+                if result.spinal.degenerative_stage
+                else None
+            ),
+            "segmental_resonance": [
+                {
+                    "level": item.level,
+                    "organ": item.organ,
+                    "emotional_load": item.emotional_load,
+                    "facet_symptom": item.facet_symptom,
+                    "confidence": item.confidence,
+                    "evidence": item.evidence,
+                }
+                for item in result.spinal.segmental_resonance
+            ],
+            "du_ren_balance": (
+                {
+                    "du_mai_state": result.spinal.du_ren_balance.du_mai_state,
+                    "ren_mai_state": result.spinal.du_ren_balance.ren_mai_state,
+                    "interpretation": result.spinal.du_ren_balance.interpretation,
+                    "anterior_chain_priority": result.spinal.du_ren_balance.anterior_chain_priority,
+                }
+                if result.spinal.du_ren_balance
+                else None
+            ),
+            "movement_guidance": result.spinal.movement_guidance,
+            "pbm_targets": result.spinal.pbm_targets,
+            "cautions": result.spinal.cautions,
+            "educational_framing": result.spinal.educational_framing,
         },
         "onboarding": [
             {

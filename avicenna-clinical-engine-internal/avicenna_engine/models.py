@@ -271,6 +271,50 @@ class StabilizationPlan:
 
 
 @dataclass
+class SegmentalResonance:
+    level: str
+    organ: str
+    emotional_load: str
+    facet_symptom: str
+    confidence: float
+    evidence: list[str] = field(default_factory=list)
+
+
+@dataclass
+class DegenerativeStage:
+    stage: str
+    pattern: str
+    tissue: str
+    interpretation: str
+    action: str = ""
+    confidence: float = 0.0
+
+
+@dataclass
+class DuRenBalance:
+    du_mai_state: str
+    ren_mai_state: str
+    interpretation: str
+    anterior_chain_priority: bool = False
+
+
+@dataclass
+class SpinalPlan:
+    active: bool = False
+    red_flags: list[str] = field(default_factory=list)
+    referral_required: bool = False
+    probable_patterns: list[str] = field(default_factory=list)
+    degenerative_stage: DegenerativeStage | None = None
+    segmental_resonance: list[SegmentalResonance] = field(default_factory=list)
+    du_ren_balance: DuRenBalance | None = None
+    fascia_organ_model: JsonDict = field(default_factory=dict)
+    movement_guidance: list[str] = field(default_factory=list)
+    pbm_targets: list[str] = field(default_factory=list)
+    cautions: list[str] = field(default_factory=list)
+    educational_framing: str = ""
+
+
+@dataclass
 class EngineResult:
     safety: SafetyDecision
     patterns: list[PatternScore]
@@ -281,6 +325,7 @@ class EngineResult:
     restoration: RestorationPlan
     onboarding: list[OnboardingPath]
     stabilization: StabilizationPlan
+    spinal: SpinalPlan
     axis_scores: list[AxisScore]
     interventions: list[InterventionCandidate]
     llm_context: JsonDict

@@ -44,6 +44,10 @@ class KnowledgeBase:
         self.mitochondrial_field_model = dict(payload.get("mitochondrial_field_model") or {})
         self.dangerous_molecules_reference = dict(payload.get("dangerous_molecules_reference") or {})
         self.frontend_patient_language = dict(payload.get("frontend_patient_language") or {})
+        self.segmental_organ_map = dict(payload.get("segmental_organ_map") or {})
+        self.degenerative_progression_model = dict(payload.get("degenerative_progression_model") or {})
+        self.fascia_organ_functional_model = dict(payload.get("fascia_organ_functional_model") or {})
+        self.western_acute_treatment = dict(payload.get("western_acute_treatment") or {})
         self.notes = list(payload.get("notes") or [])
         self._pattern_markers = self._build_pattern_markers()
 
@@ -163,6 +167,10 @@ def _merge_payloads(payloads: list[tuple[Path, dict[str, Any]]]) -> dict[str, An
         "mitochondrial_field_model": {},
         "dangerous_molecules_reference": {},
         "frontend_patient_language": {},
+        "segmental_organ_map": {},
+        "degenerative_progression_model": {},
+        "fascia_organ_functional_model": {},
+        "western_acute_treatment": {},
     }
     seen_inputs: set[str] = set()
     seen_patterns: set[str] = set()
@@ -203,4 +211,12 @@ def _merge_payloads(payloads: list[tuple[Path, dict[str, Any]]]) -> dict[str, An
             merged["dangerous_molecules_reference"] = payload["dangerous_molecules_reference"]
         if payload.get("frontend_patient_language"):
             merged["frontend_patient_language"] = payload["frontend_patient_language"]
+        if payload.get("segmental_organ_map"):
+            merged["segmental_organ_map"] = payload["segmental_organ_map"]
+        if payload.get("degenerative_progression_model"):
+            merged["degenerative_progression_model"] = payload["degenerative_progression_model"]
+        if payload.get("fascia_organ_functional_model"):
+            merged["fascia_organ_functional_model"] = payload["fascia_organ_functional_model"]
+        if payload.get("western_acute_treatment"):
+            merged["western_acute_treatment"] = payload["western_acute_treatment"]
     return merged

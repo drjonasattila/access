@@ -1,0 +1,750 @@
+{
+  "batch": 2,
+  "source_files": ["facet_joint_pain_pdf.pdf"],
+  "engine_version": "Avicenna-Base44",
+
+  "input_variables": [
+    "pain_location",
+    "pain_character",
+    "pain_direction",
+    "movement_effect_on_pain",
+    "morning_stiffness",
+    "leg_radiation",
+    "imaging_result",
+    "emotional_load",
+    "cerebral_demand",
+    "sympathetic_tone",
+    "yin_deficiency",
+    "kidney_deficiency",
+    "liver_qi_stagnation",
+    "du_mai_coherence",
+    "ren_mai_tone",
+    "spinal_level",
+    "organ_segment_resonance",
+    "degenerative_stage",
+    "abdominal_wall_tone",
+    "adrenal_state",
+    "fascia_hydration"
+  ],
+
+  "patterns": [
+    {
+      "name": "du_mai_yang_overload",
+      "label": "Du Mai Congestion + Shaoyang Torque Overload (Facet Pain – Early Stage)",
+      "triggers": [
+        "chronic emotional load or stress",
+        "decision fatigue",
+        "hypervigilance or trauma processing",
+        "excessive screen exposure or rumination",
+        "sympathetic chain overdrive",
+        "segmental organ weakness at corresponding spinal level",
+        "Shaoyang axis overload (liver-gallbladder axis stress)",
+        "Du Mai upward conduction demand (cerebral overconsumption)"
+      ],
+      "symptoms": [
+        "pain localized near facet joint, often unilateral (off midline)",
+        "pain worse on extension-rotation",
+        "morning stiffness (tissue dehydration)",
+        "stiffness after prolonged sitting",
+        "pain does not radiate down leg (or minimal radiation)",
+        "sharp, deep, positional pain",
+        "band-like referred pain",
+        "paraspinal muscle spasm",
+        "pain amplified by stress or emotional load"
+      ],
+      "degenerative_stage": "early (Yang phase)",
+      "ez_water_status": "EZ collapse in facet synovial capsule",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Chai Hu (Bupleurum)",
+            "role": "Shaoyang release; micro-rotation torque reduction",
+            "notes": "Combine with Bai Shao Yao"
+          },
+          {
+            "name": "Bai Shao Yao (White Peony)",
+            "role": "Shaoyang torque release; antispasmodic; Yin nourishment",
+            "notes": "Pair with Chai Hu for facet spasm"
+          },
+          {
+            "name": "Gou Teng (Uncaria)",
+            "role": "paraspinal spasm relief; Liver Yang calming",
+            "notes": "Use when prominent spasm or heat sign"
+          },
+          {
+            "name": "Yu Jin (cold curcuma)",
+            "role": "fascial glide restoration; blood moving",
+            "notes": "Use when stagnation + heat signs co-exist"
+          },
+          {
+            "name": "Dan Shen (Salvia miltiorrhiza)",
+            "role": "microcirculation; synovial EZ-water re-expansion",
+            "notes": "Key for synovial fluid restoration"
+          },
+          {
+            "name": "Long Gu / Mu Li (Dragon Bone / Oyster Shell)",
+            "role": "field anchoring; reduce cerebral overconsumption / Yang demand",
+            "notes": "Use when hypervigilance or rumination is a trigger"
+          },
+          {
+            "name": "Suan Zao Ren + Ye Jiao Teng",
+            "role": "braking system; downregulate brain heat / Du Mai upward pull",
+            "notes": "Use with Long Gu/Mu Li for cerebral Yang excess"
+          },
+          {
+            "name": "Xiao Chai Hu Tang (formula)",
+            "role": "Shaoyang congestion pattern; facet congestion mimicry",
+            "notes": "Use derivative adapted to presentation"
+          },
+          {
+            "name": "Du Huo Ji Sheng Tang (formula)",
+            "role": "Taiyang-Shaoyin transition support; low back and facet pain",
+            "notes": "Combined with Liu Wei Di Huang Wan for Kidney support"
+          },
+          {
+            "name": "Liu Wei Di Huang Wan (formula)",
+            "role": "Kidney Yin replenishment; fascia hydration base",
+            "notes": "Combine with Du Huo Ji Sheng Tang"
+          },
+          {
+            "name": "Zhuang Yao Pian (formula)",
+            "role": "low back pain specific; Kidney and Du Mai support",
+            "notes": "Direct low back / lumbar facet focus"
+          },
+          {
+            "name": "Magnesium",
+            "role": "muscle relaxation; neuromodulation",
+            "notes": "Adjunct supplement"
+          },
+          {
+            "name": "Riboflavin (B2)",
+            "role": "mitochondrial support",
+            "notes": "Adjunct supplement"
+          },
+          {
+            "name": "Duolife: Aloe",
+            "role": "gut-ECM support; anti-inflammatory base",
+            "notes": "Duolife product"
+          },
+          {
+            "name": "Duolife: Chlorophyl",
+            "role": "uncertain — listed in source without elaboration",
+            "notes": "Duolife product"
+          },
+          {
+            "name": "Duolife: Vita D / Nigella",
+            "role": "membrane support; Shaoyang softening",
+            "notes": "Duolife product; same role as in CRPS I protocol"
+          },
+          {
+            "name": "Duolife: ProDeacid",
+            "role": "fascia noise unloading; metabolic noise reduction",
+            "notes": "Duolife product; consistent with Batch 1 CRPS I role"
+          },
+          {
+            "name": "Duolife: Spirulina",
+            "role": "optional: fatigue, post-viral, low resilience",
+            "notes": "Conditional add"
+          }
+        ],
+        "preparation": "formula-based oral TCM; supplement adjuncts oral",
+        "device": "PBM / laser: bladder meridian (BL) + huatuojiaji points; check upstream and downstream segmental organ dysfunction; Gua Sha or cupping over BL/GB lines; moxa Du-4, Du-14; warm compress posterior chain",
+        "acupuncture_points": ["Du-4", "Du-14", "BL line", "GB line", "SI line", "Huatuojiaji at affected segment"]
+      }
+    },
+
+    {
+      "name": "du_ren_collapse",
+      "label": "Du–Ren Biotensegrity Failure (Intermediate to Late Degeneration)",
+      "triggers": [
+        "aging with progressive Kidney Yin / Jing depletion",
+        "Liver blood deficiency causing anterior fascial slack",
+        "Ren Mai weakening (abdominal wall tone loss)",
+        "Du Mai overloading to compensate for Ren collapse",
+        "chronic emotional containment failure",
+        "adrenal Kidney Yang excess burning dry fascia"
+      ],
+      "symptoms": [
+        "spinal degeneration (facet arthropathy, disc degeneration)",
+        "abdominal wall weakness or distension",
+        "umbilical or inguinal hernia tendency",
+        "reflux",
+        "pelvic floor weakness",
+        "postural collapse (forward lean or kyphosis)",
+        "diaphragm restriction",
+        "emotional fragility or anxiety",
+        "diastasis recti"
+      ],
+      "degenerative_stage": "intermediate to late",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "He Shou Wu (Polygonum multiflorum)",
+            "role": "Liver/Kidney Blood and Essence nourishment; thickens fascia; strengthens marrow; Du-Ren bridge",
+            "notes": "Core herb for Du-Ren fascial restoration"
+          },
+          {
+            "name": "Gou Qi Zi (Lycium berry)",
+            "role": "Liver Blood + Kidney Yin; hydrates tendons; Ren tensile integrity",
+            "notes": "Essential for anterior chain hydration"
+          },
+          {
+            "name": "Sheng Di Huang (Rehmannia raw)",
+            "role": "pure Yin and fluid replenishment; rebuilds EZ-water grid for Du and Ren",
+            "notes": "Foundation Yin herb; rebuilds fascia water matrix"
+          },
+          {
+            "name": "Gu Sui Bu (Drynaria)",
+            "role": "bone focus; Kidney Yang tonification for structural repair",
+            "notes": "Bone-specific supplement"
+          },
+          {
+            "name": "Xu Duan (Dipsacus)",
+            "role": "bone and tendon continuity; Du Mai structural support",
+            "notes": "Spinal ligament and disc support"
+          },
+          {
+            "name": "Du Zhong (Eucommia)",
+            "role": "Kidney Yang; Du Mai tonification; low back strength",
+            "notes": "Key Du Mai tonic herb"
+          },
+          {
+            "name": "Wu Wei Zi (Schisandra)",
+            "role": "synovial gel stabilization; fluid consolidation",
+            "notes": "Astringent; use for synovial EZ instability"
+          },
+          {
+            "name": "Mai Men Dong (Ophiopogon)",
+            "role": "fluid repletion; Yin nourishment for joint and fascial hydration",
+            "notes": "Use when dryness and fluid depletion dominant"
+          },
+          {
+            "name": "Xuan Shen (Scrophularia)",
+            "role": "fluid repletion; Yin nourishment",
+            "notes": "Complement to Mai Men Dong"
+          }
+        ],
+        "preparation": "oral decoction or patent formula; long-term protocol",
+        "device": "moxa Du-4 (warming Kidney Yang); PBM on Du and Ren midlines; abdominal strengthening movement"
+      }
+    },
+
+    {
+      "name": "yin_structure_calcification",
+      "label": "Late Yin Collapse — Structural Calcification / Stenosis",
+      "triggers": [
+        "unresolved Du Mai Yang overload progressing to Yin structure involvement",
+        "chronic sympathetic electrical overload without Yin buffering",
+        "EZ-water collapse in disc and joint capsule",
+        "fibrous and calcified transformation of previously Yang-burned structures",
+        "Kidney Jing severe depletion"
+      ],
+      "symptoms": [
+        "osteophyte formation",
+        "facet hypertrophy",
+        "synovial cyst",
+        "disc degeneration",
+        "foraminal stenosis",
+        "central canal stenosis",
+        "cord compression symptoms",
+        "fixed deformity"
+      ],
+      "degenerative_stage": "late (Yin phase)",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "He Shou Wu",
+            "role": "Jing/marrow rebuilding",
+            "notes": "Long-term; maintenance"
+          },
+          {
+            "name": "Sheng Di Huang",
+            "role": "EZ-water matrix restoration",
+            "notes": "High dose; long-term"
+          },
+          {
+            "name": "Gu Sui Bu + Xu Duan + Du Zhong (combined)",
+            "role": "bone repair and spinal structural support",
+            "notes": "Standard bone-focus trio"
+          },
+          {
+            "name": "Dan Shen",
+            "role": "microcirculation in calcified/fibrotic zones",
+            "notes": "Prevents further stagnation"
+          }
+        ],
+        "preparation": "long-term oral protocol; decoction preferred",
+        "device": "PBM; uncertain efficacy at end-stage structural change — supportive only"
+      },
+      "notes": "Structural changes (osteophytes, stenosis) are considered Yin fossilisation of unresolved Yang turbulence. Engine should flag this stage and consider western referral."
+    },
+
+    {
+      "name": "kidney_yin_jing_deficiency",
+      "label": "Kidney Yin / Jing Deficiency (Fascia Scaffold Failure)",
+      "triggers": [
+        "aging",
+        "chronic overwork",
+        "sexual excess or reproductive depletion",
+        "chronic stress with adrenal Kidney Yang excess depleting Yin",
+        "poor collagen and ECM remodelling",
+        "genetic constitution weakness"
+      ],
+      "symptoms": [
+        "hypermobile or lax fascia",
+        "herniation tendency (umbilical, inguinal)",
+        "prolapse",
+        "bone fragility",
+        "poor repair and recovery",
+        "dryness (tendons, joints)",
+        "deep fatigue",
+        "low back weakness without acute pain"
+      ],
+      "field_interpretation": "Kidney Yin/Jing = DNA blueprint + collagen architecture + EZ-water lattice. Depleted Jing = compromised collagen coding and fascial water matrix.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Sheng Di Huang",
+            "role": "pure Yin and EZ-water lattice replenishment",
+            "notes": "Primary Yin herb"
+          },
+          {
+            "name": "Gou Qi Zi",
+            "role": "Liver Blood and Kidney Yin",
+            "notes": "Tendon and fascia hydration"
+          },
+          {
+            "name": "He Shou Wu",
+            "role": "Liver/Kidney Essence; fascia thickening",
+            "notes": "Long-term use"
+          },
+          {
+            "name": "Liu Wei Di Huang Wan (formula)",
+            "role": "classical Kidney Yin formula",
+            "notes": "Base formula; modify as needed"
+          }
+        ],
+        "preparation": "oral long-term; decoction or patent",
+        "device": "hydration and electrolyte support; gentle movement; PBM for EZ-water restoration"
+      }
+    },
+
+    {
+      "name": "liver_qi_fascia_tension",
+      "label": "Liver Qi Stagnation / Liver Yang Rising — Fascial Electrotension Excess",
+      "triggers": [
+        "emotional pressure, resentment, decision fatigue",
+        "Liver Yang oscillation in segmental arterial system",
+        "Shaoyang overload failing to redistribute posterior Taiyang charge",
+        "Liver electrifying dry fascia (Kidney Yin insufficient to buffer)"
+      ],
+      "symptoms": [
+        "fascial spasm",
+        "frozen or rigid joints",
+        "burning sensation in paraspinal muscles",
+        "flank or rib-radiating pain (T7-T10 level)",
+        "headache with posterior chain tension",
+        "worsening of symptoms with stress"
+      ],
+      "field_interpretation": "Liver = electrical tension conductor through fascia. Excess Liver current in dry/Yin-deficient fascia = burn pattern. Without Kidney the fascia is tense but brittle.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Chai Hu",
+            "role": "Shaoyang release; Liver Qi movement",
+            "notes": "Primary Liver Qi herb"
+          },
+          {
+            "name": "Bai Shao Yao",
+            "role": "Liver Yin nourishment; antispasmodic",
+            "notes": "Balance Chai Hu; soften tension"
+          },
+          {
+            "name": "Gou Teng",
+            "role": "Liver Yang calming; paraspinal spasm",
+            "notes": "Use when heat and spasm prominent"
+          },
+          {
+            "name": "Yu Jin",
+            "role": "fascial glide; blood moving; cold curcuma direction",
+            "notes": "Stagnation + heat pattern"
+          },
+          {
+            "name": "Long Gu / Mu Li",
+            "role": "Liver Yang anchoring",
+            "notes": "Use when rising Yang or hypervigilance triggers symptoms"
+          }
+        ],
+        "preparation": "oral decoction or formula",
+        "device": "Gua Sha over BL/GB lines; gentle rotational mobilisation; cupping"
+      }
+    },
+
+    {
+      "name": "sympathetic_overdrive_spinal",
+      "label": "Sympathetic Chain Overdrive — Du Mai Supercharger Dysregulation",
+      "triggers": [
+        "chronic unresolved emotional load",
+        "trauma imprint in paraspinal fascia",
+        "prolonged fight-flight activation",
+        "prevertebral fascia tightening from sympathetic chain surge",
+        "high cerebral metabolic demand pulling Yang upward through Du Mai"
+      ],
+      "symptoms": [
+        "paraspinal myofascial contraction",
+        "facet joint locking",
+        "medial branch REZ-like irritation",
+        "band-like radiation mimicking radicular pain",
+        "CRPS-like sympathetically maintained pain",
+        "abdominal pain (unstable Yin downstream)",
+        "symptoms worse under emotional or cognitive stress"
+      ],
+      "field_interpretation": "Sympathetic chain = high-voltage Yang current of the body; direct electrical driver of Du Mai. Chronic overdrive → facet burn → EZ collapse → fibrosis → calcification.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Long Gu / Mu Li",
+            "role": "field anchoring; sympathetic dampening",
+            "notes": "Primary for sympathetic overactivation"
+          },
+          {
+            "name": "Suan Zao Ren",
+            "role": "braking system; sedates hypervigilance",
+            "notes": "Night-time neural calming"
+          },
+          {
+            "name": "Ye Jiao Teng",
+            "role": "braking system; calms CNS excitability",
+            "notes": "Combine with Suan Zao Ren"
+          },
+          {
+            "name": "Sheng Di Huang",
+            "role": "Yin buffer to sympathetic charge",
+            "notes": "Cools and hydrates; reduces electrical turbulence"
+          }
+        ],
+        "preparation": "oral decoction",
+        "device": "PBM on huatuojiaji + BL meridian; TENS: uncertain — see Batch 1 CRPS rules; avoid overstimulation in highly sensitised states"
+      }
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "Facet joint pain (zygapophysial joint pain)",
+      "associated_patterns": ["du_mai_yang_overload", "liver_qi_fascia_tension", "sympathetic_overdrive_spinal"],
+      "notes": "Early-stage Yang joint failure. Confirmed diagnostically by medial branch block or facet injection. Imaging often inconclusive. Field interpretation: micro-torque failure of the Yang rotors of the Du Mai. Pain is somatic expression of organ-field interference at the Huatuojiaji-facet-ESP axis."
+    },
+    {
+      "diagnosis": "Facet arthropathy",
+      "associated_patterns": ["du_mai_yang_overload", "yin_structure_calcification"],
+      "notes": "Yang rotor burnout from Du Mai overload. Progressive stage after initial facet pain."
+    },
+    {
+      "diagnosis": "Degenerative disc disease",
+      "associated_patterns": ["kidney_yin_jing_deficiency", "yin_structure_calcification"],
+      "notes": "Yin-water collapse + mitochondrial insufficiency. EZ-water depletion in disc matrix."
+    },
+    {
+      "diagnosis": "Synovial cyst (spinal)",
+      "associated_patterns": ["yin_structure_calcification"],
+      "notes": "EZ water collapse → stagnant dampness encapsulation."
+    },
+    {
+      "diagnosis": "Facet hypertrophy",
+      "associated_patterns": ["yin_structure_calcification"],
+      "notes": "Yang fixation attempting to stabilise collapsing coherence."
+    },
+    {
+      "diagnosis": "Osteophyte formation (spinal)",
+      "associated_patterns": ["yin_structure_calcification"],
+      "notes": "Chronic stagnation → calcified trauma imprint. Fossilised unresolved Yang turbulence."
+    },
+    {
+      "diagnosis": "Foraminal stenosis / central canal stenosis",
+      "associated_patterns": ["yin_structure_calcification"],
+      "notes": "End-stage Yin rigidity replacing lost Yang flow. Cord compression = structural collapse. Refer / escalate."
+    },
+    {
+      "diagnosis": "Lumbar radiculopathy / root compression",
+      "associated_patterns": ["du_mai_yang_overload", "sympathetic_overdrive_spinal", "yin_structure_calcification"],
+      "notes": "Field model: radicular pain is NOT the cause of facet pain — it is the downstream effect of ignoring facet pain. Progression: facet REZ irritation → sympathetic maintained pain → nerve root hypersensitivity → structural compression."
+    },
+    {
+      "diagnosis": "Spondylosis",
+      "associated_patterns": ["yin_structure_calcification", "kidney_yin_jing_deficiency"],
+      "notes": "Red flag: exclude before integrative protocol. Also an end-stage Yin degeneration pattern."
+    },
+    {
+      "diagnosis": "Spondylolisthesis",
+      "associated_patterns": ["uncertain"],
+      "notes": "Listed as red flag. Exclude before treatment. Not mapped to a pattern in source."
+    },
+    {
+      "diagnosis": "Rheumatoid Arthritis (RA)",
+      "associated_patterns": ["liver_qi_fascia_tension", "kidney_yin_jing_deficiency"],
+      "notes": "Distinct from facet pain. RA = collapse of identity boundary + self-directed aggression. Affects finger joints (Yang terminals with Yin buffer) not facets (Yang core). Mechanism: Liver attacking fascia when Yin scaffold collapses. Requires boundary repair, agency reinstatement, parasympathetic restoration."
+    },
+    {
+      "diagnosis": "Osteoarthritis (hip and knee — Yin joints)",
+      "associated_patterns": ["kidney_yin_jing_deficiency"],
+      "notes": "Yin joints (hip, knee) in systemic inflammatory conditions. Different mechanism from facet (Yang joint) degeneration. Noted in source as comparative reference."
+    },
+    {
+      "diagnosis": "Umbilical / inguinal hernia",
+      "associated_patterns": ["du_ren_collapse", "kidney_yin_jing_deficiency"],
+      "notes": "Ren Mai slack + abdominal wall Qi deficiency. Cold fascia, diastasis recti pattern."
+    },
+    {
+      "diagnosis": "Diastasis recti",
+      "associated_patterns": ["du_ren_collapse"],
+      "notes": "Linea alba weakening from Liver blood deficiency + Ren Mai collapse."
+    },
+    {
+      "diagnosis": "Gastro-oesophageal reflux (GERD)",
+      "associated_patterns": ["du_ren_collapse"],
+      "notes": "Listed as downstream consequence of Ren collapse and diaphragm restriction."
+    },
+    {
+      "diagnosis": "Pelvic organ prolapse",
+      "associated_patterns": ["du_ren_collapse", "kidney_yin_jing_deficiency"],
+      "notes": "Ren Mai / anterior chain collapse. Pelvic floor sags with Liver blood deficiency."
+    },
+    {
+      "diagnosis": "Compression fracture (vertebral)",
+      "associated_patterns": ["uncertain"],
+      "notes": "Listed as RED FLAG. Exclude before treatment."
+    },
+    {
+      "diagnosis": "Spinal tumour / TB / trauma",
+      "associated_patterns": ["uncertain"],
+      "notes": "Listed as RED FLAGS. Exclude before treatment."
+    },
+    {
+      "diagnosis": "Sympathetically maintained pain (spinal)",
+      "associated_patterns": ["sympathetic_overdrive_spinal", "du_mai_yang_overload"],
+      "notes": "Same interference block as CRPS. Facet pain, abdominal CRPS-like symptoms, and sympathetically maintained pain are manifestations of the same Du-Huatuojiaji-sympathetic interference pattern."
+    },
+    {
+      "diagnosis": "Cervicogenic headache",
+      "associated_patterns": ["du_mai_yang_overload", "sympathetic_overdrive_spinal"],
+      "notes": "Mentioned as sharing the same interference block pattern as facet pain. C5-T2 level: lung / boundary trauma pattern."
+    },
+    {
+      "diagnosis": "Thoracic outlet syndrome",
+      "associated_patterns": ["du_mai_yang_overload", "sympathetic_overdrive_spinal"],
+      "notes": "Same unified interference model as facet pain."
+    },
+    {
+      "diagnosis": "Pudendal syndrome",
+      "associated_patterns": ["du_mai_yang_overload", "sympathetic_overdrive_spinal"],
+      "notes": "Same unified interference model — mentioned alongside facet pain and CRPS."
+    }
+  ],
+
+  "rules": [
+    {
+      "condition": "pain_location == unilateral_paraspinal AND pain_worse_on_extension_rotation == true AND leg_radiation == absent_or_minimal",
+      "action": "assign pattern = du_mai_yang_overload; consider facet joint pain diagnosis; confirm with medial branch block if available"
+    },
+    {
+      "condition": "red_flag_present (compression_fracture OR spondylolisthesis OR tumour OR TB OR trauma)",
+      "action": "REFER / ESCALATE immediately; do not proceed with Base44 integrative protocol"
+    },
+    {
+      "condition": "emotional_load == high OR cerebral_demand == high OR hypervigilance == true",
+      "action": "add Long Gu + Mu Li + Suan Zao Ren to protocol; target Du Mai upward Yang pull"
+    },
+    {
+      "condition": "spinal_level == T4_T6 AND organ_resonance == heart_pericardium",
+      "action": "flag emotional load: grief / betrayal / vigilance; thoracic facet burning pain pattern; check heart/pericardium segment upstream and downstream via PBM"
+    },
+    {
+      "condition": "spinal_level == T7_T10 AND organ_resonance == liver_gallbladder",
+      "action": "flag emotional load: decision stress / resentment; rib-radiating or flank pain pattern; add Chai Hu + Bai Shao Yao"
+    },
+    {
+      "condition": "spinal_level == L1_L3 AND organ_resonance == kidney",
+      "action": "flag emotional load: fear / survival; lumbar locking + groin radiation pattern; add Liu Wei Di Huang Wan + Du Huo Ji Sheng Tang"
+    },
+    {
+      "condition": "spinal_level == C5_T2 AND organ_resonance == lung",
+      "action": "flag emotional load: boundary trauma; cervical facet + arm radiation pattern"
+    },
+    {
+      "condition": "degenerative_stage == early AND dominant_pattern == du_mai_yang_overload",
+      "action": "use Xiao Chai Hu Tang derivative + Du Huo Ji Sheng Tang + Liu Wei Di Huang Wan; PBM bladder meridian + huatuojiaji"
+    },
+    {
+      "condition": "degenerative_stage == intermediate AND ren_mai_tone == low",
+      "action": "add He Shou Wu + Gou Qi Zi + Sheng Di Huang; address abdominal wall tone; moxa Du-4"
+    },
+    {
+      "condition": "degenerative_stage == late AND structural_changes_present (osteophyte OR stenosis OR synovial_cyst)",
+      "action": "flag: Yin fossilisation stage; bone-focus herbs (Gu Sui Bu + Xu Duan + Du Zhong); consider western referral; PBM supportive only"
+    },
+    {
+      "condition": "kidney_yin_deficiency == true",
+      "action": "add Sheng Di Huang + Gou Qi Zi + He Shou Wu; Liu Wei Di Huang Wan base formula"
+    },
+    {
+      "condition": "liver_qi_stagnation == true AND fascia_dry == true",
+      "action": "add Bai Shao Yao + Chai Hu; avoid excess Liver-moving herbs without Yin support; risk of burn pattern if Yin insufficient"
+    },
+    {
+      "condition": "sympathetic_tone == high AND paraspinal_spasm == true",
+      "action": "add Long Gu + Mu Li; PBM on huatuojiaji; Gua Sha BL/GB lines; downregulate sympathetic before direct facet treatment"
+    },
+    {
+      "condition": "synovial_EZ_collapse == suspected (stiffness on extension + morning stiffness)",
+      "action": "add Dan Shen + Wu Wei Zi + Mai Men Dong; hydration and electrolyte support; PBM local"
+    },
+    {
+      "condition": "abdominal_wall_tone == low AND ren_mai_collapse == true",
+      "action": "add He Shou Wu + Gou Qi Zi + Sheng Di Huang; treat Ren as parallel to Du; abdominal strengthening movement"
+    },
+    {
+      "condition": "pain_improves_with_warmth_and_rotation == true",
+      "action": "confirm du_mai_yang_overload pattern; add moxa Du-4; warm compress; gentle rotation exercise"
+    },
+    {
+      "condition": "pain_worse_on_extension == true",
+      "action": "confirm Yang compression pattern (facet); avoid extension-loading exercises; use flexion-biased mobilisation"
+    },
+    {
+      "condition": "pbm_available == true",
+      "action": "target: bladder meridian + huatuojiaji at affected level; check organ resonance upstream and downstream the segment; rationale = reduce muscle tension and peripheral nociceptive input"
+    },
+    {
+      "condition": "pattern == du_ren_collapse AND adrenal_excess == true",
+      "action": "flag: excess adrenal-Liver electricity with weak Kidney Yin scaffold; risk of accelerated facet burn; priority = Yin nourishment before Yang tonification"
+    },
+    {
+      "condition": "diagnosis == RA",
+      "action": "redirect to Liver-fascia-boundary protocol; do NOT use facet pain herbal protocol; RA requires boundary repair + agency reinstatement + parasympathetic restoration"
+    },
+    {
+      "condition": "frailty == true OR advanced_age == true",
+      "action": "reduce formula complexity; prioritise Kidney Yin base (Liu Wei Di Huang Wan); avoid strong Qi-moving herbs"
+    },
+    {
+      "condition": "digestive_sensitivity == true",
+      "action": "reduce bitter cold herbs (Gou Teng, Xuan Shen); lead with Gou Qi Zi + He Shou Wu; add digestive support (Aloe, ProDeacid)"
+    }
+  ],
+
+  "segmental_organ_map": {
+    "description": "Facet pain level determined by interference pattern between Du Mai flow and local organ-shu weakness. Use for PBM targeting and herbal selection.",
+    "segments": [
+      { "level": "C5-T2", "organ": "Lung", "emotional_load": "boundary trauma", "facet_symptom": "cervical facet + arm radiation" },
+      { "level": "T4-T6", "organ": "Heart / Pericardium", "emotional_load": "grief / betrayal / vigilance", "facet_symptom": "thoracic facet burning pain" },
+      { "level": "T7-T10", "organ": "Liver / Gallbladder", "emotional_load": "decision stress / resentment", "facet_symptom": "rib-radiating or flank pain" },
+      { "level": "L1-L3", "organ": "Kidney", "emotional_load": "fear / survival", "facet_symptom": "lumbar locking / groin radiation" }
+    ]
+  },
+
+  "degenerative_progression_model": {
+    "description": "Yang burns first, Yin collapses later. Strictly sequential.",
+    "stages": [
+      {
+        "stage": "1_early_yang",
+        "tissue": "Facet joint (Yang rotor)",
+        "energetic_state": "overheated, high-frequency overload",
+        "manifestation": "facet pain, paraspinal spasm",
+        "pattern": "du_mai_yang_overload"
+      },
+      {
+        "stage": "2_mid_turbulence",
+        "tissue": "Nerve REZ + sympathetic chain",
+        "energetic_state": "irritation, turbulence",
+        "manifestation": "radicular pain, band radiation",
+        "pattern": "sympathetic_overdrive_spinal"
+      },
+      {
+        "stage": "3_late_yin",
+        "tissue": "Disc, bone, ligament (Yin structures)",
+        "energetic_state": "gel collapse → fibrosis and calcification",
+        "manifestation": "osteophytes, hypertrophy, synovial cyst",
+        "pattern": "yin_structure_calcification"
+      },
+      {
+        "stage": "4_end_stage",
+        "tissue": "Canal / foramina (deep Yin)",
+        "energetic_state": "structural collapse",
+        "manifestation": "stenosis, cord compression",
+        "pattern": "yin_structure_calcification",
+        "action": "REFER"
+      }
+    ]
+  },
+
+  "fascia_organ_functional_model": {
+    "kidney_yin_jing": {
+      "function": "builds fascia scaffold",
+      "provides": ["collagen", "ground substance (GAGs)", "mineral scaffolding", "EZ-water lattice", "deep fascial continuity"],
+      "modern_equivalent": "DNA blueprint + ECM architecture + fascia hydration",
+      "failure_pattern": "collapse (hypermobility, herniation, prolapse)"
+    },
+    "kidney_yang": {
+      "function": "metabolic ignition",
+      "provides": ["baseline warmth", "fascial tone", "microcurrent"],
+      "modern_equivalent": "cortisol + adrenaline + mitochondrial ATP activation",
+      "failure_pattern": "fatigue, lax fascia, drooping tissues"
+    },
+    "liver_blood_qi": {
+      "function": "electrifies and tensions fascia",
+      "provides": ["electrical charge through blood", "myofibroblast tone", "contractile force", "piezoelectric activation", "shock distribution"],
+      "modern_equivalent": "microvascular charge distribution + piezoelectric fascia tension",
+      "failure_pattern": "burn (facet degeneration, spasm, stenosis)"
+    },
+    "adrenals": {
+      "function": "amplifier / emergency generator",
+      "provides": ["mitochondrial power for Liver conduction", "sympathetic discharge"],
+      "modern_equivalent": "adrenaline + cortisol surge",
+      "failure_pattern": "excess = overheated facets / burn; deficiency = fatigue + fascia laxity"
+    },
+    "sympathetic_chain": {
+      "function": "high-voltage Du Mai supercharger",
+      "location": "anterolateral prevertebral fascia",
+      "provides": ["emergency amplification of Yang current", "direct electrical driver of Du Mai"],
+      "failure_pattern": "overdrive = turbulence → burn → calcification → stenosis"
+    },
+    "du_mai": {
+      "function": "Yang information conductor / vertical antenna",
+      "supported_by": "Kidney Jing (structure) + Sympathetic chain (power)",
+      "failure_pattern": "conduction weakens → facets compensate → facet pain"
+    },
+    "ren_mai": {
+      "function": "Yin emotional container / anterior chain tension",
+      "supported_by": "Liver Blood (electrification) + Kidney Yin (hydration)",
+      "embryological_origin": "Liver tension through teres hepatis + falciform ligament + linea alba",
+      "failure_pattern": "abdominal slack → herniation → reflux → pelvic instability → Du overload"
+    }
+  },
+
+  "western_acute_treatment": {
+    "acute": ["Paracetamol", "NSAIDs"],
+    "diagnostic_confirmation": "medial branch block OR facet joint injection",
+    "imaging": {
+      "MRI": "soft tissue issues, joint inflammation, cartilage loss",
+      "CT": "joint structure, bone spurs",
+      "Xray": "degeneration, narrowed joint spaces, misalignment",
+      "note": "imaging often inconclusive; diagnosis primarily clinical"
+    },
+    "base44_stance": "adjunctive; not replacing western care"
+  },
+
+  "notes": [
+    "Facet pain = somatic expression of organ-field interference at Huatuojiaji-facet-ESP axis — not a purely mechanical diagnosis",
+    "Facet pain is the EARLIEST warning of Du Mai-Shaoyang turbulence; stenosis is end-stage crystallisation of unresolved interference",
+    "Radicular pain is downstream of facet pain — not its cause",
+    "Facet joints burn first because they are central, unbuffered Yang stabilisers with low Yin cooling and high sympathetic load",
+    "Finger joints (Yang terminals) do NOT burn easily because they have Yin-Yang polarity transition and abundant Yin buffer — except RA (agency collapse pattern)",
+    "Sympathetic chain on prevertebral fascia = supercharger of Du Mai; its chronic overdrive explains the full degenerative sequence",
+    "Kidney = Du Mai (posterior chain / structure); Liver = Ren Mai (anterior chain / tension) — functional reinterpretation",
+    "Embryological basis: Liver-generated tension through teres hepatis + falciform + linea alba electrically sculpted the Ren Mai",
+    "CRPS, facet pain, abdominal sympathetically maintained pain, thoracic outlet, cervicogenic headache, pudendal syndrome = same interference block pattern",
+    "PBM target for facet: bladder meridian + huatuojiaji; always check organ resonance upstream AND downstream the segment",
+    "Red flags: compression fracture, spondylosis, spondylolisthesis, tumour, TB, trauma — exclude before integrative protocol"
+  ]
+}

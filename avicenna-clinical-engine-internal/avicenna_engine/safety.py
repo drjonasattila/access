@@ -45,6 +45,18 @@ DANGEROUS_MOLECULES = ["DMSO", "EDTA", "methylene blue", "ozone", "CDS", "chlori
 GUT_RELAPSE_MARKERS = ["constipation", "bloating", "reflux", "sleep fragmentation", "emotional overload"]
 SIDE_EFFECT_MARKERS = ["fatigue", "cognitive dulling", "dose escalation", "side effects increasing"]
 RED_FLAG_MARKERS = ["rapid motor loss", "severe trophic skin changes", "suicidal ideation", "uncontrolled infection"]
+SPINAL_RED_FLAG_MARKERS = [
+    "compression fracture",
+    "tumour",
+    "tumor",
+    "tb",
+    "major trauma",
+    "progressive neurological deficit",
+    "cord compression",
+    "severe stenosis",
+    "unstable spondylolisthesis",
+    "spondylolisthesis",
+]
 
 
 class SafetyLayer:
@@ -93,6 +105,7 @@ class SafetyLayer:
         facts["active_cancer"] = facts.get("active_cancer", False) or text_contains_any(
             " ".join(case.diagnoses), ["cancer", "oncology", "malignancy"]
         )
+        facts["diagnosis_ra"] = text_contains_any(" ".join(case.diagnoses), ["rheumatoid arthritis", " ra "])
         facts["age_40_plus"] = facts.get("age_40_plus", False) or facts.get("age_40_plus_flag", False)
         facts["central_weight_gain"] = facts.get("central_weight_gain", False) or text_contains_any(text, CENTRAL_WEIGHT_MARKERS)
         facts["sleep_poor"] = facts.get("sleep_poor", False) or facts.get("sleep_fragmentation_flag", False) or text_contains_any(
@@ -143,6 +156,57 @@ class SafetyLayer:
         )
         facts["side_effects_present"] = facts.get("side_effects_present", False) or text_contains_any(text, SIDE_EFFECT_MARKERS)
         facts["red_flags_present"] = facts.get("red_flags_present", False) or text_contains_any(text, RED_FLAG_MARKERS)
+        facts["spinal_red_flags"] = _matched_markers(text, SPINAL_RED_FLAG_MARKERS)
+        facts["red_flag_present"] = facts.get("red_flag_present", False) or bool(facts["spinal_red_flags"])
+        facts["compression_fracture"] = facts.get("compression_fracture", False) or text_contains_any(text, ["compression fracture"])
+        facts["spondylolisthesis"] = facts.get("spondylolisthesis", False) or text_contains_any(text, ["spondylolisthesis"])
+        facts["tumour"] = facts.get("tumour", False) or text_contains_any(text, ["tumour", "tumor"])
+        facts["tb"] = facts.get("tb", False) or text_contains_any(text, ["tb", "tuberculosis"])
+        facts["trauma"] = facts.get("trauma", False) or text_contains_any(text, ["major trauma"])
+        facts["cord_compression"] = facts.get("cord_compression", False) or text_contains_any(text, ["cord compression"])
+        facts["severe_stenosis"] = facts.get("severe_stenosis", False) or text_contains_any(text, ["severe stenosis"])
+        facts["pain_worse_on_extension_rotation"] = facts.get("pain_worse_on_extension_rotation", False) or text_contains_any(
+            text, ["extension rotation", "extension-rotation", "worse on extension rotation"]
+        )
+        facts["pain_worse_on_extension"] = facts.get("pain_worse_on_extension", False) or text_contains_any(
+            text, ["pain worse on extension", "extension worsens"]
+        )
+        facts["pain_improves_with_warmth_and_rotation"] = facts.get("pain_improves_with_warmth_and_rotation", False) or text_contains_any(
+            text, ["warmth and gentle rotation help", "improves with warmth and rotation"]
+        )
+        facts["leg_radiation_absent_or_minimal"] = facts.get("leg_radiation_absent_or_minimal", False) or text_contains_any(
+            text, ["no leg radiation", "minimal leg radiation", "does not radiate down leg"]
+        )
+        facts["ren_mai_collapse"] = facts.get("ren_mai_collapse", False) or text_contains_any(
+            text, ["ren mai collapse", "abdominal wall weakness", "diastasis", "hernia", "reflux"]
+        )
+        facts["ren_mai_tone_low"] = facts.get("ren_mai_tone_low", False) or (
+            normalize_term(case.observations.get("ren_mai_tone") or case.flags.get("ren_mai_tone") or "") == "low"
+        )
+        facts["paraspinal_spasm"] = facts.get("paraspinal_spasm", False) or text_contains_any(text, ["paraspinal spasm"])
+        facts["synovial_ez_collapse"] = facts.get("synovial_ez_collapse", False) or (
+            facts.get("pain_worse_on_extension") and text_contains_any(text, ["morning stiffness", "stiffness"])
+        )
+        facts["fascia_dry"] = facts.get("fascia_dry", False) or text_contains_any(text, ["fascia dry", "dry fascia", "tissue dehydration"])
+        facts["structural_changes_present"] = facts.get("structural_changes_present", False) or text_contains_any(
+            text, ["osteophyte", "stenosis", "synovial cyst", "facet hypertrophy"]
+        )
+        facts["pbm_available"] = facts.get("pbm_available", False) or text_contains_any(text, ["pbm available", "laser available"])
+        facts["spinal_level"] = normalize_term(case.observations.get("spinal_level") or case.flags.get("spinal_level") or "")
+        facts["organ_resonance"] = normalize_term(
+            case.observations.get("organ_resonance")
+            or case.observations.get("organ_segment_resonance")
+            or case.flags.get("organ_resonance")
+            or case.flags.get("organ_segment_resonance")
+            or ""
+        )
+        facts["degenerative_stage"] = normalize_term(
+            case.observations.get("degenerative_stage") or case.flags.get("degenerative_stage") or ""
+        )
+        facts["abdominal_wall_tone_low"] = facts.get("abdominal_wall_tone_low", False) or (
+            normalize_term(case.observations.get("abdominal_wall_tone") or case.flags.get("abdominal_wall_tone") or "") == "low"
+        )
+        facts["adrenal_excess"] = facts.get("adrenal_excess", False) or text_contains_any(text, ["adrenal excess"])
         facts["user_searches_dangerous_molecule"] = text_contains_any(text, DANGEROUS_MOLECULES)
         facts["tens_only_while_on"] = facts.get("tens_only_while_on", False) or (
             "only" in facts["tens_response"] and "on" in facts["tens_response"]
@@ -170,6 +234,8 @@ class SafetyLayer:
         facts["dose_escalating"] = facts.get("dose_escalating", False) or text_contains_any(text, ["dose escalating", "dose escalation"])
 
         top_names = {score.name for score in patterns if score.confidence >= 0.35}
+        for name in top_names:
+            facts[f"dominant_pattern_{name}"] = True
         facts["jueyin_depletion_detected"] = "jueyin_depletion" in top_names or text_contains_any(text, ["jueyin depletion"])
         facts["mitochondrial_decoherence"] = "mitochondrial_decoherence" in top_names or text_contains_any(
             text, ["mitochondrial decoherence", "mitochondrial field collapse"]
@@ -265,6 +331,8 @@ def _evaluate_condition(condition: str, facts: dict[str, Any]) -> bool:
         return bool(facts.get("tens_only_while_on"))
     if "red_flags_present" in normal:
         return bool(facts.get("red_flags_present"))
+    if "red_flag_present" in normal:
+        return bool(facts.get("red_flag_present"))
     if "fatigue_true_and_post_viral_true_and_resilience_low" in normal:
         return bool(facts.get("fatigue") and facts.get("post_viral") and facts.get("resilience_low"))
     if "presentation_dryness_and_brittle_nails_true_and_pallor_true" in normal:
@@ -285,6 +353,49 @@ def _evaluate_condition(condition: str, facts: dict[str, Any]) -> bool:
         return bool("pregabalin" in meds)
     if "upper_heat_lower_cold_both_present" in normal:
         return bool(facts.get("upper_heat") and facts.get("lower_cold"))
+    if "pain_location_unilateral_paraspinal" in normal:
+        return bool(
+            facts.get("pain_worse_on_extension_rotation")
+            and facts.get("leg_radiation_absent_or_minimal")
+            and (
+                facts.get("pain_location_unilateral_paraspinal")
+                or text_flag(facts, "pain_location", "unilateral_paraspinal")
+            )
+        )
+    if "spinal_level_t4_t6" in normal:
+        return facts.get("spinal_level") in {"t4_t6", "t4_t5", "t5_t6"} and facts.get("organ_resonance") in {
+            "heart_pericardium",
+            "heart",
+            "pericardium",
+        }
+    if "spinal_level_t7_t10" in normal:
+        return facts.get("spinal_level") == "t7_t10" and facts.get("organ_resonance") in {"liver_gallbladder", "liver", "gallbladder"}
+    if "spinal_level_l1_l3" in normal:
+        return facts.get("spinal_level") == "l1_l3" and facts.get("organ_resonance") == "kidney"
+    if "spinal_level_c5_t2" in normal:
+        return facts.get("spinal_level") == "c5_t2" and facts.get("organ_resonance") == "lung"
+    if "degenerative_stage_early" in normal:
+        return facts.get("degenerative_stage") == "early" and facts.get("dominant_pattern_du_mai_yang_overload")
+    if "degenerative_stage_intermediate" in normal:
+        return facts.get("degenerative_stage") == "intermediate" and facts.get("ren_mai_tone_low")
+    if "degenerative_stage_late" in normal:
+        return facts.get("degenerative_stage") == "late" and facts.get("structural_changes_present")
+    if "sympathetic_tone_high_and_paraspinal_spasm_true" in normal:
+        return facts.get("sympathetic_tone_high") and facts.get("paraspinal_spasm")
+    if "synovial_ez_collapse_suspected" in normal:
+        return facts.get("synovial_ez_collapse")
+    if "abdominal_wall_tone_low_and_ren_mai_collapse_true" in normal:
+        return facts.get("abdominal_wall_tone_low") and facts.get("ren_mai_collapse")
+    if "pain_improves_with_warmth_and_rotation_true" in normal:
+        return facts.get("pain_improves_with_warmth_and_rotation")
+    if "pain_worse_on_extension_true" in normal:
+        return facts.get("pain_worse_on_extension")
+    if "pbm_available_true" in normal:
+        return facts.get("pbm_available")
+    if "pattern_du_ren_collapse_and_adrenal_excess_true" in normal:
+        return facts.get("dominant_pattern_du_ren_collapse") and facts.get("adrenal_excess")
+    if "diagnosis_ra" in normal:
+        return facts.get("diagnosis_ra", False)
     if "upper_heat_flag_true_and_lower_cold_flag_true" in normal:
         return bool(facts.get("upper_heat_flag") and facts.get("lower_cold_flag"))
     if "age_40_plus_true_and_central_weight_gain_true_and_sleep_poor_true" in normal:
@@ -387,6 +498,18 @@ def _parse_action(action: str) -> dict[str, Any]:
             out["required_framing"].append("educational_only_redirect_to_safer_support")
         if "refer_escalate_immediately" in normal:
             out["required_framing"].append("urgent_medical_escalation")
+        if "do_not_proceed_with_base44_integrative_protocol" in normal:
+            out["required_framing"].append("western_red_flag_primary")
+        if "consider_western_referral" in normal or "pbm_supportive_only" in normal:
+            out["required_framing"].append("structural_stage_supportive_only")
+        if "avoid_extension_loading_exercises" in normal:
+            out["avoid_categories"].append("extension_loading_exercises")
+        if "avoid_overpromising" in normal or "structural_changes" in normal:
+            out["cautions"].append("avoid_overpromising_reversibility")
+        if "downregulate_sympathetic_before_direct_facet_treatment" in normal:
+            out["cautions"].append("calm_sympathetic_before_direct_facet_work")
+        if "treat_ren_as_parallel_to_du" in normal:
+            out["cautions"].append("anterior_chain_restoration_required")
         if "never_abrupt" in normal or "slow_taper" in normal or "medication_exit" in normal:
             out["cautions"].append("no_abrupt_medication_discontinuation")
         if "gut_before_escalating" in normal or "gut_digestion_first" in normal:
@@ -425,6 +548,10 @@ def _severity(condition: str, action: str) -> str:
             "acute_inflammatory_flare",
             "antibiotics_primary",
             "red_flags",
+            "red_flag_present",
+            "cord_compression",
+            "severe_stenosis",
+            "compression_fracture",
             "dangerous_molecules",
             "do_not_recommend",
         )
@@ -477,3 +604,11 @@ def _current_medications(case: EngineInput) -> list[str]:
 def _count_markers(case: EngineInput, markers: list[str]) -> int:
     text = case.all_text()
     return sum(1 for marker in markers if text_contains_any(text, [marker]))
+
+
+def _matched_markers(text: str, markers: list[str]) -> list[str]:
+    return [marker for marker in markers if text_contains_any(text, [marker])]
+
+
+def text_flag(facts: dict[str, Any], key: str, expected: str) -> bool:
+    return normalize_term(str(facts.get(key, ""))) == normalize_term(expected)

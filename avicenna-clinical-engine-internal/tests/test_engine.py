@@ -187,6 +187,78 @@ class AvicennaClinicalEngineTests(unittest.TestCase):
         self.assertTrue(all(phase.status in {"deprioritized", "blocked_until_stabilized"} for phase in advanced))
         self.assertIn("digestive_flow", result.stabilization.success_metrics)
 
+    def test_batch4_spinal_red_flags_override_symbolic_reasoning(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Foraminal stenosis / central canal stenosis"],
+                "symptoms": ["severe stenosis", "cord compression", "progressive neurological deficit"],
+                "observations": {"spinal_level": "L1_L3"},
+            }
+        )
+        self.assertTrue(result.spinal.referral_required)
+        self.assertIn("severe stenosis", result.spinal.red_flags)
+        self.assertIn("western_red_flag_primary", result.safety.required_framing)
+
+    def test_batch4_early_facet_du_mai_stage_and_extension_guidance(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Facet joint pain (zygapophysial joint pain)"],
+                "symptoms": ["pain worse on extension-rotation", "no leg radiation", "morning stiffness", "paraspinal muscle spasm"],
+                "observations": {
+                    "pain_location": "unilateral_paraspinal",
+                    "degenerative_stage": "early",
+                },
+            }
+        )
+        self.assertTrue(result.spinal.active)
+        self.assertEqual(result.spinal.degenerative_stage.pattern, "du_mai_yang_overload")
+        self.assertIn("du_mai_yang_overload", result.spinal.probable_patterns)
+
+    def test_batch4_segmental_liver_resonance_guides_overlay(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "symptoms": ["rib-radiating flank pain", "decision stress", "worsening with stress"],
+                "observations": {
+                    "spinal_level": "T7_T10",
+                    "organ_resonance": "liver_gallbladder",
+                },
+            }
+        )
+        self.assertTrue(result.spinal.segmental_resonance)
+        top = result.spinal.segmental_resonance[0]
+        self.assertEqual(top.level, "T7-T10")
+        self.assertEqual(top.organ, "Liver / Gallbladder")
+        self.assertIn("T7-T10 organ resonance zone: Liver / Gallbladder", result.spinal.pbm_targets)
+
+    def test_batch4_du_ren_collapse_prioritizes_anterior_chain(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Diastasis recti", "Gastro-oesophageal reflux (GERD)"],
+                "symptoms": ["abdominal wall weakness", "reflux", "postural collapse", "hernia tendency"],
+                "observations": {
+                    "ren_mai_tone": "low",
+                    "abdominal_wall_tone": "low",
+                    "degenerative_stage": "intermediate",
+                },
+            }
+        )
+        self.assertTrue(result.spinal.du_ren_balance.anterior_chain_priority)
+        self.assertIn("Ren/anterior chain support zone", result.spinal.pbm_targets)
+        self.assertIn("anterior_chain_restoration_required", result.safety.cautions)
+
+    def test_batch4_late_calcification_is_supportive_only(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Osteophyte formation (spinal)", "Synovial cyst (spinal)"],
+                "symptoms": ["osteophyte", "synovial cyst", "facet hypertrophy"],
+                "observations": {"degenerative_stage": "late"},
+            }
+        )
+        self.assertTrue(result.spinal.active)
+        self.assertEqual(result.spinal.degenerative_stage.pattern, "yin_structure_calcification")
+        self.assertIn("late_structural_stage_supportive_only", result.spinal.cautions)
+        self.assertIn("structural_stage_supportive_only", result.safety.required_framing)
+
 
 if __name__ == "__main__":
     unittest.main()

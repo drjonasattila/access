@@ -56,6 +56,12 @@ PATTERN_AXIS_MAP = {
     "gut_relapse_driver": ["digestive_flow", "gut_ecm_axis", "flare_recurrence"],
     "mitochondrial_decoherence": ["mitochondrial_energy_state", "recovery_capacity", "coherence_model"],
     "dampness_biofilm": ["digestive_flow", "metabolite_accumulation", "gut_first_sequence"],
+    "du_mai_yang_overload": ["posterior_yang_conduction", "facet_microcirculation", "sympathetic_tone", "shaoyang_torque"],
+    "du_ren_collapse": ["anterior_chain_containment", "posterior_compensation", "abdominal_fascia_tone"],
+    "yin_structure_calcification": ["late_structural_stage", "calcification", "stenosis_risk", "supportive_only_boundary"],
+    "kidney_yin_jing_deficiency": ["fascia_scaffold", "collagen_ez_water_lattice", "repair_capacity"],
+    "liver_qi_fascia_tension": ["fascial_electrotension", "stress_load", "segmental_tension"],
+    "sympathetic_overdrive_spinal": ["sympathetic_chain", "du_mai_supercharge", "paraspinal_fascia"],
 }
 
 
@@ -75,6 +81,12 @@ DYNAMIC_RELATIONSHIPS = {
     "gut_relapse_driver": "Gut-linked relapse implies digestive flow may be a system-level coherence gate before advanced modulation.",
     "mitochondrial_decoherence": "Mitochondrial decoherence is treated as an exploratory coherence-oriented model, not established mainstream biochemistry.",
     "dampness_biofilm": "Dampness/biofilm patterns follow gut to energy to nervous-system sequencing before targeted intervention.",
+    "du_mai_yang_overload": "Early facet-type pain may represent posterior Yang conduction overload and Shaoyang torque congestion rather than purely local mechanics.",
+    "du_ren_collapse": "Du-Ren collapse suggests posterior spinal load may be compensating for reduced anterior-chain containment.",
+    "yin_structure_calcification": "Late Yin structural calcification is supportive-only terrain; red flags and Western referral boundaries become primary.",
+    "kidney_yin_jing_deficiency": "Kidney Yin/Jing deficiency is used internally as a fascia scaffold and recovery-capacity model.",
+    "liver_qi_fascia_tension": "Liver Qi fascia tension may reflect stress-amplified fascial electrotension, especially when Yin buffering is low.",
+    "sympathetic_overdrive_spinal": "Sympathetic overdrive may act as a Du Mai supercharger, increasing paraspinal tone and segmental turbulence.",
 }
 
 

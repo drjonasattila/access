@@ -60,3 +60,17 @@ batch3_case = {
 
 batch3_result = engine.evaluate(batch3_case)
 print(json.dumps(batch3_result.to_dict()["stabilization"], indent=2))
+
+batch4_case = {
+    "diagnoses": ["Facet joint pain (zygapophysial joint pain)"],
+    "symptoms": ["pain worse on extension-rotation", "no leg radiation", "morning stiffness"],
+    "observations": {
+        "pain_location": "unilateral_paraspinal",
+        "spinal_level": "T7_T10",
+        "organ_resonance": "liver_gallbladder",
+        "degenerative_stage": "early",
+    },
+}
+
+batch4_result = engine.evaluate(batch4_case)
+print(json.dumps(batch4_result.to_dict()["spinal"], indent=2))

@@ -13,6 +13,7 @@ It is not a symptom checker, diagnostic AI, or treatment recommender. It produce
 - `transitions.py` models temporal progression, root layers, compensation layers, and restoration sequencing.
 - `onboarding.py` keeps beginner metabolic rhythm pathways separate from advanced terrain reconstruction.
 - `stabilization.py` sequences intervention layers, bridge tools, medication-transition support, relapse loops, and dangerous-molecule safety redirects.
+- `spinal.py` adds spinal segment, Du-Ren, fascia-organ, degenerative staging, movement, and PBM targeting overlays with red-flag-first safety.
 - `contradictions.py` detects mixed thermal states and other terrain conflicts.
 - `terrain.py` converts scores into system-state interpretation, compensatory loops, and dynamic transitions.
 - `interventions.py` extracts herbs, devices, lifestyle, breathwork, movement, and related categories as terrain modulators, then blocks or cautions them through safety rules.
@@ -68,3 +69,15 @@ Batch 3 adds intervention sequencing without turning the engine into a treatment
 - relapse-loop interpretation such as TENS relief only while active
 - dangerous molecules handled as educational-only redirects, never recommendations
 - success metrics focused on sleep, emotional regulation, digestive flow, resilience, flare frequency, pacing tolerance, and reduced medication dependence
+
+## Batch 4 Spinal Segment Expansion
+
+Batch 4 adds a spinal reasoning overlay:
+
+- facet pain interpreted as possible Du Mai / Shaoyang / sympathetic segmental overload, not purely mechanical
+- strict degenerative staging from early Yang overload to late structural compression
+- segmental organ resonance map for C5-T2, T4-T6, T7-T10, and L1-L3
+- Du Mai posterior Yang conduction and Ren Mai anterior Yin containment logic
+- anterior-chain restoration when Ren collapse contributes to posterior spinal overload
+- PBM targeting overlays for Huatuojiaji, BL line, GB line, affected segment, and organ resonance zones
+- spinal red flags override all symbolic reasoning and require referral/escalation framing
