@@ -12,6 +12,7 @@ It is not a symptom checker, diagnostic AI, or treatment recommender. It produce
 - `graph.py` treats Five Element structures as directional systems graphs, with generating, controlling, and destroying-cycle edges.
 - `transitions.py` models temporal progression, root layers, compensation layers, and restoration sequencing.
 - `onboarding.py` keeps beginner metabolic rhythm pathways separate from advanced terrain reconstruction.
+- `stabilization.py` sequences intervention layers, bridge tools, medication-transition support, relapse loops, and dangerous-molecule safety redirects.
 - `contradictions.py` detects mixed thermal states and other terrain conflicts.
 - `terrain.py` converts scores into system-state interpretation, compensatory loops, and dynamic transitions.
 - `interventions.py` extracts herbs, devices, lifestyle, breathwork, movement, and related categories as terrain modulators, then blocks or cautions them through safety rules.
@@ -54,3 +55,16 @@ Batch 2 adds systems architecture rather than only new clinical markers:
 - metabolic rhythm onboarding as a lower-risk entry protocol
 - state transitions and restoration stages
 - UI visualization payloads kept outside clinical scoring
+
+## Batch 3 Stabilization Expansion
+
+Batch 3 adds intervention sequencing without turning the engine into a treatment recommender:
+
+- suppression-versus-resolution distinction
+- tissue-before-nerve phase blocking
+- gut-first orchestration before advanced modulation
+- TENS and laser modeled as bridge/coherence tools, not primary solutions
+- medication transition support with no abrupt-discontinuation logic
+- relapse-loop interpretation such as TENS relief only while active
+- dangerous molecules handled as educational-only redirects, never recommendations
+- success metrics focused on sleep, emotional regulation, digestive flow, resilience, flare frequency, pacing tolerance, and reduced medication dependence

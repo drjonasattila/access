@@ -12,6 +12,7 @@ from .models import EngineInput, EngineResult
 from .onboarding import OnboardingEngine
 from .safety import SafetyLayer
 from .scoring import AxisPredictionEngine, WeightedPatternEngine
+from .stabilization import StabilizationEngine
 from .terrain import interpret_terrain
 from .transitions import StateTransitionEngine
 
@@ -31,6 +32,7 @@ class AvicennaClinicalEngine:
         self.graph_engine = FiveElementGraphEngine(knowledge_base)
         self.transition_engine = StateTransitionEngine(knowledge_base)
         self.onboarding_engine = OnboardingEngine(knowledge_base)
+        self.stabilization_engine = StabilizationEngine(knowledge_base)
 
     @classmethod
     def from_json(cls, path: str | Path | None = None) -> "AvicennaClinicalEngine":
@@ -44,6 +46,7 @@ class AvicennaClinicalEngine:
         state_transitions = self.transition_engine.transitions(case, patterns)
         restoration = self.transition_engine.restoration_plan(case, patterns, state_transitions, graph, facts)
         onboarding = self.onboarding_engine.evaluate(case, patterns, facts)
+        stabilization = self.stabilization_engine.evaluate(case, patterns, safety, facts)
         contradictions = detect_contradictions(case, facts)
         terrain = interpret_terrain(case, self.kb, patterns, facts, contradictions)
         axis_scores = self.axis_engine.score(case)
@@ -58,6 +61,7 @@ class AvicennaClinicalEngine:
             state_transitions=state_transitions,
             restoration=restoration,
             onboarding=onboarding,
+            stabilization=stabilization,
             axis_scores=axis_scores,
             interventions=interventions,
             llm_context={},

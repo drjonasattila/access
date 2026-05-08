@@ -14,5 +14,5 @@ class VisualizationSpec:
             "ui_architecture_spec": self.kb.ui_architecture_spec,
             "five_element_node_panel_data": self.kb.five_element_node_panel_data,
             "metabolic_rhythm_card": self.kb.metabolic_rhythm_card,
+            "frontend_patient_language": self.kb.frontend_patient_language,
         }
-

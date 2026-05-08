@@ -38,6 +38,12 @@ class KnowledgeBase:
         self.metabolic_rhythm_card = dict(payload.get("metabolic_rhythm_card") or {})
         self.ui_architecture_spec = dict(payload.get("ui_architecture_spec") or {})
         self.ayurveda_tcm_cellular_crosswalk = dict(payload.get("ayurveda_tcm_cellular_crosswalk") or {})
+        self.western_medication_compatibility = list(payload.get("western_medication_compatibility") or [])
+        self.tens_protocol = dict(payload.get("tens_protocol") or {})
+        self.laser_protocol = dict(payload.get("laser_protocol") or {})
+        self.mitochondrial_field_model = dict(payload.get("mitochondrial_field_model") or {})
+        self.dangerous_molecules_reference = dict(payload.get("dangerous_molecules_reference") or {})
+        self.frontend_patient_language = dict(payload.get("frontend_patient_language") or {})
         self.notes = list(payload.get("notes") or [])
         self._pattern_markers = self._build_pattern_markers()
 
@@ -151,6 +157,12 @@ def _merge_payloads(payloads: list[tuple[Path, dict[str, Any]]]) -> dict[str, An
         "metabolic_rhythm_card": {},
         "ui_architecture_spec": {},
         "ayurveda_tcm_cellular_crosswalk": {},
+        "western_medication_compatibility": [],
+        "tens_protocol": {},
+        "laser_protocol": {},
+        "mitochondrial_field_model": {},
+        "dangerous_molecules_reference": {},
+        "frontend_patient_language": {},
     }
     seen_inputs: set[str] = set()
     seen_patterns: set[str] = set()
@@ -180,4 +192,15 @@ def _merge_payloads(payloads: list[tuple[Path, dict[str, Any]]]) -> dict[str, An
         if payload.get("ui_architecture_spec"):
             merged["ui_architecture_spec"] = payload["ui_architecture_spec"]
         merged["ayurveda_tcm_cellular_crosswalk"].update(payload.get("ayurveda_tcm_cellular_crosswalk") or {})
+        merged["western_medication_compatibility"].extend(payload.get("western_medication_compatibility") or [])
+        if payload.get("tens_protocol"):
+            merged["tens_protocol"] = payload["tens_protocol"]
+        if payload.get("laser_protocol"):
+            merged["laser_protocol"] = payload["laser_protocol"]
+        if payload.get("mitochondrial_field_model"):
+            merged["mitochondrial_field_model"] = payload["mitochondrial_field_model"]
+        if payload.get("dangerous_molecules_reference"):
+            merged["dangerous_molecules_reference"] = payload["dangerous_molecules_reference"]
+        if payload.get("frontend_patient_language"):
+            merged["frontend_patient_language"] = payload["frontend_patient_language"]
     return merged

@@ -1,0 +1,628 @@
+{
+  "batch": 1,
+  "source_files": ["CRPS.pdf", "cytochromes_pdf.pdf", "DMSO_card.pdf"],
+  "engine_version": "Avicenna-Base44",
+
+  "input_variables": [
+    "crps_type",
+    "dominant_layer",
+    "pain_character",
+    "nerve_injury_documented",
+    "current_medications",
+    "gut_symptoms",
+    "sleep_quality",
+    "emotional_load",
+    "fatigue_level",
+    "thermal_state",
+    "frailty",
+    "medication_exit_trigger_count",
+    "tens_response",
+    "digestive_flow",
+    "energy_availability",
+    "nervous_system_load"
+  ],
+
+  "patterns": [
+    {
+      "name": "fascia_ecm_dominant",
+      "label": "CRPS I – Fascia / ECM Dominant",
+      "triggers": [
+        "no documented nerve injury",
+        "pain character: heavy, swollen, stiff, dull",
+        "microcirculatory stagnation signs",
+        "post-trauma tissue holding",
+        "water grid fragmentation"
+      ],
+      "symptoms": [
+        "disproportional pain",
+        "colour/temperature asymmetry",
+        "swelling",
+        "allodynia",
+        "motor hesitation",
+        "stiffness",
+        "dullness",
+        "pain out of proportion to tissue findings"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "ProDeacid (Duolife)",
+            "role": "fascia noise unloading; primary ECM decompression",
+            "notes": "Core product for CRPS I; use first"
+          },
+          {
+            "name": "Fiber (Duolife)",
+            "role": "gut-ECM-autophagy grounding; reduce internal stagnation",
+            "notes": "Supports elimination; reduces dampness load"
+          },
+          {
+            "name": "RegenOil (Duolife)",
+            "role": "membrane and Shaoyang softening",
+            "notes": "Interchangeable with Vit D + Nigella if unavailable"
+          },
+          {
+            "name": "Vit D + Nigella",
+            "role": "membrane softening alternative",
+            "notes": "Use if RegenOil unavailable"
+          },
+          {
+            "name": "Spirulina (Duolife)",
+            "role": "optional: fatigue, post-viral, low resilience",
+            "notes": "Conditional add only"
+          },
+          {
+            "name": "MyBlood (Duolife)",
+            "role": "optional: dryness, brittle hair/nails, pallor",
+            "notes": "Conditional add only"
+          }
+        ],
+        "preparation": "oral supplementation; phase-based",
+        "device": "TENS: LOW frequency 2-4 Hz over fascia/muscle belly; goal = input normalisation not pain block",
+        "laser": "Target: fascia planes; use for CRPS I specifically"
+      }
+    },
+    {
+      "name": "nerve_dominant",
+      "label": "CRPS II – Nerve Dominant",
+      "triggers": [
+        "documented nerve injury (surgery, fracture with nerve involvement, EMG/sensory deficit)",
+        "pain character: burning, electric, shooting",
+        "hyperexcitable nerve signs",
+        "sympathetic overdrive",
+        "loss of signal filtering"
+      ],
+      "symptoms": [
+        "burning pain",
+        "electric/shooting pain",
+        "allodynia",
+        "hyperalgesia",
+        "autonomic dysregulation",
+        "disproportional pain"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "ProSelect (Duolife)",
+            "role": "neural noise damping; primary nerve stabiliser",
+            "notes": "Core product for CRPS II"
+          },
+          {
+            "name": "Duolife Night / Melatonin",
+            "role": "night reset; sleep-phase neural stabilisation",
+            "notes": "Important for overnight recovery"
+          },
+          {
+            "name": "RegenOil (Duolife)",
+            "role": "membrane buffering",
+            "notes": "Supports nerve membrane integrity"
+          },
+          {
+            "name": "Astaxanthin",
+            "role": "optional: oxidative sensitivity",
+            "notes": "Conditional add only"
+          },
+          {
+            "name": "Magnesium (external)",
+            "role": "optional: nerve excitability reduction",
+            "notes": "Topical or oral; conditional"
+          }
+        ],
+        "preparation": "oral supplementation; phase-based",
+        "device": "TENS: compatible; integrate with medication; laser target = DRG / nerve exits",
+        "laser": "Target: DRG / nerve exits; use for CRPS II specifically"
+      }
+    },
+    {
+      "name": "mixed_transitional",
+      "label": "Mixed / Transitional CRPS",
+      "triggers": [
+        "pain character: fluctuating, relapsing",
+        "symptoms alternate between fascia-heavy and nerve-dominant",
+        "incomplete response to single-layer treatment"
+      ],
+      "symptoms": [
+        "fluctuating pain type",
+        "relapsing course",
+        "mixed thermal signs"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Phase 1: ProDeacid + Fiber + RegenOil",
+            "role": "tissue unloading first",
+            "notes": "Duration: 2-4 weeks; do NOT add nerve modulators yet"
+          },
+          {
+            "name": "Phase 2: ProSelect + Night stabilisation",
+            "role": "nerve calming added after tissue unloaded",
+            "notes": "Add only after Phase 1 established"
+          },
+          {
+            "name": "Phase 3: lowest effective combination",
+            "role": "maintenance",
+            "notes": "Reassess dominant layer at >8 weeks"
+          }
+        ],
+        "preparation": "phased oral protocol",
+        "device": "TENS phased to match dominant layer at each phase"
+      },
+      "critical_rule": "NEVER calm the nerve before unloading the tissue"
+    },
+    {
+      "name": "gut_relapse_driver",
+      "label": "Gut-Linked CRPS Relapse",
+      "triggers": [
+        "constipation present",
+        "bloating present",
+        "reflux present",
+        "sleep fragmentation",
+        "emotional overload"
+      ],
+      "symptoms": [
+        "CRPS relapse without clear mechanical trigger",
+        "GI symptoms concurrent with pain flare"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Fiber (Duolife)",
+            "role": "gut-ECM grounding",
+            "notes": "First line for gut-linked relapse"
+          },
+          {
+            "name": "MyGastrin (Duolife)",
+            "role": "gastric support",
+            "notes": "Add if reflux or gastric symptoms present"
+          },
+          {
+            "name": "Aloe-Ginger",
+            "role": "gut motility and anti-inflammatory",
+            "notes": "Add if sluggish transit or bloating dominant"
+          }
+        ],
+        "preparation": "oral",
+        "device": "laser: back shu and huatuojiaji acupuncture points for gut-linked relapse"
+      }
+    },
+    {
+      "name": "mitochondrial_decoherence",
+      "label": "Mitochondrial Field Collapse (cytochrome model)",
+      "triggers": [
+        "chronic fatigue unresponsive to rest",
+        "post-trauma or post-viral low resilience",
+        "emotional flattening",
+        "cognitive dulling",
+        "GI motility slowing",
+        "persistent pain with poor drug response"
+      ],
+      "symptoms": [
+        "fatigue",
+        "brain fog",
+        "emotional flatness",
+        "constipation",
+        "poor recovery",
+        "pain amplification"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "ProDeacid",
+            "role": "metabolic noise reduction",
+            "notes": "Primary mitochondrial support via Base44 logic"
+          },
+          {
+            "name": "Fiber",
+            "role": "GI motility support; reduces metabolic stagnation",
+            "notes": "Both GI and mitochondrial pathway"
+          },
+          {
+            "name": "MyBlood",
+            "role": "blood quality; coldness, pallor, weakness",
+            "notes": "Conditional: cold and weak presentation"
+          },
+          {
+            "name": "Pungens-aromatic herbs (ginger, cinnamon, cardamom)",
+            "role": "functional re-tuning of biophoton emission rhythm; electron-proton transition timing",
+            "notes": "Not classical chromophores; act as functional retunors"
+          },
+          {
+            "name": "Yin-building herbs",
+            "role": "restore EZ-water lattice; membrane-field carrier medium",
+            "notes": "Required before laser or pungens herbs can work effectively"
+          }
+        ],
+        "preparation": "sequenced: Yin-building first, then pungens tuning, then laser if available",
+        "device": "laser 610nm (Summus): coherence injection not stimulation; short sessions; good wavelength"
+      }
+    },
+    {
+      "name": "dampness_biofilm",
+      "label": "Dampness / Metabolite Accumulation Pattern",
+      "triggers": [
+        "slow digestion",
+        "irregular bowel movement",
+        "bloating or heaviness after meals",
+        "low energy availability",
+        "chronic stress or unresolved emotional load",
+        "poor elimination"
+      ],
+      "symptoms": [
+        "heaviness",
+        "stagnation sensation",
+        "sluggish GI transit",
+        "fatigue",
+        "chronic symptoms without clear receptor-level diagnosis"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Garlic (Allium sativum)",
+            "role": "sulphur-mediated zeta potential improvement; vascular flow support",
+            "notes": "Safe DMSO functional analogue; mild and directional"
+          },
+          {
+            "name": "Ginger (Zingiber officinale)",
+            "role": "warming circulation; peripheral flow support; GI motility",
+            "notes": "Classic dampness-mover; safe"
+          },
+          {
+            "name": "Salvia officinalis (sage)",
+            "role": "membrane/EZ stabilisation; antioxidant",
+            "notes": "Endothelial function support"
+          },
+          {
+            "name": "Turmeric / Curcumin (Curcuma longa = Jiang Huang)",
+            "role": "vascular and metabolic support; anti-inflammatory; zeta improvement",
+            "notes": "Warm curcuma; blood sludging reduction"
+          },
+          {
+            "name": "Yu Jin (cold curcuma)",
+            "role": "blood moving; cooling variant",
+            "notes": "Use when heat signs present alongside stagnation"
+          },
+          {
+            "name": "E Zhu (Curcuma zedoaria)",
+            "role": "strong blood mover; white curcuma",
+            "notes": "Use for strong stagnation only"
+          },
+          {
+            "name": "Dan Shen (Salvia miltiorrhiza)",
+            "role": "blood flow and tissue nourishment",
+            "notes": "TCM blood stasis primary herb"
+          },
+          {
+            "name": "Fiber / Last ProFiber",
+            "role": "intestinal transit support; metabolite clearance",
+            "notes": "Foundation of dampness reduction protocol"
+          },
+          {
+            "name": "Procholterol (Duolife)",
+            "role": "lipid-surface interface optimisation",
+            "notes": "Backend: Hofmeister series logic"
+          },
+          {
+            "name": "Procardiol (Duolife)",
+            "role": "microcirculatory coherence",
+            "notes": "Marketed for cardiovascular support"
+          }
+        ],
+        "preparation": "oral; sequence: gut support first, then energy, then circulation",
+        "device": "decision tree: address gut → energy → nervous system → targeted intervention (in this order)"
+      }
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "CRPS I (Complex Regional Pain Syndrome Type I)",
+      "associated_patterns": ["fascia_ecm_dominant", "mixed_transitional", "gut_relapse_driver"],
+      "notes": "No documented nerve injury. ECM/fascia load is primary. Backend rule: unresolved trauma stored in fascia → translated into neural noise."
+    },
+    {
+      "diagnosis": "CRPS II (Complex Regional Pain Syndrome Type II)",
+      "associated_patterns": ["nerve_dominant", "mixed_transitional"],
+      "notes": "Documented nerve injury required. Hyperexcitable nerve, sympathetic overdrive. Compatible Western meds: Gabapentin, Pregabalin, Amitriptyline, Lamotrigine, Ketamine (short-term bridge)."
+    },
+    {
+      "diagnosis": "Neuropathic pain (general)",
+      "associated_patterns": ["nerve_dominant"],
+      "notes": "Burning, electric, shooting pain character. Neural signal filtering loss."
+    },
+    {
+      "diagnosis": "Fibromyalgia",
+      "associated_patterns": ["fascia_ecm_dominant", "mitochondrial_decoherence"],
+      "notes": "uncertain — implied by fascia/ECM dominant pattern and mitochondrial field collapse; not explicitly named in source"
+    },
+    {
+      "diagnosis": "Narcotic bowel syndrome / opioid-induced constipation",
+      "associated_patterns": ["gut_relapse_driver", "mitochondrial_decoherence"],
+      "notes": "GI motility = CNS motility in sensitivity. Both mitochondria-dependent. Opioids suppress limbic mitochondria → emotional flattening + GI slowing."
+    },
+    {
+      "diagnosis": "Opioid-induced paradox hyperalgesia",
+      "associated_patterns": ["nerve_dominant", "mitochondrial_decoherence"],
+      "notes": "Opiate noise suppression overwhelmed by incoming signal. Exit pathway: ProDeacid + Fiber + MyBlood. TENS: MID frequency 50-80 Hz, proximal fascia + spinal segment."
+    },
+    {
+      "diagnosis": "Post-ketamine CRPS relapse",
+      "associated_patterns": ["mixed_transitional"],
+      "notes": "Pattern: apparent improvement not maintained. Protocol: ProDeacid Phase 1 → ProSelect Phase 2. TENS: avoid overstimulation; short low-intensity only in stabilised state."
+    },
+    {
+      "diagnosis": "Epilepsy / seizure disorder",
+      "associated_patterns": ["mitochondrial_decoherence"],
+      "notes": "Carbamazepine noted as field-coherence stabiliser: slows chaotic electron/neural oscillations, increases mitochondrial time-constant. Not energy-giving but reduces fragmentation."
+    },
+    {
+      "diagnosis": "Migraine",
+      "associated_patterns": ["mitochondrial_decoherence", "nerve_dominant"],
+      "notes": "Mentioned as a condition where the cytochrome/mitochondrial field system collapses. No specific protocol extracted from source."
+    },
+    {
+      "diagnosis": "Post-stroke sequelae",
+      "associated_patterns": ["mitochondrial_decoherence"],
+      "notes": "Mentioned as condition where mitochondrial field system collapses. uncertain — no specific protocol in source."
+    },
+    {
+      "diagnosis": "Post-surgical CRPS",
+      "associated_patterns": ["fascia_ecm_dominant", "mixed_transitional"],
+      "notes": "Scar borders as laser target. CRPS with nerve injury documented → CRPS II overlay possible."
+    },
+    {
+      "diagnosis": "Chronic infection / biofilm states",
+      "associated_patterns": ["dampness_biofilm"],
+      "notes": "Reframed as low-energy adaptation, not primary pathogen attack. Strategy: restore energy + digestion + regulation → biofilm becomes unnecessary. NOT treated with oxidative agents."
+    },
+    {
+      "diagnosis": "Heavy metal burden / mineral rigidity",
+      "associated_patterns": ["dampness_biofilm"],
+      "notes": "EDTA framing: calcium/mineral rigidity as field-wedge. Safer approach: reduce exposure, support elimination (fiber, hydration), mineral rebalancing. Medical chelation only when formally indicated."
+    },
+    {
+      "diagnosis": "Fatigue / post-viral syndrome",
+      "associated_patterns": ["mitochondrial_decoherence", "fascia_ecm_dominant"],
+      "notes": "Spirulina as conditional add. Mitochondrial field collapse model applies."
+    }
+  ],
+
+  "rules": [
+    {
+      "condition": "crps_type == CRPS_I",
+      "action": "assign pattern = fascia_ecm_dominant; start ProDeacid + Fiber + RegenOil"
+    },
+    {
+      "condition": "crps_type == CRPS_II",
+      "action": "assign pattern = nerve_dominant; start ProSelect + Night + RegenOil"
+    },
+    {
+      "condition": "dominant_layer == mixed OR pain_character == fluctuating",
+      "action": "assign pattern = mixed_transitional; enforce phase sequence: tissue unload first"
+    },
+    {
+      "condition": "dominant_layer == mixed",
+      "action": "BLOCK ProSelect until ProDeacid Phase 1 complete (2-4 weeks)"
+    },
+    {
+      "condition": "gut_symptoms >= 2 (constipation, bloating, reflux, sleep fragmentation, emotional overload)",
+      "action": "add Fiber + MyGastrin + Aloe-Ginger; treat gut before escalating pain protocol"
+    },
+    {
+      "condition": "medication_exit_trigger_count >= 2",
+      "action": "initiate medication exit pathway: Week 0-2 Duolife stabilise + TENS; Week 2-4 slow taper; Week 4-8 maintenance; >8 weeks reassess dominant layer"
+    },
+    {
+      "condition": "current_medication == gabapentin OR pregabalin AND side_effects present (fatigue, cognitive dulling, dose escalation)",
+      "action": "initiate Gabapentin/Pregabalin exit; CRPS_I dominant → ProDeacid + Fiber; CRPS_II dominant → ProSelect; TENS LOW frequency 2-4 Hz over fascia"
+    },
+    {
+      "condition": "current_medication == opioid AND (paradox_hyperalgesia OR GI_slowing OR emotional_flattening)",
+      "action": "initiate opioid exit; add ProDeacid + Fiber + MyBlood; TENS MID frequency 50-80 Hz proximal fascia + spinal segment"
+    },
+    {
+      "condition": "current_medication == ketamine AND CRPS returning post-treatment",
+      "action": "initiate ketamine exit: ProDeacid Phase 1 → ProSelect Phase 2; TENS: avoid overstimulation; short low-intensity only when stabilised"
+    },
+    {
+      "condition": "current_medication == NSAID OR steroid AND inflammation reduced but CRPS persists",
+      "action": "initiate NSAID/steroid exit; add ProDeacid (HLJDT-soft direction) + RegenOil/D+Nigella"
+    },
+    {
+      "condition": "TENS helps ONLY while device is ON",
+      "action": "flag: fascia still loaded; do not escalate TENS; intensify ProDeacid + Fiber"
+    },
+    {
+      "condition": "red_flags present (rapid motor loss, severe trophic skin changes, suicidal ideation, uncontrolled infection)",
+      "action": "REFER / ESCALATE immediately; do not continue Base44 protocol as primary"
+    },
+    {
+      "condition": "fatigue == true AND post_viral == true AND resilience == low",
+      "action": "add Spirulina (optional)"
+    },
+    {
+      "condition": "presentation == dryness AND brittle_nails == true AND pallor == true",
+      "action": "add MyBlood (optional)"
+    },
+    {
+      "condition": "oxidative_sensitivity == true",
+      "action": "add Astaxanthin (optional)"
+    },
+    {
+      "condition": "mitochondrial_decoherence == true AND Yin_deficiency == true",
+      "action": "restore EZ-water lattice first (Yin-building herbs) BEFORE applying pungens herbs or laser"
+    },
+    {
+      "condition": "laser available",
+      "action": "sequence: 1. coherent light 610nm; 2. pungens-aromatic herbs; 3. Yin/EZ-water rebuild; 4. cytochrome modulation only if needed"
+    },
+    {
+      "condition": "dampness_pattern == true",
+      "action": "intervention sequence: gut/digestion first → energy availability → nervous system load → targeted intervention LAST"
+    },
+    {
+      "condition": "user searches for DMSO, EDTA, methylene blue, ozone, CDS",
+      "action": "surface educational card; identify underlying unmet need; redirect to safe functional substitute; do NOT recommend the searched substance"
+    },
+    {
+      "condition": "biofilm_suspected == true",
+      "action": "do NOT use aggressive oxidative/antimicrobial strategy; support gut motility + energy + nervous system regulation instead"
+    },
+    {
+      "condition": "frailty == true",
+      "action": "reduce protocol complexity; prioritise single dominant intervention; avoid layering"
+    },
+    {
+      "condition": "digestive_sensitivity == true",
+      "action": "reduce herb complexity; lead with Fiber; delay ProDeacid if GI reaction; titrate slowly"
+    },
+    {
+      "condition": "carbamazepine dose escalating OR side effects increasing",
+      "action": "flag: risk of cytochrome over-damping; signal loss from morphic reference; consider dose reduction with Base44 support"
+    },
+    {
+      "condition": "pregabalin prescribed",
+      "action": "flag: hormesis risk – excessive noise suppression removes signal; system may become unable to self-regulate; monitor carefully"
+    }
+  ],
+
+  "western_medication_compatibility": [
+    { "drug": "NSAIDs", "base44_stance": "short term OK", "exit_trigger": "inflammation resolved but CRPS persists" },
+    { "drug": "Steroids", "base44_stance": "flare only", "exit_trigger": "rebound flare present" },
+    { "drug": "Opioids", "base44_stance": "avoid escalation", "exit_trigger": "paradox hyperalgesia OR GI slowing OR emotional flattening" },
+    { "drug": "Bisphosphonates", "base44_stance": "optional early", "exit_trigger": "uncertain" },
+    { "drug": "Gabapentin / Pregabalin", "base44_stance": "compatible", "exit_trigger": "fatigue + cognitive dulling + dose escalation" },
+    { "drug": "Amitriptyline", "base44_stance": "compatible", "exit_trigger": "uncertain" },
+    { "drug": "Lamotrigine", "base44_stance": "compatible", "exit_trigger": "uncertain" },
+    { "drug": "Ketamine", "base44_stance": "short-term bridge only", "exit_trigger": "CRPS returning post-treatment" },
+    { "drug": "Carbamazepine", "base44_stance": "use with caution; field-coherence stabiliser but may over-damp", "exit_trigger": "dose escalation / signal loss" },
+    { "drug": "Oxcarbazepine", "base44_stance": "preferred over carbamazepine; less field disruption", "exit_trigger": "uncertain" }
+  ],
+
+  "tens_protocol": {
+    "general_role": "bridge during medication exit; fascia-nerve interface recalibration; support not driver",
+    "not_for": ["primary treatment", "permanent solution", "indiscriminate placement"],
+    "quick_rule": "If TENS helps only while ON → fascia still loaded",
+    "modes": [
+      {
+        "exit_context": "Gabapentin/Pregabalin exit",
+        "frequency": "LOW 2-4 Hz",
+        "placement": "over fascia / muscle belly",
+        "goal": "input normalisation"
+      },
+      {
+        "exit_context": "Opioid exit",
+        "frequency": "MID 50-80 Hz",
+        "placement": "proximal fascia + spinal segment",
+        "goal": "descending inhibition re-teaching"
+      },
+      {
+        "exit_context": "Ketamine post-bridge",
+        "frequency": "AVOID overstimulation",
+        "placement": "only in stabilised state",
+        "goal": "stabilisation; short and low intensity only"
+      }
+    ]
+  },
+
+  "laser_protocol": {
+    "source": "Summus (referenced; UI pending at time of document creation)",
+    "primary_wavelength": "610 nm",
+    "mechanism_field_model": "coherence injection not stimulation; re-phases cytochrome chromophores; reorganises EZ-water crystal phase; recalibrates mitochondrial antenna",
+    "targets": [
+      { "target": "Fascia planes", "indication": "CRPS I" },
+      { "target": "DRG / nerve exits", "indication": "CRPS II" },
+      { "target": "Back shu + huatuojiaji acupuncture points", "indication": "gut-linked relapse" },
+      { "target": "Scar borders", "indication": "post-surgical CRPS" }
+    ],
+    "dosing_principle": "small dose, short duration, correct wavelength; coherence not intensity"
+  },
+
+  "mitochondrial_field_model": {
+    "summary": "Mitochondrion = field transducer (antenna + transformer + accumulator), not simply an energy factory",
+    "cytochrome_role": "bidirectional gate: electron→photon (state reporting) and photon→electron (environmental sensing)",
+    "chromophore_function": "frequency-sensitive switch; responds to coherence, phase, and noise not just intensity",
+    "ez_water_role": "ordered crystal phase; electromagnetic carrier medium; information storage and conduction",
+    "atp_status": "secondary byproduct; primary event = ordered space creation on membrane-water-light axis",
+    "light_mechanism": "reduces noise; increases coherence; restores cytochrome spin and redox rhythm",
+    "collapse_triggers": ["trauma", "Yin deficiency", "chronic stress", "opioid use (limbic mitochondria suppressed)"],
+    "one_line": "The mitochondrial cytochrome system does not produce energy — it produces coherence. Light does not drive it — it tunes it. Metabolism is not chemistry — it is ordered time."
+  },
+
+  "dangerous_molecules_reference": {
+    "purpose": "Internal/educational reference only. NOT for clinical recommendation.",
+    "series": [
+      {
+        "molecule": "DMSO",
+        "teaches": "zeta potential; blood sludging as colloid problem not clot; water-surface-charge triad",
+        "risk": "uncontrolled penetration; field gate without protection",
+        "safe_substitutes": ["Garlic", "Ginger", "Salvia", "Turmeric", "Procholterol", "Procardiol"]
+      },
+      {
+        "molecule": "EDTA",
+        "teaches": "calcium ≠ only bone; bound ions as field wedges; microcirculatory rigidity",
+        "risk": "too-fast chelation; rebound instability",
+        "safe_substitutes": ["reduce exposure", "fiber + hydration for elimination", "mineral rebalancing"]
+      },
+      {
+        "molecule": "Methylene Blue",
+        "teaches": "electron-shuttle; mitochondrion as field antenna; redox ≠ antioxidant narrative",
+        "risk": "too-direct intervention in energy chain",
+        "safe_substitutes": ["NAC / glutathione support", "Riboflavin B2", "CoQ10", "sleep + morning light + zone-2 movement"]
+      },
+      {
+        "molecule": "Ozone",
+        "teaches": "sterile inflammation; oxidation as signal not enemy; immune system as information processor",
+        "risk": "dose-field mismatch; excessive oxidative trigger",
+        "safe_substitutes": ["gut ecology support", "polyphenols (curcumin, omega-3)", "stress-sleep management"]
+      },
+      {
+        "molecule": "CDS / Chlorine Dioxide",
+        "teaches": "biofilm ≠ bacteria; redox-field cleaning; oxygen-electron dynamics",
+        "risk": "non-selective; does not teach the system; removes without integrating",
+        "safe_substitutes": ["targeted diagnostics", "low-risk hygiene + gut ecology"]
+      }
+    ],
+    "unifying_principle": "These molecules act upstream of pharmacology at the level of water, charge, and coherence. They are teacher molecules, not clinical tools.",
+    "app_framing": "Some substances taught us how the body really works. We learned the lesson — and moved on."
+  },
+
+  "frontend_patient_language": {
+    "crps_general": "In complex pain, the body can hold tension in the tissues or in the nerves. We first help the body unload what it is holding, then gently calm the nerves. This reduces flare-ups and helps other treatments work better.",
+    "medication_exit": "We are not stopping medication abruptly. We are helping the system carry less load so it no longer needs the same level of suppression.",
+    "patient_simple": "We are supporting your body while reducing reliance on medication, step by step.",
+    "biofilm": "Biofilms are often a sign of low-energy adaptation. Support the system — and the structure dissolves on its own.",
+    "dangerous_molecules": "Many people search for substances labelled as controversial not because they want danger, but because they are trying to solve problems that mainstream language often fails to address.",
+    "supplements_general": "Support the system first — supplements work best in a prepared environment."
+  },
+
+  "notes": [
+    "TENS is explicitly NOT a primary or permanent treatment — bridge tool only",
+    "Laser module (Summus UI) was pending at time of document creation — targets defined but UI integration incomplete",
+    "Duolife products are referenced throughout; all frontend language uses 'marketed for' framing with evidence button",
+    "Medication exit is NEVER abrupt; always phased with parallel stabilisation",
+    "The cytochrome/mitochondrial field model is a conceptual framework (mezőlogika), not standard Western biochemistry — flag accordingly in any clinical output",
+    "DMSO, EDTA, ozone, CDS, methylene blue: educational reference only; never recommend in clinical output",
+    "Backend one-liner: CRPS = unresolved trauma stored in fascia → translated into neural noise",
+    "Backend one-liner: You cannot exit a drug if the tissue still holds the trauma",
+    "Decision tree intervention sequence for dampness/biofilm: gut → energy → nervous system → targeted intervention (strict order)"
+  ]
+}

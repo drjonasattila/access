@@ -41,6 +41,10 @@ ORGAN_REMOVAL_MARKERS = ["cholecystectomy", "hysterectomy", "appendectomy", "nep
 CENTRAL_WEIGHT_MARKERS = ["central weight gain", "increased waist", "waist circumference", "visceral obesity"]
 SLEEP_POOR_MARKERS = ["poor sleep", "sleep fragmentation", "insomnia", "circadian drift", "low sleep quality"]
 STRUCTURAL_ABDOMINAL_MARKERS = ["hernia", "diastasis", "structural abdominal wall defect"]
+DANGEROUS_MOLECULES = ["DMSO", "EDTA", "methylene blue", "ozone", "CDS", "chlorine dioxide"]
+GUT_RELAPSE_MARKERS = ["constipation", "bloating", "reflux", "sleep fragmentation", "emotional overload"]
+SIDE_EFFECT_MARKERS = ["fatigue", "cognitive dulling", "dose escalation", "side effects increasing"]
+RED_FLAG_MARKERS = ["rapid motor loss", "severe trophic skin changes", "suicidal ideation", "uncontrolled infection"]
 
 
 class SafetyLayer:
@@ -123,9 +127,54 @@ class SafetyLayer:
         facts["lower_dantian_decoupled"] = facts.get("lower_dantian_decoupled", False) or (
             facts.get("upper_heat") and facts.get("lower_cold") and text_contains_any(text, ["anxiety", "low libido", "insomnia"])
         )
+        facts["digestive_sensitivity"] = facts.get("digestive_sensitivity", False) or facts.get("digestive_sensitivity_flag", False)
+        facts["fatigue"] = facts.get("fatigue", False) or text_contains_any(text, ["fatigue", "chronic fatigue", "low energy"])
+        facts["current_medications"] = _current_medications(case)
+        facts["crps_type"] = normalize_term(case.observations.get("crps_type") or case.flags.get("crps_type") or "")
+        facts["dominant_layer"] = normalize_term(case.observations.get("dominant_layer") or case.flags.get("dominant_layer") or "")
+        facts["pain_character"] = normalize_term(case.observations.get("pain_character") or case.flags.get("pain_character") or "")
+        facts["tens_response"] = normalize_term(case.observations.get("tens_response") or case.flags.get("tens_response") or "")
+        facts["medication_exit_trigger_count"] = _as_float(
+            case.observations.get("medication_exit_trigger_count") or case.flags.get("medication_exit_trigger_count")
+        ) or 0
+        facts["gut_symptoms_count"] = _count_markers(case, GUT_RELAPSE_MARKERS)
+        facts["digestive_flow_impaired"] = facts.get("digestive_flow_impaired", False) or text_contains_any(
+            text, ["slow digestion", "poor elimination", "sluggish GI transit", "constipation", "bloating"]
+        )
+        facts["side_effects_present"] = facts.get("side_effects_present", False) or text_contains_any(text, SIDE_EFFECT_MARKERS)
+        facts["red_flags_present"] = facts.get("red_flags_present", False) or text_contains_any(text, RED_FLAG_MARKERS)
+        facts["user_searches_dangerous_molecule"] = text_contains_any(text, DANGEROUS_MOLECULES)
+        facts["tens_only_while_on"] = facts.get("tens_only_while_on", False) or (
+            "only" in facts["tens_response"] and "on" in facts["tens_response"]
+        )
+        facts["post_viral"] = facts.get("post_viral", False) or text_contains_any(text, ["post viral", "post-viral", "long covid"])
+        facts["resilience_low"] = facts.get("resilience_low", False) or text_contains_any(text, ["low resilience", "poor recovery"])
+        facts["dryness"] = facts.get("dryness", False) or text_contains_any(text, ["dryness", "dry", "brittle nails"])
+        facts["brittle_nails"] = facts.get("brittle_nails", False) or text_contains_any(text, ["brittle nails"])
+        facts["pallor"] = facts.get("pallor", False) or text_contains_any(text, ["pallor", "pale"])
+        facts["oxidative_sensitivity"] = facts.get("oxidative_sensitivity", False) or text_contains_any(text, ["oxidative sensitivity"])
+        facts["yin_deficiency"] = facts.get("yin_deficiency", False) or text_contains_any(text, ["yin deficiency", "dryness", "poor recovery"])
+        facts["laser_available"] = facts.get("laser_available", False) or text_contains_any(text, ["laser available", "summus"])
+        facts["dampness_pattern"] = facts.get("dampness_pattern", False) or text_contains_any(
+            text, ["dampness", "heaviness", "sluggish gi", "poor elimination"]
+        )
+        facts["paradox_hyperalgesia"] = facts.get("paradox_hyperalgesia", False) or text_contains_any(text, ["paradox hyperalgesia"])
+        facts["gi_slowing"] = facts.get("gi_slowing", False) or text_contains_any(text, ["gi slowing", "constipation", "sluggish gi"])
+        facts["emotional_flattening"] = facts.get("emotional_flattening", False) or text_contains_any(text, ["emotional flattening"])
+        facts["crps_returning_post_treatment"] = facts.get("crps_returning_post_treatment", False) or text_contains_any(
+            text, ["crps returning post treatment", "ketamine relief fades", "relief fades rapidly"]
+        )
+        facts["inflammation_reduced_but_crps_persists"] = facts.get("inflammation_reduced_but_crps_persists", False) or text_contains_any(
+            text, ["inflammation reduced but crps persists"]
+        )
+        facts["dose_escalating"] = facts.get("dose_escalating", False) or text_contains_any(text, ["dose escalating", "dose escalation"])
 
         top_names = {score.name for score in patterns if score.confidence >= 0.35}
         facts["jueyin_depletion_detected"] = "jueyin_depletion" in top_names or text_contains_any(text, ["jueyin depletion"])
+        facts["mitochondrial_decoherence"] = "mitochondrial_decoherence" in top_names or text_contains_any(
+            text, ["mitochondrial decoherence", "mitochondrial field collapse"]
+        )
+        facts["dampness_pattern"] = facts.get("dampness_pattern", False) or "dampness_biofilm" in top_names
         facts["berberine_switch"] = facts.get("berberine_switch", False) or "berberine_metabolic_protocol" in top_names
         facts["stasis_confidence"] = facts.get("stasis_confidence", False)
         facts["pain_worse_at_rest"] = facts.get("pain_worse_at_rest", False) or text_contains_any(text, ["pain worse at rest"])
@@ -191,6 +240,49 @@ def _lab_facts(labs: dict[str, Any]) -> dict[str, bool]:
 
 def _evaluate_condition(condition: str, facts: dict[str, Any]) -> bool:
     normal = normalize_term(condition)
+    meds = set(facts.get("current_medications") or [])
+    if "crps_type_crps_i" in normal:
+        return facts.get("crps_type") == "crps_i"
+    if "crps_type_crps_ii" in normal:
+        return facts.get("crps_type") == "crps_ii"
+    if "dominant_layer_mixed_or_pain_character_fluctuating" in normal:
+        return facts.get("dominant_layer") == "mixed" or facts.get("pain_character") == "fluctuating"
+    if normal == "dominant_layer_mixed":
+        return facts.get("dominant_layer") == "mixed"
+    if "gut_symptoms_2" in normal:
+        return facts.get("gut_symptoms_count", 0) >= 2
+    if "medication_exit_trigger_count_2" in normal:
+        return facts.get("medication_exit_trigger_count", 0) >= 2
+    if "current_medication_gabapentin" in normal or "pregabalin_and_side_effects_present" in normal:
+        return bool({"gabapentin", "pregabalin"} & meds and facts.get("side_effects_present"))
+    if "current_medication_opioid" in normal:
+        return bool("opioid" in meds and (facts.get("paradox_hyperalgesia") or facts.get("gi_slowing") or facts.get("emotional_flattening")))
+    if "current_medication_ketamine" in normal:
+        return bool("ketamine" in meds and facts.get("crps_returning_post_treatment"))
+    if "current_medication_nsaid" in normal or "steroid_and_inflammation" in normal:
+        return bool(({"nsaid", "nsaids", "steroid", "steroids"} & meds) and facts.get("inflammation_reduced_but_crps_persists"))
+    if "tens_helps_only_while_device_is_on" in normal:
+        return bool(facts.get("tens_only_while_on"))
+    if "red_flags_present" in normal:
+        return bool(facts.get("red_flags_present"))
+    if "fatigue_true_and_post_viral_true_and_resilience_low" in normal:
+        return bool(facts.get("fatigue") and facts.get("post_viral") and facts.get("resilience_low"))
+    if "presentation_dryness_and_brittle_nails_true_and_pallor_true" in normal:
+        return bool(facts.get("dryness") and facts.get("brittle_nails") and facts.get("pallor"))
+    if "oxidative_sensitivity_true" in normal:
+        return bool(facts.get("oxidative_sensitivity"))
+    if "mitochondrial_decoherence_true_and_yin_deficiency_true" in normal:
+        return bool(facts.get("mitochondrial_decoherence") and facts.get("yin_deficiency"))
+    if "laser_available" in normal:
+        return bool(facts.get("laser_available"))
+    if "dampness_pattern_true" in normal:
+        return bool(facts.get("dampness_pattern"))
+    if "user_searches_for_dmso_edta_methylene_blue_ozone_cds" in normal:
+        return bool(facts.get("user_searches_dangerous_molecule"))
+    if "carbamazepine_dose_escalating" in normal:
+        return bool("carbamazepine" in meds and facts.get("dose_escalating"))
+    if "pregabalin_prescribed" in normal:
+        return bool("pregabalin" in meds)
     if "upper_heat_lower_cold_both_present" in normal:
         return bool(facts.get("upper_heat") and facts.get("lower_cold"))
     if "upper_heat_flag_true_and_lower_cold_flag_true" in normal:
@@ -284,6 +376,23 @@ def _parse_action(action: str) -> dict[str, Any]:
         if "turn_berberine_off" in normal:
             out["avoid_categories"].append("berberine")
             out["modifiers"]["berberine"] = "off"
+        if "block_proselect" in normal:
+            out["avoid_categories"].append("nerve_suppressive_escalation")
+            out["cautions"].append("tissue_before_nerve")
+        if "do_not_escalate_tens" in normal or "avoid_overstimulation" in normal:
+            out["avoid_categories"].append("tens_escalation")
+            out["cautions"].append("bridge_tool_only")
+        if "do_not_recommend_the_searched_substance" in normal:
+            out["avoid_categories"].append("dangerous_molecules")
+            out["required_framing"].append("educational_only_redirect_to_safer_support")
+        if "refer_escalate_immediately" in normal:
+            out["required_framing"].append("urgent_medical_escalation")
+        if "never_abrupt" in normal or "slow_taper" in normal or "medication_exit" in normal:
+            out["cautions"].append("no_abrupt_medication_discontinuation")
+        if "gut_before_escalating" in normal or "gut_digestion_first" in normal:
+            out["cautions"].append("gut_first_before_advanced_modulation")
+        if "reduce_protocol_complexity" in normal or "avoid_layering" in normal:
+            out["cautions"].append("reduce_protocol_complexity")
         if "activate_berberine_on" in normal:
             out["modifiers"]["berberine"] = "on"
         if "reduce_formula_complexity" in normal:
@@ -308,7 +417,18 @@ def _split_names(value: str) -> list[str]:
 
 def _severity(condition: str, action: str) -> str:
     normal = normalize_term(f"{condition} {action}")
-    if any(marker in normal for marker in ("pregnancy", "active_cancer", "acute_inflammatory_flare", "antibiotics_primary")):
+    if any(
+        marker in normal
+        for marker in (
+            "pregnancy",
+            "active_cancer",
+            "acute_inflammatory_flare",
+            "antibiotics_primary",
+            "red_flags",
+            "dangerous_molecules",
+            "do_not_recommend",
+        )
+    ):
         return "hard_override"
     if any(marker in normal for marker in ("exclude", "avoid", "turn_berberine_off")):
         return "override"
@@ -331,3 +451,29 @@ def _as_float(value: Any) -> float | None:
         return float(value)
     except (TypeError, ValueError):
         return None
+
+
+def _current_medications(case: EngineInput) -> list[str]:
+    values: list[Any] = []
+    for source in (case.observations, case.flags):
+        for key in ("current_medications", "current_medication", "medications", "medication"):
+            if key in source:
+                values.append(source[key])
+    out: list[str] = []
+    for value in values:
+        if isinstance(value, str):
+            parts = re.split(r"[,/;+]", value)
+        elif isinstance(value, (list, tuple, set)):
+            parts = [str(item) for item in value]
+        else:
+            parts = [str(value)]
+        for part in parts:
+            normal = normalize_term(part)
+            if normal:
+                out.append(normal)
+    return unique_preserve(out)
+
+
+def _count_markers(case: EngineInput, markers: list[str]) -> int:
+    text = case.all_text()
+    return sum(1 for marker in markers if text_contains_any(text, [marker]))

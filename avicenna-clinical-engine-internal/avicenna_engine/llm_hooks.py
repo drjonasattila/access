@@ -42,6 +42,11 @@ LLM_CASE_EXTRACTION_SCHEMA: dict[str, Any] = {
         "cold_lower_body_flag": "boolean",
         "heat_upper_body_flag": "boolean",
         "five_element_node_FIRE_pathology": "boolean",
+        "crps_type": "CRPS_I, CRPS_II, mixed, or unknown",
+        "dominant_layer": "fascia_ecm, nerve, mitochondrial, gut_relapse, mixed",
+        "current_medications": ["opioid, ketamine, gabapentin, pregabalin, NSAID, steroid, etc."],
+        "tens_response": "helps_only_while_on, durable_relief, worsens, unknown",
+        "medication_exit_trigger_count": "integer count of medication-transition warning signals",
     },
 }
 
@@ -124,6 +129,71 @@ def build_llm_context(result: EngineResult) -> dict[str, Any]:
             "ordered_steps": result.restoration.ordered_steps,
             "avoid_first": result.restoration.avoid_first,
             "success_metrics": result.restoration.success_metrics,
+        },
+        "stabilization": {
+            "dominant_layers": [
+                {
+                    "name": layer.name,
+                    "weight": layer.weight,
+                    "role": layer.role,
+                    "evidence": layer.evidence,
+                }
+                for layer in result.stabilization.dominant_layers
+            ],
+            "phases": [
+                {
+                    "order": phase.order,
+                    "name": phase.name,
+                    "goal": phase.goal,
+                    "rationale": phase.rationale,
+                    "status": phase.status,
+                    "blocked_by": phase.blocked_by,
+                }
+                for phase in result.stabilization.phases
+            ],
+            "bridge_tools": [
+                {
+                    "name": tool.name,
+                    "role": tool.role,
+                    "limits": tool.limits,
+                    "monitoring": tool.monitoring,
+                    "status": tool.status,
+                }
+                for tool in result.stabilization.bridge_tools
+            ],
+            "medication_transitions": [
+                {
+                    "medication": transition.medication,
+                    "stance": transition.stance,
+                    "trigger": transition.trigger,
+                    "pathway": transition.pathway,
+                    "safety_alerts": transition.safety_alerts,
+                    "status": transition.status,
+                }
+                for transition in result.stabilization.medication_transitions
+            ],
+            "relapse_loops": [
+                {
+                    "signal": loop.signal,
+                    "interpretation": loop.interpretation,
+                    "recommended_posture": loop.recommended_posture,
+                    "evidence": loop.evidence,
+                }
+                for loop in result.stabilization.relapse_loops
+            ],
+            "dangerous_molecule_alerts": [
+                {
+                    "molecule": alert.molecule,
+                    "unmet_need": alert.unmet_need,
+                    "risk": alert.risk,
+                    "safer_redirects": alert.safer_redirects,
+                    "status": alert.status,
+                }
+                for alert in result.stabilization.dangerous_molecule_alerts
+            ],
+            "success_metrics": result.stabilization.success_metrics,
+            "suppression_warnings": result.stabilization.suppression_warnings,
+            "conceptual_cautions": result.stabilization.conceptual_cautions,
         },
         "onboarding": [
             {

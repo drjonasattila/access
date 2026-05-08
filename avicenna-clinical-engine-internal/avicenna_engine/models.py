@@ -204,6 +204,73 @@ class OnboardingPath:
 
 
 @dataclass
+class DysregulationLayer:
+    name: str
+    weight: float
+    role: str
+    evidence: list[str] = field(default_factory=list)
+
+
+@dataclass
+class StabilizationPhase:
+    order: int
+    name: str
+    goal: str
+    rationale: str = ""
+    status: str = "candidate"
+    blocked_by: list[str] = field(default_factory=list)
+
+
+@dataclass
+class BridgeTool:
+    name: str
+    role: str
+    limits: list[str] = field(default_factory=list)
+    monitoring: list[str] = field(default_factory=list)
+    status: str = "bridge_only"
+
+
+@dataclass
+class MedicationTransition:
+    medication: str
+    stance: str
+    trigger: str
+    pathway: list[JsonDict] = field(default_factory=list)
+    safety_alerts: list[str] = field(default_factory=list)
+    status: str = "monitor"
+
+
+@dataclass
+class RelapseLoop:
+    signal: str
+    interpretation: str
+    recommended_posture: str
+    evidence: list[str] = field(default_factory=list)
+
+
+@dataclass
+class DangerousMoleculeAlert:
+    molecule: str
+    unmet_need: str
+    risk: str
+    safer_redirects: list[str] = field(default_factory=list)
+    status: str = "educational_only_never_recommend"
+
+
+@dataclass
+class StabilizationPlan:
+    dominant_layers: list[DysregulationLayer] = field(default_factory=list)
+    phases: list[StabilizationPhase] = field(default_factory=list)
+    bridge_tools: list[BridgeTool] = field(default_factory=list)
+    medication_transitions: list[MedicationTransition] = field(default_factory=list)
+    relapse_loops: list[RelapseLoop] = field(default_factory=list)
+    dangerous_molecule_alerts: list[DangerousMoleculeAlert] = field(default_factory=list)
+    success_metrics: list[str] = field(default_factory=list)
+    suppression_warnings: list[str] = field(default_factory=list)
+    conceptual_cautions: list[str] = field(default_factory=list)
+
+
+@dataclass
 class EngineResult:
     safety: SafetyDecision
     patterns: list[PatternScore]
@@ -213,6 +280,7 @@ class EngineResult:
     state_transitions: list[StateTransition]
     restoration: RestorationPlan
     onboarding: list[OnboardingPath]
+    stabilization: StabilizationPlan
     axis_scores: list[AxisScore]
     interventions: list[InterventionCandidate]
     llm_context: JsonDict

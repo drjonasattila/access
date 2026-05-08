@@ -50,6 +50,12 @@ PATTERN_AXIS_MAP = {
     "yin_field_laxity_coxa_saltans": ["connective_tissue_laxity", "hip_fascia_stability", "sleep_regulation"],
     "pelvic_yang_compression": ["pelvic_fascia_compression", "emotional_holding", "microcirculation", "mitochondrial_rhythm"],
     "five_element_destroying_cycle": ["graph_pathology", "cascade_prediction", "root_node_prioritization"],
+    "fascia_ecm_dominant": ["fascia_ecm_load", "microcirculation", "tissue_holding", "pain_noise"],
+    "nerve_dominant": ["neural_overfiring", "autonomic_instability", "signal_filtering"],
+    "mixed_transitional": ["tissue_nerve_transition", "relapse_loop", "sequencing_required"],
+    "gut_relapse_driver": ["digestive_flow", "gut_ecm_axis", "flare_recurrence"],
+    "mitochondrial_decoherence": ["mitochondrial_energy_state", "recovery_capacity", "coherence_model"],
+    "dampness_biofilm": ["digestive_flow", "metabolite_accumulation", "gut_first_sequence"],
 }
 
 
@@ -63,6 +69,12 @@ DYNAMIC_RELATIONSHIPS = {
     "cold_heat_complex": "Cold-heat complex progresses from lower collapse to upper heat compensation and later mixed stagnation; lower-root restoration should come first.",
     "pelvic_yang_compression": "Pelvic Yang compression can evolve from emotional guarding into autonomic compression, fascial dehydration, stasis, and structural overgrowth.",
     "five_element_destroying_cycle": "Destroying-cycle activation implies graph spread; root-node stabilization should precede treating every node manifestation.",
+    "fascia_ecm_dominant": "Fascia/ECM dominance suggests tissue unloading should precede nerve-suppressive escalation.",
+    "nerve_dominant": "Nerve dominance may need neural noise reduction, but only after tissue and gut load are not the primary drivers.",
+    "mixed_transitional": "Mixed transitional states require staged sequencing rather than simultaneous tissue and nerve modulation.",
+    "gut_relapse_driver": "Gut-linked relapse implies digestive flow may be a system-level coherence gate before advanced modulation.",
+    "mitochondrial_decoherence": "Mitochondrial decoherence is treated as an exploratory coherence-oriented model, not established mainstream biochemistry.",
+    "dampness_biofilm": "Dampness/biofilm patterns follow gut to energy to nervous-system sequencing before targeted intervention.",
 }
 
 

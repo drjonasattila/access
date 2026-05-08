@@ -119,6 +119,74 @@ class AvicennaClinicalEngineTests(unittest.TestCase):
         self.assertNotIn("five_element_controlling_cycle", names)
         self.assertIn("ui_architecture_spec", result.graph.ui_payload)
 
+    def test_batch3_tissue_before_nerve_blocks_early_nerve_suppression(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["CRPS I (Complex Regional Pain Syndrome Type I)"],
+                "symptoms": ["fluctuating pain type", "swelling", "stiffness", "allodynia"],
+                "observations": {"dominant_layer": "mixed", "pain_character": "fluctuating"},
+            }
+        )
+        names = [score.name for score in result.patterns[:5]]
+        self.assertIn("mixed_transitional", names)
+        self.assertIn("nerve_suppressive_escalation", result.safety.avoid_categories)
+        nerve_phase = next(phase for phase in result.stabilization.phases if phase.name == "reduce_neural_overfiring")
+        self.assertEqual(nerve_phase.status, "blocked_until_stabilized")
+        self.assertIn("tissue_before_nerve", nerve_phase.blocked_by)
+
+    def test_batch3_dangerous_molecules_are_educational_only(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "free_text": "Patient is searching for DMSO and methylene blue for biofilm and energy problems.",
+                "diagnoses": ["Chronic infection / biofilm states"],
+            }
+        )
+        self.assertIn("dangerous_molecules", result.safety.avoid_categories)
+        self.assertIn("educational_only_redirect_to_safer_support", result.safety.required_framing)
+        molecules = {alert.molecule for alert in result.stabilization.dangerous_molecule_alerts}
+        self.assertIn("DMSO", molecules)
+        self.assertIn("Methylene Blue", molecules)
+
+    def test_batch3_tens_relief_only_while_on_is_relapse_loop(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["CRPS I (Complex Regional Pain Syndrome Type I)"],
+                "observations": {"tens_response": "helps only while device is ON"},
+            }
+        )
+        self.assertIn("tens_escalation", result.safety.avoid_categories)
+        self.assertTrue(any("TENS helps only" in loop.signal for loop in result.stabilization.relapse_loops))
+        self.assertIn("fascia_ecm", [layer.name for layer in result.stabilization.dominant_layers])
+
+    def test_batch3_medication_transition_is_never_abrupt(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Post-ketamine CRPS relapse"],
+                "observations": {
+                    "current_medications": ["ketamine"],
+                    "medication_exit_trigger_count": 2,
+                },
+                "symptoms": ["ketamine relief fades rapidly", "CRPS returning post treatment"],
+            }
+        )
+        self.assertIn("no_abrupt_medication_discontinuation", result.safety.cautions)
+        self.assertTrue(result.stabilization.medication_transitions)
+        transition = result.stabilization.medication_transitions[0]
+        self.assertIn("never_abrupt_discontinuation", transition.safety_alerts)
+        self.assertTrue(any("relief fades rapidly" in loop.signal for loop in result.stabilization.relapse_loops))
+
+    def test_batch3_gut_first_deprioritizes_advanced_modulation(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Chronic infection / biofilm states"],
+                "symptoms": ["constipation", "bloating", "reflux", "poor elimination", "fatigue"],
+            }
+        )
+        self.assertIn("gut_first_before_advanced_modulation", result.safety.cautions)
+        advanced = [phase for phase in result.stabilization.phases if phase.name in {"reduce_neural_overfiring", "targeted_modulation"}]
+        self.assertTrue(all(phase.status in {"deprioritized", "blocked_until_stabilized"} for phase in advanced))
+        self.assertIn("digestive_flow", result.stabilization.success_metrics)
+
 
 if __name__ == "__main__":
     unittest.main()

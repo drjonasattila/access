@@ -47,3 +47,16 @@ batch2_case = {
 batch2_result = engine.evaluate(batch2_case)
 print(json.dumps(batch2_result.to_dict()["onboarding"], indent=2))
 print(json.dumps(batch2_result.to_dict()["restoration"], indent=2))
+
+batch3_case = {
+    "diagnoses": ["CRPS I (Complex Regional Pain Syndrome Type I)"],
+    "symptoms": ["fluctuating pain type", "swelling", "stiffness", "allodynia"],
+    "observations": {
+        "dominant_layer": "mixed",
+        "pain_character": "fluctuating",
+        "tens_response": "helps only while device is ON",
+    },
+}
+
+batch3_result = engine.evaluate(batch3_case)
+print(json.dumps(batch3_result.to_dict()["stabilization"], indent=2))
