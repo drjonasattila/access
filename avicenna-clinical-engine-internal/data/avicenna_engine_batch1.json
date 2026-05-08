@@ -1,0 +1,860 @@
+{
+  "meta": {
+    "version": "1.0",
+    "batch": 1,
+    "source_files": [
+      "Abdominal_pain_syndromes.pdf",
+      "chronic_pelvic_pain.pdf",
+      "Base44_Card___Taiyang_shaoyin_Disszocia_cio_.pdf",
+      "cold_heat_complex.pages",
+      "Berberine.pages",
+      "cancer_pain.pages",
+      "Cluster___TAC.pages",
+      "axis_prediction.pages",
+      "arthritis_flow_chart_app.pages",
+      "5_element_cycles.pages"
+    ]
+  },
+
+  "input_variables": [
+    "thermal_sensation",
+    "moisture_state",
+    "energy_state",
+    "pain_quality",
+    "pain_location",
+    "pain_timing",
+    "autonomic_signs",
+    "emotional_state",
+    "digestive_status",
+    "urinary_symptoms",
+    "sexual_symptoms",
+    "sleep_quality",
+    "response_to_heat",
+    "response_to_cold",
+    "response_to_stress",
+    "tongue_coating",
+    "joint_symptoms",
+    "headache_type",
+    "menstrual_pattern",
+    "postural_aggravation",
+    "frailty_flag",
+    "pregnancy_flag",
+    "digestive_sensitivity_flag",
+    "heat_dominant_flag",
+    "cold_dominant_flag",
+    "stasis_confidence",
+    "blood_stasis_flag",
+    "emotional_constraint_flag"
+  ],
+
+  "patterns": [
+
+    {
+      "name": "shaoyang_taiyin_dissonance",
+      "aliases": ["visceral_SMP_upper", "diaphragmatic_heat", "empty_heat_early"],
+      "tcm_axis": "Shaoyang (GB/TB) overactive — Taiyin (LU/SP) cannot anchor",
+      "field_model": "Sympathetic brace: compensatory stabilisation attempt when EZ lattice collapses",
+      "triggers": [
+        "chronic_stress",
+        "trauma",
+        "post_viral_state",
+        "emotional_boundary_violation",
+        "upper_abdominal_SMP"
+      ],
+      "symptoms": [
+        "deep_visceral_anxiety",
+        "epigastric_tension",
+        "diaphragmatic_heat_sensation",
+        "IBS_symptoms",
+        "reflux",
+        "unexplained_tachycardia",
+        "cold_hands_warm_chest",
+        "insomnia",
+        "alternating_constipation_diarrhoea",
+        "palpitations",
+        "panic_episodes",
+        "reactive_depression"
+      ],
+      "western_physiology": "Splanchnicus reflex circuit disruption; solar plexus sympathetic overdrive; thoracolumbar sympathetic outflow T5-L2 dysregulation",
+      "interventions": {
+        "herbs": [
+          { "name": "Chai Hu", "role": "Shaoyang release — opens stuck sympathetic gate", "notes": "primary mover" },
+          { "name": "Yu Jin", "role": "Qi and blood stasis in solar plexus", "notes": "" },
+          { "name": "Gou Teng", "role": "calms Shaoyang excess, lowers ascending Yang", "notes": "" },
+          { "name": "Ban Xia Hou Po Tang", "role": "formula base for Shaoyang-Taiyin dissonance", "notes": "use as base formula" },
+          { "name": "Fu Ling", "role": "Taiyin anchor — calms and stabilises", "notes": "" },
+          { "name": "Bai Zhu", "role": "Spleen Qi support — rebuilds Taiyin", "notes": "" },
+          { "name": "Mai Men Dong", "role": "Yin nourishment, fascia moisture", "notes": "" },
+          { "name": "Bai He", "role": "Lung Yin — cools empty heat", "notes": "" },
+          { "name": "Sheng Di", "role": "deep Yin rebuilding, EZ lattice support", "notes": "" }
+        ],
+        "preparation": "Decoction preferred; capsule acceptable for chronic phase",
+        "device": "Huatuojiaji laser Th6–L1 (2-4 Hz, 808-830 nm); diaphragm release; IR to solar plexus zone",
+        "lifestyle": "Diaphragmatic breathing, 5-6 breaths/min; slow rhythmic movement"
+      }
+    },
+
+    {
+      "name": "shaoyin_taiyang_dissonance",
+      "aliases": ["heat_above_cold_below", "adrenal_fatigue_pattern", "taiyang_shaoyin_dissociation"],
+      "tcm_axis": "Shaoyin (HT/KD) cannot anchor — Taiyang (BL/SI) overloaded",
+      "field_model": "Shaoyin sink failure: no internal self-soothing; Yang floats upward unanchored",
+      "triggers": [
+        "chronic_stress_sustained",
+        "trauma_emotional_or_physical",
+        "identity_fixation_overcontrol",
+        "unstable_attachment_pattern",
+        "adrenal_overdrive_followed_by_collapse"
+      ],
+      "symptoms": {
+        "heat_above": ["head_warmth", "occipital_pressure", "tinnitus", "insomnia", "night_thinking", "anxiety", "dry_eyes"],
+        "cold_below": ["cold_feet_legs", "cold_pelvis", "fatigue", "low_libido", "nocturia"],
+        "shared": ["neck_shoulder_tension", "BL_SI_fascial_tightness", "addictive_behaviour", "compulsive_control"]
+      },
+      "subtypes": {
+        "degenerative_type": {
+          "profile": "identity-locked, overcontrol, burnout, neurodegenerative signs",
+          "formula": {
+            "herbs": [
+              { "name": "Sheng Di Huang", "dose": 10, "role": "Yin-Jing rebuild" },
+              { "name": "Shan Yao", "dose": 15, "role": "Spleen-Kidney stabilise" },
+              { "name": "Shan Zhu Yu", "dose": 10, "role": "Kidney essence anchor" },
+              { "name": "Fu Ling", "dose": 15, "role": "calm-stabilise" },
+              { "name": "Mu Dan Pi", "dose": 10, "role": "cool blood, clear empty heat" },
+              { "name": "Ze Xie", "dose": 10, "role": "downward drainage, feedback loop" },
+              { "name": "He Shou Wu", "dose": 10, "role": "Jing-blood rebuild" },
+              { "name": "Gou Qi Zi", "dose": 10, "role": "Liver-Kidney Yin" },
+              { "name": "Dang Gui", "dose": 10, "role": "blood nourish, move" },
+              { "name": "Bai Shao Yao", "dose": 10, "role": "Yin hold, soften" },
+              { "name": "Huai Niu Xi", "dose": 10, "role": "downward anchoring" },
+              { "name": "Huang Qi", "dose": 10, "role": "Qi stabilise surface" },
+              { "name": "Bai Zhu", "dose": 10, "role": "Spleen-Taiyin support" },
+              { "name": "Gan Cao", "dose": 5, "role": "harmonise" },
+              { "name": "Fu Xiao Mai", "dose": 10, "role": "drain surface neural overload" },
+              { "name": "Zhi Qiao", "dose": 3, "role": "light Qi mover, prevent stagnation" }
+            ]
+          }
+        },
+        "addictive_type": {
+          "profile": "insecure attachment, no internal holding, anxiety, substance use",
+          "formula": {
+            "herbs": [
+              { "name": "Sheng Di Huang", "dose": 10, "role": "Yin-Jing rebuild" },
+              { "name": "Shan Yao", "dose": 15, "role": "Spleen-Kidney stabilise" },
+              { "name": "Shan Zhu Yu", "dose": 10, "role": "Kidney essence anchor" },
+              { "name": "Ze Xie", "dose": 10, "role": "downward drainage" },
+              { "name": "Mu Dan Pi", "dose": 10, "role": "cool blood" },
+              { "name": "Fu Shen", "dose": 15, "role": "self-soothing Shaoyin circuit — key herb" },
+              { "name": "Huang Qi", "dose": 10, "role": "Qi stabilise" },
+              { "name": "Mai Men Dong", "dose": 10, "role": "Yin nourish" },
+              { "name": "Wu Wei Zi", "dose": 10, "role": "Shaoyin self-soothing anchor" },
+              { "name": "Yuan Zhi", "dose": 5, "role": "HT-KD bridge, calm shen" },
+              { "name": "Gou Qi Zi", "dose": 10, "role": "Liver-Kidney Yin" },
+              { "name": "He Shou Wu", "dose": 10, "role": "Jing rebuild" },
+              { "name": "Dan Shen", "dose": 8, "role": "trauma-held blood stasis — soften" },
+              { "name": "Bai Zhu", "dose": 8, "role": "Spleen support" },
+              { "name": "Dang Gui", "dose": 8, "role": "blood nourish" },
+              { "name": "Bai Shao Yao", "dose": 8, "role": "Yin hold" }
+            ]
+          }
+        }
+      },
+      "preparation": "Decoction; chronic use",
+      "device": "Fascia laser Th10–L2–BL–KI line; occipital release",
+      "lifestyle": "Early sleep; abdominal breathing; no aggressive stimulation"
+    },
+
+    {
+      "name": "cold_pelvis_shaoyin_collapse",
+      "aliases": ["lower_burner_collapse", "kidney_adrenal_pelvic_field_collapse", "cold_damp_pelvis"],
+      "tcm_axis": "Kidney Yang ↓ → pelvic fascia low perfusion → mitochondrial downshift → autonomic lock",
+      "field_model": "Lower dantian freeze: EZ lattice collapses; bulk water dominates; lymph and venous drainage slow",
+      "triggers": [
+        "adrenal_fatigue",
+        "chronic_sympathetic_drive",
+        "emotional_holding_pelvic",
+        "post_infectious_biofilm",
+        "surgical_trauma",
+        "hormonal_collapse_menopause_PCOS_postpartum"
+      ],
+      "symptoms": [
+        "cold_sensation_lower_abdomen",
+        "sacral_lumbar_pain",
+        "worse_sitting",
+        "worse_cold_better_heat",
+        "low_libido",
+        "erectile_dysfunction_or_dyspareunia",
+        "urinary_frequency",
+        "oedema_sensation",
+        "IBS_bloating",
+        "depressive_tone",
+        "menstrual_cramps",
+        "prostate_tension"
+      ],
+      "upper_heat_compensation": [
+        "anxiety",
+        "migraine",
+        "palpitations",
+        "insomnia",
+        "tinnitus",
+        "dry_eyes",
+        "sympathetic_dominance"
+      ],
+      "subtypes": [
+        "cold_damp_stagnation",
+        "cold_plus_trauma_lock",
+        "yang_collapse_plus_yin_leak",
+        "blood_stasis_dominant",
+        "post_surgical_pelvic_field"
+      ],
+      "interventions": {
+        "yang_rekindle": {
+          "herbs": [
+            { "name": "Rou Gui", "role": "rekindle lower fire", "notes": "small dose" },
+            { "name": "Hu Lu Ba", "role": "warm Kidney Yang", "notes": "" },
+            { "name": "Yin Yang Huo", "role": "tonify Kidney Yang", "notes": "" },
+            { "name": "Ba Ji Tian", "role": "warm and strengthen Yang", "notes": "" },
+            { "name": "Tu Si Zi", "role": "Kidney Yang + Yin balance", "notes": "" },
+            { "name": "Suo Yang", "role": "warm Yang, tonify Jing", "notes": "" }
+          ],
+          "device": "Summus laser lower back (Du, BL, Huatuojiaji); below umbilicus (Ren); along Dai Mai; IR/moxa equivalent"
+        },
+        "yin_lattice_rebuild": {
+          "herbs": [
+            { "name": "Shu Di / Sheng Di", "role": "deep Yin rebuild", "notes": "" },
+            { "name": "Gou Qi Zi", "role": "Liver-Kidney Yin", "notes": "" },
+            { "name": "Mai Men Dong", "role": "fascia moisture, Lung Yin", "notes": "" },
+            { "name": "He Shou Wu", "role": "Jing and blood rebuild", "notes": "" },
+            { "name": "Liu Wei Di Huang Wan", "role": "base formula for Kidney Yin deficiency", "notes": "use as base" }
+          ]
+        },
+        "biofilm_clearance": {
+          "herbs": [
+            { "name": "Wen Dan Tang", "role": "base — clear phlegm-damp", "notes": "" },
+            { "name": "Yi Mu Cao (Leonurus japonicum)", "role": "warm pelvis, activate blood", "notes": "" },
+            { "name": "Cang Zhu", "role": "dry damp, biofilm", "notes": "" },
+            { "name": "Chuan Niu Xi", "role": "downward drain, blood move", "notes": "" },
+            { "name": "Huang Bai", "role": "clear damp-heat, biofilm", "notes": "" }
+          ]
+        },
+        "fascia_autonomic": {
+          "physical": ["iliopsoas release", "QL stretch", "pelvic floor down-training", "slow spiral movement"],
+          "acupoints": ["KD3", "KD7", "CV4", "CV6", "BL23", "SP6"],
+          "breathwork": ["long exhalation", "humming", "vagus stimulation"]
+        },
+        "preparation": "Decoction; long-term protocol"
+      }
+    },
+
+    {
+      "name": "jueyin_depletion",
+      "aliases": ["deep_yin_exhaustion", "source_field_depletion", "HUN_loss"],
+      "tcm_axis": "Jueyin (LR/PC) source depleted — innermost Yin exhausted through overgiving or energetic drain",
+      "field_model": "Proto-Yin fails: fascia dries, all meridians energetically slip; HUN (soul-thread) detaches",
+      "triggers": [
+        "repeated_boundary_violations",
+        "emotional_vampirism",
+        "chronic_empathy_overdrain",
+        "spiritual_exhaustion",
+        "long_term_burnout"
+      ],
+      "symptoms": [
+        "loss_of_dreams_or_direction",
+        "anhedonia",
+        "tired_empty_eyes",
+        "world_feels_flat_no_resonance",
+        "menstrual_irregularity_or_amenorrhoea",
+        "libido_loss",
+        "creative_paralysis",
+        "hair_loss",
+        "hypotension",
+        "fibromyalgia_like"
+      ],
+      "depletion_sequence": "Jueyin → Taiyin → Shaoyin (in that order)",
+      "interventions": {
+        "phase_1_yin_rebuild": {
+          "herbs": [
+            { "name": "He Shou Wu", "role": "fascia water rebuild, blood-Jing", "notes": "" },
+            { "name": "Sheng Di", "role": "deep Yin, EZ lattice", "notes": "" },
+            { "name": "Bai He", "role": "Lung-Yin, quiet inner space", "notes": "" },
+            { "name": "Wu Wei Zi", "role": "Shaoyin anchor, self-soothing", "notes": "" },
+            { "name": "Ye Jiao Teng", "role": "reconnect soul to body, sleep", "notes": "" }
+          ]
+        },
+        "phase_2_yang_recall": {
+          "herbs": [
+            { "name": "Chai Hu", "role": "reopen Shaoyang gently", "notes": "only after Yin is stabilised" },
+            { "name": "Huang Qi", "role": "surface Qi stabilise", "notes": "" },
+            { "name": "Rou Gui", "role": "recall true Yang", "notes": "small dose only" }
+          ]
+        },
+        "soul_reconnect": {
+          "herbs": [
+            { "name": "He Huan Pi", "role": "lift repressed emotion, soften grief", "notes": "" },
+            { "name": "Ye Jiao Teng", "role": "soul reconnection, sleep", "notes": "" },
+            { "name": "Bai Zi Ren", "role": "HT Yin, calm Shen", "notes": "" }
+          ]
+        },
+        "preparation": "Start with Yin-rebuild phase only; add Yang recall only when Yin is established",
+        "device": "Gentle light therapy, sound, rhythm-based movement; no aggressive stimulation"
+      }
+    },
+
+    {
+      "name": "damp_heat_pelvic",
+      "aliases": ["long_dan_xie_gan_pattern", "shaoyang_damp_heat"],
+      "tcm_axis": "Shaoyang (GB/LR) damp-heat — active inflammatory state",
+      "triggers": [
+        "active_infection",
+        "fever",
+        "high_CRP_elevated_WBC",
+        "flare_up_state"
+      ],
+      "symptoms": [
+        "burning_pelvic_pain",
+        "recurrent_conjunctivitis",
+        "migraine",
+        "herpes_outbreak",
+        "otitis_media",
+        "perioral_eczema",
+        "cystitis",
+        "cholecystitis",
+        "prostatitis",
+        "colpitis",
+        "intercostal_neuralgia",
+        "frozen_shoulder_hot_to_touch",
+        "greater_trochanteric_bursitis",
+        "ankle_arthritis"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Long Dan Xie Gan Tang", "role": "base formula — drain damp-heat from Liver/GB", "notes": "for acute flare only" }
+        ],
+        "preparation": "Short course only; reassess after flare resolves",
+        "device": "Cooling PBM if available; no warming modalities in acute phase"
+      }
+    },
+
+    {
+      "name": "qi_blood_stasis_joint",
+      "aliases": ["degenerative_stasis", "microcirculatory_failure", "arthritis_stasis"],
+      "tcm_axis": "Qi and Blood stasis at joint level; microcirculation failure; EZ collapse",
+      "triggers": [
+        "chronic_overload",
+        "post_surgical",
+        "chronic_sympathetic_tension",
+        "insufficient_movement",
+        "RA_flare"
+      ],
+      "symptoms": [
+        "joint_pain_worse_at_rest",
+        "morning_stiffness_improves_with_movement",
+        "deep_aching",
+        "crepitus",
+        "instability",
+        "reduced_range_of_motion",
+        "pain_after_sitting"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Dan Shen", "role": "blood stasis — gentle mover", "notes": "prefer over aggressive movers" },
+          { "name": "San Qi", "role": "blood stasis + tissue repair", "notes": "" },
+          { "name": "Chuan Xiong", "role": "blood and Qi move", "notes": "" },
+          { "name": "Yu Jin", "role": "Qi stasis in joints", "notes": "" },
+          { "name": "Du Zhong", "role": "sinew-bone support, Kidney", "notes": "" },
+          { "name": "Gou Qi Zi", "role": "Liver-Kidney Yin, joint nourish", "notes": "" },
+          { "name": "He Shou Wu", "role": "blood-Jing rebuild", "notes": "" },
+          { "name": "Bai Shao Yao", "role": "Yin, soften spasm", "notes": "" }
+        ],
+        "supplements": ["DuoLife Collagen", "MyBlood", "ProCardio", "Ginger", "Astaxanthin", "Spirulina"],
+        "preparation": "Long-term decoction or capsule",
+        "device": "Laser on affected joint (not direct tumor); IR; PEMF",
+        "physical": "Gentle spiral/circular movement; Tai Chi; Qi Gong"
+      }
+    },
+
+    {
+      "name": "metabolic_cold_damp",
+      "aliases": ["taiyin_collapse", "hypothyroid_insulin_resistance_pattern", "metabolic_syndrome_cold"],
+      "tcm_axis": "Taiyin (LU/SP) collapse — Yin cooling grid fails; glucose and lipid dysregulation",
+      "triggers": [
+        "chronic_stress",
+        "Jueyin_depletion_downstream",
+        "poor_sleep",
+        "cold_intolerance"
+      ],
+      "symptoms": [
+        "hypothyroidism_signs",
+        "insulin_resistance",
+        "bloating",
+        "food_intolerance",
+        "blood_sludging",
+        "periauricular_eczema",
+        "psoriasis",
+        "fatigue",
+        "weight_gain_oedema",
+        "cold_intolerance",
+        "diarrhoea"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Fu Ling", "role": "Taiyin stabilise, calm damp", "notes": "" },
+          { "name": "Bai Zhu", "role": "Spleen Qi, dry damp", "notes": "" },
+          { "name": "Bai He", "role": "Lung Yin, cool", "notes": "" },
+          { "name": "Sheng Di", "role": "deep Yin rebuild", "notes": "" },
+          { "name": "Mai Men Dong", "role": "Lung-Stomach Yin, fascia moisture", "notes": "" },
+          { "name": "Shan Yao", "role": "Spleen-Kidney Qi", "notes": "" },
+          { "name": "Berberine", "role": "metabolic reset — glucose/lipid signalling; damp-heat modulation; microbiome tone", "notes": "see Berberine card for full protocol" }
+        ],
+        "preparation": "Decoction base + Berberine as separate supplement",
+        "device": "Warming laser lower back; IR"
+      }
+    },
+
+    {
+      "name": "cancer_pain_composite",
+      "aliases": ["oncological_pain_TCM"],
+      "tcm_axis": "Multi-axis — depends on pain type (see subtypes)",
+      "triggers": ["active_cancer_diagnosis"],
+      "subtypes": {
+        "local_compression": {
+          "pattern": "Shaoyang + Taiyin mixed",
+          "symptoms": ["mechanical_capsule_fascia_pain", "oedema_tension", "posture_dependent"]
+        },
+        "neuropathic_nerve_invasion": {
+          "pattern": "Shaoyang_nerve",
+          "symptoms": ["burning_lightning_like", "radiation_along_nerve", "allodynia", "hyperalgesia"]
+        },
+        "cachexia_diffuse": {
+          "pattern": "Jueyin_collapse",
+          "symptoms": ["diffuse_cold_dominant", "exhaustion", "no_localisation"]
+        }
+      },
+      "interventions": {
+        "herbs": [
+          { "name": "Nigella sativa (short course, low dose)", "role": "membrane stabilisation", "notes": "brief, adjunctive" },
+          { "name": "Spirulina", "role": "low energy wide-field support", "notes": "" }
+        ],
+        "device": "Laser perilesional (not direct on tumour); low-energy wide-field",
+        "notes": "Not disease treatment — supportive pain modulation only. Always adjunctive to oncology care."
+      }
+    },
+
+    {
+      "name": "cluster_headache_TAC",
+      "aliases": ["trigeminal_autonomic_cephalalgia", "SUNCT", "paroxysmal_hemicrania"],
+      "tcm_axis": "uncertain — possible Liver involvement; Shaoyang excess; field-level voltage-gated pathway",
+      "triggers": [
+        "circadian_rhythm_disruption",
+        "alcohol",
+        "stress",
+        "high_altitude"
+      ],
+      "symptoms": [
+        "unilateral_eye_temple_pain",
+        "autonomic_dysautonomia_eye_nose_ear",
+        "15_to_180_min_duration",
+        "restlessness_agitation",
+        "high_frequency_1_to_8_per_day",
+        "conjunctival_injection",
+        "rhinorrhoea",
+        "ptosis",
+        "lacrimation"
+      ],
+      "red_flags": [
+        "thunderclap_onset",
+        "neurological_deficit",
+        "papilloedema",
+        "neck_stiffness",
+        "immunocompromised_state",
+        "fever_weight_loss"
+      ],
+      "western_treatment": ["oxygen", "triptan", "verapamil", "lithium", "topiramate", "occipital_nerve_block", "sphenopalatine_block", "botox", "rTMS", "galcanezumab"],
+      "interventions": {
+        "herbs": [
+          { "name": "Liu Wei Di Huang Wan / Zhi Bai", "role": "base for Yin deficiency signs", "notes": "only if Yin deficiency pattern present" },
+          { "name": "Lian Jie Du Tang", "role": "heat-toxicity pattern", "notes": "front-end: not exposed to patient" }
+        ],
+        "supplements": ["Magnesium", "Riboflavin (mitochondrial)", "Electrolytes", "DuoLife Day/Night (ProCardio)"],
+        "device": "PBM — may reduce muscle tension and nociceptive input",
+        "preparation": "Adjunctive only alongside Western care"
+      }
+    },
+
+    {
+      "name": "arthritis_joint_degenerative",
+      "aliases": ["OA_pattern", "structural_failure"],
+      "tcm_axis": "Bu Shen (Kidney deficiency) — structural degeneration",
+      "triggers": [
+        "age",
+        "chronic_overload",
+        "post_surgical",
+        "genetic"
+      ],
+      "symptoms": [
+        "dull_aching_joint",
+        "morning_stiffness",
+        "crepitus",
+        "reduced_range_of_motion",
+        "worse_activity"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Du Zhong", "role": "Kidney-sinew support", "notes": "" },
+          { "name": "Xu Duan", "role": "restore connective tissue elasticity", "notes": "" },
+          { "name": "Gou Qi Zi", "role": "Liver-Kidney Yin", "notes": "" },
+          { "name": "He Shou Wu", "role": "Jing-blood rebuild", "notes": "" }
+        ],
+        "supplements": ["DuoLife Collagen", "Protein", "MyBlood", "Ginger", "Astaxanthin", "Spirulina"],
+        "preparation": "Long-term; reassess at 14 days",
+        "device": "Laser on joint; mild warmth; not aggressive"
+      }
+    },
+
+    {
+      "name": "berberine_metabolic_protocol",
+      "aliases": ["metabolic_overload_GI_glucose"],
+      "description": "Berberine as a targeted intervention — engine trigger, not standalone diagnosis",
+      "primary_uses": [
+        "metabolic_overload",
+        "gut_related_inflammation",
+        "glucose_lipid_dysregulation",
+        "low_grade_chronic_inflammatory_states",
+        "functional_GI_disorders_with_damp_heat",
+        "insulin_resistance_metabolic_syndrome",
+        "post_infectious_antibiotic_gut_imbalance"
+      ],
+      "contraindications": [
+        "severe_underweight",
+        "pregnancy",
+        "cold_deficiency_dominant_pattern",
+        "very_weak_digestion"
+      ],
+      "switch_logic": {
+        "ON_trigger": "heat_dominant, metabolic overload, damp-heat GI",
+        "OFF_trigger": "cold_dominant OR deficiency pattern",
+        "reassess_interval": "days_3_to_7"
+      },
+      "interactions": ["Metformin (monitor)", "PPIs (short-term OK)", "Prokinetics", "Antispasmodics"],
+      "preparation": "With or after meals; cyclically; as part of broader protocol",
+      "ecosystem_pairs": ["Fiber support", "Endotoxin control (Duolife)", "Tissue-level noise reduction"]
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "Irritable Bowel Syndrome (IBS)",
+      "associated_patterns": ["shaoyang_taiyin_dissonance", "cold_pelvis_shaoyin_collapse", "metabolic_cold_damp"],
+      "notes": "Splanchnicus reflex circuit disruption; solar plexus sympathetic overdrive; gut-brain axis as sympathetic field connection"
+    },
+    {
+      "diagnosis": "Functional Abdominal Pain Syndrome (FAPS)",
+      "associated_patterns": ["shaoyang_taiyin_dissonance"],
+      "notes": "Central sensitisation; splanchnicus and vagal field dysregulation; peritoneal fascia EM tension"
+    },
+    {
+      "diagnosis": "Chronic Pancreatitis Pain",
+      "associated_patterns": ["shaoyang_taiyin_dissonance"],
+      "notes": "Celiac plexus torsion; vegetative overactivation; splanchnicus block often diagnostic and therapeutic"
+    },
+    {
+      "diagnosis": "Post-Cholecystectomy Pain Syndrome",
+      "associated_patterns": ["shaoyang_taiyin_dissonance"],
+      "notes": "Local sympathetic reflex at coeliac plexus; fascial memory of organ (phantom gallbladder field); viscerosomatic imprint"
+    },
+    {
+      "diagnosis": "Chronic Pelvic Pain",
+      "associated_patterns": ["cold_pelvis_shaoyin_collapse", "shaoyang_taiyin_dissonance"],
+      "notes": "Superior/inferior hypogastric plexus SMP; Yin-field stagnation; multiple subtypes (cold-damp, trauma lock, blood stasis)"
+    },
+    {
+      "diagnosis": "Endometriosis",
+      "associated_patterns": ["cold_pelvis_shaoyin_collapse", "damp_heat_pelvic"],
+      "notes": "Cold pelvis with superimposed damp-heat flare; Chong-Ren circulation field heat; hormonal-Yin axis"
+    },
+    {
+      "diagnosis": "Prostatitis (non-bacterial / chronic)",
+      "associated_patterns": ["cold_pelvis_shaoyin_collapse", "damp_heat_pelvic"],
+      "notes": "Biofilm in cold (damp-cold) or inflamed (damp-heat) pelvis; culture negative: warm pelvis + autophagy induction"
+    },
+    {
+      "diagnosis": "Postoperative Visceral Adhesional Pain",
+      "associated_patterns": ["shaoyang_taiyin_dissonance", "cold_pelvis_shaoyin_collapse"],
+      "notes": "Sympathetic efferent circuit persists; fascial field memory; splanchnicus or hypogastric block may help"
+    },
+    {
+      "diagnosis": "Neurogenic Abdominal Wall Pain (ACNES)",
+      "associated_patterns": ["shaoyang_taiyin_dissonance"],
+      "notes": "Local sympathetic microspasm; linked to SMP at splanchnicus-segmental level"
+    },
+    {
+      "diagnosis": "CRPS (Complex Regional Pain Syndrome)",
+      "associated_patterns": ["shaoyang_taiyin_dissonance"],
+      "notes": "Prototype sympathetically maintained pain; splanchnicus block resets local field loop"
+    },
+    {
+      "diagnosis": "Fibromyalgia / ME-CFS",
+      "associated_patterns": ["jueyin_depletion", "shaoyin_taiyang_dissonance"],
+      "notes": "Jueyin collapsus; dopamine-melatonin axis failure; blood-Yin cannot store; EZ lattice global collapse"
+    },
+    {
+      "diagnosis": "Hypothyroidism",
+      "associated_patterns": ["metabolic_cold_damp", "jueyin_depletion"],
+      "notes": "Lung field loses rhythm and cooling; oxygen integrates poorly; metabolic hypoxia"
+    },
+    {
+      "diagnosis": "Insulin Resistance / Type 2 Diabetes",
+      "associated_patterns": ["metabolic_cold_damp", "berberine_metabolic_protocol"],
+      "notes": "Spleen field cannot hold dense Yin essence; glucose dysregulation; Berberine as primary metabolic reset"
+    },
+    {
+      "diagnosis": "Adrenal Fatigue",
+      "associated_patterns": ["shaoyin_taiyang_dissonance", "cold_pelvis_shaoyin_collapse"],
+      "notes": "Shaoyin (KD/HT) exhausted by sustained overdrive; adrenal-Kidney axis; retroperitoneal cold"
+    },
+    {
+      "diagnosis": "Post-viral Fatigue / Long COVID Dysautonomia",
+      "associated_patterns": ["shaoyang_taiyin_dissonance", "shaoyin_taiyang_dissonance"],
+      "notes": "Post-viral diaphragmatic heat type; EZ lattice damage; mitochondrial shift to glycolysis; vagal downregulation"
+    },
+    {
+      "diagnosis": "Depression (reactive / anhedonic)",
+      "associated_patterns": ["jueyin_depletion", "shaoyang_taiyin_dissonance"],
+      "notes": "Vagal stream cannot anchor below diaphragm; interoception breaks; mitochondrial feszültség-mód (Warburg-like)"
+    },
+    {
+      "diagnosis": "Major Depression / Bipolar Post-exhaustion",
+      "associated_patterns": ["jueyin_depletion"],
+      "notes": "Jueyin collapsus; dopamine-melatonin tensor collapses; body cannot dream itself regenerated each night"
+    },
+    {
+      "diagnosis": "Autoimmune Thyroid Disease",
+      "associated_patterns": ["jueyin_depletion", "metabolic_cold_damp"],
+      "notes": "Low vagal tone + chronic inflammation; blood-Yin cannot store"
+    },
+    {
+      "diagnosis": "Neurovegetative Dysautonomia",
+      "associated_patterns": ["shaoyin_taiyang_dissonance", "shaoyang_taiyin_dissonance"],
+      "notes": "Thermoregulation, heart rate, bowel rhythm dissociated; heat above cold below macro-pattern"
+    },
+    {
+      "diagnosis": "Perimenopausal Syndrome",
+      "associated_patterns": ["jueyin_depletion", "shaoyin_taiyang_dissonance"],
+      "notes": "Oestrogen-melatonin-GABA triple loss of synchrony; dreamless state; Jueyin collapsus"
+    },
+    {
+      "diagnosis": "Cluster Headache (ICHD-3)",
+      "associated_patterns": ["cluster_headache_TAC"],
+      "notes": "uncertain TCM mapping; possible Shaoyang excess + Liver involvement; Western treatment primary"
+    },
+    {
+      "diagnosis": "Paroxysmal Hemicrania / SUNCT / Hemicrania Continua",
+      "associated_patterns": ["cluster_headache_TAC"],
+      "notes": "TAC subgroup; strictly responds to Indomethacin (PH); TCM mapping uncertain"
+    },
+    {
+      "diagnosis": "Osteoarthritis (OA)",
+      "associated_patterns": ["arthritis_joint_degenerative", "qi_blood_stasis_joint"],
+      "notes": "Structural failure + microcirculatory stasis; Bu Shen base + blood-stasis modulation"
+    },
+    {
+      "diagnosis": "Rheumatoid Arthritis (RA) — flare",
+      "associated_patterns": ["damp_heat_pelvic", "qi_blood_stasis_joint"],
+      "notes": "Active flare = damp-heat; between flares = Qi-blood stasis + Kidney deficiency"
+    },
+    {
+      "diagnosis": "Femoro-Acetabular Impingement (FAI)",
+      "associated_patterns": ["qi_blood_stasis_joint"],
+      "notes": "Chronic Yang compression + EZ collapse + calcification of Qi stagnation; psoas armor pattern; pelvic Yang compression"
+    },
+    {
+      "diagnosis": "Gluteal Bursitis / Tendinopathy",
+      "associated_patterns": ["qi_blood_stasis_joint", "cold_pelvis_shaoyin_collapse"],
+      "notes": "GB-BL junction heat-stagnation; pelvic Yang compression seeking vent"
+    },
+    {
+      "diagnosis": "Hip Osteoarthritis",
+      "associated_patterns": ["arthritis_joint_degenerative", "qi_blood_stasis_joint"],
+      "notes": "Chronic Yang densification and EZ collapse; ossification of Qi stagnation"
+    },
+    {
+      "diagnosis": "Meralgia Paresthetica",
+      "associated_patterns": ["qi_blood_stasis_joint", "cold_pelvis_shaoyin_collapse"],
+      "notes": "Thickened fascia compresses lateral femoral cutaneous nerve; blocked Dai Mai flow"
+    },
+    {
+      "diagnosis": "Sacroiliac Pain / Pelvic Floor Pain",
+      "associated_patterns": ["cold_pelvis_shaoyin_collapse"],
+      "notes": "Kidney water-Liver fire disconnection; Yin anchor loss"
+    },
+    {
+      "diagnosis": "Piriformis Syndrome",
+      "associated_patterns": ["cold_pelvis_shaoyin_collapse", "qi_blood_stasis_joint"],
+      "notes": "Myofascial pain + possible sciatic nerve compression; post-traumatic scar variant exists"
+    },
+    {
+      "diagnosis": "Symphysis Pubis Dysfunction",
+      "associated_patterns": ["cold_pelvis_shaoyin_collapse"],
+      "notes": "Qi deficiency / mitochondrial dysfunction; internal Damp-Cold syndrome"
+    },
+    {
+      "diagnosis": "Coxa Saltans (Snapping Hip)",
+      "associated_patterns": ["qi_blood_stasis_joint"],
+      "notes": "Yin Qiao Mai or Yin Wei Mai instability; loss of inner coherence at Yin channel level"
+    },
+    {
+      "diagnosis": "IBS (upper field type)",
+      "associated_patterns": ["shaoyang_taiyin_dissonance"],
+      "notes": "Upper field dysregulation; gut-brain axis as sympathetic field"
+    },
+    {
+      "diagnosis": "Pancreatic Cancer Pain",
+      "associated_patterns": ["cancer_pain_composite"],
+      "notes": "Celiac plexus SMP; supportive only"
+    },
+    {
+      "diagnosis": "Herpetic Pain / Post-Herpetic Neuralgia",
+      "associated_patterns": ["cancer_pain_composite"],
+      "notes": "Neuropathic subtype; Shaoyang nerve involvement; uncertain full mapping"
+    }
+  ],
+
+  "rules": [
+    {
+      "condition": "heat_dominant_flag = true",
+      "action": "activate_berberine_ON; use_cooling_herbs (Mu Dan Pi, Huang Bai, Ze Xie); avoid_warming_formula"
+    },
+    {
+      "condition": "cold_dominant_flag = true OR deficiency_pattern = true",
+      "action": "turn_berberine_OFF; use_warming_Yang_herbs (Rou Gui, Hu Lu Ba, Yin Yang Huo); avoid_Lian_Jie_Du_Tang"
+    },
+    {
+      "condition": "pregnancy_flag = true",
+      "action": "exclude: Chuan Xiong, Dan Shen, San Qi, Chuan Niu Xi, Yi Mu Cao, Fu Zi; flag for specialist review"
+    },
+    {
+      "condition": "digestive_sensitivity_flag = true",
+      "action": "remove: Huang Bai, Long Dan Cao, Ze Xie (high dose); reduce formula complexity; add Gan Cao as buffer"
+    },
+    {
+      "condition": "frailty_flag = true",
+      "action": "reduce_formula_complexity; prioritise Yin-rebuild phase only; avoid aggressive movers (San Qi, Chuan Xiong at full dose)"
+    },
+    {
+      "condition": "active_cancer = true",
+      "action": "label_as_supportive_pain_modulation_only; no_disease_treatment_claim; always_adjunctive_to_oncology"
+    },
+    {
+      "condition": "acute_inflammatory_flare = true AND CRP_elevated = true AND WBC_elevated = true",
+      "action": "use_damp_heat_formula (Long Dan Xie Gan Tang); avoid_warming_protocol; reassess_after_flare"
+    },
+    {
+      "condition": "biofilm_suspected = true (white_tongue_coating OR recurrent_pelvic_infection OR menstrual_pain_better_heat)",
+      "action": "add_biofilm_clearance_protocol: Wen Dan Tang + Yi Mu Cao + Cang Zhu + Chuan Niu Xi + Huang Bai"
+    },
+    {
+      "condition": "upper_heat + lower_cold both present",
+      "action": "activate_cold_pelvis_shaoyin_collapse AND flag_vertical_dissociation (Chong-Ren-Du uncoupled); treat_lower_first_before_clearing_upper_heat"
+    },
+    {
+      "condition": "jueyin_depletion detected AND Yang_recovery_tempting",
+      "action": "hold_Yang_recall_phase; complete_Yin_rebuild_first; only_add_Chai_Hu_Huang_Qi_Rou_Gui_after_stabilisation"
+    },
+    {
+      "condition": "culture_negative AND CRP_normal AND WBC_normal AND pelvic_pain_cold_type",
+      "action": "warm_pelvis_with_PBM; induce_autophagy; avoid_antibiotics"
+    },
+    {
+      "condition": "culture_positive AND pelvic_infection",
+      "action": "antibiotics_primary; add_warm_herbs_alongside (chamomile, ginger) to induce autophagy; avoid_cold_antibiotic_only_approach"
+    },
+    {
+      "condition": "stasis_confidence = high AND pain_worse_at_rest = true",
+      "action": "prioritise_blood_stasis_protocol (Dan Shen, San Qi, Chuan Xiong, Yu Jin); gentle_not_aggressive"
+    },
+    {
+      "condition": "emotional_constraint_flag = true",
+      "action": "add_emotional_release_herbs (He Huan Pi, Ye Jiao Teng, Bai Zi Ren); include_somatic_bodywork_recommendation"
+    },
+    {
+      "condition": "berberine_switch AND reassess_day_3_to_7",
+      "action": "if_symptoms_changed_toward_cold: turn_berberine_OFF; if_still_heat_dominant: continue"
+    },
+    {
+      "condition": "organ_removed (cholecystectomy, hysterectomy, appendectomy, nephrectomy)",
+      "action": "flag_viscerosomatic_imprint_risk; assess_for_phantom_field_pain; consider_fascial_memory_protocol"
+    }
+  ],
+
+  "five_element_map": {
+    "FIRE": {
+      "organ": "Heart / Small Intestine",
+      "function": "neural rhythm, cardiac field",
+      "pathology_note": "ectopic discharge when depleted"
+    },
+    "EARTH": {
+      "organ": "Spleen / Stomach",
+      "function": "digestion / autophagy",
+      "pathology_note": "food intolerance, blood sludging when weak"
+    },
+    "METAL": {
+      "organ": "Lung / Large Intestine",
+      "function": "respiratory chain",
+      "pathology_note": "hypothyroid pattern, eczema when Yin collapses"
+    },
+    "WATER": {
+      "organ": "Kidney / Bladder",
+      "function": "ERM, Jing synthesis, wiring",
+      "pathology_note": "adrenal fatigue, cold pelvis when depleted"
+    },
+    "WOOD": {
+      "organ": "Liver / Gallbladder",
+      "function": "CSF / Yin dampens fire; HUN / morphogenetic field",
+      "pathology_note": "phantom pain, dark broken field when depleted"
+    }
+  },
+
+  "axis_prediction_module": {
+    "description": "7-axis probability model to identify dominant energetic axis from symptom input",
+    "input_blocks": [
+      {
+        "block": "Head_Neck_Posterior",
+        "symptoms": ["occipital_headache", "neck_stiffness_pressure", "worse_bending_straining", "visual_disturbance", "relief_supported_posture"],
+        "flags": ["history_lumbar_puncture", "IIH_known", "RESS_Chiari_venous"]
+      },
+      {
+        "block": "Lateral_MSK_Autonomic",
+        "symptoms": ["hip_line_tightness_same_side", "TMJ_tension", "nerve_entrapment_tingling", "frozen_shoulder_bursitis", "CRPS_phase_I_features"]
+      },
+      {
+        "block": "Visceral_GI",
+        "symptoms": ["post_meal_symptoms", "bowel_pattern_changes", "abdominal_pain_fatigue", "bloating"]
+      },
+      {
+        "block": "Metabolic_Endocrine",
+        "symptoms": ["diabetes_metabolic_syndrome", "panic_episodes", "palpitations", "sleep_fragmentation", "bladder_irritability"]
+      },
+      {
+        "block": "Global_Multisystem",
+        "symptoms": ["fibromyalgia_like", "multiple_axes_simultaneous", "failed_multiple_treatments"]
+      }
+    ],
+    "output_format": {
+      "primary_axis": "top probability score axis",
+      "secondary_axis": "second probability score",
+      "flags": "high_risk alerts for loop review"
+    }
+  },
+
+  "notes": [
+    "All interventions are supportive and integrative — not replacing Western medical diagnosis or treatment",
+    "Pattern assignments are probabilistic, not absolute; always cross-check with clinical presentation",
+    "Berberine switch logic must be reassessed at days 3-7; do not treat as permanent ON",
+    "Fascial memory / viscerosomatic imprint concept is the author's integrative framework — not standard Western diagnosis",
+    "EZ water / vízrács references are from Gerald Pollack's structured water model; not yet in standard medical literature",
+    "Formula doses are in grams and represent base doses; adjust for frailty, age, digestive sensitivity",
+    "5_element_cycles.pages file contains UI design spec for a Five Element Cellular Field Map — visual-only, no additional clinical rules extracted",
+    "axis_prediction.pages contains the Axis Prediction Module v1.0 design — input/output logic captured above",
+    "Batch 2 files not yet processed (CRPS.pdf, Cold-Heat_complex_engine.pdf, Base_44_Metabolic_Rhythm.pages)"
+  ]
+}

@@ -1,0 +1,9 @@
+[project]
+name = "avicenna-clinical-engine"
+version = "0.1.0"
+description = "Internal symbolic terrain reasoning layer for the Avicenna Clinical Engine."
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
