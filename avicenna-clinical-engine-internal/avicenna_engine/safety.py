@@ -57,6 +57,9 @@ SPINAL_RED_FLAG_MARKERS = [
     "unstable spondylolisthesis",
     "spondylolisthesis",
 ]
+ECM_DAMPNESS_MARKERS = ["bloating", "heaviness", "post meal", "post-meal", "slow recovery", "pain returns", "morning stiffness"]
+SURFACE_STAGNATION_MARKERS = ["microclot", "microvascular adhesion", "cold extremities", "raynaud", "heavy legs", "blood sludging"]
+STASIS_ACTIVE_MARKERS = ["fixed stabbing pain", "night worsening", "trauma history", "fibrous area", "purple tone"]
 
 
 class SafetyLayer:
@@ -207,6 +210,79 @@ class SafetyLayer:
             normalize_term(case.observations.get("abdominal_wall_tone") or case.flags.get("abdominal_wall_tone") or "") == "low"
         )
         facts["adrenal_excess"] = facts.get("adrenal_excess", False) or text_contains_any(text, ["adrenal excess"])
+        facts["pain_fluctuates_with_digestion"] = facts.get("pain_fluctuates_with_digestion", False) or text_contains_any(
+            text, ["pain fluctuates with digestion", "pain worse after eating", "post meal worsening", "post-meal worsening"]
+        )
+        facts["bloating"] = facts.get("bloating", False) or text_contains_any(text, ["bloating"])
+        facts["heaviness"] = facts.get("heaviness", False) or text_contains_any(text, ["heaviness", "heavy legs", "heavy limb"])
+        facts["post_meal_worsening"] = facts.get("post_meal_worsening", False) or text_contains_any(
+            text, ["post meal worsening", "post-meal worsening", "pain worse after eating"]
+        )
+        facts["slow_recovery"] = facts.get("slow_recovery", False) or text_contains_any(text, ["slow recovery", "poor recovery"])
+        facts["gut_noise_present"] = facts.get("gut_noise_present", False) or _count_markers(case, ECM_DAMPNESS_MARKERS) >= 2
+        facts["ecm_dampness_logic"] = facts.get("ecm_dampness_logic", False) or facts["gut_noise_present"]
+        facts["autophagy_protocol_planned"] = facts.get("autophagy_protocol_planned", False) or text_contains_any(
+            text, ["autophagy protocol planned", "proselect", "borellispro", "autophagy induction"]
+        )
+        facts["endothelial_stagnation_pattern_confirmed"] = facts.get("endothelial_stagnation_pattern_confirmed", False) or text_contains_any(
+            text, SURFACE_STAGNATION_MARKERS
+        )
+        facts["dan_shen_sole_first_agent"] = facts.get("dan_shen_sole_first_agent", False) or text_contains_any(
+            text, ["dan shen sole first", "dan shen first agent", "dan shen used first"]
+        )
+        facts["proimmuno_fucoidan_co_prescribed"] = text_contains_any(text, ["proimmuno"]) and text_contains_any(text, ["fucoidan"])
+        facts["fucoidan_with_anticoagulants"] = text_contains_any(text, ["fucoidan"]) and (
+            text_contains_any(text, ["anticoagulant", "aspirin", "rivaroxaban", "apixaban", "doac"])
+            or bool({"aspirin", "rivaroxaban", "apixaban", "doac", "anticoagulant"} & set(facts.get("current_medications", [])))
+        )
+        facts["fucoidan_with_nsaids_or_steroids"] = text_contains_any(text, ["fucoidan"]) and (
+            text_contains_any(text, ["nsaid", "steroid"]) or bool({"nsaid", "nsaids", "steroid", "steroids"} & set(facts.get("current_medications", [])))
+        )
+        facts["fucoidan_with_metformin_or_insulin"] = text_contains_any(text, ["fucoidan"]) and (
+            text_contains_any(text, ["metformin", "insulin"]) or bool({"metformin", "insulin"} & set(facts.get("current_medications", [])))
+        )
+        facts["fucoidan_dosing_evening"] = facts.get("fucoidan_dosing_evening", False) or text_contains_any(
+            text, ["fucoidan evening", "fucoidan at night", "evening fucoidan"]
+        )
+        facts["fucoidan_with_stimulants"] = text_contains_any(text, ["fucoidan"]) and text_contains_any(
+            text, ["caffeine", "pre-workout", "strong stimulant"]
+        )
+        facts["strong_yang_deficiency"] = facts.get("strong_yang_deficiency", False) or text_contains_any(
+            text, ["strong yang deficiency", "cold collapse"]
+        )
+        facts["acute_yang_excess"] = facts.get("acute_yang_excess", False) or text_contains_any(text, ["acute yang excess", "acute pain"])
+        facts["cachectic"] = facts.get("cachectic", False) or text_contains_any(text, ["cachectic", "starving"])
+        facts["severe_diarrhoea"] = facts.get("severe_diarrhoea", False) or text_contains_any(text, ["severe diarrhoea", "severe diarrhea"])
+        facts["functional_exhaustion_pattern"] = facts.get("functional_exhaustion_pattern", False) or (
+            text_contains_any(text, ["diffuse pain", "normal labs", "sleep fragmentation"]) and not facts["endothelial_stagnation_pattern_confirmed"]
+        )
+        facts["active_stasis_signs_present"] = facts.get("active_stasis_signs_present", False) or text_contains_any(text, STASIS_ACTIVE_MARKERS)
+        facts["pain_returns_after_treatment"] = facts.get("pain_returns_after_treatment", False) or text_contains_any(
+            text, ["pain returns after treatment", "pain improves then returns", "pain echoes after treatment"]
+        )
+        facts["fiber_without_astragalus"] = facts.get("fiber_without_astragalus", False) or text_contains_any(text, ["fiber without astragalus"])
+        facts["astragalus_prescribed"] = text_contains_any(text, ["astragalus", "huang qi"])
+        facts["astragalus_too_early"] = facts.get("astragalus_too_early", False) or text_contains_any(text, ["astragalus too early"])
+        facts["chlorella_high_dose_detox"] = facts.get("chlorella_high_dose_detox", False) or text_contains_any(
+            text, ["chlorella high dose", "high dose during detox", "detox overpull"]
+        )
+        facts["protocol_duration_insufficient"] = facts.get("protocol_duration_insufficient", False) or text_contains_any(
+            text, ["protocol duration insufficient", "less than 4 weeks", "stopped after 1 week"]
+        )
+        facts["symptom_worsening_occurs"] = facts.get("symptom_worsening_occurs", False) or text_contains_any(text, ["symptom worsening"])
+        facts["fucoidan_heaviness"] = facts.get("fucoidan_heaviness", False) or text_contains_any(text, ["fucoidan causes heaviness", "felt heavy"])
+        facts["dan_shen_worsens_stabbing_pain"] = facts.get("dan_shen_worsens_stabbing_pain", False) or text_contains_any(
+            text, ["dan shen worsens stabbing pain", "stabbing pain worsens"]
+        )
+        facts["fatigue_worsens"] = facts.get("fatigue_worsens", False) or text_contains_any(text, ["fatigue worsens", "fatigue increases"])
+        facts["fiber_causes_collapse"] = facts.get("fiber_causes_collapse", False) or text_contains_any(text, ["fiber causes collapse"])
+        facts["lateral_kinetic_chain_pattern_confirmed"] = facts.get("lateral_kinetic_chain_pattern_confirmed", False) or text_contains_any(
+            text, ["lateral kinetic chain", "lateral hip pain", "temporal headache", "vestibular tension", "ankle instability"]
+        )
+        facts["frozen_shoulder_pattern"] = facts.get("frozen_shoulder_pattern", False) or text_contains_any(text, ["frozen shoulder"])
+        facts["sheng_mai_san_formula_consideration"] = facts.get("sheng_mai_san_formula_consideration", False) or text_contains_any(
+            text, ["sheng mai san"]
+        )
         facts["user_searches_dangerous_molecule"] = text_contains_any(text, DANGEROUS_MOLECULES)
         facts["tens_only_while_on"] = facts.get("tens_only_while_on", False) or (
             "only" in facts["tens_response"] and "on" in facts["tens_response"]
@@ -241,6 +317,10 @@ class SafetyLayer:
             text, ["mitochondrial decoherence", "mitochondrial field collapse"]
         )
         facts["dampness_pattern"] = facts.get("dampness_pattern", False) or "dampness_biofilm" in top_names
+        facts["endothelial_stagnation_pattern_confirmed"] = facts["endothelial_stagnation_pattern_confirmed"] or "endothel_surface_stagnation" in top_names
+        facts["ecm_dampness_logic"] = facts["ecm_dampness_logic"] or "dampness_ECM_overload" in top_names
+        facts["functional_exhaustion_pattern"] = facts["functional_exhaustion_pattern"] or "functional_exhaustion_neurofascial" in top_names
+        facts["lateral_kinetic_chain_pattern_confirmed"] = facts["lateral_kinetic_chain_pattern_confirmed"] or "lateral_kinetic_chain_overload" in top_names
         facts["berberine_switch"] = facts.get("berberine_switch", False) or "berberine_metabolic_protocol" in top_names
         facts["stasis_confidence"] = facts.get("stasis_confidence", False)
         facts["pain_worse_at_rest"] = facts.get("pain_worse_at_rest", False) or text_contains_any(text, ["pain worse at rest"])
@@ -265,7 +345,7 @@ class SafetyLayer:
                 continue
             severity = _severity(condition, action)
             decision.active_rules.append(SafetyRuleHit(condition=condition, action=action, severity=severity))
-            parsed = _parse_action(action)
+            parsed = _parse_action(f"{condition}; {action}")
             exclusions.extend(parsed["exclusions"])
             avoid_categories.extend(parsed["avoid_categories"])
             required_framing.extend(parsed["required_framing"])
@@ -331,6 +411,61 @@ def _evaluate_condition(condition: str, facts: dict[str, Any]) -> bool:
         return bool(facts.get("tens_only_while_on"))
     if "red_flags_present" in normal:
         return bool(facts.get("red_flags_present"))
+    if "pain_fluctuates_with_digestion" in normal:
+        return bool(
+            facts.get("pain_fluctuates_with_digestion")
+            and (facts.get("bloating") or facts.get("heaviness") or facts.get("post_meal_worsening") or facts.get("slow_recovery"))
+        )
+    if "gut_noise_present" in normal:
+        return bool(facts.get("gut_noise_present") and facts.get("autophagy_protocol_planned"))
+    if "endothelial_stagnation_pattern_confirmed" in normal:
+        return bool(facts.get("endothelial_stagnation_pattern_confirmed"))
+    if "dan_shen_used_as_sole_first_agent" in normal:
+        return bool(facts.get("dan_shen_sole_first_agent"))
+    if "proimmuno_and_fucoidan_co_prescribed" in normal:
+        return bool(facts.get("proimmuno_fucoidan_co_prescribed"))
+    if "fucoidan_prescribed_with_anticoagulants" in normal:
+        return bool(facts.get("fucoidan_with_anticoagulants"))
+    if "fucoidan_prescribed_with_nsaids_or_steroids" in normal:
+        return bool(facts.get("fucoidan_with_nsaids_or_steroids"))
+    if "fucoidan_prescribed_with_metformin_insulin" in normal:
+        return bool(facts.get("fucoidan_with_metformin_or_insulin"))
+    if "fucoidan_dosing_time_evening" in normal:
+        return bool(facts.get("fucoidan_dosing_evening"))
+    if "fucoidan_strong_stimulants" in normal:
+        return bool(facts.get("fucoidan_with_stimulants"))
+    if "fucoidan_strong_yang_deficiency" in normal:
+        return bool(facts.get("strong_yang_deficiency"))
+    if "acute_pain_acute_yang_excess" in normal:
+        return bool(facts.get("acute_yang_excess"))
+    if "cachectic_starving_patient" in normal:
+        return bool(facts.get("cachectic"))
+    if "severe_diarrhoea" in normal:
+        return bool(facts.get("severe_diarrhoea"))
+    if "functional_exhaustion_pattern" in normal:
+        return bool(facts.get("functional_exhaustion_pattern"))
+    if "active_stasis_signs_present" in normal:
+        return bool(facts.get("active_stasis_signs_present"))
+    if "pain_improves_then_returns_after_treatment" in normal:
+        return bool(facts.get("pain_returns_after_treatment"))
+    if "fiber_without_astragalus" in normal:
+        return bool(facts.get("fiber_without_astragalus"))
+    if "astragalus_prescribed_in_acute_inflammation" in normal:
+        return bool(facts.get("astragalus_prescribed") and facts.get("acute_inflammatory_flare"))
+    if "astragalus_prescribed_too_early" in normal:
+        return bool(facts.get("astragalus_too_early"))
+    if "chlorella_prescribed_in_high_dose" in normal:
+        return bool(facts.get("chlorella_high_dose_detox"))
+    if "protocol_duration_insufficient" in normal:
+        return bool(facts.get("protocol_duration_insufficient"))
+    if "symptom_worsening_occurs" in normal:
+        return bool(facts.get("symptom_worsening_occurs"))
+    if "lateral_kinetic_chain_pattern_confirmed" in normal:
+        return bool(facts.get("lateral_kinetic_chain_pattern_confirmed"))
+    if "frozen_shoulder_pattern" in normal:
+        return bool(facts.get("frozen_shoulder_pattern"))
+    if "sheng_mai_san_formula_consideration" in normal:
+        return bool(facts.get("sheng_mai_san_formula_consideration"))
     if "red_flag_present" in normal:
         return bool(facts.get("red_flag_present"))
     if "fatigue_true_and_post_viral_true_and_resilience_low" in normal:
@@ -510,6 +645,37 @@ def _parse_action(action: str) -> dict[str, Any]:
             out["cautions"].append("calm_sympathetic_before_direct_facet_work")
         if "treat_ren_as_parallel_to_du" in normal:
             out["cautions"].append("anterior_chain_restoration_required")
+        if "fiber_module_first" in normal or "fiber_must_precede_autophagy" in normal:
+            out["cautions"].append("fiber_before_autophagy_or_targeted_protocol")
+        if "start_fucoidan_before_dan_shen" in normal or "fucoidan_before_dan_shen" in normal:
+            out["cautions"].append("surface_before_microcirculation_moving")
+        if "dan_shen" in normal and ("contraindicated_as_first_agent" in normal or "used_as_sole_first_agent" in normal):
+            out["avoid_categories"].append("dan_shen_first_line")
+        if "separate_by_30_60_minutes" in normal or "fucoidan_first" in normal:
+            out["cautions"].append("fucoidan_before_proimmuno_30_60_min")
+        if "fucoidan_dosing_time_evening" in normal or "contraindicated_in_evening" in normal:
+            out["avoid_categories"].append("fucoidan_evening_dosing")
+        if "fucoidan_strong_stimulants" in normal or "avoid_combination" in normal:
+            out["avoid_categories"].append("fucoidan_with_strong_stimulants")
+        if "fucoidan_strong_yang_deficiency" in normal or "worsen_cold_collapse" in normal:
+            out["avoid_categories"].append("fucoidan_in_cold_collapse")
+        if "fiber_contraindicated" in normal or "fiber_not_first_line" in normal:
+            out["avoid_categories"].append("fiber_first_line")
+        if "fucoidan_often_unnecessary" in normal:
+            out["avoid_categories"].append("fucoidan_first_line")
+        if "anticoagulants" in normal or "metformin" in normal or "insulin" in normal or "nsaids_or_steroids" in normal:
+            out["required_framing"].append("clinician_review_monitor_carefully")
+            out["required_framing"].append("do_not_replace_prescribed_medication")
+        if "not_inr_raising" in normal:
+            out["required_framing"].append("not_known_as_direct_inr_raising")
+        if "detox_overpull" in normal:
+            out["avoid_categories"].append("aggressive_detox_overpull")
+        if "minimum_4_6_weeks" in normal:
+            out["cautions"].append("minimum_4_6_weeks_first_review_2_3_weeks")
+        if "felt_heavy" in normal or "stabbing_pain_worsens" in normal or "fatigue_increases" in normal:
+            out["cautions"].append("interpret_worsening_as_state_feedback")
+        if "treat_full_lateral_fascial_circuit" in normal:
+            out["cautions"].append("evaluate_full_lateral_kinetic_chain_not_local_site_only")
         if "never_abrupt" in normal or "slow_taper" in normal or "medication_exit" in normal:
             out["cautions"].append("no_abrupt_medication_discontinuation")
         if "gut_before_escalating" in normal or "gut_digestion_first" in normal:

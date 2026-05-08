@@ -259,6 +259,89 @@ class AvicennaClinicalEngineTests(unittest.TestCase):
         self.assertIn("late_structural_stage_supportive_only", result.spinal.cautions)
         self.assertIn("structural_stage_supportive_only", result.safety.required_framing)
 
+    def test_batch5_surface_before_microcirculation_moving(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Microclot / Endothelial Dysfunction"],
+                "symptoms": ["cold extremities", "heavy legs", "brain fog", "poor recovery"],
+                "free_text": "Dan Shen used first as sole first agent in endothelial stagnation.",
+            }
+        )
+        names = [score.name for score in result.patterns[:5]]
+        self.assertIn("endothel_surface_stagnation", names)
+        self.assertIn("surface_before_microcirculation_moving", result.safety.cautions)
+        self.assertIn("dan_shen_first_line", result.safety.avoid_categories)
+        self.assertEqual(result.surface.sequence[0].name, "surface_regulation")
+        dan_shen = [candidate for candidate in result.interventions if candidate.name == "Dan Shen"]
+        self.assertTrue(any(candidate.status == "caution" for candidate in dan_shen))
+
+    def test_batch5_fiber_before_autophagy_for_ecm_dampness(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["CRPS I (Complex Regional Pain Syndrome Type I)"],
+                "symptoms": ["bloating", "pain returns after treatment", "morning stiffness", "slow recovery"],
+                "free_text": "Autophagy protocol planned with ProSelect.",
+            }
+        )
+        names = [score.name for score in result.patterns[:5]]
+        self.assertIn("dampness_ECM_overload", names)
+        self.assertIn("fiber_before_autophagy_or_targeted_protocol", result.safety.cautions)
+        self.assertEqual(result.surface.sequence[0].name, "fiber_terrain_support")
+
+    def test_batch5_functional_exhaustion_deprioritizes_fucoidan(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "symptoms": ["diffuse pain", "normal labs", "sleep fragmentation", "non-restorative sleep", "fatigue"],
+            }
+        )
+        names = [score.name for score in result.patterns[:5]]
+        self.assertIn("functional_exhaustion_neurofascial", names)
+        self.assertIn("fucoidan_first_line", result.safety.avoid_categories)
+        self.assertEqual(result.surface.dominant_interface, "neurofascial_exhaustion")
+        self.assertIn("do_not_confuse_functional_exhaustion_with_surface_stagnation", result.surface.cautions)
+
+    def test_batch5_fucoidan_timing_and_compatibility_are_cautious(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "free_text": "Fucoidan evening with ProImmuno and aspirin DOAC metformin insulin.",
+                "observations": {"current_medications": ["aspirin", "metformin"]},
+            }
+        )
+        self.assertIn("fucoidan_evening_dosing", result.safety.avoid_categories)
+        self.assertIn("clinician_review_monitor_carefully", result.safety.required_framing)
+        self.assertIn("do_not_replace_prescribed_medication", result.safety.required_framing)
+        timing = {(rule.item, rule.rule) for rule in result.surface.timing_rules}
+        self.assertIn(("Fucoidan + ProImmuno", "separate_by_30_to_60_minutes"), timing)
+        self.assertTrue(result.surface.compatibility_cautions)
+
+    def test_batch5_lateral_kinetic_chain_is_full_chain(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "diagnoses": ["Greater Trochanteric Pain Syndrome"],
+                "symptoms": ["lateral hip pain", "temporal headache", "ankle instability", "vestibular tension"],
+            }
+        )
+        self.assertTrue(result.surface.fascial_chain)
+        chain = result.surface.fascial_chain[0]
+        self.assertIn("lateral_hip", chain.regions_to_evaluate)
+        self.assertIn("temporal_headache", chain.regions_to_evaluate)
+        self.assertIn("evaluate_full_lateral_kinetic_chain_not_local_site_only", result.safety.cautions)
+
+    def test_batch5_feedback_signals_are_state_information(self) -> None:
+        result = self.engine.evaluate(
+            {
+                "free_text": (
+                    "Fucoidan causes heaviness. Dan Shen worsens stabbing pain. "
+                    "Fiber causes collapse. Fatigue worsens during protocol."
+                ),
+            }
+        )
+        signals = {item.signal for item in result.surface.feedback}
+        self.assertIn("Fucoidan causes heaviness", signals)
+        self.assertIn("Dan Shen worsens stabbing pain", signals)
+        self.assertIn("Fiber causes collapse", signals)
+        self.assertIn("Fatigue worsens", signals)
+
 
 if __name__ == "__main__":
     unittest.main()

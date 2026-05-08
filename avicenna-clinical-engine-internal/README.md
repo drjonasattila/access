@@ -14,6 +14,7 @@ It is not a symptom checker, diagnostic AI, or treatment recommender. It produce
 - `onboarding.py` keeps beginner metabolic rhythm pathways separate from advanced terrain reconstruction.
 - `stabilization.py` sequences intervention layers, bridge tools, medication-transition support, relapse loops, and dangerous-molecule safety redirects.
 - `spinal.py` adds spinal segment, Du-Ren, fascia-organ, degenerative staging, movement, and PBM targeting overlays with red-flag-first safety.
+- `surface.py` adds surface-interface sequencing for endothelial, ECM, gut-nerve, fascial-chain, and post-viral instability states.
 - `contradictions.py` detects mixed thermal states and other terrain conflicts.
 - `terrain.py` converts scores into system-state interpretation, compensatory loops, and dynamic transitions.
 - `interventions.py` extracts herbs, devices, lifestyle, breathwork, movement, and related categories as terrain modulators, then blocks or cautions them through safety rules.
@@ -81,3 +82,16 @@ Batch 4 adds a spinal reasoning overlay:
 - anterior-chain restoration when Ren collapse contributes to posterior spinal overload
 - PBM targeting overlays for Huatuojiaji, BL line, GB line, affected segment, and organ resonance zones
 - spinal red flags override all symbolic reasoning and require referral/escalation framing
+
+## Batch 5 Surface-Interface Expansion
+
+Batch 5 adds ordered surface/interface logic:
+
+- endothelial surface stagnation is sequenced as surface regulation before stronger microcirculation moving
+- ECM dampness is modeled as tissue/network overload and slow recovery medium, not mucus or detox
+- gut-ECM-nerve patterns prioritize Fiber/terrain support before autophagy or targeted pain protocols
+- Fucoidan is framed cautiously as a surface/interface regulator, never as anticoagulation, tumour treatment, stimulant, or replacement medication
+- timing rules cover Fucoidan morning/early afternoon, Fucoidan before ProImmuno, Fucoidan before Dan Shen, and Fiber before autophagy
+- contradiction feedback interprets heaviness, stabbing-pain worsening, fatigue worsening, or Fiber collapse as state information
+- lateral kinetic chain logic evaluates the full chain instead of the local pain site only
+- device guidance remains brand-agnostic and low-intensity, with capability mapping reserved for a later layer

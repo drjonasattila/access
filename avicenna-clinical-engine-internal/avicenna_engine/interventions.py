@@ -103,6 +103,21 @@ def _apply_safety(candidates: list[InterventionCandidate], safety: SafetyDecisio
         if candidate_name in exclusion_keys:
             status = "blocked_by_safety"
             reason = "excluded_by_active_rule"
+        elif "fucoidan_evening_dosing" in avoid and "fucoidan" in marker_text:
+            status = "caution"
+            reason = "fucoidan_timing_morning_or_early_afternoon_only"
+        elif "fucoidan_in_cold_collapse" in avoid and "fucoidan" in marker_text:
+            status = "blocked_by_safety"
+            reason = "fucoidan_avoided_in_cold_collapse"
+        elif "fucoidan_first_line" in avoid and "fucoidan" in marker_text:
+            status = "caution"
+            reason = "fucoidan_not_first_line_for_functional_exhaustion"
+        elif "fiber_first_line" in avoid and "fiber" in marker_text:
+            status = "blocked_by_safety"
+            reason = "fiber_first_line_contraindicated"
+        elif "dan_shen_first_line" in avoid and "dan_shen" in marker_text:
+            status = "caution"
+            reason = "dan_shen_deferred_until_surface_prepared"
         elif "fat_loss_protocol" in avoid and _has_any(marker_text, {"fat_burning", "fat_loss", "visceral_fat_targeting"}):
             status = "blocked_by_safety"
             reason = "fat_loss_protocol_avoided"

@@ -1,0 +1,532 @@
+{
+  "patterns": [
+    {
+      "name": "endothel_surface_stagnation",
+      "triggers": [
+        "microvascular adhesion / microclot signs",
+        "post-COVID or post-vaccine state",
+        "cold extremities with pressure sensation",
+        "Raynaud-type presentation",
+        "NSAID non-response",
+        "heavy limb sensation",
+        "chaotic hot-cold alternation"
+      ],
+      "symptoms": [
+        "cold extremities",
+        "heavy legs",
+        "brain fog",
+        "palpitations",
+        "dyspnoea",
+        "pressure sensation in chest",
+        "sleep disruption",
+        "poor recovery",
+        "blood sludging / microclot feel"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Fucoidan (Actividan)",
+            "role": "primary surface regulator — reduces endothelial adhesion, loosens microclot environment, hydrates fascia-endothelial interface",
+            "notes": "not a direct anticoagulant; acts at surface level. Dose: 1-2x daily, morning + early afternoon, with or just after food. NOT in evening (excess Yin → heaviness). Onset: 2-4 weeks."
+          },
+          {
+            "name": "Dan Shen",
+            "role": "microcirculation mover — active blood mover, used AFTER Fucoidan has cleared surface",
+            "notes": "Do NOT use Dan Shen as first agent when endothelial surface is still rigid. Use only after 'space feels lighter' but fixed pain remains. Anticoagulant interaction risk."
+          },
+          {
+            "name": "Xuan Shen",
+            "role": "internal Yin regulator — TCM analogue to Fucoidan for deeper blood/Yin level",
+            "notes": "Fucoidan = surface analogue of Xuan Shen. Together: outer + inner Yin regulation."
+          },
+          {
+            "name": "Hai Zao (Kun Bu)",
+            "role": "structural algae — coarser, structural dampness resolution; nodule/struma indication",
+            "notes": "Fucoidan is finer, field-level version. Hai Zao is more forceful. Do not substitute directly."
+          }
+        ],
+        "preparation": "capsule / supplement (Actividan product); Dan Shen in formula or capsule",
+        "device": "uncertain"
+      }
+    },
+    {
+      "name": "dampness_ECM_overload",
+      "triggers": [
+        "pain fluctuates with digestion or food intake",
+        "pain worse after eating",
+        "bloating co-occurs with pain",
+        "heavy, dull, returning pain",
+        "CRPS or neuropathy with GI symptoms",
+        "post-viral / long-COVID with gut symptoms",
+        "migraine with GI symptoms",
+        "arthritis with morning stiffness and bloating",
+        "slow recovery / 'sticky' regeneration pattern",
+        "minimum 2 of the above triggers present"
+      ],
+      "symptoms": [
+        "bloating",
+        "dull heavy pain",
+        "pain returns after treatment",
+        "morning stiffness",
+        "slow recovery",
+        "fatigue → pain progression",
+        "nervous system noise",
+        "pain 'echoes' after treatment"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Fiber complex (Sunfiber / acacia / konjac)",
+            "role": "terrain reset — dries sticky extracellular medium, reduces fascia-gut-nerve noise, prepares terrain for autophagy",
+            "notes": "NOT a laxative. Acts as external carrier for unintegrated material (dampness). Essential before autophagy induction. Fiber ≠ Spirulina (different functions — see rules)."
+          },
+          {
+            "name": "Boswellia",
+            "role": "fascial noise dampener — anti-phlegm-cement; NOT primarily COX blocker in this context",
+            "notes": "Use for fascial noise reduction, not as primary anti-inflammatory."
+          },
+          {
+            "name": "Astragalus / Huang Qi (as Astragin® in Fiber product)",
+            "role": "interface stabiliser — holds ECM coherence during dampness release; prevents system collapse during fiber-driven drying; stabilises mitochondrial proton gradient buffer",
+            "notes": "NOT a classical TCM Qi tonic in this context. NOT dampness-resolving per classical TCM — but included here as field-level stabiliser. Key function: allows system to release without collapsing. Use WITH fiber, not alone."
+          }
+        ],
+        "preparation": "DuoLife Fiber product (contains fiber complex + Boswellia + Astragalus/Astragin). Taken before main protocol agents.",
+        "device": "laser (wide-field, low intensity; abdomen / paraspinal / sacral zones; goal: interface quieting, not activation)"
+      }
+    },
+    {
+      "name": "functional_exhaustion_neurofascial",
+      "triggers": [
+        "diffuse pain with normal labs",
+        "sleep fragmentation dominant",
+        "fatigue leads to pain",
+        "no physical finding as anchor",
+        "stress-induced pain",
+        "no vascular or surface adhesion signs"
+      ],
+      "symptoms": [
+        "diffuse pain",
+        "non-restorative sleep",
+        "morning body stiffness ('concrete body')",
+        "trigger points less painful over time",
+        "hypersensitive nervous system",
+        "fatigue",
+        "sleep fragmentation"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Magnesium (DuoLife Magnesium + Calm)",
+            "role": "neuromuscular and autonomic relaxation; sleep quality",
+            "notes": "Take in evening before bed. Essential base."
+          },
+          {
+            "name": "Collagen (DuoLife Collagen)",
+            "role": "fascia and connective tissue rehydration; reduces 'dry pain'",
+            "notes": "Take afternoon or evening, ideally before Mg. Fucoidan improves collagen integration."
+          },
+          {
+            "name": "ProImmuno (DuoLife ProImmuno)",
+            "role": "immune reset — NOT stimulation; NK + macrophage signal clarification",
+            "notes": "Low dose. Separate from Fucoidan by 30-60 min. Fucoidan first (surface clearance), then ProImmuno (so it does not overshoot)."
+          }
+        ],
+        "preparation": "DuoLife product stack. Fucoidan often unnecessary here; may worsen (excess Yin). Use only if endothelial collapse develops (e.g. post-stress).",
+        "device": "uncertain"
+      }
+    },
+    {
+      "name": "lateral_kinetic_chain_overload",
+      "triggers": [
+        "lateral hip pain (GTPS pattern)",
+        "co-occurring lateral neck/shoulder tightness",
+        "rib or intercostal compression",
+        "knee strain or ankle instability",
+        "temporal headaches / vestibular tension",
+        "emotional frustration pattern",
+        "fascial coherence loss along GB channel"
+      ],
+      "symptoms": [
+        "greater trochanteric pain",
+        "lateral neck / shoulder tightness (GB20-21 region)",
+        "rib / intercostal compression (GB24 region)",
+        "knee strain",
+        "ankle instability (GB34-39 region)",
+        "temporal headache",
+        "visual or vestibular tension"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Dan Shen",
+            "role": "microcirculation restoration along lateral fascial chain",
+            "notes": "uncertain preparation"
+          },
+          {
+            "name": "Chuan Xiong",
+            "role": "blood circulation; lateral chain microvascular support",
+            "notes": "uncertain preparation"
+          },
+          {
+            "name": "Gou Teng",
+            "role": "lateral tension release; wind-damp; vestibular/temporal component",
+            "notes": "uncertain preparation"
+          }
+        ],
+        "preparation": "uncertain",
+        "device": "laser or acupuncture targeting GB29-30 (resonance gates); aim: fascial phase realignment"
+      }
+    },
+    {
+      "name": "medial_chain_collapse",
+      "triggers": [
+        "medial knee pain",
+        "weak foot arch",
+        "fatigue",
+        "pelvic drift",
+        "dampness stagnation pattern",
+        "Taiyin-Yangming dysfunction"
+      ],
+      "symptoms": [
+        "medial knee pain",
+        "flat foot / weak arch",
+        "fatigue",
+        "pelvic drift"
+      ],
+      "interventions": {
+        "herbs": [],
+        "preparation": "uncertain",
+        "device": "uncertain"
+      }
+    },
+    {
+      "name": "inferior_gate_congestion",
+      "triggers": [
+        "plantar fasciitis",
+        "loss of grounding",
+        "excessive upward energy draw",
+        "Dai-Chong imbalance"
+      ],
+      "symptoms": [
+        "plantar fasciitis",
+        "loss of grounding sensation",
+        "upward energy pull"
+      ],
+      "interventions": {
+        "herbs": [],
+        "preparation": "uncertain",
+        "device": "uncertain"
+      }
+    },
+    {
+      "name": "anterior_posterior_phase_lock",
+      "triggers": [
+        "frozen shoulder",
+        "core torsion",
+        "emotional armoring",
+        "Ren-Du conflict pattern"
+      ],
+      "symptoms": [
+        "frozen shoulder",
+        "core torsion",
+        "emotional armoring"
+      ],
+      "interventions": {
+        "herbs": [],
+        "preparation": "uncertain",
+        "device": "uncertain"
+      }
+    },
+    {
+      "name": "proton_gradient_instability_post_viral",
+      "triggers": [
+        "post-COVID syndrome",
+        "post-vaccine syndrome",
+        "mitochondrial underload (not primary cell death)",
+        "sterile inflammation",
+        "EZ-water destabilisation",
+        "endothelial surface biofilm"
+      ],
+      "symptoms": [
+        "fatigue",
+        "dyspnoea",
+        "brain fog",
+        "palpitations",
+        "muscle and chest pain",
+        "sleep disorder",
+        "poor regeneration",
+        "fluctuating symptoms",
+        "immune fatigue"
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Fucoidan (Actividan)",
+            "role": "primary — endothelial surface and microvascular regulation",
+            "notes": "2x daily in post-COVID. Do not skip."
+          },
+          {
+            "name": "Vitamin C (DuoLife Vita C)",
+            "role": "endothelial regeneration; redox support",
+            "notes": "Take 1-2 hours after ProImmuno."
+          },
+          {
+            "name": "Magnesium (DuoLife Magnesium + Calm)",
+            "role": "autonomic nervous system; sleep",
+            "notes": "Evening only. Critical in this protocol."
+          },
+          {
+            "name": "ProImmuno (DuoLife ProImmuno)",
+            "role": "immune reset (not stimulation)",
+            "notes": "Separate from Fucoidan by 30-60 min. Morning."
+          }
+        ],
+        "preparation": "Fucoidan 2x daily (morning + early afternoon). ProImmuno 1x morning. Vita C 1x morning (1-2h after ProImmuno). Mg evening.",
+        "device": "uncertain"
+      }
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "Greater Trochanteric Pain Syndrome (GTPS)",
+      "associated_patterns": ["lateral_kinetic_chain_overload"],
+      "notes": "Reframed as lateral kinetic chain coherence loss. Mechanism: fascial tension redistribution across gluteus medius-TFL-iliotibial tract-lateral knee fascia. Shaoyang field disruption. Dai Mai dysfunction often precedes it. Yang Wei Mai connects lateral to posterior chain (GTPS + lumbar tightness)."
+    },
+    {
+      "diagnosis": "Fibromyalgia",
+      "associated_patterns": ["dampness_ECM_overload", "functional_exhaustion_neurofascial", "endothel_surface_stagnation"],
+      "notes": "Primary mechanism: fascia dehydration + ECM dampness ('dry nerve pain'). NOT primarily neural hyperactivation. Fucoidan: fascia surface hydration + indirect pain threshold elevation. Magnesium + Collagen = essential base. Fucoidan 1x daily may suffice. Clinical markers: morning stiffness eases, trigger points less painful."
+    },
+    {
+      "diagnosis": "Post-COVID Syndrome / Long COVID",
+      "associated_patterns": ["proton_gradient_instability_post_viral", "endothel_surface_stagnation"],
+      "notes": "Core: microclot, endothelial surface biofilm, sterile inflammation, EZ-water destabilisation, mitochondrial underload. Not classic inflammation — NSAID insufficient. First improvement signs: temperature normalisation, increased exercise tolerance."
+    },
+    {
+      "diagnosis": "Microclot / Endothelial Dysfunction",
+      "associated_patterns": ["endothel_surface_stagnation"],
+      "notes": "Fucoidan = primary agent. Reduces endothelial adhesion (not INR-raising). Safer than 'blood movers' (Dan Shen) alongside anticoagulants. Monitor for sudden 'warm wave' = endothelial release sign."
+    },
+    {
+      "diagnosis": "Raynaud's Phenomenon",
+      "associated_patterns": ["endothel_surface_stagnation"],
+      "notes": "Microvascular surface adhesion pattern. Fucoidan primary. Expected improvements: peripheral circulation, reduced cold extremities."
+    },
+    {
+      "diagnosis": "Diabetic Neuropathy",
+      "associated_patterns": ["endothel_surface_stagnation", "dampness_ECM_overload"],
+      "notes": "Fucoidan acts on gut and endothelial surface, reduces inflammatory insulin resistance. Expected: more stable blood glucose, less brain fog, reduced peripheral neuropathic symptoms."
+    },
+    {
+      "diagnosis": "CRPS (Complex Regional Pain Syndrome)",
+      "associated_patterns": ["dampness_ECM_overload", "endothel_surface_stagnation"],
+      "notes": "Adjunct role only. Protocol sequence: Stabilisation → Fiber → Spirulina → targeted laser."
+    },
+    {
+      "diagnosis": "Migraine (non-triptane-responsive, inflammatory / 'sticky' type)",
+      "associated_patterns": ["dampness_ECM_overload", "endothel_surface_stagnation"],
+      "notes": "GI symptoms co-occurring. Fucoidan for inflammatory 'sticky' migraine type. Not classical triptane responder."
+    },
+    {
+      "diagnosis": "Plantar Fasciitis",
+      "associated_patterns": ["inferior_gate_congestion"],
+      "notes": "Field equivalent: Inferior Gate Congestion (Dai-Chong imbalance). Loss of grounding, upward draw pattern."
+    },
+    {
+      "diagnosis": "Frozen Shoulder",
+      "associated_patterns": ["anterior_posterior_phase_lock"],
+      "notes": "Field equivalent: Anterior-Posterior Phase Lock (Ren-Du conflict). Core torsion, emotional armoring component."
+    },
+    {
+      "diagnosis": "Medial Knee Pain",
+      "associated_patterns": ["medial_chain_collapse"],
+      "notes": "Medial chain collapse (Taiyin-Yangming pattern). Weak foot arch, fatigue, pelvic drift co-pattern."
+    },
+    {
+      "diagnosis": "Chronic Low-Grade Inflammation",
+      "associated_patterns": ["endothel_surface_stagnation", "dampness_ECM_overload"],
+      "notes": "Fucoidan indicated for non-flare phase. Biofilm, gut wall irritation component present."
+    },
+    {
+      "diagnosis": "Autoimmune (non-flare phase)",
+      "associated_patterns": ["endothel_surface_stagnation", "dampness_ECM_overload"],
+      "notes": "Fucoidan reduces over-stimulation when combined with ProImmuno. Better tolerance in autoimmune-prone individuals."
+    },
+    {
+      "diagnosis": "Oncology (adjunct support only)",
+      "associated_patterns": ["endothel_surface_stagnation"],
+      "notes": "NOT anti-tumour. Role: immune field support, endothelial protection, surface noise reduction during chemo/immunotherapy."
+    },
+    {
+      "diagnosis": "Insulin Resistance / Type 2 Diabetes (metabolic component)",
+      "associated_patterns": ["endothel_surface_stagnation", "dampness_ECM_overload"],
+      "notes": "Fucoidan + Metformin: gut + endothelial surface effect, reduces inflammatory insulin resistance. Expected: more stable blood glucose."
+    },
+    {
+      "diagnosis": "Neuropathy (general)",
+      "associated_patterns": ["dampness_ECM_overload", "functional_exhaustion_neurofascial"],
+      "notes": "Protocol sequence for neuropathy/CRPS: Stabilisation → Fiber → Spirulina → targeted laser."
+    },
+    {
+      "diagnosis": "Arthritis (chronic joint pain with morning stiffness)",
+      "associated_patterns": ["dampness_ECM_overload"],
+      "notes": "Trigger: morning stiffness + bloating + slow regeneration. Protocol sequence: Fiber → ProStik → Collagen / RegenOil."
+    },
+    {
+      "diagnosis": "Insomnia / Sleep Disorder",
+      "associated_patterns": ["functional_exhaustion_neurofascial"],
+      "notes": "Magnesium + Calm evening. Fucoidan NOT in evening (excess Yin causes heaviness)."
+    },
+    {
+      "diagnosis": "Tennis Elbow / Lateral Epicondylitis",
+      "associated_patterns": ["lateral_kinetic_chain_overload"],
+      "notes": "Segmental manifestation of lateral kinetic chain field collapse per source model."
+    }
+  ],
+
+  "rules": [
+    {
+      "condition": "pain fluctuates with digestion AND at least 1 of: bloating, heaviness, post-meal worsening, slow recovery",
+      "action": "prioritise Fiber module FIRST before any other intervention"
+    },
+    {
+      "condition": "gut noise present (bloating + pain pattern) AND autophagy protocol planned",
+      "action": "Fiber must precede autophagy induction (ProSelect / BorellisPro). Autophagy without stable interface → destabilisation and relapse."
+    },
+    {
+      "condition": "endothelial stagnation pattern confirmed",
+      "action": "start Fucoidan BEFORE Dan Shen. Dan Shen only after 'space feels lighter' but fixed pain remains."
+    },
+    {
+      "condition": "Dan Shen used as sole first agent in endothelial stagnation",
+      "action": "CONTRAINDICATED as first agent — may worsen surface resistance. Use Fucoidan first."
+    },
+    {
+      "condition": "ProImmuno and Fucoidan co-prescribed",
+      "action": "separate by 30-60 minutes. Fucoidan first (surface clearance), then ProImmuno (prevents immune overshoot)."
+    },
+    {
+      "condition": "Fucoidan prescribed with anticoagulants (aspirin, rivaroxaban, apixaban, DOAC)",
+      "action": "safe to combine — Fucoidan not INR-raising. Monitor; endothelial adhesion reduction, not additive pharmacology."
+    },
+    {
+      "condition": "Fucoidan prescribed with NSAIDs or steroids",
+      "action": "compatible — Fucoidan provides surface noise reduction, reduces rebound inflammation. Better NSAID tolerance."
+    },
+    {
+      "condition": "Fucoidan prescribed with Metformin / insulin",
+      "action": "compatible — Fucoidan reduces inflammatory insulin resistance at gut/endothelial surface."
+    },
+    {
+      "condition": "Fucoidan dosing time = evening",
+      "action": "CONTRAINDICATED in evening — excess Yin effect causes heaviness. Use morning + early afternoon only."
+    },
+    {
+      "condition": "Fucoidan + strong stimulants (caffeine, pre-workout)",
+      "action": "AVOID combination"
+    },
+    {
+      "condition": "Fucoidan + strong Yang-deficiency (cold collapse pattern)",
+      "action": "CONTRAINDICATED — Fucoidan is Yin/surface; will worsen cold-collapse."
+    },
+    {
+      "condition": "acute pain / acute Yang-excess",
+      "action": "Fiber NOT first line. Precede with Day/Night stabilisation or Spirulina first."
+    },
+    {
+      "condition": "cachectic / starving patient",
+      "action": "Fiber CONTRAINDICATED"
+    },
+    {
+      "condition": "severe diarrhoea",
+      "action": "Fiber CONTRAINDICATED"
+    },
+    {
+      "condition": "functional exhaustion pattern (diffuse pain, normal labs, sleep fragmentation)",
+      "action": "Fucoidan often unnecessary; may worsen (excess Yin). Use DuoLife-only stack (Mg + Collagen + ProImmuno). Add Fucoidan only if post-stress endothelial collapse develops."
+    },
+    {
+      "condition": "active stasis signs present (fixed stabbing pain, night worsening, trauma history, fibrous area, purple tone)",
+      "action": "Dan Shen branch — but only after Fucoidan has prepared surface. Sequence: Fucoidan → Dan Shen"
+    },
+    {
+      "condition": "pain improves then returns after treatment",
+      "action": "gut noise likely present. Add Fiber. This is pain relapse (ECM not released), not new disease."
+    },
+    {
+      "condition": "Fiber without Astragalus",
+      "action": "system may collapse during drying — patient becomes more fatigued. Astragalus holds charge stability during release."
+    },
+    {
+      "condition": "Astragalus prescribed in acute inflammation",
+      "action": "AVOID — not indicated in acute inflammatory phase"
+    },
+    {
+      "condition": "Astragalus prescribed too early in dampness protocol",
+      "action": "AVOID — not appropriate before terrain is prepared"
+    },
+    {
+      "condition": "Chlorella prescribed in high dose during detox",
+      "action": "AVOID — 'detox overpull' destabilises system"
+    },
+    {
+      "condition": "protocol duration insufficient",
+      "action": "minimum 4-6 weeks; optimal 8-12 weeks. First evaluation at 2-3 weeks."
+    },
+    {
+      "condition": "symptom worsening occurs during protocol",
+      "action": "check: (1) 'felt heavy' = too much Yin, reduce Fucoidan; (2) stabbing pain worsens = Dan Shen too early; (3) fatigue increases = DuoLife stimulating, reduce ProImmuno."
+    },
+    {
+      "condition": "lateral kinetic chain pattern confirmed",
+      "action": "treat full lateral fascial circuit (GB20, GB21, GB31-34), not just local pain site. Add Dan Shen + Chuan Xiong + Gou Teng for microcirculation. Address Dai Mai dysfunction."
+    },
+    {
+      "condition": "frozen shoulder pattern",
+      "action": "assess Ren-Du conflict (anterior-posterior phase lock); emotional armoring component present"
+    },
+    {
+      "condition": "Sheng Mai San formula consideration",
+      "action": "Huang Qi (interface + holding) + Mai Men Dong (EZ-water + dielectric medium) + Wu Wei Zi (leak control + phase stabilisation). Indicated: post-viral, fatigue, proton gradient instability, trauma recovery."
+    }
+  ],
+
+  "input_variables": [
+    "pain_character: fixed / moving / diffuse / dull / stabbing",
+    "pain_timing: night_worse / morning_worse / post_meal / fluctuating",
+    "GI_symptoms: bloating / fullness / slow_transit / none",
+    "thermal_state: cold_extremities / heat_intolerance / normal / mixed",
+    "energy_state: fatigue / post_exertional_collapse / normal",
+    "recovery_speed: slow / normal",
+    "microclot_signs: yes / no / uncertain",
+    "post_viral: yes / no",
+    "stasis_signs: fixed_pain / purple_tone / trauma_history / fibrous_area",
+    "autoimmune: yes / no / flare / remission",
+    "anticoagulant_use: yes (specify agent) / no",
+    "NSAID_steroid_use: yes / no",
+    "metformin_insulin_use: yes / no",
+    "fascial_chain: lateral / medial / posterior / anterior_posterior / uncertain",
+    "frailty: yes / no",
+    "cachexia: yes / no",
+    "diarrhoea_severe: yes / no",
+    "emotional_constraint: yes / no",
+    "dominant_layer: surface_endothelial / ECM_dampness / intracellular / neurofascial",
+    "gut_noise_present: yes (2+ triggers) / no"
+  ],
+
+  "notes": [
+    "Sequencing rule: Fucoidan creates space FIRST → DuoLife builds AFTER. Reversed order → symptom escalation.",
+    "Fiber sequencing rule: Fiber (terrain) → ProSelect/BorellisPro → autophagy. Autophagy cannot run cleanly without stable gut-fascia interface.",
+    "Dan Shen timing: always second-line after Fucoidan has cleared surface. Dan Shen alone in stagnant-surface state = worsening.",
+    "Lateral kinetic chain (GB / Shaoyang) = western neutral term for Gallbladder meridian. Engine should use 'lateral_kinetic_chain_overload' not meridian language.",
+    "Extraordinary vessels = higher-order fascial crosslinkers: Dai Mai (lateral load / pelvic rotation), Yang Wei Mai (lateral-posterior oscillation), Yin Wei Mai (medial-anterior emotional containment), Chong Mai (longitudinal core integrator).",
+    "Fucoidan TCM positioning: Yin, Water+Salt, inward-drawing, surface-active. Analogues: Xuan Shen (deeper), Hai Zao (structural), Mang Xiao (functional only).",
+    "Astragalus in Fiber product: acts as interface stabiliser (ECM-mitochondria axis), NOT classical Qi tonic. Prevents collapse during dampness release. TCM classical teaching does not use Astragalus in dampness formulas — this is a field-logic departure.",
+    "Dampness (ECM): defined as compensatory extracellular thickening when intracellular oxidation is reduced (Warburg-like state). Not water. Not mucus. Coherence-substituting material.",
+    "Backend-only concept (not for frontend): proton gradient instability as distributed field phenomenon; fascia as holographic memory substrate; ECM as biological SSD. Frontend equivalent: 'system tension', 'tissue holding tension', 'network overload'.",
+    "Sheng Mai San analogue: Huang Qi + Mai Men Dong + Wu Wei Zi = interface stabiliser + EZ-water builder + leak controller. Indicated for proton gradient instability states.",
+    "All Fucoidan clinical evidence is preclinical / early-phase. Supplement, not drug. Fucoidan is NOT a direct anticoagulant, NOT a stimulant, NOT an acute pain agent."
+  ]
+}

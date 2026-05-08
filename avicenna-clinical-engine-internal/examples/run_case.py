@@ -74,3 +74,12 @@ batch4_case = {
 
 batch4_result = engine.evaluate(batch4_case)
 print(json.dumps(batch4_result.to_dict()["spinal"], indent=2))
+
+batch5_case = {
+    "diagnoses": ["Post-COVID Syndrome / Long COVID", "Microclot / Endothelial Dysfunction"],
+    "symptoms": ["cold extremities", "heavy legs", "brain fog", "poor recovery", "sleep disruption"],
+    "free_text": "Fucoidan morning with ProImmuno planned. Dan Shen is being considered later if fixed pain remains.",
+}
+
+batch5_result = engine.evaluate(batch5_case)
+print(json.dumps(batch5_result.to_dict()["surface"], indent=2))

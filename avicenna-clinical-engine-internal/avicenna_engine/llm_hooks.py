@@ -25,6 +25,11 @@ LLM_CASE_EXTRACTION_SCHEMA: dict[str, Any] = {
         "degenerative_stage": "early, intermediate, late, end_stage, or unknown",
         "ren_mai_tone": "low, normal, unknown",
         "movement_effect_on_pain": "extension_worse, rotation_helpful, warmth_helpful, unknown",
+        "surface_signs": "microclot feeling, cold extremities, Raynaud-like episodes, heavy legs, or absent",
+        "gut_ecm_signs": "bloating, post-meal pain, heaviness, pain returns after treatment, slow recovery",
+        "fascial_chain": "lateral_kinetic_chain, medial_chain, inferior_gate, anterior_posterior_lock, or unknown",
+        "supplement_timing": "Fucoidan morning/afternoon/evening, ProImmuno timing, Fiber/autophagy sequence, if mentioned",
+        "protocol_feedback": "heaviness, stabbing pain worse, fatigue worse, fiber collapse, pain echo, or none",
     },
     "labs": {
         "CRP": "numeric or elevated/normal",
@@ -54,6 +59,13 @@ LLM_CASE_EXTRACTION_SCHEMA: dict[str, Any] = {
         "medication_exit_trigger_count": "integer count of medication-transition warning signals",
         "red_flag_present": "boolean; spinal and urgent medical red flags must be preserved",
         "pbm_available": "boolean",
+        "post_viral": "boolean",
+        "microvascular_surface_signs": "boolean",
+        "autophagy_protocol_planned": "boolean",
+        "fucoidan_dosing_evening": "boolean",
+        "anticoagulant_or_antiplatelet_use": "boolean",
+        "metformin_or_insulin_use": "boolean",
+        "avoid_detox_framing": "boolean",
     },
 }
 
@@ -244,6 +256,51 @@ def build_llm_context(result: EngineResult) -> dict[str, Any]:
             "pbm_targets": result.spinal.pbm_targets,
             "cautions": result.spinal.cautions,
             "educational_framing": result.spinal.educational_framing,
+        },
+        "surface_interface": {
+            "active": result.surface.active,
+            "dominant_interface": result.surface.dominant_interface,
+            "sequence": [
+                {
+                    "order": step.order,
+                    "name": step.name,
+                    "goal": step.goal,
+                    "rationale": step.rationale,
+                    "status": step.status,
+                }
+                for step in result.surface.sequence
+            ],
+            "timing_rules": [
+                {
+                    "item": rule.item,
+                    "rule": rule.rule,
+                    "rationale": rule.rationale,
+                }
+                for rule in result.surface.timing_rules
+            ],
+            "feedback": [
+                {
+                    "signal": item.signal,
+                    "interpretation": item.interpretation,
+                    "adjustment": item.adjustment,
+                    "severity": item.severity,
+                }
+                for item in result.surface.feedback
+            ],
+            "fascial_chain": [
+                {
+                    "chain": item.chain,
+                    "active": item.active,
+                    "regions_to_evaluate": item.regions_to_evaluate,
+                    "neutral_language": item.neutral_language,
+                }
+                for item in result.surface.fascial_chain
+            ],
+            "device_strategy": result.surface.device_strategy,
+            "compatibility_cautions": result.surface.compatibility_cautions,
+            "success_metrics": result.surface.success_metrics,
+            "frontend_language": result.surface.frontend_language,
+            "cautions": result.surface.cautions,
         },
         "onboarding": [
             {

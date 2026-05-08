@@ -28,6 +28,11 @@ LAYER_PATTERN_MAP = {
     "cold_heat_complex": "thermal_autonomic",
     "pelvic_yang_compression": "fascia_autonomic",
     "metabolic_rhythm_disruption": "mitochondrial_circadian",
+    "endothel_surface_stagnation": "endothelial_surface",
+    "dampness_ECM_overload": "gut_ecm_interface",
+    "functional_exhaustion_neurofascial": "neurofascial_exhaustion",
+    "lateral_kinetic_chain_overload": "fascia_chain",
+    "proton_gradient_instability_post_viral": "post_viral_surface_redox",
 }
 
 
@@ -155,7 +160,9 @@ class StabilizationEngine:
     ) -> list[StabilizationPhase]:
         layer_names = {layer.name for layer in layers if layer.weight >= 0.12}
         phases: list[StabilizationPhase] = []
-        tissue_loaded = bool({"fascia_ecm", "fascia_autonomic", "gut_metabolic_dampness"} & layer_names)
+        tissue_loaded = bool(
+            {"fascia_ecm", "fascia_autonomic", "gut_metabolic_dampness", "gut_ecm_interface", "fascia_chain"} & layer_names
+        )
         gut_impaired = facts.get("digestive_flow_impaired") or facts.get("gut_symptoms_count", 0) >= 2
 
         for order, name, goal in BASE_PHASES:
@@ -316,4 +323,3 @@ class StabilizationEngine:
         if self.kb.dangerous_molecules_reference:
             cautions.append("Dangerous molecules are educational references only and must never be recommended.")
         return cautions
-

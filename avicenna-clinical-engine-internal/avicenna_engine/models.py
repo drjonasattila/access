@@ -315,6 +315,53 @@ class SpinalPlan:
 
 
 @dataclass
+class SurfaceSequenceStep:
+    order: int
+    name: str
+    goal: str
+    rationale: str = ""
+    status: str = "candidate"
+
+
+@dataclass
+class TimingRule:
+    item: str
+    rule: str
+    rationale: str = ""
+
+
+@dataclass
+class InterfaceFeedback:
+    signal: str
+    interpretation: str
+    adjustment: str
+    severity: str = "state_feedback"
+
+
+@dataclass
+class FascialChainAssessment:
+    chain: str
+    active: bool
+    regions_to_evaluate: list[str] = field(default_factory=list)
+    neutral_language: str = ""
+
+
+@dataclass
+class SurfaceInterfacePlan:
+    active: bool = False
+    dominant_interface: str = ""
+    sequence: list[SurfaceSequenceStep] = field(default_factory=list)
+    timing_rules: list[TimingRule] = field(default_factory=list)
+    feedback: list[InterfaceFeedback] = field(default_factory=list)
+    fascial_chain: list[FascialChainAssessment] = field(default_factory=list)
+    device_strategy: list[str] = field(default_factory=list)
+    compatibility_cautions: list[str] = field(default_factory=list)
+    success_metrics: list[str] = field(default_factory=list)
+    frontend_language: JsonDict = field(default_factory=dict)
+    cautions: list[str] = field(default_factory=list)
+
+
+@dataclass
 class EngineResult:
     safety: SafetyDecision
     patterns: list[PatternScore]
@@ -326,6 +373,7 @@ class EngineResult:
     onboarding: list[OnboardingPath]
     stabilization: StabilizationPlan
     spinal: SpinalPlan
+    surface: SurfaceInterfacePlan
     axis_scores: list[AxisScore]
     interventions: list[InterventionCandidate]
     llm_context: JsonDict

@@ -62,6 +62,39 @@ PATTERN_AXIS_MAP = {
     "kidney_yin_jing_deficiency": ["fascia_scaffold", "collagen_ez_water_lattice", "repair_capacity"],
     "liver_qi_fascia_tension": ["fascial_electrotension", "stress_load", "segmental_tension"],
     "sympathetic_overdrive_spinal": ["sympathetic_chain", "du_mai_supercharge", "paraspinal_fascia"],
+    "endothel_surface_stagnation": [
+        "endothelial_surface",
+        "microvascular_adhesion",
+        "interface_hydration",
+        "surface_before_moving",
+    ],
+    "dampness_ECM_overload": [
+        "ecm_dampness",
+        "gut_ecm_nerve_axis",
+        "slow_recovery_medium",
+        "clearance_interface",
+    ],
+    "functional_exhaustion_neurofascial": [
+        "neurofascial_exhaustion",
+        "sleep_regulation",
+        "recovery_capacity",
+        "nonvascular_diffuse_pain",
+    ],
+    "lateral_kinetic_chain_overload": [
+        "lateral_kinetic_chain",
+        "fascia_chain_load",
+        "vestibular_temporal_tension",
+        "microcirculation_chain",
+    ],
+    "medial_chain_collapse": ["medial_kinetic_chain", "arch_pelvis_support", "fatigue_load"],
+    "inferior_gate_congestion": ["inferior_gate", "plantar_fascia", "grounding_sensation"],
+    "anterior_posterior_phase_lock": ["ren_du_phase_lock", "core_torsion", "emotional_armoring"],
+    "proton_gradient_instability_post_viral": [
+        "post_viral_surface_instability",
+        "redox_regulation",
+        "endothelial_surface",
+        "autonomic_sleep_support",
+    ],
 }
 
 
@@ -87,6 +120,14 @@ DYNAMIC_RELATIONSHIPS = {
     "kidney_yin_jing_deficiency": "Kidney Yin/Jing deficiency is used internally as a fascia scaffold and recovery-capacity model.",
     "liver_qi_fascia_tension": "Liver Qi fascia tension may reflect stress-amplified fascial electrotension, especially when Yin buffering is low.",
     "sympathetic_overdrive_spinal": "Sympathetic overdrive may act as a Du Mai supercharger, increasing paraspinal tone and segmental turbulence.",
+    "endothel_surface_stagnation": "Endothelial surface stagnation follows surface-first sequencing; microcirculation moving is deferred until the interface feels less rigid.",
+    "dampness_ECM_overload": "ECM dampness is interpreted as tissue/network overload and slow recovery medium; gut-interface support should precede autophagy or targeted pain protocols.",
+    "functional_exhaustion_neurofascial": "Functional neurofascial exhaustion may resemble surface stagnation, but without vascular surface signs it prioritizes sleep, Magnesium-type calming, and connective-tissue recovery.",
+    "lateral_kinetic_chain_overload": "Lateral kinetic chain overload should be read as a whole-chain pattern rather than only a local pain site.",
+    "medial_chain_collapse": "Medial chain collapse may reflect foot-arch, knee, pelvic, and fatigue load interacting as a support-chain state.",
+    "inferior_gate_congestion": "Inferior gate congestion may connect plantar fascia symptoms with loss of grounding sensation and upward compensatory pull.",
+    "anterior_posterior_phase_lock": "Anterior-posterior phase lock suggests Ren-Du or front-back fascial conflict, often requiring interface quieting before targeted shoulder or core work.",
+    "proton_gradient_instability_post_viral": "Post-viral proton-gradient instability is handled as an exploratory redox/surface-autonomic model with surface regulation before immune clarification and evening sleep support.",
 }
 
 
