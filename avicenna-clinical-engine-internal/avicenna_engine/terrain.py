@@ -39,6 +39,17 @@ PATTERN_AXIS_MAP = {
     "cluster_headache_TAC": ["autonomic_instability", "neurovascular_rhythm", "red_flag_screening"],
     "arthritis_joint_degenerative": ["joint_fascia_load", "inflammatory_load", "recovery_capacity"],
     "berberine_metabolic_protocol": ["metabolic_heat_damp", "digestive_resilience", "inflammatory_tone"],
+    "metabolic_rhythm_disruption": [
+        "circadian_regulation",
+        "mitochondrial_energy_state",
+        "autonomic_balance",
+        "digestive_resilience",
+        "onboarding_program",
+    ],
+    "cold_heat_complex": ["thermal_regulation", "vertical_autonomic_dissociation", "lower_root_collapse", "compensatory_heat"],
+    "yin_field_laxity_coxa_saltans": ["connective_tissue_laxity", "hip_fascia_stability", "sleep_regulation"],
+    "pelvic_yang_compression": ["pelvic_fascia_compression", "emotional_holding", "microcirculation", "mitochondrial_rhythm"],
+    "five_element_destroying_cycle": ["graph_pathology", "cascade_prediction", "root_node_prioritization"],
 }
 
 
@@ -48,6 +59,10 @@ DYNAMIC_RELATIONSHIPS = {
     "damp_heat_pelvic": "Damp-heat may be a flare layer superimposed on colder pelvic stagnation, so timing and inflammatory markers matter.",
     "shaoyang_taiyin_dissonance": "Shaoyang bracing may compensate for weak Taiyin anchoring and can amplify visceral autonomic arousal.",
     "metabolic_cold_damp": "Metabolic cold-damp may alternate with heat-damp phases when inflammatory load or glucose stress rises.",
+    "metabolic_rhythm_disruption": "Metabolic rhythm disruption is best treated as an onboarding terrain state where sleep and circadian restoration precede weight or lab normalization.",
+    "cold_heat_complex": "Cold-heat complex progresses from lower collapse to upper heat compensation and later mixed stagnation; lower-root restoration should come first.",
+    "pelvic_yang_compression": "Pelvic Yang compression can evolve from emotional guarding into autonomic compression, fascial dehydration, stasis, and structural overgrowth.",
+    "five_element_destroying_cycle": "Destroying-cycle activation implies graph spread; root-node stabilization should precede treating every node manifestation.",
 }
 
 
@@ -120,4 +135,3 @@ def _summary(patterns: list[PatternScore], contradictions: list[Contradiction], 
     if facts.get("active_cancer"):
         summary += " Oncology-related content must remain supportive and adjunctive to conventional care."
     return summary
-

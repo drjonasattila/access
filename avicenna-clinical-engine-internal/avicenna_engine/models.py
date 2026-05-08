@@ -144,11 +144,75 @@ class TerrainInterpretation:
 
 
 @dataclass
+class GraphEdge:
+    source: str
+    target: str
+    relationship: str
+    mechanism: str = ""
+    label: str = ""
+
+
+@dataclass
+class GraphActivation:
+    node: str
+    activation: float
+    evidence: list[str] = field(default_factory=list)
+    clinical_correlates: list[str] = field(default_factory=list)
+
+
+@dataclass
+class GraphAnalysis:
+    active_nodes: list[GraphActivation] = field(default_factory=list)
+    edges: list[GraphEdge] = field(default_factory=list)
+    root_nodes: list[str] = field(default_factory=list)
+    upstream_nodes: list[str] = field(default_factory=list)
+    downstream_nodes: list[str] = field(default_factory=list)
+    cascade_predictions: list[str] = field(default_factory=list)
+    pathological_cycles: list[str] = field(default_factory=list)
+    ui_payload: JsonDict = field(default_factory=dict)
+
+
+@dataclass
+class StateTransition:
+    pattern: str
+    stage: str
+    sequence_index: int
+    description: str
+    evidence: list[str] = field(default_factory=list)
+    intervention_posture: str = ""
+
+
+@dataclass
+class RestorationPlan:
+    root_layers: list[str] = field(default_factory=list)
+    compensation_layers: list[str] = field(default_factory=list)
+    secondary_layers: list[str] = field(default_factory=list)
+    ordered_steps: list[JsonDict] = field(default_factory=list)
+    avoid_first: list[str] = field(default_factory=list)
+    success_metrics: list[str] = field(default_factory=list)
+
+
+@dataclass
+class OnboardingPath:
+    name: str
+    level: str
+    eligible: bool
+    reasons: list[str] = field(default_factory=list)
+    exclusions: list[str] = field(default_factory=list)
+    primary_metrics: list[str] = field(default_factory=list)
+    next_depth: str = ""
+
+
+@dataclass
 class EngineResult:
     safety: SafetyDecision
     patterns: list[PatternScore]
     contradictions: list[Contradiction]
     terrain: TerrainInterpretation
+    graph: GraphAnalysis
+    state_transitions: list[StateTransition]
+    restoration: RestorationPlan
+    onboarding: list[OnboardingPath]
     axis_scores: list[AxisScore]
     interventions: list[InterventionCandidate]
     llm_context: JsonDict

@@ -65,13 +65,14 @@ def _walk_intervention_tree(
     if value is None:
         return
     if isinstance(value, dict):
-        if "name" in value:
+        display_name = value.get("name") or value.get("point") or value.get("add") or value.get("condition")
+        if display_name:
             out.append(
                 InterventionCandidate(
                     pattern=pattern_name,
                     category=category,
-                    name=str(value.get("name", "")),
-                    role=str(value.get("role", "")),
+                    name=str(display_name),
+                    role=str(value.get("role") or value.get("function") or value.get("description") or value.get("condition") or ""),
                     notes=str(value.get("notes", "")),
                 )
             )
@@ -102,6 +103,21 @@ def _apply_safety(candidates: list[InterventionCandidate], safety: SafetyDecisio
         if candidate_name in exclusion_keys:
             status = "blocked_by_safety"
             reason = "excluded_by_active_rule"
+        elif "fat_loss_protocol" in avoid and _has_any(marker_text, {"fat_burning", "fat_loss", "visceral_fat_targeting"}):
+            status = "blocked_by_safety"
+            reason = "fat_loss_protocol_avoided"
+        elif "aggressive_hiit" in avoid and "hiit" in marker_text:
+            status = "blocked_by_safety"
+            reason = "aggressive_hiit_avoided"
+        elif "caloric_restriction" in avoid and "caloric_restriction" in marker_text:
+            status = "blocked_by_safety"
+            reason = "caloric_restriction_avoided"
+        elif "cryolipolysis" in avoid and "cryolipolysis" in marker_text:
+            status = "blocked_by_safety"
+            reason = "cryolipolysis_avoided"
+        elif "aggressive_yang_stimulation" in avoid and _has_any(marker_text, {"fu_zi", "yang", "stimulation"}):
+            status = "caution"
+            reason = "aggressive_yang_stimulation_avoided"
         elif "berberine" in avoid and "berberine" in marker_text:
             status = "blocked_by_safety"
             reason = "berberine_switch_off"

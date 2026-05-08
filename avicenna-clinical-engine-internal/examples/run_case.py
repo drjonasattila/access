@@ -33,3 +33,17 @@ case = {
 
 result = engine.evaluate(case)
 print(json.dumps(result.to_dict(), indent=2))
+
+batch2_case = {
+    "diagnoses": ["Visceral Obesity / Central Weight Gain (40+)"],
+    "symptoms": ["central weight gain", "poor sleep quality", "fatigue", "low back pain"],
+    "flags": {
+        "age_40_plus_flag": True,
+        "central_weight_gain": True,
+        "circadian_drift_flag": True,
+    },
+}
+
+batch2_result = engine.evaluate(batch2_case)
+print(json.dumps(batch2_result.to_dict()["onboarding"], indent=2))
+print(json.dumps(batch2_result.to_dict()["restoration"], indent=2))

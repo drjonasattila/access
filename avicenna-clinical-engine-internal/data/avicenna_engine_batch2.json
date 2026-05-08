@@ -1,0 +1,665 @@
+{
+  "meta": {
+    "version": "1.0",
+    "batch": 2,
+    "source_files": [
+      "5_element_cycles.pdf",
+      "Base_44___Metabolic_Rhythm___Visceral_Tissue_Regeneration_2.pdf",
+      "cold_heat_complex.pdf"
+    ],
+    "priority": "high — core logic files recovered from failed .pages batch"
+  },
+
+  "input_variables": [
+    "age_40_plus_flag",
+    "central_weight_gain",
+    "waist_circumference",
+    "sleep_quality_score",
+    "circadian_drift_flag",
+    "low_back_pain",
+    "morning_stiffness",
+    "fatigue_level",
+    "concentration_score",
+    "stress_dominance_flag",
+    "functional_GI_symptoms",
+    "insulin_resistance_flag",
+    "dyslipidaemia_flag",
+    "blood_stasis_flag",
+    "sleep_fragmentation_flag",
+    "wearable_sleep_data",
+    "tongue_coating",
+    "tongue_colour",
+    "cold_lower_body_flag",
+    "heat_upper_body_flag",
+    "pelvic_pain_flag",
+    "snapping_hip_flag",
+    "hip_pain_character",
+    "sympathetic_dominance_flag",
+    "mRNA_vaccine_history",
+    "emotional_holding_flag",
+    "lab_glucose",
+    "lab_lipids",
+    "lab_CRP",
+    "five_element_node_affected"
+  ],
+
+  "patterns": [
+
+    {
+      "name": "metabolic_rhythm_disruption",
+      "aliases": ["circadian_collapse", "visceral_fat_stress_adaptation", "40plus_metabolic_drift"],
+      "core_hypothesis": "Visceral fat is a stress-adaptation marker, not a primary fat disorder. Fat accumulation = protective buffering state driven by peritoneal fascia hypometabolism.",
+      "tcm_axis": "Qi/Yang + Yin depletion; Taiyin (SP/LU) and Shaoyin (HT/KD) dual weakness; peritoneal Jueyin interface cooling",
+      "triggers": [
+        "age_40_plus",
+        "circadian_rhythm_collapse",
+        "peritoneal_abdominal_fascia_hypometabolism",
+        "sympathetic_dominance_chronic",
+        "mitochondrial_energy_debt",
+        "cortisol_dominance",
+        "mRNA_spike_protein_mitochondrial_burden",
+        "post_infectious_metabolic_reset_failure"
+      ],
+      "symptoms": [
+        "central_weight_gain_increased_waist",
+        "poor_sleep_quality",
+        "circadian_drift",
+        "low_back_pain",
+        "morning_stiffness",
+        "fatigue",
+        "reduced_concentration",
+        "functional_GI_symptoms",
+        "early_insulin_resistance",
+        "dyslipidaemia"
+      ],
+      "primary_outcomes": [
+        "sleep_quality_improvement",
+        "energy_level_increase",
+        "concentration_clarity",
+        "low_back_pain_reduction",
+        "morning_stiffness_reduction"
+      ],
+      "secondary_marker": "waist_circumference (low-key, non-promotional)",
+      "exclusions": [
+        "structural_abdominal_wall_defects_hernia_diastasis",
+        "advanced_metabolic_disease_requiring_pharmacology"
+      ],
+      "interventions": {
+        "foundation_layer": {
+          "description": "Rhythm restoration — always first",
+          "supplements": [
+            {
+              "name": "DuoLife Day",
+              "role": "Qi + Yang mobilisation without overstimulation; circadian Yang anchoring",
+              "timing": "daytime"
+            },
+            {
+              "name": "DuoLife Night",
+              "role": "Yin, mitochondrial recovery, autonomic down-regulation; nocturnal regeneration",
+              "timing": "evening"
+            }
+          ],
+          "notes": "Together = circadian re-anchoring. Always used as base before add-ons."
+        },
+        "autonomic_fascia_layer": {
+          "description": "Non-invasive autonomic and fascial support",
+          "acupoints": [
+            { "point": "BL18", "function": "Liver Shu — metabolic decision-making" },
+            { "point": "BL20", "function": "Spleen Shu — energy distribution" },
+            { "point": "BL21", "function": "Stomach Shu — peritoneal fascia reflex" },
+            { "point": "BL23", "function": "Kidney Shu — basal metabolism / survival mode" }
+          ],
+          "notes": "Not classic tonification — intent is re-perfusion and autonomic reprogramming",
+          "device": "Optional laser: paraspinal + lower thoracic-lumbar fascia (not directly on fat). Goal: vagus tone ↑, sympathetic tone ↓, peritoneal circulation ↑",
+          "breathwork": "Prolonged exhalation; diaphragmatic-pelvic coordination; 5-6 breaths/min"
+        },
+        "lab_guided_targeted_layer": {
+          "description": "Add-ons only if lab-supported — never as base",
+          "options": [
+            { "condition": "insulin_resistance", "add": "Prosugar" },
+            { "condition": "dyslipidaemia", "add": "Procholterol" },
+            { "condition": "stress_or_sleep_fragmentation", "add": "Prorelaxin (evening)" },
+            { "condition": "blood_stasis_signs (cold, pain, pressure sensitivity, dark tongue)", "add": "cautious circulatory support — clinical decision only, not marketing" }
+          ]
+        },
+        "contraindicated_approaches": [
+          "fat-burning protocols",
+          "cryolipolysis",
+          "aggressive_HIIT_in_40_plus",
+          "caloric_restriction_dominant_approach"
+        ],
+        "contraindicated_rationale": "These further elevate cortisol, worsen peritoneal fascia state, and cement visceral fat"
+      },
+      "positioning_language": {
+        "use": [
+          "Metabolic rhythm restoration",
+          "Day-night recovery and energy reset",
+          "Autonomic and tissue regeneration support",
+          "Improving central metabolic flexibility"
+        ],
+        "avoid": [
+          "Fat loss claims",
+          "Visceral fat targeting",
+          "Cosmetic promises",
+          "Surgical replacement language"
+        ],
+        "core_sentence": "We address early metabolic dysfunction by restoring circadian rhythm, tissue energy and autonomic balance rather than targeting fat directly."
+      },
+      "preparation": "DuoLife Day (morning) + Night (evening); decoction or capsule add-ons lab-guided"
+    },
+
+    {
+      "name": "cold_heat_complex",
+      "aliases": ["heat_above_cold_below", "upper_heat_lower_cold", "phase_dissociation", "chong_ren_du_uncoupled"],
+      "tcm_axis": "Chong Mai + Ren Mai + Du Mai phase decoupling; lower dantian frozen, upper dantian overloaded",
+      "field_model": "Upper heat = excessive charge + reactive oxidation. Lower cold = collapsed structure + low charge density. Both are aspects of the same loss of field resonance.",
+      "triggers": [
+        "lower_dantian_freeze_first",
+        "parasympathetic_tone_loss",
+        "blood_diverted_upward_chronic",
+        "fascia_dehydration",
+        "mitochondria_shift_to_glycolysis",
+        "EZ_water_collapse",
+        "chronic_stress_emotional_constriction",
+        "adrenal_fatigue"
+      ],
+      "progression_stages": [
+        {
+          "stage": 1,
+          "name": "lower_dantian_freeze",
+          "description": "Root water field collapses; Qi cannot rise; true cold (entropy, not temperature)",
+          "western": "Adrenal fatigue; retroperitoneal cold; mitochondrial glycolytic shift"
+        },
+        {
+          "stage": 2,
+          "name": "compensatory_upper_heat",
+          "description": "Upper field Yang-dominant because Yin cooling wave absent from below",
+          "western": "Sympathetic overdrive, cortisol-adrenaline dominance, oxidative mitochondrial mode in brain/heart"
+        },
+        {
+          "stage": 3,
+          "name": "mixed_stagnant_heat",
+          "description": "Blocked lower water ferments — damp-heat pattern; chaotic bulk water in closed field",
+          "western": "Pelvic inflammation, prostatitis, ovarian cysts, endometriosis, FAI, bursitis"
+        }
+      ],
+      "symptoms": {
+        "upper_heat": [
+          "mental_overactivity",
+          "insomnia",
+          "palpitations",
+          "anxiety",
+          "dry_throat",
+          "red_eyes",
+          "tinnitus",
+          "occipital_pressure",
+          "migraine"
+        ],
+        "lower_cold": [
+          "cold_pelvis",
+          "cold_lower_extremities",
+          "low_libido",
+          "fatigue",
+          "nocturia",
+          "low_back_pain",
+          "pelvic_pain"
+        ],
+        "later_stage_mixed": [
+          "pelvic_inflammation",
+          "prostatitis",
+          "ovarian_cysts",
+          "endometriosis",
+          "bursitis",
+          "FAI",
+          "false_heat_in_cold_matrix"
+        ]
+      },
+      "interventions": {
+        "herbs": [
+          { "name": "Sheng Di", "role": "moisten, rebuild structured water, deep Yin", "notes": "primary" },
+          { "name": "Xuan Shen", "role": "cool blood, moisten lower", "notes": "" },
+          { "name": "Mai Men Dong", "role": "fascia moisture, Lung-Stomach Yin", "notes": "" },
+          { "name": "He Shou Wu", "role": "Jing-blood rebuild, EZ lattice", "notes": "" },
+          { "name": "Dan Shen", "role": "blood stasis, trauma-held tension", "notes": "" },
+          { "name": "Rou Gui", "role": "rekindle true fire without overheating lower", "notes": "small dose only" },
+          { "name": "Fu Zi", "role": "rekindle Yang — modern gentle substitute preferred", "notes": "use with caution; small dose" }
+        ],
+        "device": "Laser paraspinal lower back; sacral warming; IR to lower burner; NOT aggressive heating",
+        "physical": "Microcosmic orbit breathwork; grounding; pelvic wave; hip opening; tremor release",
+        "lifestyle": "Early sleep; abdominal breathing; quiet presence practice"
+      },
+      "engine_rule": "if upper_heat_flag = true AND lower_cold_flag = true → activate cold_heat_complex pattern AND treat lower first before addressing upper heat"
+    },
+
+    {
+      "name": "yin_field_laxity_coxa_saltans",
+      "aliases": ["yin_qiao_instability", "yin_wei_exhaustion", "fascia_loosening_hip"],
+      "tcm_axis": "Yin Qiao Mai (Stepping Vessel) or Yin Wei Mai (Linking Vessel) under-toned",
+      "field_model": "Fascia loses coherent gel tension → Yang rebound within Yin vacuum → tendon whiplash snapping",
+      "triggers": [
+        "hypermobility_or_lax_connective_tissue",
+        "weak_core_and_gluteal_stabilisers",
+        "anterior_pelvic_tilt_fascial_asymmetry",
+        "Yin_field_laxity"
+      ],
+      "differential": {
+        "yin_qiao_mai": {
+          "axis": "Medial leg → pelvis → eye",
+          "symptoms": ["instability_in_gait", "tightness_alternating_with_flaccidity", "snapping", "insomnia"],
+          "pattern": "Disconnection of Yin from movement"
+        },
+        "yin_wei_mai": {
+          "axis": "Internal binding of Yin organs",
+          "symptoms": ["chronic_instability", "sense_of_disintegration", "pelvic_pain", "fascial_looseness"],
+          "pattern": "Deep connective Yin exhaustion"
+        }
+      },
+      "interventions": {
+        "herbs": [
+          { "name": "Gou Qi Zi", "role": "strengthen Yin anchoring", "notes": "" },
+          { "name": "He Shou Wu", "role": "Jing-blood rebuild, fascia nourish", "notes": "" },
+          { "name": "Bai Shao Yao", "role": "Yin hold, soften fascia tension", "notes": "" },
+          { "name": "Du Zhong", "role": "sinew-bone support, Kidney", "notes": "" },
+          { "name": "Xu Duan", "role": "restore fascia elasticity", "notes": "" },
+          { "name": "Sang Ji Sheng", "role": "Liver-Kidney, sinew-bone nourish", "notes": "" },
+          { "name": "Dang Gui", "role": "blood nourish, move gently", "notes": "" },
+          { "name": "Ren Shen", "role": "re-tone linking fascia field containment", "notes": "mild use only" },
+          { "name": "Huang Qi", "role": "surface Qi containment", "notes": "" },
+          { "name": "Wu Wei Zi", "role": "seal the matrix, Yin anchor", "notes": "" }
+        ],
+        "device": "Laser or moxibustion along Yin Qiao Mai: KD2 → KD6 → BL1",
+        "physical": "Pelvic field symmetry; grounding rituals; gentle oscillatory stretching"
+      }
+    },
+
+    {
+      "name": "pelvic_yang_compression",
+      "aliases": ["yang_shell", "lower_dantian_decoupled", "three_dantian_separation"],
+      "tcm_axis": "Pelvic Yang compressed; Chong + Ren + Du lose phase alignment; lower-middle-upper dantian vertical resonance broken",
+      "field_model": "Peripelvic fascia becomes closed pressure vessel — dense, dehydrated, electromagnetically overcharged. Vertical resonance channel loses phase coupling.",
+      "triggers": [
+        "chronic_sympathetic_tension_psoas_gluteal",
+        "martial_arts_or_athletic_Yang_shell",
+        "fear_shame_performance_pressure_emotional_holding",
+        "cortisol_catecholamine_pelvic_floor_tension",
+        "retroperitoneal_fascia_drying"
+      ],
+      "collapse_chain": [
+        "mind_emotion: unresolved fear/control/shame → pelvic guarding",
+        "autonomic: chronic sympathetic drive → loss of parasympathetic pulsation",
+        "biochemical: cortisol + ROS + dehydration → EZ collapse (adrenal fatigue)",
+        "structural: fascia tightening + venous stagnation → damp heat, pain, bone overgrowth",
+        "field: lower ↔ upper dantian disconnection → loss of coherence, fatigue, disorientation"
+      ],
+      "clinical_manifestations": [
+        { "diagnosis": "Gluteal bursitis / tendinopathy", "mechanism": "GB-BL junction heat-stagnation; trapped Yang pressure seeking vent" },
+        { "diagnosis": "Hip osteoarthritis / FAI", "mechanism": "Chronic Yang densification + EZ collapse; ossification of Qi stagnation" },
+        { "diagnosis": "Psoas tendinitis / iliopsoas spasm", "mechanism": "Defensive contraction protecting dan tian gate; fear-based holding" },
+        { "diagnosis": "Meralgia paresthetica", "mechanism": "Thickened fascia compresses lateral femoral cutaneous nerve; blocked Dai Mai" },
+        { "diagnosis": "Sacroiliac / pelvic floor pain", "mechanism": "Kidney water-Liver fire disconnection; Yin anchor loss" },
+        { "diagnosis": "Reproductive or urinary dysfunction", "mechanism": "Field heat and dehydration in Chong/Ren; upward cooling wave failure" }
+      ],
+      "restoration_stages": [
+        { "stage": 1, "action": "Breath-based parasympathetic training", "detail": "5-6 breaths/min, slow diaphragmatic or pelvic breathing" },
+        { "stage": 2, "action": "Fascia rehydration", "detail": "Gentle oscillatory stretching; NOT static lengthening" },
+        { "stage": 3, "action": "Yin-restoring herbs + nutrition", "detail": "Mai Men Dong, Sheng Di, He Huan Pi, Fu Shen, Wu Wei Zi; mineral-rich fluids" },
+        { "stage": 4, "action": "Emotional discharge", "detail": "Trembling, crying, grounding; pelvic safety restoration" },
+        { "stage": 5, "action": "Mitochondrial rhythm rebuild", "detail": "Sunlight, moderate movement, rhythmic sleep" }
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "He Huan Pi", "role": "lift repressed emotion, soften pelvic holding", "notes": "" },
+          { "name": "Fu Shen", "role": "self-soothing, calm Shen", "notes": "" },
+          { "name": "Wu Wei Zi", "role": "Shaoyin anchor, seal matrix", "notes": "" },
+          { "name": "Mai Men Dong", "role": "moisten, fascia water restore", "notes": "" },
+          { "name": "Dan Shen", "role": "blood stasis, trauma-held tension", "notes": "" },
+          { "name": "Sheng Di", "role": "deep Yin, EZ lattice", "notes": "" }
+        ],
+        "device": "Qi Gong spirals; slow hip rotations; small wave practices; laser paraspinal; gentle IR on hip",
+        "physical": "Psoas + piriformis + adductor + TFL + iliacus gentle rhythmic lengthening (melting, not forcing); Dan Tian pulsing exercises"
+      }
+    },
+
+    {
+      "name": "five_element_generating_cycle_intact",
+      "aliases": ["sheng_cycle", "healthy_flow"],
+      "description": "All five elements flowing in generating sequence. Cellular function coherent.",
+      "cycle": "WOOD → FIRE → EARTH → METAL → WATER → WOOD",
+      "arrow_direction": "clockwise",
+      "node_functions": [
+        { "element": "WOOD", "tcm": "LV", "cellular": "ER / protein synthesis / wiring", "generating_text": "builds cytoskeleton / organizes water", "ayurveda": "Ether" },
+        { "element": "FIRE", "tcm": "HT", "cellular": "Microtubules / neural rhythm", "generating_text": "drives neural rhythm / stabilizes transport", "ayurveda": "Fire" },
+        { "element": "EARTH", "tcm": "SP", "cellular": "Lysosome / autophagy", "generating_text": "cellular digestion / debris clearance", "ayurveda": "Earth" },
+        { "element": "METAL", "tcm": "LU", "cellular": "Mitochondria / respiratory chain", "generating_text": "energy generation / respiratory chain", "ayurveda": "Air" },
+        { "element": "WATER", "tcm": "KD", "cellular": "DNA hydration shell / stem-cell reserve", "generating_text": "DNA hydration / regenerative blueprint", "ayurveda": "Water" }
+      ]
+    },
+
+    {
+      "name": "five_element_controlling_cycle",
+      "aliases": ["ke_cycle", "homeostasis", "mutual_restraint"],
+      "description": "Normal homeostatic restraint between elements. Each element controls another to prevent excess.",
+      "cycle": "WOOD → EARTH → WATER → FIRE → METAL → WOOD",
+      "arrow_direction": "star-shaped (pentagonal cross-connections)",
+      "controlling_pairs": [
+        { "controller": "WOOD", "controlled": "EARTH", "mechanism": "ER stress inhibits autophagy", "label": "stress gating cleanup" },
+        { "controller": "EARTH", "controlled": "WATER", "mechanism": "Lysosomal inflammation damages DNA hydration shell", "label": "inflammation drains reserves" },
+        { "controller": "WATER", "controlled": "FIRE", "mechanism": "DNA hydration shell stabilises/destabilises microtubule hydration shell", "label": "CSF / Yin dampens firing" },
+        { "controller": "FIRE", "controlled": "METAL", "mechanism": "Microtubule hydration shell stabilises/destabilises mitochondrial hydration shell", "label": "neural rhythm tunes mitochondria" },
+        { "controller": "METAL", "controlled": "WOOD", "mechanism": "Energy availability limits ER plasticity", "label": "energy limits plasticity" }
+      ]
+    },
+
+    {
+      "name": "five_element_destroying_cycle",
+      "aliases": ["cheng_cycle", "insulting_cycle", "pathological_cascade"],
+      "description": "Pathological over-acting or insulting cycle. Disease spirals form when one element overwhelms or insults the one that normally controls it.",
+      "cycle": "FIRE → EARTH → METAL → WATER → WOOD → FIRE",
+      "arrow_direction": "broken dark clockwise",
+      "pathology_tags": [
+        { "element": "FIRE", "pathology": "migraine storms / ectopic discharges / epileptiform activity" },
+        { "element": "EARTH", "pathology": "CRPS / neuroinflammation" },
+        { "element": "METAL", "pathology": "mitochondrial dysfunction / fatigue / neuropathy" },
+        { "element": "WATER", "pathology": "depleted repair / phantom pain" },
+        { "element": "WOOD", "pathology": "maladaptive plasticity / phantom pain" }
+      ],
+      "engine_use": "When multiple diagnoses co-exist in destroying cycle pattern → suspect cascading field pathology; treat root element first"
+    }
+  ],
+
+  "five_element_node_panel_data": {
+    "description": "Popup panel content when user taps a node in the UI. Engine can use this to return node-specific clinical data.",
+    "nodes": {
+      "FIRE": {
+        "tcm_organ": "Heart / Small Intestine (HT)",
+        "cellular": "Microtubules / cytoskeleton / neural rhythm",
+        "neuro_pain_correlate": "migraine / epileptiform activity / ectopic neural discharge",
+        "ayurveda": "Fire element",
+        "typical_syndromes": ["migraine", "seizure_threshold_low", "neural_hyperexcitability"],
+        "entry_protocol": "Summus laser / Cell Activator at HT meridian; Neural rhythm stabilisation"
+      },
+      "EARTH": {
+        "tcm_organ": "Spleen / Stomach (SP)",
+        "cellular": "Lysosome / autophagy",
+        "neuro_pain_correlate": "CRPS / neuroinflammation / chronic regional pain",
+        "ayurveda": "Earth element",
+        "typical_syndromes": ["CRPS", "neuroinflammation", "autodigestion_failure"],
+        "entry_protocol": "Autophagy induction support; warming herbs if cold-damp; cooling if damp-heat"
+      },
+      "METAL": {
+        "tcm_organ": "Lung / Large Intestine (LU)",
+        "cellular": "Mitochondria / respiratory chain",
+        "neuro_pain_correlate": "fatigue / neuropathy / mitochondrial dysfunction",
+        "ayurveda": "Air (electron flow / cellular respiration / prana)",
+        "typical_syndromes": ["chronic_fatigue", "peripheral_neuropathy", "post_viral_mitochondrial_dysfunction"],
+        "entry_protocol": "Mitochondrial support; Cell Activator; respiratory chain modulators"
+      },
+      "WATER": {
+        "tcm_organ": "Kidney / Bladder (KD)",
+        "cellular": "DNA hydration shell / stem-cell reserve / regenerative blueprint",
+        "neuro_pain_correlate": "depleted repair / phantom pain / repair collapse",
+        "ayurveda": "Water element",
+        "typical_syndromes": ["adrenal_fatigue", "cold_pelvis", "depleted_regeneration"],
+        "entry_protocol": "Kidney Yang or Yin rebuild depending on dominance; BL23 / KD3 / KD7"
+      },
+      "WOOD": {
+        "tcm_organ": "Liver / Gallbladder (LV)",
+        "cellular": "ER / protein synthesis / morphogenetic wiring",
+        "neuro_pain_correlate": "phantom pain / maladaptive plasticity",
+        "ayurveda": "Ether (organizing field / HUN / morphogenetic matrix)",
+        "ayurveda_note": "Ether = ER as morphogenetic matrix antenna; HUN = etheral soul, daydreams, night dreams, fantasy, creativity",
+        "typical_syndromes": ["phantom_pain", "maladaptive_plasticity", "chronic_nerve_injury"],
+        "entry_protocol": "Liver Qi and blood support; GB meridian vent if Shaoyang excess; Jueyin calm if depleted"
+      }
+    }
+  },
+
+  "metabolic_rhythm_card": {
+    "name": "Metabolic Rhythm & Visceral Tissue Regeneration (40+)",
+    "type": "Base44 foundational protocol card",
+    "clinical_entry_point": {
+      "who_fits": [
+        "age_40_plus",
+        "central_weight_gain_or_increased_waist",
+        "poor_sleep_or_circadian_drift",
+        "low_back_pain_or_morning_stiffness",
+        "fatigue_or_reduced_concentration",
+        "stress_dominance_or_burnout_features",
+        "functional_GI_symptoms",
+        "early_insulin_resistance_or_dyslipidaemia_optional"
+      ],
+      "exclusions": [
+        "structural_abdominal_wall_defects_hernia_significant_diastasis",
+        "advanced_metabolic_disease_requiring_pharmacologic_management"
+      ]
+    },
+    "program_names": [
+      "Metabolic Rhythm Restoration Program",
+      "Day-Night Recovery & Energy Reset",
+      "Early Metabolic Dysfunction Reversal Program",
+      "Circadian & Tissue Recovery Protocol (40+)"
+    ],
+    "measurable_outcomes": {
+      "primary": ["sleep_quality", "energy_level_daytime", "concentration_cognitive_clarity", "low_back_pain_morning_stiffness"],
+      "secondary": ["waist_circumference_low_key"]
+    },
+    "strategic_notes": [
+      "Ideal entry program for Dubai population (younger, high-stress, pre-disease)",
+      "Strong early wins via sleep, pain, energy → trust building",
+      "Scalable later into subscription / education model",
+      "Backend compatible with fascia-mitochondrial regeneration framework",
+      "Frontend publication pending"
+    ]
+  },
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "Visceral Obesity / Central Weight Gain (40+)",
+      "associated_patterns": ["metabolic_rhythm_disruption", "cold_heat_complex"],
+      "notes": "Not primary fat disorder — peritoneum-fascia-mitochondria-autonomic nervous system problem. Fat = consequence of stress adaptation. Cortisol dominance + mitochondrial survival mode + peritoneal fascia hypometabolism."
+    },
+    {
+      "diagnosis": "Metabolic Syndrome (pre-disease / anteroom)",
+      "associated_patterns": ["metabolic_rhythm_disruption"],
+      "notes": "Pre-disease state: no diabetes, no HT, no statin yet. Hasi hízás + fáradtság + alvászavar + koncentrációromlás + low back pain cluster. Treat rhythm, not fat."
+    },
+    {
+      "diagnosis": "Insulin Resistance",
+      "associated_patterns": ["metabolic_rhythm_disruption", "metabolic_cold_damp"],
+      "notes": "Add Prosugar to base protocol if lab-confirmed. Berberine also applicable (see Batch 1 Berberine card)."
+    },
+    {
+      "diagnosis": "Dyslipidaemia",
+      "associated_patterns": ["metabolic_rhythm_disruption"],
+      "notes": "Add Procholterol to base protocol if lab-confirmed."
+    },
+    {
+      "diagnosis": "Post-mRNA Vaccine Metabolic Burden",
+      "associated_patterns": ["metabolic_rhythm_disruption"],
+      "notes": "Spike protein → mitochondrial energy drain + EZ lattice burden + chronic low-grade inflammation → cortisol ↑ → local insulin resistance → visceral fat as energetic buffer. Not diet question."
+    },
+    {
+      "diagnosis": "Circadian Rhythm Disorder / Sleep Disruption",
+      "associated_patterns": ["metabolic_rhythm_disruption"],
+      "notes": "Sleep is primary outcome. Visceral fat always accompanies circadian breakdown. No fascia regeneration without sleep. DuoLife Day/Night as circadian re-anchoring base."
+    },
+    {
+      "diagnosis": "Coxa Saltans (Snapping Hip Syndrome)",
+      "associated_patterns": ["yin_field_laxity_coxa_saltans"],
+      "notes": "Yin Qiao Mai or Yin Wei Mai instability. Fascia loses coherent gel tension. Tendon whiplash = Yang rebound in Yin vacuum. Iliotibial band, iliopsoas, or gluteus medius tendon over bony prominence."
+    },
+    {
+      "diagnosis": "Femoro-Acetabular Impingement (FAI) — cam or pincer",
+      "associated_patterns": ["pelvic_yang_compression", "qi_blood_stasis_joint"],
+      "notes": "Bone spurs = crystallised Qi = chronic Yang compression + EZ collapse. Martial arts / sympathetic drive = Yang shell. Fascia dries → bulk water buildup → bone senses instability → compensatory spur. Treat: psoas/piriformis/adductor melting + EZ rehydration + spiral movement."
+    },
+    {
+      "diagnosis": "Gluteal Bursitis / Tendinopathy",
+      "associated_patterns": ["pelvic_yang_compression"],
+      "notes": "GB-BL junction heat-stagnation; trapped Yang pressure seeking vent at greater trochanter."
+    },
+    {
+      "diagnosis": "Psoas Tendinitis / Iliopsoas Spasm",
+      "associated_patterns": ["pelvic_yang_compression"],
+      "notes": "Defensive contraction protecting lower dan tian gate; fear-based holding. Treat fear/shame first via somatic work."
+    },
+    {
+      "diagnosis": "Meralgia Paresthetica",
+      "associated_patterns": ["pelvic_yang_compression"],
+      "notes": "Thickened pelvic fascia compresses lateral femoral cutaneous nerve. Blocked lateral Qi flow along Dai Mai."
+    },
+    {
+      "diagnosis": "Hip Osteoarthritis",
+      "associated_patterns": ["pelvic_yang_compression", "qi_blood_stasis_joint"],
+      "notes": "Chronic Yang densification + EZ collapse → ossification of Qi stagnation. Same root as FAI in advanced stage."
+    },
+    {
+      "diagnosis": "Sacroiliac Pain / Pelvic Floor Pain",
+      "associated_patterns": ["pelvic_yang_compression", "cold_pelvis_shaoyin_collapse"],
+      "notes": "Kidney water-Liver fire disconnection; Yin anchor loss. Part of lower dantian decoupling."
+    },
+    {
+      "diagnosis": "Reproductive or Urinary Dysfunction",
+      "associated_patterns": ["pelvic_yang_compression", "cold_pelvis_shaoyin_collapse"],
+      "notes": "Field heat and dehydration in Chong/Ren circulation; upward cooling wave failure. Lower dantian frozen first."
+    },
+    {
+      "diagnosis": "Migraine",
+      "associated_patterns": ["five_element_destroying_cycle"],
+      "notes": "FIRE element pathology in destroying cycle; neural overexcitability; microtubule dysfunction; ectopic discharges."
+    },
+    {
+      "diagnosis": "CRPS (neuroinflammatory subtype)",
+      "associated_patterns": ["five_element_destroying_cycle", "shaoyang_taiyin_dissonance"],
+      "notes": "EARTH element in destroying cycle; neuroinflammation. Also SMP (sympathetically maintained pain) — see Batch 1."
+    },
+    {
+      "diagnosis": "Peripheral Neuropathy / Chronic Fatigue",
+      "associated_patterns": ["five_element_destroying_cycle"],
+      "notes": "METAL element pathology; mitochondrial dysfunction; respiratory chain failure."
+    },
+    {
+      "diagnosis": "Phantom Pain / Maladaptive Plasticity",
+      "associated_patterns": ["five_element_destroying_cycle"],
+      "notes": "WATER-WOOD element pathology; depleted repair; ER morphogenetic wiring disruption."
+    },
+    {
+      "diagnosis": "Adrenal Fatigue (40+ burnout type)",
+      "associated_patterns": ["cold_heat_complex", "metabolic_rhythm_disruption"],
+      "notes": "Lower dantian freezes first; mitochondrial glycolytic shift; retroperitoneal cold. Yang burnout = systemic mitochondrial decoherence."
+    }
+  ],
+
+  "rules": [
+    {
+      "condition": "age_40_plus = true AND central_weight_gain = true AND sleep_poor = true",
+      "action": "activate metabolic_rhythm_disruption pattern; start DuoLife Day/Night base; do NOT recommend fat-loss protocol"
+    },
+    {
+      "condition": "upper_heat_flag = true AND lower_cold_flag = true (simultaneous)",
+      "action": "activate cold_heat_complex; treat lower burner first (Yin rebuild + Yang rekindle small dose); do not address upper heat directly until lower is stabilised"
+    },
+    {
+      "condition": "lab_insulin_resistance = true",
+      "action": "add Prosugar to base DuoLife Day/Night protocol"
+    },
+    {
+      "condition": "lab_dyslipidaemia = true",
+      "action": "add Procholterol to base protocol"
+    },
+    {
+      "condition": "stress_dominance_flag = true AND sleep_fragmentation = true",
+      "action": "add Prorelaxin (evening dose)"
+    },
+    {
+      "condition": "blood_stasis_signs = true (cold, pain, pressure sensitivity, dark tongue)",
+      "action": "add cautious circulatory support as clinical decision — NOT in marketing or frontend output"
+    },
+    {
+      "condition": "structural_abdominal_defect = true OR advanced_metabolic_disease = true",
+      "action": "exclude from Metabolic Rhythm Restoration Program; refer to appropriate specialist"
+    },
+    {
+      "condition": "snapping_hip_flag = true",
+      "action": "assess for Yin Qiao Mai vs Yin Wei Mai subtype; activate yin_field_laxity_coxa_saltans pattern; add Yin anchoring herbs + KD2-KD6-BL1 laser"
+    },
+    {
+      "condition": "pelvic_yang_compression = true AND martial_arts_or_athlete_history = true",
+      "action": "activate pelvic_yang_compression; prioritise psoas/piriformis melting + EZ rehydration + spiral movement BEFORE herbal protocol"
+    },
+    {
+      "condition": "five_element_node_fire_pathology = true AND five_element_node_earth_pathology = true AND five_element_node_metal_pathology = true",
+      "action": "flag destroying cycle cascade; treat root element; do NOT treat all symptoms simultaneously"
+    },
+    {
+      "condition": "lower_dantian_decoupled = true (pelvic_cold + upper_heat + anxiety + low_libido + insomnia cluster)",
+      "action": "activate three_dantian_decoupling protocol; restoration stages 1→5 in sequence; no aggressive Yang stimulation"
+    },
+    {
+      "condition": "cortisol_dominance_flag = true",
+      "action": "avoid aggressive HIIT; avoid caloric restriction; avoid cryolipolysis; prioritise breath + fascia + rhythm approach"
+    },
+    {
+      "condition": "circadian_drift = true",
+      "action": "DuoLife Day (morning) + Night (evening) as non-negotiable base before any add-ons"
+    },
+    {
+      "condition": "vagus_stimulation_requested = true",
+      "action": "implement as background mechanism only; label as 'autonomic recalibration as part of metabolic recovery' — NOT as standalone vagus program; prevents wellness framing"
+    },
+    {
+      "condition": "sleep_improvement_achieved = true",
+      "action": "flag as primary success marker; all other metabolic markers expected to follow; do not switch protocol"
+    }
+  ],
+
+  "ui_architecture_spec": {
+    "description": "Five Element Cellular Field Map — UI engine specification for Avicenna app (from 5_element_cycles.pdf). This is NOT clinical logic — it is the app's visual system architecture.",
+    "canvas": {
+      "type": "Single master canvas with 5 interactive nodes arranged pentagonally",
+      "background": "Cellular water lattice / EZ-water texture / proton gradients",
+      "centre": "Tagline",
+      "nodes": "Clickable; each triggers animation + side panel"
+    },
+    "overlay_layers": [
+      { "layer": 1, "name": "Generating", "arrows": "green clockwise", "meaning": "functional regeneration / healthy flow" },
+      { "layer": 2, "name": "Controlling", "arrows": "red star-shaped", "meaning": "homeostasis / mutual restraint" },
+      { "layer": 3, "name": "Destroying", "arrows": "broken dark clockwise", "meaning": "pathological cascade / disease spiral" },
+      { "layer": 4, "name": "Ayurveda", "arrows": "translucent secondary overlay", "meaning": "Ether/Air/Fire/Water/Earth spiritual-field layer" }
+    ],
+    "control_panel_toggles": ["Generating", "Controlling", "Destroying", "Ayurveda", "Clinical examples", "Cellular detail", "Neuro detail"],
+    "audience_modes": [
+      "Conference Mode (minimal text, strong visuals)",
+      "Clinical Mode (mechanisms and syndromes)",
+      "Education Mode (cellular + Ayurveda overlays)",
+      "Investor Mode (decision-engine logic emphasised)"
+    ],
+    "node_panel_sections": ["Cellular function", "Neuro-pain correlate", "Ayurvedic mapping", "Typical syndromes", "Entry protocol (Cell Activator / Summus)"],
+    "system_goal": "Cellular-systems diagnostic visualization engine for pain and neurological syndromes — translating complex integrative models into actionable intervention pathways for clinicians and patients.",
+    "platform_positioning": "Powers at-home laser-guided therapy assistant and clinician-level decision support platform — not merely an educational infographic."
+  },
+
+  "ayurveda_tcm_cellular_crosswalk": {
+    "description": "Cross-mapping table for Ayurveda elements to TCM elements and cellular systems",
+    "mappings": [
+      { "ayurveda": "Ether", "tcm": "WOOD / LV", "cellular": "ER / morphogenetic matrix", "note": "HUN = etheral soul; organizing field; daydreams; creativity; morphogenetic antenna" },
+      { "ayurveda": "Air", "tcm": "METAL / LU", "cellular": "Mitochondria / respiratory chain", "note": "Electron flow / cellular respiration / prana dynamics" },
+      { "ayurveda": "Fire", "tcm": "FIRE / HT", "cellular": "Microtubules / neural rhythm", "note": "Direct correspondence" },
+      { "ayurveda": "Water", "tcm": "WATER / KD", "cellular": "DNA hydration shell / stem-cell reserve", "note": "Direct correspondence" },
+      { "ayurveda": "Earth", "tcm": "EARTH / SP", "cellular": "Lysosome / autophagy", "note": "Direct correspondence" }
+    ]
+  },
+
+  "notes": [
+    "Batch 2 contains three critical recovered files: Five Element UI spec, Metabolic Rhythm protocol, and Cold-Heat Complex engine — all previously lost due to .pages binary format.",
+    "The metabolic_rhythm_disruption pattern is a foundational standalone protocol for the 40+ demographic — intended as entry-level Avicenna program before deeper clinical work.",
+    "The five_element_node_panel_data is ready-to-use for the app's interactive UI side panels — each node contains clinical content extracted directly from source.",
+    "The ui_architecture_spec section is APP ARCHITECTURE only — not clinical logic. Should be passed to frontend/UI team separately.",
+    "The ayurveda_tcm_cellular_crosswalk enables the Ayurveda toggle layer in the UI.",
+    "cold_heat_complex.pdf content substantially overlaps with pelvic pain content from Batch 1 — merged and de-duplicated.",
+    "Still pending processing: CRPS.pdf (uploaded in Batch 1 file listing but content not yet extracted).",
+    "Berberine metabolic protocol (Batch 1) + DuoLife Day/Night supplement logic (Batch 2) are companion components for metabolic_rhythm_disruption pattern — should be linked in engine.",
+    "All interventions are supportive and integrative — not replacing Western medical diagnosis or treatment.",
+    "Pattern assignments are probabilistic — always cross-check with clinical presentation."
+  ]
+}

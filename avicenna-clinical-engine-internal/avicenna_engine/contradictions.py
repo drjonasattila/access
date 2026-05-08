@@ -21,7 +21,7 @@ def detect_contradictions(case: EngineInput, facts: dict[str, Any]) -> list[Cont
             )
         )
 
-    if facts.get("upper_heat") and facts.get("lower_cold"):
+    if (facts.get("upper_heat") or facts.get("upper_heat_flag")) and (facts.get("lower_cold") or facts.get("lower_cold_flag")):
         contradictions.append(
             Contradiction(
                 kind="vertical_dissociation",
@@ -79,4 +79,3 @@ def _observation(case: EngineInput, key: str) -> str:
 def _positive_response(value: str) -> bool:
     normal = normalize_term(value)
     return any(marker in normal for marker in ("better", "relief", "improves", "helps", "positive"))
-

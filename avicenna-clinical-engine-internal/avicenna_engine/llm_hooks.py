@@ -34,6 +34,14 @@ LLM_CASE_EXTRACTION_SCHEMA: dict[str, Any] = {
         "acute_inflammatory_flare": "boolean",
         "yang_recovery_tempting": "boolean",
         "reassess_day_3_to_7": "boolean",
+        "age_40_plus_flag": "boolean",
+        "central_weight_gain": "boolean",
+        "circadian_drift_flag": "boolean",
+        "sleep_fragmentation_flag": "boolean",
+        "stress_dominance_flag": "boolean",
+        "cold_lower_body_flag": "boolean",
+        "heat_upper_body_flag": "boolean",
+        "five_element_node_FIRE_pathology": "boolean",
     },
 }
 
@@ -83,6 +91,51 @@ def build_llm_context(result: EngineResult) -> dict[str, Any]:
             }
             for score in result.patterns[:5]
         ],
+        "graph": {
+            "active_nodes": [
+                {
+                    "node": node.node,
+                    "activation": node.activation,
+                    "evidence": node.evidence,
+                    "clinical_correlates": node.clinical_correlates,
+                }
+                for node in result.graph.active_nodes
+            ],
+            "root_nodes": result.graph.root_nodes,
+            "upstream_nodes": result.graph.upstream_nodes,
+            "downstream_nodes": result.graph.downstream_nodes,
+            "cascade_predictions": result.graph.cascade_predictions,
+            "pathological_cycles": result.graph.pathological_cycles,
+        },
+        "state_transitions": [
+            {
+                "pattern": transition.pattern,
+                "stage": transition.stage,
+                "sequence_index": transition.sequence_index,
+                "description": transition.description,
+                "intervention_posture": transition.intervention_posture,
+            }
+            for transition in result.state_transitions
+        ],
+        "restoration": {
+            "root_layers": result.restoration.root_layers,
+            "compensation_layers": result.restoration.compensation_layers,
+            "secondary_layers": result.restoration.secondary_layers,
+            "ordered_steps": result.restoration.ordered_steps,
+            "avoid_first": result.restoration.avoid_first,
+            "success_metrics": result.restoration.success_metrics,
+        },
+        "onboarding": [
+            {
+                "name": path.name,
+                "level": path.level,
+                "eligible": path.eligible,
+                "reasons": path.reasons,
+                "exclusions": path.exclusions,
+                "primary_metrics": path.primary_metrics,
+            }
+            for path in result.onboarding
+        ],
         "contradictions": [
             {
                 "kind": contradiction.kind,
@@ -109,4 +162,3 @@ def build_llm_context(result: EngineResult) -> dict[str, Any]:
             for candidate in result.interventions[:20]
         ],
     }
-

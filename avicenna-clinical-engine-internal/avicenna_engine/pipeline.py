@@ -4,13 +4,16 @@ from pathlib import Path
 from typing import Any
 
 from .contradictions import detect_contradictions
+from .graph import FiveElementGraphEngine
 from .interventions import collect_interventions
 from .knowledge_base import KnowledgeBase
 from .llm_hooks import build_llm_context
 from .models import EngineInput, EngineResult
+from .onboarding import OnboardingEngine
 from .safety import SafetyLayer
 from .scoring import AxisPredictionEngine, WeightedPatternEngine
 from .terrain import interpret_terrain
+from .transitions import StateTransitionEngine
 
 
 class AvicennaClinicalEngine:
@@ -25,6 +28,9 @@ class AvicennaClinicalEngine:
         self.pattern_engine = WeightedPatternEngine(knowledge_base)
         self.axis_engine = AxisPredictionEngine(knowledge_base)
         self.safety_layer = SafetyLayer(knowledge_base)
+        self.graph_engine = FiveElementGraphEngine(knowledge_base)
+        self.transition_engine = StateTransitionEngine(knowledge_base)
+        self.onboarding_engine = OnboardingEngine(knowledge_base)
 
     @classmethod
     def from_json(cls, path: str | Path | None = None) -> "AvicennaClinicalEngine":
@@ -34,6 +40,10 @@ class AvicennaClinicalEngine:
         case = EngineInput.from_mapping(case_data)
         patterns = self.pattern_engine.score(case)
         safety, facts = self.safety_layer.evaluate(case, patterns)
+        graph = self.graph_engine.analyze(case, patterns, facts)
+        state_transitions = self.transition_engine.transitions(case, patterns)
+        restoration = self.transition_engine.restoration_plan(case, patterns, state_transitions, graph, facts)
+        onboarding = self.onboarding_engine.evaluate(case, patterns, facts)
         contradictions = detect_contradictions(case, facts)
         terrain = interpret_terrain(case, self.kb, patterns, facts, contradictions)
         axis_scores = self.axis_engine.score(case)
@@ -44,6 +54,10 @@ class AvicennaClinicalEngine:
             patterns=patterns,
             contradictions=contradictions,
             terrain=terrain,
+            graph=graph,
+            state_transitions=state_transitions,
+            restoration=restoration,
+            onboarding=onboarding,
             axis_scores=axis_scores,
             interventions=interventions,
             llm_context={},
@@ -52,4 +66,3 @@ class AvicennaClinicalEngine:
         )
         result.llm_context = build_llm_context(result)
         return result
-
