@@ -1,0 +1,687 @@
+{
+  "batch": 1,
+  "source_files": [
+    "migraine_transitions_pdf.pdf",
+    "koindukcios_modellek_pdf.pdf",
+    "mixed_OA_RA_transition_state_decision_tree_flow_chart_app_pdf.pdf"
+  ],
+
+  "patterns": [
+    {
+      "name": "gut_jueyin_overload",
+      "aliases": ["GI pressure", "Jueyin overload", "liver_qi_invading_stomach"],
+      "triggers": [
+        "nausea with or before migraine",
+        "bloating",
+        "reflux",
+        "belching",
+        "fullness after eating",
+        "dizziness associated with headache",
+        "stress or emotional overload",
+        "worsens after eating or emotional strain",
+        "sensation of 'cannot digest emotionally'"
+      ],
+      "symptoms": [
+        "nausea",
+        "bloating",
+        "reflux",
+        "frontal headache",
+        "dizziness",
+        "migraine concurrent with GI symptoms",
+        "worsening after meals or stress"
+      ],
+      "backend_flags": [
+        "GI_pressure: true",
+        "emotional_digestion_overload: true",
+        "water_grid_instability: mild",
+        "liver_qi_invading_stomach: true"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "MyGastrin", "role": "primary GI pressure reduction", "notes": "first-line for gut-driven migraine" },
+          { "name": "Fiber", "role": "stabilisation, prevents rebound", "notes": "use in phase 1 and maintain in phase 2" },
+          { "name": "Aloe", "role": "GI soothing adjunct", "notes": "optional, add if mucosal irritation present" },
+          { "name": "Ginger", "role": "gentle warming, motility support", "notes": "contraindicated if dry component present in formula — see rules" }
+        ],
+        "preparation": "oral supplements; ginger as weak-to-medium tea, morning or midday only (not evening)",
+        "device": "none first-line",
+        "not_first_line": ["triptans", "strong stimulants", "isolated neck treatment"]
+      }
+    },
+
+    {
+      "name": "shaoyang_gate_instability",
+      "aliases": ["Jueyin-Shaoyang spillover", "migraine overflow", "signal-noise instability"],
+      "triggers": [
+        "gut_jueyin_overload unresolved",
+        "GI symptoms present before or during headache",
+        "Jueyin cannot release → Shaoyang becomes tense gate"
+      ],
+      "symptoms": [
+        "migraine",
+        "throbbing or pressure headache",
+        "nausea",
+        "photophobia",
+        "phonophobia",
+        "neck-shoulder tension post-migraine"
+      ],
+      "backend_flags": [
+        "shaoyang_gate: unstable",
+        "signal_noise_ratio: impaired",
+        "water_grid: fragmenting"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Promigraine", "role": "membrane modulation / migraine-specific", "notes": "use when headache is dominant" },
+          { "name": "D + Nigella", "role": "membrane stabilisation", "notes": "adjunct to Promigraine" },
+          { "name": "RegenOil", "role": "membrane fluidity support", "notes": "alternative to D+Nigella depending on presentation" }
+        ],
+        "preparation": "oral",
+        "device": "laser — GB / SJ / ST meridian lines if tension component present",
+        "not_first_line": ["GI-first if headache is dominant without GI symptoms", "strong sedation"]
+      }
+    },
+
+    {
+      "name": "shaoyang_downstream_fascia_overload",
+      "aliases": ["tension/fascia-driven migraine", "Shaoyang downstream overload", "gallbladder meridian load"],
+      "triggers": [
+        "unresolved Shaoyang gate instability",
+        "neck-initiated headache",
+        "stress worsens",
+        "poor posture worsens",
+        "residual tension after migraine resolves"
+      ],
+      "symptoms": [
+        "neck-shoulder tension",
+        "scapula pain",
+        "temporal fascia tenderness",
+        "hat-like pressure sensation ('sapkás')",
+        "intercostal neuralgia",
+        "hip pain",
+        "meralgia paresthetica",
+        "greater trochanteric pain syndrome",
+        "bursitis along gallbladder meridian",
+        "TMJ disorder",
+        "ankle sprain (gallbladder meridian distribution)"
+      ],
+      "backend_flags": [
+        "fascial_stiffness: true",
+        "membrane_rigidity: true",
+        "downstream_load: unresolved_stress"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Kudzu", "role": "tension release, neck-shoulder", "notes": "morning dosing" },
+          { "name": "Chlorophyll", "role": "optional tissue support", "notes": "as needed" },
+          { "name": "Collagen", "role": "structural tissue support", "notes": "only in building phase — not during active inflammation" }
+        ],
+        "preparation": "oral",
+        "device": "local laser — GB / SJ / SI meridian points",
+        "not_first_line": ["GI-first module", "strong sedation"]
+      }
+    },
+
+    {
+      "name": "vascular_blood_stasis_migraine",
+      "aliases": ["microcirculation failure", "blood sludging", "EZ-grid collapse"],
+      "triggers": [
+        "throbbing headache",
+        "aura present",
+        "cold extremities",
+        "weather sensitivity (barometric)",
+        "capillary sensitivity",
+        "eye pain"
+      ],
+      "symptoms": [
+        "throbbing pain",
+        "aura (visual or sensory)",
+        "cold hands/feet",
+        "weather-triggered headache",
+        "capillary fragility",
+        "eye pain"
+      ],
+      "backend_flags": [
+        "blood_sludging: true",
+        "EZ_grid_collapse: true",
+        "microflow: impaired",
+        "zeta_potential: collapsing"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "MyBlood", "role": "primary microcirculation support", "notes": "first-line" },
+          { "name": "ProCardiol", "role": "vascular tone support", "notes": "first-line" },
+          { "name": "Garlic extract", "role": "anti-sludging", "notes": "combine with Salvia extract" },
+          { "name": "Salvia extract", "role": "blood flow", "notes": "combine with Garlic" },
+          { "name": "Turmeric", "role": "anti-inflammatory, microcirculation", "notes": "" },
+          { "name": "Ginger", "role": "warming, zeta potential support", "notes": "low-moderate dose; context: taiyin spleen compensation" },
+          { "name": "Cardamom", "role": "warming adjunct, taiyin support", "notes": "" }
+        ],
+        "preparation": "oral",
+        "device": "none specified",
+        "not_first_line": ["excessive cooling agents", "isolated GI module"]
+      }
+    },
+
+    {
+      "name": "neuro_sensory_membrane_excitability",
+      "aliases": ["signal-noise imbalance", "sensory overload migraine", "poor damping"],
+      "triggers": [
+        "photophobia",
+        "phonophobia",
+        "sleep deprivation triggers migraine",
+        "irritability",
+        "'everything is too much' sensation"
+      ],
+      "symptoms": [
+        "photophobia",
+        "phonophobia",
+        "irritability",
+        "sleep-deprivation triggered headache",
+        "sensory overwhelm"
+      ],
+      "backend_flags": [
+        "membrane_excitability: elevated",
+        "damping: poor",
+        "sensory_load: overloaded"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "ProSelect", "role": "primary membrane / sensory modulation", "notes": "first-line" },
+          { "name": "Melatonin", "role": "night stabilisation", "notes": "evening only" },
+          { "name": "Spirulina", "role": "grounding, mitochondrial base", "notes": "low-to-moderate dose" }
+        ],
+        "preparation": "oral; melatonin strictly evening",
+        "device": "none specified",
+        "not_first_line": ["stimulants", "excess yang tonics"]
+      }
+    },
+
+    {
+      "name": "mixed_joint_inflammatory_edge",
+      "aliases": ["mixed OA-RA transition — inflammatory edge", "intermittent active inflammation + structure depleted"],
+      "triggers": [
+        "joint warm or swollen intermittently",
+        "flares with load or stress",
+        "worse in evening",
+        "rapid worsening with warming agents",
+        "exercise triggers flare",
+        "collagen supplementation alone worsened state"
+      ],
+      "symptoms": [
+        "intermittent joint heat",
+        "intermittent swelling",
+        "pain worsens toward evening",
+        "flares with physical or emotional stress"
+      ],
+      "backend_flags": [
+        "inflammation: intermittently_active",
+        "structure: depleted",
+        "phase: stabilisation_required"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "DuoLife Night", "role": "overnight anti-inflammatory stabilisation", "notes": "phase 1 core" },
+          { "name": "Spirulina", "role": "mitochondrial grounding, anti-inflammatory base", "notes": "" },
+          { "name": "Astaxanthin", "role": "antioxidant, anti-inflammatory", "notes": "maintain through phases 1 and 2" },
+          { "name": "Ginger tea", "role": "gentle warming, motility", "notes": "weak-to-medium; morning or midday ONLY — not evening" },
+          { "name": "Melatonin", "role": "evening calming only", "notes": "only if overstimulated at night" }
+        ],
+        "preparation": "oral; ginger tea morning/midday",
+        "device": "none in phase 1",
+        "not_yet": ["Collagen", "ProCardiol", "strong MyBlood"]
+      }
+    },
+
+    {
+      "name": "mixed_joint_transitional",
+      "aliases": ["mixed OA-RA — transitional phase", "flow without overdrive"],
+      "triggers": [
+        "less heat than before",
+        "less swelling",
+        "pain character shifting from burning to stiff",
+        "slow improvement but not sustained"
+      ],
+      "symptoms": [
+        "residual joint stiffness",
+        "reduced but persistent pain",
+        "improvement plateaus without structural support"
+      ],
+      "backend_flags": [
+        "inflammation: subsiding",
+        "structure: not_yet_supported",
+        "phase: transitional"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "MyBlood", "role": "low-dose microcirculation support", "notes": "start low dose only" },
+          { "name": "Spirulina", "role": "continue from phase 1", "notes": "" },
+          { "name": "Astaxanthin", "role": "continue from phase 1", "notes": "" },
+          { "name": "Ginger tea", "role": "continue", "notes": "" },
+          { "name": "Garlic extract", "role": "anti-sludging adjunct", "notes": "only if blood sludging signs present" }
+        ],
+        "preparation": "oral",
+        "device": "none specified",
+        "still_cautious": ["ProCardiol (only if needed)", "Collagen (not yet)"]
+      }
+    },
+
+    {
+      "name": "mixed_joint_building_phase",
+      "aliases": ["mixed OA-RA — building phase", "structural rebuilding"],
+      "triggers": [
+        "no active heat in joint",
+        "movement feels better",
+        "pain is 'empty' not inflamed",
+        "fatigue + weak posture present"
+      ],
+      "symptoms": [
+        "dull non-inflamed joint pain",
+        "weakness",
+        "poor posture endurance",
+        "fatigue with exertion"
+      ],
+      "backend_flags": [
+        "inflammation: resolved",
+        "structure: buildable",
+        "phase: building"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "DuoLife Collagen", "role": "structural tissue rebuilding", "notes": "FIRST introduction of collagen — only in this phase" },
+          { "name": "MyBlood", "role": "normal dose microcirculation", "notes": "increase from phase 2 dose" },
+          { "name": "ProCardiol", "role": "vascular and energy flow", "notes": "only if improvement not sustained or relapses with load" },
+          { "name": "Astragalus", "role": "qi tonification, fatigue and weak posture", "notes": "morning dosing; only if fatigue + weak posture" },
+          { "name": "Ginger tea", "role": "continue as maintenance", "notes": "" }
+        ],
+        "preparation": "oral",
+        "device": "none specified"
+      }
+    },
+
+    {
+      "name": "cgrp_suppression_structural_deficit",
+      "aliases": ["CGRP exit state", "medication-induced system silencing", "dead horse phenomenon"],
+      "triggers": [
+        "migraine frequency reduced on CGRP inhibitor but energy absent",
+        "constipation appeared or worsened on CGRP",
+        "flat emotional state",
+        "reduced physical tolerance",
+        "GI complaints intensified",
+        "patient reports: 'quieter but not better'"
+      ],
+      "symptoms": [
+        "fatigue",
+        "constipation",
+        "flat affect",
+        "reduced exercise tolerance",
+        "GI worsening"
+      ],
+      "backend_flags": [
+        "oscillation: suppressed",
+        "water_grid_repair: absent",
+        "proton_battery: not_rebuilding",
+        "vagus_gut_axis: partially_blocked"
+      ],
+      "interventions": {
+        "step_1_grounding": {
+          "herbs": [
+            { "name": "Fiber", "role": "core gut grounding", "notes": "do not skip" },
+            { "name": "Hydration support", "role": "gentle rehydration", "notes": "not forced" },
+            { "name": "Spirulina", "role": "mitochondrial re-activation", "notes": "low-to-moderate dose start" }
+          ],
+          "goal": "allow system to start moving again"
+        },
+        "step_2_membrane_flow": {
+          "herbs": [
+            { "name": "RegenOil", "role": "membrane fluidity restoration", "notes": "" },
+            { "name": "D + Nigella", "role": "membrane stabilisation alternative", "notes": "" },
+            { "name": "MyGastrin", "role": "GI pressure relief if nausea/pressure present", "notes": "only if needed" }
+          ],
+          "goal": "prevent migraine rebound on CGRP reduction"
+        },
+        "step_3_phenotype_tuning": {
+          "notes": "match to underlying migraine phenotype before reducing CGRP",
+          "gut_driven": ["MyGastrin + Fiber continue"],
+          "vascular": ["MyBlood / ProCardiol"],
+          "tension": ["Promigraine + laser"]
+        },
+        "device": "none in steps 1-2; laser in step 3 if tension phenotype",
+        "principle": "NEVER use CGRP exit strategy alone; Base44 protocol runs alongside"
+      }
+    },
+
+    {
+      "name": "medication_exhaustion_state",
+      "aliases": ["when meds stop working", "system capacity failure"],
+      "triggers": [
+        "increasing doses required for same effect",
+        "effect duration shortening",
+        "side effects increasing",
+        "new symptoms emerging (GI, fatigue, brain fog)"
+      ],
+      "symptoms": [
+        "tolerance development",
+        "GI side effects",
+        "fatigue",
+        "brain fog",
+        "new symptom clusters on medication"
+      ],
+      "backend_flags": [
+        "system_capacity: insufficient",
+        "load_processing: impaired"
+      ],
+      "interventions": {
+        "primary_question": "Is the system able to process load?",
+        "if_no": "stabilise first — do not escalate medication",
+        "if_yes": "modulate specifically by phenotype",
+        "branches": {
+          "gut_noise": {
+            "signs": ["nausea", "bloating", "reflux", "constipation"],
+            "intervention": ["MyGastrin", "Fiber"],
+            "rule": "do not increase medication dose"
+          },
+          "energy_fatigue": {
+            "signs": ["low energy", "fatigue dominant"],
+            "intervention": ["Spirulina", "Collagen if tissue fatigue"]
+          },
+          "migrating_pain": {
+            "signs": ["pain shifts location or character"],
+            "intervention": ["RegenOil", "D + Nigella — membrane stabilisation"]
+          },
+          "local_overload": {
+            "signs": ["neck, shoulder, lumbar overload"],
+            "intervention": ["Laser", "Collagen", "Kudzu"]
+          }
+        },
+        "do_not": [
+          "automatically increase medication",
+          "immediately switch to another drug",
+          "suppress the system further"
+        ]
+      }
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "migraine — gut-driven",
+      "associated_patterns": ["gut_jueyin_overload", "shaoyang_gate_instability"],
+      "notes": "GI overload spills into Shaoyang gate; treat gut first. Key marker: GI symptoms precede or accompany headache."
+    },
+    {
+      "diagnosis": "migraine — vascular",
+      "associated_patterns": ["vascular_blood_stasis_migraine"],
+      "notes": "Microcirculation failure, blood sludging, EZ-grid collapse. Aura = water-grid fragmentation."
+    },
+    {
+      "diagnosis": "migraine — tension/fascia-driven",
+      "associated_patterns": ["shaoyang_downstream_fascia_overload"],
+      "notes": "Neck-initiated. Gallbladder meridian distribution. Stress and posture worsen. Not primarily GI."
+    },
+    {
+      "diagnosis": "migraine — neuro-sensory",
+      "associated_patterns": ["neuro_sensory_membrane_excitability"],
+      "notes": "Membrane excitability, poor neural damping. Triggered by sleep deprivation and sensory overload."
+    },
+    {
+      "diagnosis": "cervicogenic headache",
+      "associated_patterns": ["shaoyang_downstream_fascia_overload"],
+      "notes": "LOCAL fascia/ligament/joint capsule — downstream overload, not upstream spillover. Distinct from migraine: fixed side, no aura, no GI link, worsens with neck movement. Migraine drugs alone are insufficient."
+    },
+    {
+      "diagnosis": "functional GI disorder / IBS-like",
+      "associated_patterns": ["gut_jueyin_overload"],
+      "notes": "Emotional and informational digestive overload. Liver qi invading stomach pattern."
+    },
+    {
+      "diagnosis": "osteoarthritis (OA)",
+      "associated_patterns": ["mixed_joint_building_phase"],
+      "notes": "When inflammation has resolved — structural deficit dominant. Collagen, MyBlood, Astragalus."
+    },
+    {
+      "diagnosis": "rheumatoid arthritis (RA) — active phase",
+      "associated_patterns": ["mixed_joint_inflammatory_edge"],
+      "notes": "Intermittent active inflammation. Stabilise first. Do NOT add collagen or strong stimulants."
+    },
+    {
+      "diagnosis": "mixed OA-RA transition state",
+      "associated_patterns": ["mixed_joint_inflammatory_edge", "mixed_joint_transitional", "mixed_joint_building_phase"],
+      "notes": "Most failure occurs here due to wrong intervention order. Phase-dependent: stabilise → flow → build. Pattern is not fixed — assess which phase the patient is currently in."
+    },
+    {
+      "diagnosis": "CGRP inhibitor side effects (constipation, fatigue, flat affect)",
+      "associated_patterns": ["cgrp_suppression_structural_deficit"],
+      "notes": "Not side effects — structural deficits from oscillation suppression without system restoration. Vagus-gut axis partially blocked."
+    },
+    {
+      "diagnosis": "medication overuse / tolerance",
+      "associated_patterns": ["medication_exhaustion_state"],
+      "notes": "Not compliance failure. System capacity is depleted. Stabilise before escalating or switching medication."
+    },
+    {
+      "diagnosis": "intercostal neuralgia",
+      "associated_patterns": ["shaoyang_downstream_fascia_overload"],
+      "notes": "Gallbladder meridian distribution."
+    },
+    {
+      "diagnosis": "meralgia paresthetica",
+      "associated_patterns": ["shaoyang_downstream_fascia_overload"],
+      "notes": "Gallbladder meridian distribution."
+    },
+    {
+      "diagnosis": "greater trochanteric pain syndrome",
+      "associated_patterns": ["shaoyang_downstream_fascia_overload"],
+      "notes": "Gallbladder meridian distribution."
+    },
+    {
+      "diagnosis": "TMJ disorder",
+      "associated_patterns": ["shaoyang_downstream_fascia_overload"],
+      "notes": "Temporal fascia component; gallbladder meridian involvement."
+    },
+    {
+      "diagnosis": "weather-sensitive joint/head pain",
+      "associated_patterns": ["vascular_blood_stasis_migraine", "shaoyang_downstream_fascia_overload"],
+      "notes": "Vascular: charged particle sensitivity (barometric fronts). Fascia: tense fascia reacts to electromagnetic movement of weather fronts."
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "R001",
+      "condition": "gut noise present (nausea, bloating, reflux, constipation) AND headache",
+      "action": "treat gut first — MyGastrin + Fiber before migraine-specific intervention"
+    },
+    {
+      "id": "R002",
+      "condition": "headache dominant WITHOUT GI symptoms",
+      "action": "use Promigraine / membrane module directly; do not default to GI-first"
+    },
+    {
+      "id": "R003",
+      "condition": "neck-initiated pain, fixed side, no aura, no GI link, worsens with neck movement",
+      "action": "cervicogenic protocol — local laser C2-C5 GB SI BL; Collagen/RegenOil; Kudzu. Do NOT use migraine drugs as sole treatment."
+    },
+    {
+      "id": "R004",
+      "condition": "dry component present in formula",
+      "action": "exclude Ginger from Pack 1"
+    },
+    {
+      "id": "R005",
+      "condition": "joint shows active heat / swelling / evening worsening",
+      "action": "stabilise only — do NOT add Collagen, ProCardiol, or strong MyBlood"
+    },
+    {
+      "id": "R006",
+      "condition": "joint heat subsiding, pain character shifting from burning to stiff",
+      "action": "advance to phase 2 — add low-dose MyBlood; Collagen still excluded"
+    },
+    {
+      "id": "R007",
+      "condition": "joint: no active heat, movement improves, pain is 'empty' not inflamed",
+      "action": "advance to phase 3 — introduce Collagen; increase MyBlood to normal dose; consider ProCardiol if improvement not sustained"
+    },
+    {
+      "id": "R008",
+      "condition": "warming agent, exercise, or Collagen alone causes rapid worsening of joint",
+      "action": "classify as inflammation still dominant — return to phase 1 stabilisation"
+    },
+    {
+      "id": "R009",
+      "condition": "improvement occurred then relapsed without structural support",
+      "action": "classify as structure not yet supported — remain in phase 2 longer before phase 3"
+    },
+    {
+      "id": "R010",
+      "condition": "CGRP inhibitor in use AND ≥2 of: migraine quieter but no energy / constipation worsened / flat affect / reduced tolerance / GI worsening / 'quieter but not better'",
+      "action": "initiate CGRP exit support — grounding phase first (Fiber + Spirulina + hydration); do not stop CGRP without phenotype-specific support in place"
+    },
+    {
+      "id": "R011",
+      "condition": "CGRP exit step 1 complete AND no migraine rebound",
+      "action": "advance to step 2 — add RegenOil or D+Nigella for membrane repair"
+    },
+    {
+      "id": "R012",
+      "condition": "CGRP exit step 2 complete",
+      "action": "phenotype-tune in step 3 BEFORE reducing CGRP dose"
+    },
+    {
+      "id": "R013",
+      "condition": "CGRP exit: severe uncontrolled migraine OR active quality-of-life impairment OR patient feels unsafe",
+      "action": "do NOT exit — run Base44 support protocol alongside CGRP; do not replace"
+    },
+    {
+      "id": "R014",
+      "condition": "medication requires increasing dose OR effect shortening OR new GI/fatigue/brain fog symptoms",
+      "action": "assess system capacity first — stabilise before escalating or switching medication"
+    },
+    {
+      "id": "R015",
+      "condition": "system capacity: cannot process load",
+      "action": "stabilise first (MyGastrin + Fiber or Spirulina); do not add more interventions"
+    },
+    {
+      "id": "R016",
+      "condition": "system capacity: can process load",
+      "action": "modulate specifically by current dominant symptom branch (gut / energy / membrane / local)"
+    },
+    {
+      "id": "R017",
+      "condition": "migrating or shifting pain character",
+      "action": "membrane stabilisation — RegenOil or D+Nigella"
+    },
+    {
+      "id": "R018",
+      "condition": "isolated traumatic neck pain OR purely mechanical injury OR acute GI with fever/inflammation",
+      "action": "use local or acute protocol — do NOT apply GI-migraine-neck axis logic"
+    },
+    {
+      "id": "R019",
+      "condition": "TCA/SNRI in use (amitriptyline, duloxetine)",
+      "action": "add Spirulina (mitochondrial), Fiber (autophagy grounding), MyGastrin if GI complaints"
+    },
+    {
+      "id": "R020",
+      "condition": "antipsychotic used off-label for pain",
+      "action": "use only transitionally; always combine with stabilisation protocol"
+    },
+    {
+      "id": "R021",
+      "condition": "ginger tea prescribed",
+      "action": "morning or midday ONLY — never evening; weak-to-medium strength"
+    },
+    {
+      "id": "R022",
+      "condition": "mixed joint state: mixed → sequence, don't stack",
+      "action": "enforce phase sequence; do not combine phase 1 and phase 3 interventions simultaneously"
+    },
+    {
+      "id": "R023",
+      "condition": "mixed joint state: unsure which phase",
+      "action": "wait one phase longer before advancing"
+    },
+    {
+      "id": "R024",
+      "condition": "photophobia + phonophobia + irritability dominant",
+      "action": "neuro-sensory phenotype — ProSelect + Melatonin (evening) + Spirulina; avoid stimulants and yang tonics"
+    }
+  ],
+
+  "input_variables": [
+    { "name": "gi_symptoms_present", "type": "boolean", "values": [true, false], "maps_to": "gut_jueyin_overload" },
+    { "name": "headache_type", "type": "enum", "values": ["gut_driven", "vascular", "fascia_tension", "neuro_sensory", "mixed", "cervicogenic", "unknown"] },
+    { "name": "pain_character", "type": "enum", "values": ["throbbing", "burning", "pressure_hat", "stiff", "empty", "moving"] },
+    { "name": "thermal_state_joint", "type": "enum", "values": ["hot_swollen", "intermittently_hot", "cold_stiff", "neutral"] },
+    { "name": "temporal_dynamic", "type": "enum", "values": ["rapid_worsening_with_stimulation", "slow_improvement_not_sustained", "stable"] },
+    { "name": "pain_onset", "type": "enum", "values": ["from_inside_system", "from_neck", "from_gut", "from_stress"] },
+    { "name": "aura_present", "type": "boolean" },
+    { "name": "laterality", "type": "enum", "values": ["fixed_side", "variable_side"] },
+    { "name": "gi_link", "type": "boolean", "notes": "GI symptoms correlate with headache timing" },
+    { "name": "neck_movement_worsens", "type": "boolean" },
+    { "name": "photophobia", "type": "boolean" },
+    { "name": "phonophobia", "type": "boolean" },
+    { "name": "cold_extremities", "type": "boolean" },
+    { "name": "weather_sensitive", "type": "boolean" },
+    { "name": "cgrp_in_use", "type": "boolean" },
+    { "name": "cgrp_side_effects", "type": "multi_select", "values": ["constipation", "fatigue", "flat_affect", "reduced_tolerance", "GI_worsening", "quieter_not_better"] },
+    { "name": "medication_status", "type": "enum", "values": ["none", "working", "tolerance_developing", "exhausted"] },
+    { "name": "tca_snri_in_use", "type": "boolean" },
+    { "name": "antipsychotic_pain_use", "type": "boolean" },
+    { "name": "joint_phase", "type": "enum", "values": ["inflammatory_edge", "transitional", "building", "unknown"] },
+    { "name": "collagen_worsened", "type": "boolean", "notes": "collagen supplementation alone caused worsening — inflammation still dominant flag" },
+    { "name": "energy_state", "type": "enum", "values": ["normal", "low", "very_low", "flat"] },
+    { "name": "emotional_load", "type": "boolean", "notes": "stress or emotional overload as trigger" },
+    { "name": "dry_component_in_formula", "type": "boolean", "notes": "triggers ginger exclusion rule R004" },
+    { "name": "frailty", "type": "boolean", "notes": "reduces complexity of protocol" }
+  ],
+
+  "decision_axes": [
+    {
+      "name": "GI_migraine_neck_axis",
+      "description": "Functional GI → Migraine → Neck/Shoulder pain — one axis, not three diseases",
+      "sequence": ["gut_jueyin_overload", "shaoyang_gate_instability", "shaoyang_downstream_fascia_overload"],
+      "key_rule": "treat upstream driver first; prevent downstream migration",
+      "exclusion_criteria": ["isolated traumatic neck pain", "purely mechanical injury", "acute GI with fever/inflammation"]
+    },
+    {
+      "name": "migraine_phenotype_axis",
+      "description": "Migraine is a system overflow problem with different entry points",
+      "phenotypes": ["gut_driven", "vascular_blood_stasis", "fascia_tension", "neuro_sensory", "mixed"],
+      "30_second_triage": [
+        "nausea/bloating present? → gut_driven",
+        "throbbing/aura/cold hands? → vascular",
+        "neck-initiated pain? → fascia",
+        "light/noise intolerance? → neuro_sensory"
+      ]
+    },
+    {
+      "name": "mixed_joint_phase_axis",
+      "description": "Mixed OA-RA: failure is due to wrong order, not wrong treatment",
+      "phases": ["inflammatory_edge → stabilise", "transitional → flow_without_overdrive", "building → structure"],
+      "fast_rules": [
+        "if heat flares → stabilise, don't build",
+        "if stiffness dominates → build, don't suppress",
+        "if mixed → sequence, don't stack",
+        "if unsure → wait one phase longer"
+      ]
+    },
+    {
+      "name": "medication_integration_axis",
+      "description": "Medications reduce oscillation; Base44 restores system capacity",
+      "medication_types": ["triptans", "TCA/SNRI", "CGRP_inhibitors", "prokinetics/antispasmodics", "antipsychotics_off_label"],
+      "base_principle": "never use medication in isolation — assess system capacity and run structural support alongside"
+    }
+  ],
+
+  "notes": [
+    "All patterns in this batch are from Base44/Avicenna 2 source documents — language is original author's model, integrating TCM meridian logic with functional Western pathophysiology.",
+    "DuoLife product names (MyGastrin, MyBlood, ProCardiol, Spirulina, etc.) are proprietary supplement product names — map to generic functional categories if needed for non-DuoLife deployment.",
+    "CGRP exit strategy: requires minimum 3-step sequence before CGRP dose reduction; never replace, only support.",
+    "Mixed OA-RA transition state: collagen is contraindicated in phases 1 and 2 — this is a critical safety rule.",
+    "Ginger: excluded from Pack 1 when dry component present (R004); excluded from evening use (R021).",
+    "Migraine vs cervicogenic headache: not interchangeable — different upstream drivers, different first-line interventions.",
+    "Third file (koindukcios_modellek_pdf) content was partially embedded within the migraine transitions PDF — no separate distinct pattern library was identifiable; content was captured within existing pattern extractions above."
+  ]
+}

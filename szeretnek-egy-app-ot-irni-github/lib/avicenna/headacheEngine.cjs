@@ -1,5 +1,13 @@
 const headacheData = require("./data/engines/headacheEngine.batch6.json");
 const batch7Data = require("./data/engines/avicenna_engine_batch7.json");
+const batch8Data = require("./data/engines/avicenna_engine_batch8.json");
+
+const batch8Patterns = Array.isArray(batch8Data.patterns) ? batch8Data.patterns : Object.values(batch8Data.patterns || {});
+const batch8Rules = Array.isArray(batch8Data.rules) ? batch8Data.rules : Object.values(batch8Data.rules || {});
+const batch8DecisionAxes = Array.isArray(batch8Data.decision_axes)
+  ? batch8Data.decision_axes
+  : Object.values(batch8Data.decision_axes || {});
+const BATCH8_RULE_BY_ID = Object.fromEntries(batch8Rules.map((rule) => [rule.id, rule]));
 
 const AXES = [
   "nerve_first_score",
@@ -66,6 +74,16 @@ const PATIENT_LABELS = {
   spine_facet_capsule_ligament_oedema: "Spinal facet-capsule oedema pattern",
   spine_disc_dominant_degeneration: "Spinal disc-support pattern",
   migraine_western_ICHD3: "Migraine criteria reference layer",
+  gut_jueyin_overload: "Gut-pressure migraine pattern",
+  shaoyang_gate_instability: "Shaoyang gate instability pattern",
+  shaoyang_downstream_fascia_overload: "Downstream fascia overload pattern",
+  vascular_blood_stasis_migraine: "Vascular microflow migraine pattern",
+  neuro_sensory_membrane_excitability: "Neuro-sensory membrane pattern",
+  mixed_joint_inflammatory_edge: "Mixed joint inflammatory-edge phase",
+  mixed_joint_transitional: "Mixed joint transitional phase",
+  mixed_joint_building_phase: "Mixed joint building phase",
+  cgrp_suppression_structural_deficit: "CGRP support and rebuild pattern",
+  medication_exhaustion_state: "Medication exhaustion and capacity pattern",
   insufficient_pattern_evidence: "Unclear headache terrain"
 };
 
@@ -87,7 +105,13 @@ const CORE_PHRASES = [
   "Laser should follow the dominant failure layer, not the pain location.",
   "Chronic headache is not escalation - it is migration.",
   "We don't just stop headaches. We restore the system that prevents them.",
-  "Ondansetron and triptans are not opposites; they attempt to re-synchronise the same neurovascular-fascial continuum from different entry points."
+  "Ondansetron and triptans are not opposites; they attempt to re-synchronise the same neurovascular-fascial continuum from different entry points.",
+  "Functional GI -> Migraine -> Neck/Shoulder pain - one axis, not three diseases.",
+  "Mixed OA-RA: failure is due to wrong order, not wrong treatment.",
+  "If mixed -> sequence, don't stack.",
+  "If unsure -> wait one phase longer.",
+  "Medications reduce oscillation; Base44 restores system capacity.",
+  "Never use medication in isolation - assess system capacity and run structural support alongside."
 ];
 
 function list(value) {
@@ -151,6 +175,61 @@ function normaliseInput(input = {}) {
     current_phase: input.current_phase || "",
     red_flag_present: bool(input.red_flag_present),
     red_flag_type: list(input.red_flag_type),
+    gi_symptoms_present: bool(input.gi_symptoms_present)
+      || any(list(input.early_warning_signs), ["bloating", "reflux", "constipation", "nausea"])
+      || includes(list(input.body_signals), "bloating_heaviness")
+      || bool(input.gi_link)
+      || bool(input.digestive_sensitivity),
+    headache_type: input.headache_type || "unknown",
+    pain_character: input.pain_character || "",
+    thermal_state_joint: input.thermal_state_joint || "",
+    temporal_dynamic: input.temporal_dynamic || "",
+    pain_onset: input.pain_onset || "",
+    aura_present: bool(input.aura_present) || includes(list(input.sensory_features), "visual_aura"),
+    laterality: input.laterality || "",
+    gi_link: bool(input.gi_link),
+    neck_movement_worsens: bool(input.neck_movement_worsens),
+    photophobia: bool(input.photophobia)
+      || includes(list(input.sensory_features), "light_sensitivity")
+      || includes(list(input.early_warning_signs), "light_sensitivity"),
+    phonophobia: bool(input.phonophobia) || includes(list(input.sensory_features), "sound_sensitivity"),
+    cold_extremities: bool(input.cold_extremities)
+      || includes(list(input.body_signals), "cold_hands_feet")
+      || includes(list(input.early_warning_signs), "cold_hands_feet"),
+    weather_sensitive: bool(input.weather_sensitive)
+      || input.trigger_category === "weather"
+      || input.trigger_today === "weather",
+    cgrp_in_use: bool(input.cgrp_in_use) || includes(list(input.current_medications), "CGRP_inhibitor"),
+    cgrp_side_effects: list(input.cgrp_side_effects),
+    medication_status: input.medication_status || "none",
+    tca_snri_in_use: bool(input.tca_snri_in_use),
+    antipsychotic_pain_use: bool(input.antipsychotic_pain_use),
+    joint_phase: input.joint_phase || "",
+    collagen_worsened: bool(input.collagen_worsened),
+    dry_component_in_formula: bool(input.dry_component_in_formula),
+    acute_gi_fever_inflammation: bool(input.acute_gi_fever_inflammation),
+    isolated_traumatic_neck_pain: bool(input.isolated_traumatic_neck_pain),
+    purely_mechanical_injury: bool(input.purely_mechanical_injury),
+    joint_heat_swelling: bool(input.joint_heat_swelling),
+    evening_worsening: bool(input.evening_worsening),
+    stiffness_replaces_burning: bool(input.stiffness_replaces_burning),
+    movement_improves_joint: bool(input.movement_improves_joint),
+    pain_empty_not_inflamed: bool(input.pain_empty_not_inflamed),
+    warming_agents_worsened: bool(input.warming_agents_worsened),
+    exercise_worsened: bool(input.exercise_worsened),
+    increasing_medication_doses_required: bool(input.increasing_medication_doses_required),
+    effect_duration_shortening: bool(input.effect_duration_shortening),
+    side_effects_increasing: bool(input.side_effects_increasing),
+    new_gi_fatigue_brain_fog: bool(input.new_gi_fatigue_brain_fog),
+    system_capacity_known: bool(input.system_capacity_known),
+    system_capacity_can_process_load: bool(input.system_capacity_can_process_load),
+    cgrp_step1_complete: bool(input.cgrp_step1_complete),
+    cgrp_no_rebound: bool(input.cgrp_no_rebound),
+    cgrp_step2_complete: bool(input.cgrp_step2_complete),
+    cgrp_severe_uncontrolled: bool(input.cgrp_severe_uncontrolled),
+    cgrp_qol_impairment: bool(input.cgrp_qol_impairment),
+    cgrp_patient_feels_unsafe: bool(input.cgrp_patient_feels_unsafe),
+    ginger_tea_prescribed: bool(input.ginger_tea_prescribed),
     internal_audit: bool(input.internal_audit)
   };
 }
@@ -169,6 +248,33 @@ function pattern(name) {
 
 function batch7Pattern(name) {
   return batch7Data.patterns.find((item) => item.name === name) || {};
+}
+
+function batch8Pattern(name) {
+  return batch8Patterns.find((item) => item.name === name) || {};
+}
+
+function batch8Rule(id) {
+  return BATCH8_RULE_BY_ID[id] || { id, condition: "", action: "" };
+}
+
+function triggeredBatch8Rule(id, reason = "") {
+  const rule = batch8Rule(id);
+  return {
+    id: rule.id,
+    condition: rule.condition,
+    action: rule.action,
+    reason
+  };
+}
+
+function uniqueRules(rules) {
+  const seen = new Set();
+  return rules.filter((rule) => {
+    if (!rule || !rule.id || seen.has(rule.id)) return false;
+    seen.add(rule.id);
+    return true;
+  });
 }
 
 function add(scores, axis, points, input, reason) {
@@ -191,6 +297,9 @@ function scoreAxes(input) {
   if (includes(input.sensory_features, "light_sensitivity")) add(scores, "nerve_first_score", 2, "light_sensitivity", "photophobia");
   if (includes(input.sensory_features, "sound_sensitivity")) add(scores, "nerve_first_score", 1, "sound_sensitivity", "phonophobia");
   if (includes(input.sensory_features, "nausea")) add(scores, "nerve_first_score", 1, "nausea", "sensory overload with nausea");
+  if (input.photophobia) add(scores, "nerve_first_score", 1, "photophobia", "Batch 8 neuro-sensory phenotype signal");
+  if (input.phonophobia) add(scores, "nerve_first_score", 1, "phonophobia", "Batch 8 neuro-sensory phenotype signal");
+  if (input.pain_character === "burning") add(scores, "nerve_first_score", 2, "burning", "burning signal-load phenotype");
   if (input.pain_quality === "sharp_stabbing") add(scores, "nerve_first_score", 2, "sharp_stabbing", "sharp/electric pain quality proxy");
   if (input.headache_character === "burning_vibrating") add(scores, "nerve_first_score", 3, "burning_vibrating", "diffuse burning/vibrating nerve-first character");
   if (input.pain_onset_pattern === "nerve_first") add(scores, "nerve_first_score", 2, "pain_onset_pattern", "nerve-first onset pattern");
@@ -208,6 +317,11 @@ function scoreAxes(input) {
   if (input.pain_quality === "tight_band_like") add(scores, "fascia_first_score", 2, "tight_band_like", "band-like fascial tension");
   if (input.headache_character === "dull_deep" || input.headache_character === "tight_band") add(scores, "fascia_first_score", 3, "headache_character", "dull/tight chronic fascia-first character");
   if (input.pain_onset_pattern === "fascia_first") add(scores, "fascia_first_score", 2, "pain_onset_pattern", "fascia-first onset pattern");
+  if (input.pain_onset === "from_neck") add(scores, "fascia_first_score", 3, "pain_onset", "neck-initiated Batch 8 fascia/cervicogenic signal");
+  if (input.neck_movement_worsens) add(scores, "fascia_first_score", 2, "neck_movement_worsens", "movement-sensitive cervicogenic signal");
+  if (input.pain_character === "pressure_hat" || input.pain_character === "stiff") {
+    add(scores, "fascia_first_score", 2, "pain_character", "pressure/stiff fascia tension phenotype");
+  }
   if (input.pain_onset_pattern === "mixed_chronic") add(scores, "fascia_first_score", 2, "mixed_chronic", "chronic migration endpoint");
   if (any(input.early_warning_signs, ["neck_stiffness", "jaw_tightness", "shoulder_pull"])) {
     add(scores, "fascia_first_score", 2, "neck_shoulder_precedes_headache", "neck/jaw/shoulder precedes headache");
@@ -222,6 +336,9 @@ function scoreAxes(input) {
   if (["shoulder", "hip", "spine"].includes(input.pain_location)) add(scores, "fascia_first_score", 1, "capsule_fascia_location", "capsule/fascia pain location");
 
   if (input.trigger_category === "food_alcohol_histamine") add(scores, "gut_metabolic_first_score", 2, "food_alcohol_histamine", "food or histamine trigger");
+  if (input.gi_symptoms_present) add(scores, "gut_metabolic_first_score", 2, "gi_symptoms_present", "Batch 8 GI-migraine-neck axis signal");
+  if (input.gi_link) add(scores, "gut_metabolic_first_score", 2, "gi_link", "GI timing correlates with headache");
+  if (input.pain_onset === "from_gut") add(scores, "gut_metabolic_first_score", 3, "pain_onset", "gut symptoms precede or initiate headache");
   if (any(input.early_warning_signs, ["bloating", "reflux", "constipation", "nausea"])) {
     add(scores, "gut_metabolic_first_score", 2, "bloating_reflux_constipation", "GI signal before headache");
   }
@@ -237,6 +354,10 @@ function scoreAxes(input) {
   }
 
   if (input.pain_quality === "pulsing_throbbing") add(scores, "vessel_dominant_score", 2, "pulsing_throbbing", "pulsing/throbbing vessel signal");
+  if (input.pain_character === "throbbing") add(scores, "vessel_dominant_score", 2, "throbbing", "Batch 8 vascular phenotype signal");
+  if (input.aura_present) add(scores, "vessel_dominant_score", 1, "aura_present", "aura can contribute to vessel-amplitude phenotype");
+  if (input.cold_extremities) add(scores, "vessel_dominant_score", 1, "cold_extremities", "cold extremities vascular overlay");
+  if (input.weather_sensitive) add(scores, "vessel_dominant_score", 1, "weather_sensitive", "weather-sensitive vessel overlay");
   if (input.headache_character === "pulsing_throbbing") add(scores, "vessel_dominant_score", 2, "headache_character", "pulsatile vessel-first character");
   if (input.pain_onset_pattern === "vessel_first") add(scores, "vessel_dominant_score", 2, "pain_onset_pattern", "vessel-first onset pattern");
   if (includes(input.early_warning_signs, "pulsatile_temple")) add(scores, "vessel_dominant_score", 2, "pulsatile_temple", "pulsatile temple warning");
@@ -254,6 +375,9 @@ function scoreAxes(input) {
   if (input.tongue === "purple_engorged") add(scores, "vessel_dominant_score", 2, "purple_engorged_tongue", "purple/engorged tongue vessel sign");
 
   if (input.energy_state === "exhausted") add(scores, "mitochondrial_fatigue_score", 2, "exhausted", "exhausted energy state");
+  if (["low", "very_low", "flat"].includes(input.energy_state)) {
+    add(scores, "mitochondrial_fatigue_score", 2, input.energy_state, "Batch 8 system-capacity energy signal");
+  }
   if (input.energy_state === "cold") add(scores, "mitochondrial_fatigue_score", 1, "cold", "cold energy state");
   if (input.dominant_state === "cold_deficiency" || input.cold_signs) add(scores, "mitochondrial_fatigue_score", 2, "cold_deficiency", "cold deficiency or cold intolerance");
   if (input.trigger_today === "overexertion") add(scores, "mitochondrial_fatigue_score", 1, "overexertion", "overexertion energy depletion");
@@ -262,6 +386,10 @@ function scoreAxes(input) {
   if (includes(input.current_medications, "antidepressant")) add(scores, "mitochondrial_fatigue_score", 2, "antidepressant", "drug-terrain energy conflict marker");
   if (input.treatment_response === "helps_pain_but_drains") add(scores, "mitochondrial_fatigue_score", 2, "helps_pain_but_drains", "pain relief drains energy");
   if (input.gepant_side_effects.includes("fatigue")) add(scores, "mitochondrial_fatigue_score", 1, "gepant_fatigue", "gepant fatigue terrain conflict");
+  if (input.cgrp_side_effects.some((item) => ["fatigue", "flat_affect", "reduced_tolerance"].includes(item))) {
+    add(scores, "mitochondrial_fatigue_score", 1, "cgrp_side_effects", "CGRP support capacity signal");
+  }
+  if (input.new_gi_fatigue_brain_fog) add(scores, "mitochondrial_fatigue_score", 1, "new_gi_fatigue_brain_fog", "medication capacity fatigue signal");
 
   const drySignals = ["dry_mouth", "dry_stool_constipation", "dark_urine", "dry_skin", "brittle_nails", "brittle_hair"];
   const dryCount = drySignals.filter((signal) => input.body_signals.includes(signal)).length;
@@ -284,7 +412,7 @@ function safetyStop(input) {
   const redFlags = [];
   if (input.thunderclap_headache) redFlags.push("thunderclap");
   if (input.new_neurological_deficit) redFlags.push("neuro_deficit");
-  if (input.red_flag_present) redFlags.push(...input.red_flag_type);
+  if (input.red_flag_present || input.red_flag_type.length) redFlags.push(...input.red_flag_type);
   const uniqueFlags = [...new Set(redFlags)].filter(Boolean);
   if (!uniqueFlags.length) return null;
   return {
@@ -677,6 +805,544 @@ function progressionModel(input, layer) {
   };
 }
 
+function hasHeadacheSignal(input) {
+  return Boolean(
+    input.headache_type !== "unknown"
+    || input.pain_quality
+    || input.headache_character
+    || input.pain_character
+    || input.sensory_features.length
+    || input.early_warning_signs.length
+    || input.aura_present
+    || input.photophobia
+    || input.phonophobia
+  );
+}
+
+function addPhenotype(phenotypes, key, points, inputName, reason) {
+  phenotypes[key].score += points;
+  phenotypes[key].contributing_inputs.push({ input: inputName, points, reason });
+}
+
+function detectMigrainePhenotype(input) {
+  const phenotypes = {
+    gut_driven: { score: 0, contributing_inputs: [] },
+    vascular_blood_stasis: { score: 0, contributing_inputs: [] },
+    fascia_tension: { score: 0, contributing_inputs: [] },
+    neuro_sensory: { score: 0, contributing_inputs: [] }
+  };
+
+  if (input.headache_type && input.headache_type !== "unknown" && input.headache_type !== "mixed" && input.headache_type !== "cervicogenic") {
+    const key = input.headache_type === "vascular" ? "vascular_blood_stasis" : input.headache_type;
+    if (phenotypes[key]) addPhenotype(phenotypes, key, 3, "headache_type", "explicit phenotype selection");
+  }
+  if (input.headache_type === "cervicogenic") addPhenotype(phenotypes, "fascia_tension", 4, "headache_type", "explicit cervicogenic selection");
+  if (input.headache_type === "mixed") {
+    Object.keys(phenotypes).forEach((key) => addPhenotype(phenotypes, key, 1, "headache_type", "mixed phenotype selection"));
+  }
+
+  if (input.gi_symptoms_present || input.gi_link || input.pain_onset === "from_gut") {
+    addPhenotype(phenotypes, "gut_driven", 3, "gi_symptoms_present", "nausea, bloating, reflux, constipation, or GI timing link");
+  }
+  if (includes(input.sensory_features, "nausea") || includes(input.early_warning_signs, "nausea")) {
+    addPhenotype(phenotypes, "gut_driven", 1, "nausea", "nausea can mark gut-driven migraine phenotype");
+  }
+
+  if (input.pain_character === "throbbing" || input.pain_quality === "pulsing_throbbing" || input.headache_character === "pulsing_throbbing") {
+    addPhenotype(phenotypes, "vascular_blood_stasis", 2, "throbbing", "throbbing or pulsatile headache");
+  }
+  if (input.aura_present) addPhenotype(phenotypes, "vascular_blood_stasis", 2, "aura_present", "aura signal");
+  if (input.cold_extremities) addPhenotype(phenotypes, "vascular_blood_stasis", 1, "cold_extremities", "cold hands/feet vessel overlay");
+  if (input.weather_sensitive) addPhenotype(phenotypes, "vascular_blood_stasis", 1, "weather_sensitive", "weather or barometric trigger");
+
+  if (input.pain_onset === "from_neck" || input.neck_movement_worsens || input.pain_onset_pattern === "fascia_first") {
+    addPhenotype(phenotypes, "fascia_tension", 3, "neck_or_fascia_onset", "neck-initiated or movement-sensitive pattern");
+  }
+  if (any(input.early_warning_signs, ["neck_stiffness", "jaw_tightness", "shoulder_pull"]) || input.pain_character === "pressure_hat" || input.pain_character === "stiff") {
+    addPhenotype(phenotypes, "fascia_tension", 2, "neck_shoulder_pressure", "neck/shoulder/skull-base or pressure-hat tension");
+  }
+
+  if (input.photophobia || input.phonophobia) {
+    addPhenotype(phenotypes, "neuro_sensory", 2, "light_noise_intolerance", "light/noise intolerance");
+  }
+  if (input.energy_state === "irritable" || input.trigger_category === "sleep_disruption" || input.pain_character === "burning") {
+    addPhenotype(phenotypes, "neuro_sensory", 1, "sensory_overload", "irritability, sleep disruption, or burning overload");
+  }
+
+  const ordered = Object.entries(phenotypes)
+    .map(([phenotype, value]) => ({ phenotype, ...value }))
+    .sort((a, b) => b.score - a.score);
+  const top = ordered[0];
+  const second = ordered[1];
+  const cervicogenic = Boolean(
+    (input.headache_type === "cervicogenic" || input.pain_onset === "from_neck")
+    && input.laterality === "fixed_side"
+    && !input.aura_present
+    && !input.gi_link
+    && !input.gi_symptoms_present
+    && input.neck_movement_worsens
+  );
+  const mixed = !cervicogenic && top.score > 0 && second.score > 0 && Math.abs(top.score - second.score) <= 1;
+  const detected = cervicogenic ? "cervicogenic" : mixed ? "mixed" : top.score > 0 ? top.phenotype : "unknown";
+
+  return {
+    detected_phenotype: detected,
+    phenotype_scores: phenotypes,
+    contributing_inputs: Object.fromEntries(Object.entries(phenotypes).map(([key, value]) => [key, value.contributing_inputs])),
+    top_two: ordered.slice(0, 2),
+    mixed,
+    cervicogenic
+  };
+}
+
+function detectGIMigraineNeckAxis(input, phenotype) {
+  const rules = [];
+  const exclusionReasons = [];
+  if (input.isolated_traumatic_neck_pain) exclusionReasons.push("isolated_traumatic_neck_pain");
+  if (input.purely_mechanical_injury) exclusionReasons.push("purely_mechanical_injury");
+  if (input.acute_gi_fever_inflammation) exclusionReasons.push("acute_GI_with_fever_inflammation");
+  if (exclusionReasons.length) rules.push(triggeredBatch8Rule("R018", exclusionReasons.join(", ")));
+
+  const headachePresent = hasHeadacheSignal(input);
+  const giDriven = input.gi_symptoms_present || input.gi_link || input.pain_onset === "from_gut" || phenotype.detected_phenotype === "gut_driven";
+  const active = !exclusionReasons.length && headachePresent && giDriven;
+  let currentStage = "not_active";
+  if (active) {
+    currentStage = "gut_jueyin_overload";
+    if (input.headache_type !== "gut_driven" && (input.photophobia || input.phonophobia || input.pain_character === "throbbing")) {
+      currentStage = "shaoyang_gate_instability";
+    }
+    if (input.pain_onset === "from_neck" || input.neck_movement_worsens || any(input.early_warning_signs, ["neck_stiffness", "shoulder_pull"])) {
+      currentStage = "shaoyang_downstream_fascia_overload";
+    }
+    rules.push(triggeredBatch8Rule("R001", "GI symptoms precede or accompany headache"));
+  } else if (!exclusionReasons.length && headachePresent && !input.gi_symptoms_present && !input.gi_link) {
+    rules.push(triggeredBatch8Rule("R002", "headache dominant without GI signal"));
+  }
+
+  const axis = batch8DecisionAxes.find((item) => item.name === "GI_migraine_neck_axis") || {};
+  return {
+    active,
+    excluded: exclusionReasons.length > 0,
+    exclusion_reasons: exclusionReasons,
+    phrase: axis.description || "Functional GI -> Migraine -> Neck/Shoulder pain - one axis, not three diseases.",
+    sequence: axis.sequence || ["gut_jueyin_overload", "shaoyang_gate_instability", "shaoyang_downstream_fascia_overload"],
+    current_stage: currentStage,
+    upstream_first: active,
+    rules
+  };
+}
+
+function detectJointPhase(input) {
+  const rules = [];
+  const contraindications = [];
+  const cautions = [];
+  const hasJointContext = Boolean(
+    input.joint_phase
+    || input.thermal_state_joint
+    || input.joint_heat_swelling
+    || input.evening_worsening
+    || input.stiffness_replaces_burning
+    || input.movement_improves_joint
+    || input.pain_empty_not_inflamed
+    || input.collagen_worsened
+    || input.warming_agents_worsened
+    || input.exercise_worsened
+  );
+
+  if (!hasJointContext) {
+    return {
+      active: false,
+      phase: "not_assessed",
+      pattern: "",
+      goal: "",
+      contraindications,
+      cautions,
+      intervention_sequence: [],
+      rules
+    };
+  }
+
+  let phase = input.joint_phase || "unknown";
+  if (input.warming_agents_worsened || input.exercise_worsened || input.collagen_worsened || input.temporal_dynamic === "rapid_worsening_with_stimulation") {
+    phase = "inflammatory_edge";
+    rules.push(triggeredBatch8Rule("R008", "rapid worsening with warming, exercise, or collagen"));
+  } else if (input.joint_heat_swelling || input.evening_worsening || input.thermal_state_joint === "hot_swollen" || input.thermal_state_joint === "intermittently_hot") {
+    phase = "inflammatory_edge";
+    rules.push(triggeredBatch8Rule("R005", "heat, swelling, or evening worsening"));
+  } else if (input.stiffness_replaces_burning || phase === "transitional" || input.temporal_dynamic === "slow_improvement_not_sustained") {
+    phase = "transitional";
+    rules.push(triggeredBatch8Rule("R006", "heat subsiding and stiffness replacing burning"));
+  } else if (input.movement_improves_joint && input.pain_empty_not_inflamed && phase !== "unknown") {
+    phase = "building";
+    rules.push(triggeredBatch8Rule("R007", "no active heat, movement improves, pain feels empty/not inflamed"));
+  }
+
+  if (input.temporal_dynamic === "slow_improvement_not_sustained") {
+    rules.push(triggeredBatch8Rule("R009", "improvement relapsed without structural support"));
+  }
+  if (phase === "unknown") {
+    rules.push(triggeredBatch8Rule("R023", "joint phase is uncertain"));
+    cautions.push("If the joint phase is unclear, wait one phase longer before adding rebuilding inputs.");
+  }
+  rules.push(triggeredBatch8Rule("R022", "mixed joint phase logic is active"));
+
+  const phaseMap = {
+    inflammatory_edge: {
+      pattern: "mixed_joint_inflammatory_edge",
+      goal: "stabilise",
+      intervention_sequence: ["stabilise inflammation", "avoid building inputs", "reassess after heat/swelling settles"],
+      contraindications: ["Collagen_phase_1", "ProCardiol_phase_1", "strong_MyBlood_phase_1"]
+    },
+    transitional: {
+      pattern: "mixed_joint_transitional",
+      goal: "flow_without_overdrive",
+      intervention_sequence: ["continue stabilisation base", "low-dose MyBlood only if tolerated", "keep Collagen excluded"],
+      contraindications: ["Collagen_phase_2"]
+    },
+    building: {
+      pattern: "mixed_joint_building_phase",
+      goal: "structure",
+      intervention_sequence: ["introduce Collagen", "increase MyBlood only after heat stays quiet", "consider ProCardiol only if improvement is not sustained"],
+      contraindications: []
+    },
+    unknown: {
+      pattern: "",
+      goal: "wait_one_phase_longer",
+      intervention_sequence: ["stabilise and observe", "do not stack phase 1 and phase 3 inputs"],
+      contraindications: ["phase_advancement_until_clear"]
+    }
+  };
+  const config = phaseMap[phase] || phaseMap.unknown;
+  contraindications.push(...config.contraindications);
+  if (phase === "inflammatory_edge") {
+    cautions.push("Mixed OA-RA: failure is due to wrong order, not wrong treatment.");
+    cautions.push("If mixed -> sequence, don't stack.");
+  }
+
+  return {
+    active: true,
+    phase,
+    pattern: config.pattern,
+    goal: config.goal,
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    intervention_sequence: config.intervention_sequence,
+    rules: uniqueRules(rules)
+  };
+}
+
+function detectCgrpSupport(input, phenotype) {
+  const rules = [];
+  const contraindications = [];
+  const cautions = [];
+  const sideEffects = [...new Set(input.cgrp_side_effects)];
+  if (input.energy_state === "flat" && !sideEffects.includes("flat_affect")) sideEffects.push("flat_affect");
+  if (input.gi_symptoms_present && !sideEffects.includes("GI_worsening")) sideEffects.push("GI_worsening");
+  if (input.energy_state === "low" || input.energy_state === "very_low") sideEffects.push("fatigue");
+  const relevant = sideEffects.filter((item) => ["constipation", "fatigue", "flat_affect", "reduced_tolerance", "GI_worsening", "quieter_not_better"].includes(item));
+  const active = input.cgrp_in_use && relevant.length >= 2;
+
+  if (!input.cgrp_in_use) {
+    return {
+      active: false,
+      status: "not_in_use",
+      flag: "",
+      side_effect_markers: [],
+      support_sequence: [],
+      contraindications,
+      cautions,
+      rules
+    };
+  }
+
+  if (active) {
+    rules.push(triggeredBatch8Rule("R010", relevant.join(", ")));
+    cautions.push("Do not recommend CGRP dose reduction unless phenotype-specific support is in place and clinician supervision is explicit.");
+  }
+  if (input.cgrp_step1_complete && input.cgrp_no_rebound) rules.push(triggeredBatch8Rule("R011", "step 1 complete with no rebound"));
+  if (input.cgrp_step2_complete) rules.push(triggeredBatch8Rule("R012", "step 2 complete"));
+  if (input.cgrp_severe_uncontrolled || input.cgrp_qol_impairment || input.cgrp_patient_feels_unsafe) {
+    rules.push(triggeredBatch8Rule("R013", "severe or unsafe CGRP exit context"));
+    contraindications.push("CGRP_exit_attempt");
+  }
+
+  const phenotypeTuning = {
+    gut_driven: ["MyGastrin + Fiber"],
+    vascular_blood_stasis: ["MyBlood / ProCardiol"],
+    fascia_tension: ["Promigraine + laser"],
+    cervicogenic: ["Promigraine + laser"],
+    mixed: ["phenotype-specific staged support"]
+  };
+  return {
+    active,
+    status: active ? "support_sequence_required" : "in_use_without_batch8_exit_flag",
+    flag: active ? "cgrp_suppression_structural_deficit" : "",
+    side_effect_markers: relevant,
+    support_sequence: active ? [
+      { step: 1, focus: "grounding", items: ["Fiber", "Hydration support", "Spirulina"] },
+      { step: 2, focus: "membrane flow", items: ["RegenOil or D + Nigella", "MyGastrin only if GI pressure or nausea is present"] },
+      { step: 3, focus: "phenotype tuning", items: phenotypeTuning[phenotype.detected_phenotype] || phenotypeTuning.mixed }
+    ] : [],
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    clinician_supervision_required: true,
+    rules: uniqueRules(rules)
+  };
+}
+
+function detectMedicationCapacity(input, phenotype) {
+  const rules = [];
+  const cautions = [];
+  const drugTerrainConflicts = [];
+  const active = Boolean(
+    ["tolerance_developing", "exhausted"].includes(input.medication_status)
+    || input.increasing_medication_doses_required
+    || input.effect_duration_shortening
+    || input.side_effects_increasing
+    || input.new_gi_fatigue_brain_fog
+    || input.treatment_response === "helps_less_less"
+    || input.treatment_response === "helps_less_and_less"
+  );
+
+  if (active) {
+    rules.push(triggeredBatch8Rule("R014", "medication effect shortening, dose pressure, side effects, or new GI/fatigue/brain fog symptoms"));
+  }
+
+  const canProcessLoad = input.system_capacity_known && input.system_capacity_can_process_load;
+  if (active && !canProcessLoad) {
+    rules.push(triggeredBatch8Rule("R015", input.system_capacity_known ? "system cannot process load" : "system capacity unknown, defaulting to stabilise-first"));
+    cautions.push("Primary question: Is the system able to process load? If not clear, stabilise first and avoid stacking interventions.");
+  }
+  if (active && canProcessLoad) {
+    rules.push(triggeredBatch8Rule("R016", "system capacity marked as able to process load"));
+  }
+  if (input.pain_character === "moving") rules.push(triggeredBatch8Rule("R017", "migrating or shifting pain character"));
+  if (input.tca_snri_in_use || includes(input.current_medications, "antidepressant")) {
+    rules.push(triggeredBatch8Rule("R019", "TCA/SNRI or antidepressant class context"));
+    drugTerrainConflicts.push("TCA/SNRI support layer: Spirulina + Fiber; add MyGastrin only if GI complaints are present.");
+  }
+  if (input.antipsychotic_pain_use) {
+    rules.push(triggeredBatch8Rule("R020", "off-label antipsychotic pain context"));
+    drugTerrainConflicts.push("Off-label antipsychotic pain use is treated as transitional only and paired with stabilisation support.");
+  }
+
+  let dominantBranch = "stabilise_first";
+  let branchSequence = ["stabilise first", "do not escalate medication or add multiple interventions inside this tool"];
+  if (active && canProcessLoad) {
+    if (input.gi_symptoms_present || phenotype.detected_phenotype === "gut_driven") {
+      dominantBranch = "gut_noise";
+      branchSequence = ["MyGastrin", "Fiber"];
+    } else if (["low", "very_low", "flat", "exhausted"].includes(input.energy_state)) {
+      dominantBranch = "energy_fatigue";
+      branchSequence = ["Spirulina"];
+    } else if (input.pain_character === "moving") {
+      dominantBranch = "migrating_pain";
+      branchSequence = ["RegenOil", "D + Nigella"];
+    } else if (["from_neck", "from_stress"].includes(input.pain_onset) || ["shoulder", "hip", "spine"].includes(input.pain_location)) {
+      dominantBranch = "local_overload";
+      branchSequence = ["Laser", "Collagen", "Kudzu"];
+    }
+  }
+
+  return {
+    active,
+    status: active ? "medication_exhaustion_state" : "not_flagged",
+    system_capacity_question: "Is the system able to process load?",
+    can_process_load: canProcessLoad,
+    dominant_branch: dominantBranch,
+    branch_sequence: branchSequence,
+    cautions: [...new Set(cautions)],
+    drug_terrain_conflicts: [...new Set(drugTerrainConflicts)],
+    rules: uniqueRules(rules)
+  };
+}
+
+function patternContainsGinger(patternName) {
+  const source = batch8Pattern(patternName);
+  const interventions = source.interventions || {};
+  const herbs = [
+    ...(interventions.herbs || []),
+    ...Object.values(interventions)
+      .filter((item) => item && Array.isArray(item.herbs))
+      .flatMap((item) => item.herbs)
+  ];
+  return herbs.some((item) => /ginger/i.test(item.name || item));
+}
+
+function batch8InterventionSequence(patternName) {
+  if (!patternName) return [];
+  const source = batch8Pattern(patternName);
+  const interventions = source.interventions || {};
+  if (Array.isArray(interventions.herbs)) {
+    return [{
+      pattern: patternName,
+      items: interventions.herbs.map((item) => item.name),
+      device: interventions.device || "",
+      sequence_note: interventions.preparation || ""
+    }];
+  }
+  if (patternName === "cgrp_suppression_structural_deficit") {
+    return [
+      { pattern: patternName, step: 1, items: (interventions.step_1_grounding?.herbs || []).map((item) => item.name), sequence_note: interventions.step_1_grounding?.goal || "" },
+      { pattern: patternName, step: 2, items: (interventions.step_2_membrane_flow?.herbs || []).map((item) => item.name), sequence_note: interventions.step_2_membrane_flow?.goal || "" },
+      { pattern: patternName, step: 3, items: ["phenotype-specific tuning before any medication discussion"], sequence_note: interventions.step_3_phenotype_tuning?.notes || "" }
+    ];
+  }
+  if (patternName === "medication_exhaustion_state") {
+    return [{
+      pattern: patternName,
+      items: ["assess system capacity", "stabilise first if capacity is low", "then choose one dominant branch"],
+      sequence_note: interventions.primary_question || ""
+    }];
+  }
+  return [];
+}
+
+function evaluateBatch8(input, stopped) {
+  const empty = {
+    migraine_phenotype: {
+      detected_phenotype: "not_evaluated",
+      phenotype_scores: {},
+      contributing_inputs: {},
+      top_two: [],
+      mixed: false,
+      cervicogenic: false
+    },
+    gi_migraine_neck_axis: {
+      active: false,
+      excluded: false,
+      exclusion_reasons: [],
+      phrase: "Functional GI -> Migraine -> Neck/Shoulder pain - one axis, not three diseases.",
+      sequence: [],
+      current_stage: "not_evaluated",
+      upstream_first: false,
+      rules: []
+    },
+    joint_phase_logic: {
+      active: false,
+      phase: "not_evaluated",
+      pattern: "",
+      goal: "",
+      contraindications: [],
+      cautions: [],
+      intervention_sequence: [],
+      rules: []
+    },
+    cgrp_support: {
+      active: false,
+      status: "not_evaluated",
+      flag: "",
+      side_effect_markers: [],
+      support_sequence: [],
+      contraindications: [],
+      cautions: [],
+      rules: []
+    },
+    medication_capacity: {
+      active: false,
+      status: "not_evaluated",
+      system_capacity_question: "Is the system able to process load?",
+      can_process_load: false,
+      dominant_branch: "",
+      branch_sequence: [],
+      cautions: [],
+      drug_terrain_conflicts: [],
+      rules: []
+    },
+    cervicogenic_protocol: { active: false, sequence: [] },
+    matching_pattern: "",
+    intervention_sequence: [],
+    contraindications: [],
+    cautions: [],
+    drug_terrain_conflicts: [],
+    rules_triggered_by_id: []
+  };
+
+  if (stopped) return empty;
+
+  const phenotype = detectMigrainePhenotype(input);
+  const giAxis = detectGIMigraineNeckAxis(input, phenotype);
+  const jointPhase = detectJointPhase(input);
+  const cgrpSupport = detectCgrpSupport(input, phenotype);
+  const medicationCapacity = detectMedicationCapacity(input, phenotype);
+  const rules = [
+    ...giAxis.rules,
+    ...jointPhase.rules,
+    ...cgrpSupport.rules,
+    ...medicationCapacity.rules
+  ];
+  const contraindications = [
+    ...jointPhase.contraindications,
+    ...cgrpSupport.contraindications
+  ];
+  const cautions = [
+    ...jointPhase.cautions,
+    ...cgrpSupport.cautions,
+    ...medicationCapacity.cautions
+  ];
+  const drugTerrainConflicts = [...medicationCapacity.drug_terrain_conflicts];
+
+  let matchingPattern = "";
+  if (jointPhase.pattern) matchingPattern = jointPhase.pattern;
+  if (cgrpSupport.active) matchingPattern = "cgrp_suppression_structural_deficit";
+  if (medicationCapacity.active && !matchingPattern) matchingPattern = "medication_exhaustion_state";
+  if (giAxis.active && !matchingPattern) matchingPattern = giAxis.current_stage;
+  if (!matchingPattern) {
+    const phenotypeMap = {
+      gut_driven: "gut_jueyin_overload",
+      vascular_blood_stasis: "vascular_blood_stasis_migraine",
+      fascia_tension: "shaoyang_downstream_fascia_overload",
+      cervicogenic: "shaoyang_downstream_fascia_overload",
+      neuro_sensory: "neuro_sensory_membrane_excitability",
+      mixed: "shaoyang_gate_instability"
+    };
+    matchingPattern = phenotypeMap[phenotype.detected_phenotype] || "";
+  }
+
+  if (phenotype.cervicogenic) {
+    rules.push(triggeredBatch8Rule("R003", "neck-initiated, fixed-side, no aura/GI link, worse with movement"));
+  }
+  if (input.dry_component_in_formula) {
+    contraindications.push("Ginger_Pack_1");
+    rules.push(triggeredBatch8Rule("R004", "dry component present in formula"));
+  }
+  if (input.ginger_tea_prescribed || patternContainsGinger(matchingPattern)) {
+    cautions.push("Ginger tea timing: morning or midday only; never evening; weak-to-medium strength.");
+    rules.push(triggeredBatch8Rule("R021", "ginger tea present in the active pattern or selected inputs"));
+  }
+  if (phenotype.detected_phenotype === "neuro_sensory" && input.photophobia && input.phonophobia && input.energy_state === "irritable") {
+    rules.push(triggeredBatch8Rule("R024", "photophobia + phonophobia + irritability dominant"));
+  }
+
+  const interventionSequence = [
+    ...batch8InterventionSequence(matchingPattern),
+    ...(jointPhase.active ? [{ pattern: jointPhase.pattern || "mixed_joint_phase", items: jointPhase.intervention_sequence, sequence_note: jointPhase.goal }] : []),
+    ...(cgrpSupport.active ? cgrpSupport.support_sequence.map((step) => ({ pattern: "cgrp_suppression_structural_deficit", ...step })) : []),
+    ...(medicationCapacity.active ? [{ pattern: "medication_exhaustion_state", items: medicationCapacity.branch_sequence, sequence_note: medicationCapacity.system_capacity_question }] : [])
+  ];
+
+  return {
+    migraine_phenotype: phenotype,
+    gi_migraine_neck_axis: giAxis,
+    joint_phase_logic: jointPhase,
+    cgrp_support: cgrpSupport,
+    medication_capacity: medicationCapacity,
+    cervicogenic_protocol: {
+      active: phenotype.cervicogenic,
+      sequence: phenotype.cervicogenic
+        ? ["local laser C2-C5 / GB / SI / BL", "Collagen / RegenOil", "Kudzu", "do not treat as migraine alone"]
+        : []
+    },
+    matching_pattern: matchingPattern,
+    intervention_sequence: interventionSequence,
+    contraindications: [...new Set(contraindications)],
+    cautions: [...new Set(cautions)],
+    drug_terrain_conflicts: [...new Set(drugTerrainConflicts)],
+    rules_triggered_by_id: uniqueRules(rules)
+  };
+}
+
 function patientOutput({
   stopped,
   stop,
@@ -690,7 +1356,8 @@ function patientOutput({
   hierarchy,
   phase,
   berberine,
-  laser
+  laser,
+  batch8
 }) {
   if (stopped) {
     return {
@@ -710,13 +1377,22 @@ function patientOutput({
   const label = PATIENT_LABELS[matchingPattern] || PATIENT_LABELS[dominantPattern] || "Headache terrain pattern";
   const support = [];
   support.push(`Current phase: ${phase.name.replace(/_/g, " ")} - ${phase.goal.replace(/_/g, " ")}.`);
-  if (hierarchy.first_line.length) {
+  const batch8FirstSequence = (batch8?.intervention_sequence || []).find((step) => (step.items || []).length);
+  if (batch8?.matching_pattern && batch8FirstSequence) {
+    support.push(`Batch 8 sequence focus: ${batch8FirstSequence.items.join(", ")}.`);
+  } else if (hierarchy.first_line.length) {
     support.push(`Primary support focus: ${hierarchy.first_line.map((item) => item.name).join(", ")}.`);
   }
   if (berberine.status !== "OFF") {
     support.push(`${berberine.rule} Current switch status: ${berberine.status.replace(/_/g, " ")}.`);
   }
-  if (laser.status !== "defer") {
+  const batch8BlocksEarlyLaser = Boolean(
+    batch8?.gi_migraine_neck_axis?.active
+    || batch8?.cgrp_support?.active
+    || (batch8?.medication_capacity?.active && !batch8.medication_capacity.can_process_load)
+    || batch8?.joint_phase_logic?.phase === "inflammatory_edge"
+  );
+  if (laser.status !== "defer" && !batch8BlocksEarlyLaser) {
     support.push(`Laser layer logic: ${laser.recommendation}`);
   }
   if (vesselOverlay) {
@@ -727,6 +1403,24 @@ function patientOutput({
   }
   if (mixed) {
     support.push(`This looks layered; the closest axes are ${mixedPatterns.map((item) => item.axis.replace(/_score$/, "")).join(" and ")}.`);
+  }
+  if (batch8?.migraine_phenotype?.detected_phenotype && !["unknown", "not_evaluated"].includes(batch8.migraine_phenotype.detected_phenotype)) {
+    support.push(`Batch 8 phenotype triage: ${batch8.migraine_phenotype.detected_phenotype.replace(/_/g, " ")} pattern.`);
+  }
+  if (batch8?.gi_migraine_neck_axis?.active) {
+    support.push(`${batch8.gi_migraine_neck_axis.phrase.replace(/\.$/, "")}. Upstream GI support is prioritised when GI signals precede or accompany headache.`);
+  }
+  if (batch8?.cervicogenic_protocol?.active) {
+    support.push("Cervicogenic distinction is active: neck-initiated, fixed-side, movement-sensitive pain is handled as local fascia/neck support, not migraine alone.");
+  }
+  if (batch8?.joint_phase_logic?.active) {
+    support.push(`Joint phase logic: ${batch8.joint_phase_logic.phase.replace(/_/g, " ")} - ${batch8.joint_phase_logic.goal.replace(/_/g, " ")}.`);
+  }
+  if (batch8?.cgrp_support?.active) {
+    support.push("CGRP support logic is active: grounding and membrane-flow support come before any medication discussion with a clinician.");
+  }
+  if (batch8?.medication_capacity?.active) {
+    support.push(`System capacity check: ${batch8.medication_capacity.system_capacity_question}`);
   }
 
   return {
@@ -764,6 +1458,18 @@ function evaluateHeadache(inputPayload = {}) {
   const cluster = shaoyangCluster(input);
   const progression = progressionModel(input, layer);
   const safety = applyRules(input, scores, membrane, input.internal_audit, currentPhase, berberine);
+  const batch8 = evaluateBatch8(input, Boolean(stop));
+  safety.contraindications.push(...batch8.contraindications);
+  safety.cautions.push(...batch8.cautions);
+  safety.drugTerrainConflicts.push(...batch8.drug_terrain_conflicts);
+  if (input.internal_audit) {
+    safety.ruleTrace.push(...batch8.rules_triggered_by_id.map((rule) => ({
+      id: rule.id,
+      condition: rule.condition,
+      action: rule.action,
+      reason: rule.reason
+    })));
+  }
   if (matchingPattern === "shoulder_capsule_cold_stasis") {
     safety.contraindications.push("systemic_Fu_Zi_Rou_Gui_level_heating");
     safety.cautions.push("Use local targeted Yang support rather than systemic high-heat herbs for shoulder capsule cold-stasis patterns.");
@@ -836,7 +1542,7 @@ function evaluateHeadache(inputPayload = {}) {
 
   return {
     engine: "headache_migraine_pattern_engine",
-    source: ["headacheEngine.batch6.json", "avicenna_engine_batch7.json"],
+    source: ["headacheEngine.batch6.json", "avicenna_engine_batch7.json", "avicenna_engine_batch8.json"],
     stopped: Boolean(stop),
     stop,
     axis_scores: scores,
@@ -847,8 +1553,10 @@ function evaluateHeadache(inputPayload = {}) {
     dominant_layer: layer,
     dominant_pattern: topPattern,
     matching_pattern: matchingPattern,
+    batch8_matching_pattern: batch8.matching_pattern,
     dominant_pattern_label: PATIENT_LABELS[topPattern] || topPattern,
     matching_pattern_label: PATIENT_LABELS[matchingPattern] || matchingPattern,
+    batch8_matching_pattern_label: PATIENT_LABELS[batch8.matching_pattern] || batch8.matching_pattern,
     embryological_layer: meta.embryological_layer,
     tcm_channel: meta.tcm_channel,
     tri_axial_model: {
@@ -873,6 +1581,14 @@ function evaluateHeadache(inputPayload = {}) {
       note: "Structural parallel only - not diagnostic equivalence."
     },
     shaoyang_collapse_cluster: cluster,
+    migraine_phenotype: batch8.migraine_phenotype,
+    gi_migraine_neck_axis: batch8.gi_migraine_neck_axis,
+    joint_phase_logic: batch8.joint_phase_logic,
+    cgrp_support: batch8.cgrp_support,
+    medication_capacity: batch8.medication_capacity,
+    cervicogenic_protocol: batch8.cervicogenic_protocol,
+    batch8_intervention_sequence: stop ? [] : batch8.intervention_sequence,
+    rules_triggered_by_id: batch8.rules_triggered_by_id,
     intervention_hierarchy: hierarchy,
     contraindications: safety.contraindications,
     drug_terrain_conflicts: safety.drugTerrainConflicts,
@@ -890,7 +1606,8 @@ function evaluateHeadache(inputPayload = {}) {
       hierarchy,
       phase,
       berberine,
-      laser
+      laser,
+      batch8
     }),
     clinician: {
       axis_scores: scores,
@@ -900,6 +1617,17 @@ function evaluateHeadache(inputPayload = {}) {
       dominant_layer: layer,
       dominant_pattern: topPattern,
       matching_pattern: matchingPattern,
+      batch8_matching_pattern: batch8.matching_pattern,
+      detected_phenotype: batch8.migraine_phenotype.detected_phenotype,
+      migraine_phenotype: batch8.migraine_phenotype,
+      gi_migraine_neck_axis: batch8.gi_migraine_neck_axis,
+      joint_phase_logic: batch8.joint_phase_logic,
+      cgrp_support_status: batch8.cgrp_support.status,
+      cgrp_support: batch8.cgrp_support,
+      medication_exhaustion_state: batch8.medication_capacity,
+      cervicogenic_protocol: batch8.cervicogenic_protocol,
+      batch8_intervention_sequence: stop ? [] : batch8.intervention_sequence,
+      rules_triggered_by_id: batch8.rules_triggered_by_id,
       embryological_layer: meta.embryological_layer,
       tcm_channel: meta.tcm_channel,
       intervention_hierarchy: hierarchy,
@@ -914,7 +1642,9 @@ function evaluateHeadache(inputPayload = {}) {
     },
     output_contract: headacheData.output_screens,
     notes: [...headacheData.notes, ...batch7Data.notes, ...CORE_PHRASES],
-    batch7_patterns: batch7Data.patterns
+    batch7_patterns: batch7Data.patterns,
+    batch8_patterns: batch8Patterns,
+    batch8_decision_axes: batch8DecisionAxes
   };
 }
 
@@ -923,5 +1653,6 @@ module.exports = {
   scoreAxes,
   headacheData,
   batch7Data,
+  batch8Data,
   AXES
 };

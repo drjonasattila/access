@@ -129,6 +129,51 @@ const headacheInitialInput = {
   current_phase: "",
   red_flag_present: false,
   red_flag_type: [],
+  gi_symptoms_present: false,
+  headache_type: "unknown",
+  pain_character: "",
+  thermal_state_joint: "",
+  temporal_dynamic: "",
+  pain_onset: "",
+  aura_present: false,
+  laterality: "",
+  gi_link: false,
+  neck_movement_worsens: false,
+  photophobia: false,
+  phonophobia: false,
+  cold_extremities: false,
+  weather_sensitive: false,
+  cgrp_in_use: false,
+  cgrp_side_effects: [],
+  medication_status: "none",
+  tca_snri_in_use: false,
+  antipsychotic_pain_use: false,
+  joint_phase: "",
+  collagen_worsened: false,
+  dry_component_in_formula: false,
+  acute_gi_fever_inflammation: false,
+  isolated_traumatic_neck_pain: false,
+  purely_mechanical_injury: false,
+  joint_heat_swelling: false,
+  evening_worsening: false,
+  stiffness_replaces_burning: false,
+  movement_improves_joint: false,
+  pain_empty_not_inflamed: false,
+  warming_agents_worsened: false,
+  exercise_worsened: false,
+  increasing_medication_doses_required: false,
+  effect_duration_shortening: false,
+  side_effects_increasing: false,
+  new_gi_fatigue_brain_fog: false,
+  system_capacity_known: false,
+  system_capacity_can_process_load: false,
+  cgrp_step1_complete: false,
+  cgrp_no_rebound: false,
+  cgrp_step2_complete: false,
+  cgrp_severe_uncontrolled: false,
+  cgrp_qol_impairment: false,
+  cgrp_patient_feels_unsafe: false,
+  ginger_tea_prescribed: false,
   internal_audit: false
 };
 
@@ -160,7 +205,10 @@ const headacheFieldGroups = [
       ["tired_but_wired", "Wired-tired", "Activated but depleted"],
       ["exhausted", "Exhausted", "Low recovery capacity"],
       ["irritable", "Irritable", "Reactive, buzzing"],
-      ["cold", "Cold", "Cold, low warmth"]
+      ["cold", "Cold", "Cold, low warmth"],
+      ["low", "Low", "Reduced capacity"],
+      ["very_low", "Very low", "Strong recovery limitation"],
+      ["flat", "Flat", "Quieter but not better"]
     ]
   },
   {
@@ -309,6 +357,91 @@ const batch7FieldGroups = [
   }
 ];
 
+const batch8FieldGroups = [
+  {
+    key: "headache_type",
+    label: "Migraine phenotype triage",
+    options: [
+      ["gut_driven", "Gut-driven", "Nausea, bloating, reflux, or meal/stress link"],
+      ["vascular", "Vascular", "Throbbing, aura, cold hands, weather link"],
+      ["fascia_tension", "Fascia tension", "Neck, shoulder, skull-base pattern"],
+      ["neuro_sensory", "Neuro-sensory", "Light/noise intolerance or overload"],
+      ["mixed", "Mixed", "Several patterns are close"],
+      ["cervicogenic", "Cervicogenic", "Neck-initiated, movement-sensitive"],
+      ["unknown", "Unknown", "Let the engine infer"]
+    ]
+  },
+  {
+    key: "pain_character",
+    label: "Batch 8 pain character",
+    options: [
+      ["throbbing", "Throbbing", "Pulsatile / amplitude signal"],
+      ["burning", "Burning", "Signal overload"],
+      ["pressure_hat", "Pressure hat", "Band-like / fascia tension"],
+      ["stiff", "Stiff", "Joint or fascia stiffness"],
+      ["empty", "Empty", "Non-inflamed depleted feel"],
+      ["moving", "Moving", "Migrating or shifting pain"]
+    ]
+  },
+  {
+    key: "pain_onset",
+    label: "Where it seems to start",
+    options: [
+      ["from_inside_system", "Inside system", "General system overflow"],
+      ["from_neck", "Neck", "Neck starts the cascade"],
+      ["from_gut", "Gut", "GI signals precede headache"],
+      ["from_stress", "Stress", "Stress load starts the cascade"]
+    ]
+  },
+  {
+    key: "thermal_state_joint",
+    label: "Joint thermal state",
+    options: [
+      ["hot_swollen", "Hot / swollen", "Active heat or swelling"],
+      ["intermittently_hot", "Intermittently hot", "Comes and goes"],
+      ["cold_stiff", "Cold stiff", "Cold stiffness"],
+      ["neutral", "Neutral", "No strong joint heat/cold"]
+    ]
+  },
+  {
+    key: "joint_phase",
+    label: "Mixed joint phase",
+    options: [
+      ["inflammatory_edge", "Inflammatory edge", "Stabilise only"],
+      ["transitional", "Transitional", "Flow without overdrive"],
+      ["building", "Building", "Structure phase"],
+      ["unknown", "Unknown", "Wait one phase longer"]
+    ]
+  },
+  {
+    key: "temporal_dynamic",
+    label: "Temporal dynamic",
+    options: [
+      ["rapid_worsening_with_stimulation", "Worsens with stimulation", "Heat/exercise/building input worsens"],
+      ["slow_improvement_not_sustained", "Improves then fades", "Needs phase support"],
+      ["stable", "Stable", "No major dynamic shift"]
+    ]
+  },
+  {
+    key: "medication_status",
+    label: "Medication capacity",
+    options: [
+      ["none", "None", "No medication context"],
+      ["working", "Working", "Effect stable"],
+      ["tolerance_developing", "Tolerance", "Effect shortening or dose pressure"],
+      ["exhausted", "Exhausted", "Medication helps less and adds load"]
+    ]
+  },
+  {
+    key: "laterality",
+    label: "Laterality",
+    options: [
+      ["fixed_side", "Fixed side", "Usually same side"],
+      ["variable_side", "Variable", "Side changes"]
+    ]
+  }
+];
+
 const headacheMultiGroups = [
   {
     key: "sensory_features",
@@ -403,9 +536,14 @@ const headacheSafetyFlags = [
   ["cancer_active", "Active cancer"],
   ["post_chemo_window", "Post-chemo window"],
   ["gut_flare_active", "Active gut flare"],
+  ["gi_symptoms_present", "GI symptoms present"],
+  ["gi_link", "GI timing link"],
   ["digestive_sensitivity", "Digestive sensitivity"],
   ["frailty", "Low resilience / frailty"],
-  ["acute_headache_episode", "Acute headache episode"]
+  ["acute_headache_episode", "Acute headache episode"],
+  ["acute_gi_fever_inflammation", "Acute GI fever / inflammation"],
+  ["isolated_traumatic_neck_pain", "Isolated traumatic neck pain"],
+  ["purely_mechanical_injury", "Purely mechanical injury"]
 ];
 
 const headacheAdvancedFlags = [
@@ -420,7 +558,38 @@ const headacheAdvancedFlags = [
   ["radiculopathy_present", "Radiculopathy present"],
   ["cold_signs", "Cold signs"],
   ["heat_signs", "Heat signs"],
-  ["gepant_use", "Gepant use"]
+  ["gepant_use", "Gepant use"],
+  ["aura_present", "Aura present"],
+  ["photophobia", "Photophobia"],
+  ["phonophobia", "Phonophobia"],
+  ["cold_extremities", "Cold extremities"],
+  ["weather_sensitive", "Weather sensitive"],
+  ["neck_movement_worsens", "Neck movement worsens"],
+  ["cgrp_in_use", "CGRP inhibitor in use"],
+  ["tca_snri_in_use", "TCA/SNRI in use"],
+  ["antipsychotic_pain_use", "Off-label antipsychotic for pain"],
+  ["collagen_worsened", "Collagen worsened symptoms"],
+  ["dry_component_in_formula", "Dry component in formula"],
+  ["joint_heat_swelling", "Joint heat / swelling"],
+  ["evening_worsening", "Evening worsening"],
+  ["stiffness_replaces_burning", "Stiffness replaces burning"],
+  ["movement_improves_joint", "Movement improves joint"],
+  ["pain_empty_not_inflamed", "Pain feels empty / not inflamed"],
+  ["warming_agents_worsened", "Warming agents worsened"],
+  ["exercise_worsened", "Exercise worsened"],
+  ["increasing_medication_doses_required", "Increasing medication doses required"],
+  ["effect_duration_shortening", "Medication effect shortening"],
+  ["side_effects_increasing", "Side effects increasing"],
+  ["new_gi_fatigue_brain_fog", "New GI / fatigue / brain fog"],
+  ["system_capacity_known", "System capacity assessed"],
+  ["system_capacity_can_process_load", "System can process load"],
+  ["cgrp_step1_complete", "CGRP support step 1 complete"],
+  ["cgrp_no_rebound", "No CGRP rebound"],
+  ["cgrp_step2_complete", "CGRP support step 2 complete"],
+  ["cgrp_severe_uncontrolled", "Severe uncontrolled migraine"],
+  ["cgrp_qol_impairment", "Quality-of-life impairment"],
+  ["cgrp_patient_feels_unsafe", "Patient feels unsafe"],
+  ["ginger_tea_prescribed", "Ginger tea in plan"]
 ];
 
 const shaoyangClusterItems = [
@@ -451,6 +620,15 @@ const gepantSideEffects = [
   ["nausea", "Nausea"],
   ["fatigue", "Fatigue"],
   ["constipation", "Constipation"]
+];
+
+const cgrpSideEffects = [
+  ["constipation", "Constipation"],
+  ["fatigue", "Fatigue"],
+  ["flat_affect", "Flat affect"],
+  ["reduced_tolerance", "Reduced tolerance"],
+  ["GI_worsening", "GI worsening"],
+  ["quieter_not_better", "Quieter but not better"]
 ];
 
 function titleCase(value) {
@@ -634,6 +812,12 @@ function HeadacheResult({ result, advanced, onReset }) {
           </div>
           <p>Dominant pattern: {result.dominant_pattern}</p>
           <p>Matching Batch 7 pattern: {result.matching_pattern}</p>
+          <p>Matching Batch 8 pattern: {result.batch8_matching_pattern || "none"}</p>
+          <p>Detected phenotype: {result.migraine_phenotype?.detected_phenotype || "unknown"}</p>
+          <p>GI-migraine-neck axis: {result.gi_migraine_neck_axis?.active ? result.gi_migraine_neck_axis.current_stage : result.gi_migraine_neck_axis?.excluded ? "excluded" : "not active"}</p>
+          <p>Joint phase: {result.joint_phase_logic?.active ? `${result.joint_phase_logic.phase} / ${result.joint_phase_logic.goal}` : "not assessed"}</p>
+          <p>CGRP support: {result.cgrp_support?.status || "not assessed"}</p>
+          <p>Medication capacity: {result.medication_capacity?.status || "not assessed"} / {result.medication_capacity?.dominant_branch || "none"}</p>
           <p>Detected phase: {result.current_phase}</p>
           <p>Dominant layer: {result.dominant_layer}</p>
           <p>Embryological layer: {result.embryological_layer}</p>
@@ -643,6 +827,19 @@ function HeadacheResult({ result, advanced, onReset }) {
           <p>Laser: {result.laser_layer_recommendation.recommendation}</p>
           <p>Berberine: {result.berberine_switch.status} - {result.berberine_switch.next_step}</p>
           <p>Shaoyang collapse cluster: {result.shaoyang_collapse_cluster.present ? result.shaoyang_collapse_cluster.signs.join(", ") : "absent"}</p>
+          <TagSection title="Batch 8 triggered rules" items={(result.rules_triggered_by_id || []).map((rule) => `${rule.id}: ${rule.action}`)} tone="mod" empty="None triggered" />
+          <section>
+            <h2>Batch 8 intervention sequence</h2>
+            {(result.batch8_intervention_sequence || []).length ? (
+              result.batch8_intervention_sequence.map((step, index) => (
+                <span key={`${step.pattern}-${step.step || index}`}>
+                  {step.pattern}: {(step.items || []).join(", ")} {step.sequence_note ? `(${step.sequence_note})` : ""}
+                </span>
+              ))
+            ) : (
+              <p className="av-muted">None</p>
+            )}
+          </section>
           <TagSection title="Drug-terrain conflicts" items={result.drug_terrain_conflicts} tone="avoid" empty="None flagged" />
           <TagSection title="Contraindications" items={result.contraindications} tone="avoid" empty="None flagged" />
           <section>
@@ -784,6 +981,29 @@ function HeadacheEngineSection() {
           </section>
         ))}
 
+        {batch8FieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
         {headacheMultiGroups.map((group) => (
           <ToggleList
             key={group.key}
@@ -852,6 +1072,13 @@ function HeadacheEngineSection() {
               items={gepantSideEffects}
               selected={input.gepant_side_effects}
               onToggle={(value) => toggleArray("gepant_side_effects", value)}
+              safety
+            />
+            <ToggleList
+              title="CGRP support markers"
+              items={cgrpSideEffects}
+              selected={input.cgrp_side_effects}
+              onToggle={(value) => toggleArray("cgrp_side_effects", value)}
               safety
             />
             <section className="av-section">

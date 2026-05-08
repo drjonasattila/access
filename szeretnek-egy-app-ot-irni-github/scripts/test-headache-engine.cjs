@@ -101,4 +101,85 @@ const chronic = evaluateHeadache({
 assert.equal(chronic.chronic_progression.detected, true);
 assert.equal(chronic.chronic_progression.phrase, "Chronic headache is not escalation - it is migration.");
 
-console.log("Headache engine tests passed: 9/9");
+const giMigraineNeck = evaluateHeadache({
+  headache_type: "gut_driven",
+  pain_onset: "from_gut",
+  gi_symptoms_present: true,
+  sensory_features: ["nausea"],
+  internal_audit: true
+});
+
+assert.equal(giMigraineNeck.migraine_phenotype.detected_phenotype, "gut_driven");
+assert.equal(giMigraineNeck.gi_migraine_neck_axis.active, true);
+assert.equal(giMigraineNeck.batch8_matching_pattern, "gut_jueyin_overload");
+assert.ok(giMigraineNeck.rules_triggered_by_id.some((rule) => rule.id === "R001"));
+
+const cervicogenic = evaluateHeadache({
+  headache_type: "cervicogenic",
+  pain_onset: "from_neck",
+  laterality: "fixed_side",
+  neck_movement_worsens: true,
+  internal_audit: true
+});
+
+assert.equal(cervicogenic.migraine_phenotype.detected_phenotype, "cervicogenic");
+assert.equal(cervicogenic.cervicogenic_protocol.active, true);
+assert.ok(cervicogenic.rules_triggered_by_id.some((rule) => rule.id === "R003"));
+
+const mixedJoint = evaluateHeadache({
+  joint_heat_swelling: true,
+  evening_worsening: true,
+  internal_audit: true
+});
+
+assert.equal(mixedJoint.joint_phase_logic.phase, "inflammatory_edge");
+assert.ok(mixedJoint.contraindications.includes("Collagen_phase_1"));
+assert.ok(mixedJoint.rules_triggered_by_id.some((rule) => rule.id === "R005"));
+
+const cgrpSupport = evaluateHeadache({
+  cgrp_in_use: true,
+  cgrp_side_effects: ["constipation", "quieter_not_better"],
+  headache_type: "vascular",
+  internal_audit: true
+});
+
+assert.equal(cgrpSupport.cgrp_support.active, true);
+assert.equal(cgrpSupport.cgrp_support.flag, "cgrp_suppression_structural_deficit");
+assert.ok(cgrpSupport.rules_triggered_by_id.some((rule) => rule.id === "R010"));
+
+const medicationCapacity = evaluateHeadache({
+  medication_status: "exhausted",
+  effect_duration_shortening: true,
+  new_gi_fatigue_brain_fog: true,
+  internal_audit: true
+});
+
+assert.equal(medicationCapacity.medication_capacity.active, true);
+assert.ok(medicationCapacity.rules_triggered_by_id.some((rule) => rule.id === "R014"));
+assert.ok(medicationCapacity.rules_triggered_by_id.some((rule) => rule.id === "R015"));
+
+const gingerSafety = evaluateHeadache({
+  dry_component_in_formula: true,
+  ginger_tea_prescribed: true,
+  internal_audit: true
+});
+
+assert.ok(gingerSafety.contraindications.includes("Ginger_Pack_1"));
+assert.ok(gingerSafety.rules_triggered_by_id.some((rule) => rule.id === "R004"));
+assert.ok(gingerSafety.rules_triggered_by_id.some((rule) => rule.id === "R021"));
+
+const tcaSupport = evaluateHeadache({
+  tca_snri_in_use: true,
+  internal_audit: true
+});
+
+assert.ok(tcaSupport.rules_triggered_by_id.some((rule) => rule.id === "R019"));
+
+const offLabelAntipsychotic = evaluateHeadache({
+  antipsychotic_pain_use: true,
+  internal_audit: true
+});
+
+assert.ok(offLabelAntipsychotic.rules_triggered_by_id.some((rule) => rule.id === "R020"));
+
+console.log("Headache engine tests passed: 17/17");
