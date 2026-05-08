@@ -1,0 +1,495 @@
+{
+  "patterns": [
+    {
+      "name": "signal_overload_neurovascular_decoupling",
+      "triggers": [
+        "visual aura",
+        "photophobia",
+        "phonophobia",
+        "nausea",
+        "pulsing/throbbing pain",
+        "triptan partial response",
+        "tired but wired energy state"
+      ],
+      "symptoms": [
+        "pulsating headache",
+        "light sensitivity",
+        "sound sensitivity",
+        "nausea",
+        "aura",
+        "hyperalgesia",
+        "allodynia",
+        "scalp tenderness",
+        "irritability",
+        "burning or electric pain quality"
+      ],
+      "dominant_axis": "nerve_first",
+      "embryological_layer": "ectoderm",
+      "tcm_channel": "Taiyang",
+      "failure_mode": "neurovascular decoupling",
+      "risk": "excessive cooling or suppression",
+      "interventions": {
+        "herbs": [
+          { "name": "ProMigren", "role": "primary neurovascular support", "notes": "Base44 product; first-line for this pattern" },
+          { "name": "Astaxanthin", "role": "EZ-water layer rebuild, membrane protection", "notes": "tertiary support" },
+          { "name": "Nigella (Black Seed)", "role": "membrane fluidity support", "notes": "combine with Vitamin D" },
+          { "name": "Magnesium", "role": "neural stabilisation, EZ-water support", "notes": "low dose; CGRP pathway support" },
+          { "name": "Tryptophan / Saffron", "role": "serotonin axis support", "notes": "ProSelect formulation; nerve smoothing" }
+        ],
+        "preparation": "capsule; timing: morning preferred; avoid melatonin initially in evening",
+        "device": "laser (superficial nerve), TENS, vagus nerve stimulation",
+        "pharmaceuticals_noted": ["triptans", "CGRP blockers", "gabapentinoids (secondary)"]
+      }
+    },
+    {
+      "name": "dampness_microcirculatory_failure",
+      "triggers": [
+        "heavy/dull pain quality",
+        "bloating/heaviness",
+        "morning heaviness",
+        "swollen tongue or thick coating",
+        "diabetes comorbidity",
+        "dark urine",
+        "constipation",
+        "cold hands/feet"
+      ],
+      "symptoms": [
+        "dull or heavy headache",
+        "bloating",
+        "morning stiffness/heaviness",
+        "cold extremities",
+        "dry stool or constipation",
+        "thick tongue coating",
+        "dry skin",
+        "brittle hair/nails"
+      ],
+      "dominant_axis": "vessel_first",
+      "embryological_layer": "mesoderm (vessel component)",
+      "tcm_channel": "Taiyin (damp accumulation)",
+      "failure_mode": "flow obstruction",
+      "risk": "stimulation without clearing",
+      "interventions": {
+        "herbs": [
+          { "name": "MyBlood", "role": "microcirculation support", "notes": "low dose; 'Iron Soul' analogy — moves without overdriving" },
+          { "name": "ProCardiol", "role": "macro/micro circulation, heart-field connection", "notes": "second-line if MyBlood insufficient" },
+          { "name": "Dan Shen line", "role": "blood moving, vessel clearing", "notes": "TCM: blood stasis" },
+          { "name": "Xue Fu Zhu Yu Tang", "role": "blood stasis resolution", "notes": "classical TCM formula; blood-dominant headache" },
+          { "name": "Gui Zhi Fu Ling", "role": "blood stasis + cold pattern", "notes": "for cold + stasis combination" },
+          { "name": "Spirulina", "role": "structured water hydration support", "notes": "dryness component of dampness pattern" },
+          { "name": "Kangen water / structured water", "role": "EZ-water hydration", "notes": "low tissue water content correction" }
+        ],
+        "preparation": "morning circulation support; avoid evening stimulation",
+        "device": "PEMF (indirect), heat modulation",
+        "pharmaceuticals_noted": ["statin adjunct if lipid/metabolic background present"]
+      }
+    },
+    {
+      "name": "mitochondrial_fatigue_energy_deficiency",
+      "triggers": [
+        "morning headache",
+        "exhaustion (not tired-but-wired)",
+        "cold energy state",
+        "beta-blocker use",
+        "antidepressant use",
+        "treatment response: helps pain but leaves drained"
+      ],
+      "symptoms": [
+        "morning headache",
+        "exhaustion",
+        "feeling cold",
+        "post-treatment fatigue",
+        "low regenerative capacity",
+        "poor morning recovery"
+      ],
+      "dominant_axis": "mitochondrial_fatigue",
+      "embryological_layer": "uncertain (cross-layer)",
+      "tcm_channel": "uncertain",
+      "failure_mode": "insufficient energy support",
+      "risk": "overstimulation worsens the pattern",
+      "interventions": {
+        "herbs": [
+          { "name": "DuoLife Day", "role": "circadian energy distribution, daytime mitochondrial support", "notes": "not stimulant; redistributes available energy" },
+          { "name": "DuoLife Night", "role": "membrane regeneration, night-phase cellular reorganisation", "notes": "supports ER-mitochondria reconnection" },
+          { "name": "Astragalus (fiber form)", "role": "EZ-matrix scaffold, ER-field strengthening, mitochondrial recall", "notes": "NOT stimulation; reconnection via polysaccharide scaffold" },
+          { "name": "Ginger", "role": "mild Ca2+ dynamics, mitochondrial warmth recall", "notes": "fine thermal stimulation; not driving" },
+          { "name": "Ginseng", "role": "mitochondrial recall (not stimulation)", "notes": "cautious; avoid overuse" },
+          { "name": "Vitamin D", "role": "membrane fluidity, EZ-water layer support", "notes": "combine with Nigella" }
+        ],
+        "preparation": "pulsed not continuous; morning for Day formulas; evening for Night formulas; rhythm critical",
+        "device": "PEMF (low intensity), gentle heat protocols",
+        "pharmaceuticals_noted": ["beta-blockers and antidepressants increase this pattern score — note as drug-terrain conflict"]
+      }
+    },
+    {
+      "name": "fascia_dominant_mechanical",
+      "triggers": [
+        "neck/shoulder tightness preceding headache",
+        "movement provokes pain (turning head, posture)",
+        "trigger points / scalp fascia tenderness",
+        "weather/barometric sensitivity",
+        "morning stiffness",
+        "relief from heat or manual therapy"
+      ],
+      "symptoms": [
+        "neck stiffness",
+        "shoulder tension",
+        "movement-sensitive headache",
+        "trigger points",
+        "weather-sensitive pattern",
+        "cervicogenic headache features",
+        "migrating pain",
+        "CRPS features"
+      ],
+      "dominant_axis": "fascia_first",
+      "embryological_layer": "mesoderm",
+      "tcm_channel": "Shaoyang",
+      "failure_mode": "connective tissue tension / water-grid instability",
+      "risk": "stimulation without hydration support",
+      "interventions": {
+        "herbs": [
+          { "name": "ProDeacid", "role": "fascia modulation, acid-base correction in connective tissue", "notes": "first-line fascia support" },
+          { "name": "Hydration protocol", "role": "EZ-water restitution in fascia", "notes": "structured water; not plain volume" }
+        ],
+        "preparation": "combine with physical modalities; herbs secondary to device in this pattern",
+        "device": "laser (primary — fascia/photon → water-grid pathway), TENS, physiotherapy, manual therapy, heat, stretching"
+      }
+    },
+    {
+      "name": "gut_metabolic_dominant",
+      "triggers": [
+        "food-triggered headache (late dinner, fasting rebound, histamine foods)",
+        "bloating/reflux/constipation/loose stools associated with headache",
+        "PMS or emotional overload → GI flare → headache",
+        "post-infectious or post-antibiotic onset",
+        "relief after bowel movement",
+        "heat/fever component",
+        "inflammatory flares"
+      ],
+      "symptoms": [
+        "food-triggered headache",
+        "bloating or reflux",
+        "constipation or loose stools",
+        "heat sensation",
+        "inflammatory flares",
+        "PMS-associated headache",
+        "post-infection headache"
+      ],
+      "dominant_axis": "gut_metabolic_first",
+      "embryological_layer": "endoderm",
+      "tcm_channel": "Yangming",
+      "failure_mode": "internal heat / metabolic processing failure",
+      "risk": "berberine overuse outside flare phase",
+      "interventions": {
+        "herbs": [
+          { "name": "Fiber (soluble)", "role": "GI microbiome scaffold, endoderm surface repair", "notes": "first-line; Astragalus fiber preferred" },
+          { "name": "Aloe vera", "role": "gut lining soothing", "notes": "repair phase" },
+          { "name": "Chamomile", "role": "GI anti-spasmodic, calming", "notes": "repair phase" },
+          { "name": "Pearl barley (Yi Yi Ren)", "role": "damp clearing, gut metabolic normalisation", "notes": "TCM: drain damp" },
+          { "name": "Ginger", "role": "GI motility, warming", "notes": "only if cold-damp pattern confirmed; avoid in dry/hot pattern" },
+          { "name": "Berberine", "role": "anti-inflammatory, metabolic flare control", "notes": "ONLY during active flare; NOT maintenance" }
+        ],
+        "preparation": "food-timing awareness critical; rebuild phase 2–4 weeks; PPI exit ladder if applicable",
+        "device": "vagus nerve stimulation (indirect gut-brain axis support)",
+        "pharmaceuticals_noted": ["PPI exit pathway recommended when gut pattern is primary"]
+      }
+    },
+    {
+      "name": "membrane_EZ_water_instability",
+      "triggers": [
+        "dryness signs (dry mouth, skin, stool, urine)",
+        "post-chemotherapy state",
+        "environmental toxin exposure (e.g. glyphosate)",
+        "emotional trauma history (backend signal)",
+        "high ROS / cachexia",
+        "MAM disruption context"
+      ],
+      "symptoms": [
+        "dry mouth",
+        "dry skin",
+        "brittle nails/hair",
+        "dark urine",
+        "unexplained fatigue",
+        "poor regeneration after treatment",
+        "cachexia"
+      ],
+      "dominant_axis": "cross-layer (membrane/EZ)",
+      "embryological_layer": "cross-layer",
+      "tcm_channel": "uncertain",
+      "failure_mode": "EZ-water grid collapse / MAM disruption",
+      "risk": "glutathione pushed without field preparation = locks closed state",
+      "interventions": {
+        "herbs": [
+          { "name": "Glutathione (pulsed)", "role": "redox-capacity restoration, MAM stabilisation, EZ-water ordering", "notes": "NOT continuous; NOT large dose; pulsed ≥6x/day max 24h window; post-intervention use only (after chemotherapy)" },
+          { "name": "Astragalus (fiber)", "role": "EZ-matrix scaffold, ER-field strengthening", "notes": "mandatory pair with glutathione" },
+          { "name": "Magnesium (low dose)", "role": "EZ-water stabilisation prerequisite", "notes": "prepare field before glutathione" },
+          { "name": "Vitamin D", "role": "membrane fluidity", "notes": "" },
+          { "name": "Nigella", "role": "membrane fluidity", "notes": "" },
+          { "name": "Regenoil", "role": "membrane fluidity", "notes": "" },
+          { "name": "Procholterol", "role": "phytoestrogen + garlic-sulfur pathway (back-door sulfur precursor)", "notes": "membrane-raft stabilisation" },
+          { "name": "Phospholipid support (general)", "role": "membrane reconstruction", "notes": "cholesterol is not the enemy in this context" },
+          { "name": "Omega-3 (low dose only)", "role": "membrane opening — cautious", "notes": "excessive dose over-opens membranes; small dose only" }
+        ],
+        "preparation": "sequence matters: EZ-stabilise first → membrane fluidity → glutathione pulsed → mitochondrial recall → circadian rebuild",
+        "device": "uncertain"
+      }
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "migraine (with or without aura)",
+      "associated_patterns": ["signal_overload_neurovascular_decoupling", "membrane_EZ_water_instability"],
+      "notes": "Primary driver: neurovascular signal overload. Secondary: EZ-water fragmentation. Pulsing + photophobia + nausea + aura = high signal_overload score. Triptan partial response confirms pattern but also signals downstream vessel involvement."
+    },
+    {
+      "diagnosis": "tension-type headache",
+      "associated_patterns": ["fascia_dominant_mechanical", "dampness_microcirculatory_failure"],
+      "notes": "Tight/band-like pain + neck-shoulder origin = fascia_dominant. If associated with morning heaviness and cold signs, add dampness pattern score."
+    },
+    {
+      "diagnosis": "cervicogenic headache",
+      "associated_patterns": ["fascia_dominant_mechanical"],
+      "notes": "Mesoderm/Shaoyang pathway dominant. Movement provokes, trigger points present. Laser primary intervention."
+    },
+    {
+      "diagnosis": "neuropathic headache / neuralgia",
+      "associated_patterns": ["signal_overload_neurovascular_decoupling"],
+      "notes": "Burning, electric, allodynia features. Ectoderm/Taiyang dominant."
+    },
+    {
+      "diagnosis": "CRPS (Complex Regional Pain Syndrome)",
+      "associated_patterns": ["fascia_dominant_mechanical", "signal_overload_neurovascular_decoupling"],
+      "notes": "Mixed fascia + nerve pattern. Relapse often routes through gut axis. Layered protocol required."
+    },
+    {
+      "diagnosis": "post-COVID headache",
+      "associated_patterns": ["dampness_microcirculatory_failure", "mitochondrial_fatigue_energy_deficiency"],
+      "notes": "Blood sludging + mitochondrial fatigue combination. Post-COVID sludging pattern confirmed. Vessel-dominant with energy deficiency overlay."
+    },
+    {
+      "diagnosis": "hormonal migraine / PMS headache",
+      "associated_patterns": ["gut_metabolic_dominant", "signal_overload_neurovascular_decoupling"],
+      "notes": "Yangming/endoderm trigger (PMS → GI flare → headache). Secondary nerve axis. Berberine only during active flare."
+    },
+    {
+      "diagnosis": "fibromyalgia",
+      "associated_patterns": ["fascia_dominant_mechanical", "mitochondrial_fatigue_energy_deficiency", "membrane_EZ_water_instability"],
+      "notes": "uncertain — not explicitly named in source but implied by CRPS/fascia-dominant + fatigue cluster"
+    },
+    {
+      "diagnosis": "IBS / GI-triggered headache",
+      "associated_patterns": ["gut_metabolic_dominant"],
+      "notes": "Endoderm/Yangming axis. Food triggers, stool changes, post-infectious onset = confirmatory."
+    },
+    {
+      "diagnosis": "medication overuse headache (MOH)",
+      "associated_patterns": ["signal_overload_neurovascular_decoupling", "mitochondrial_fatigue_energy_deficiency"],
+      "notes": "Failure pattern: 'helps less and less' or 'wears off sooner'. Rebuild layer required before exit. Do not provide taper schedule — refer to prescriber."
+    },
+    {
+      "diagnosis": "diabetes (comorbidity)",
+      "associated_patterns": ["dampness_microcirculatory_failure", "gut_metabolic_dominant"],
+      "notes": "Raises dampness/micro-circulatory score. GI metabolic axis also implicated."
+    },
+    {
+      "diagnosis": "hypertension (comorbidity)",
+      "associated_patterns": ["dampness_microcirculatory_failure", "signal_overload_neurovascular_decoupling"],
+      "notes": "Vessel-dominant contributor. Raises blood stasis score."
+    },
+    {
+      "diagnosis": "anxiety / depression (comorbidity)",
+      "associated_patterns": ["signal_overload_neurovascular_decoupling", "mitochondrial_fatigue_energy_deficiency"],
+      "notes": "Raises nerve-dominant score. Antidepressant use raises mitochondrial_fatigue score (drug-terrain conflict)."
+    },
+    {
+      "diagnosis": "cancer (peri-chemotherapy state)",
+      "associated_patterns": ["membrane_EZ_water_instability", "mitochondrial_fatigue_energy_deficiency"],
+      "notes": "Framework: frozen survival state + MAM disruption. Glutathione contraindicated during active tumour; indicated post-chemo only. Requires full EZ-preparation sequence before glutathione."
+    }
+  ],
+
+  "rules": [
+    {
+      "condition": "beta_blocker_use == true OR antidepressant_use == true",
+      "action": "increase mitochondrial_fatigue_score += 2; flag drug-terrain conflict; note: medication suppresses energy without addressing underlying pattern"
+    },
+    {
+      "condition": "triptan_use == true AND response == 'partial'",
+      "action": "increase signal_overload_score += 2; flag: neurovascular decoupling confirmed; initiate nerve-layer rebuild alongside medication"
+    },
+    {
+      "condition": "treatment_response == 'helps_pain_but_drains'",
+      "action": "increase mitochondrial_fatigue_score += 2; flag insufficient energy support; avoid further stimulation protocols"
+    },
+    {
+      "condition": "treatment_response == 'helps_less_and_less'",
+      "action": "flag medication_overuse_risk; initiate medication exit engine; stabilise → rebuild layer → reassess"
+    },
+    {
+      "condition": "digestive_sensitivity == true",
+      "action": "remove berberine from maintenance plan; keep only as flare toggle; reduce herb complexity; prioritise fiber + aloe + chamomile"
+    },
+    {
+      "condition": "frailty == true",
+      "action": "reduce herb stack complexity; avoid stacking adaptogens; prioritise single-layer intervention; favour DuoLife Day/Night over complex formulas"
+    },
+    {
+      "condition": "gut_flare_active == true",
+      "action": "defer laser; stabilise gut first (fiber + aloe/ginger + chamomile); laser = low-yield during active gut flare"
+    },
+    {
+      "condition": "pattern == 'dampness' AND dry_signs_present == true",
+      "action": "add structured water hydration protocol; add spirulina; add EZ-water rebuild (DuoLife Day/Night + MyBlood)"
+    },
+    {
+      "condition": "ginger_in_formula == true AND dry_component_present == true",
+      "action": "EXCLUDE ginger from Pack 1 / primary formula; ginger is warming and drying — contraindicated in dry pattern"
+    },
+    {
+      "condition": "cancer_active == true",
+      "action": "CONTRAINDICATE glutathione; do not push until post-chemo window; flag for clinician review"
+    },
+    {
+      "condition": "post_chemo_window == true AND glutathione_indicated == true",
+      "action": "use pulsed glutathione protocol ONLY: ≥6x/day, max 24h, then switch to DuoLife Day/Night rebuild; always pair with Astragalus (fiber)"
+    },
+    {
+      "condition": "glutathione_initiated == true AND EZ_stabilisation_not_done == true",
+      "action": "BLOCK glutathione; EZ-preparation sequence required first: Mg2+ → structured water → membrane fluidity support → then glutathione"
+    },
+    {
+      "condition": "omega3_dose == 'high'",
+      "action": "reduce to low dose only; excessive omega-3 over-opens membranes in fragile EZ state"
+    },
+    {
+      "condition": "nerve_dominant_score > fascia_score AND nerve_dominant_score > gut_score",
+      "action": "assign pattern = nerve_first; first-line: ProSelect + magnesium + laser/TENS + vagus; initiate fascia/gut rebuild as second layer"
+    },
+    {
+      "condition": "fascia_score > nerve_score AND fascia_score > gut_score",
+      "action": "assign pattern = fascia_first; first-line: laser (primary) + ProDeacid + physio + hydration"
+    },
+    {
+      "condition": "gut_score > nerve_score AND gut_score > fascia_score",
+      "action": "assign pattern = gut_metabolic_first; first-line: fiber + aloe + chamomile; defer laser"
+    },
+    {
+      "condition": "vessel_score_high == true",
+      "action": "assign pattern = vessel_dominant (parallel axis); add MyBlood + ProCardiol + Dan Shen line; check lipid/metabolic background"
+    },
+    {
+      "condition": "top_two_pattern_scores_delta <= 2",
+      "action": "assign pattern = mixed; output layered protocol covering both axes"
+    },
+    {
+      "condition": "new_neurological_deficit == true OR thunderclap_headache == true",
+      "action": "STOP engine; flag red: refer to clinician immediately; do not output supplement recommendation"
+    },
+    {
+      "condition": "ProImmunoR_requested == true AND acute_headache_episode == true",
+      "action": "CONTRAINDICATE ProImmunoR in acute phase; risk of overstimulation"
+    },
+    {
+      "condition": "multiple_adaptogens_stacking == true",
+      "action": "BLOCK; do not stack multiple adaptogens; choose single primary adaptogen per phase"
+    },
+    {
+      "condition": "reassessment_day >= 10 AND reassessment_day <= 14",
+      "action": "trigger reassessment loop; re-score all axes; update dominant pattern if changed; do not lock initial pattern"
+    },
+    {
+      "condition": "emotional_constraint == true (backend only)",
+      "action": "flag MAM disruption risk; increase membrane_EZ_instability score; do NOT surface trauma language in patient output; use frontend-safe language: 'prolonged nervous system activation affecting cellular recovery'"
+    },
+    {
+      "condition": "laser_eligibility_check AND fascia_score_high == true",
+      "action": "green: laser primary"
+    },
+    {
+      "condition": "laser_eligibility_check AND gut_flare_active == true",
+      "action": "red: defer laser; stabilise gut first"
+    },
+    {
+      "condition": "laser_eligibility_check AND mixed_pattern == true",
+      "action": "yellow: laser with parallel gut or nerve layer"
+    }
+  ],
+
+  "input_variables": [
+    "pain_quality: enum [pulsing_throbbing, dull_heavy, tight_band_like, sharp_stabbing]",
+    "sensory_features: multi-select [light_sensitivity, sound_sensitivity, visual_aura, nausea]",
+    "timing: enum [worse_morning, worse_afternoon, worse_evening, wakes_at_night]",
+    "energy_state: enum [tired_but_wired, exhausted, irritable, cold]",
+    "existing_diagnosis: multi-select [migraine_with_aura, migraine_without_aura, tension_headache, cervical_spine, diabetes, hypertension, anxiety_depression]",
+    "current_medications: multi-select [triptan, beta_blocker, antidepressant, gabapentin_pregabalin, NSAID, none]",
+    "treatment_response: enum [helps_temporarily, helps_pain_but_drains, helps_less_less, helps_but_side_effects, no_help]",
+    "body_signals: multi-select [dry_mouth, dry_stool_constipation, dark_urine, dry_skin, brittle_nails, brittle_hair, bloating_heaviness, cold_hands_feet, sweating_without_exertion, usually_cold, usually_hot]",
+    "tongue_photo: optional upload",
+    "tongue_features: multi-select [swollen, thin, dry, thick_coating, purple_dark, normal]",
+    "trigger_category: enum [weather, stress_overload, overexertion, sleep_disruption, food_alcohol_histamine, infection, hormonal]",
+    "early_warning_signs: multi-select [bloating, reflux, constipation, nausea, neck_stiffness, jaw_tightness, shoulder_pull, light_sensitivity, scalp_tenderness, irritability_buzzing, pulsatile_temple, heavy_head, cold_hands_feet, exertion_intolerance]",
+    "frailty: boolean",
+    "emotional_constraint: boolean (backend only — not shown to patient)",
+    "digestive_sensitivity: boolean",
+    "cancer_active: boolean",
+    "post_chemo_window: boolean",
+    "gut_flare_active: boolean",
+    "new_neurological_deficit: boolean (red flag screen)"
+  ],
+
+  "scoring_axes": [
+    {
+      "axis": "nerve_first_score",
+      "inputs": ["visual_aura (+2)", "photophobia (+2)", "phonophobia (+1)", "nausea_with_sensory_overload (+1)", "burning_electric_pain (+2)", "allodynia (+2)", "triptan_partial_response (+2)", "tired_but_wired (+1)", "scalp_tenderness (+1)"]
+    },
+    {
+      "axis": "fascia_first_score",
+      "inputs": ["tight_band_like_pain (+2)", "neck_shoulder_precedes_headache (+2)", "movement_provokes (+2)", "trigger_points (+2)", "weather_barometric_sensitivity (+2)", "morning_stiffness (+1)", "relief_from_heat_manual_therapy (+1)"]
+    },
+    {
+      "axis": "gut_metabolic_first_score",
+      "inputs": ["food_triggered (+2)", "bloating_reflux_constipation (+2)", "PMS_headache (+2)", "post_infectious_onset (+2)", "relief_after_bowel_movement (+1)", "heat_fever_component (+1)", "inflammatory_flares (+1)"]
+    },
+    {
+      "axis": "vessel_dominant_score",
+      "inputs": ["pulsing_throbbing_fixed_location (+2)", "exertion_worsens (+2)", "cold_extremities (+1)", "post_COVID (+2)", "lipid_metabolic_background (+1)", "dark_tongue_purple (+1)", "worse_with_exertion (+2)"]
+    },
+    {
+      "axis": "mitochondrial_fatigue_score",
+      "inputs": ["exhausted_energy_state (+2)", "cold_energy_state (+1)", "morning_headache (+2)", "beta_blocker_use (+2)", "antidepressant_use (+2)", "helps_but_drains_response (+2)"]
+    }
+  ],
+
+  "output_screens": {
+    "patient_facing": {
+      "primary_focus": "dominant pattern label in plain language",
+      "secondary_support": "second-highest axis intervention",
+      "tertiary_support": "EZ-water / membrane rebuild if indicated",
+      "avoid": "contraindicated actions for this pattern",
+      "compatibility_note": "plain language note on current medications vs pattern",
+      "red_flags": "separate button — neuro deficits, thunderclap → clinician immediately",
+      "reassessment_trigger": "10–14 day check-in loop"
+    },
+    "clinician_facing": {
+      "axis_scores": "all 5 axis scores with contributing inputs",
+      "dominant_pattern": "pattern name + embryological layer + TCM channel",
+      "intervention_hierarchy": "first-line + second-line + rebuild layer",
+      "drug_terrain_conflicts": "flagged medications that worsen pattern",
+      "contraindications": "full list",
+      "debug_mode": "rule trace available if systemMode = internal_audit"
+    }
+  },
+
+  "notes": [
+    "Vessel-dominant is treated as a parallel/overlay axis, not a fourth independent axis in the tri-axial embryological model. Blood and vessels are mesodermal — this is a sub-branch of fascia_first/mesoderm.",
+    "Glutathione is a MAM-level modulator, not a simple antioxidant. High glutathione does NOT equal healthy cell. Context-dependency is critical.",
+    "The emotional_constraint field is backend-only. Patient-facing language replaces it with: 'prolonged nervous system activation' or 'cellular stress-adaptation response'.",
+    "Berberine is flare-only — never maintenance. Engine must enforce this as a hard rule.",
+    "Ginger exclusion in dry pattern is a hard rule (already formalised in Avicenna 2 Pack 1 logic).",
+    "Adaptogen stacking is a hard block — ProImmunoR, strong cooling protocols, and stacking are all contraindicated in acute headache phase.",
+    "The tri-axial model (Nerve/Fascia/Gut = Taiyang/Shaoyang/Yangming = Ectoderm/Mesoderm/Endoderm) is the conceptual backbone of the headache engine — this is a structural parallel, not a literal equivalence claim.",
+    "Laser pathway: photon → EZ-water → fascia. Herbs pathway: colloid → blood. Drug pathway: receptor → local channel. These are parallel, non-competing mechanisms with a required hierarchy.",
+    "MAM (mitochondria-associated membranes) is the biological bridge between emotional/informational load and mitochondrial function — backend model only.",
+    "All supplement recommendations are educational support tools, not medical prescriptions. Clinician review flagging must be preserved in output for safety."
+  ]
+}

@@ -101,8 +101,6 @@ function applyDigestiveSensitivity(herbs, sensitivity, pattern) {
   return { herbs: filtered, applied: true };
 }
 
-}
-
 function integrateSecondary(herbs, primaryPattern, energyState, trace) {
   if (energyState === "neutral" || primaryPattern === energyState) return herbs;
 

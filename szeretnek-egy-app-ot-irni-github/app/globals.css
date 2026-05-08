@@ -33,6 +33,11 @@ input {
   font: inherit;
 }
 
+input[type="file"],
+input[type="number"] {
+  width: 100%;
+}
+
 .av-page {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
@@ -67,6 +72,28 @@ input {
 .av-header span {
   color: var(--muted);
   font-size: 17px;
+}
+
+.av-mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.av-mode-tab {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 10px 12px;
+}
+
+.av-mode-tab-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
 }
 
 .av-workspace {
@@ -193,6 +220,10 @@ input {
   padding: 22px;
 }
 
+.av-output-header-danger {
+  background: var(--safety-text);
+}
+
 .av-output-header p {
   font-family: "Courier New", monospace;
   font-size: 12px;
@@ -282,6 +313,47 @@ input {
 .av-debug span {
   display: block;
   margin-top: 6px;
+}
+
+.av-file,
+.av-number {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.av-axis-table {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.av-axis-row {
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 9px 10px;
+}
+
+.av-axis-row strong {
+  overflow-wrap: anywhere;
+}
+
+.av-headache-output .av-debug {
+  font-family: inherit;
+}
+
+.av-headache-output .av-debug > summary {
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 @media (max-width: 920px) {

@@ -6,9 +6,13 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 
 - A Next.js App Router interface in `app/`
 - A server-side protocol endpoint at `app/api/protocol/route.js`
+- A dedicated headache/migraine pattern endpoint at `app/api/headache/route.js`
 - The migrated rule engine in `lib/avicenna/engine.cjs`
+- The Batch 6 headache engine in `lib/avicenna/headacheEngine.cjs`
 - Claude-exported data files in `lib/avicenna/data/`
+- Batch 6 structured source data in `lib/avicenna/data/engines/headacheEngine.batch6.json`
 - Engine regression checks in `scripts/test-engine.cjs`
+- Headache engine checks in `scripts/test-headache-engine.cjs`
 - Original Claude export preserved in `avicenna-export/`
 
 ## Run locally
@@ -35,6 +39,7 @@ http://localhost:3000
 
 ```bash
 npm run test:engine
+npm run test:headache
 ```
 
 ## GitHub setup
