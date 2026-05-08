@@ -109,6 +109,26 @@ const headacheInitialInput = {
   laser_eligibility_check: false,
   omega3_dose: "",
   reassessment_day: "",
+  dominant_state: "",
+  berberine_status: "OFF",
+  system_response_at_day3_7: "",
+  headache_character: "",
+  pain_onset_pattern: "",
+  pain_location: "head",
+  pain_timing: "",
+  instability_present: false,
+  radiculopathy_present: false,
+  cold_signs: false,
+  heat_signs: false,
+  tongue: "",
+  pulse: "",
+  Shaoyang_collapse_cluster_signs: [],
+  triptan_response: "",
+  gepant_use: false,
+  gepant_side_effects: [],
+  current_phase: "",
+  red_flag_present: false,
+  red_flag_type: [],
   internal_audit: false
 };
 
@@ -174,6 +194,117 @@ const headacheFieldGroups = [
       ["none", "None", "Not currently used"],
       ["low", "Low", "Small dose only"],
       ["high", "High", "High-dose use"]
+    ]
+  }
+];
+
+const batch7FieldGroups = [
+  {
+    key: "current_phase",
+    label: "Current phase",
+    options: [
+      ["flare", "Flare", "Short-term stabilisation only"],
+      ["baseline", "Baseline", "Rebuild and strengthen"],
+      ["post_flare_rebuild", "Post-flare rebuild", "Transition from calming to reconstruction"]
+    ]
+  },
+  {
+    key: "dominant_state",
+    label: "Dominant state",
+    options: [
+      ["heat_flare", "Heat flare", "Inflammatory escalation"],
+      ["dampness_stagnation", "Dampness baseline", "Chronic stagnation"],
+      ["cold_deficiency", "Cold deficiency", "Cold, low warmth"],
+      ["mixed_unstable", "Mixed unstable", "Overlapping state"]
+    ]
+  },
+  {
+    key: "berberine_status",
+    label: "Berberine switch",
+    options: [
+      ["OFF", "Off", "Not active"],
+      ["ON", "On", "Short flare switch only"]
+    ]
+  },
+  {
+    key: "system_response_at_day3_7",
+    label: "Day 3-7 response",
+    options: [
+      ["stabilised", "Stabilised", "Calmer, less flare"],
+      ["worse", "Worse", "Symptoms increased"],
+      ["no_change", "No change", "No clear shift"]
+    ]
+  },
+  {
+    key: "headache_character",
+    label: "Headache character",
+    options: [
+      ["pulsing_throbbing", "Pulsing", "Vessel-amplitude signal"],
+      ["burning_vibrating", "Burning / vibrating", "Nerve-first signal"],
+      ["dull_deep", "Dull deep", "Fascia-buffer signal"],
+      ["tight_band", "Tight band", "Fascia-line signal"]
+    ]
+  },
+  {
+    key: "pain_onset_pattern",
+    label: "Progression pattern",
+    options: [
+      ["nerve_first", "Nerve first", "Noise / sensory first"],
+      ["vessel_first", "Vessel first", "Throbbing / amplitude first"],
+      ["fascia_first", "Fascia first", "Tension / buffer first"],
+      ["mixed_chronic", "Mixed chronic", "Layered migration"]
+    ]
+  },
+  {
+    key: "pain_location",
+    label: "Main location",
+    options: [
+      ["head", "Head", "Headache dominant"],
+      ["shoulder", "Shoulder", "Shoulder capsule pattern"],
+      ["hip", "Hip", "Hip capsule / cartilage / ligament"],
+      ["spine", "Spine", "Facet / disc / segmental"],
+      ["mixed", "Mixed", "Multiple regions"]
+    ]
+  },
+  {
+    key: "pain_timing",
+    label: "Pain timing",
+    options: [
+      ["rest_night", "Rest / night", "Pain at rest or at night"],
+      ["load_only", "Load only", "Pain mainly with load"],
+      ["morning_worse_improves", "Morning worse", "Improves through day"],
+      ["constant", "Constant", "Persistent"]
+    ]
+  },
+  {
+    key: "tongue",
+    label: "Tongue pattern",
+    options: [
+      ["purple_engorged", "Purple / engorged", "Vessel signs"],
+      ["wet_coated", "Wet coated", "Dampness signs"],
+      ["thin_dry", "Thin dry", "Dry rebuild signs"],
+      ["normal", "Normal", "No strong signal"]
+    ]
+  },
+  {
+    key: "pulse",
+    label: "Pulse pattern",
+    options: [
+      ["weak", "Weak", "Low recovery signal"],
+      ["wiry", "Wiry", "Tension signal"],
+      ["full", "Full", "Excess / flare signal"],
+      ["normal", "Normal", "No strong signal"]
+    ]
+  },
+  {
+    key: "triptan_response",
+    label: "Triptan response",
+    options: [
+      ["good", "Good", "Clear acute help"],
+      ["partial", "Partial", "Some help"],
+      ["stops_working", "Stops working", "Diminishing response"],
+      ["rebound", "Rebound", "Returns or rebounds"],
+      ["not_used", "Not used", "Not applicable"]
     ]
   }
 ];
@@ -268,6 +399,7 @@ const headacheMultiGroups = [
 const headacheSafetyFlags = [
   ["thunderclap_headache", "Thunderclap headache"],
   ["new_neurological_deficit", "New neurological deficit"],
+  ["red_flag_present", "Other red flag present"],
   ["cancer_active", "Active cancer"],
   ["post_chemo_window", "Post-chemo window"],
   ["gut_flare_active", "Active gut flare"],
@@ -283,7 +415,42 @@ const headacheAdvancedFlags = [
   ["multiple_adaptogens_stacking", "Multiple adaptogens stacking"],
   ["glutathione_initiated", "Glutathione initiated"],
   ["EZ_stabilisation_not_done", "EZ preparation not completed"],
-  ["laser_eligibility_check", "Laser eligibility check"]
+  ["laser_eligibility_check", "Laser eligibility check"],
+  ["instability_present", "Instability present"],
+  ["radiculopathy_present", "Radiculopathy present"],
+  ["cold_signs", "Cold signs"],
+  ["heat_signs", "Heat signs"],
+  ["gepant_use", "Gepant use"]
+];
+
+const shaoyangClusterItems = [
+  ["migraine", "Migraine"],
+  ["TMJ", "TMJ"],
+  ["intercostal_neuralgia", "Intercostal neuralgia"],
+  ["hip_pain", "Hip pain"],
+  ["meralgia", "Meralgia"],
+  ["knee_pain", "Knee pain"],
+  ["ankle_pain", "Ankle pain"],
+  ["bursitis", "Bursitis"]
+];
+
+const redFlagTypes = [
+  ["thunderclap", "Thunderclap onset"],
+  ["neuro_deficit", "Neurological deficit"],
+  ["papilloedema", "Papilloedema"],
+  ["neck_stiffness", "Neck stiffness"],
+  ["immunocompromised", "Immunocompromised"],
+  ["fever_weight_loss", "Fever / weight loss"],
+  ["new_over_50", "New headache age >50"],
+  ["progressive", "Progressive worsening"],
+  ["head_trauma", "Recent head trauma"],
+  ["exertional", "Exertional headache"]
+];
+
+const gepantSideEffects = [
+  ["nausea", "Nausea"],
+  ["fatigue", "Fatigue"],
+  ["constipation", "Constipation"]
 ];
 
 function titleCase(value) {
@@ -466,11 +633,34 @@ function HeadacheResult({ result, advanced, onReset }) {
             </div>
           </div>
           <p>Dominant pattern: {result.dominant_pattern}</p>
+          <p>Matching Batch 7 pattern: {result.matching_pattern}</p>
+          <p>Detected phase: {result.current_phase}</p>
+          <p>Dominant layer: {result.dominant_layer}</p>
           <p>Embryological layer: {result.embryological_layer}</p>
           <p>TCM channel: {result.tcm_channel}</p>
+          <p>Red flags: {result.clinician.red_flag_status.length ? result.clinician.red_flag_status.join(", ") : "none"}</p>
           <p>Vessel overlay: {result.vessel_overlay_active ? "active" : "not dominant"}</p>
+          <p>Laser: {result.laser_layer_recommendation.recommendation}</p>
+          <p>Berberine: {result.berberine_switch.status} - {result.berberine_switch.next_step}</p>
+          <p>Shaoyang collapse cluster: {result.shaoyang_collapse_cluster.present ? result.shaoyang_collapse_cluster.signs.join(", ") : "absent"}</p>
           <TagSection title="Drug-terrain conflicts" items={result.drug_terrain_conflicts} tone="avoid" empty="None flagged" />
           <TagSection title="Contraindications" items={result.contraindications} tone="avoid" empty="None flagged" />
+          <section>
+            <h2>Intervention interoperability</h2>
+            <p>{result.intervention_interoperability.description}</p>
+            {result.intervention_interoperability.rows.map((row) => (
+              <span key={row.dominant_layer}>
+                {row.dominant_layer}: medication = {row.medication_role}; supplements = {row.supplement_role}; laser = {row.laser_role}
+              </span>
+            ))}
+          </section>
+          <section>
+            <h2>Ayurveda interface map</h2>
+            <p>{result.ayurveda_interface_map.note}</p>
+            {result.ayurveda_interface_map.rows.map((row) => (
+              <span key={row.ayurveda}>{row.ayurveda}: {row.base44}</span>
+            ))}
+          </section>
           {result.clinician.rule_trace.length > 0 && (
             <section>
               <h2>Rule trace</h2>
@@ -571,6 +761,29 @@ function HeadacheEngineSection() {
           </section>
         ))}
 
+        {batch7FieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
         {headacheMultiGroups.map((group) => (
           <ToggleList
             key={group.key}
@@ -619,6 +832,26 @@ function HeadacheEngineSection() {
               items={headacheAdvancedFlags}
               selected={headacheAdvancedFlags.filter(([key]) => input[key]).map(([key]) => key)}
               onToggle={(value) => setField(value, !input[value])}
+              safety
+            />
+            <ToggleList
+              title="Shaoyang collapse cluster"
+              items={shaoyangClusterItems}
+              selected={input.Shaoyang_collapse_cluster_signs}
+              onToggle={(value) => toggleArray("Shaoyang_collapse_cluster_signs", value)}
+            />
+            <ToggleList
+              title="Red flag details"
+              items={redFlagTypes}
+              selected={input.red_flag_type}
+              onToggle={(value) => toggleArray("red_flag_type", value)}
+              safety
+            />
+            <ToggleList
+              title="Gepant side effects"
+              items={gepantSideEffects}
+              selected={input.gepant_side_effects}
+              onToggle={(value) => toggleArray("gepant_side_effects", value)}
               safety
             />
             <section className="av-section">

@@ -1,0 +1,766 @@
+{
+  "patterns": [
+
+    {
+      "name": "heat_flare_active",
+      "triggers": [
+        "acute inflammatory escalation",
+        "feverish GI or pain flare",
+        "emotional overload with somatic symptoms",
+        "premenstrual inflammatory worsening",
+        "berberine_ON conditions met"
+      ],
+      "symptoms": [
+        "acute pain escalation",
+        "fever or heat sensation",
+        "GI flare (nausea, loose stool)",
+        "PMS inflammatory worsening",
+        "somatic emotional overflow"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Berberine", "role": "anti-inflammatory flare control — ON switch only", "notes": "HARD RULE: flare phase only; 3–7 day use; taper OFF when stabilised; NEVER maintenance" }
+        ],
+        "preparation": "capsule; short course only",
+        "device": "none during acute flare; defer laser until stabilised"
+      }
+    },
+
+    {
+      "name": "dampness_stagnation_baseline",
+      "triggers": [
+        "chronic low-grade symptoms",
+        "fatigue-dominant state",
+        "post-infectious or post-antibiotic phase",
+        "cold intolerance present",
+        "berberine_OFF conditions met"
+      ],
+      "symptoms": [
+        "chronic dull symptoms",
+        "fatigue",
+        "cold intolerance",
+        "post-infection residue",
+        "bloating without acute flare"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Fiber (soluble)", "role": "GI grounding, microbiome scaffold — baseline foundation", "notes": "always present when berberine is OFF" },
+          { "name": "Mucosal/fascia rebuild support (aloe, chamomile)", "role": "repair phase", "notes": "gentle; not stimulating" },
+          { "name": "Ginger (gentle warming)", "role": "if cold-damp confirmed", "notes": "only if cold pattern present; exclude if dry" },
+          { "name": "DuoLife Day/Night", "role": "mitochondrial recall + circadian reset", "notes": "if fatigue dominates" }
+        ],
+        "preparation": "capsule or tea; gentle, non-stimulating",
+        "device": "PEMF low intensity; heat modulation (gentle)"
+      }
+    },
+
+    {
+      "name": "cold_deficiency_yang_insufficient",
+      "triggers": [
+        "cold intolerance",
+        "weak pulse",
+        "fatigue in cardiac/lung/chest region",
+        "no redness, no heat",
+        "cold-wet weather worsens",
+        "Shaoyang GB/TB line collapse signs (see shoulder pattern)",
+        "hypotonic muscles (Yin-type)"
+      ],
+      "symptoms": [
+        "cold extremities",
+        "cold shoulder or joint",
+        "wet coated tongue",
+        "weak pulse",
+        "fatigue without heat",
+        "frozen joint (shoulder, hip)",
+        "depression co-present",
+        "Raynaud features",
+        "numbness (large fiber neuropathy type)"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "ProStik", "role": "capsule/ECM release — targeted local Yang", "notes": "first-line for frozen joint patterns" },
+          { "name": "Vitamin D + Nigella", "role": "membrane fluidity, short-term Yang support", "notes": "short course; not long-term stimulation" },
+          { "name": "Chlorophyll", "role": "light-membrane interface support", "notes": "adjunct" },
+          { "name": "Ginger tea (fine, not aggressive)", "role": "gentle mitochondrial warmth recall", "notes": "finom, nem agresszív" },
+          { "name": "Astragalus (optional)", "role": "EZ-scaffold, mitochondrial recall", "notes": "intermittent; monitor peripheral perfusion" },
+          { "name": "Ginseng (intermittent low dose)", "role": "mitochondrial recall, not stimulation", "notes": "cold days / winter use; monitor cold sensation improvement" },
+          { "name": "Cinnamon tea (fahéj)", "role": "Yang warming — lower limb / extremity direction", "notes": "gentle; not high-dose systemic" }
+        ],
+        "preparation": "tea preferred for warming herbs; capsule for ProStik; laser primary device",
+        "device": "laser (local, targeted Yang via fascia); NOT systemic large-dose Yang herbs (Fu Zi / Rou Gui doses)"
+      }
+    },
+
+    {
+      "name": "hypertonic_damp_heat_yang_type",
+      "triggers": [
+        "hypertonic muscles",
+        "overuse pattern",
+        "no cold signs",
+        "explosive tension rather than freezing",
+        "feszes trapéz (tight trapezius)"
+      ],
+      "symptoms": [
+        "tight trapezius",
+        "tension without cold",
+        "overuse injury",
+        "heat sensation in affected area",
+        "stiffness that loosens with movement"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "RegenOil", "role": "membrane fluidity, fascial release", "notes": "first-line for hypertonic/damp-heat pattern" },
+          { "name": "Aloe vera", "role": "anti-inflammatory, mucosal cooling", "notes": "" },
+          { "name": "Vitamin D + Nigella", "role": "short-term membrane support", "notes": "short course" }
+        ],
+        "preparation": "topical and oral combination where applicable",
+        "device": "laser (mitochondria + water-grid fill; restores normal energy production); avoid excessive Yang stimulation"
+      }
+    },
+
+    {
+      "name": "nerve_first_signal_overload",
+      "triggers": [
+        "emotional overload",
+        "visceral reflex (GI, uterus, bowel)",
+        "sleep deprivation",
+        "sensory overload (screen, noise)",
+        "diffuse vibrating pain precedes vascular involvement",
+        "nausea + dizziness dominant",
+        "anxiety component present"
+      ],
+      "symptoms": [
+        "diffuse, burning, vibrating pain",
+        "nausea and dizziness",
+        "anxiety component",
+        "less pulsatile than vessel-first",
+        "photophobia / phonophobia (secondary)",
+        "GI link (visceral reflex)"
+      ],
+      "phase_logic": "nerve collapses BEFORE vessel can respond — signal too large before vascular amplitude engages",
+      "interventions": {
+        "herbs": [
+          { "name": "ProSelect", "role": "neural noise dampening — first-line nerve-first", "notes": "day use" },
+          { "name": "Fiber / MyGastrin", "role": "GI-nerve axis stabilisation", "notes": "if GI component confirmed" },
+          { "name": "Magnesium / B6", "role": "neural stabilisation, CGRP pathway support", "notes": "first-line supplemental" },
+          { "name": "ProDeAcid", "role": "fascia calming — second line", "notes": "adjunct to neural support" },
+          { "name": "ProRelaxin", "role": "physiological restorative sleep", "notes": "evening use; second line" }
+        ],
+        "preparation": "capsule; nerve-first pattern does NOT lead with triptan",
+        "device": "laser: low-energy, superficial, cervical/auricular/trigeminal zones; TENS; vagus nerve stimulation",
+        "pharmaceutical_notes": "ondansetron-logic (5-HT3 antagonist) = decouples nerve from noisy periphery; appropriate for GI-dominant nerve-first; triptans OFTEN NOT ideal first step in nerve-first"
+      }
+    },
+
+    {
+      "name": "vessel_first_amplitude_overload",
+      "triggers": [
+        "hormonal change",
+        "weather / barometric pressure shift",
+        "physical overexertion",
+        "dehydration",
+        "migraine predisposition",
+        "pulsatile pain dominant",
+        "aura present",
+        "paradox triptan response (short relief then rebound)"
+      ],
+      "symptoms": [
+        "pulsatile throbbing pain",
+        "aura",
+        "photophobia / phonophobia",
+        "unilateral pain",
+        "pressure fullness sensation",
+        "tongue: purple, engorged veins",
+        "rebound after triptan",
+        "weather sensitivity",
+        "menstrual correlation"
+      ],
+      "phase_logic": "vessel cannot handle amplitude — nerve still capable but vessel enters phase delay; classical neurovascular decoupling",
+      "serotonin_model": "triptans (5-HT1B/1D agonists) = local amplitude reset, NOT global vasoconstriction; reduces pulsatile biofoton / signal load; hard reset; NOT sustained rebuild",
+      "interventions": {
+        "herbs": [
+          { "name": "ProMigren / ProMigraine", "role": "primary neurovascular support, vessel-first pattern", "notes": "first-line Base44" },
+          { "name": "Vitamin D + Nigella", "role": "short-term membrane fluidity support", "notes": "acute phase adjunct" },
+          { "name": "Spirulina", "role": "EZ-water / ECM baseline rebuild", "notes": "stabilisation phase after acute" },
+          { "name": "Collagen", "role": "fascia rebuild post-vessel-first episode", "notes": "stabilisation phase" },
+          { "name": "Xue Fu Zhu Yu Tang", "role": "blood-moving, turbulent → laminar flow correction (head region)", "notes": "TCM formula; vessel-dominant headache with stasis signs" },
+          { "name": "Dan Shen line", "role": "coronary-field ordering, vessel clearing (chest region)", "notes": "if chest / cardiac field involved" },
+          { "name": "Gui Zhi Fu Ling Wan", "role": "cold-stasis + blood stasis (pelvic / lower)", "notes": "menstrual / lower body vessel stasis" },
+          { "name": "Niu Xi + Huang Bai + Cang Zhu", "role": "gravitational stasis drainage (lower extremity)", "notes": "" }
+        ],
+        "preparation": "capsule; vessel tools are NOT blood thinners — they are flow-quality modulators",
+        "device": "laser: medium energy, perivascular planes, temporal/orbital region",
+        "pharmaceutical_notes": "triptan / ergotamine: appropriate acute tool; NOT curative; rebound risk if used frequently; fails when EZ-water not rebuilt"
+      }
+    },
+
+    {
+      "name": "fascia_first_buffer_failure",
+      "triggers": [
+        "neither nerve nor vessel can dampen noise → fascia takes the load",
+        "chronic tension pattern",
+        "trauma memory in ECM",
+        "ECM / water-grid decoherence",
+        "persistent microtubule tension",
+        "slow self-sustaining oscillation"
+      ],
+      "symptoms": [
+        "dull, deep pain",
+        "neck-shoulder-skull base involvement",
+        "worse in morning",
+        "medications only partially effective",
+        "changes with movement / stretching",
+        "weather sensitive",
+        "trigger points present",
+        "refractory to triptans and ondansetron"
+      ],
+      "phase_logic": "chronic headache migration endpoint; progression: nerve-first → vessel-first → fascia-first",
+      "interventions": {
+        "herbs": [
+          { "name": "Spirulina", "role": "EZ-water stabilisation, ECM rebuild", "notes": "first-line fascia pattern" },
+          { "name": "Collagen", "role": "structural ECM support", "notes": "first-line" },
+          { "name": "ProDeAcid", "role": "fascia modulation, acid-base correction in connective tissue", "notes": "first-line" },
+          { "name": "Magnesium", "role": "fascial and neural co-stabilisation", "notes": "first-line" },
+          { "name": "RegenOil / Vitamin D + Nigella", "role": "membrane and EZ-water support (phase-dependent)", "notes": "second line; choose by phase" }
+        ],
+        "preparation": "capsule; longer treatment duration required; combine with physical modalities",
+        "device": "laser: low-medium energy, fascia lines (neck, shoulder, scalp); longer sessions; home superficial device (cell activator / Bioptron-type) for maintenance; Summus = deep phase reset (mitochondria-fascia); home device = surface fascia maintenance"
+      }
+    },
+
+    {
+      "name": "shoulder_capsule_cold_stasis",
+      "triggers": [
+        "pain at rest + night pain + restricted movement",
+        "cold extremities (HT, LU, PC meridian cold)",
+        "Raynaud features",
+        "large fiber neuropathy / numbness (Taiyang)",
+        "fatigued cold upper body",
+        "Shaoyang collapse signs: check for migraine, TMJ, intercostal neuralgia, hip pain, meralgia, knee/ankle pain, bursitis"
+      ],
+      "symptoms": [
+        "frozen shoulder",
+        "cold hands",
+        "Raynaud-type features",
+        "numbness / tingling",
+        "fatigue without heat",
+        "weak pulse",
+        "no redness, no warmth"
+      ],
+      "tcm_channel": "Taiyang / SI-BL line; Shaoyang GB-TB collapse",
+      "interventions": {
+        "herbs": [
+          { "name": "ProStik", "role": "capsule/ECM release, local targeted Yang", "notes": "first-line" },
+          { "name": "Vitamin D + Nigella", "role": "membrane fluidity, short Yang support", "notes": "short course" },
+          { "name": "Chlorophyll", "role": "light-membrane interface", "notes": "adjunct" },
+          { "name": "Ginger tea (gentle)", "role": "gentle warmth recall", "notes": "not aggressive" },
+          { "name": "Astragalus (optional)", "role": "mitochondrial recall", "notes": "optional adjunct" },
+          { "name": "Ginseng (optional)", "role": "mitochondrial recall", "notes": "optional adjunct" }
+        ],
+        "preparation": "tea + capsule combination; laser primary",
+        "device": "laser: local targeted Yang via fascia; NOT systemic Fu Zi / Rou Gui level heating"
+      }
+    },
+
+    {
+      "name": "hip_capsule_deep_fascia_oedema",
+      "triggers": [
+        "pain at rest, night pain, pain when sitting",
+        "deep hip capsule / ligament involvement",
+        "oedema component"
+      ],
+      "symptoms": [
+        "rest pain",
+        "night pain",
+        "sitting-provoked pain",
+        "deep hip stiffness"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "ProStik", "role": "capsule/ECM release", "notes": "first-line" },
+          { "name": "RegenOil (long term)", "role": "sustained membrane support", "notes": "" },
+          { "name": "Vitamin D + Nigella (short term)", "role": "membrane fluidity", "notes": "" },
+          { "name": "Chlorophyll", "role": "light-membrane adjunct", "notes": "" }
+        ],
+        "preparation": "capsule + long-term oral",
+        "device": "laser: deep fascia targeting"
+      }
+    },
+
+    {
+      "name": "hip_cartilage_deficiency_blood_stasis",
+      "triggers": [
+        "pain on load / walking (not at rest)",
+        "no significant instability",
+        "cartilage-dominant OA pattern",
+        "dry or blood-deficient signs"
+      ],
+      "symptoms": [
+        "load-provoked hip pain",
+        "absence of instability",
+        "dry signs (dry skin, dark urine)",
+        "possible circulation signs"
+      ],
+      "tcm_analog": "Bu Shen Huo Xue: bushen = steroid replacement support (ginger-cinnamon tea); huoxue = blood moving (ProCardiol, MyBlood)",
+      "interventions": {
+        "herbs": [
+          { "name": "Collagen", "role": "cartilage matrix support", "notes": "first-line" },
+          { "name": "Spirulina", "role": "EZ-water support, yin nourishment", "notes": "first-line" },
+          { "name": "MyBlood", "role": "blood moving, if dry/blood-deficient", "notes": "conditional: add if dryness confirmed" },
+          { "name": "ProCardiol", "role": "microcirculation support", "notes": "conditional: add if circulation signs present" },
+          { "name": "Ginger-cinnamon tea", "role": "steroid-support analog (Bu Shen), mild Yang warmth", "notes": "adjunct" }
+        ],
+        "preparation": "oral capsule + tea",
+        "device": "uncertain (not specified for this sub-pattern)"
+      }
+    },
+
+    {
+      "name": "hip_ligament_laxity_cold_mitochondrial_weakness",
+      "triggers": [
+        "joint instability / 'gives way'",
+        "hypermobility",
+        "cold-type pattern",
+        "mitochondrial weakness signs"
+      ],
+      "symptoms": [
+        "joint slipping / giving way",
+        "hypermobility",
+        "cold extremities",
+        "fatigue"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Collagen", "role": "ligament structural support", "notes": "first-line" },
+          { "name": "RegenOil", "role": "membrane support", "notes": "first-line" },
+          { "name": "Spirulina", "role": "yin/EZ support adjunct", "notes": "" },
+          { "name": "Ginseng (intermittent low dose)", "role": "mitochondrial recall", "notes": "cold days / winter; monitor peripheral perfusion" },
+          { "name": "Ginger (intermittent)", "role": "gentle warmth", "notes": "monitor" },
+          { "name": "Astragalus (conditional)", "role": "EZ scaffold, especially in cold/winter", "notes": "monitor for cold relief and warming hands/feet" }
+        ],
+        "preparation": "capsule; monitor response",
+        "device": "uncertain"
+      }
+    },
+
+    {
+      "name": "spine_facet_capsule_ligament_oedema",
+      "triggers": [
+        "pain at rest / night pain",
+        "facet joint capsule / ligament involvement",
+        "oedema component"
+      ],
+      "symptoms": [
+        "night pain",
+        "rest pain",
+        "morning worse, improves through day (ligament laxity sub-type)",
+        "stiffness at rest"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "ProStik", "role": "capsule/ECM release", "notes": "first-line" },
+          { "name": "RegenOil", "role": "membrane support", "notes": "" },
+          { "name": "Ginger-cinnamon tea", "role": "gentle Yang warmth", "notes": "ligament laxity sub-type" },
+          { "name": "Collagen", "role": "structural support (ligament sub-type)", "notes": "" },
+          { "name": "RegenOil (ligament sub-type)", "role": "", "notes": "" }
+        ],
+        "preparation": "capsule + tea",
+        "device": "laser: paraspinal, segmental along bladder meridian and huatuojiaji points — relaxes erector spinae fascia, corresponds to vegetative control of ventral segment (thoracic + abdominal organ water grid); anatomically = paravertebral space"
+      }
+    },
+
+    {
+      "name": "spine_disc_dominant_degeneration",
+      "triggers": [
+        "pain on load / flexion-extension",
+        "worse with bending",
+        "radiculopathy only if disc bulge + nerve root irritation confirmed"
+      ],
+      "symptoms": [
+        "flexion-provoked pain",
+        "radiation only with confirmed disc bulge",
+        "dry degeneration signs"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Collagen", "role": "disc matrix support", "notes": "first-line" },
+          { "name": "Spirulina", "role": "long-term yin support", "notes": "optional: add goji berry for enhanced yin nourishment" },
+          { "name": "MyBlood", "role": "if dryness / degenerative blood deficiency signs", "notes": "conditional" }
+        ],
+        "preparation": "oral long-term",
+        "device": "uncertain for disc-specific"
+      }
+    },
+
+    {
+      "name": "migraine_western_ICHD3",
+      "triggers": [
+        "migraine without aura: ≥5 attacks, 4–72h, 2+ of: unilateral/pulsating/moderate-severe/exertion-aggravated, + nausea/vomiting OR photophobia/phonophobia",
+        "migraine with aura: ≥2 attacks, reversible aura >4min gradual onset <60min, headache follows within 60min",
+        "chronic migraine: ≥15 headache days/month >3 months, ≥8 fulfilling migraine criteria"
+      ],
+      "symptoms": [
+        "unilateral pulsating pain",
+        "moderate-severe intensity",
+        "exertion aggravation",
+        "nausea / vomiting",
+        "photophobia / phonophobia",
+        "reversible aura (visual, sensory)",
+        "aura preceding headache by <60 min"
+      ],
+      "red_flags_engine_stop": [
+        "thunderclap onset",
+        "neurological deficit",
+        "papilloedema",
+        "neck stiffness",
+        "immunocompromised",
+        "fever + weight loss",
+        "new headache age >50",
+        "progressive worsening",
+        "recent head trauma",
+        "headache worse with exercise (exertional)"
+      ],
+      "western_acute": ["paracetamol", "NSAIDs", "oxygen", "triptans", "CGRP mAb (galcanezumab)", "gepants (side effects: nausea, fatigue, constipation)"],
+      "western_prophylaxis": ["beta-blockers", "valproate", "topiramate", "sphenopalatine block", "stress management", "sleep hygiene", "manual therapy"],
+      "interventions": {
+        "herbs": [
+          { "name": "DuoLife Day/Night", "role": "stress-sleep rhythm support", "notes": "adjunctive" },
+          { "name": "ProDeAcid", "role": "dampens fascia noise", "notes": "" },
+          { "name": "ProSelect", "role": "dampens neural noise", "notes": "" },
+          { "name": "ProRelaxin", "role": "physiological restorative sleep", "notes": "evening" },
+          { "name": "ProCardiol", "role": "circulation and tissue perfusion support", "notes": "" },
+          { "name": "Magnesium", "role": "muscle relaxation, neuromodulation", "notes": "evidence-supported adjunct" },
+          { "name": "Riboflavin (B2)", "role": "mitochondrial support", "notes": "evidence-supported adjunct" },
+          { "name": "Xiao Chai Hu Tang + Mai Men Dong, Bai He, Wu Wei Zi, Bai Shao Yao, Xuan Shen", "role": "morning formula: Shaoyang branch + Yin nourishment", "notes": "practitioner-prescribed; Shaoyang/Yangming tension + Yin support" },
+          { "name": "Liu Wei Di Huang Wan derivative", "role": "evening formula: lower KD Yin stabilisation (Shaoyin sink)", "notes": "practitioner-prescribed" },
+          { "name": "Sheng Mai San (Mai Men Dong, Wu Wei Zi, Fu Shen, Huang Qi)", "role": "upper HT stabilisation", "notes": "adjunct; HT/KD Yuan Zhi link" }
+        ],
+        "preparation": "morning / evening split formulas; clinical practitioner supervision required for TCM formulas",
+        "device": "PBM / laser: periorbital and maxillary fascia; rationale: reduce muscle tension + peripheral nociceptive input"
+      }
+    }
+  ],
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "migraine without aura",
+      "associated_patterns": ["vessel_first_amplitude_overload", "signal_overload_neurovascular_decoupling"],
+      "notes": "ICHD-3 criteria apply. Primary driver: vessel-first amplitude overload. Nerve-first may precede. Serotonin axis = phase modulator not directional switch."
+    },
+    {
+      "diagnosis": "migraine with aura",
+      "associated_patterns": ["vessel_first_amplitude_overload", "nerve_first_signal_overload"],
+      "notes": "Aura = neurovascular decoupling signal; nerve precedes vessel. Mixed nerve + vessel pattern most likely."
+    },
+    {
+      "diagnosis": "chronic migraine",
+      "associated_patterns": ["fascia_first_buffer_failure", "vessel_first_amplitude_overload", "nerve_first_signal_overload"],
+      "notes": "Migration model: nerve-first → vessel-first → fascia-first. Chronic = endpoint of migration, not escalation. Multiple failed medications confirm fascia-dominant stage."
+    },
+    {
+      "diagnosis": "medication overuse headache (MOH)",
+      "associated_patterns": ["vessel_first_amplitude_overload", "mitochondrial_fatigue_energy_deficiency"],
+      "notes": "Triptans reset but do not rebuild. Failure pattern: helps less and less, shorter duration, rebound. Exit strategy required: stabilise → rebuild layer → reassess. DO NOT provide taper schedule — refer prescriber."
+    },
+    {
+      "diagnosis": "frozen shoulder (adhesive capsulitis)",
+      "associated_patterns": ["shoulder_capsule_cold_stasis", "cold_deficiency_yang_insufficient"],
+      "notes": "Capsule/ECM + cold stasis dominant. Interface problem, not lack of Yang. Local targeted Yang (laser + ProStik) preferred over systemic heating. Check Shaoyang collapse signs."
+    },
+    {
+      "diagnosis": "shoulder pain on load (rotator cuff / overuse)",
+      "associated_patterns": ["hypertonic_damp_heat_yang_type", "fascia_first_buffer_failure"],
+      "notes": "Yang-type / hypertonic: overuse, tight trapezius, no cold. Laser supports mitochondria + water-grid, not Yang push."
+    },
+    {
+      "diagnosis": "Raynaud's phenomenon (in shoulder context)",
+      "associated_patterns": ["shoulder_capsule_cold_stasis", "cold_deficiency_yang_insufficient"],
+      "notes": "HT, LU, PC meridian cold; large fiber neuropathy features; Taiyang line involvement."
+    },
+    {
+      "diagnosis": "hip osteoarthritis (cartilage-dominant)",
+      "associated_patterns": ["hip_cartilage_deficiency_blood_stasis"],
+      "notes": "Bu Shen Huo Xue analog: bushen = steroid support (ginger-cinnamon); huoxue = blood moving (MyBlood, ProCardiol). Load-provoked pain, no instability."
+    },
+    {
+      "diagnosis": "hip capsule / deep ligament pain",
+      "associated_patterns": ["hip_capsule_deep_fascia_oedema"],
+      "notes": "Rest/night pain = capsule/oedema dominant. ProStik first-line. Laser deep fascia."
+    },
+    {
+      "diagnosis": "hip ligament laxity / hypermobility",
+      "associated_patterns": ["hip_ligament_laxity_cold_mitochondrial_weakness"],
+      "notes": "Cold type + mitochondrial weakness. Collagen + RegenOil first-line. Intermittent ginseng/ginger/astragalus; monitor peripheral perfusion."
+    },
+    {
+      "diagnosis": "facet joint pain / spinal ligament pain",
+      "associated_patterns": ["spine_facet_capsule_ligament_oedema"],
+      "notes": "Rest/night pain = facet capsule. Laser paraspinal (bladder meridian / huatuojiaji) = vegetative control of ventral segment + organ water grid. ProStik first-line."
+    },
+    {
+      "diagnosis": "disc herniation / disc-dominant back pain",
+      "associated_patterns": ["spine_disc_dominant_degeneration"],
+      "notes": "Load/flexion pain. Radiculopathy only if disc bulge + nerve root irritation confirmed. Collagen + Spirulina long term."
+    },
+    {
+      "diagnosis": "spondylosis / spinal instability",
+      "associated_patterns": ["spine_facet_capsule_ligament_oedema", "cold_deficiency_yang_insufficient"],
+      "notes": "Morning worse, improves through day. Collagen + RegenOil + gentle warming tea. Cold worsens."
+    },
+    {
+      "diagnosis": "CRPS",
+      "associated_patterns": ["fascia_first_buffer_failure", "nerve_first_signal_overload"],
+      "notes": "Mixed fascia + nerve. Relapse often routes through gut axis. Layered protocol required."
+    },
+    {
+      "diagnosis": "functional GI migraine",
+      "associated_patterns": ["nerve_first_signal_overload", "gut_metabolic_dominant"],
+      "notes": "Ondansetron-logic appropriate: decouples nerve from noisy GI periphery. Fiber + MyGastrin adjunct."
+    },
+    {
+      "diagnosis": "IBS with headache",
+      "associated_patterns": ["gut_metabolic_dominant", "nerve_first_signal_overload"],
+      "notes": "Gut-brain axis involvement. Endoderm / Yangming axis primary."
+    },
+    {
+      "diagnosis": "cervicogenic headache",
+      "associated_patterns": ["fascia_first_buffer_failure", "shoulder_capsule_cold_stasis"],
+      "notes": "Fascia/mesoderm dominant. Laser primary (fascia plane). Movement provokes. Shaoyang GB/TB line."
+    },
+    {
+      "diagnosis": "post-COVID headache",
+      "associated_patterns": ["dampness_microcirculatory_failure", "mitochondrial_fatigue_energy_deficiency"],
+      "notes": "Blood sludging + mitochondrial fatigue. Vessel-dominant with energy deficiency overlay."
+    },
+    {
+      "diagnosis": "TMJ dysfunction",
+      "associated_patterns": ["shoulder_capsule_cold_stasis", "fascia_first_buffer_failure"],
+      "notes": "Check as part of Shaoyang GB/TB collapse cluster: migraine, TMJ, intercostal neuralgia, hip, meralgia, knee, ankle, bursitis."
+    },
+    {
+      "diagnosis": "meralgia paraesthetica",
+      "associated_patterns": ["nerve_first_signal_overload", "shoulder_capsule_cold_stasis"],
+      "notes": "Part of Shaoyang collapse cluster. Note presence/absence; do not diverge from primary engine path."
+    },
+    {
+      "diagnosis": "bursitis (shoulder, hip, knee)",
+      "associated_patterns": ["shoulder_capsule_cold_stasis", "hip_capsule_deep_fascia_oedema", "cold_deficiency_yang_insufficient"],
+      "notes": "Note as Shaoyang collapse cluster sign. Capsule/ECM pattern."
+    }
+  ],
+
+  "rules": [
+    {
+      "condition": "berberine_indicated AND state == 'heat_flare_active'",
+      "action": "SET berberine = ON; max 3–7 days; system response check at day 3–7"
+    },
+    {
+      "condition": "berberine ON AND system_response_check == 'stabilised'",
+      "action": "TAPER berberine OFF; transition to baseline module (fiber + mucosal rebuild)"
+    },
+    {
+      "condition": "berberine ON AND system_response_check == 'worse'",
+      "action": "STOP berberine immediately; initiate rebuild protocol; reassess dominant pattern"
+    },
+    {
+      "condition": "berberine ON AND system_response_check == 'no_change'",
+      "action": "STOP berberine; reassess dominant pattern — may not be heat_flare"
+    },
+    {
+      "condition": "state == 'cold_deficiency' OR state == 'fatigue_dominant' OR state == 'post_infectious' OR cold_intolerance == true",
+      "action": "BLOCK berberine; use baseline module only"
+    },
+    {
+      "condition": "pattern == 'nerve_first' AND headache_phase == 'acute'",
+      "action": "DO NOT lead with triptan; first-line: ProSelect + Magnesium/B6 + ondansetron-logic if GI involved; laser low-energy superficial"
+    },
+    {
+      "condition": "pattern == 'vessel_first' AND headache_phase == 'acute'",
+      "action": "triptan/ergotamine acceptable; pair with ProMigren; plan rebuild: Spirulina + Collagen post-acute"
+    },
+    {
+      "condition": "pattern == 'fascia_first'",
+      "action": "medication = low yield; first-line: Spirulina + Collagen + ProDeAcid + Magnesium; laser fascia planes; home device for maintenance"
+    },
+    {
+      "condition": "pattern == 'mixed_chronic' OR multiple_failed_medications == true",
+      "action": "staged reconstruction: (1) calm dominant noise layer, (2) rebuild fascia + water grid, (3) reduce medication dependence, (4) introduce home maintenance"
+    },
+    {
+      "condition": "triptan_response == 'stops_working' OR triptan_response == 'shorter_duration' OR rebound_headache == true",
+      "action": "initiate medication exit strategy: stabilise baseline → target dominant layer supplement → laser integration → do not abruptly stop; refer prescriber"
+    },
+    {
+      "condition": "laser_pattern == 'nerve_first'",
+      "action": "laser: low energy, superficial, cervical/auricular/trigeminal zones; goal = noise reduction"
+    },
+    {
+      "condition": "laser_pattern == 'vessel_first'",
+      "action": "laser: medium energy, perivascular planes, temporal/orbital region; goal = amplitude reduction"
+    },
+    {
+      "condition": "laser_pattern == 'fascia_first'",
+      "action": "laser: low-medium energy, fascia lines (neck, shoulder, scalp), longer sessions; goal = buffer rebuild"
+    },
+    {
+      "condition": "laser_pattern == 'mixed'",
+      "action": "staged laser: (1) nerve, (2) vessel, (3) fascia; follow dominant failure layer not pain location"
+    },
+    {
+      "condition": "spine_pain == true AND laser_indicated == true",
+      "action": "laser: paraspinal, segmental along bladder meridian and huatuojiaji points; relaxes erector spinae fascia; corresponds to vegetative control of ventral segment and organ water grid"
+    },
+    {
+      "condition": "shoulder_pattern == 'cold_stasis' AND TCM_systemic_Yang_herbs_requested == true",
+      "action": "BLOCK Fu Zi / Rou Gui level systemic Yang; use local targeted Yang (laser + ProStik + gentle ginger/cinnamon tea) instead"
+    },
+    {
+      "condition": "shoulder_pattern == 'hypertonic_yang_type'",
+      "action": "BLOCK excessive Yang herbs; use RegenOil + aloe; laser for mitochondria/water-grid restoration"
+    },
+    {
+      "condition": "hip_pain_timing == 'rest_or_night'",
+      "action": "assign pattern = hip_capsule_deep_fascia_oedema; first-line: ProStik + laser deep fascia"
+    },
+    {
+      "condition": "hip_pain_timing == 'load_only' AND instability == false",
+      "action": "assign pattern = hip_cartilage_deficiency; first-line: Collagen + Spirulina"
+    },
+    {
+      "condition": "hip_pain_timing == 'load_only' AND instability == true",
+      "action": "assign pattern = hip_ligament_laxity_cold; first-line: Collagen + RegenOil; intermittent ginseng/ginger/astragalus"
+    },
+    {
+      "condition": "spine_pain_timing == 'rest_or_night'",
+      "action": "assign pattern = spine_facet_capsule; first-line: ProStik + laser paraspinal"
+    },
+    {
+      "condition": "spine_pain_timing == 'load_flexion_extension' AND radiculopathy == false",
+      "action": "assign pattern = spine_disc_dominant; first-line: Collagen + Spirulina long-term"
+    },
+    {
+      "condition": "spine_ligament_laxity == true",
+      "action": "morning worse, improves through day + cold worsens = ligament pattern; Collagen + RegenOil + gentle Yang tea + laser"
+    },
+    {
+      "condition": "any_red_flag == true",
+      "action": "STOP engine immediately; output: refer to clinician / emergency; do NOT generate supplement or herb recommendation"
+    },
+    {
+      "condition": "red_flags_list includes: thunderclap_onset OR neurological_deficit OR papilloedema OR neck_stiffness OR immunocompromised OR fever_weight_loss OR new_headache_age_over_50 OR progressive_worsening OR recent_head_trauma OR exertional_headache",
+      "action": "STOP engine; flag red; mandatory clinician referral"
+    },
+    {
+      "condition": "Shaoyang_collapse_cluster_check triggered",
+      "action": "note presence/absence of: migraine, TMJ dysfunction, intercostal neuralgia, hip pain, meralgia paraesthetica, knee pain, ankle pain, bursitis (shoulder/hip/knee); do NOT diverge into sub-patterns at this stage; log for pattern weighting"
+    },
+    {
+      "condition": "headache_chronic_progression_detected",
+      "action": "apply migration model: nerve-first → vessel-first → fascia-first; do not chase pain location; address deeper layers"
+    },
+    {
+      "condition": "weather_trigger == true",
+      "action": "raise vessel_dominant_score + fascia_first_score; add hydration and tissue fluid support to protocol"
+    },
+    {
+      "condition": "stress_emotional_overload_trigger == true",
+      "action": "raise nerve_first_score; note: load may redirect into digestion or pain pathways; add ProSelect + fiber/gut support"
+    },
+    {
+      "condition": "overexertion_trigger == true",
+      "action": "raise vessel_dominant_score + mitochondrial_fatigue_score; energy depletion → temporary immune or pain flare"
+    },
+    {
+      "condition": "flare_detected == true",
+      "action": "phase = flare → short-term stabilisation protocol; do NOT introduce rebuild protocol during active flare"
+    },
+    {
+      "condition": "flare_resolved == true",
+      "action": "phase = baseline → rebuild and strengthen protocol"
+    },
+    {
+      "condition": "gepant_side_effects_present (nausea, fatigue, constipation)",
+      "action": "note drug-terrain conflict: gepants worsen gut and fatigue patterns; raise gut_metabolic_score + mitochondrial_fatigue_score"
+    }
+  ],
+
+  "input_variables": [
+    "dominant_state: enum [heat_flare, dampness_stagnation, cold_deficiency, mixed_unstable]",
+    "berberine_status: enum [ON, OFF]",
+    "system_response_at_day3_7: enum [stabilised, worse, no_change]",
+    "headache_character: enum [pulsing_throbbing, burning_vibrating, dull_deep, tight_band]",
+    "pain_onset_pattern: enum [nerve_first, vessel_first, fascia_first, mixed_chronic]",
+    "pain_location: enum [head, shoulder, hip, spine, mixed]",
+    "pain_timing: enum [rest_night, load_only, morning_worse_improves, constant]",
+    "instability_present: boolean",
+    "radiculopathy_present: boolean",
+    "cold_signs: boolean",
+    "heat_signs: boolean",
+    "tongue: enum [purple_engorged, wet_coated, thin_dry, normal]",
+    "pulse: enum [weak, wiry, full, normal]",
+    "Shaoyang_collapse_cluster_signs: multi-select [migraine, TMJ, intercostal_neuralgia, hip_pain, meralgia, knee_pain, ankle_pain, bursitis]",
+    "trigger_today: enum [weather, stress_emotional, overexertion, sleep, food, infection, hormonal]",
+    "triptan_response: enum [good, partial, stops_working, rebound, not_used]",
+    "gepant_use: boolean",
+    "gepant_side_effects: multi-select [nausea, fatigue, constipation]",
+    "current_phase: enum [flare, baseline, post_flare_rebuild]",
+    "red_flag_present: boolean",
+    "red_flag_type: multi-select [thunderclap, neuro_deficit, papilloedema, neck_stiffness, immunocompromised, fever_weight_loss, new_over_50, progressive, head_trauma, exertional]"
+  ],
+
+  "intervention_interoperability_table": {
+    "description": "Medication = reset; Supplements = rebuild; Laser = phase correction",
+    "rows": [
+      {
+        "dominant_layer": "nerve_first",
+        "medication_role": "short-term noise suppression (ondansetron/neuromodulator)",
+        "supplement_role": "ProSelect, Fiber, Magnesium/B6",
+        "laser_role": "low-energy neural (cervical/auricular/trigeminal)"
+      },
+      {
+        "dominant_layer": "vessel_first",
+        "medication_role": "acute amplitude reset (triptan/ergotamine)",
+        "supplement_role": "ProMigren, Vitamin D + Nigella (acute); Spirulina (rebuild)",
+        "laser_role": "medium energy, perivascular/temporal/orbital"
+      },
+      {
+        "dominant_layer": "fascia_first",
+        "medication_role": "minimal / low yield",
+        "supplement_role": "Spirulina, Collagen, ProDeAcid, Magnesium",
+        "laser_role": "low-medium, fascia lines (neck/shoulder/scalp), longer sessions"
+      },
+      {
+        "dominant_layer": "chronic_mixed",
+        "medication_role": "taper and exit strategy",
+        "supplement_role": "baseline stabilisers (all layers staged)",
+        "laser_role": "phased maintenance (nerve → vessel → fascia sequence)"
+      }
+    ]
+  },
+
+  "ayurveda_interface_map": {
+    "description": "Structural parallel only — not diagnostic equivalence",
+    "rows": [
+      { "ayurveda": "Vata aggravation", "base44": "nerve/fascia oscillation" },
+      { "ayurveda": "Pitta congestion", "base44": "heat-dominant blood turbulence (vessel-first, heat flare)" },
+      { "ayurveda": "Kapha accumulation", "base44": "dampness + sludging (dampness_microcirculatory pattern)" }
+    ]
+  },
+
+  "notes": [
+    "CLINICIAN ANCHOR: 'Berberine is a switch, not a foundation.' — hard rule; never maintenance.",
+    "PATIENT REASSURANCE (engine output): 'Symptoms returning usually means the system was challenged again — not that the treatment failed.'",
+    "QUICK DISCRIMINATOR: 'Does it throb/pulse?' → vessel-first. 'Does it burn/tighten/numb?' → nerve-first.",
+    "CHRONIC HEADACHE PRINCIPLE: 'Chronic headache is not escalation — it is migration.' Nerve → Vessel → Fascia progression.",
+    "LASER PRINCIPLE: 'Laser should follow the dominant failure layer, not the pain location.'",
+    "DEVICE HIERARCHY: Summus (clinic) = deep phase reset (mitochondria-fascia); Cell activator/Bioptron (home) = surface fascia maintenance. This is clinic → home → self-regulation hierarchy, NOT competition.",
+    "SHOULDER/HIP/SPINE PRINCIPLE: 'Frozen shoulder, hip and spine pain are rarely lack-of-Yang problems; they are interface and capsule problems (Shaoyang GB/TB line) that respond better to targeted Yang (laser + ECM modulation) than systemic heating.'",
+    "SEROTONIN ENGINE PRINCIPLE: 'Ondansetron and triptans are not opposites; they attempt to re-synchronise the same neurovascular-fascial continuum from different entry points.'",
+    "SYSTEM PHILOSOPHY: 'We don't just stop headaches. We restore the system that prevents them.'",
+    "AYURVEDA NOTE: Interface map provided as structural parallel only; do not merge TCM and Ayurveda pattern logics without explicit engine flag.",
+    "MIGRAINE WESTERN CRITERIA: ICHD-3 criteria extracted verbatim for red flag and diagnostic confirmation layer; engine must pass red flag screen before any recommendation output.",
+    "Riboflavin (B2) is evidence-supported for migraine prophylaxis — extract as standalone supplement with independent evidence base.",
+    "Sphenopalatine block noted as western prophylaxis option — flag for clinician referral pathway.",
+    "Shaoyang collapse cluster (migraine + TMJ + intercostal + hip + meralgia + knee + ankle + bursitis) = pattern recognition tool; note presence/absence; do not expand sub-patterns in initial triage pass."
+  ]
+}
