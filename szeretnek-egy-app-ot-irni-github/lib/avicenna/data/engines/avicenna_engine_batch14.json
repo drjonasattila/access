@@ -1,0 +1,756 @@
+{
+  "module": "TAIYANG_MODULE_v1.0",
+  "source": "Taiyang_atlas_pdf.pdf",
+  "description": "Taiyang syndrome atlas — posterior shell overpressure, blocked Shaoyin return flow. Extracted for Avicenna Clinical Engine.",
+  "input_variables": [
+    "posterior_tension",
+    "thermal_state_lower_body",
+    "thermal_state_surface",
+    "edema_present",
+    "cranial_pressure",
+    "sleep_quality",
+    "autonomic_state",
+    "emotional_integration",
+    "trauma_history",
+    "skin_reactivity",
+    "pain_location",
+    "pain_character",
+    "shaoyin_fire_status",
+    "jueyin_direction_status",
+    "stability_state",
+    "active_panic_or_dissociation",
+    "acute_migraine_active"
+  ],
+  "patterns": [
+    {
+      "name": "taiyang_pure_tension",
+      "label": "Pure Taiyang Tension (Dry-Tight)",
+      "description": "Surface tense, no deep fluid stagnation. Shaoyin return blocked but no oedema.",
+      "triggers": [
+        "posterior_tension == true",
+        "edema_present == false",
+        "cranial_pressure == false",
+        "thermal_state_lower_body == cold OR normal"
+      ],
+      "symptoms": [
+        "tension headache",
+        "occipital neuralgia",
+        "cervicogenic headache",
+        "myofascial pain",
+        "frozen shoulder (early stage)",
+        "stress-induced insomnia",
+        "trapezius / erector spinae tightness"
+      ],
+      "meridian_zones": [
+        "BL10–BL20",
+        "SI9–SI11"
+      ],
+      "field_logic": "Taiyang shell over-tensioned → energy cannot move inward (Shaoyin). BL paravertebral branches act as EM wire pair; when congested, field flow distorts.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Gou Teng",
+            "role": "Taiyang shell release, surface tension reduction",
+            "notes": "Primary herb for this branch"
+          },
+          {
+            "name": "Bai Shao",
+            "role": "Yin nourishment, fascial softening",
+            "notes": ""
+          },
+          {
+            "name": "Chuan Xiong",
+            "role": "Blood movement in Taiyang zone",
+            "notes": ""
+          },
+          {
+            "name": "Dan Shen",
+            "role": "Circulation, stasis resolution",
+            "notes": ""
+          },
+          {
+            "name": "Zhi Gan Cao",
+            "role": "Harmonising, Shaoyin rhythm support",
+            "notes": ""
+          }
+        ],
+        "preparation": "Standard decoction or concentrated granules",
+        "device": {
+          "modality": "HILT laser (Summus Horizon)",
+          "recommendation": "strongly_recommended",
+          "target_zones": [
+            "BL10–BL20 (occiput to upper back)",
+            "SI9–SI11 (scapula)",
+            "trapezius / erector spinae"
+          ],
+          "mechanism": "Fascia EZ recharge; dissolution of local field micro-stagnations; passive Taiyang shell decompression",
+          "clinical_label": "Posterior neuro-fascial decompression using HILT",
+          "legal_safe_label": "Peripheral neuro-fascial decompression using HILT laser at posterior convergence zones",
+          "contraindications": [
+            "acute_migraine_active == true"
+          ]
+        },
+        "supplement": {
+          "name": "DuoLife Collagen + Mg / DuoLife Magnesium Balance",
+          "status": "optional",
+          "rationale": "Fascial hydration, neuromuscular tension reduction. Does not drive Yang, does not cool aggressively.",
+          "best_for": [
+            "shoulder girdle",
+            "neck",
+            "myofascial pain"
+          ]
+        }
+      }
+    },
+    {
+      "name": "taiyang_water_sludging",
+      "label": "Taiyang + Water / Sludging",
+      "description": "Taiyang congestion with fluid accumulation. Yang locked in head. Shaoyin heart-rhythm cannot recall energy downward.",
+      "triggers": [
+        "posterior_tension == true",
+        "cranial_pressure == true",
+        "edema_present == true OR venous_stasis == true"
+      ],
+      "symptoms": [
+        "feeling of trapped pressure in head",
+        "IIH-like symptoms (PRESS / posterior fossa congestion)",
+        "Chiari-like pressure sensation",
+        "heavy back",
+        "oedema (vesico-lumbar)",
+        "venous stasis",
+        "urinary difficulty (cold lower body)",
+        "heavy legs"
+      ],
+      "meridian_zones": [
+        "BL-KD transition",
+        "BL40",
+        "BL paravertebral T6–L2",
+        "sacrum",
+        "poplitea BL40"
+      ],
+      "field_logic": "Yang locked in head; water + energy cannot descend. Shaoyin heart-rhythm does not recall energy. BL–KD transition congested.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Fu Ling",
+            "role": "Water metabolism, gentle drainage downward",
+            "notes": ""
+          },
+          {
+            "name": "Zhu Ling",
+            "role": "Diuretic, assists fluid descent",
+            "notes": ""
+          },
+          {
+            "name": "Mai Men Dong",
+            "role": "Yin moistening, prevents over-drying",
+            "notes": ""
+          },
+          {
+            "name": "Dan Shen",
+            "role": "Circulation, micro-stasis resolution",
+            "notes": ""
+          },
+          {
+            "name": "Gou Teng",
+            "role": "Taiyang shell release",
+            "notes": ""
+          }
+        ],
+        "preparation": "Standard decoction",
+        "goal": "Conduct water-field downward — not 'extract' but circulate",
+        "device": {
+          "modality": "HILT laser (Summus Horizon)",
+          "recommendation": "conditionally_recommended",
+          "gate_question": "acute_migraine_active OR acute_cranial_pressure → delay laser, herbs first",
+          "target_zones": [
+            "BL paravertebral T6–L2",
+            "sacrum",
+            "poplitea BL40"
+          ],
+          "mechanism": "Water-field conduction downward; venous and fascial stasis resolution. Does not dry, but moves.",
+          "legal_safe_label": "Peripheral neuro-fascial decompression using HILT laser at paravertebral and sacral zones",
+          "contraindications": [
+            "acute_migraine_active == true",
+            "acute_cranial_pressure == true"
+          ]
+        },
+        "supplement": {
+          "name": "DuoLife Day / ProSugar Balance / Liquid Chlorophyll",
+          "status": "recommended",
+          "rationale": "Microcirculation support, mild detox, water-structuring effect (biological level)",
+          "avoid": [
+            "strong stimulants",
+            "aggressive detox protocols"
+          ]
+        }
+      }
+    },
+    {
+      "name": "taiyang_shaoyin_deficiency",
+      "label": "Taiyang + Shaoyin Deficiency",
+      "description": "Internal cold → external tension. Shaoyin fire absent; body cannot warm from inside, so surface remains in permanent alert.",
+      "triggers": [
+        "posterior_tension == true",
+        "thermal_state_lower_body == cold",
+        "thermal_state_surface == tight",
+        "sleep_quality == poor",
+        "shaoyin_fire_status == deficient"
+      ],
+      "symptoms": [
+        "cold feet + tight neck",
+        "insomnia with fatigue",
+        "palpitation",
+        "inability to relax",
+        "hyperarousal without external cause"
+      ],
+      "meridian_zones": [
+        "BL23 (lumbar)",
+        "BL15–BL17 (thoracic heart zone)"
+      ],
+      "field_logic": "Shaoyin fire absent → body cannot warm internally → surface stays in permanent readiness (Taiyang). Not the same as frailty — this is specific internal cold pattern.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Fu Shen",
+            "role": "Calms Shen, supports heart-kidney axis",
+            "notes": ""
+          },
+          {
+            "name": "Ye Jiao Teng",
+            "role": "Nourishes blood, calms sleep",
+            "notes": ""
+          },
+          {
+            "name": "Wu Wei Zi",
+            "role": "Consolidates Yin, supports adrenal axis",
+            "notes": ""
+          },
+          {
+            "name": "Mai Men Dong",
+            "role": "Yin moistening, heart cooling",
+            "notes": ""
+          },
+          {
+            "name": "Zhi Gan Cao",
+            "role": "Rhythm support, harmonising",
+            "notes": ""
+          },
+          {
+            "name": "Rou Gui",
+            "role": "Micro-dose only — internal warming, KD Yang tonification",
+            "notes": "Use only in micro-dose; contraindicated if heat signs present"
+          }
+        ],
+        "preparation": "Standard decoction; Rou Gui added last (short boil or infused separately)",
+        "goal": "Internal warming → Taiyang shell releases on its own",
+        "device": {
+          "modality": "HILT laser (Summus Horizon)",
+          "recommendation": "delayed_and_gentle",
+          "rule": "First 7–10 days: herbs only. Laser only after sleep improves and internal warmth returns.",
+          "target_zones": [
+            "BL23 lumbar (gentle)",
+            "BL15–17 thoracic heart zone"
+          ],
+          "rationale": "Do not drain remaining Yang. Only proceed when patient is stabilising.",
+          "contraindications": [
+            "shaoyin_fire_status == severely_deficient",
+            "sleep_quality still_poor"
+          ]
+        },
+        "supplement": {
+          "name": "DuoLife Night / Calm Formula",
+          "status": "optional",
+          "rationale": "Autonomic nervous system support, sleep quality improvement. Does not open outward gate.",
+          "timing": "Evening only. Never morning."
+        }
+      }
+    },
+    {
+      "name": "taiyang_trauma_hyperreactivity",
+      "label": "Taiyang + Trauma / Hyperreactivity",
+      "description": "Autonomic over-tension, allergic reactivity, skin reactions, sensory overload. Shaoyin–Jueyin gate closed — no emotional integration.",
+      "triggers": [
+        "posterior_tension == true",
+        "skin_reactivity == high OR allergy == true OR panic_attacks == true",
+        "emotional_integration == impaired",
+        "trauma_history == true OR autonomic_state == hyperarousal"
+      ],
+      "symptoms": [
+        "panic attacks",
+        "allergic reactions",
+        "skin reactions (eczema, urticaria, psoriasis)",
+        "sensory overload",
+        "autistic-pattern sensory hypersensitivity",
+        "hyperarousal"
+      ],
+      "meridian_zones": [
+        "sacrum",
+        "lower BL branches"
+      ],
+      "field_logic": "Taiyang shield hyper-reactive; every stimulus perceived as threat. Shaoyin–Jueyin gate closed → no emotional integration. Laser at head/neck zone CONTRAINDICATED in this pattern.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "He Huan Pi",
+            "role": "Emotional integration, Shen calming",
+            "notes": "Key herb for trauma layer"
+          },
+          {
+            "name": "Ye Jiao Teng",
+            "role": "Blood nourishment, calms nervous system",
+            "notes": ""
+          },
+          {
+            "name": "Yuan Zhi",
+            "role": "Opens heart orifice, integrates emotion and cognition",
+            "notes": ""
+          },
+          {
+            "name": "Bai He",
+            "role": "Lung–heart calming, grief processing",
+            "notes": ""
+          },
+          {
+            "name": "Dan Shen",
+            "role": "Blood circulation, mild Shen calming",
+            "notes": ""
+          }
+        ],
+        "preparation": "Standard decoction",
+        "goal": "Field safety → shell relaxes",
+        "device": {
+          "modality": "HILT laser (Summus Horizon)",
+          "recommendation": "only_if_stable",
+          "gate_question": "active_panic_or_dissociation == true → laser FORBIDDEN",
+          "target_zones": [
+            "sacrum",
+            "lower BL branches"
+          ],
+          "forbidden_zones": [
+            "head",
+            "neck (direct)"
+          ],
+          "mechanism": "Field safety restoration, body boundary re-establishment",
+          "contraindications": [
+            "active_panic_or_dissociation == true",
+            "fresh_trauma",
+            "derealization_active == true"
+          ]
+        },
+        "supplement": {
+          "name": "DuoLife Adaptogen / Anti-Stress formula",
+          "status": "only_if_stable",
+          "rationale": "HPA-axis modulation, psycho-integration support",
+          "contraindicated_if": [
+            "active_panic",
+            "derealization",
+            "severe_shaoyin_deficiency"
+          ]
+        }
+      }
+    },
+    {
+      "name": "taiyang_heat_skin_immune",
+      "label": "Taiyang Heat / Skin / Immune Overflow",
+      "description": "Heat and stagnation pushed outward to surface. Skin acts as forced decompression valve.",
+      "triggers": [
+        "skin_reactivity == high",
+        "posterior_tension == true",
+        "heat_signs == true",
+        "immune_hyperreactivity == true"
+      ],
+      "symptoms": [
+        "eczema",
+        "psoriasis",
+        "acute exanthema",
+        "dermatomyositis (skin component)",
+        "SLE skin manifestations",
+        "urticaria",
+        "hay fever / seasonal allergy"
+      ],
+      "field_logic": "Heat + stagnation forced outward to surface. Skin = compulsory decompression valve. Taiyang layer loses synchrony between fascia and field. Immune system perceives field dissonance as external threat.",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "Gou Teng",
+            "role": "Surface tension release",
+            "notes": ""
+          },
+          {
+            "name": "Bai Shao",
+            "role": "Yin nourishment, anti-spasm",
+            "notes": ""
+          },
+          {
+            "name": "Dan Shen",
+            "role": "Blood cooling and moving",
+            "notes": ""
+          }
+        ],
+        "preparation": "uncertain — not fully specified in source",
+        "device": "uncertain — not explicitly specified for this sub-pattern",
+        "supplement": "uncertain"
+      }
+    },
+    {
+      "name": "taiyang_vascular_congestion",
+      "label": "Taiyang Vascular / Circulatory Congestion",
+      "description": "Weak internal pump → shell swells. Energy cannot remain in inner axis — protrudes outward.",
+      "triggers": [
+        "venous_stasis == true",
+        "posterior_tension == true",
+        "internal_pump_weakness == true"
+      ],
+      "symptoms": [
+        "venous stasis",
+        "cervical stasis",
+        "varicositas",
+        "disc protrusion / hernia (lumbar or cervical)",
+        "discopathy"
+      ],
+      "field_logic": "Weak internal pump → shell swells ('heart shadow' on periphery). Taiyang field protrudes into space when energy can no longer remain in inner axis.",
+      "interventions": {
+        "herbs": "uncertain — not fully specified for this sub-pattern in source",
+        "device": {
+          "modality": "HILT laser",
+          "recommendation": "uncertain",
+          "notes": "Implied via general Taiyang laser protocol but not explicitly prescribed for vascular sub-pattern"
+        },
+        "supplement": "uncertain"
+      }
+    }
+  ],
+  "diagnosis_map": [
+    {
+      "diagnosis": "tension-type headache",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "BL10–20 zone congestion, occipital energy cushion"
+    },
+    {
+      "diagnosis": "occipital neuralgia",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "Taiyang shell over-tension at BL10 zone"
+    },
+    {
+      "diagnosis": "cervicogenic headache",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "Cervico-thoracic Taiyang zone stagnation"
+    },
+    {
+      "diagnosis": "frozen shoulder",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "Taiyang–Shaoyin axis stuck. SI meridian cold-nodes. Carries unresolved emotional burden. Common in women — mirror of heart closure."
+    },
+    {
+      "diagnosis": "facet joint pain",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "BL paravertebral EM wire pair swelling"
+    },
+    {
+      "diagnosis": "radiculopathy",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "Vertebral stagnation; vertebrae become field 'accumulators'"
+    },
+    {
+      "diagnosis": "spondylosis",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "Chronic Taiyang stagnation manifestation"
+    },
+    {
+      "diagnosis": "sciatica",
+      "associated_patterns": [
+        "taiyang_pure_tension",
+        "taiyang_water_sludging"
+      ],
+      "notes": "Energy cannot return to Shaoyin (KD). Cold + stagnation pulls downward. BL40–BL60 line blockage."
+    },
+    {
+      "diagnosis": "myofascial pain syndrome",
+      "associated_patterns": [
+        "taiyang_pure_tension"
+      ],
+      "notes": "Micro-stagnation pockets in Taiyang layer (trapezius, erector spinae, gluteus). Local field vortices, often carrying trauma memory."
+    },
+    {
+      "diagnosis": "IIH (idiopathic intracranial hypertension)",
+      "associated_patterns": [
+        "taiyang_water_sludging"
+      ],
+      "notes": "Yang locked in head; venous congestion, blood sludging. Shaoyin heart-rhythm cannot recall energy."
+    },
+    {
+      "diagnosis": "posterior fossa congestion / Chiari-like pressure",
+      "associated_patterns": [
+        "taiyang_water_sludging"
+      ],
+      "notes": "Precursor or variant of IIH pattern. Taiyang zone swelling."
+    },
+    {
+      "diagnosis": "urinary difficulty / vesico-lumbar oedema",
+      "associated_patterns": [
+        "taiyang_water_sludging"
+      ],
+      "notes": "BL–KD transition congested. Cold lower body. Taiyang–Shaoyin dissociation."
+    },
+    {
+      "diagnosis": "eczema",
+      "associated_patterns": [
+        "taiyang_heat_skin_immune"
+      ],
+      "notes": "Heat + stagnation forced to surface. Skin as decompression valve."
+    },
+    {
+      "diagnosis": "psoriasis",
+      "associated_patterns": [
+        "taiyang_heat_skin_immune"
+      ],
+      "notes": "Same mechanism as eczema — chronic heat overflow"
+    },
+    {
+      "diagnosis": "dermatomyositis (skin component)",
+      "associated_patterns": [
+        "taiyang_heat_skin_immune"
+      ],
+      "notes": "Taiyang layer synchrony loss between fascia and field"
+    },
+    {
+      "diagnosis": "SLE (skin manifestations)",
+      "associated_patterns": [
+        "taiyang_heat_skin_immune"
+      ],
+      "notes": "Autoimmune surface inflammation — fascia–field desynchronisation"
+    },
+    {
+      "diagnosis": "urticaria",
+      "associated_patterns": [
+        "taiyang_heat_skin_immune",
+        "taiyang_trauma_hyperreactivity"
+      ],
+      "notes": "Can be heat overflow or hyperreactivity pattern"
+    },
+    {
+      "diagnosis": "hay fever / allergic rhinitis",
+      "associated_patterns": [
+        "taiyang_heat_skin_immune",
+        "taiyang_trauma_hyperreactivity"
+      ],
+      "notes": "Protective field over-tensioned; immune system perceives field dissonance as external threat"
+    },
+    {
+      "diagnosis": "insomnia",
+      "associated_patterns": [
+        "taiyang_pure_tension",
+        "taiyang_shaoyin_deficiency"
+      ],
+      "notes": "Taiyang tension cannot subside → hyperarousal. Shaoyin fire absent → no internal warmth → permanent readiness."
+    },
+    {
+      "diagnosis": "panic attack / panic disorder",
+      "associated_patterns": [
+        "taiyang_trauma_hyperreactivity"
+      ],
+      "notes": "Autonomic over-tension. Active panic = laser contraindication."
+    },
+    {
+      "diagnosis": "migraine",
+      "associated_patterns": [
+        "taiyang_water_sludging",
+        "taiyang_pure_tension"
+      ],
+      "notes": "Shaoyang–Taiyang slide: light-wave from posterior field to frontal. Trigeminal complex + BL10–GB20 region overload. Acute migraine = laser and DuoLife contraindication."
+    },
+    {
+      "diagnosis": "autism spectrum / sensory processing disorder",
+      "associated_patterns": [
+        "taiyang_trauma_hyperreactivity"
+      ],
+      "notes": "Hyper-reactive Taiyang field; Shaoyin–Jueyin gate closed → no emotional integration"
+    },
+    {
+      "diagnosis": "varicositis / venous insufficiency",
+      "associated_patterns": [
+        "taiyang_vascular_congestion"
+      ],
+      "notes": "Taiyang–Bladder fascia line — circulatory backflow. Weak internal pump."
+    },
+    {
+      "diagnosis": "disc herniation / protrusion (lumbar or cervical)",
+      "associated_patterns": [
+        "taiyang_vascular_congestion"
+      ],
+      "notes": "Taiyang field protrudes into space when energy cannot stay in inner axis"
+    },
+    {
+      "diagnosis": "hyperarousal / sympatho-vagal imbalance",
+      "associated_patterns": [
+        "taiyang_pure_tension",
+        "taiyang_shaoyin_deficiency",
+        "taiyang_trauma_hyperreactivity"
+      ],
+      "notes": "Taiyang tension cannot subside. No Shaoyin fire to warm internally."
+    }
+  ],
+  "rules": [
+    {
+      "condition": "posterior_tension == false",
+      "action": "exit Taiyang module → route to other module (Shaoyang, Jueyin, or Shaoyin)"
+    },
+    {
+      "condition": "posterior_tension == true AND tension_worsens_with_stress_cold_or_overstimulation == false",
+      "action": "flag as mixed pattern → recommend Shaoyang module"
+    },
+    {
+      "condition": "cranial_pressure == true",
+      "action": "activate taiyang_water_sludging branch"
+    },
+    {
+      "condition": "edema_present == true OR venous_stasis == true",
+      "action": "activate taiyang_water_sludging branch"
+    },
+    {
+      "condition": "thermal_state_lower_body == cold AND sleep_quality == poor AND shaoyin_fire_status == deficient",
+      "action": "activate taiyang_shaoyin_deficiency branch"
+    },
+    {
+      "condition": "panic_attacks == true OR skin_reactivity == high OR sensory_overload == true",
+      "action": "activate taiyang_trauma_hyperreactivity branch (check from any branch — global gate Q7)"
+    },
+    {
+      "condition": "active_panic_or_dissociation == true",
+      "action": "BLOCK laser module AND BLOCK DuoLife supplement module"
+    },
+    {
+      "condition": "acute_migraine_active == true",
+      "action": "BLOCK laser module AND BLOCK DuoLife supplement module"
+    },
+    {
+      "condition": "severe_shaoyin_deficiency == true",
+      "action": "BLOCK laser module. Herbs only for first 7–10 days."
+    },
+    {
+      "condition": "fresh_trauma == true",
+      "action": "BLOCK laser module AND BLOCK DuoLife supplement module"
+    },
+    {
+      "condition": "psychotic_state == true",
+      "action": "BLOCK laser module"
+    },
+    {
+      "condition": "severe_IIH_symptoms == true",
+      "action": "BLOCK laser module"
+    },
+    {
+      "condition": "branch == taiyang_shaoyin_deficiency AND laser_eligible == true",
+      "action": "Delay laser minimum 7–10 days. Confirm sleep improved and internal warmth returning before activating laser."
+    },
+    {
+      "condition": "branch == taiyang_shaoyin_deficiency AND supplement_eligible == true",
+      "action": "DuoLife Night / Calm formula only. Evening only. Never morning."
+    },
+    {
+      "condition": "branch == taiyang_trauma_hyperreactivity AND stability_state == stable",
+      "action": "Laser may be applied to sacrum and lower BL branches. NEVER to head or neck directly."
+    },
+    {
+      "condition": "branch == taiyang_water_sludging AND acute_cranial_pressure == true",
+      "action": "Delay laser. Herbs first."
+    },
+    {
+      "condition": "DuoLife_supplement_eligible == true",
+      "action": "DuoLife = biological stabiliser only. Never primary treatment. Herba = field direction. Order: 1-Herba, 2-Laser, 3-DuoLife."
+    },
+    {
+      "condition": "intervention_documentation == required",
+      "action": "Use functional zone terminology only. Preferred: 'Peripheral neuro-fascial decompression using HILT laser at [zone] convergence zones.' Do NOT reference meridian names or acupuncture point names in formal documentation."
+    },
+    {
+      "condition": "Rou_Gui in formula",
+      "action": "Use micro-dose only. Contraindicated if any heat signs present."
+    }
+  ],
+  "integration_order": {
+    "description": "Mandatory treatment sequence for all Taiyang branches",
+    "order": [
+      "1. Herba (field direction + internal recall)",
+      "2. HILT Laser (shell decompression / fascia reset) — if eligible",
+      "3. DuoLife (biological stabilisation) — if eligible"
+    ],
+    "rule": "Never reverse this order."
+  },
+  "laser_module": {
+    "principle": "HILT is the mechanical–field decompression valve of the Taiyang shell, when energy can no longer be recalled from within.",
+    "mechanism_summary": "Laser does not polarise. It does not 'add Yin' or 'remove Yang'. It interrupts pathological chaotic Yang-oscillation. Once noise is removed, healthy Yin oscillation becomes available as a phase anchor for structured Yang oscillation.",
+    "clinical_formulation": "Peripheral laser neuromodulation reduces pathological high-frequency activation, allowing autonomic rebalancing.",
+    "documentation_rule": {
+      "patient_record": "fascia / nerve (biomechanical language)",
+      "clinician_knowledge": "field / meridian",
+      "formal_documentation": "biomechanical / neurofascial language only"
+    },
+    "absolute_contraindications": [
+      "acute migraine",
+      "fresh trauma",
+      "severe Shaoyin depletion",
+      "psychotic state",
+      "severe IIH symptoms",
+      "active panic or dissociation"
+    ],
+    "app_message_when_contraindicated": "A mező most irányt kér, nem energiát. / The field needs direction, not energy."
+  },
+  "summary_formula": {
+    "core_equation": "Taiyang swelling = blocked internal return + external shell overflow",
+    "triad": [
+      "Tension",
+      "Stagnation",
+      "Hyperreactivity"
+    ],
+    "regional_manifestations": {
+      "head_neck": [
+        "tension headache",
+        "PRESS",
+        "migraine"
+      ],
+      "back_spine": [
+        "myofascial pain",
+        "vertebral complaints"
+      ],
+      "skin_surface": [
+        "eczema",
+        "psoriasis",
+        "allergy"
+      ],
+      "nervous_system_autonomic": [
+        "insomnia",
+        "hyperarousal",
+        "panic"
+      ],
+      "circulation_venous": [
+        "stasis",
+        "oedema",
+        "varicositas"
+      ]
+    }
+  },
+  "notes": [
+    "This module is designed to be one of 20–30 terrain modules in the Avicenna engine. Same logic structure should be applied to Shaoyang, Jueyin, and Shaoyin modules.",
+    "Field language (mező, meridian) is for internal engine reasoning only. Output layer must use appropriate register depending on systemMode: TCM or integrative-neutral.",
+    "Laser eligibility is a GATED sub-module — all contraindications must be checked before any laser recommendation is output.",
+    "DuoLife supplement block is a separately toggleable module — never a substitute for herbal core.",
+    "Pattern taiyang_trauma_hyperreactivity can be activated as overlay from any other branch (global gate — Q7 equivalent).",
+    "Pattern taiyang_shaoyin_deficiency must be distinguished from general frailty — it is a specific cold-below / tight-above dissociation pattern."
+  ]
+}

@@ -1745,6 +1745,203 @@ const shaoyinAdvancedFlags = [
   ["debugMode", "Debug mode"]
 ];
 
+const taiyangInitialInput = {
+  systemMode: "integrative-neutral",
+  thermal_state_lower_body: "unknown",
+  thermal_state_surface: "unknown",
+  sleep_quality: "unknown",
+  autonomic_state: "unknown",
+  emotional_integration: "unknown",
+  shaoyin_fire_status: "unknown",
+  stability_state: "unknown",
+  skin_reactivity: "unknown",
+  symptoms: [],
+  posterior_tension: false,
+  tension_worsens_with_stress_cold_or_overstimulation: true,
+  edema_present: false,
+  cranial_pressure: false,
+  acute_cranial_pressure: false,
+  venous_stasis: false,
+  urinary_difficulty: false,
+  heavy_legs: false,
+  cold_lower_body: false,
+  tight_surface: false,
+  poor_sleep: false,
+  panic_attacks: false,
+  sensory_overload: false,
+  trauma_history: false,
+  hyperarousal: false,
+  impaired_emotional_integration: false,
+  heat_signs: false,
+  immune_hyperreactivity: false,
+  allergy: false,
+  internal_pump_weakness: false,
+  varicosities: false,
+  venous_insufficiency: false,
+  disc_protrusion_pattern: false,
+  sleep_improved: false,
+  internal_warmth_returning: false,
+  active_panic_or_dissociation: false,
+  acute_migraine_active: false,
+  fresh_trauma: false,
+  severe_shaoyin_depletion: false,
+  psychotic_state: false,
+  severe_IIH_symptoms: false,
+  derealization_active: false,
+  intervention_documentation_required: false,
+  debugMode: false
+};
+
+const taiyangFieldGroups = [
+  {
+    key: "systemMode",
+    label: "Output language mode",
+    options: [
+      ["integrative-neutral", "Integrative neutral", "Posterior shell, fluid regulation, autonomic reactivity"],
+      ["TCM", "TCM terminology", "Taiyang / Shaoyin / BL / SI language in advanced context"]
+    ]
+  },
+  {
+    key: "thermal_state_lower_body",
+    label: "Lower-body thermal state",
+    options: [
+      ["cold", "Cold", "Cold feet or lower-body cold"],
+      ["normal", "Normal", "No strong lower cold"],
+      ["heat", "Heat", "Lower-body heat signs"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "thermal_state_surface",
+    label: "Posterior surface state",
+    options: [
+      ["dry_tight", "Dry-tight", "Tense, tight, dry-feeling surface"],
+      ["tight", "Tight", "Surface held in alert tone"],
+      ["heat", "Heat", "Skin/immune heat expression"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "sleep_quality",
+    label: "Sleep quality",
+    options: [
+      ["poor", "Poor", "Insomnia, hyperarousal, unrested"],
+      ["improving", "Improving", "Stabilising after support"],
+      ["good", "Good", "Sleep not a major driver"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "shaoyin_fire_status",
+    label: "Internal warmth / Shaoyin fire",
+    options: [
+      ["deficient", "Deficient", "Low internal warmth, poor settling"],
+      ["severely_deficient", "Severely depleted", "Herbs first, laser blocked/delayed"],
+      ["adequate", "Adequate", "No clear warmth deficiency"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "stability_state",
+    label: "System stability",
+    options: [
+      ["stable", "Stable", "Can tolerate gentle next layer"],
+      ["reactive", "Reactive", "Needs calming first"],
+      ["unstable", "Unstable", "Avoid device escalation"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "skin_reactivity",
+    label: "Skin / surface reactivity",
+    options: [
+      ["high", "High", "Urticaria, eczema, allergy, sensory reactivity"],
+      ["moderate", "Moderate", "Some reactivity"],
+      ["low", "Low", "Not prominent"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "autonomic_state",
+    label: "Autonomic state",
+    options: [
+      ["hyperarousal", "Hyperarousal", "Panic, alertness, overstimulation"],
+      ["settled", "Settled", "No active overdrive"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "emotional_integration",
+    label: "Integration state",
+    options: [
+      ["impaired", "Impaired", "Reactivity or incomplete integration signal"],
+      ["intact", "Intact", "No clear integration block"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  }
+];
+
+const taiyangSymptomItems = [
+  ["tension_headache", "Tension headache"],
+  ["occipital_neuralgia", "Occipital neuralgia"],
+  ["cervicogenic_headache", "Cervicogenic headache"],
+  ["trapezius_tightness", "Trapezius tightness"],
+  ["myofascial_pain", "Myofascial pain"],
+  ["frozen_shoulder", "Frozen shoulder"],
+  ["posterior_fossa_congestion", "Posterior fossa pressure"],
+  ["iih_like", "IIH-like pressure"],
+  ["chiari_like", "Chiari-like pressure"],
+  ["urinary_difficulty", "Urinary difficulty"],
+  ["heavy_legs", "Heavy legs"],
+  ["eczema", "Eczema"],
+  ["psoriasis", "Psoriasis"],
+  ["urticaria", "Urticaria"],
+  ["hay_fever", "Hay fever / allergy"],
+  ["varicosities", "Varicosities"],
+  ["venous_insufficiency", "Venous insufficiency"],
+  ["disc_protrusion", "Disc protrusion pattern"]
+];
+
+const taiyangBranchFlags = [
+  ["posterior_tension", "Posterior tension"],
+  ["tension_worsens_with_stress_cold_or_overstimulation", "Worse with stress/cold/overstimulation"],
+  ["edema_present", "Oedema present"],
+  ["cranial_pressure", "Cranial pressure"],
+  ["acute_cranial_pressure", "Acute cranial pressure"],
+  ["venous_stasis", "Venous stasis"],
+  ["urinary_difficulty", "Urinary difficulty"],
+  ["heavy_legs", "Heavy legs"],
+  ["cold_lower_body", "Cold lower body"],
+  ["tight_surface", "Tight posterior surface"],
+  ["poor_sleep", "Poor sleep"],
+  ["panic_attacks", "Panic attacks"],
+  ["sensory_overload", "Sensory overload"],
+  ["trauma_history", "Trauma history"],
+  ["hyperarousal", "Hyperarousal"],
+  ["impaired_emotional_integration", "Impaired emotional integration"],
+  ["heat_signs", "Heat signs"],
+  ["immune_hyperreactivity", "Immune hyperreactivity"],
+  ["allergy", "Allergy"],
+  ["internal_pump_weakness", "Weak internal pump"],
+  ["varicosities", "Varicosities"],
+  ["venous_insufficiency", "Venous insufficiency"],
+  ["disc_protrusion_pattern", "Disc protrusion pattern"],
+  ["sleep_improved", "Sleep improved"],
+  ["internal_warmth_returning", "Internal warmth returning"]
+];
+
+const taiyangSafetyFlags = [
+  ["active_panic_or_dissociation", "Active panic or dissociation"],
+  ["acute_migraine_active", "Acute migraine"],
+  ["fresh_trauma", "Fresh trauma"],
+  ["severe_shaoyin_depletion", "Severe Shaoyin depletion"],
+  ["psychotic_state", "Psychotic state"],
+  ["severe_IIH_symptoms", "Severe IIH symptoms"],
+  ["derealization_active", "Derealisation active"],
+  ["intervention_documentation_required", "Formal documentation needed"],
+  ["debugMode", "Debug mode"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -1896,6 +2093,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("shaoyin")}
       >
         Meta pattern
+      </button>
+      <button
+        className={mode === "taiyang" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("taiyang")}
+      >
+        Taiyang shell
       </button>
     </nav>
   );
@@ -2994,6 +3198,216 @@ function ShaoyinTaiyangSection() {
   );
 }
 
+function TaiyangScoreBars({ scores = {} }) {
+  const rows = Object.entries(scores).map(([label, score]) => [titleCase(label), score]);
+
+  if (!rows.length) return null;
+
+  return (
+    <section>
+      <h2>Branch scores</h2>
+      <div className="av-axis-bars">
+        {rows.map(([label, score]) => (
+          <div className="av-axis-row" key={label}>
+            <div>
+              <strong>{label}</strong>
+              <span>{score}/10</span>
+            </div>
+            <div className="av-axis-track">
+              <div className="av-axis-fill" style={{ width: `${Math.min(score, 10) * 10}%` }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TaiyangResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient;
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className="av-output-header">
+        <p>Taiyang terrain module</p>
+        <strong>{patient.title}</strong>
+      </div>
+
+      <section>
+        <h2>Terrain interpretation</h2>
+        <p>{patient.summary}</p>
+        {patient.branch_selection_note && <p>{patient.branch_selection_note}</p>}
+        {patient.laser_message && <p>{patient.laser_message}</p>}
+      </section>
+
+      <TagSection title="Integration order" items={patient.integration_order || []} tone="effect" empty="No sequence generated." />
+      <TagSection title="Mixed pattern / overlays" items={[...(result.mixed_patterns || []), ...(result.overlay_activation_status?.overlays || [])].map(titleCase)} tone="mod" empty="No overlay active." />
+      <TagSection title="Contraindications" items={result.contraindications || []} tone="avoid" empty="No contraindications triggered." />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {patient.safety_notes.map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Advanced clinician view</summary>
+          <p>Selected branch: {result.selected_branch || "not active"}</p>
+          <p>System mode: {result.systemMode}</p>
+          <p>Laser status: {result.laser_eligibility?.status}</p>
+          <p>Supplement status: {result.supplement_eligibility?.eligible ? "eligible" : "blocked"}</p>
+          <p>Formal documentation: {result.formal_documentation?.label}</p>
+          <p>Internal logic: {result.internal_field_logic}</p>
+
+          <TaiyangScoreBars scores={result.branch_scores} />
+
+          <TagSection title="Visible terminology" items={result.display_terms || []} tone="mod" empty="No terminology listed." />
+          <TagSection title="Internal target zones" items={result.target_zones?.internal || []} tone="effect" empty="No target zones listed." />
+          <TagSection title="Herb layer" items={(result.herb_layer?.herbs || []).map((item) => `${item.name}: ${item.role}`)} tone="effect" empty="No herb layer listed." />
+          <TagSection title="Laser notes" items={result.intervention_layers?.laser_layer?.notes || []} tone="mod" empty="No laser notes." />
+          <TagSection title="Supplement layer" items={[result.supplement_layer?.name, result.supplement_layer?.timing].filter(Boolean)} tone="effect" empty="No supplement layer listed." />
+          <TagSection title="Triggered rules" items={(result.triggered_rules || []).map((item) => `${item.id}: ${item.action}`)} tone="mod" empty="None triggered." />
+          <TagSection title="Core principles" items={result.core_principles || []} tone="effect" empty="No principles listed." />
+          <TagSection title="Cross-batch links" items={result.cross_batch_links || []} tone="effect" empty="No cross-batch links listed." />
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function TaiyangModuleSection() {
+  const [input, setInput] = useState(taiyangInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  function toggleArray(key, value) {
+    setInput((current) => {
+      const list = current[key];
+      return {
+        ...current,
+        [key]: list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+      };
+    });
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/taiyang", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, debugMode: advanced || input.debugMode })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Taiyang module evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(taiyangInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>TAIYANG_MODULE_v1.0</h2>
+          <p className="av-muted">
+            Posterior Shell Overpressure / Blocked Shaoyin Return Flow. This is an educational pattern-recognition tool, not a medical diagnosis.
+          </p>
+        </section>
+
+        {taiyangFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <ToggleList
+          title="Symptoms and regional expressions"
+          items={taiyangSymptomItems}
+          selected={input.symptoms}
+          onToggle={(value) => toggleArray("symptoms", value)}
+        />
+
+        <ToggleList
+          title="Taiyang branch signals"
+          items={taiyangBranchFlags}
+          selected={taiyangBranchFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <ToggleList
+          title="Laser / DuoLife safety gates"
+          items={taiyangSafetyFlags}
+          selected={taiyangSafetyFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show clinician/laser/order panels</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate Taiyang module"}
+        </button>
+      </form>
+
+      <TaiyangResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function HeadacheEngineSection() {
   const [input, setInput] = useState(headacheInitialInput);
   const [result, setResult] = useState(null);
@@ -3327,6 +3741,8 @@ export default function AvicennaApp() {
             ? "Spinal & Neuro-Meningeal Failure Modes"
             : mode === "shaoyin"
               ? "Shaoyin-Taiyang Dissociation Engine"
+              : mode === "taiyang"
+                ? "TAIYANG_MODULE_v1.0"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -3339,6 +3755,8 @@ export default function AvicennaApp() {
             ? "Functional spinal scoring across disc, fascia, neurogenic, and ligament holding layers"
             : mode === "shaoyin"
               ? "Inner Freeze / Outer Expansion meta-pattern screen for chronic downstream manifestations"
+              : mode === "taiyang"
+                ? "Posterior shell overpressure, laser eligibility, and Herba -> HILT Laser -> DuoLife sequencing"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
@@ -3358,6 +3776,8 @@ export default function AvicennaApp() {
         <SpinalFailureModeSection />
       ) : mode === "shaoyin" ? (
         <ShaoyinTaiyangSection />
+      ) : mode === "taiyang" ? (
+        <TaiyangModuleSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

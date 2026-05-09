@@ -1,0 +1,113 @@
+{
+  "module": "taiyang_hilt_laser_eligibility",
+  "source": "avicenna_engine_batch14.json",
+  "principle": "HILT is the mechanical–field decompression valve of the Taiyang shell, when energy can no longer be recalled from within.",
+  "mechanism_summary": "Laser does not polarise. It does not 'add Yin' or 'remove Yang'. It interrupts pathological chaotic Yang-oscillation. Once noise is removed, healthy Yin oscillation becomes available as a phase anchor for structured Yang oscillation.",
+  "clinical_formulation": "Peripheral laser neuromodulation reduces pathological high-frequency activation, allowing autonomic rebalancing.",
+  "documentation_rule": {
+    "patient_record": "fascia / nerve (biomechanical language)",
+    "clinician_knowledge": "field / meridian",
+    "formal_documentation": "biomechanical / neurofascial language only"
+  },
+  "absolute_contraindications": [
+    {
+      "key": "acute_migraine_active",
+      "label": "acute migraine"
+    },
+    {
+      "key": "fresh_trauma",
+      "label": "fresh trauma"
+    },
+    {
+      "key": "severe_shaoyin_depletion",
+      "label": "severe Shaoyin depletion"
+    },
+    {
+      "key": "psychotic_state",
+      "label": "psychotic state"
+    },
+    {
+      "key": "severe_IIH_symptoms",
+      "label": "severe IIH symptoms"
+    },
+    {
+      "key": "active_panic_or_dissociation",
+      "label": "active panic or dissociation"
+    }
+  ],
+  "app_message_when_contraindicated": "The field needs direction, not energy.",
+  "internal_hungarian_message": "A mező most irányt kér, nem energiát.",
+  "formal_documentation_template": "Peripheral neuro-fascial decompression using HILT laser at [zone] convergence zones.",
+  "branch_logic": {
+    "taiyang_pure_tension": {
+      "modality": "HILT laser (Summus Horizon)",
+      "recommendation": "strongly_recommended",
+      "target_zones": [
+        "BL10–BL20 (occiput to upper back)",
+        "SI9–SI11 (scapula)",
+        "trapezius / erector spinae"
+      ],
+      "mechanism": "Fascia EZ recharge; dissolution of local field micro-stagnations; passive Taiyang shell decompression",
+      "clinical_label": "Posterior neuro-fascial decompression using HILT",
+      "legal_safe_label": "Peripheral neuro-fascial decompression using HILT laser at posterior convergence zones",
+      "contraindications": [
+        "acute_migraine_active == true"
+      ]
+    },
+    "taiyang_water_sludging": {
+      "modality": "HILT laser (Summus Horizon)",
+      "recommendation": "conditionally_recommended",
+      "gate_question": "acute_migraine_active OR acute_cranial_pressure → delay laser, herbs first",
+      "target_zones": [
+        "BL paravertebral T6–L2",
+        "sacrum",
+        "poplitea BL40"
+      ],
+      "mechanism": "Water-field conduction downward; venous and fascial stasis resolution. Does not dry, but moves.",
+      "legal_safe_label": "Peripheral neuro-fascial decompression using HILT laser at paravertebral and sacral zones",
+      "contraindications": [
+        "acute_migraine_active == true",
+        "acute_cranial_pressure == true"
+      ]
+    },
+    "taiyang_shaoyin_deficiency": {
+      "modality": "HILT laser (Summus Horizon)",
+      "recommendation": "delayed_and_gentle",
+      "rule": "First 7–10 days: herbs only. Laser only after sleep improves and internal warmth returns.",
+      "target_zones": [
+        "BL23 lumbar (gentle)",
+        "BL15–17 thoracic heart zone"
+      ],
+      "rationale": "Do not drain remaining Yang. Only proceed when patient is stabilising.",
+      "contraindications": [
+        "shaoyin_fire_status == severely_deficient",
+        "sleep_quality still_poor"
+      ]
+    },
+    "taiyang_trauma_hyperreactivity": {
+      "modality": "HILT laser (Summus Horizon)",
+      "recommendation": "only_if_stable",
+      "gate_question": "active_panic_or_dissociation == true → laser FORBIDDEN",
+      "target_zones": [
+        "sacrum",
+        "lower BL branches"
+      ],
+      "forbidden_zones": [
+        "head",
+        "neck (direct)"
+      ],
+      "mechanism": "Field safety restoration, body boundary re-establishment",
+      "contraindications": [
+        "active_panic_or_dissociation == true",
+        "fresh_trauma",
+        "derealization_active == true"
+      ]
+    },
+    "taiyang_heat_skin_immune": "uncertain — not explicitly specified for this sub-pattern",
+    "taiyang_vascular_congestion": {
+      "modality": "HILT laser",
+      "recommendation": "uncertain",
+      "notes": "Implied via general Taiyang laser protocol but not explicitly prescribed for vascular sub-pattern"
+    }
+  }
+}
