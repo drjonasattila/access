@@ -1438,8 +1438,8 @@ const spinalMultiGroups = [
     title: "Requested or planned supports",
     items: [
       ["collagen", "Collagen"],
-      ["myblood", "MyBlood / flow support"],
-      ["flow_support", "Equivalent flow support"],
+      ["flow_support", "Microcirculatory flow support"],
+      ["equivalent_flow_support", "Equivalent flow support"],
       ["steroid", "Steroid / block"],
       ["stretching", "Stretching"],
       ["early_mobilisation", "Early mobilisation"]
@@ -2135,6 +2135,59 @@ const transitionSafetyFlags = [
   ["pain_syndromes_primary_keys", "Reject: pain syndrome as primary key"]
 ];
 
+const platformInitialInput = {
+  system_output_mode: "front_end",
+  instability_type: "",
+  root_branch_assessment: "",
+  system_priority: "",
+  branch_direction: "",
+  traditional_content_referenced: false,
+  clinician_requests_upload: false,
+  case_free_text_only: false,
+  case_plausibility_score: "",
+  data_completeness_score: ""
+};
+
+const platformFieldGroups = [
+  {
+    key: "instability_type",
+    label: "Where is the primary instability?",
+    options: [
+      ["energy_deficiency", "Energy deficiency", "Low reserve, slow recovery, depletion"],
+      ["overheating", "Overheating", "Heat, flares, irritability, inflammatory tone"],
+      ["dryness", "Dryness", "Dry tissue, low hydration, rebuilding need"],
+      ["stagnation", "Stagnation", "Blocked movement, heaviness, pressure"],
+      ["neural_overload", "Neural overload", "Sensory load, pain amplification, autonomic noise"]
+    ]
+  },
+  {
+    key: "root_branch_assessment",
+    label: "What is root, what is branch?",
+    options: [
+      ["internal_reserves_weak", "Internal reserves weak", "Support before surface intervention"],
+      ["exit_pathway_impaired", "Exit pathway impaired", "Ventilation / drainage before rebuilding"],
+      ["trauma_active", "Trauma active", "Hyperreactivity overlay and stimulation caution"]
+    ]
+  },
+  {
+    key: "system_priority",
+    label: "Which system can help most right now?",
+    options: [
+      ["medication", "Medication", "Conventional care or medication review"],
+      ["herbal", "Herbal", "Plant-based support under clinician guidance"],
+      ["lifestyle", "Lifestyle", "Sleep, pacing, rhythm, movement"],
+      ["nutrition", "Nutrition", "Nutritional and supplement support"],
+      ["nervous_system_reset", "Nervous system reset", "Breath, bodywork, device or regulation input"]
+    ]
+  }
+];
+
+const platformAdvancedFlags = [
+  ["traditional_content_referenced", "Traditional content referenced"],
+  ["clinician_requests_upload", "Clinician case upload"],
+  ["case_free_text_only", "Case is free text only"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -2300,6 +2353,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("transition")}
       >
         Transition router
+      </button>
+      <button
+        className={mode === "platform" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("platform")}
+      >
+        Platform UX
       </button>
     </nav>
   );
@@ -3577,7 +3637,7 @@ function TaiyangModuleSection() {
         />
 
         <ToggleList
-          title="Laser / DuoLife safety gates"
+          title="Laser / supplement safety gates"
           items={taiyangSafetyFlags}
           selected={taiyangSafetyFlags.filter(([key]) => input[key]).map(([key]) => key)}
           onToggle={(value) => setField(value, !input[value])}
@@ -3630,6 +3690,241 @@ function TransitionAxisBars({ scores = {} }) {
         ))}
       </div>
     </section>
+  );
+}
+
+function PlatformResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient || {};
+  const caseQuality = result.case_quality || result.clinician?.case_quality_status;
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className="av-output-header">
+        <p>Platform architecture</p>
+        <strong>{patient.instability_type || "Instability route"}</strong>
+      </div>
+
+      <section>
+        <h2>Three-question output</h2>
+        <div className="av-mini-grid">
+          <span><strong>Instability</strong>{patient.instability_type}</span>
+          <span><strong>Root / branch</strong>{patient.root_branch}</span>
+          <span><strong>System priority</strong>{patient.system_priority}</span>
+        </div>
+        <p>{patient.explanation}</p>
+      </section>
+
+      {patient.branch_direction && (
+        <section>
+          <h2>Branch direction</h2>
+          <p>{patient.branch_direction.direction}: {patient.branch_direction.interpretation}</p>
+        </section>
+      )}
+
+      <section className="av-safety-box">
+        <h2>Language and safety</h2>
+        {(patient.safety_notes || []).map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Practitioner / case-quality panel</summary>
+          <section>
+            <h2>Output mode</h2>
+            <p>{result.system_output_mode}</p>
+          </section>
+          <section>
+            <h2>Case quality</h2>
+            <p>{typeof caseQuality === "string" ? caseQuality : result.case_quality?.status || "No case submission assessed"}</p>
+            {result.case_quality && (
+              <div className="av-mini-grid">
+                <span><strong>Plausibility</strong>{result.case_quality.case_plausibility_score}</span>
+                <span><strong>Completeness</strong>{result.case_quality.data_completeness_score}</span>
+                <span><strong>Human review</strong>{result.case_quality.human_review_required ? "Required" : "Not required"}</span>
+              </div>
+            )}
+          </section>
+          <TagSection
+            title="Rules triggered"
+            items={(result.triggered_rules || []).map((rule) => rule.id)}
+            tone="effect"
+          />
+          {result.clinician && (
+            <pre>{JSON.stringify(result.clinician, null, 2)}</pre>
+          )}
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function PlatformArchitectureSection() {
+  const [input, setInput] = useState(platformInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    const missing = platformFieldGroups.filter((group) => !input[group.key]).map((group) => group.label);
+    if (missing.length) {
+      setError(`Please complete: ${missing.join(", ")}`);
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/platform", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...input,
+          system_output_mode: advanced ? "practitioner" : "front_end"
+        })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Platform architecture evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(platformInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>Platform Philosophy & Architecture</h2>
+          <p className="av-muted">
+            Three-question routing for instability, root/branch, and the system most useful right now. Evidence-informed + practice-derived.
+          </p>
+        </section>
+
+        {platformFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section className="av-section">
+          <h2>Practitioner mode</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show backend maps and case-quality architecture</span>
+          </label>
+        </section>
+
+        {advanced && (
+          <>
+            <section className="av-section">
+              <h2>Branch direction</h2>
+              <div className="av-options">
+                {[
+                  ["", "Not specified", "Do not infer branch direction"],
+                  ["outbound", "Outbound", "Release valve / overflow"],
+                  ["inbound", "Inbound", "Stress entry / suppression route"]
+                ].map(([value, label, description]) => (
+                  <label className="av-option" key={label}>
+                    <input
+                      type="radio"
+                      name="branch_direction"
+                      value={value}
+                      checked={input.branch_direction === value}
+                      onChange={() => setField("branch_direction", value)}
+                    />
+                    <span>
+                      <strong>{label}</strong>
+                      <small>{description}</small>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </section>
+
+            <ToggleList
+              title="Case library / language flags"
+              items={platformAdvancedFlags}
+              selected={platformAdvancedFlags.filter(([key]) => input[key]).map(([key]) => key)}
+              onToggle={(value) => setField(value, !input[value])}
+            />
+
+            <section className="av-section">
+              <h2>Case quality scores</h2>
+              <input
+                className="av-number"
+                min="0"
+                max="1"
+                step="0.01"
+                type="number"
+                placeholder="Plausibility 0-1"
+                value={input.case_plausibility_score}
+                onChange={(event) => setField("case_plausibility_score", event.target.value)}
+              />
+              <input
+                className="av-number"
+                min="0"
+                max="1"
+                step="0.01"
+                type="number"
+                placeholder="Completeness 0-1"
+                value={input.data_completeness_score}
+                onChange={(event) => setField("data_completeness_score", event.target.value)}
+              />
+            </section>
+          </>
+        )}
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate platform route"}
+        </button>
+      </form>
+
+      <PlatformResult result={result} advanced={advanced} onReset={reset} />
+    </div>
   );
 }
 
@@ -4181,6 +4476,8 @@ export default function AvicennaApp() {
                 ? "TAIYANG_MODULE_v1.0"
                 : mode === "transition"
                   ? "Transition Engine v1.0"
+                  : mode === "platform"
+                    ? "Platform Philosophy & Architecture"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -4194,9 +4491,11 @@ export default function AvicennaApp() {
             : mode === "shaoyin"
               ? "Inner Freeze / Outer Expansion meta-pattern screen for chronic downstream manifestations"
               : mode === "taiyang"
-                ? "Posterior shell overpressure, laser eligibility, and Herba -> HILT Laser -> DuoLife sequencing"
+                ? "Posterior shell overpressure, laser eligibility, and Herba -> HILT Laser -> supplement support sequencing"
                 : mode === "transition"
                   ? "High-level 7-axis routing above terrain modules and downstream symptom expressions"
+                  : mode === "platform"
+                    ? "Three-question UX, instability routing, case-quality architecture, and cross-system translation rules"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
@@ -4220,6 +4519,8 @@ export default function AvicennaApp() {
         <TaiyangModuleSection />
       ) : mode === "transition" ? (
         <TransitionEngineSection />
+      ) : mode === "platform" ? (
+        <PlatformArchitectureSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

@@ -473,7 +473,7 @@
       "id": "restore_flow",
       "goal": "gently reopen microcirculation and discharge residual pressure",
       "allowed": [
-        "MyBlood",
+        "microcirculatory support",
         "weak ginger if no dry component",
         "warming laser"
       ],
@@ -485,7 +485,7 @@
       "id": "reintegration",
       "goal": "restore load tolerance and structural support",
       "allowed": [
-        "ProCardiol",
+        "cardiometabolic flow support",
         "collagen structural support if instability confirmed",
         "progressive movement"
       ]

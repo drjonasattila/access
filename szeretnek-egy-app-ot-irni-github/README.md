@@ -13,6 +13,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - A Shaoyin-Taiyang Dissociation meta-pattern endpoint at `app/api/shaoyin-taiyang/route.js`
 - A Taiyang posterior-shell terrain endpoint at `app/api/taiyang/route.js`
 - A high-level Transition Engine routing endpoint at `app/api/transition/route.js`
+- A Platform Philosophy & Architecture endpoint at `app/api/platform/route.js`
 - The migrated rule engine in `lib/avicenna/engine.cjs`
 - The Batch 6 headache engine in `lib/avicenna/headacheEngine.cjs`
 - The Batch 10 pharyngeal arch engine in `lib/avicenna/pharyngealArchEngine.cjs`
@@ -21,6 +22,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - The Batch 13 Shaoyin-Taiyang dissociation meta-pattern engine in `lib/avicenna/shaoyinTaiyangDissociationEngine.cjs`
 - The Batch 14 Taiyang posterior-shell terrain module in `lib/avicenna/taiyangModule.cjs`
 - The Batch 15 Transition Engine routing layer in `lib/avicenna/transitionEngine.cjs`
+- The Batch 16 platform philosophy, three-question UX, instability classifier, and case-quality architecture in `lib/avicenna/platformArchitecture.cjs`
 - Claude-exported data files in `lib/avicenna/data/`
 - Batch 6 structured source data in `lib/avicenna/data/engines/headacheEngine.batch6.json`
 - Batch 7 headache/pain extension data in `lib/avicenna/data/engines/avicenna_engine_batch7.json`
@@ -32,7 +34,9 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - Batch 13 Shaoyin-Taiyang Dissociation data in `lib/avicenna/data/engines/avicenna_engine_batch13.json` and `lib/avicenna/data/engines/shaoyinTaiyangDissociationEngine.json`
 - Batch 14 Taiyang module data in `lib/avicenna/data/engines/avicenna_engine_batch14.json`, `lib/avicenna/data/terrainModules/taiyangModule.v1.json`, and `lib/avicenna/data/libraries/laserEligibility.taiyang.json`
 - Batch 15 Transition Engine data in `lib/avicenna/data/engines/avicenna_engine_batch15.json`, `lib/avicenna/data/engines/transitionEngine.v1.json`, `lib/avicenna/data/engines/tthModule.v1.json`, `lib/avicenna/data/libraries/unifiedTransitionMap.json`, and `lib/avicenna/data/libraries/treatmentClusters.v1.json`
-- Batch 9, Batch 10, Batch 11, Batch 12, Batch 13, Batch 14, and Batch 15 herb, cranial nerve, gate organ, developmental model, reflexology, vertical-axis, spinal, neuro-meningeal, Shaoyin sink, Taiyang-Shaoyin, Taiyang laser eligibility, transition map, treatment cluster, and field medicine concept libraries in `lib/avicenna/data/libraries/`
+- Batch 16 platform data in `lib/avicenna/data/platform/platformPhilosophy.v1.json`, `lib/avicenna/data/libraries/sixCompartmentCommunicationMap.json`, `lib/avicenna/data/libraries/threeSystemIntegrationModel.json`, `lib/avicenna/data/libraries/instabilityClassifier.v1.json`, and `lib/avicenna/data/caseLibrary/dataQualityArchitecture.v1.json`
+- Batch 9, Batch 10, Batch 11, Batch 12, Batch 13, Batch 14, Batch 15, and Batch 16 herb, cranial nerve, gate organ, developmental model, reflexology, vertical-axis, spinal, neuro-meningeal, Shaoyin sink, Taiyang-Shaoyin, Taiyang laser eligibility, transition map, treatment cluster, platform, and field medicine concept libraries in `lib/avicenna/data/libraries/`
+- A neutral supplement compatibility layer in `lib/avicenna/brandSanitizer.cjs`; active UI and engine outputs use generic support categories rather than named proprietary product recommendations.
 - Engine regression checks in `scripts/test-engine.cjs`
 - Headache engine checks in `scripts/test-headache-engine.cjs`
 - Pharyngeal arch engine checks in `scripts/test-pharyngeal-arch-engine.cjs`
@@ -41,6 +45,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - Shaoyin-Taiyang meta-pattern checks in `scripts/test-shaoyin-taiyang-engine.cjs`
 - Taiyang posterior-shell module checks in `scripts/test-taiyang-module.cjs`
 - Transition Engine routing checks in `scripts/test-transition-engine.cjs`
+- Platform architecture checks in `scripts/test-platform-architecture.cjs`
 - Original Claude export preserved in `avicenna-export/`
 
 ## Run locally
@@ -74,6 +79,7 @@ npm run test:spinal
 npm run test:shaoyin
 npm run test:taiyang
 npm run test:transition
+npm run test:platform
 ```
 
 ## GitHub setup

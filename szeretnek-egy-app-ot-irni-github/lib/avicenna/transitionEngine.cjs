@@ -3,6 +3,7 @@ const transitionEngineData = require("./data/engines/transitionEngine.v1.json");
 const tthModuleData = require("./data/engines/tthModule.v1.json");
 const unifiedTransitionMap = require("./data/libraries/unifiedTransitionMap.json");
 const treatmentClusters = require("./data/libraries/treatmentClusters.v1.json");
+const { sanitizeForOutput } = require("./brandSanitizer.cjs");
 
 const RULES = transitionEngineData.rules || [];
 const RULE_BY_ID = Object.fromEntries(RULES.map((rule) => [rule.id, rule]));
@@ -213,7 +214,7 @@ function normaliseInput(input = {}) {
     vomiting_present: bool(input.vomiting_present)
   });
 
-  return {
+  const result = {
     systemMode: input.systemMode === "clinician" ? "clinician" : "patient",
     headache_quality: headacheQuality,
     headache_laterality: headacheLaterality,
@@ -262,6 +263,8 @@ function normaliseInput(input = {}) {
     panic_like: includesAny(symptoms, ["panic"]) || input.autonomic_state === "panic",
     fatigue_or_collapse: input.autonomic_state === "collapse" || input.autonomic_state === "freeze" || includesAny(symptoms, ["fatigue", "collapse"])
   };
+
+  return sanitizeForOutput(result);
 }
 
 function isTthInput(input) {
@@ -372,11 +375,13 @@ function detectTransitions(input, axisScores) {
     });
   }
   detected.sort((a, b) => b.score - a.score || b.priority - a.priority);
-  return {
+  const finalResult = {
     primary_transition: detected[0] || null,
     secondary_transition: detected[1] || null,
     all: detected
   };
+
+  return sanitizeForOutput(finalResult);
 }
 
 function classifyExpression(input, axisScores) {
@@ -610,7 +615,7 @@ function evaluateTransitionEngine(inputPayload = {}) {
   if (highestAxis?.id === "central") moduleLinks.push("chronic pain / fibromyalgia / CFS logic");
   if (transitions.all.some((item) => item.transition === "Shaoyang -> Jueyin")) moduleLinks.push("CRPS / pelvic autonomic pain modules");
 
-  return {
+  const output = {
     engine: "transition_engine_v1",
     name: "TRANSITION_ENGINE_v1.0",
     subtitle: "TTH Module + Unified Transition Map",
@@ -700,6 +705,8 @@ function evaluateTransitionEngine(inputPayload = {}) {
       secondary_attributes: ["pain_syndromes", "western diagnoses", "symptom expressions"]
     }
   };
+
+  return sanitizeForOutput(output);
 }
 
 module.exports = {

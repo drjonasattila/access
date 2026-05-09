@@ -226,7 +226,11 @@ const jointOA = evaluateHeadache({
 });
 
 assert.equal(jointOA.batch9_joint_classifier.classifier, "OA_yin_joint_degenerative");
-assert.deepEqual(jointOA.batch9_joint_classifier.intervention_sequence, ["Collagen", "MyBlood", "ProCardiol"]);
+assert.deepEqual(jointOA.batch9_joint_classifier.intervention_sequence, ["Collagen", "microcirculatory support", "cardiometabolic flow support"]);
+assert(
+  !JSON.stringify(jointOA).includes("DuoLife"),
+  "Headache/pain output must not display DuoLife branding"
+);
 assert.ok(jointOA.batch9_rules_triggered_by_id.some((rule) => rule.id === "R_B2_010"));
 
 const pelvic = evaluateHeadache({

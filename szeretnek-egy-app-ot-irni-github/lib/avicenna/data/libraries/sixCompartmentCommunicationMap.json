@@ -1,0 +1,56 @@
+{
+  "module": "six_compartment_communication_map",
+  "visibility": "backend_or_practitioner_only",
+  "axis_mapping_to_transition_engine": {
+    "TaiYang": "Axis 1 - Posterior Sensory Axis",
+    "ShaoYang": "Axis 2 - Lateral Autonomic Axis",
+    "YangMing": "Axis 3 - Anterior Metabolic Axis",
+    "TaiYin": "Axis 4 - Midline Interoceptive Axis",
+    "ShaoYin": "Axis 5 - Survival / Emotional Axis",
+    "JueYin": "Axis 6 - Deep Autonomic-Vascular Axis",
+    "Ren_Du_Central": "Axis 7 - Central Integration Axis"
+  },
+  "compartments": {
+    "description": "Visual operational map showing correspondence between TCM meridian axes, Ayurvedic concepts, and anatomical/tissue roles. Bidirectional branches: outbound = release valve for excess charge; inbound = pathogen entry route (physical and emotional).",
+    "root_concept": "Dhatu = Yin (tissues). Root instability = solid organ water grid electrical instability (Empty Heat).",
+    "compartment_mappings": [
+      {
+        "tcm_axis": "TaiYang (BL/SI)",
+        "anatomical_territory": "skin, nerves, occiput, spine, neural crest",
+        "ayurvedic_correspondence": "Bhrajaka Pitta + Apana",
+        "ayurvedic_function": "skin, immune surveillance, external defence, heat dissipation"
+      },
+      {
+        "tcm_axis": "ShaoYin (KD/HT)",
+        "anatomical_territory": "central axis — connects dorsal and ventral",
+        "ayurvedic_correspondence": "Ojas, Majja, Shukra",
+        "ayurvedic_function": "deep vitality, marrow, reproductive essence"
+      },
+      {
+        "tcm_axis": "JueYin (LV/PC)",
+        "anatomical_territory": "deep autonomic–vascular",
+        "ayurvedic_correspondence": "Sadhaka + Ranjaka Pitta",
+        "ayurvedic_function": "emotional-metabolic pivot"
+      },
+      {
+        "tcm_axis": "ShaoYang (GB/TB)",
+        "anatomical_territory": "lipid membranes, fascia, external/internal pivot",
+        "ayurvedic_correspondence": "Samana Vyana / Prana pivot",
+        "ayurvedic_function": "prana redistribution, gate / routing hub"
+      },
+      {
+        "tcm_axis": "TaiYin (LU/LI)",
+        "anatomical_territory": "midline interoceptive",
+        "ayurvedic_correspondence": "Rasa Dhatu / Kapha",
+        "ayurvedic_function": "tissue nutrition, fluid regulation"
+      },
+      {
+        "tcm_axis": "YangMing (ST/SP)",
+        "anatomical_territory": "digestion, bulk metabolism, inflammation",
+        "ayurvedic_correspondence": "Pachaka Pitta",
+        "ayurvedic_function": "metabolic waste and heat elimination, microbiome, emotional digestion"
+      }
+    ],
+    "engine_rule": "Branches are bidirectional. Outbound = release valve for excessive charge. Inbound = pathogen entry route (physical and emotional). Both directions must be modelled in pattern logic."
+  }
+}

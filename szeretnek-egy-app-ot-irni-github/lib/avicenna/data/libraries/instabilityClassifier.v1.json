@@ -1,0 +1,86 @@
+{
+  "module": "instability_classifier_v1",
+  "front_end_types": [
+    "energy_deficiency",
+    "overheating",
+    "dryness",
+    "stagnation",
+    "neural_overload"
+  ],
+  "classifier": {
+    "description": "Front-end primary state classifier. Maps to backend axis/pattern logic. Five instability types that user can identify.",
+    "instability_types": [
+      {
+        "label": "energy_deficiency",
+        "backend_mapping": [
+          "Shaoyin deficit",
+          "Taiyin collapse",
+          "Ojas depletion"
+        ],
+        "western_correlate": "mitochondrial insufficiency, adrenal fatigue"
+      },
+      {
+        "label": "overheating",
+        "backend_mapping": [
+          "Shaoyang overload",
+          "Pitta excess",
+          "Yangming heat"
+        ],
+        "western_correlate": "inflammatory phenotype, sympathetic spike"
+      },
+      {
+        "label": "dryness",
+        "backend_mapping": [
+          "Yin depletion",
+          "Rasa/Dhatu depletion",
+          "Empty Heat"
+        ],
+        "western_correlate": "tissue dehydration, reduced EZ water, fascia rigidity"
+      },
+      {
+        "label": "stagnation",
+        "backend_mapping": [
+          "Qi stagnation",
+          "blood stagnation",
+          "Kapha accumulation",
+          "Ama"
+        ],
+        "western_correlate": "microcirculatory slowdown, lymphatic congestion, fascial adhesion"
+      },
+      {
+        "label": "neural_overload",
+        "backend_mapping": [
+          "Taiyang overpressure",
+          "Jueyin overcharge",
+          "Vata excess"
+        ],
+        "western_correlate": "central sensitisation, autonomic dysregulation, sensory amplification"
+      }
+    ]
+  },
+  "routing_links": {
+    "energy_deficiency": [
+      "Shaoyin",
+      "Taiyin"
+    ],
+    "overheating": [
+      "Shaoyang",
+      "Yangming"
+    ],
+    "dryness": [
+      "Yin depletion",
+      "tissue hydration logic"
+    ],
+    "stagnation": [
+      "Taiyang or Yangming by location",
+      "microcirculation",
+      "posterior sensory cluster"
+    ],
+    "neural_overload": [
+      "Taiyang",
+      "Jueyin",
+      "central sensitisation",
+      "autonomic dysregulation"
+    ]
+  }
+}

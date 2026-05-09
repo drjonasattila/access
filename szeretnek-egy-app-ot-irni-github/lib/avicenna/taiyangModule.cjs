@@ -1,6 +1,7 @@
 const batch14Data = require("./data/engines/avicenna_engine_batch14.json");
 const taiyangModuleData = require("./data/terrainModules/taiyangModule.v1.json");
 const laserEligibilityData = require("./data/libraries/laserEligibility.taiyang.json");
+const { sanitizeForOutput } = require("./brandSanitizer.cjs");
 
 const PATTERNS = batch14Data.patterns || [];
 const RULES = taiyangModuleData.rules || [];
@@ -46,7 +47,7 @@ const GLOBAL_PRINCIPLES = [
   "Taiyang swelling = blocked internal return + external shell overflow.",
   "Herba = field direction.",
   "HILT laser = shell decompression / fascia reset.",
-  "DuoLife = biological stabilisation only.",
+  "Supplement support = biological stabilisation only.",
   "Never reverse the order.",
   "Laser does not polarise. It interrupts pathological chaotic Yang oscillation.",
   "The field needs direction, not energy."
@@ -311,7 +312,7 @@ function evaluateSupplementEligibility(input, branch) {
     eligible: contraindications.length === 0,
     blocked: contraindications.length > 0,
     contraindications,
-    role: "DuoLife = biological stabilisation only. It is never the primary treatment layer."
+    role: "Supplement support = biological stabilisation only. It is never the primary treatment layer."
   };
 }
 
@@ -429,13 +430,13 @@ function evaluateTaiyangModule(inputPayload = {}) {
   if (selectedBranch === "taiyang_shaoyin_deficiency" && supplement.eligible) triggered.push(rule("B14_R014", "Shaoyin-deficiency branch supplement timing"));
   if (selectedBranch === "taiyang_trauma_hyperreactivity" && input.stable) triggered.push(rule("B14_R015", "stable trauma/reactivity branch"));
   if (selectedBranch === "taiyang_water_sludging" && input.acute_cranial_pressure) triggered.push(rule("B14_R016", "acute cranial pressure in water-sludging branch"));
-  if (supplement.eligible) triggered.push(rule("B14_R017", "DuoLife eligible as third layer only"));
+  if (supplement.eligible) triggered.push(rule("B14_R017", "supplement support eligible as third layer only"));
   if (input.intervention_documentation_required) triggered.push(rule("B14_R018", "formal documentation requested"));
   if (selectedBranch === "taiyang_shaoyin_deficiency") triggered.push(rule("B14_R019", input.heat_signs ? "Rou Gui present with heat signs" : "Rou Gui micro-dose rule applies"));
 
   const contraindications = [
     ...laser.contraindications.map((item) => `HILT laser blocked: ${item}.`),
-    ...supplement.contraindications.map((item) => `DuoLife layer blocked: ${item}.`),
+    ...supplement.contraindications.map((item) => `Supplement support layer blocked: ${item}.`),
     ...intervention.contraindications
   ];
 
@@ -456,14 +457,14 @@ function evaluateTaiyangModule(inputPayload = {}) {
     },
     {
       order: 3,
-      layer: "DuoLife",
+      layer: "Supplement support",
       status: supplement.eligible ? "eligible" : "blocked",
       description: "biological stabilisation only, never primary treatment",
       active: supplement.eligible
     }
   ];
 
-  return {
+  return sanitizeForOutput({
     engine: "taiyang_module_v1",
     name: "TAIYANG_MODULE_v1.0",
     subtitle: "Posterior Shell Overpressure / Blocked Shaoyin Return Flow",
@@ -489,7 +490,7 @@ function evaluateTaiyangModule(inputPayload = {}) {
     integration_order_status: {
       valid_order: true,
       order: integrationSteps,
-      mandatory_principle: "Never reverse the order: Herba -> HILT Laser -> DuoLife."
+      mandatory_principle: "Never reverse the order: Herba -> HILT Laser -> supplement support."
     },
     laser_eligibility: laser,
     supplement_eligibility: supplement,
@@ -522,7 +523,7 @@ function evaluateTaiyangModule(inputPayload = {}) {
       safety_notes: [
         "This is an educational pattern-recognition tool, not a medical diagnosis.",
         "Medication, herb, supplement, or device changes must be discussed with a clinician.",
-        "DuoLife support is biological stabilisation only, not primary treatment.",
+        "Supplement support is biological stabilisation only, not primary treatment.",
         ...(laser.blocked ? ["The field needs direction, not energy."] : [])
       ]
     },
@@ -551,7 +552,7 @@ function evaluateTaiyangModule(inputPayload = {}) {
       systemMode: input.systemMode,
       cross_batch_links: taiyangModuleData.cross_batch_links || []
     }
-  };
+  });
 }
 
 module.exports = {

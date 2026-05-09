@@ -1,0 +1,524 @@
+{
+  "module": "PLATFORM_PHILOSOPHY_AND_ARCHITECTURE_v1.0",
+  "source": "Transition_map_es_app_filozofia__pdf.pdf",
+  "description": "Platform philosophy, cross-system integration model, Six-Compartment Communication Map, app UX logic, and data quality architecture. Engine-relevant components extracted. Business/marketing content summarised as metadata only.",
+  "note": "This document is primarily strategic and philosophical. Clinical pattern content is sparse but the cross-system mapping (TCM/Ayurveda/Western) and the app output logic are directly engine-relevant. Extracted accordingly.",
+  "six_compartment_communication_map": {
+    "description": "Visual operational map showing correspondence between TCM meridian axes, Ayurvedic concepts, and anatomical/tissue roles. Bidirectional branches: outbound = release valve for excess charge; inbound = pathogen entry route (physical and emotional).",
+    "root_concept": "Dhatu = Yin (tissues). Root instability = solid organ water grid electrical instability (Empty Heat).",
+    "compartment_mappings": [
+      {
+        "tcm_axis": "TaiYang (BL/SI)",
+        "anatomical_territory": "skin, nerves, occiput, spine, neural crest",
+        "ayurvedic_correspondence": "Bhrajaka Pitta + Apana",
+        "ayurvedic_function": "skin, immune surveillance, external defence, heat dissipation"
+      },
+      {
+        "tcm_axis": "ShaoYin (KD/HT)",
+        "anatomical_territory": "central axis — connects dorsal and ventral",
+        "ayurvedic_correspondence": "Ojas, Majja, Shukra",
+        "ayurvedic_function": "deep vitality, marrow, reproductive essence"
+      },
+      {
+        "tcm_axis": "JueYin (LV/PC)",
+        "anatomical_territory": "deep autonomic–vascular",
+        "ayurvedic_correspondence": "Sadhaka + Ranjaka Pitta",
+        "ayurvedic_function": "emotional-metabolic pivot"
+      },
+      {
+        "tcm_axis": "ShaoYang (GB/TB)",
+        "anatomical_territory": "lipid membranes, fascia, external/internal pivot",
+        "ayurvedic_correspondence": "Samana Vyana / Prana pivot",
+        "ayurvedic_function": "prana redistribution, gate / routing hub"
+      },
+      {
+        "tcm_axis": "TaiYin (LU/LI)",
+        "anatomical_territory": "midline interoceptive",
+        "ayurvedic_correspondence": "Rasa Dhatu / Kapha",
+        "ayurvedic_function": "tissue nutrition, fluid regulation"
+      },
+      {
+        "tcm_axis": "YangMing (ST/SP)",
+        "anatomical_territory": "digestion, bulk metabolism, inflammation",
+        "ayurvedic_correspondence": "Pachaka Pitta",
+        "ayurvedic_function": "metabolic waste and heat elimination, microbiome, emotional digestion"
+      }
+    ],
+    "engine_rule": "Branches are bidirectional. Outbound = release valve for excessive charge. Inbound = pathogen entry route (physical and emotional). Both directions must be modelled in pattern logic."
+  },
+  "three_system_integration_model": {
+    "description": "Core architectural principle: TCM, Ayurveda, and Western medicine are three clinical languages describing the same biological problem. The engine translates between them — it does not merge or subordinate any system.",
+    "system_roles": {
+      "TCM": {
+        "function": "topology and pattern",
+        "questions_answered": [
+          "Where did the problem start?",
+          "Where is it moving?",
+          "Is it root or branch?",
+          "Which axis collapsed?",
+          "Which compartment is unstable?"
+        ],
+        "engine_role": "provides the map"
+      },
+      "Ayurveda": {
+        "function": "metabolism and tissue state",
+        "questions_answered": [
+          "Is the system too hot?",
+          "Is it dried out?",
+          "Is it toxic?",
+          "Is the fuel depleted?",
+          "Are reserves exhausted?"
+        ],
+        "engine_role": "provides state indicators"
+      },
+      "Western_medicine": {
+        "function": "measurement and safety",
+        "questions_answered": [
+          "What do imaging studies show?",
+          "What do labs show?",
+          "Nerve conduction findings?",
+          "Inflammatory markers?",
+          "What must be excluded?",
+          "What is urgent?"
+        ],
+        "engine_role": "provides control and baseline"
+      }
+    },
+    "common_denominator": {
+      "label": "functional biology",
+      "shared_domains": [
+        "mitochondrial performance",
+        "tissue hydration",
+        "fascia tension",
+        "autonomic nervous system",
+        "immune energy",
+        "stress processing"
+      ],
+      "cross_system_equivalences": [
+        {
+          "domain": "Yin/Yang stability",
+          "system": "TCM"
+        },
+        {
+          "domain": "Dhatu/Pitta balance",
+          "system": "Ayurveda"
+        },
+        {
+          "domain": "metabolism / neuroendocrine / inflammation",
+          "system": "Western"
+        }
+      ]
+    },
+    "clinical_value_statement": "TCM recognises migrating pain. Ayurveda determines if tissue is too hot. Western excludes dangerous causes. Together: not just symptom suppression — system stabilisation.",
+    "patient_facing_statement": "We don't just treat the pain — we address why your body can no longer regenerate."
+  },
+  "app_ux_logic": {
+    "description": "Front-end user experience model. User does NOT interact with the six-layer system directly. Three questions drive the interface.",
+    "user_facing_questions": [
+      {
+        "id": 1,
+        "question": "Where is the primary instability?",
+        "options": [
+          "energy deficiency",
+          "overheating",
+          "dryness",
+          "stagnation",
+          "neural overload"
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What is root, what is branch?",
+        "options": [
+          "internal reserves weak?",
+          "exit pathway impaired?",
+          "trauma active?"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Which system can help MOST right now?",
+        "options": [
+          "medication",
+          "herbal",
+          "lifestyle",
+          "nutrition",
+          "nervous system reset"
+        ]
+      }
+    ],
+    "engine_principle": "App gives recommendation weights, not dogmas.",
+    "evidence_framing": {
+      "preferred_label": "evidence-informed + practice-derived",
+      "avoid": "evidence-based only (too restrictive) OR anti-evidence (legally vulnerable)",
+      "external_framing_for_traditional_content": "It is believed in traditional medical systems that...",
+      "rationale": "Legally safe, professionally defensible, does not overstate or dismiss evidence base"
+    }
+  },
+  "instability_classifier": {
+    "description": "Front-end primary state classifier. Maps to backend axis/pattern logic. Five instability types that user can identify.",
+    "instability_types": [
+      {
+        "label": "energy_deficiency",
+        "backend_mapping": [
+          "Shaoyin deficit",
+          "Taiyin collapse",
+          "Ojas depletion"
+        ],
+        "western_correlate": "mitochondrial insufficiency, adrenal fatigue"
+      },
+      {
+        "label": "overheating",
+        "backend_mapping": [
+          "Shaoyang overload",
+          "Pitta excess",
+          "Yangming heat"
+        ],
+        "western_correlate": "inflammatory phenotype, sympathetic spike"
+      },
+      {
+        "label": "dryness",
+        "backend_mapping": [
+          "Yin depletion",
+          "Rasa/Dhatu depletion",
+          "Empty Heat"
+        ],
+        "western_correlate": "tissue dehydration, reduced EZ water, fascia rigidity"
+      },
+      {
+        "label": "stagnation",
+        "backend_mapping": [
+          "Qi stagnation",
+          "blood stagnation",
+          "Kapha accumulation",
+          "Ama"
+        ],
+        "western_correlate": "microcirculatory slowdown, lymphatic congestion, fascial adhesion"
+      },
+      {
+        "label": "neural_overload",
+        "backend_mapping": [
+          "Taiyang overpressure",
+          "Jueyin overcharge",
+          "Vata excess"
+        ],
+        "western_correlate": "central sensitisation, autonomic dysregulation, sensory amplification"
+      }
+    ]
+  },
+  "data_quality_architecture": {
+    "description": "Case library integrity system. Three-layer defence against data corruption and clinician dishonesty.",
+    "layers": [
+      {
+        "id": 1,
+        "name": "Structured data input",
+        "principle": "No free-text dominance. Forces structured entry.",
+        "required_fields": [
+          "checklists",
+          "scales",
+          "pain scores",
+          "timeline",
+          "labs",
+          "imaging",
+          "before/after",
+          "PROMs (patient-reported outcome measures)"
+        ],
+        "rationale": "Reduces bias and fabrication by limiting interpretive freedom at entry"
+      },
+      {
+        "id": 2,
+        "name": "AI plausibility scoring (coherence index)",
+        "principle": "Not censorship — confidence/coherence index. Flags, does not delete.",
+        "checks": [
+          "Does the pattern fit others in the library?",
+          "Is there outcome-mechanism mismatch?",
+          "Unrealistic timeline?",
+          "Incomplete data?",
+          "Outlier handling?"
+        ],
+        "action_if_low_score": "Flagged for human review. Not auto-deleted. Escalated to admin/board.",
+        "engine_field": "case_plausibility_score (0.0–1.0)"
+      },
+      {
+        "id": 3,
+        "name": "Peer review layer",
+        "principle": "Founding clinicians can comment anonymously. Precedent-law logic.",
+        "features": [
+          "anonymous peer commentary",
+          "would you treat similarly? — binary vote",
+          "outcome confirmation request",
+          "pattern challenge flag"
+        ]
+      }
+    ],
+    "case_library_concept": "Clinical precedent engine. Cases function as legal precedents — indirect evidence from prior similar cases with documented outcomes.",
+    "what_is_NOT_required_from_clinicians": [
+      "exact dosages",
+      "supplier information",
+      "IP or proprietary protocols"
+    ],
+    "what_IS_captured": [
+      "pattern-level reasoning",
+      "treatment cluster selected",
+      "outcome (worked / partial / didn't work)",
+      "relapse timing",
+      "adverse events",
+      "compliance",
+      "herb-drug interactions noted",
+      "patient-reported outcome measures"
+    ]
+  },
+  "platform_architecture_metadata": {
+    "description": "Engine-level architectural decisions. Not clinical content — but governs how clinical modules are deployed.",
+    "platform_identity": "Cross-tradition clinical reasoning layer. Not an app — a clinical infrastructure.",
+    "positioning": "platform, not school or doctrine. Translates between clinical languages.",
+    "entry_point": "Pain (chronic pain and clinically complex cases) — universal, urgent, motivating, system-level signal.",
+    "flagship_use_case": "Pelvic pain — frequent, complex, multidisciplinary, imaging-often-negative, neuro-immune-fascia involvement. TCM, Ayurveda, and Western each see it differently → optimal demonstration of cross-tradition value.",
+    "go_to_market": "B2B first (low ideological friction). Target: integrative clinics, pain centres, functional medicine, rehab, ayurveda centres, TCM practices, concierge medicine.",
+    "poc_unit": "Founding Clinical Network — closed group training the first cross-tradition reasoning engine.",
+    "evidence_positioning": "evidence-informed + practice-derived. Where formal evidence is limited, we systematically harvest expert clinical reasoning.",
+    "brand_tone": [
+      "calm",
+      "clinical",
+      "non-ideological",
+      "collaborative",
+      "systems-driven",
+      "practitioner-first"
+    ],
+    "key_taglines": [
+      "The first multi-medical reasoning engine for chronic pain and clinically complex cases.",
+      "Turning traditional and modern clinical experience into structured decision support.",
+      "Where Chinese pattern recognition, Ayurvedic tissue logic and Western physiology meet in one decision system.",
+      "From WhatsApp case discussions to a searchable precedent engine.",
+      "Doctors already crowdsource complex cases in chat groups. We built the first platform that turns that chaos into structured clinical intelligence."
+    ],
+    "differentiator": "Not wellness. Not integrative lifestyle. Not spiritual education. Clinical reasoning translation engine for complex cases where conventional protocols have run out.",
+    "competitor_gap": "NYSORA model (case in → AI recommendations out) applied to chronic pain / functional / integrative space. Much less saturated niche.",
+    "b2b_products": [
+      "decision support engine",
+      "case simulation",
+      "teaching platform",
+      "cross-disciplinary communication tool",
+      "patient-facing reports",
+      "per-seat subscription",
+      "clinic license",
+      "enterprise analytics",
+      "teaching modules",
+      "branded reports"
+    ],
+    "b2c_products": [
+      "freemium intake + summary",
+      "paid reasoning session",
+      "practitioner match",
+      "nutrition plans",
+      "pattern tracker"
+    ],
+    "early_adopter_program": {
+      "name": "Founding Clinician Program",
+      "incentives": [
+        "lifetime discount",
+        "co-author credit",
+        "feature voting",
+        "case library access",
+        "benchmarking",
+        "advisory board invitation",
+        "speaking slot at future events",
+        "CPD points (future)",
+        "publishable case series"
+      ],
+      "recruitment_narrative": "Help us train the first cross-tradition clinical reasoning engine.",
+      "target_profile": [
+        "open-minded clinicians",
+        "integrative pain specialists",
+        "systems thinkers",
+        "teachers",
+        "frustrated consultants",
+        "expat practitioners"
+      ]
+    },
+    "feedback_system": {
+      "outcome_tags": [
+        "worked",
+        "partial",
+        "didn't work"
+      ],
+      "additional_fields": [
+        "add-your-logic notes",
+        "pattern correction",
+        "adverse events",
+        "compliance",
+        "herb-drug interactions",
+        "relapse timing",
+        "PROMs"
+      ],
+      "strategic_value": "real-world evidence generation. Investor-grade data asset.",
+      "engine_learning": "AI learns from feedback to refine pattern probability scores and cluster recommendations."
+    },
+    "governance": {
+      "required_elements": [
+        "ethics board",
+        "clinician advisory panel",
+        "moderation policy",
+        "anonymisation",
+        "HIPAA/GDPR-ready infrastructure",
+        "IRB-style consent template"
+      ],
+      "rationale": "Builds clinician trust. Legally defensible. Required for enterprise B2B contracts."
+    }
+  },
+  "rules": [
+    {
+      "id": "B16_R001",
+      "condition": "system_output_mode == front_end",
+      "action": "Show only three user questions (instability type, root/branch, system priority). Do NOT expose six-compartment system, meridian axes, or Ayurvedic terminology unless user is in practitioner mode."
+    },
+    {
+      "id": "B16_R002",
+      "condition": "system_output_mode == practitioner",
+      "action": "May show axis probabilities, transition detection, cross-tradition mapping. Still follow language rules for documentation."
+    },
+    {
+      "id": "B16_R003",
+      "condition": "traditional_content_referenced_in_patient_output",
+      "action": "Frame as: 'It is believed in traditional medical systems that...' Do NOT make clinical claims."
+    },
+    {
+      "id": "B16_R004",
+      "condition": "case_plausibility_score < threshold",
+      "action": "Flag case for human review. Do NOT auto-delete. Do NOT include in pattern library until reviewed and approved."
+    },
+    {
+      "id": "B16_R005",
+      "condition": "case_submitted_with_free_text_only",
+      "action": "Reject or require structured field completion before case enters library."
+    },
+    {
+      "id": "B16_R006",
+      "condition": "clinician_requests_upload_without_structured_fields",
+      "action": "Prompt for: timeline, pain scores, PROMs, labs/imaging available, outcome. Minimum data set required."
+    },
+    {
+      "id": "B16_R007",
+      "condition": "branch_direction == outbound",
+      "action": "Interpret as: system releasing excessive charge. Pattern = overflow/release valve active. Corresponds to heat/skin/immune expressions."
+    },
+    {
+      "id": "B16_R008",
+      "condition": "branch_direction == inbound",
+      "action": "Interpret as: pathogen entry route active (physical or emotional). Corresponds to trauma, invasion, suppression patterns."
+    },
+    {
+      "id": "B16_R009",
+      "condition": "instability_type == energy_deficiency",
+      "action": "Route to Shaoyin or Taiyin module. Do not stimulate. Support first."
+    },
+    {
+      "id": "B16_R010",
+      "condition": "instability_type == overheating",
+      "action": "Route to Shaoyang or Yangming module. Check for inflammatory phenotype. Lateral autonomic decompression cluster."
+    },
+    {
+      "id": "B16_R011",
+      "condition": "instability_type == stagnation",
+      "action": "Route to Taiyang or Yangming module depending on location (posterior vs anterior). Microcirculatory or posterior sensory cluster."
+    },
+    {
+      "id": "B16_R012",
+      "condition": "instability_type == neural_overload",
+      "action": "Route to Taiyang or Jueyin module. Check for central sensitisation. Central coherence or posterior sensory cluster."
+    },
+    {
+      "id": "B16_R013",
+      "condition": "root_branch_assessment == root_weak",
+      "action": "Prioritise internal support before any surface treatment. Shaoyin/Taiyin stabilisation first."
+    },
+    {
+      "id": "B16_R014",
+      "condition": "root_branch_assessment == exit_impaired",
+      "action": "Prioritise drainage/ventilation. Shaoyang or Yangming cluster."
+    },
+    {
+      "id": "B16_R015",
+      "condition": "root_branch_assessment == trauma_active",
+      "action": "Activate trauma/hyperreactivity overlay. Check laser and generic supplement and stimulation contraindications per Taiyang module."
+    }
+  ],
+  "input_variables_added": [
+    "instability_type",
+    "root_branch_assessment",
+    "case_plausibility_score",
+    "branch_direction",
+    "system_output_mode",
+    "outcome_tag",
+    "practitioner_annotation",
+    "data_completeness_score"
+  ],
+  "cross_module_links": [
+    {
+      "link": "Six-Compartment Map → Transition Engine",
+      "note": "The six compartments map directly to the 7-axis model in Transition Engine v1.0. TaiYang=Axis1, ShaoYang=Axis2, YangMing=Axis3, TaiYin=Axis4, ShaoYin=Axis5, JueYin=Axis6. Central (Ren/Du)=Axis7."
+    },
+    {
+      "link": "instability_type → Treatment Cluster Selector",
+      "note": "Five instability types route to corresponding clusters. Overheating→Lateral Autonomic Decompression. Stagnation→Posterior Sensory or Microcirculatory. Energy deficiency→Survival-Axis Stabilisation or Interoceptive Regulation. Neural overload→Central Coherence or Posterior Sensory."
+    },
+    {
+      "link": "case_plausibility_score → AI quality gate",
+      "note": "This field must be computed by the engine on every case submission. Low score triggers human review workflow. High score allows case to enter searchable precedent library."
+    },
+    {
+      "link": "Pelvic pain → future dedicated module",
+      "note": "Flagship showcase case. Requires dedicated pattern module. Involves Jueyin/Shaoyang convergence zone, neuro-immune-fascia overlap, potential victim and/or perpetrator role patterns."
+    }
+  ],
+  "ayurveda_tcm_western_cross_reference_table": {
+    "description": "Engine-internal mapping table for cross-system translation. Backend only.",
+    "rows": [
+      {
+        "biological_domain": "external defence / surface immunity",
+        "tcm": "TaiYang (BL/SI)",
+        "ayurveda": "Bhrajaka Pitta + Apana",
+        "western": "skin immune surveillance, heat dissipation, neural crest function"
+      },
+      {
+        "biological_domain": "deep vitality / reproductive reserve",
+        "tcm": "ShaoYin (KD/HT)",
+        "ayurveda": "Ojas / Shukra / Majja",
+        "western": "HPA axis, marrow, adrenal reserve, cardiac autonomic tone"
+      },
+      {
+        "biological_domain": "emotional-metabolic pivot / deep autonomic",
+        "tcm": "JueYin (LV/PC)",
+        "ayurveda": "Sadhaka + Ranjaka Pitta",
+        "western": "liver metabolism, pericardial autonomic regulation, emotional processing"
+      },
+      {
+        "biological_domain": "fascia / lipid membrane / lateral pivot",
+        "tcm": "ShaoYang (GB/TB)",
+        "ayurveda": "Samana Vyana / Prana pivot",
+        "western": "fascial tensegrity, lipid bilayer integrity, lymphatic routing"
+      },
+      {
+        "biological_domain": "tissue nutrition / fluid regulation / midline interoception",
+        "tcm": "TaiYin (LU/LI)",
+        "ayurveda": "Rasa Dhatu / Kapha",
+        "western": "lymphatic fluid, mucosal immunity, interoceptive sensing"
+      },
+      {
+        "biological_domain": "digestion / metabolic clearance / inflammation",
+        "tcm": "YangMing (ST/SP)",
+        "ayurveda": "Pachaka Pitta",
+        "western": "digestive enzymes, metabolic waste elimination, microbiome, inflammatory phenotype"
+      }
+    ]
+  },
+  "notes": [
+    "The Six-Compartment Communication Map is the visual/conceptual backbone of the entire engine. It should be implemented as the internal mapping table that underpins all cross-system translations.",
+    "The three-question UX model (instability / root-branch / system priority) is the only front-end logic. All complexity lives in the backend.",
+    "The case library is the long-term data asset and competitive moat. Quality architecture (structured input + plausibility scoring + peer review) must be built from day one.",
+    "Pelvic pain is confirmed as flagship showcase. Engine should prioritise building this module after Taiyang.",
+    "Evidence positioning ('evidence-informed + practice-derived') is a legal and professional design decision — not optional. Must be reflected in all output language.",
+    "The AI plausibility scoring system (case_plausibility_score) is an engine feature, not just a UI feature. It must run on every case submission automatically.",
+    "Ayurvedic terminology should be mapped to engine fields but not surfaced to non-Ayurvedic clinicians in front-end output unless systemMode == TCM or integrative-full."
+  ]
+}

@@ -195,6 +195,27 @@ input[type="number"] {
   padding: 10px 12px;
 }
 
+.av-mini-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.av-mini-grid span {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+}
+
+.av-mini-grid strong {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .av-axis-bars {
   display: grid;
   gap: 12px;
@@ -427,6 +448,10 @@ input[type="number"] {
   }
 
   .av-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .av-mini-grid {
     grid-template-columns: 1fr;
   }
 

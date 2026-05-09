@@ -13,7 +13,8 @@
     "test:spinal": "node scripts/test-spinal-failure-mode-engine.cjs",
     "test:shaoyin": "node scripts/test-shaoyin-taiyang-engine.cjs",
     "test:taiyang": "node scripts/test-taiyang-module.cjs",
-    "test:transition": "node scripts/test-transition-engine.cjs"
+    "test:transition": "node scripts/test-transition-engine.cjs",
+    "test:platform": "node scripts/test-platform-architecture.cjs"
   },
   "dependencies": {
     "next": "^15.3.0",

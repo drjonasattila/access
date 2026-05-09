@@ -1,0 +1,97 @@
+{
+  "module": "data_quality_architecture_v1",
+  "quality_system": {
+    "description": "Case library integrity system. Three-layer defence against data corruption and clinician dishonesty.",
+    "layers": [
+      {
+        "id": 1,
+        "name": "Structured data input",
+        "principle": "No free-text dominance. Forces structured entry.",
+        "required_fields": [
+          "checklists",
+          "scales",
+          "pain scores",
+          "timeline",
+          "labs",
+          "imaging",
+          "before/after",
+          "PROMs (patient-reported outcome measures)"
+        ],
+        "rationale": "Reduces bias and fabrication by limiting interpretive freedom at entry"
+      },
+      {
+        "id": 2,
+        "name": "AI plausibility scoring (coherence index)",
+        "principle": "Not censorship — confidence/coherence index. Flags, does not delete.",
+        "checks": [
+          "Does the pattern fit others in the library?",
+          "Is there outcome-mechanism mismatch?",
+          "Unrealistic timeline?",
+          "Incomplete data?",
+          "Outlier handling?"
+        ],
+        "action_if_low_score": "Flagged for human review. Not auto-deleted. Escalated to admin/board.",
+        "engine_field": "case_plausibility_score (0.0–1.0)"
+      },
+      {
+        "id": 3,
+        "name": "Peer review layer",
+        "principle": "Founding clinicians can comment anonymously. Precedent-law logic.",
+        "features": [
+          "anonymous peer commentary",
+          "would you treat similarly? — binary vote",
+          "outcome confirmation request",
+          "pattern challenge flag"
+        ]
+      }
+    ],
+    "case_library_concept": "Clinical precedent engine. Cases function as legal precedents — indirect evidence from prior similar cases with documented outcomes.",
+    "what_is_NOT_required_from_clinicians": [
+      "exact dosages",
+      "supplier information",
+      "IP or proprietary protocols"
+    ],
+    "what_IS_captured": [
+      "pattern-level reasoning",
+      "treatment cluster selected",
+      "outcome (worked / partial / didn't work)",
+      "relapse timing",
+      "adverse events",
+      "compliance",
+      "herb-drug interactions noted",
+      "patient-reported outcome measures"
+    ]
+  },
+  "required_minimum_fields": [
+    "timeline",
+    "pain_scores",
+    "PROMs",
+    "labs_imaging_if_available",
+    "outcome",
+    "adverse_events",
+    "compliance",
+    "relapse_timing"
+  ],
+  "precedent_engine_capture": [
+    "pattern_level_reasoning",
+    "treatment_cluster",
+    "outcome_worked_partial_didnt_work",
+    "relapse_timing",
+    "adverse_events",
+    "compliance",
+    "herb_drug_interactions",
+    "PROMs"
+  ],
+  "not_required": [
+    "exact_dosages",
+    "supplier_information",
+    "proprietary_protocol_details"
+  ],
+  "plausibility_threshold": 0.65,
+  "peer_review_fields": [
+    "anonymous_clinician_comment",
+    "would_you_treat_similarly_binary_vote",
+    "outcome_confirmation_request",
+    "pattern_challenge_flag"
+  ]
+}

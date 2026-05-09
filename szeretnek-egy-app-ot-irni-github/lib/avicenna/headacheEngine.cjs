@@ -4,6 +4,7 @@ const batch8Data = require("./data/engines/avicenna_engine_batch8.json");
 const batch9Data = require("./data/engines/avicenna_engine_batch9.json");
 const batch9HerbLibrary = require("./data/libraries/herbLibrary.batch9.json");
 const batch9FieldMedicineConcepts = require("./data/libraries/fieldMedicineConcepts.batch9.json");
+const { sanitizeForOutput } = require("./brandSanitizer.cjs");
 
 const batch8Patterns = Array.isArray(batch8Data.patterns) ? batch8Data.patterns : Object.values(batch8Data.patterns || {});
 const batch8Rules = Array.isArray(batch8Data.rules) ? batch8Data.rules : Object.values(batch8Data.rules || {});
@@ -156,7 +157,7 @@ function bool(value) {
 }
 
 function normaliseInput(input = {}) {
-  return {
+  const result = {
     pain_quality: input.pain_quality || "",
     sensory_features: list(input.sensory_features),
     timing: input.timing || "",
@@ -298,6 +299,8 @@ function normaliseInput(input = {}) {
     acute_vascular_compromise: bool(input.acute_vascular_compromise),
     internal_audit: bool(input.internal_audit)
   };
+
+  return sanitizeForOutput(result);
 }
 
 function includes(values, value) {
@@ -334,12 +337,14 @@ function batch9Rule(id) {
 
 function triggeredBatch8Rule(id, reason = "") {
   const rule = batch8Rule(id);
-  return {
+  const result = {
     id: rule.id,
     condition: rule.condition,
     action: rule.action,
     reason
   };
+
+  return sanitizeForOutput(result);
 }
 
 function triggeredBatch9Rule(id, reason = "") {
@@ -1083,18 +1088,18 @@ function detectJointPhase(input) {
       pattern: "mixed_joint_inflammatory_edge",
       goal: "stabilise",
       intervention_sequence: ["stabilise inflammation", "avoid building inputs", "reassess after heat/swelling settles"],
-      contraindications: ["Collagen_phase_1", "ProCardiol_phase_1", "strong_MyBlood_phase_1"]
+      contraindications: ["Collagen_phase_1", "cardiometabolic_flow_support_phase_1", "strong_microcirculatory_support_phase_1"]
     },
     transitional: {
       pattern: "mixed_joint_transitional",
       goal: "flow_without_overdrive",
-      intervention_sequence: ["continue stabilisation base", "low-dose MyBlood only if tolerated", "keep Collagen excluded"],
+      intervention_sequence: ["continue stabilisation base", "low-dose microcirculatory support only if tolerated", "keep Collagen excluded"],
       contraindications: ["Collagen_phase_2"]
     },
     building: {
       pattern: "mixed_joint_building_phase",
       goal: "structure",
-      intervention_sequence: ["introduce Collagen", "increase MyBlood only after heat stays quiet", "consider ProCardiol only if improvement is not sustained"],
+      intervention_sequence: ["introduce Collagen", "increase microcirculatory support only after heat stays quiet", "consider cardiometabolic flow support only if improvement is not sustained"],
       contraindications: []
     },
     unknown: {
@@ -1159,10 +1164,10 @@ function detectCgrpSupport(input, phenotype) {
   }
 
   const phenotypeTuning = {
-    gut_driven: ["MyGastrin + Fiber"],
-    vascular_blood_stasis: ["MyBlood / ProCardiol"],
-    fascia_tension: ["Promigraine + laser"],
-    cervicogenic: ["Promigraine + laser"],
+    gut_driven: ["GI mucosal support + Fiber"],
+    vascular_blood_stasis: ["microcirculatory support / cardiometabolic flow support"],
+    fascia_tension: ["headache membrane support + laser"],
+    cervicogenic: ["headache membrane support + laser"],
     mixed: ["phenotype-specific staged support"]
   };
   return {
@@ -1172,7 +1177,7 @@ function detectCgrpSupport(input, phenotype) {
     side_effect_markers: relevant,
     support_sequence: active ? [
       { step: 1, focus: "grounding", items: ["Fiber", "Hydration support", "Spirulina"] },
-      { step: 2, focus: "membrane flow", items: ["RegenOil or D + Nigella", "MyGastrin only if GI pressure or nausea is present"] },
+      { step: 2, focus: "membrane flow", items: ["RegenOil or D + Nigella", "GI mucosal support only if GI pressure or nausea is present"] },
       { step: 3, focus: "phenotype tuning", items: phenotypeTuning[phenotype.detected_phenotype] || phenotypeTuning.mixed }
     ] : [],
     contraindications: [...new Set(contraindications)],
@@ -1211,7 +1216,7 @@ function detectMedicationCapacity(input, phenotype) {
   if (input.pain_character === "moving") rules.push(triggeredBatch8Rule("R017", "migrating or shifting pain character"));
   if (input.tca_snri_in_use || includes(input.current_medications, "antidepressant")) {
     rules.push(triggeredBatch8Rule("R019", "TCA/SNRI or antidepressant class context"));
-    drugTerrainConflicts.push("TCA/SNRI support layer: Spirulina + Fiber; add MyGastrin only if GI complaints are present.");
+    drugTerrainConflicts.push("TCA/SNRI support layer: Spirulina + Fiber; add GI mucosal support only if GI complaints are present.");
   }
   if (input.antipsychotic_pain_use) {
     rules.push(triggeredBatch8Rule("R020", "off-label antipsychotic pain context"));
@@ -1223,7 +1228,7 @@ function detectMedicationCapacity(input, phenotype) {
   if (active && canProcessLoad) {
     if (input.gi_symptoms_present || phenotype.detected_phenotype === "gut_driven") {
       dominantBranch = "gut_noise";
-      branchSequence = ["MyGastrin", "Fiber"];
+      branchSequence = ["GI mucosal support", "Fiber"];
     } else if (["low", "very_low", "flat", "exhausted"].includes(input.energy_state)) {
       dominantBranch = "energy_fatigue";
       branchSequence = ["Spirulina"];
@@ -1652,7 +1657,7 @@ function classifyBatch9Joint(input, batch8) {
   }
 
   const sequence = classifier === "OA_yin_joint_degenerative"
-    ? ["Collagen", "MyBlood", "ProCardiol"]
+    ? ["Collagen", "microcirculatory support", "cardiometabolic flow support"]
     : classifier === "RA_yang_joint_inflammatory"
       ? ["stabilise inflammation", "do not stimulate", "defer structural building"]
       : ["calm first", "flow later", "build last"];
@@ -2225,7 +2230,7 @@ function evaluateHeadache(inputPayload = {}) {
     }
   }
 
-  return {
+  const output = {
     engine: "headache_migraine_pattern_engine",
     source: ["headacheEngine.batch6.json", "avicenna_engine_batch7.json", "avicenna_engine_batch8.json", "avicenna_engine_batch9.json"],
     stopped: Boolean(stop),
@@ -2363,6 +2368,8 @@ function evaluateHeadache(inputPayload = {}) {
     batch9_herb_library: batch9HerbLibrary.entries,
     batch9_field_medicine_concepts: batch9FieldMedicineConcepts.entries
   };
+
+  return sanitizeForOutput(output);
 }
 
 module.exports = {

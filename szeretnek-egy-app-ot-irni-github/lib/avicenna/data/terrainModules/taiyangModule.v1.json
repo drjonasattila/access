@@ -2,12 +2,12 @@
   "module": "TAIYANG_MODULE_v1.0",
   "name": "TAIYANG_MODULE_v1.0",
   "title": "Posterior Shell Overpressure / Blocked Shaoyin Return Flow",
-  "primary_purpose": "Detect Taiyang posterior shell overpressure patterns and route them through Herba, HILT Laser, then DuoLife support only when eligible.",
+  "primary_purpose": "Detect Taiyang posterior shell overpressure patterns and route them through Herba, HILT Laser, then generic supplement support support only when eligible.",
   "mandatory_order": {
     "order": [
       "Herba",
       "HILT Laser",
-      "DuoLife"
+      "generic supplement support"
     ],
     "principle": "Never reverse the order.",
     "explanation": {
@@ -15,7 +15,7 @@
       "order": [
         "1. Herba (field direction + internal recall)",
         "2. HILT Laser (shell decompression / fascia reset) — if eligible",
-        "3. DuoLife (biological stabilisation) — if eligible"
+        "3. generic supplement support (biological stabilisation) — if eligible"
       ],
       "rule": "Never reverse this order."
     }
@@ -94,7 +94,7 @@
           ]
         },
         "supplement": {
-          "name": "DuoLife Collagen + Mg / DuoLife Magnesium Balance",
+          "name": "collagen / magnesium support",
           "status": "optional",
           "rationale": "Fascial hydration, neuromuscular tension reduction. Does not drive Yang, does not cool aggressively.",
           "best_for": [
@@ -179,7 +179,7 @@
           ]
         },
         "supplement": {
-          "name": "DuoLife Day / ProSugar Balance / Liquid Chlorophyll",
+          "name": "daytime nutritional support / metabolic support / Liquid Chlorophyll",
           "status": "recommended",
           "rationale": "Microcirculation support, mild detox, water-structuring effect (biological level)",
           "avoid": [
@@ -262,7 +262,7 @@
           ]
         },
         "supplement": {
-          "name": "DuoLife Night / Calm Formula",
+          "name": "evening circadian nutritional support / Calm Formula",
           "status": "optional",
           "rationale": "Autonomic nervous system support, sleep quality improvement. Does not open outward gate.",
           "timing": "Evening only. Never morning."
@@ -342,7 +342,7 @@
           ]
         },
         "supplement": {
-          "name": "DuoLife Adaptogen / Anti-Stress formula",
+          "name": "adaptogenic support, only if stable",
           "status": "only_if_stable",
           "rationale": "HPA-axis modulation, psycho-integration support",
           "contraindicated_if": [
@@ -575,7 +575,7 @@
         "taiyang_water_sludging",
         "taiyang_pure_tension"
       ],
-      "notes": "Shaoyang–Taiyang slide: light-wave from posterior field to frontal. Trigeminal complex + BL10–GB20 region overload. Acute migraine = laser and DuoLife contraindication."
+      "notes": "Shaoyang–Taiyang slide: light-wave from posterior field to frontal. Trigeminal complex + BL10–GB20 region overload. Acute migraine = laser and generic supplement support contraindication."
     },
     {
       "diagnosis": "autism spectrum / sensory processing disorder",
@@ -642,12 +642,12 @@
     {
       "id": "B14_R007",
       "condition": "active_panic_or_dissociation == true",
-      "action": "BLOCK laser module AND BLOCK DuoLife supplement module"
+      "action": "BLOCK laser module AND BLOCK generic supplement support module"
     },
     {
       "id": "B14_R008",
       "condition": "acute_migraine_active == true",
-      "action": "BLOCK laser module AND BLOCK DuoLife supplement module"
+      "action": "BLOCK laser module AND BLOCK generic supplement support module"
     },
     {
       "id": "B14_R009",
@@ -657,7 +657,7 @@
     {
       "id": "B14_R010",
       "condition": "fresh_trauma == true",
-      "action": "BLOCK laser module AND BLOCK DuoLife supplement module"
+      "action": "BLOCK laser module AND BLOCK generic supplement support module"
     },
     {
       "id": "B14_R011",
@@ -677,7 +677,7 @@
     {
       "id": "B14_R014",
       "condition": "branch == taiyang_shaoyin_deficiency AND supplement_eligible == true",
-      "action": "DuoLife Night / Calm formula only. Evening only. Never morning."
+      "action": "evening circadian nutritional support / Calm formula only. Evening only. Never morning."
     },
     {
       "id": "B14_R015",
@@ -691,8 +691,8 @@
     },
     {
       "id": "B14_R017",
-      "condition": "DuoLife_supplement_eligible == true",
-      "action": "DuoLife = biological stabiliser only. Never primary treatment. Herba = field direction. Order: 1-Herba, 2-Laser, 3-DuoLife."
+      "condition": "generic supplement support_supplement_eligible == true",
+      "action": "generic supplement support = biological stabiliser only. Never primary treatment. Herba = field direction. Order: 1-Herba, 2-Laser, 3-generic supplement support."
     },
     {
       "id": "B14_R018",
@@ -734,7 +734,7 @@
       "cure claims",
       "meridian language unless TCM mode is enabled",
       "laser adds energy",
-      "DuoLife is treatment",
+      "generic supplement support is treatment",
       "deterministic trauma language"
     ],
     "required_disclaimer": "This is an educational pattern-recognition tool, not a medical diagnosis."
@@ -751,7 +751,7 @@
     "Taiyang swelling = blocked internal return + external shell overflow.",
     "Herba = field direction.",
     "HILT laser = shell decompression / fascia reset.",
-    "DuoLife = biological stabilisation only.",
+    "generic supplement support = biological stabilisation only.",
     "Never reverse the order.",
     "Laser does not polarise. It interrupts pathological chaotic Yang oscillation.",
     "The field needs direction, not energy."
@@ -767,7 +767,7 @@
     "This module is designed to be one of 20–30 terrain modules in the Avicenna engine. Same logic structure should be applied to Shaoyang, Jueyin, and Shaoyin modules.",
     "Field language (mező, meridian) is for internal engine reasoning only. Output layer must use appropriate register depending on systemMode: TCM or integrative-neutral.",
     "Laser eligibility is a GATED sub-module — all contraindications must be checked before any laser recommendation is output.",
-    "DuoLife supplement block is a separately toggleable module — never a substitute for herbal core.",
+    "generic supplement support block is a separately toggleable module — never a substitute for herbal core.",
     "Pattern taiyang_trauma_hyperreactivity can be activated as overlay from any other branch (global gate — Q7 equivalent).",
     "Pattern taiyang_shaoyin_deficiency must be distinguished from general frailty — it is a specific cold-below / tight-above dissociation pattern."
   ],

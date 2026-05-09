@@ -1,0 +1,71 @@
+{
+  "module": "three_system_integration_model",
+  "statement": "The engine translates between systems. It does not merge or subordinate them.",
+  "evidence_positioning": "Evidence-informed + practice-derived.",
+  "systems": {
+    "description": "Core architectural principle: TCM, Ayurveda, and Western medicine are three clinical languages describing the same biological problem. The engine translates between them — it does not merge or subordinate any system.",
+    "system_roles": {
+      "TCM": {
+        "function": "topology and pattern",
+        "questions_answered": [
+          "Where did the problem start?",
+          "Where is it moving?",
+          "Is it root or branch?",
+          "Which axis collapsed?",
+          "Which compartment is unstable?"
+        ],
+        "engine_role": "provides the map"
+      },
+      "Ayurveda": {
+        "function": "metabolism and tissue state",
+        "questions_answered": [
+          "Is the system too hot?",
+          "Is it dried out?",
+          "Is it toxic?",
+          "Is the fuel depleted?",
+          "Are reserves exhausted?"
+        ],
+        "engine_role": "provides state indicators"
+      },
+      "Western_medicine": {
+        "function": "measurement and safety",
+        "questions_answered": [
+          "What do imaging studies show?",
+          "What do labs show?",
+          "Nerve conduction findings?",
+          "Inflammatory markers?",
+          "What must be excluded?",
+          "What is urgent?"
+        ],
+        "engine_role": "provides control and baseline"
+      }
+    },
+    "common_denominator": {
+      "label": "functional biology",
+      "shared_domains": [
+        "mitochondrial performance",
+        "tissue hydration",
+        "fascia tension",
+        "autonomic nervous system",
+        "immune energy",
+        "stress processing"
+      ],
+      "cross_system_equivalences": [
+        {
+          "domain": "Yin/Yang stability",
+          "system": "TCM"
+        },
+        {
+          "domain": "Dhatu/Pitta balance",
+          "system": "Ayurveda"
+        },
+        {
+          "domain": "metabolism / neuroendocrine / inflammation",
+          "system": "Western"
+        }
+      ]
+    },
+    "clinical_value_statement": "TCM recognises migrating pain. Ayurveda determines if tissue is too hot. Western excludes dangerous causes. Together: not just symptom suppression — system stabilisation.",
+    "patient_facing_statement": "We don't just treat the pain — we address why your body can no longer regenerate."
+  }
+}

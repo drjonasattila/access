@@ -2,6 +2,7 @@ const batch12Data = require("./data/engines/avicenna_engine_batch12.json");
 const spinalFailureModeData = require("./data/engines/spinalFailureModeEngine.json");
 const spinalConcepts = require("./data/libraries/spinalConcepts.batch12.json");
 const neuroMeningealConcepts = require("./data/libraries/neuroMeningealConcepts.batch12.json");
+const { sanitizeForOutput } = require("./brandSanitizer.cjs");
 
 const PATTERNS = batch12Data.patterns || [];
 const RULES = spinalFailureModeData.rules || [];
@@ -92,7 +93,7 @@ function normaliseInput(input = {}) {
   const ezState = input.EZ_state || input.hydration_layer_state || "";
   const ezContinuityProvided = Object.prototype.hasOwnProperty.call(input, "EZ_continuity");
 
-  return {
+  const result = {
     pain_location: painLocation,
     pain_quality: painQuality,
     pain_type: input.pain_type || "",
@@ -138,7 +139,7 @@ function normaliseInput(input = {}) {
     disc_stability_at_reassessment: input.disc_stability_at_reassessment || "",
     nerve_pain_at_reassessment: input.nerve_pain_at_reassessment || "",
     phase_current: Number(input.phase_current || 1),
-    flow_support_present: bool(input.flow_support_present) || interventions.includes("myblood") || interventions.includes("flow_support"),
+    flow_support_present: bool(input.flow_support_present) || interventions.includes("flow_support") || interventions.includes("equivalent_flow_support"),
     collagen_prescribed: bool(input.collagen_prescribed) || interventions.includes("collagen"),
     steroid_prescribed: bool(input.steroid_prescribed) || meds.includes("steroids") || interventions.includes("steroid"),
     aggressive_stimulation: bool(input.aggressive_stimulation),
@@ -158,6 +159,8 @@ function normaliseInput(input = {}) {
     fascia_released: bool(input.fascia_released),
     debugMode: bool(input.debugMode)
   };
+
+  return sanitizeForOutput(result);
 }
 
 function addAxis(axis, points, inputName, reason) {
@@ -279,7 +282,7 @@ function ezContinuityState(input) {
     : continuity
     ? "Consolidation therapies may be more plausible in this exploratory model."
     : "Hydration continuity appears reduced in this model; rebuild Yin/hydration support before relying on consolidation logic.";
-  return {
+  const result = {
     backend_entity: "EZ_water_grid",
     frontend_label: "Hydration Layer Integrity Failure",
     state,
@@ -290,6 +293,8 @@ function ezContinuityState(input) {
     steroid_suitability: steroidSuitability,
     advanced_note: "Steroid = artificial Yang is an internal educational metaphor only, not established medical fact."
   };
+
+  return sanitizeForOutput(result);
 }
 
 function dominantPatternForAxis(axis, ligamentSubtype) {
@@ -300,7 +305,7 @@ function dominantPatternForAxis(axis, ligamentSubtype) {
 
 function buildContraindications(input, dominantPattern, ligamentSubtype, triggered) {
   const contraindications = [];
-  if (input.collagen_prescribed && !input.flow_support_present) contraindications.push("Collagen without flow support is contraindicated; pair collagen with MyBlood or equivalent flow support.");
+  if (input.collagen_prescribed && !input.flow_support_present) contraindications.push("Collagen without flow support is contraindicated; pair collagen with microcirculatory support or equivalent flow support.");
   if (input.aggressive_stimulation && input.acute_nerve_pain) contraindications.push("Aggressive stimulation is contraindicated during acute nerve pain.");
   if (input.stretching_prescribed && ligamentSubtype.subtype === "hypotonic") contraindications.push("Stretching is contraindicated during hypotonic instability.");
   if (input.early_mobilisation && ligamentSubtype.subtype === "hypotonic") contraindications.push("Early mobilisation before holding tone restoration may worsen instability.");
@@ -315,23 +320,23 @@ function sequencingFor(dominantPattern, mixedPattern, ligamentSubtype, input) {
   const sequence = [];
   if (mixedPattern) sequence.push("Mixed pattern: sequence, do not stack.");
   if (dominantPattern === "disc_dehydration_structural_failure") {
-    sequence.push("Disc/matrix support: collagen + MyBlood or equivalent flow support together, adequate protein, hydration support.");
+    sequence.push("Disc/matrix support: collagen + microcirculatory support or equivalent flow support together, adequate protein, hydration support.");
   }
   if (dominantPattern === "stasis_fascial_tension") {
-    sequence.push("Stasis/fascial layer: MyBlood, weak ginger tea if appropriate, garlic only if sludging pattern, laser/fascia work; mobilisation only after stasis reduction.");
+    sequence.push("Stasis/fascial layer: microcirculatory support, weak ginger tea if appropriate, garlic only if sludging pattern, laser/fascia work; mobilisation only after stasis reduction.");
   }
   if (dominantPattern === "neurogenic_overload" || dominantPattern === "neuro_meningeal_hydration_failure") {
     sequence.push("Neurogenic layer: astaxanthin, spirulina, and melatonin only if night overstimulation is confirmed; avoid aggressive stimulation in acute phase.");
   }
   if (dominantPattern === "deep_ligament_segmental_instability_hypertonic") {
-    sequence.push("Hypertonic ligament Phase 1: calm + support with collagen, spirulina, astaxanthin, gentle laser only; avoid strong MyBlood and aggressive mobilisation.");
-    if (input.phase_current >= 2) sequence.push("Hypertonic ligament Phase 2: low-dose MyBlood and weak ginger tea for microflow support.");
-    if (input.phase_current >= 3 || input.improvement_not_sustained) sequence.push("Hypertonic ligament Phase 3: low-dose ProCardiol for load-holding support.");
+    sequence.push("Hypertonic ligament Phase 1: calm + support with collagen, spirulina, astaxanthin, gentle laser only; avoid strong microcirculatory support and aggressive mobilisation.");
+    if (input.phase_current >= 2) sequence.push("Hypertonic ligament Phase 2: low-dose microcirculatory support and weak ginger tea for microflow support.");
+    if (input.phase_current >= 3 || input.improvement_not_sustained) sequence.push("Hypertonic ligament Phase 3: low-dose cardiometabolic flow support for load-holding support.");
   }
   if (dominantPattern === "deep_ligament_segmental_instability_hypotonic") {
-    sequence.push("Hypotonic ligament Phase 1 BUILD: collagen, spirulina, astaxanthin; no stretching, no mobilisation, no MyBlood initially.");
+    sequence.push("Hypotonic ligament Phase 1 BUILD: collagen, spirulina, astaxanthin; no stretching, no mobilisation, no microcirculatory support initially.");
     if (input.phase_current >= 2) sequence.push("Hypotonic ligament Phase 2: Qi holding restoration with astragalus, ginseng, schisandra, Vitamin D + Nigella, and protein support.");
-    if (input.phase_current >= 3 || input.improvement_not_sustained) sequence.push("Hypotonic ligament Phase 3: only after holding improves, low-dose MyBlood and extremely gentle ginger for secondary stagnation.");
+    if (input.phase_current >= 3 || input.improvement_not_sustained) sequence.push("Hypotonic ligament Phase 3: only after holding improves, low-dose microcirculatory support and extremely gentle ginger for secondary stagnation.");
   }
   if (dominantPattern === "hybrid_yin_yang_spinal" || ligamentSubtype.subtype === "hybrid") {
     sequence.push("Hybrid Yin/Yang pattern: BUILD first, MOVE later; never release and build at the same time.");
@@ -408,7 +413,7 @@ function evaluateSpinalFailureMode(inputPayload = {}) {
   const contraindications = buildContraindications(input, dominantPattern, ligamentSubtype, triggered);
   const sequence = sequencingFor(dominantPattern, mixedAxes, ligamentSubtype, input);
 
-  return {
+  const finalResult = {
     engine: "spinal_neuro_meningeal_failure_mode",
     name: "Spinal & Neuro-Meningeal Failure Mode Engine",
     source: ["avicenna_engine_batch12.json", "spinalFailureModeEngine.json"],
@@ -485,6 +490,8 @@ function evaluateSpinalFailureMode(inputPayload = {}) {
       primary_pattern_data: pattern(dominantPattern)
     }
   };
+
+  return sanitizeForOutput(finalResult);
 }
 
 module.exports = {

@@ -2,6 +2,7 @@ const batch11Data = require("./data/engines/avicenna_engine_batch11.json");
 const postSurgicalIntegrationData = require("./data/engines/postSurgicalIntegrationEngine.json");
 const reflexologyConcepts = require("./data/libraries/reflexologyConcepts.batch11.json");
 const verticalAxisConcepts = require("./data/libraries/verticalAxisConcepts.batch11.json");
+const { sanitizeForOutput } = require("./brandSanitizer.cjs");
 
 const PATTERNS = batch11Data.patterns || [];
 const RULES = postSurgicalIntegrationData.rules || [];
@@ -102,7 +103,7 @@ function normaliseInput(input = {}) {
   const headacheType = input.headache_type || "";
   const systemRigidity = input.system_rigidity || "none";
 
-  return {
+  const result = {
     wound_healing_status: woundHealing,
     pain_character: painCharacters,
     pain_timeline: input.pain_timeline || "",
@@ -158,6 +159,8 @@ function normaliseInput(input = {}) {
     emotionalConstraint: bool(input.emotionalConstraint),
     debugMode: bool(input.debugMode)
   };
+
+  return sanitizeForOutput(result);
 }
 
 function blankScores() {
@@ -224,8 +227,8 @@ function sequenceFor(input, primaryPattern, detectedPhase, compensationSecondary
 
   if (primaryPattern === "shaoyang_gate_dysfunction") {
     if (detectedPhase === 1) sequence.push("Phase 1 calm_the_gate: Spirulina, Vitamin D, Nigella, gentle laser, sleep rhythm support; optional melatonin only for evening overactivation.");
-    if (detectedPhase === 2) sequence.push("Phase 2 restore_flow: mild MyBlood, weak ginger only if no dry component, gentle warming laser.");
-    if (detectedPhase === 3) sequence.push("Phase 3 reintegration: ProCardiol if indicated, collagen only if instability confirmed, progressive movement.");
+    if (detectedPhase === 2) sequence.push("Phase 2 restore_flow: mild microcirculatory support, weak ginger only if no dry component, gentle warming laser.");
+    if (detectedPhase === 3) sequence.push("Phase 3 reintegration: cardiometabolic flow support if indicated, collagen only if instability confirmed, progressive movement.");
   }
 
   if (input.whieda_insole_selected || primaryPattern === "kd_sp_holding_field_deficiency") {
@@ -240,7 +243,7 @@ function rigidityIndex(input) {
   const map = { none: 0, mild: 1, moderate: 2, severe: 3 };
   const rigidity = map[input.system_rigidity] || 0;
   const adaptivity = input.adaptivity_intact ? 3 - Math.min(rigidity, 3) : 0;
-  return {
+  const finalResult = {
     rigidity_level: input.system_rigidity,
     rigidity_score: rigidity,
     adaptivity_intact: input.adaptivity_intact,
@@ -249,6 +252,8 @@ function rigidityIndex(input) {
       ? "Chronic rigidity may reduce responsiveness; pace lower-intensity field inputs."
       : "Residual adaptivity appears present; lower-intensity interventions may be more informative."
   };
+
+  return sanitizeForOutput(finalResult);
 }
 
 function evaluatePostSurgicalIntegration(inputPayload = {}) {
@@ -363,7 +368,7 @@ function evaluatePostSurgicalIntegration(inputPayload = {}) {
   const suggestedSequence = sequenceFor(input, primary.pattern, detectedPhase, compensationDetected && kdSpLikely);
   const rigidity = rigidityIndex(input);
 
-  return {
+  const finalResult = {
     engine: "vertical_axis_post_surgical_integration",
     name: "Vertical Axis & Post-Surgical Integration Engine",
     subtitle: "Shaoyang Gate / KD-SP Holding Field / CDR3 Integration Module",
@@ -432,6 +437,8 @@ function evaluatePostSurgicalIntegration(inputPayload = {}) {
       primary_pattern_data: primaryPattern
     }
   };
+
+  return sanitizeForOutput(finalResult);
 }
 
 module.exports = {

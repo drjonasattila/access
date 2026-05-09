@@ -94,7 +94,7 @@ assert(
 );
 
 assert.equal(blockedCase.laser_eligibility.blocked, true, "absolute contraindications should block laser");
-assert.equal(blockedCase.supplement_eligibility.blocked, true, "acute migraine/panic/fresh trauma should block DuoLife");
+assert.equal(blockedCase.supplement_eligibility.blocked, true, "acute migraine/panic/fresh trauma should block supplement support");
 assert(
   blockedCase.patient.safety_notes.includes("The field needs direction, not energy."),
   "blocked laser should show patient-safe message"
@@ -104,7 +104,11 @@ assert.equal(pureCase.selected_branch, "taiyang_pure_tension", "dry-tight poster
 assert.equal(pureCase.laser_eligibility.eligible, true, "pure tension should be laser-eligible when no gates are triggered");
 assert.equal(pureCase.integration_order_status.order[0].layer, "Herba", "Herba must be first");
 assert.equal(pureCase.integration_order_status.order[1].layer, "HILT Laser", "HILT laser must be second");
-assert.equal(pureCase.integration_order_status.order[2].layer, "DuoLife", "DuoLife must be third");
+assert.equal(pureCase.integration_order_status.order[2].layer, "Supplement support", "supplement support must be third");
+assert(
+  !JSON.stringify(pureCase).includes("DuoLife"),
+  "Taiyang output must not display DuoLife branding"
+);
 
 const covered = new Set([
   ...ruleIds(exitCase),
