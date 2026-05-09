@@ -1,0 +1,34 @@
+{
+  "source_batch": 12,
+  "title": "Batch 12 Spinal Failure Mode Concepts",
+  "patient_facing_caution": "These are educational pattern-recognition concepts, not diagnostic claims.",
+  "concepts": [
+    {
+      "concept": "disc_as_passive_witness",
+      "engine_relevant": true,
+      "summary": "Disc is often not the primary pain generator. Deep ligaments (PLL, ALL, flavum, facet capsules) are poorly vascularised and slow to regenerate — they generate deep, postural, diffuse pain. This is structural + microcirculatory + fascia failure. The 4-axis failure model explicitly separates disc from ligament from nerve from stasis."
+    },
+    {
+      "concept": "spinal_prolapse_analogy",
+      "engine_relevant": true,
+      "summary": "Hypotonic spinal ligament = spinal prolapse. Same Qi-deficiency root as uterine prolapse, pelvic floor insufficiency, varicosities. Common in women, postpartum, chronic fatigue. Needs holding tone before movement — same sequencing as prolapse management."
+    },
+    {
+      "concept": "facet_joint_reclassification",
+      "engine_relevant": true,
+      "summary": "Facet joint pain is capsulo-ligamentous pain, not classic joint/OA pain. Pain borne by capsule + deep paraspinal fascia + ligamentous tension system, not articular surface. Apply Yin/Yang ligament sub-typing. Support agents work systemically via circulation — not facet-specific targeting needed."
+    },
+    {
+      "concept": "functional_categories_not_anatomical",
+      "engine_relevant": true,
+      "summary": "Disc, ligament, and fascia are functional categories, not exclusive anatomical targets. Support acts systemically via circulation and matrix integration. Engine should score functional failure modes, not assign interventions based on anatomy alone."
+    }
+  ],
+  "key_principles": [
+    "Pain emerges from functional failure modes, not anatomy alone.",
+    "The disc is often a passive witness.",
+    "Facet pain is capsulo-ligamentous pain.",
+    "BUILD first, MOVE later.",
+    "The structure may fail because it cannot hold — not because it is inflamed."
+  ]
+}

@@ -9,7 +9,8 @@
     "test:engine": "node scripts/test-engine.cjs",
     "test:headache": "node scripts/test-headache-engine.cjs",
     "test:arch": "node scripts/test-pharyngeal-arch-engine.cjs",
-    "test:vertical": "node scripts/test-post-surgical-integration-engine.cjs"
+    "test:vertical": "node scripts/test-post-surgical-integration-engine.cjs",
+    "test:spinal": "node scripts/test-spinal-failure-mode-engine.cjs"
   },
   "dependencies": {
     "next": "^15.3.0",

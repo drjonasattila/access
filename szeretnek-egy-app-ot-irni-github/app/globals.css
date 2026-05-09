@@ -180,6 +180,50 @@ input[type="number"] {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.av-score-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.av-score-field {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.av-axis-bars {
+  display: grid;
+  gap: 12px;
+}
+
+.av-axis-row {
+  display: grid;
+  gap: 6px;
+}
+
+.av-axis-row > div:first-child {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.av-axis-track {
+  background: #e7ded0;
+  border-radius: 8px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.av-axis-fill {
+  background: var(--accent);
+  height: 100%;
+}
+
 .av-primary-button,
 .av-secondary-button {
   border: 0;

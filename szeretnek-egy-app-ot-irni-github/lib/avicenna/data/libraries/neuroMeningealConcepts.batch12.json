@@ -1,0 +1,53 @@
+{
+  "source_batch": 12,
+  "title": "Batch 12 Neuro-Meningeal Concepts",
+  "patient_facing_caution": "These are exploratory educational models and should not be presented as established medical fact.",
+  "concepts": [
+    {
+      "concept": "pulse_plate_plexus_universal_model",
+      "engine_relevant": true,
+      "summary": "Universal mechanism for nerve pain: Pulse (arterial/vascular load = Liver Yang) compresses Plate (dural/perineural EZ layer) at Plexus (autonomic ganglion or DRG). Valid for both cranial (REZ + ganglion) and spinal (dural sleeve + DRG) pathways."
+    },
+    {
+      "concept": "EZ_water_grid_as_hydration_layer",
+      "engine_relevant": true,
+      "summary": "Exclusion zone water (EZ/structured water) in nerve sheaths, dura, and fascia = protective buffer for nerve impulse damping and regeneration. Continuity = acute/subacute; partial fragmentation = subchronic; full fragmentation = chronic Yin-deficiency. Steroid response maps directly to EZ state."
+    },
+    {
+      "concept": "dural_craniosacral_continuity",
+      "engine_relevant": true,
+      "summary": "Dural system is a single continuous global EZ membrane from skull to sacrum. Sacral treatment improves trigeminal symptoms. Occiput release calms vagus. Fascia release stabilises autonomic. Treatment is never purely local."
+    },
+    {
+      "concept": "steroid_as_artificial_yang",
+      "engine_relevant": true,
+      "summary": "Steroid classified as artificial Yang. Works when EZ continuity intact (acute/subacute). Fails when EZ fragmented (chronic/Yin-deficiency). This creates a clear clinical gating rule: assess EZ/chronicity state before steroid decision."
+    }
+  ],
+  "pulse_plate_plexus_model": {
+    "pulse": "vascular oscillation",
+    "plate": "dural or perineural hydration layer",
+    "plexus": "DRG, autonomic ganglion, or cranial ganglion amplification node",
+    "applications": [
+      "cranial REZ systems",
+      "spinal DRG systems"
+    ]
+  },
+  "hydration_layer_states": [
+    {
+      "state": "continuous",
+      "clinical_stage": "acute/subacute",
+      "steroid_gate": "consolidation may be more plausible in this model"
+    },
+    {
+      "state": "partially_fragmented",
+      "clinical_stage": "subchronic",
+      "steroid_gate": "partial or inconsistent response possible"
+    },
+    {
+      "state": "fragmented",
+      "clinical_stage": "chronic Yin-deficiency neuropathic state",
+      "steroid_gate": "rebuild Yin/hydration layer first in this model"
+    }
+  ]
+}

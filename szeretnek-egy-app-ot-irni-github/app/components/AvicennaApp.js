@@ -1236,6 +1236,306 @@ const verticalFlags = [
   ["debugMode", "Debug mode"]
 ];
 
+const spinalInitialInput = {
+  pain_location: "",
+  pain_quality: "",
+  pain_type: "",
+  load_position_dependence: "",
+  EZ_state: "",
+  EZ_continuity: false,
+  western_diagnosis: "",
+  current_medications: [],
+  treatment_response: "",
+  imaging_findings: "",
+  steroid_response_history: "",
+  ligament_tone: "",
+  core_question_result: "",
+  visceral_organ_feedback: "none",
+  phase_current: 1,
+  failure_mode_score_disc: 0,
+  failure_mode_score_stasis: 0,
+  failure_mode_score_neurogenic: 0,
+  failure_mode_score_deep_ligament: 0,
+  spinal_features: [],
+  requested_interventions: [],
+  morning_stiffness: false,
+  cold_lower_back: false,
+  leg_numbness: false,
+  fatigue_dominant: false,
+  poor_sleep: false,
+  night_pain: false,
+  instability_sensation: false,
+  instability_sensation_reduced: false,
+  clicking_popping: false,
+  pain_unpredictability: false,
+  pain_unpredictability_reduced: false,
+  systemic_laxity_signs: false,
+  cold_extremities: false,
+  bloating_food_intolerance: false,
+  hypothyroid: false,
+  adrenal_fatigue: false,
+  postpartum: false,
+  liver_yang_rising: false,
+  organ_instability: false,
+  dermatomal_spread: false,
+  neurological_deficit: false,
+  improvement_not_sustained: false,
+  flow_support_present: false,
+  collagen_prescribed: false,
+  steroid_prescribed: false,
+  aggressive_stimulation: false,
+  acute_nerve_pain: false,
+  stretching_prescribed: false,
+  early_mobilisation: false,
+  treating_disc_only: false,
+  treating_radiculopathy_nerve_only: false,
+  local_tenderness: false,
+  postural_strain: false,
+  post_surgical_scarring: false,
+  stiffness_greater_than_pain: false,
+  no_large_herniation: false,
+  sacrum_treated: false,
+  occiput_released: false,
+  fascia_released: false,
+  disc_stability_at_reassessment: "",
+  nerve_pain_at_reassessment: "",
+  debugMode: false
+};
+
+const spinalFieldGroups = [
+  {
+    key: "pain_location",
+    label: "Pain location",
+    options: [
+      ["neck", "Neck", "Cervical region"],
+      ["upper_back", "Upper back", "Thoracic region"],
+      ["lower_back", "Lower back", "Lumbar/sacral region"],
+      ["radiating_arm", "Radiating arm", "Arm radiation"],
+      ["radiating_leg", "Radiating leg", "Leg radiation"],
+      ["cranial", "Cranial", "Head/craniosacral continuity"]
+    ]
+  },
+  {
+    key: "pain_quality",
+    label: "Pain quality",
+    options: [
+      ["dull_deep_ache", "Dull deep ache", "Structural or ligament layer"],
+      ["sharp_with_movement", "Sharp with movement", "Load or segmental trigger"],
+      ["electric_shooting", "Electric / shooting", "Neurogenic signal"],
+      ["stiffness_tightness", "Stiffness / tightness", "Stasis or guarding"],
+      ["burning", "Burning", "Nerve or hydration layer"],
+      ["diffuse_uncertain", "Diffuse / uncertain", "Mixed or ligament layer"]
+    ]
+  },
+  {
+    key: "pain_type",
+    label: "Pain type",
+    options: [
+      ["intermittent", "Intermittent", "Hydration layer may remain connected"],
+      ["mixed", "Mixed", "Partial fragmentation model"],
+      ["continuous_neuropathic", "Continuous neuropathic", "Chronic nerve-type state"],
+      ["acute_nerve", "Acute nerve", "Stimulation-sensitive nerve pain"]
+    ]
+  },
+  {
+    key: "load_position_dependence",
+    label: "Load / position behavior",
+    options: [
+      ["worse_sitting", "Worse sitting", "Stasis or ligament loading"],
+      ["worse_standing", "Worse standing", "Segmental holding stress"],
+      ["worse_bending", "Worse bending", "Mechanical loading"],
+      ["relieved_movement", "Relieved by movement", "Disc/stasis improvement signal"],
+      ["relieved_lying", "Relieved lying down", "Structural support signal"]
+    ]
+  },
+  {
+    key: "EZ_state",
+    label: "Hydration layer state",
+    options: [
+      ["continuous", "Continuous", "Acute/subacute"],
+      ["partially_fragmented", "Partially fragmented", "Subchronic"],
+      ["fragmented", "Fragmented", "Chronic Yin-deficiency model"],
+      ["not_assessed", "Not assessed", "Unknown"]
+    ]
+  },
+  {
+    key: "western_diagnosis",
+    label: "Conventional context",
+    options: [
+      ["disc_bulge_herniation", "Disc bulge/herniation", "Disc plus neurogenic check"],
+      ["degenerative_disc_disease", "Degenerative disc disease", "Disc matrix axis"],
+      ["spinal_stenosis", "Spinal stenosis", "Neurogenic axis"],
+      ["post_surgical_spine", "Post-surgical spine", "Stasis / gate overlay"],
+      ["spondylosis", "Spondylosis", "Deep ligament axis"],
+      ["facet_pain", "Facet pain", "Capsulo-ligamentous reclassification"],
+      ["non_specific", "Non-specific", "Run all axes"],
+      ["radiculopathy", "Radiculopathy", "Neurogenic plus ligament check"],
+      ["CRPS", "CRPS", "DRG / hydration overlay"]
+    ]
+  },
+  {
+    key: "imaging_findings",
+    label: "Imaging finding",
+    options: [
+      ["herniation", "Herniation", "Disc / nerve context"],
+      ["bulge", "Bulge", "Disc context"],
+      ["spondylosis_osteophytes", "Spondylosis / osteophytes", "Ligament load context"],
+      ["disc_height_loss", "Disc height loss", "Disc + ligament context"],
+      ["facet_degeneration", "Facet degeneration", "Capsulo-ligamentous context"],
+      ["stenosis", "Stenosis", "Neurogenic context"],
+      ["normal", "Normal", "Functional failure-mode check"],
+      ["none", "None", "No imaging available"]
+    ]
+  },
+  {
+    key: "ligament_tone",
+    label: "Ligament tone",
+    options: [
+      ["hypertonic", "Hypertonic", "Holding too much"],
+      ["hypotonic", "Hypotonic", "Cannot hold"],
+      ["mixed", "Mixed", "Weak structure with guarding"],
+      ["unknown", "Unknown", "Let engine infer"]
+    ]
+  },
+  {
+    key: "core_question_result",
+    label: "Core holding question",
+    options: [
+      ["cannot_hold", "Cannot hold", "Yin-type / hypotonic"],
+      ["holding_too_much", "Holding too much", "Yang-type / hypertonic"],
+      ["mixed", "Mixed", "Build first, move later"],
+      ["unknown", "Unknown", "Let engine infer"]
+    ]
+  },
+  {
+    key: "visceral_organ_feedback",
+    label: "Visceral feedback",
+    options: [
+      ["HT", "Heart", "Palpitations / red tip / sleep"],
+      ["LU", "Lung", "Chest or breath-linked"],
+      ["LV", "Liver", "Heat/headache/tension"],
+      ["KD", "Kidney", "Lower back/cold/fatigue"],
+      ["none", "None", "No clear organ feedback"]
+    ]
+  }
+];
+
+const spinalMultiGroups = [
+  {
+    key: "current_medications",
+    title: "Current medications",
+    items: [
+      ["NSAIDs", "NSAIDs"],
+      ["muscle_relaxants", "Muscle relaxants"],
+      ["gabapentin_pregabalin", "Gabapentin / pregabalin"],
+      ["opioids", "Opioids"],
+      ["steroids", "Steroids"],
+      ["none", "None"]
+    ]
+  },
+  {
+    key: "requested_interventions",
+    title: "Requested or planned supports",
+    items: [
+      ["collagen", "Collagen"],
+      ["myblood", "MyBlood / flow support"],
+      ["flow_support", "Equivalent flow support"],
+      ["steroid", "Steroid / block"],
+      ["stretching", "Stretching"],
+      ["early_mobilisation", "Early mobilisation"]
+    ]
+  },
+  {
+    key: "spinal_features",
+    title: "Spinal and systemic features",
+    items: [
+      ["morning_stiffness", "Morning stiffness"],
+      ["end_day_fatigue", "End-day fatigue"],
+      ["local_tenderness", "Local tenderness"],
+      ["postural_strain", "Postural strain"],
+      ["post_surgical_scarring", "Post-surgical scarring"],
+      ["varicose_veins", "Varicose veins"],
+      ["prolapse", "Prolapse"],
+      ["haemorrhoids", "Haemorrhoids"],
+      ["oedema", "Oedema"],
+      ["adrenal_fatigue", "Adrenal fatigue"],
+      ["postpartum", "Postpartum"]
+    ]
+  }
+];
+
+const spinalFlags = [
+  ["EZ_continuity", "Hydration continuity intact"],
+  ["morning_stiffness", "Morning stiffness"],
+  ["cold_lower_back", "Cold lower back"],
+  ["leg_numbness", "Leg numbness"],
+  ["fatigue_dominant", "Fatigue dominant"],
+  ["poor_sleep", "Poor sleep"],
+  ["night_pain", "Night pain"],
+  ["instability_sensation", "Instability sensation"],
+  ["instability_sensation_reduced", "Instability reduced at reassessment"],
+  ["clicking_popping", "Clicking / popping"],
+  ["pain_unpredictability", "Pain unpredictability"],
+  ["pain_unpredictability_reduced", "Unpredictability reduced"],
+  ["systemic_laxity_signs", "Systemic laxity signs"],
+  ["cold_extremities", "Cold extremities"],
+  ["bloating_food_intolerance", "Bloating / food intolerance"],
+  ["hypothyroid", "Hypothyroid context"],
+  ["adrenal_fatigue", "Adrenal fatigue"],
+  ["postpartum", "Postpartum"],
+  ["liver_yang_rising", "Liver Yang signs"],
+  ["organ_instability", "Organ instability"],
+  ["dermatomal_spread", "Dermatomal spread"],
+  ["neurological_deficit", "Neurological deficit"],
+  ["improvement_not_sustained", "Improvement not sustained"],
+  ["flow_support_present", "Flow support present"],
+  ["collagen_prescribed", "Collagen planned"],
+  ["steroid_prescribed", "Steroid / block planned"],
+  ["aggressive_stimulation", "Aggressive stimulation planned"],
+  ["acute_nerve_pain", "Acute nerve pain"],
+  ["stretching_prescribed", "Stretching planned"],
+  ["early_mobilisation", "Early mobilisation planned"],
+  ["treating_disc_only", "Treating as disc-only"],
+  ["treating_radiculopathy_nerve_only", "Treating radiculopathy as nerve-only"],
+  ["local_tenderness", "Local tenderness"],
+  ["postural_strain", "Postural strain"],
+  ["post_surgical_scarring", "Post-surgical scarring"],
+  ["stiffness_greater_than_pain", "Stiffness greater than pain"],
+  ["no_large_herniation", "No large herniation"],
+  ["sacrum_treated", "Sacrum treated"],
+  ["occiput_released", "Occiput released"],
+  ["fascia_released", "Fascia released"],
+  ["debugMode", "Debug mode"]
+];
+
+const spinalScoreFields = [
+  ["failure_mode_score_disc", "Axis A: disc dehydration"],
+  ["failure_mode_score_stasis", "Axis B: stasis / fascia"],
+  ["failure_mode_score_neurogenic", "Axis C: neurogenic overload"],
+  ["failure_mode_score_deep_ligament", "Axis D: deep ligament"]
+];
+
+const spinalReassessmentGroups = [
+  {
+    key: "disc_stability_at_reassessment",
+    label: "Disc stability at 14-28 days",
+    options: [
+      ["improved", "Improved", "Gradual load return"],
+      ["unchanged", "Unchanged", "Continue support"],
+      ["worsened", "Worsened", "Reassess safety and load"]
+    ]
+  },
+  {
+    key: "nerve_pain_at_reassessment",
+    label: "Nerve pain at 14-28 days",
+    options: [
+      ["reduced", "Reduced", "Taper noise reduction, maintain membrane protection"],
+      ["unchanged", "Unchanged", "Continue membrane protection"],
+      ["worsened", "Worsened", "Reassess safety and load"]
+    ]
+  }
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -1373,6 +1673,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("vertical")}
       >
         Vertical axis
+      </button>
+      <button
+        className={mode === "spinal" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("spinal")}
+      >
+        Spinal modes
       </button>
     </nav>
   );
@@ -1960,6 +2267,284 @@ function VerticalAxisEngineSection() {
   );
 }
 
+function SpinalAxisBars({ scores }) {
+  const rows = Object.values(scores || {});
+  if (!rows.length) return null;
+
+  return (
+    <section>
+      <h2>4-axis failure scores</h2>
+      <div className="av-axis-bars">
+        {rows.map((axis) => (
+          <div className="av-axis-row" key={axis.key}>
+            <div>
+              <strong>{axis.axis}: {axis.label}</strong>
+              <span>{axis.score}/10</span>
+            </div>
+            <div className="av-axis-track">
+              <div className="av-axis-fill" style={{ width: `${Math.min(axis.score, 10) * 10}%` }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function SpinalFailureResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient;
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className="av-output-header">
+        <p>Spinal failure-mode engine</p>
+        <strong>{patient.title}</strong>
+      </div>
+
+      <section>
+        <h2>Failure-mode interpretation</h2>
+        <p>{patient.summary}</p>
+      </section>
+
+      <TagSection title="Support language" items={patient.support_language || []} tone="effect" empty="No support language generated." />
+      <TagSection title="Suggested sequence" items={patient.sequence || []} tone="effect" empty="No sequencing suggested from current inputs." />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {patient.safety_notes.map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Advanced clinician view</summary>
+          <p>Dominant failure mode: {result.dominant_failure_mode?.label || "not assessed"}</p>
+          <p>Primary pattern: {result.primary_pattern || "not assessed"}</p>
+          <p>Mixed pattern: {result.mixed_pattern ? "yes - sequence, do not stack" : "no"}</p>
+          <p>Yin/Yang ligament subtype: {result.ligament_subtype?.subtype || "not assessed"}</p>
+          <p>EZ continuity state: {result.EZ_continuity_state?.state || "not assessed"} / {String(result.EZ_continuity_state?.continuity)}</p>
+          <p>Steroid suitability logic: {result.steroid_suitability_logic?.suitability}</p>
+
+          <SpinalAxisBars scores={result.axis_scores} />
+
+          <TagSection title="Triggered rules" items={(result.triggered_rules || []).map((item) => `${item.id}: ${item.action}`)} tone="mod" empty="None triggered" />
+          <TagSection title="Contraindications" items={result.contraindications || []} tone="avoid" empty="None triggered" />
+          <TagSection title="Core principles" items={result.core_phrases || []} tone="effect" empty="None listed" />
+
+          <section>
+            <h2>Pulse-plate-plexus model</h2>
+            <p>Pulse: {result.pulse_plate_plexus_model?.pulse}</p>
+            <p>Plate: {result.pulse_plate_plexus_model?.plate}</p>
+            <p>Plexus: {result.pulse_plate_plexus_model?.plexus}</p>
+            {(result.pulse_plate_plexus_model?.applications || []).map((item) => <span key={item}>{item}</span>)}
+          </section>
+
+          <section>
+            <h2>Organ-spine feedback</h2>
+            <p>{result.organ_spine_feedback?.interpretation}</p>
+            <p>Active: {result.organ_spine_feedback?.active ? "yes" : "no"}</p>
+          </section>
+
+          <section>
+            <h2>Dural craniosacral continuity</h2>
+            <p>{result.dural_craniosacral_continuity?.summary}</p>
+          </section>
+
+          <section>
+            <h2>Spinal concepts</h2>
+            {(result.spinal_concepts?.concepts || []).map((concept) => (
+              <span key={concept.concept}>{titleCase(concept.concept)}: {concept.summary}</span>
+            ))}
+          </section>
+
+          <section>
+            <h2>Neuro-meningeal concepts</h2>
+            {(result.neuro_meningeal_concepts?.concepts || []).map((concept) => (
+              <span key={concept.concept}>{titleCase(concept.concept)}: {concept.summary}</span>
+            ))}
+          </section>
+
+          <section>
+            <h2>Cross-batch links</h2>
+            {(result.cross_batch_links || []).map((item) => <span key={item}>{item}</span>)}
+          </section>
+
+          <p>Reassessment timing: {result.reassessment_timing}</p>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function SpinalFailureModeSection() {
+  const [input, setInput] = useState(spinalInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  function toggleArray(key, value) {
+    setInput((current) => {
+      const list = current[key];
+      return {
+        ...current,
+        [key]: list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+      };
+    });
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/spinal-failure", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, debugMode: advanced || input.debugMode })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Spinal failure-mode evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(spinalInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>Spinal & Neuro-Meningeal Failure Modes</h2>
+          <p className="av-muted">
+            Maps spinal pain into hydration, flow, load-distribution, ligament-holding, and neural-damping failure modes. This is an educational pattern-recognition tool, not a medical diagnosis.
+          </p>
+        </section>
+
+        {spinalFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section className="av-section">
+          <h2>Optional explicit axis scores</h2>
+          <div className="av-score-grid">
+            {spinalScoreFields.map(([key, label]) => (
+              <label className="av-score-field" key={key}>
+                <span>{label}</span>
+                <input
+                  type="number"
+                  min="0"
+                  max="10"
+                  value={input[key]}
+                  onChange={(event) => setField(key, event.target.value)}
+                />
+              </label>
+            ))}
+          </div>
+        </section>
+
+        {spinalReassessmentGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {spinalMultiGroups.map((group) => (
+          <ToggleList
+            key={group.key}
+            title={group.title}
+            items={group.items}
+            selected={input[group.key]}
+            onToggle={(value) => toggleArray(group.key, value)}
+          />
+        ))}
+
+        <ToggleList
+          title="Spinal safety and logic flags"
+          items={spinalFlags}
+          selected={spinalFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show clinician/neuro-meningeal panels</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate spinal mode"}
+        </button>
+      </form>
+
+      <SpinalFailureResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function HeadacheEngineSection() {
   const [input, setInput] = useState(headacheInitialInput);
   const [result, setResult] = useState(null);
@@ -2289,7 +2874,9 @@ export default function AvicennaApp() {
         ? "Cranio-Visceral Developmental Gates"
         : mode === "vertical"
           ? "Vertical Axis & Post-Surgical Integration"
-          : "Wellness protocol generator";
+          : mode === "spinal"
+            ? "Spinal & Neuro-Meningeal Failure Modes"
+            : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
       ? "Safety-first terrain scoring across nerve, fascia, gut, vessel, and energy-recovery axes"
@@ -2297,7 +2884,9 @@ export default function AvicennaApp() {
         ? "Pharyngeal Arch Engine: symptom to gate to axis to reset strategy"
         : mode === "vertical"
           ? "Post-surgical reintegration, KD-SP holding field, and compensatory Shaoyang logic"
-          : "Rule-based terrain assessment and tea protocol builder";
+          : mode === "spinal"
+            ? "Functional spinal scoring across disc, fascia, neurogenic, and ligament holding layers"
+            : "Rule-based terrain assessment and tea protocol builder";
 
   return (
     <main className="av-page">
@@ -2312,6 +2901,8 @@ export default function AvicennaApp() {
         <PharyngealArchEngineSection />
       ) : mode === "vertical" ? (
         <VerticalAxisEngineSection />
+      ) : mode === "spinal" ? (
+        <SpinalFailureModeSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (
