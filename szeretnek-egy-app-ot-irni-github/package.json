@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test:engine": "node scripts/test-engine.cjs",
-    "test:headache": "node scripts/test-headache-engine.cjs"
+    "test:headache": "node scripts/test-headache-engine.cjs",
+    "test:arch": "node scripts/test-pharyngeal-arch-engine.cjs"
   },
   "dependencies": {
     "next": "^15.3.0",

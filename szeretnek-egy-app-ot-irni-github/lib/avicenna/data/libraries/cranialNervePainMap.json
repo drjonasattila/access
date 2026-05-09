@@ -1,0 +1,129 @@
+{
+  "source": "avicenna_engine_batch10.json",
+  "entries": [
+    {
+      "cranial_nerve": "CN I (Olfactory)",
+      "arch": "none (olfactory bulb–cribriform plate transition)",
+      "plate_REZ": "Olfactory bulb–cribriform plate",
+      "pulse_vascular": "Anterior cerebral arterial microflow; cortical respiratory pulse",
+      "plexus": "Limbic interface (amygdala, orbitofrontal)",
+      "pathology_EZ_pattern": "Hyposmia, parosmia, emotional invasion, post-viral anosmia (damp-heat or boundary loss)",
+      "interventions": "Breath retraining, olfactory meditation, upper turbinate photobiomodulation",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN II (Optic)",
+      "arch": "none (optic disc–retinal field)",
+      "plate_REZ": "Optic disc–retinal field (CSF–retina boundary)",
+      "pulse_vascular": "Ophthalmic artery pulsation",
+      "plexus": "Ciliary ganglion, hypothalamic-retinal loop",
+      "pathology_EZ_pattern": "Optic neuritis, glaucoma (Yang excess, stagnation), visual migraine aura",
+      "interventions": "Light modulation; microcurrent at temple; Gou Teng + Dan Shen for microcirculation",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN III (Oculomotor)",
+      "arch": "none",
+      "plate_REZ": "Midbrain REZ near posterior perforated substance",
+      "pulse_vascular": "Posterior cerebral / superior cerebellar arteries",
+      "plexus": "Ciliary and pterygopalatine ganglia",
+      "pathology_EZ_pattern": "Ptosis, diplopia, pupil irregularity (Shaoyang field rigidity)",
+      "interventions": "Gentle midline photobiostimulation; acetyl-L-carnitine micro-dosing; Xiao Chai Hu-type harmonisation",
+      "TCM_axis": "Shaoyang field rigidity"
+    },
+    {
+      "cranial_nerve": "CN IV (Trochlear)",
+      "arch": "none",
+      "plate_REZ": "Dorsal midbrain",
+      "pulse_vascular": "Superior cerebellar artery",
+      "plexus": "Cavernous sinus plexus",
+      "pathology_EZ_pattern": "Vertical diplopia, ocular dizziness",
+      "interventions": "Cranial fascial release; cerebellar recalibration (Liver-Wind calming herbs)",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN V (Trigeminus)",
+      "arch": "Pharyngeal arch 1",
+      "plate_REZ": "Pons REZ (SCA impact)",
+      "pulse_vascular": "SCA, CSF turbulence",
+      "plexus": "Sphenopalatine, otic, submandibular ganglia; dura",
+      "pathology_EZ_pattern": "Trigeminal neuralgia, facial pain, migraine, TAC, cluster",
+      "gate": "Lateral face / jaw / external carotid gate",
+      "interventions": "SPG block; Dan Shen–Wu Wei Zi Yin seal; photobiomodulation; Chai Hu + Chuan Xiong + Gou Teng",
+      "TCM_axis": "Shaoyang"
+    },
+    {
+      "cranial_nerve": "CN VI (Abducens)",
+      "arch": "none",
+      "plate_REZ": "Pontomedullary junction",
+      "pulse_vascular": "Basilar artery",
+      "plexus": "Cavernous sinus and sympathetic plexus",
+      "pathology_EZ_pattern": "Diplopia, brainstem stretch headaches",
+      "interventions": "Craniosacral unwinding; hydration (EZ restoration)",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN VII (Facial)",
+      "arch": "Pharyngeal arch 2",
+      "plate_REZ": "Pontomedullary angle",
+      "pulse_vascular": "AICA, Labyrinthine artery",
+      "plexus": "Geniculate and submandibular ganglia",
+      "pathology_EZ_pattern": "Bell's palsy (cold invasion → Yin collapse); vasomotor facial signs; sympatho-vagal lability",
+      "gate": "Anterior face / autonomic microvascular",
+      "interventions": "Warm laser along stylomastoid path; Shaoyang-Yin tonics; He Huan Pi + Fu Shen",
+      "TCM_axis": "ShaoYin HT/KD — autonomic and microvascular tone"
+    },
+    {
+      "cranial_nerve": "CN VIII (Vestibulocochlear)",
+      "arch": "none (pontomedullary angle)",
+      "plate_REZ": "Pontomedullary angle",
+      "pulse_vascular": "AICA / Labyrinthine artery",
+      "plexus": "Vestibular ganglion, cerebellar relay",
+      "pathology_EZ_pattern": "Vertigo, tinnitus, Meniere's (CSF-lymph decoupling)",
+      "interventions": "Inner-ear photobiomodulation; Huang Qin + Zhu Ling logic (clear damp-heat)",
+      "TCM_axis": "uncertain — damp-heat or CSF-lymph decoupling"
+    },
+    {
+      "cranial_nerve": "CN IX (Glossopharyngeus)",
+      "arch": "Pharyngeal arch 3",
+      "plate_REZ": "Medulla REZ",
+      "pulse_vascular": "PICA",
+      "plexus": "Otic ganglion",
+      "pathology_EZ_pattern": "Glossopharyngeal neuralgia, dysautonomia, baroreflex instability",
+      "gate": "Baroreceptor gate / thyroid upper pole",
+      "interventions": "Otic ganglion modulation; Dan Shen + Gou Teng; gentle vagal stimulation",
+      "TCM_axis": "Ren Mai ventral block"
+    },
+    {
+      "cranial_nerve": "CN X (Vagus)",
+      "arch": "Pharyngeal arches 4 and 6",
+      "plate_REZ": "Medulla REZ",
+      "pulse_vascular": "Vertebral / PICA",
+      "plexus": "Nodose ganglion, cardiac plexus, enteric plexuses",
+      "pathology_EZ_pattern": "Dysautonomia, POTS, arrhythmia, IBS, arm CRPS",
+      "gate": "Mediastinal gate / thymus / pericardium",
+      "interventions": "Auricular vagus stimulation; deep breathing; He Huan Pi + Fu Shen formulas; laser Ren17 + C6-T2",
+      "TCM_axis": "Ren / HT-LU (Jueyin-Ren)"
+    },
+    {
+      "cranial_nerve": "CN XI (Accessory)",
+      "arch": "Cervical cord–foramen magnum REZ",
+      "plate_REZ": "Cervical cord–foramen magnum REZ",
+      "pulse_vascular": "Vertebral arteries",
+      "plexus": "Cervical sympathetic chain",
+      "pathology_EZ_pattern": "Shoulder/neck spasm, tension headaches",
+      "interventions": "Neck fascial release; GB meridian harmonisation",
+      "TCM_axis": "Shaoyang downstream (Batch 1)"
+    },
+    {
+      "cranial_nerve": "CN XII (Hypoglossal)",
+      "arch": "Medulla REZ",
+      "plate_REZ": "Medulla REZ",
+      "pulse_vascular": "Vertebral / basilar branches",
+      "plexus": "Lingual parasympathetic fibers",
+      "pathology_EZ_pattern": "Dysarthria, tongue deviation, speech-field fatigue",
+      "interventions": "Tongue grounding exercises; Yin restoratives (Sheng Di, Xuan Shen)",
+      "TCM_axis": "uncertain"
+    }
+  ]
+}

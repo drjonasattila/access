@@ -1,0 +1,51 @@
+{
+  "source": "avicenna_engine_batch10.json",
+  "entries": [
+    {
+      "id": "TONSIL",
+      "gate_role": "Immune surveillance gate",
+      "interface_type": "mucosal immune gate — ecto-endo shunt",
+      "field_metaphor": "emotional surveillance detector",
+      "clinical_relevance": "first line immune gatekeeping; early processing of oral/environmental signals; autonomic reflex connection to CN IX-X",
+      "Ayurveda_overlay": "Kapha"
+    },
+    {
+      "id": "THYROID",
+      "gate_role": "Metabolic oscillator / ventral field descent node",
+      "interface_type": "midline ectoderm-endoderm ventral migration path",
+      "field_metaphor": "release valve / metabolic clock",
+      "clinical_relevance": "thyroid primordium descends under arches 1-2 (classic field-descent pathway); T3/T4 = timing signal; thyroid as overloaded transformer discharging cranio-visceral noise; when disturbed: TMJ + neck fascia + sternum + vagus tone all co-affected",
+      "Ayurveda_overlay": "Pitta",
+      "co_disturbances": [
+        "TMJ",
+        "neck fascia",
+        "sternum",
+        "vagus tone"
+      ]
+    },
+    {
+      "id": "PARATHYROID",
+      "gate_role": "Calcium matrix tensioner / ECM stabiliser",
+      "interface_type": "arch 3-4 pouch origin",
+      "field_metaphor": "calcium-ECM stability sensor",
+      "clinical_relevance": "co-develops with thymus from 4th pouch; calcium as matrix tension regulator; EZ water depends on ionic balance",
+      "Ayurveda_overlay": "uncertain"
+    },
+    {
+      "id": "ULTIMOBRANCHIAL_BODY",
+      "gate_role": "Matrix stability sensor / regenerative plasticity",
+      "interface_type": "arch 5-6 pouch remnant; gives rise to parafollicular C-cells",
+      "field_metaphor": "matrix coherence sentinel",
+      "clinical_relevance": "calcitonin production; field coherence monitoring; regenerative plasticity reserve",
+      "Ayurveda_overlay": "uncertain"
+    },
+    {
+      "id": "THYMUS",
+      "gate_role": "Mediastinal immune gate",
+      "interface_type": "arch 3-4 pouch; co-develops with inferior parathyroid",
+      "field_metaphor": "mediastinal field guardian",
+      "clinical_relevance": "co-develops with parathyroid from 4th pouch; part of Arch IV-VI mediastinal field; immune programming gate",
+      "Ayurveda_overlay": "Kapha"
+    }
+  ]
+}

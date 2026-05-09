@@ -881,6 +881,156 @@ const cgrpSideEffects = [
   ["quieter_not_better", "Quieter but not better"]
 ];
 
+const archInitialInput = {
+  pain_location_cranial: [],
+  cranial_symptoms: [],
+  dominant_arch_module: "unknown",
+  visceral_trigger_cranial: [],
+  post_surgical_history: [],
+  autonomic_signs_cranial: [],
+  thyroid_dysfunction_present: false,
+  thyroid_co_patterns: [],
+  CRPS_arm_present: false,
+  stellate_block_effective: false,
+  vagus_stimulation_effective: false,
+  SCM_trigger_present: false,
+  symptom_modulated_by_posture_breath_emotion: false,
+  laser_available: false,
+  laser_wavelength_available: [],
+  hashimoto_present: false,
+  neck_pain_present: false,
+  facial_pain_present: false,
+  internal_audit: false
+};
+
+const archFieldGroups = [
+  {
+    key: "dominant_arch_module",
+    label: "Dominant arch module",
+    options: [
+      ["ARCH_1_CN_V", "Arch 1 / CN V", "Trigeminus / Shaoyang cranial gate"],
+      ["ARCH_2_CN_VII", "Arch 2 / CN VII", "Facialis / Shaoyin autonomic buffer"],
+      ["ARCH_3_CN_IX", "Arch 3 / CN IX", "Glossopharyngeus / Ren Mai block"],
+      ["ARCH_4_6_CN_X", "Arch 4-6 / CN X", "Vagus cardio-aortic / mediastinal gate"],
+      ["mixed", "Mixed", "Multiple modules may oscillate"],
+      ["unknown", "Unknown", "Let the engine infer"]
+    ]
+  }
+];
+
+const archMultiGroups = [
+  {
+    key: "pain_location_cranial",
+    title: "Cranio-thoracic territory",
+    items: [
+      ["temporal", "Temporal"],
+      ["periorbital", "Periorbital / cluster region"],
+      ["facial", "Facial"],
+      ["retroauricular", "Behind ear"],
+      ["occipital", "Occipital"],
+      ["throat_radiating", "Throat-radiating"],
+      ["chest_concurrent", "Chest concurrent"],
+      ["SCM_trigger", "SCM trigger"]
+    ]
+  },
+  {
+    key: "cranial_symptoms",
+    title: "Cranial and field symptoms",
+    items: [
+      ["trigeminal_neuralgia", "Trigeminal neuralgia"],
+      ["cluster_headache", "Cluster headache"],
+      ["temporal_migraine", "Temporal migraine"],
+      ["occipital_migraine", "Occipital migraine"],
+      ["glossopharyngeal_neuralgia", "Glossopharyngeal neuralgia"],
+      ["bell_palsy_features", "Bell's palsy features"],
+      ["dizziness", "Dizziness"],
+      ["headache", "Headache"],
+      ["migraine", "Migraine"],
+      ["swallowing_pain", "Swallowing pain"],
+      ["mediastinal_pressure", "Mediastinal pressure"],
+      ["anxiety", "Anxiety"],
+      ["hashimoto", "Hashimoto context"]
+    ]
+  },
+  {
+    key: "visceral_trigger_cranial",
+    title: "Visceral trigger corridor",
+    items: [
+      ["reflux_hiatus", "Reflux / hiatus"],
+      ["hepatic_tension", "Hepatic tension"],
+      ["carotid_irritation", "Carotid irritation"],
+      ["vagus_symp_imbalance", "Vagus-sympathetic imbalance"],
+      ["epigastric_tension", "Epigastric tension"],
+      ["IBS", "IBS"],
+      ["biliary_dysregulation", "Biliary dysregulation"],
+      ["palpitations", "Palpitations"],
+      ["thyroid_distortion", "Thyroid distortion"],
+      ["mediastinal_adhesion", "Mediastinal adhesion"],
+      ["cardiac_arrhythmia", "Cardiac arrhythmia"],
+      ["pulmonary_congestion", "Pulmonary congestion"],
+      ["pericardial_tension", "Pericardial tension"]
+    ]
+  },
+  {
+    key: "post_surgical_history",
+    title: "Surgical history",
+    items: [
+      ["thoracotomy", "Thoracotomy"],
+      ["sternotomy", "Sternotomy"],
+      ["cervical_surgery", "Cervical surgery"],
+      ["none", "None"]
+    ]
+  },
+  {
+    key: "autonomic_signs_cranial",
+    title: "Autonomic signs",
+    items: [
+      ["lacrimation_mismatch", "Dry eye / tearing mismatch"],
+      ["dry_mouth", "Dry mouth"],
+      ["hot_cold_facial_asymmetry", "Hot-cold facial asymmetry"],
+      ["palpitations", "Palpitations"],
+      ["BP_fluctuation_with_headache", "BP-linked headache"],
+      ["POTS_features", "POTS features"],
+      ["arrhythmia", "Arrhythmia"]
+    ]
+  },
+  {
+    key: "thyroid_co_patterns",
+    title: "Thyroid co-patterns",
+    items: [
+      ["TMJ_concurrent", "TMJ concurrent"],
+      ["neck_fascia_tension", "Neck fascia tension"],
+      ["sternum_symptoms", "Sternum symptoms"],
+      ["vagus_tone_change", "Vagus tone change"],
+      ["globus", "Globus"]
+    ]
+  },
+  {
+    key: "laser_wavelength_available",
+    title: "Laser wavelength available",
+    items: [
+      ["808nm", "808 nm"],
+      ["830nm", "830 nm"],
+      ["980nm", "980 nm"],
+      ["other", "Other"]
+    ]
+  }
+];
+
+const archFlags = [
+  ["thyroid_dysfunction_present", "Thyroid dysfunction present"],
+  ["hashimoto_present", "Hashimoto context"],
+  ["CRPS_arm_present", "Arm CRPS present"],
+  ["stellate_block_effective", "Stellate block helped"],
+  ["vagus_stimulation_effective", "Vagus stimulation helped"],
+  ["SCM_trigger_present", "SCM trigger present"],
+  ["neck_pain_present", "Neck pain present"],
+  ["facial_pain_present", "Facial pain present"],
+  ["symptom_modulated_by_posture_breath_emotion", "Modulated by posture / breath / emotion"],
+  ["laser_available", "Laser available"],
+  ["internal_audit", "Internal audit mode"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -1004,6 +1154,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("headache")}
       >
         Pain patterns
+      </button>
+      <button
+        className={mode === "arch" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("arch")}
+      >
+        Pharyngeal gates
       </button>
     </nav>
   );
@@ -1161,6 +1318,211 @@ function HeadacheResult({ result, advanced, onReset }) {
         Start again
       </button>
     </aside>
+  );
+}
+
+function PharyngealArchResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient;
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className="av-output-header">
+        <p>Cranio-visceral developmental gates</p>
+        <strong>{patient.title}</strong>
+      </div>
+
+      <section>
+        <h2>Module interpretation</h2>
+        <p>{patient.summary}</p>
+      </section>
+
+      <TagSection title="Reset focus" items={patient.support} tone="effect" empty="No dominant developmental gate module identified." />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {patient.safety_notes.map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Advanced clinician view</summary>
+          <p>Suspected arch module: {result.suspected_arch_module || "not assessed"}</p>
+          <p>Cranial nerve bus: {result.cranial_nerve_bus || "not assessed"}</p>
+          <p>Gate organ: {result.gate_organ?.id || result.gate_organ?.gate_role || "field gate"}</p>
+          <p>Primary pattern: {result.primary_pattern || "not assessed"}</p>
+          <p>Formula class: {result.reset_strategy?.formula_class || "not assessed"}</p>
+          <p>Field principle: {result.resonance_box?.principle}</p>
+          <TagSection title="Field state" items={result.field_state || []} tone="mod" empty="None listed" />
+          <TagSection title="Triggered rules" items={(result.triggered_rule_ids || []).map((rule) => `${rule.id}: ${rule.action}`)} tone="mod" empty="None triggered" />
+          <TagSection title="Associated herbs" items={(result.reset_strategy?.herbs || []).map((herb) => `${herb.name}: ${herb.role}`)} tone="effect" empty="None listed" />
+          {result.laser_gate_logic && (
+            <section>
+              <h2>Laser gate logic</h2>
+              <p>{result.laser_gate_logic.principle}</p>
+              {result.laser_gate_logic.notes.map((note) => <span key={note}>{note}</span>)}
+            </section>
+          )}
+          {result.four_gate_laser_stellate_protocol && (
+            <section>
+              <h2>Non-invasive 4-gate laser stellate protocol</h2>
+              <p>{result.four_gate_laser_stellate_protocol.description}</p>
+              {result.four_gate_laser_stellate_protocol.gates.map((gate) => <span key={gate}>{gate}</span>)}
+            </section>
+          )}
+          <section>
+            <h2>Mouth of the fish model</h2>
+            <p>{result.pharyngeal_pouch_sensor_corridor.description}</p>
+            <p>{result.pharyngeal_pouch_sensor_corridor.principle}</p>
+            <p>{result.pharyngeal_pouch_sensor_corridor.pouch_shunt_principle}</p>
+          </section>
+          <section>
+            <h2>Cranial nerve map</h2>
+            {result.cranial_nerve_pain_module_map.map((row) => (
+              <span key={row.cranial_nerve}>{row.cranial_nerve}: {row.arch} / {row.TCM_axis}</span>
+            ))}
+          </section>
+          <section>
+            <h2>Gate organ library</h2>
+            {result.gate_organ_library.map((gate) => (
+              <span key={gate.id}>{gate.id}: {gate.gate_role} / {gate.interface_type}</span>
+            ))}
+          </section>
+          <section>
+            <h2>Cross-batch references</h2>
+            {result.cross_batch_references.map((item) => <span key={item}>{item}</span>)}
+          </section>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function PharyngealArchEngineSection() {
+  const [input, setInput] = useState(archInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  function toggleArray(key, value) {
+    setInput((current) => {
+      const list = current[key];
+      return {
+        ...current,
+        [key]: list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+      };
+    });
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/pharyngeal-arch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, internal_audit: advanced || input.internal_audit })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Pharyngeal arch evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(archInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>Cranio-Visceral Developmental Gates</h2>
+          <p className="av-muted">
+            Pharyngeal Arch Engine. This is an educational pattern-recognition tool, not a medical diagnosis.
+          </p>
+        </section>
+
+        {archFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {archMultiGroups.map((group) => (
+          <ToggleList
+            key={group.key}
+            title={group.title}
+            items={group.items}
+            selected={input[group.key]}
+            onToggle={(value) => toggleArray(group.key, value)}
+          />
+        ))}
+
+        <ToggleList
+          title="Developmental gate flags"
+          items={archFlags}
+          selected={archFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show clinician/developmental model panels</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate developmental gate"}
+        </button>
+      </form>
+
+      <PharyngealArchResult result={result} advanced={advanced} onReset={reset} />
+    </div>
   );
 }
 
@@ -1486,20 +1848,31 @@ export default function AvicennaApp() {
     setError("");
   }
 
+  const title =
+    mode === "headache"
+      ? "Pain pattern engine"
+      : mode === "arch"
+        ? "Cranio-Visceral Developmental Gates"
+        : "Wellness protocol generator";
+  const subtitle =
+    mode === "headache"
+      ? "Safety-first terrain scoring across nerve, fascia, gut, vessel, and energy-recovery axes"
+      : mode === "arch"
+        ? "Pharyngeal Arch Engine: symptom to gate to axis to reset strategy"
+        : "Rule-based terrain assessment and tea protocol builder";
+
   return (
     <main className="av-page">
       <header className="av-header">
         <p>Avicenna Clinical Engine</p>
-        <h1>{mode === "headache" ? "Headache pattern engine" : "Wellness protocol generator"}</h1>
-        <span>
-          {mode === "headache"
-            ? "Safety-first terrain scoring across nerve, fascia, gut, vessel, and energy-recovery axes"
-            : "Rule-based terrain assessment and tea protocol builder"}
-        </span>
+        <h1>{title}</h1>
+        <span>{subtitle}</span>
         <ModeTabs mode={mode} onChange={setMode} />
       </header>
 
-      {mode === "headache" ? (
+      {mode === "arch" ? (
+        <PharyngealArchEngineSection />
+      ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (
       <div className="av-workspace">

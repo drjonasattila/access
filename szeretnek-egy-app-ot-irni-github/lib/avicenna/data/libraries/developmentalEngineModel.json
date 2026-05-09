@@ -1,0 +1,87 @@
+{
+  "source": "avicenna_engine_batch10.json",
+  "object_types": [
+    {
+      "type": "DevelopmentalModule",
+      "fields": [
+        "id",
+        "week_range",
+        "core_principle",
+        "resonance_unit_label",
+        "dominant_gate",
+        "notes_short"
+      ],
+      "instances": [
+        "ARCH_1",
+        "ARCH_2",
+        "ARCH_3",
+        "ARCH_4_6"
+      ]
+    },
+    {
+      "type": "CranialNerveBus",
+      "fields": [
+        "id",
+        "arch_affiliation",
+        "function_tag",
+        "output_zone"
+      ],
+      "instances": [
+        "CN_V",
+        "CN_VII",
+        "CN_IX",
+        "CN_X"
+      ]
+    },
+    {
+      "type": "GateOrgan",
+      "fields": [
+        "id",
+        "gate_role",
+        "interface_type",
+        "field_metaphor"
+      ],
+      "instances": [
+        "TONSIL",
+        "THYROID",
+        "PARATHYROID",
+        "ULTIMOBRANCHIAL",
+        "THYMUS"
+      ]
+    },
+    {
+      "type": "SegmentalUnit",
+      "fields": [
+        "id",
+        "axis",
+        "unit_type",
+        "continuation_map"
+      ],
+      "note": "fascia-neuro-vascular resonance box"
+    }
+  ],
+  "relationships": [
+    "MODULE_FORMS_UNIT: DevelopmentalModule → SegmentalUnit",
+    "MODULE_USES_NERVE_BUS: DevelopmentalModule → CranialNerveBus",
+    "MODULE_GATES_THROUGH_ORGAN: DevelopmentalModule → GateOrgan",
+    "NERVE_MONITORS_UNIT: CranialNerveBus → SegmentalUnit (nerve registers pathological oscillations + decoherence)",
+    "CRANIAL_CAUSAL_CONTINUITY: SegmentalUnit ↔ SegmentalUnit (same segmentation continues caudally → BL/Huatuojiaji)"
+  ],
+  "UI_layer_toggles": [
+    {
+      "layer": "Developmental",
+      "default": "ON",
+      "content": "embryo timeline, neural crest migration, arches, CN-bus, gate organs"
+    },
+    {
+      "layer": "Pain",
+      "default": "OFF_placeholder",
+      "content": "symptom mapping and diagnoses — enable in future"
+    },
+    {
+      "layer": "Intervention",
+      "default": "OFF_placeholder",
+      "content": "non-invasive gate reset strategies — enable in future"
+    }
+  ]
+}

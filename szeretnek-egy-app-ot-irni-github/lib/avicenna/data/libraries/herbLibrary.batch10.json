@@ -1,0 +1,110 @@
+{
+  "source": "avicenna_engine_batch10.json",
+  "entries": [
+    {
+      "name": "Gou Teng (Uncaria)",
+      "primary_role": "Liver Yang calming, wind-heat clearing, blood pressure modulation",
+      "meridians": [
+        "Liver",
+        "Pericardium"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain"
+    },
+    {
+      "name": "Gua Lou Pi (Trichosanthes peel)",
+      "primary_role": "Heart-Lung axis opening, chest Qi regulation",
+      "meridians": [
+        "Lung",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain"
+    },
+    {
+      "name": "Huang Qi (Astragalus membranaceus)",
+      "primary_role": "Qi generation, central field drive, Wei Qi strengthening",
+      "meridians": [
+        "Lung",
+        "Spleen"
+      ],
+      "caution": "avoid in active inflammation — tonifying herb",
+      "source_batch": 10,
+      "source_caution": "avoid in active inflammation — tonifying herb"
+    },
+    {
+      "name": "Suan Zao Ren (Zizyphus seed)",
+      "primary_role": "Heart nourishment, calm spirit, insomnia",
+      "meridians": [
+        "Heart",
+        "Liver",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain"
+    },
+    {
+      "name": "Long Yan Rou (Longan flesh)",
+      "primary_role": "Heart-Spleen blood nourishment, spirit calming",
+      "meridians": [
+        "Heart",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain"
+    },
+    {
+      "name": "Di Gu Pi (Lycium bark)",
+      "primary_role": "Yin deficiency heat clearing, blood cooling",
+      "meridians": [
+        "Lung",
+        "Liver",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain"
+    },
+    {
+      "name": "Huang Qin (Scutellaria)",
+      "primary_role": "Damp-heat clearing, immune modulation, upper burner heat",
+      "meridians": [
+        "Lung",
+        "Gallbladder",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain"
+    },
+    {
+      "name": "Zhu Ling (Polyporus)",
+      "primary_role": "Dampness draining, lymphatic support, damp-heat in inner ear",
+      "meridians": [
+        "Kidney",
+        "Bladder"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain"
+    },
+    {
+      "name": "Ban Xia (Pinellia)",
+      "primary_role": "Phlegm-damp transforming, nausea, Shaoyang formula base",
+      "meridians": [
+        "Lung",
+        "Spleen",
+        "Stomach"
+      ],
+      "caution": "use processed (Zhi Ban Xia); toxic raw",
+      "source_batch": 10,
+      "source_caution": "use processed (Zhi Ban Xia); toxic raw"
+    }
+  ]
+}

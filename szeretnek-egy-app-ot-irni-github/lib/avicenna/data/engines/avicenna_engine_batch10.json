@@ -1,0 +1,831 @@
+{
+  "batch": 3,
+  "source_files": ["pharyngeal_arches_pdf.pdf"],
+
+  "engine_module": {
+    "name": "Cranio-Visceral Developmental Gates (Pharyngeal Arch Engine)",
+    "purpose": "Map cranio-thoracic pain and dysfunction to embryological field modules — pharyngeal arch → cranial nerve bus → gate organ → segmental fascia-neuro-vascular unit. Output: symptom → gate → axis → reset strategy.",
+    "core_principle": "The pharyngeal arch system is an ecto-endo shunt cranio-visceral gateway series. Neural crest migration builds segmental fascia-neuro-vascular sensory units (resonance boxes). These modules operate with minimal mesodermal buffer, making them easily overstimulated. Clinical output is not an anatomy list — it is identification of which module is oscillating and through which gate it connects to visceral organs.",
+    "field_principle": "Pain = oscillating resonance box (unstable module), not a single structure. We treat the module oscillation, not the nerve."
+  },
+
+  "patterns": [
+
+    {
+      "name": "arch_I_trigeminus_shaoyang_gate",
+      "aliases": ["Arch 1 module", "CN V module", "trigeminus field", "Shaoyang cranial gate"],
+      "developmental_module": "ARCH_1",
+      "cranial_nerve": "CN V (Trigeminus)",
+      "anatomical_field": ["maxilla", "mandible", "masticatory muscles", "temporal fascia", "external carotid branches", "nasal cavity"],
+      "TCM_axis": "Shaoyang — lateral gating / entrapped fascia",
+      "Ayurveda_overlay": "uncertain",
+      "triggers": [
+        "temporal migraine",
+        "cluster headache periorbital",
+        "trigeminal neuralgia",
+        "sinus pressure",
+        "TMJ pain",
+        "gastric reflux / hiatus hernia",
+        "hepatic tension (upstream visceral pull)",
+        "carotid irritation",
+        "vagus-sympathetic imbalance",
+        "epigastric tension"
+      ],
+      "field_state": [
+        "Shaoyang congestion",
+        "carotid field vibration",
+        "EZ-grid local collapse",
+        "mixed heat-cold pattern"
+      ],
+      "field_mechanism": "ascending ventral pull from mediastinum → face field",
+      "symptoms": [
+        "temporal headache",
+        "periorbital cluster pain",
+        "trigeminal neuralgia",
+        "sinus pressure",
+        "TMJ pain",
+        "facial tension"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Chai Hu (Bupleurum)", "role": "Shaoyang harmoniser, fascia opening", "notes": "primary" },
+          { "name": "Bai Shao Yao (White Peony)", "role": "Liver blood, fascia relaxation", "notes": "" },
+          { "name": "Chuan Xiong (Ligusticum)", "role": "blood mover, field brightener", "notes": "" },
+          { "name": "Yu Jin (Curcuma root)", "role": "Qi-Blood passage, trauma releasing", "notes": "" },
+          { "name": "Gou Teng (Uncaria)", "role": "Liver Yang calming, wind-heat clearing", "notes": "" },
+          { "name": "Dan Shen (Salvia miltiorrhiza)", "role": "Blood circulation, heart-field restoration", "notes": "" }
+        ],
+        "formula_class": "Shaoyang openers + fascia relaxers + blood movers",
+        "device": "SPG (sphenopalatine ganglion) block; laser along carotid sheath / temporal fascia / Shaoyang lines (GB / SJ)",
+        "preparation": "oral decoction or granules"
+      }
+    },
+
+    {
+      "name": "arch_II_facialis_shaoyin_autonomic_buffer",
+      "aliases": ["Arch 2 module", "CN VII module", "facialis field", "ShaoYin HT/KD autonomic stabiliser"],
+      "developmental_module": "ARCH_2",
+      "cranial_nerve": "CN VII (Facialis)",
+      "anatomical_field": ["facial muscles (mimicry)", "stapedius", "lacrimal gland", "submandibular fascia", "anterior tongue", "microcirculation of face"],
+      "TCM_axis": "ShaoYin HT/KD — autonomic and microvascular tone (deep regulatory axis; Yin-Yang tension; stress tolerance; electrical stability)",
+      "Ayurveda_overlay": "uncertain",
+      "triggers": [
+        "facial tension",
+        "temporal pressure (tense headache)",
+        "pain behind the ear",
+        "tension headache",
+        "IBS (vagal branch cranial end)",
+        "parasympathetic overdrive",
+        "biliary dysregulation",
+        "palpitations",
+        "excess lacrimation or dry mouth (parasympathetic mismatch)",
+        "cold-hot facial asymmetry (sympatho-vagal lability)"
+      ],
+      "field_state": [
+        "excess Yin influx",
+        "EZ dilution (over-hydrated field)",
+        "parasympathetic dominance"
+      ],
+      "symptoms": [
+        "facial tension",
+        "temporal pressure headache",
+        "retroauricular pain",
+        "Bell's palsy features (cold invasion → Yin collapse + microcirculation failure)",
+        "dry eye or excess tearing",
+        "palpitations",
+        "IBS concurrent with facial tension"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "He Huan Pi (Albizia bark)", "role": "emotional trauma release, Shaoyin gate opener, spirit grounding", "notes": "primary" },
+          { "name": "Suan Zao Ren (Zizyphus seed)", "role": "Heart nourishment, calm spirit, insomnia", "notes": "" },
+          { "name": "Fu Shen / Poria with root", "role": "Heart calming, water field stabilisation", "notes": "" },
+          { "name": "Ye Jiao Teng (Polygonum vine)", "role": "Blood nourishment, spirit calming, night channel opening", "notes": "" },
+          { "name": "Bai He (Lily bulb)", "role": "Heart-Lung Yin, EZ stabilisation", "notes": "" },
+          { "name": "Long Yan Rou (Longan flesh)", "role": "Heart-Spleen blood nourishment, calm spirit", "notes": "" }
+        ],
+        "formula_class": "Jueyin calming + Shen harmonising",
+        "device": "Warm laser along stylomastoid path; Shaoyang-Yin tonic laser protocol",
+        "preparation": "oral",
+        "bell_palsy_note": "Bell's palsy = cold invasion + Yin collapse + microcirculation failure in Arch 2 module; warm laser + Shaoyang-Yin tonics"
+      }
+    },
+
+    {
+      "name": "arch_III_glossopharyngeus_ren_mai_block",
+      "aliases": ["Arch 3 module", "CN IX module", "baroreceptor gate", "Ren Mai ventral block"],
+      "developmental_module": "ARCH_3",
+      "cranial_nerve": "CN IX (Glossopharyngeus)",
+      "anatomical_field": ["pharynx", "carotid sinus", "tonsil", "thyroid upper pole", "baroreceptor field"],
+      "TCM_axis": "Ren Mai — ventral Yin axis; Ren Mai blockage; neck field densification",
+      "Ayurveda_overlay": "uncertain",
+      "triggers": [
+        "occipital migraine",
+        "throat-radiating pain",
+        "vagus-mediated migraine",
+        "blood pressure fluctuation with headache",
+        "thyroid distortion",
+        "carotid tension",
+        "mediastinal adhesion",
+        "cardiac rhythm instability"
+      ],
+      "field_state": [
+        "Ren Mai blockage",
+        "ventral pull (ascending mediastinal tension)",
+        "neck field densification"
+      ],
+      "symptoms": [
+        "occipital migraine",
+        "pain radiating to throat",
+        "vagus-mediated headache",
+        "blood pressure-linked headache",
+        "dysautonomia features",
+        "baroreflex instability",
+        "glossopharyngeal neuralgia"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Sheng Di Huang (Rehmannia raw)", "role": "Blood and Yin refresh, EZ water density", "notes": "" },
+          { "name": "Mai Men Dong (Ophiopogon)", "role": "Heart-Lung Yin, systemic hydration", "notes": "" },
+          { "name": "Xuan Shen (Scrophularia)", "role": "deep Yin cooling, neck field clearance", "notes": "" },
+          { "name": "Dan Shen (Salvia miltiorrhiza)", "role": "Blood circulation, heart perfusion, field transformation", "notes": "" },
+          { "name": "Mu Dan Pi (Moutan bark)", "role": "Hidden heat clearance, blood stasis resolution", "notes": "" },
+          { "name": "Di Gu Pi (Lycium bark)", "role": "Yin deficiency heat clearing, blood cooling", "notes": "" }
+        ],
+        "formula_class": "Ren Mai tonifiers + blood-field harmonisers",
+        "device": "Otic ganglion modulation; gentle vagal stimulation; laser on carotid sheath lateral",
+        "preparation": "oral"
+      }
+    },
+
+    {
+      "name": "arch_IV_VI_vagus_cardio_aortic_jueyin_ren",
+      "aliases": ["Arch 4-6 module", "CN X module", "vagus-cardio-aortic gate", "mediastinal gate", "Jueyin-Ren dissociation"],
+      "developmental_module": "ARCH_4_6",
+      "cranial_nerve": "CN X (Vagus) + recurrent laryngeal branch",
+      "anatomical_field": ["larynx", "aortic arch", "pericardium", "thymus", "lung root"],
+      "TCM_axis": "Jueyin–Ren dissociation; mediastinal stagnation; central EZ collapse",
+      "Ayurveda_overlay": "uncertain",
+      "triggers": [
+        "atypical migraine with dizziness",
+        "migraine with chest pressure",
+        "post-sternotomy headache",
+        "pulmonary congestion",
+        "pericardial tension",
+        "cardiac arrhythmia",
+        "pleural irritation",
+        "POTS",
+        "IBS (vagal-mediated)",
+        "arm CRPS (IV-VI module + thoracic continuation)"
+      ],
+      "field_state": [
+        "Jueyin-Ren dissociation",
+        "mediastinal stagnation",
+        "central EZ collapse"
+      ],
+      "symptoms": [
+        "atypical migraine",
+        "dizziness",
+        "chest pressure",
+        "post-sternotomy occipital headache + anxiety + palpitations + globus",
+        "dysautonomia",
+        "POTS",
+        "IBS",
+        "arrhythmia",
+        "arm CRPS features"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Gua Lou Pi (Trichosanthes peel)", "role": "Heart-Lung axis opening, chest Qi", "notes": "primary" },
+          { "name": "Dan Shen (Salvia miltiorrhiza)", "role": "Blood circulation, pericardial field", "notes": "" },
+          { "name": "Yu Jin (Curcuma root)", "role": "Qi-Blood passage, trauma release, liver-line brightener", "notes": "" },
+          { "name": "Wu Wei Zi (Schisandra)", "role": "Qi consolidation, Heart-Kidney holding", "notes": "" },
+          { "name": "Huang Qi (Astragalus)", "role": "Qi generation, central field drive", "notes": "" },
+          { "name": "Mai Men Dong (Ophiopogon)", "role": "Heart-Lung Yin, systemic hydration", "notes": "" }
+        ],
+        "formula_class": "Heart-Lung axis openers + Qi movers + Yin holders",
+        "device": "Auricular vagus stimulation; deep breathing; laser: Ren17, C6-T2 Huatuojiaji, carotis sheath lateral, supraclavicular plexus; 808-830nm for deep autonomic modulation; 980nm for fascia/vasomotor; pulsed mode for afferent reset",
+        "preparation": "oral",
+        "CRPS_note": "Arm CRPS = inverted cardio-pulmonary field trapped in the periphery; treat via IV-VI arch module + thoracic continuation; laser as non-invasive stellate ganglion substitute"
+      }
+    },
+
+    {
+      "name": "thyroid_ventral_field_node_disharmony",
+      "aliases": ["thyroid as field node", "branchial arch field disharmony", "Ren Mai field-descent node", "ventral overflow node"],
+      "triggers": [
+        "thyroid pathology with concurrent TMJ pain",
+        "thyroid pathology with neck fascia tension",
+        "thyroid pathology with sternum symptoms",
+        "thyroid pathology with vagus tone changes",
+        "Hashimoto with speech inhibition / boundary failure / ventral block / pharyngeal arch tension / vagus-sympathetic disharmony"
+      ],
+      "field_mechanism": "Thyroid primordium descends under arches 1-2 during embryogenesis — classic field-descent pathway. Thyroid = overloaded transformer attempting to discharge cranio-visceral noise. T3/T4 = metabolic clock / timing signal. Thyroid as 'ventral overflow node' when Ren Mai / ventralis aorta field is under stress.",
+      "field_state": [
+        "Ren Mai obstruction",
+        "ventral field overflow",
+        "thymus-thyroid-cardiac field co-involvement"
+      ],
+      "symptoms": [
+        "thyroid dysfunction (hypo/hyper/Hashimoto)",
+        "TMJ concurrent with thyroid symptoms",
+        "neck fascia tension",
+        "sternum pressure",
+        "vagus tone dysregulation",
+        "globus sensation",
+        "voice changes"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Xiao Chai Hu Tang-type Shaoyang openers", "role": "branchial arch field disharmony resolution", "notes": "formula class; specific herbs: Chai Hu, Huang Qin, Ban Xia, etc." },
+          { "name": "He Huan Pi (Albizia bark)", "role": "spirit grounding, Shaoyin gate opening", "notes": "" },
+          { "name": "Dan Shen (Salvia miltiorrhiza)", "role": "blood-field circulation, pericardial field", "notes": "" }
+        ],
+        "device": "Cervical fascia release; Ren Mai strengthening; stellatum / vagus modulation",
+        "preparation": "uncertain",
+        "clinical_note": "Hashimoto is multifactorial clinically; psycho-emotional field may influence neuro-endocrine-immune axes but causation is NOT deterministic. Thyroid here = overtaxed transformer in a branchial field model."
+      }
+    },
+
+    {
+      "name": "post_thoracotomy_sternotomy_cranial_ascent",
+      "aliases": ["post-surgical Ren Mai injury", "ventralis aorta field ascent", "midline wound cranial field disruption"],
+      "triggers": [
+        "thoracotomy or sternotomy history",
+        "wound on ventral midline",
+        "post-surgical occipital headache",
+        "post-surgical anxiety",
+        "post-surgical palpitations",
+        "globus sensation post-surgery"
+      ],
+      "field_mechanism": "Wound on ventral midline → Ren Mai / ventral aorta field injured → energy ascends cranially compensatorily",
+      "symptoms": [
+        "occipital headache",
+        "anxiety",
+        "palpitations",
+        "globus sensation (throat lump)",
+        "post-sternotomy headache pattern"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Dan Shen", "role": "Blood circulation, mediastinal field restoration", "notes": "" },
+          { "name": "Sheng Di Huang", "role": "Yin-Blood refresh", "notes": "" },
+          { "name": "Yu Jin", "role": "trauma releasing, Qi-Blood passage", "notes": "" },
+          { "name": "Mai Men Dong", "role": "Heart-Lung Yin", "notes": "" }
+        ],
+        "device": "Ren Mai restoration; cervical fascia release; laser Ren17",
+        "preparation": "uncertain"
+      }
+    },
+
+    {
+      "name": "CRPS_arm_cardiopulmonary_field_inversion",
+      "aliases": ["arm CRPS field model", "inverted cardio-pulmonary field", "IV-VI arch + thoracic continuation"],
+      "triggers": [
+        "arm CRPS diagnosis",
+        "stellate ganglion block effective",
+        "vagus stimulation effective",
+        "cervicothoracic autonomic ganglion involvement"
+      ],
+      "field_mechanism": "CRPS = inverted cardio-pulmonary field trapped in periphery; arises from IV-VI arch module (vagus/cardio-aortic) + thoracic continuation; stellate ganglion = cervicothoracic autonomic reset gate",
+      "symptoms": [
+        "arm CRPS features",
+        "sympathetic overdrive in arm",
+        "vasomotor instability upper limb",
+        "allodynia upper limb"
+      ],
+      "interventions": {
+        "herbs": [
+          { "name": "Dan Shen", "role": "Blood-field restoration, pericardial perfusion", "notes": "" },
+          { "name": "Yu Jin", "role": "Qi-Blood trauma release", "notes": "" },
+          { "name": "Wu Wei Zi", "role": "Qi consolidation, autonomic holding", "notes": "" }
+        ],
+        "device_laser_4_point_protocol": {
+          "description": "Non-invasive stellate ganglion substitute for arm CRPS",
+          "gates": [
+            "Cervicothoracic fascia (primary gate)",
+            "C6-T2 Huatuojiaji",
+            "Ren17 (thoracic Ren Mai integrator)",
+            "Carotid sheath lateral / supraclavicular plexus"
+          ],
+          "wavelengths": [
+            "808-830nm → deep autonomic modulation",
+            "980nm → fascia/vasomotor",
+            "Pulsed mode → afferent reset"
+          ],
+          "field_logic": "Not burning tissue — EZ layer reorganisation + vagus afferent retuning + mediastinal field release"
+        },
+        "preparation": "uncertain"
+      }
+    },
+
+    {
+      "name": "neural_crest_caudal_segmentation_BL_huatuojiaji",
+      "aliases": ["caudal segmentation axis", "BL/Huatuojiaji segmental continuation", "paravertebral chain module"],
+      "developmental_note": "Neural crest migration does not stop at pharyngeal arches — continues caudally building: vegetative plexuses, enteric nervous system, thoracic-abdominal autonomic ganglia, chromaffin system, connective tissue sheaths.",
+      "field_mapping": {
+        "cranial": "pharyngeal arches → 'gate-like', complex, folded",
+        "caudal": "linear segmentation → thoracolumbar reflex mapping → BL / Huatuojiaji points"
+      },
+      "clinical_relevance": "Pain = oscillating fascia-neuro-vascular unit resonance box. Identify which segmental box is vibrating, not which named nerve is compressed.",
+      "TCM_parallel": "BL meridian and Huatuojiaji points follow the same segmental organisation as neural crest caudal migration — from pharyngeal level to pelvis",
+      "interventions": {
+        "device": "Laser / acupuncture along BL meridian and Huatuojiaji points at relevant spinal segments",
+        "herbs": "uncertain — determined by dominant pattern at that segment",
+        "preparation": "uncertain"
+      }
+    },
+
+    {
+      "name": "craniofacial_visceral_distortion_myofascial_embryonic",
+      "aliases": ["SCM-migraine-palpitation-reflux chain", "embryonic arch myofascial chain"],
+      "developmental_basis": "Arch muscles develop in a shared fascial sheath. In adults: SCM + suprahyoid muscles + tongue root + pericardium + diaphragm crura form a single resonance unit.",
+      "triggers": [
+        "SCM trigger point",
+        "migraine with palpitation with reflux cluster",
+        "swallowing pain + chest pressure",
+        "atypical angina + neck tension",
+        "vagus-mediated migraine"
+      ],
+      "field_mechanism": "SCM trigger point → migraine → palpitation → reflux. Not association — shared embryonic field.",
+      "symptoms": [
+        "SCM trigger point pain",
+        "migraine",
+        "palpitations",
+        "reflux / GERD",
+        "swallowing pain",
+        "chest pressure",
+        "atypical angina with neck tension"
+      ],
+      "interventions": {
+        "herbs": "uncertain — determined by arch module identification",
+        "device": "SCM trigger point release; stellatum / thoracic fascia treatment; vagus modulation",
+        "preparation": "uncertain"
+      }
+    }
+  ],
+
+  "cranial_nerve_pain_module_map": [
+    {
+      "cranial_nerve": "CN I (Olfactory)",
+      "arch": "none (olfactory bulb–cribriform plate transition)",
+      "plate_REZ": "Olfactory bulb–cribriform plate",
+      "pulse_vascular": "Anterior cerebral arterial microflow; cortical respiratory pulse",
+      "plexus": "Limbic interface (amygdala, orbitofrontal)",
+      "pathology_EZ_pattern": "Hyposmia, parosmia, emotional invasion, post-viral anosmia (damp-heat or boundary loss)",
+      "interventions": "Breath retraining, olfactory meditation, upper turbinate photobiomodulation",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN II (Optic)",
+      "arch": "none (optic disc–retinal field)",
+      "plate_REZ": "Optic disc–retinal field (CSF–retina boundary)",
+      "pulse_vascular": "Ophthalmic artery pulsation",
+      "plexus": "Ciliary ganglion, hypothalamic-retinal loop",
+      "pathology_EZ_pattern": "Optic neuritis, glaucoma (Yang excess, stagnation), visual migraine aura",
+      "interventions": "Light modulation; microcurrent at temple; Gou Teng + Dan Shen for microcirculation",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN III (Oculomotor)",
+      "arch": "none",
+      "plate_REZ": "Midbrain REZ near posterior perforated substance",
+      "pulse_vascular": "Posterior cerebral / superior cerebellar arteries",
+      "plexus": "Ciliary and pterygopalatine ganglia",
+      "pathology_EZ_pattern": "Ptosis, diplopia, pupil irregularity (Shaoyang field rigidity)",
+      "interventions": "Gentle midline photobiostimulation; acetyl-L-carnitine micro-dosing; Xiao Chai Hu-type harmonisation",
+      "TCM_axis": "Shaoyang field rigidity"
+    },
+    {
+      "cranial_nerve": "CN IV (Trochlear)",
+      "arch": "none",
+      "plate_REZ": "Dorsal midbrain",
+      "pulse_vascular": "Superior cerebellar artery",
+      "plexus": "Cavernous sinus plexus",
+      "pathology_EZ_pattern": "Vertical diplopia, ocular dizziness",
+      "interventions": "Cranial fascial release; cerebellar recalibration (Liver-Wind calming herbs)",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN V (Trigeminus)",
+      "arch": "Pharyngeal arch 1",
+      "plate_REZ": "Pons REZ (SCA impact)",
+      "pulse_vascular": "SCA, CSF turbulence",
+      "plexus": "Sphenopalatine, otic, submandibular ganglia; dura",
+      "pathology_EZ_pattern": "Trigeminal neuralgia, facial pain, migraine, TAC, cluster",
+      "gate": "Lateral face / jaw / external carotid gate",
+      "interventions": "SPG block; Dan Shen–Wu Wei Zi Yin seal; photobiomodulation; Chai Hu + Chuan Xiong + Gou Teng",
+      "TCM_axis": "Shaoyang"
+    },
+    {
+      "cranial_nerve": "CN VI (Abducens)",
+      "arch": "none",
+      "plate_REZ": "Pontomedullary junction",
+      "pulse_vascular": "Basilar artery",
+      "plexus": "Cavernous sinus and sympathetic plexus",
+      "pathology_EZ_pattern": "Diplopia, brainstem stretch headaches",
+      "interventions": "Craniosacral unwinding; hydration (EZ restoration)",
+      "TCM_axis": "uncertain"
+    },
+    {
+      "cranial_nerve": "CN VII (Facial)",
+      "arch": "Pharyngeal arch 2",
+      "plate_REZ": "Pontomedullary angle",
+      "pulse_vascular": "AICA, Labyrinthine artery",
+      "plexus": "Geniculate and submandibular ganglia",
+      "pathology_EZ_pattern": "Bell's palsy (cold invasion → Yin collapse); vasomotor facial signs; sympatho-vagal lability",
+      "gate": "Anterior face / autonomic microvascular",
+      "interventions": "Warm laser along stylomastoid path; Shaoyang-Yin tonics; He Huan Pi + Fu Shen",
+      "TCM_axis": "ShaoYin HT/KD — autonomic and microvascular tone"
+    },
+    {
+      "cranial_nerve": "CN VIII (Vestibulocochlear)",
+      "arch": "none (pontomedullary angle)",
+      "plate_REZ": "Pontomedullary angle",
+      "pulse_vascular": "AICA / Labyrinthine artery",
+      "plexus": "Vestibular ganglion, cerebellar relay",
+      "pathology_EZ_pattern": "Vertigo, tinnitus, Meniere's (CSF-lymph decoupling)",
+      "interventions": "Inner-ear photobiomodulation; Huang Qin + Zhu Ling logic (clear damp-heat)",
+      "TCM_axis": "uncertain — damp-heat or CSF-lymph decoupling"
+    },
+    {
+      "cranial_nerve": "CN IX (Glossopharyngeus)",
+      "arch": "Pharyngeal arch 3",
+      "plate_REZ": "Medulla REZ",
+      "pulse_vascular": "PICA",
+      "plexus": "Otic ganglion",
+      "pathology_EZ_pattern": "Glossopharyngeal neuralgia, dysautonomia, baroreflex instability",
+      "gate": "Baroreceptor gate / thyroid upper pole",
+      "interventions": "Otic ganglion modulation; Dan Shen + Gou Teng; gentle vagal stimulation",
+      "TCM_axis": "Ren Mai ventral block"
+    },
+    {
+      "cranial_nerve": "CN X (Vagus)",
+      "arch": "Pharyngeal arches 4 and 6",
+      "plate_REZ": "Medulla REZ",
+      "pulse_vascular": "Vertebral / PICA",
+      "plexus": "Nodose ganglion, cardiac plexus, enteric plexuses",
+      "pathology_EZ_pattern": "Dysautonomia, POTS, arrhythmia, IBS, arm CRPS",
+      "gate": "Mediastinal gate / thymus / pericardium",
+      "interventions": "Auricular vagus stimulation; deep breathing; He Huan Pi + Fu Shen formulas; laser Ren17 + C6-T2",
+      "TCM_axis": "Ren / HT-LU (Jueyin-Ren)"
+    },
+    {
+      "cranial_nerve": "CN XI (Accessory)",
+      "arch": "Cervical cord–foramen magnum REZ",
+      "plate_REZ": "Cervical cord–foramen magnum REZ",
+      "pulse_vascular": "Vertebral arteries",
+      "plexus": "Cervical sympathetic chain",
+      "pathology_EZ_pattern": "Shoulder/neck spasm, tension headaches",
+      "interventions": "Neck fascial release; GB meridian harmonisation",
+      "TCM_axis": "Shaoyang downstream (Batch 1)"
+    },
+    {
+      "cranial_nerve": "CN XII (Hypoglossal)",
+      "arch": "Medulla REZ",
+      "plate_REZ": "Medulla REZ",
+      "pulse_vascular": "Vertebral / basilar branches",
+      "plexus": "Lingual parasympathetic fibers",
+      "pathology_EZ_pattern": "Dysarthria, tongue deviation, speech-field fatigue",
+      "interventions": "Tongue grounding exercises; Yin restoratives (Sheng Di, Xuan Shen)",
+      "TCM_axis": "uncertain"
+    }
+  ],
+
+  "gate_organs": [
+    {
+      "id": "TONSIL",
+      "gate_role": "Immune surveillance gate",
+      "interface_type": "mucosal immune gate — ecto-endo shunt",
+      "field_metaphor": "emotional surveillance detector",
+      "clinical_relevance": "first line immune gatekeeping; early processing of oral/environmental signals; autonomic reflex connection to CN IX-X",
+      "Ayurveda_overlay": "Kapha"
+    },
+    {
+      "id": "THYROID",
+      "gate_role": "Metabolic oscillator / ventral field descent node",
+      "interface_type": "midline ectoderm-endoderm ventral migration path",
+      "field_metaphor": "release valve / metabolic clock",
+      "clinical_relevance": "thyroid primordium descends under arches 1-2 (classic field-descent pathway); T3/T4 = timing signal; thyroid as overloaded transformer discharging cranio-visceral noise; when disturbed: TMJ + neck fascia + sternum + vagus tone all co-affected",
+      "Ayurveda_overlay": "Pitta",
+      "co_disturbances": ["TMJ", "neck fascia", "sternum", "vagus tone"]
+    },
+    {
+      "id": "PARATHYROID",
+      "gate_role": "Calcium matrix tensioner / ECM stabiliser",
+      "interface_type": "arch 3-4 pouch origin",
+      "field_metaphor": "calcium-ECM stability sensor",
+      "clinical_relevance": "co-develops with thymus from 4th pouch; calcium as matrix tension regulator; EZ water depends on ionic balance",
+      "Ayurveda_overlay": "uncertain"
+    },
+    {
+      "id": "ULTIMOBRANCHIAL_BODY",
+      "gate_role": "Matrix stability sensor / regenerative plasticity",
+      "interface_type": "arch 5-6 pouch remnant; gives rise to parafollicular C-cells",
+      "field_metaphor": "matrix coherence sentinel",
+      "clinical_relevance": "calcitonin production; field coherence monitoring; regenerative plasticity reserve",
+      "Ayurveda_overlay": "uncertain"
+    },
+    {
+      "id": "THYMUS",
+      "gate_role": "Mediastinal immune gate",
+      "interface_type": "arch 3-4 pouch; co-develops with inferior parathyroid",
+      "field_metaphor": "mediastinal field guardian",
+      "clinical_relevance": "co-develops with parathyroid from 4th pouch; part of Arch IV-VI mediastinal field; immune programming gate",
+      "Ayurveda_overlay": "Kapha"
+    }
+  ],
+
+  "pharyngeal_pouch_sensor_corridor": {
+    "description": "The pharyngeal pouch system as a sensory corridor — the 'mouth of the fish' model",
+    "elements_in_sequence": [
+      "Eustachian tube / tympanic cavity",
+      "Palatine fossa / tonsil",
+      "Inferior parathyroid (co-tuned with thymus — both from 4th pouch)",
+      "Superior parathyroid",
+      "Ultimobranchial body"
+    ],
+    "principle": "Every input passing through (food, air, microbiome, sound, social signal, 'what is said') is immediately connected to: (1) autonomic reflex (CN IX-X + sympathetic), (2) immune gatekeeping (tonsil, thymus), (3) endocrine set-point (thyroid, parathyroid).",
+    "pouch_shunt_principle": "In pouches and clefts the mesodermal middle layer is very thin → rapid signal exchange between external (ecto: mucosa/skin/nerve) and internal (endo: gland/viscera). Low mechanical buffer → easily 'overwritten' under stress → prone to chronic oscillation.",
+    "nerve_role": "The nerve monitors water-grid coherence: signals when decoherent; can direct controlled EZ collapse to release potential energy (used for muscle contraction, biological function). Nerve = coherence guardian."
+  },
+
+  "diagnosis_map": [
+    {
+      "diagnosis": "trigeminal neuralgia",
+      "associated_patterns": ["arch_I_trigeminus_shaoyang_gate"],
+      "notes": "Arch 1 module oscillation. REZ / dural sleeve destabilisation explains why pain is not purely peripheral. Field: Shaoyang congestion + EZ local collapse. Treat with Shaoyang openers + fascia relaxers + blood movers."
+    },
+    {
+      "diagnosis": "cluster headache (TAC)",
+      "associated_patterns": ["arch_I_trigeminus_shaoyang_gate"],
+      "notes": "Periorbital cluster = Arch 1 module. CN V REZ + SCA involvement. Autonomic component = carotid/sphenopalatine ganglion gate."
+    },
+    {
+      "diagnosis": "temporal migraine",
+      "associated_patterns": ["arch_I_trigeminus_shaoyang_gate"],
+      "notes": "Arch 1 module; Shaoyang congestion; ascending ventral pull from mediastinum. Cross-reference Batch 1 migraine phenotypes."
+    },
+    {
+      "diagnosis": "sinus headache / rhinosinusitis-associated headache",
+      "associated_patterns": ["arch_I_trigeminus_shaoyang_gate"],
+      "notes": "Arch 1 module; nasal cavity + external carotid branches. Sinus pressure as EZ disruption in nasal-facial field."
+    },
+    {
+      "diagnosis": "Bell's palsy",
+      "associated_patterns": ["arch_II_facialis_shaoyin_autonomic_buffer"],
+      "notes": "Cold invasion → Yin collapse + microcirculation failure in Arch 2 module. Warm laser along stylomastoid path + Shaoyang-Yin tonics."
+    },
+    {
+      "diagnosis": "facial tension headache / tension headache",
+      "associated_patterns": ["arch_II_facialis_shaoyin_autonomic_buffer"],
+      "notes": "Arch 2 module; parasympathetic dominance; EZ dilution. ShaoYin HT/KD regulatory axis."
+    },
+    {
+      "diagnosis": "IBS (when concurrent with facial or neck symptoms)",
+      "associated_patterns": ["arch_II_facialis_shaoyin_autonomic_buffer", "arch_IV_VI_vagus_cardio_aortic_jueyin_ren"],
+      "notes": "Arch 2: parasympathetic overdrive (cranial vagus end). Arch 4-6: vagal-enteric axis. Both are valid entry points — determine which arch module is primary based on concurrent symptoms."
+    },
+    {
+      "diagnosis": "glossopharyngeal neuralgia",
+      "associated_patterns": ["arch_III_glossopharyngeus_ren_mai_block"],
+      "notes": "Arch 3 module; baroreceptor gate; Ren Mai ventral block. Pain radiating to throat. Otic ganglion modulation."
+    },
+    {
+      "diagnosis": "occipital migraine",
+      "associated_patterns": ["arch_III_glossopharyngeus_ren_mai_block"],
+      "notes": "Arch 3 module; carotid/baroreceptor gate; Ren Mai block. Co-occurs with blood pressure fluctuation."
+    },
+    {
+      "diagnosis": "dysautonomia / baroreflex instability",
+      "associated_patterns": ["arch_III_glossopharyngeus_ren_mai_block", "arch_IV_VI_vagus_cardio_aortic_jueyin_ren"],
+      "notes": "CN IX (Arch 3): baroreflex gate. CN X (Arch 4-6): nodose/cardiac plexus. Both contribute. Determine dominant arch by symptom cluster."
+    },
+    {
+      "diagnosis": "POTS (postural orthostatic tachycardia syndrome)",
+      "associated_patterns": ["arch_IV_VI_vagus_cardio_aortic_jueyin_ren"],
+      "notes": "Arch 4-6 module; vagal/cardiac plexus. Mediastinal field: Jueyin-Ren dissociation. Auricular vagus stimulation + He Huan Pi + Fu Shen."
+    },
+    {
+      "diagnosis": "cardiac arrhythmia (vagally-mediated)",
+      "associated_patterns": ["arch_IV_VI_vagus_cardio_aortic_jueyin_ren"],
+      "notes": "Arch 4-6 module; cardiac plexus. Mediastinal stagnation + central EZ collapse."
+    },
+    {
+      "diagnosis": "atypical migraine (with dizziness / chest pressure)",
+      "associated_patterns": ["arch_IV_VI_vagus_cardio_aortic_jueyin_ren"],
+      "notes": "Arch 4-6 module; pulmonary congestion + pericardial tension triggers. Distinguish from Arch 1 temporal migraine by chest/dizziness component."
+    },
+    {
+      "diagnosis": "post-thoracotomy / post-sternotomy headache",
+      "associated_patterns": ["post_thoracotomy_sternotomy_cranial_ascent"],
+      "notes": "Ventral midline wound → Ren Mai / ventral aorta field injured → energy ascends cranially. Typical cluster: occipital headache + anxiety + palpitations + globus."
+    },
+    {
+      "diagnosis": "arm CRPS (complex regional pain syndrome)",
+      "associated_patterns": ["CRPS_arm_cardiopulmonary_field_inversion", "arch_IV_VI_vagus_cardio_aortic_jueyin_ren"],
+      "notes": "Inverted cardio-pulmonary field trapped in periphery. Arch 4-6 + thoracic continuation. Non-invasive stellate substitute: 4-gate laser protocol (cervicothoracic fascia / C6-T2 Huatuojiaji / Ren17 / carotid sheath lateral)."
+    },
+    {
+      "diagnosis": "thyroid dysfunction (hypothyroid / hyperthyroid / Hashimoto)",
+      "associated_patterns": ["thyroid_ventral_field_node_disharmony"],
+      "notes": "Thyroid = branchial arch field disharmony; overloaded transformer discharging cranio-visceral noise. Not isolated endocrine — involves TMJ, neck fascia, sternum, vagus tone simultaneously. Hashimoto: multifactorial; concurrent features of speech inhibition, boundary failure, vagus-sympathetic disharmony are clinically relevant co-patterns."
+    },
+    {
+      "diagnosis": "vertigo / Meniere's disease",
+      "associated_patterns": ["uncertain — CN VIII pontomedullary angle module"],
+      "notes": "CSF-lymph decoupling. Inner-ear EZ disruption. Huang Qin + Zhu Ling logic (clear damp-heat). Not a pharyngeal arch module — pontomedullary angle."
+    },
+    {
+      "diagnosis": "hyposmia / anosmia (post-viral)",
+      "associated_patterns": ["uncertain — CN I olfactory-limbic module"],
+      "notes": "Damp-heat or boundary loss pattern. Breath retraining + olfactory meditation + upper turbinate PBM."
+    },
+    {
+      "diagnosis": "glaucoma",
+      "associated_patterns": ["uncertain — CN II optic field module"],
+      "notes": "Yang excess / stagnation pattern. Ophthalmic artery pulsation / ciliary ganglion involvement. Gou Teng + Dan Shen for microcirculation."
+    },
+    {
+      "diagnosis": "swallowing pain + chest pressure (undifferentiated)",
+      "associated_patterns": ["arch_III_glossopharyngeus_ren_mai_block", "arch_IV_VI_vagus_cardio_aortic_jueyin_ren", "craniofacial_visceral_distortion_myofascial_embryonic"],
+      "notes": "Same field node — different projection. Arch 3: carotid/baroreceptor. Arch 4-6: mediastinal. Myofascial: shared embryonic fascia sheath."
+    },
+    {
+      "diagnosis": "atypical angina with neck tension",
+      "associated_patterns": ["craniofacial_visceral_distortion_myofascial_embryonic", "arch_IV_VI_vagus_cardio_aortic_jueyin_ren"],
+      "notes": "SCM trigger point + pericardial field. Same embryonic field. Not coronary — vagus-mediated cardiac field projection."
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "R_B3_001",
+      "condition": "neck pain + facial pain present",
+      "action": "do NOT classify as local — check carotid sheath, vagus, sympathetic chain, aortic arch tension; treat as field module problem"
+    },
+    {
+      "id": "R_B3_002",
+      "condition": "trigeminal neuralgia OR temporal migraine OR cluster headache",
+      "action": "classify as Arch 1 (CN V) module oscillation; apply Shaoyang opener + fascia relaxer + blood mover formula"
+    },
+    {
+      "id": "R_B3_003",
+      "condition": "facial tension headache OR Bell's palsy OR IBS + facial symptoms",
+      "action": "classify as Arch 2 (CN VII) module; apply Jueyin calming + Shen harmonising formula; warm laser stylomastoid path"
+    },
+    {
+      "id": "R_B3_004",
+      "condition": "occipital migraine OR glossopharyngeal neuralgia OR blood pressure-linked headache OR throat-radiating pain",
+      "action": "classify as Arch 3 (CN IX) module; Ren Mai ventral block; apply Ren Mai tonifiers + blood-field harmonisers"
+    },
+    {
+      "id": "R_B3_005",
+      "condition": "atypical migraine with dizziness/chest OR POTS OR arrhythmia OR arm CRPS OR post-sternotomy headache",
+      "action": "classify as Arch 4-6 (CN X) module; Jueyin-Ren dissociation + mediastinal stagnation; Heart-Lung axis openers + laser Ren17 + C6-T2"
+    },
+    {
+      "id": "R_B3_006",
+      "condition": "thyroid dysfunction + concurrent TMJ pain OR neck fascia tension OR sternum symptoms OR vagus tone change",
+      "action": "classify as branchial arch field disharmony (NOT isolated endocrine); treat with Xiao Chai Hu-type Shaoyang openers + Ren Mai strengthening + cervical fascia release"
+    },
+    {
+      "id": "R_B3_007",
+      "condition": "post-thoracotomy or post-sternotomy + occipital headache + anxiety + palpitations + globus",
+      "action": "classify as Ren Mai / ventral aorta field injury with cranial ascent; treat with Dan Shen + Sheng Di + Yu Jin + Mai Men Dong; Ren Mai restoration"
+    },
+    {
+      "id": "R_B3_008",
+      "condition": "arm CRPS + stellate ganglion block effective OR vagus stimulation effective",
+      "action": "classify as Arch 4-6 module (IV-VI arch + thoracic continuation); use 4-gate non-invasive laser stellate protocol"
+    },
+    {
+      "id": "R_B3_009",
+      "condition": "SCM trigger point present",
+      "action": "flag shared embryonic field: SCM → migraine → palpitation → reflux chain possible; check for concurrent palpitations, reflux, or migraine; treat as myofascial embryonic arch module"
+    },
+    {
+      "id": "R_B3_010",
+      "condition": "pain modulated by posture, breath, or emotional state (cranial symptoms)",
+      "action": "flag as field sign — not purely structural; apply EZ field assessment logic; treat resonance box, not isolated nerve"
+    },
+    {
+      "id": "R_B3_011",
+      "condition": "laser device selected for cranial-thoracic arch module",
+      "action": "808-830nm → deep autonomic modulation; 980nm → fascia/vasomotor; pulsed mode → afferent reset; do not default to single point — apply volume-PBM over gate zone"
+    },
+    {
+      "id": "R_B3_012",
+      "condition": "IBS present without clear GI upstream cause",
+      "action": "check CN VII (Arch 2, parasympathetic overdrive) AND CN X (Arch 4-6, vagal-enteric axis) modules; determine dominant arch by concurrent symptoms"
+    },
+    {
+      "id": "R_B3_013",
+      "condition": "swallowing pain + mediastinal pressure + headache combination",
+      "action": "classify as multi-module field: Arch 3 (baroreceptor gate) + Arch 4-6 (mediastinal gate) + shared fascia chain; treat sequentially: mediastinal field first"
+    },
+    {
+      "id": "R_B3_014",
+      "condition": "laser used as stellate ganglion substitute for arm CRPS",
+      "action": "4-gate protocol: (1) cervicothoracic fascia, (2) C6-T2 Huatuojiaji, (3) Ren17, (4) carotid sheath lateral / supraclavicular plexus; wavelength: 808-830nm + pulsed mode"
+    },
+    {
+      "id": "R_B3_015",
+      "condition": "Hashimoto thyroiditis in context",
+      "action": "flag: multifactorial clinically — do NOT attribute causation deterministically to emotional/field factors; add Shaoyang opener support alongside conventional treatment; note concurrent branchial field co-patterns"
+    }
+  ],
+
+  "input_variables": [
+    { "name": "pain_location_cranial", "type": "multi_select", "values": ["temporal", "periorbital", "facial", "retroauricular", "occipital", "throat_radiating", "chest_concurrent", "SCM_trigger"] },
+    { "name": "dominant_arch_module", "type": "enum", "values": ["ARCH_1_CN_V", "ARCH_2_CN_VII", "ARCH_3_CN_IX", "ARCH_4_6_CN_X", "mixed", "unknown"] },
+    { "name": "visceral_trigger_cranial", "type": "multi_select", "values": ["reflux_hiatus", "hepatic_tension", "carotid_irritation", "vagus_symp_imbalance", "epigastric_tension", "IBS", "biliary_dysregulation", "palpitations", "thyroid_distortion", "mediastinal_adhesion", "cardiac_arrhythmia", "pulmonary_congestion", "pericardial_tension"] },
+    { "name": "post_surgical_history", "type": "multi_select", "values": ["thoracotomy", "sternotomy", "cervical_surgery", "none"] },
+    { "name": "autonomic_signs_cranial", "type": "multi_select", "values": ["lacrimation_mismatch", "dry_mouth", "hot_cold_facial_asymmetry", "palpitations", "BP_fluctuation_with_headache", "POTS_features", "arrhythmia"] },
+    { "name": "thyroid_dysfunction_present", "type": "boolean" },
+    { "name": "thyroid_co_patterns", "type": "multi_select", "values": ["TMJ_concurrent", "neck_fascia_tension", "sternum_symptoms", "vagus_tone_change", "globus"] },
+    { "name": "CRPS_arm_present", "type": "boolean" },
+    { "name": "stellate_block_effective", "type": "boolean", "notes": "if true → classify arm CRPS as Arch 4-6 field inversion" },
+    { "name": "SCM_trigger_present", "type": "boolean" },
+    { "name": "symptom_modulated_by_posture_breath_emotion", "type": "boolean", "notes": "field sign — treat as resonance box oscillation" },
+    { "name": "laser_available", "type": "boolean" },
+    { "name": "laser_wavelength_available", "type": "multi_select", "values": ["808nm", "830nm", "980nm", "other"] }
+  ],
+
+  "resonance_box_model": {
+    "definition": "fascia-neuro-vascular unit as a segmental sensory module (resonance box). Each arch module = one resonance box. Pain = pathological oscillation of that box.",
+    "identification_algorithm": {
+      "L1_localise": "dermatome/territory + fascial line (lateral/ventral/dorsal) + vasomotor signs (cold/hot, color, oedema) + autonomic companions (pulse, sweat, breathing, throat sensation)",
+      "L2_find_gate": {
+        "cranial_gates": ["carotid sheath / vagus zone", "sternum/mediastinum (Ren axis)", "pharynx/tonsil/thyroid field"],
+        "caudal_gates": ["C6-T4 (stellate zone)", "L2-S2 (pelvic plexus)", "girdle vessel zones (subclavian / iliac)"]
+      },
+      "L3_silence_oscillation": "volume-PBM/laser on gate zone; front-back pairing: ventral integrator + paravertebral chain; rhythm (breathing) + vagus tone together",
+      "L4_rebuild_buffer": "microcirculation + hydration/ECM + sleep + Yin-holding (heat-cold stabilisation)"
+    },
+    "clinical_principle": "trigger only fires in a pre-tensioned module; find why the module is pre-tensioned (Yin deficit / dampness / mitochondrial fatigue = low buffer)"
+  },
+
+  "developmental_engine_data_model": {
+    "object_types": [
+      {
+        "type": "DevelopmentalModule",
+        "fields": ["id", "week_range", "core_principle", "resonance_unit_label", "dominant_gate", "notes_short"],
+        "instances": ["ARCH_1", "ARCH_2", "ARCH_3", "ARCH_4_6"]
+      },
+      {
+        "type": "CranialNerveBus",
+        "fields": ["id", "arch_affiliation", "function_tag", "output_zone"],
+        "instances": ["CN_V", "CN_VII", "CN_IX", "CN_X"]
+      },
+      {
+        "type": "GateOrgan",
+        "fields": ["id", "gate_role", "interface_type", "field_metaphor"],
+        "instances": ["TONSIL", "THYROID", "PARATHYROID", "ULTIMOBRANCHIAL", "THYMUS"]
+      },
+      {
+        "type": "SegmentalUnit",
+        "fields": ["id", "axis", "unit_type", "continuation_map"],
+        "note": "fascia-neuro-vascular resonance box"
+      }
+    ],
+    "relationships": [
+      "MODULE_FORMS_UNIT: DevelopmentalModule → SegmentalUnit",
+      "MODULE_USES_NERVE_BUS: DevelopmentalModule → CranialNerveBus",
+      "MODULE_GATES_THROUGH_ORGAN: DevelopmentalModule → GateOrgan",
+      "NERVE_MONITORS_UNIT: CranialNerveBus → SegmentalUnit (nerve registers pathological oscillations + decoherence)",
+      "CRANIAL_CAUSAL_CONTINUITY: SegmentalUnit ↔ SegmentalUnit (same segmentation continues caudally → BL/Huatuojiaji)"
+    ],
+    "UI_layer_toggles": [
+      { "layer": "Developmental", "default": "ON", "content": "embryo timeline, neural crest migration, arches, CN-bus, gate organs" },
+      { "layer": "Pain", "default": "OFF_placeholder", "content": "symptom mapping and diagnoses — enable in future" },
+      { "layer": "Intervention", "default": "OFF_placeholder", "content": "non-invasive gate reset strategies — enable in future" }
+    ]
+  },
+
+  "herb_library_new_entries_batch3": [
+    { "name": "Gou Teng (Uncaria)", "primary_role": "Liver Yang calming, wind-heat clearing, blood pressure modulation", "meridians": ["Liver", "Pericardium"], "caution": "uncertain" },
+    { "name": "Gua Lou Pi (Trichosanthes peel)", "primary_role": "Heart-Lung axis opening, chest Qi regulation", "meridians": ["Lung", "Stomach", "Large Intestine"], "caution": "uncertain" },
+    { "name": "Huang Qi (Astragalus membranaceus)", "primary_role": "Qi generation, central field drive, Wei Qi strengthening", "meridians": ["Lung", "Spleen"], "caution": "avoid in active inflammation — tonifying herb" },
+    { "name": "Suan Zao Ren (Zizyphus seed)", "primary_role": "Heart nourishment, calm spirit, insomnia", "meridians": ["Heart", "Liver", "Spleen"], "caution": "uncertain" },
+    { "name": "Long Yan Rou (Longan flesh)", "primary_role": "Heart-Spleen blood nourishment, spirit calming", "meridians": ["Heart", "Spleen"], "caution": "uncertain" },
+    { "name": "Di Gu Pi (Lycium bark)", "primary_role": "Yin deficiency heat clearing, blood cooling", "meridians": ["Lung", "Liver", "Kidney"], "caution": "uncertain" },
+    { "name": "Huang Qin (Scutellaria)", "primary_role": "Damp-heat clearing, immune modulation, upper burner heat", "meridians": ["Lung", "Gallbladder", "Stomach", "Large Intestine"], "caution": "uncertain" },
+    { "name": "Zhu Ling (Polyporus)", "primary_role": "Dampness draining, lymphatic support, damp-heat in inner ear", "meridians": ["Kidney", "Bladder"], "caution": "uncertain" },
+    { "name": "Ban Xia (Pinellia)", "primary_role": "Phlegm-damp transforming, nausea, Shaoyang formula base", "meridians": ["Lung", "Spleen", "Stomach"], "caution": "use processed (Zhi Ban Xia); toxic raw" }
+  ],
+
+  "notes": [
+    "Batch 3 introduces the Pharyngeal Arch Engine — a developmental field module that underpins cranio-thoracic pain triage. This is a new top-level engine, not a sub-pattern of previous batches.",
+    "The engine uses embryological architecture (arch → CN → gate organ → resonance box) rather than symptom labels. Symptom → gate → axis → reset strategy is the algorithmic flow.",
+    "The Cranial Nerve Pain Module Map (12 CNs) is a complete reference table for all cranial nerve pain domains with arch affiliation, vascular driver, plexus, EZ collapse pathology, and intervention hint.",
+    "The 4-gate laser stellate protocol for arm CRPS is a concrete clinical protocol — store as a named device protocol object.",
+    "The resonance box model (L1-L4 algorithm) is a reusable clinical decision loop applicable to any segmental unit — pharyngeal or spinal.",
+    "The Developmental Engine data model (object types, relationships, UI toggles) is provided in app-build-ready format — directly implementable in Base44.",
+    "The pouch sensor corridor ('fish mouth model') is a conceptual framework explaining why pharyngeal-level problems simultaneously affect autonomic, immune, and endocrine systems.",
+    "Thyroid = ventral field descent node — clinical rule: thyroid dysfunction always check TMJ, neck fascia, sternum, vagus tone as co-patterns (all share embryological field).",
+    "Hashimoto clinical caution: multifactorial — field model supports co-pattern identification but does NOT imply emotional causation.",
+    "3 new herbs introduced in Batch 3: Gou Teng, Gua Lou Pi, Huang Qi, Suan Zao Ren, Long Yan Rou, Di Gu Pi, Huang Qin, Zhu Ling, Ban Xia.",
+    "Cross-batch linkages: Batch 1 migraine phenotypes → Batch 3 Arch 1 module (temporal migraine); Batch 2 pelvic EZ grid → Batch 3 caudal segmentation continuation; Batch 2 NSMBP → Batch 3 Du meridian / BL line as caudal arch continuation."
+  ]
+}

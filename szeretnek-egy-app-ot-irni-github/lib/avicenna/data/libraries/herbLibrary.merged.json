@@ -1,0 +1,910 @@
+{
+  "source": "merged batch herb libraries",
+  "entries": [
+    {
+      "name": "Yuan Zhi (Polygala)",
+      "primary_role": "HT-KD bridge, neural-etheric cable repair",
+      "meridians": [
+        "Heart",
+        "Kidney",
+        "Lung"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "HT-KD bridge, neural-etheric cable repair"
+      ]
+    },
+    {
+      "name": "Fu Shen / Poria with root",
+      "primary_role": "Heart calming, water field stabilisation",
+      "meridians": [
+        "Heart",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Heart calming, water field stabilisation"
+      ]
+    },
+    {
+      "name": "Wu Wei Zi (Schisandra)",
+      "primary_role": "Qi consolidation, Heart-Kidney holding, adaptogen",
+      "meridians": [
+        "Heart",
+        "Kidney",
+        "Lung"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Qi consolidation, Heart-Kidney holding, adaptogen"
+      ]
+    },
+    {
+      "name": "Dan Shen (Salvia miltiorrhiza)",
+      "primary_role": "Blood-light circulation, heart perfusion, stagnation transformation + Blood and heart field restoration",
+      "meridians": [
+        "Heart",
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Blood-light circulation, heart perfusion, stagnation transformation",
+        "Blood and heart field restoration"
+      ]
+    },
+    {
+      "name": "He Huan Pi (Albizia bark)",
+      "primary_role": "Emotional trauma release, Shaoyin gate opener, spirit grounding",
+      "meridians": [
+        "Heart",
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Emotional trauma release, Shaoyin gate opener, spirit grounding"
+      ]
+    },
+    {
+      "name": "Zhi Gan Cao (Honey-fried Licorice)",
+      "primary_role": "Electrical synchrony, heart rhythm harmonisation",
+      "meridians": [
+        "Heart",
+        "Spleen",
+        "Lung"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Electrical synchrony, heart rhythm harmonisation"
+      ]
+    },
+    {
+      "name": "Ren Shen / Tai Zi Shen",
+      "primary_role": "Qi-light generation, central battery recharge",
+      "meridians": [
+        "Heart",
+        "Lung",
+        "Spleen",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Qi-light generation, central battery recharge"
+      ]
+    },
+    {
+      "name": "Sheng Di Huang (Rehmannia raw)",
+      "primary_role": "Blood and Yin refresh, EZ water density restoration",
+      "meridians": [
+        "Heart",
+        "Kidney",
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Blood and Yin refresh, EZ water density restoration"
+      ]
+    },
+    {
+      "name": "Xuan Shen (Scrophularia)",
+      "primary_role": "Deep Yin cooling, toxin clearing, water component rebuilding",
+      "meridians": [
+        "Kidney",
+        "Stomach"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Deep Yin cooling, toxin clearing, water component rebuilding"
+      ]
+    },
+    {
+      "name": "Gou Qi Zi (Lycium/Goji)",
+      "primary_role": "Liver-Kidney Yin, blood nourishment, eye/light field support",
+      "meridians": [
+        "Liver",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Liver-Kidney Yin, blood nourishment, eye/light field support"
+      ]
+    },
+    {
+      "name": "He Shou Wu (Polygonum)",
+      "primary_role": "Jing-Yin-Blood strengthening, water body brightening + Jing-Yin-Blood, water body brightening",
+      "meridians": [
+        "Liver",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Jing-Yin-Blood strengthening, water body brightening",
+        "Jing-Yin-Blood, water body brightening"
+      ]
+    },
+    {
+      "name": "Mai Men Dong (Ophiopogon)",
+      "primary_role": "Heart-Lung Yin, systemic hydration, returns Yin via lung",
+      "meridians": [
+        "Heart",
+        "Lung",
+        "Stomach"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Heart-Lung Yin, systemic hydration, returns Yin via lung"
+      ]
+    },
+    {
+      "name": "Tian Men Dong (Asparagus root)",
+      "primary_role": "Deep Kidney Yin, internal heat settling",
+      "meridians": [
+        "Kidney",
+        "Lung"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Deep Kidney Yin, internal heat settling"
+      ]
+    },
+    {
+      "name": "Bai Shao Yao (White Peony)",
+      "primary_role": "Liver blood softening, fascia relaxation, Shaoyang-Jueyin correction",
+      "meridians": [
+        "Liver",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Liver blood softening, fascia relaxation, Shaoyang-Jueyin correction"
+      ]
+    },
+    {
+      "name": "Dang Gui (Angelica sinensis)",
+      "primary_role": "Blood and Yin circulation, Liver-Kidney connector, female Shaoyin bridge",
+      "meridians": [
+        "Liver",
+        "Heart",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Blood and Yin circulation, Liver-Kidney connector, female Shaoyin bridge"
+      ]
+    },
+    {
+      "name": "Yu Jin (Curcuma root)",
+      "primary_role": "Qi-Blood passage, heat clearing, trauma releasing, liver line brightener",
+      "meridians": [
+        "Liver",
+        "Heart",
+        "Lung"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Qi-Blood passage, heat clearing, trauma releasing, liver line brightener"
+      ]
+    },
+    {
+      "name": "Dan Pi / Mu Dan Pi (Moutan bark)",
+      "primary_role": "Hidden heat clearance, blood stasis, calms Liver Yang",
+      "meridians": [
+        "Liver",
+        "Heart",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Hidden heat clearance, blood stasis, calms Liver Yang"
+      ]
+    },
+    {
+      "name": "Rou Gui (Cinnamon bark)",
+      "primary_role": "Yang anchoring downward into Kidney, fire-water bridge",
+      "meridians": [
+        "Kidney",
+        "Spleen",
+        "Heart"
+      ],
+      "caution": "small dose only; warming — contraindicated with dry component in formula",
+      "source_batch": 9,
+      "source_caution": "small dose only; warming — contraindicated with dry component in formula",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Yang anchoring downward into Kidney, fire-water bridge"
+      ]
+    },
+    {
+      "name": "Huang Jing (Polygonatum)",
+      "primary_role": "Spinal EZ restoration, Lung-Kidney Yin",
+      "meridians": [
+        "Lung",
+        "Spleen",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Spinal EZ restoration, Lung-Kidney Yin"
+      ]
+    },
+    {
+      "name": "Ge Gen (Kudzu root)",
+      "primary_role": "Upper-lumbar opening, neck-back release, Taiyang-Yangming interface",
+      "meridians": [
+        "Spleen",
+        "Stomach"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Upper-lumbar opening, neck-back release, Taiyang-Yangming interface"
+      ]
+    },
+    {
+      "name": "Chai Hu (Bupleurum)",
+      "primary_role": "Shaoyang harmoniser, fascia opening, Qi regulation",
+      "meridians": [
+        "Liver",
+        "Gallbladder"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Shaoyang harmoniser, fascia opening, Qi regulation"
+      ]
+    },
+    {
+      "name": "Fang Feng (Siler)",
+      "primary_role": "Wind-damp clearing, fascia opening",
+      "meridians": [
+        "Bladder",
+        "Liver",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Wind-damp clearing, fascia opening"
+      ]
+    },
+    {
+      "name": "Du Zhong (Eucommia)",
+      "primary_role": "Kidney Yang, spinal structural support",
+      "meridians": [
+        "Kidney",
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Kidney Yang, spinal structural support"
+      ]
+    },
+    {
+      "name": "Bu Gu Zhi (Psoralea)",
+      "primary_role": "Kidney Yang, bone-marrow strengthening",
+      "meridians": [
+        "Kidney",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Kidney Yang, bone-marrow strengthening"
+      ]
+    },
+    {
+      "name": "Xu Duan (Dipsacus)",
+      "primary_role": "Ligament and bone repair, spinal structural support",
+      "meridians": [
+        "Liver",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Ligament and bone repair, spinal structural support"
+      ]
+    },
+    {
+      "name": "Gu Sui Bu (Drynaria)",
+      "primary_role": "Bone and fascia repair",
+      "meridians": [
+        "Kidney",
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Bone and fascia repair"
+      ]
+    },
+    {
+      "name": "Sang Ji Sheng (Loranthus)",
+      "primary_role": "Liver-Kidney strengthening, sinew nourishing, Blood tonification",
+      "meridians": [
+        "Liver",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Liver-Kidney strengthening, sinew nourishing, Blood tonification"
+      ]
+    },
+    {
+      "name": "Qiang Huo (Notopterygium)",
+      "primary_role": "Upper back/neck wind-damp, Du channel opener",
+      "meridians": [
+        "Bladder",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Upper back/neck wind-damp, Du channel opener"
+      ]
+    },
+    {
+      "name": "Du Huo (Angelica pubescens)",
+      "primary_role": "Lower back wind-damp, Bladder channel",
+      "meridians": [
+        "Kidney",
+        "Bladder"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Lower back wind-damp, Bladder channel"
+      ]
+    },
+    {
+      "name": "Bai Zhi (Angelica dahurica)",
+      "primary_role": "Wind clearing, fascia opening, frontal headache",
+      "meridians": [
+        "Lung",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Wind clearing, fascia opening, frontal headache"
+      ]
+    },
+    {
+      "name": "Chuan Xiong (Ligusticum)",
+      "primary_role": "Qi-Blood mover, blood circulation, field brightener",
+      "meridians": [
+        "Liver",
+        "Gallbladder",
+        "Pericardium"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Qi-Blood mover, blood circulation, field brightener"
+      ]
+    },
+    {
+      "name": "Hong Hua (Safflower)",
+      "primary_role": "Blood circulation opening, stasis resolution",
+      "meridians": [
+        "Heart",
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Blood circulation opening, stasis resolution"
+      ]
+    },
+    {
+      "name": "Sang Zhi (Mulberry twig)",
+      "primary_role": "Open fascia in limbs, wind-damp in channels",
+      "meridians": [
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Open fascia in limbs, wind-damp in channels"
+      ]
+    },
+    {
+      "name": "Niu Xi (Achyranthes)",
+      "primary_role": "Downward blood-Qi movement, leg channels, Blood stasis resolution",
+      "meridians": [
+        "Liver",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Downward blood-Qi movement, leg channels, Blood stasis resolution"
+      ]
+    },
+    {
+      "name": "Ji Xue Teng (Spatholobus)",
+      "primary_role": "Blood tonification and circulation, sinew nourishing",
+      "meridians": [
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Blood tonification and circulation, sinew nourishing"
+      ]
+    },
+    {
+      "name": "Ye Jiao Teng (Polygonum vine)",
+      "primary_role": "Nourish blood, calm spirit, open channels at night",
+      "meridians": [
+        "Heart",
+        "Liver"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Nourish blood, calm spirit, open channels at night"
+      ]
+    },
+    {
+      "name": "Bai He (Lily bulb)",
+      "primary_role": "EZ stabilisation, Heart-Lung Yin",
+      "meridians": [
+        "Heart",
+        "Lung"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "EZ stabilisation, Heart-Lung Yin"
+      ]
+    },
+    {
+      "name": "Zhi Mu (Anemarrhena)",
+      "primary_role": "Floating Yang containment, Kidney Yin cooling",
+      "meridians": [
+        "Lung",
+        "Stomach",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Floating Yang containment, Kidney Yin cooling"
+      ]
+    },
+    {
+      "name": "Bai Zi Ren (Biota seed)",
+      "primary_role": "Spirit grounding, insomnia, Heart nourishment",
+      "meridians": [
+        "Heart",
+        "Kidney",
+        "Large Intestine"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Spirit grounding, insomnia, Heart nourishment"
+      ]
+    },
+    {
+      "name": "Cang Zhu (Atractylodes)",
+      "primary_role": "Dampness clearing, Spleen activating",
+      "meridians": [
+        "Spleen",
+        "Stomach"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Dampness clearing, Spleen activating"
+      ]
+    },
+    {
+      "name": "Ze Xie (Alisma)",
+      "primary_role": "Dampness draining, water metabolism",
+      "meridians": [
+        "Kidney",
+        "Bladder"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Dampness draining, water metabolism"
+      ]
+    },
+    {
+      "name": "Yi Yi Ren (Coix seed)",
+      "primary_role": "Dampness resolving, tissue clarifying, Spleen supporting",
+      "meridians": [
+        "Spleen",
+        "Stomach",
+        "Lung"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 9,
+      "source_caution": "uncertain",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Dampness resolving, tissue clarifying, Spleen supporting"
+      ]
+    },
+    {
+      "name": "Magnesium",
+      "primary_role": "Membrane stabilisation, neuronal excitability reduction, mitochondrial cofactor",
+      "notes": "noise layer; metabolic layer",
+      "source_batch": 9,
+      "source_caution": "",
+      "caution": "clinician review required",
+      "source_batches": [
+        9
+      ],
+      "roles": [
+        "Membrane stabilisation, neuronal excitability reduction, mitochondrial cofactor"
+      ]
+    },
+    {
+      "name": "Gou Teng (Uncaria)",
+      "primary_role": "Liver Yang calming, wind-heat clearing, blood pressure modulation",
+      "meridians": [
+        "Liver",
+        "Pericardium"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Liver Yang calming, wind-heat clearing, blood pressure modulation"
+      ]
+    },
+    {
+      "name": "Gua Lou Pi (Trichosanthes peel)",
+      "primary_role": "Heart-Lung axis opening, chest Qi regulation",
+      "meridians": [
+        "Lung",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Heart-Lung axis opening, chest Qi regulation"
+      ]
+    },
+    {
+      "name": "Huang Qi (Astragalus membranaceus)",
+      "primary_role": "Qi generation, central field drive, Wei Qi strengthening",
+      "meridians": [
+        "Lung",
+        "Spleen"
+      ],
+      "caution": "avoid in active inflammation — tonifying herb",
+      "source_batch": 10,
+      "source_caution": "avoid in active inflammation — tonifying herb",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Qi generation, central field drive, Wei Qi strengthening"
+      ]
+    },
+    {
+      "name": "Suan Zao Ren (Zizyphus seed)",
+      "primary_role": "Heart nourishment, calm spirit, insomnia",
+      "meridians": [
+        "Heart",
+        "Liver",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Heart nourishment, calm spirit, insomnia"
+      ]
+    },
+    {
+      "name": "Long Yan Rou (Longan flesh)",
+      "primary_role": "Heart-Spleen blood nourishment, spirit calming",
+      "meridians": [
+        "Heart",
+        "Spleen"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Heart-Spleen blood nourishment, spirit calming"
+      ]
+    },
+    {
+      "name": "Di Gu Pi (Lycium bark)",
+      "primary_role": "Yin deficiency heat clearing, blood cooling",
+      "meridians": [
+        "Lung",
+        "Liver",
+        "Kidney"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Yin deficiency heat clearing, blood cooling"
+      ]
+    },
+    {
+      "name": "Huang Qin (Scutellaria)",
+      "primary_role": "Damp-heat clearing, immune modulation, upper burner heat",
+      "meridians": [
+        "Lung",
+        "Gallbladder",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Damp-heat clearing, immune modulation, upper burner heat"
+      ]
+    },
+    {
+      "name": "Zhu Ling (Polyporus)",
+      "primary_role": "Dampness draining, lymphatic support, damp-heat in inner ear",
+      "meridians": [
+        "Kidney",
+        "Bladder"
+      ],
+      "caution": "clinician review required",
+      "source_batch": 10,
+      "source_caution": "uncertain",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Dampness draining, lymphatic support, damp-heat in inner ear"
+      ]
+    },
+    {
+      "name": "Ban Xia (Pinellia)",
+      "primary_role": "Phlegm-damp transforming, nausea, Shaoyang formula base",
+      "meridians": [
+        "Lung",
+        "Spleen",
+        "Stomach"
+      ],
+      "caution": "use processed (Zhi Ban Xia); toxic raw",
+      "source_batch": 10,
+      "source_caution": "use processed (Zhi Ban Xia); toxic raw",
+      "source_batches": [
+        10
+      ],
+      "roles": [
+        "Phlegm-damp transforming, nausea, Shaoyang formula base"
+      ]
+    }
+  ]
+}
