@@ -1536,6 +1536,215 @@ const spinalReassessmentGroups = [
   }
 ];
 
+const shaoyinInitialInput = {
+  western_diagnosis_group: "other",
+  patient_sex: "other",
+  patient_sensitivity: "unknown",
+  taiyang_layer_state: "mixed",
+  qi_relay_blocked_at: "none",
+  EZ_state: "not_assessed",
+  skin_eruption: "none",
+  shaoyin_freeze: false,
+  taiyang_expansion: false,
+  pericardial_lock: false,
+  HT_Yin_weak: false,
+  KD_Yin_weak: false,
+  KD_Yang_weak: false,
+  Jing_deficient: false,
+  SI_overloaded: false,
+  BL_congested: false,
+  heat_above: false,
+  cold_below: false,
+  diastolic_dysfunction: false,
+  posterior_fossa_congestion: false,
+  blood_sludging: false,
+  venous_stasis: false,
+  ankle_oedema: false,
+  emotional_trauma: false,
+  emotional_closure: false,
+  insomnia_rumination: false,
+  sensory_hypersensitivity: false,
+  frozen_shoulder: false,
+  occipital_tension: false,
+  eye_fatigue: false,
+  tinnitus: false,
+  dizziness: false,
+  chest_tightness: false,
+  palpitations: false,
+  oliguria: false,
+  cold_feet: false,
+  decision_difficulty: false,
+  irritability: false,
+  neck_shoulder_scapula_tension: false,
+  low_back_pain: false,
+  spinal_pain: false,
+  heart_heat: false,
+  tongue_red_tip: false,
+  urinary_complaint: false,
+  urinary_obstruction: false,
+  sterile_haematuria: false,
+  urethral_discomfort: false,
+  thirst: false,
+  lower_abdominal_heat: false,
+  frailty: false,
+  severe_yin_deficient: false,
+  du_huo_prescribed: false,
+  qiang_huo_prescribed: false,
+  taiyang_opening_needed: false,
+  bai_zhi_selected: false,
+  suan_zao_ren_tang_primary: false,
+  sacrum_treatment: false,
+  occiput_release: false,
+  posterior_fascia_release: false,
+  obese_oedematous_archetype: false,
+  adrenal_fatigue: false,
+  headache: false,
+  debugMode: false
+};
+
+const shaoyinFieldGroups = [
+  {
+    key: "western_diagnosis_group",
+    label: "Downstream clinical context",
+    options: [
+      ["IIH", "IIH", "Posterior fossa / pressure context"],
+      ["PRESS", "PRESS", "Posterior reversible encephalopathy context"],
+      ["Chiari", "Chiari-like", "Posterior fossa pressure"],
+      ["POTS", "POTS", "Autonomic instability"],
+      ["fibromyalgia", "Fibromyalgia", "Distributed pain/fatigue"],
+      ["migraine", "Migraine", "Headache migration context"],
+      ["CRPS", "CRPS", "Non-local pain pattern"],
+      ["post_COVID", "Post-COVID", "Post-viral fatigue/autonomic context"],
+      ["posterior_fossa_congestion", "Posterior fossa", "Venous/pressure field"],
+      ["frozen_shoulder", "Frozen shoulder", "SI/Taiyang shoulder axis"],
+      ["spinal_degenerative", "Spinal degenerative", "BL/dura-paraspinal overload"],
+      ["skin_autoimmune", "Skin autoimmune", "Surface inflammation"],
+      ["autonomic", "Autonomic", "Instability / sleep / rhythm"],
+      ["other", "Other", "No listed context"]
+    ]
+  },
+  {
+    key: "patient_sensitivity",
+    label: "Sensitivity state",
+    options: [
+      ["Yin_deficient", "Yin deficient", "Dry/sensitive/depleted"],
+      ["cold_weak", "Cold weak", "Cold and low reserve"],
+      ["robust", "Robust", "Can tolerate movement better"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "patient_sex",
+    label: "Sex context",
+    options: [
+      ["female", "Female", "Taiyang mover safety gate"],
+      ["male", "Male", "Safety gate context"],
+      ["other", "Other", "Safety gate context"]
+    ]
+  },
+  {
+    key: "taiyang_layer_state",
+    label: "Taiyang layer state",
+    options: [
+      ["full_tense", "Full and tense", "Optional mover only if robust"],
+      ["lax_empty", "Lax / empty", "Do not push surface"],
+      ["mixed", "Mixed", "Default cautious state"]
+    ]
+  },
+  {
+    key: "qi_relay_blocked_at",
+    label: "Likely relay block",
+    options: [
+      ["HT_SI", "HT -> SI", "Heart to differentiation gate"],
+      ["SI_BL", "SI -> BL", "Sensory to posterior shell"],
+      ["BL_KD", "BL -> KD", "Surface cannot return to depth"],
+      ["KD_PC", "KD -> PC", "Depth cannot reopen chest field"],
+      ["multiple", "Multiple", "Several relay blocks"],
+      ["none", "Infer", "Let engine infer"]
+    ]
+  },
+  {
+    key: "EZ_state",
+    label: "EZ / hydration state",
+    options: [
+      ["continuous", "Continuous", "Acute/subacute"],
+      ["partially_fragmented", "Partially fragmented", "Subchronic"],
+      ["fragmented", "Fragmented", "Chronic Yin-deficiency model"],
+      ["not_assessed", "Not assessed", "Unknown"]
+    ]
+  },
+  {
+    key: "skin_eruption",
+    label: "Skin / surface expression",
+    options: [
+      ["eczema", "Eczema", "Surface decompression screen"],
+      ["psoriasis", "Psoriasis", "Surface decompression screen"],
+      ["seborrhea", "Seborrhea", "Surface decompression screen"],
+      ["urticaria", "Urticaria", "Surface reactivity"],
+      ["none", "None", "No skin expression"]
+    ]
+  }
+];
+
+const shaoyinScreenFlags = [
+  ["heat_above", "Head heat / upper heat"],
+  ["occipital_tension", "Occipital pressure / tension"],
+  ["eye_fatigue", "Eye fatigue"],
+  ["chest_tightness", "Chest closure"],
+  ["palpitations", "Palpitations"],
+  ["insomnia_rumination", "Rumination insomnia"],
+  ["ankle_oedema", "Ankle oedema"],
+  ["oliguria", "Reduced urination"],
+  ["cold_feet", "Cold feet"],
+  ["irritability", "Irritability + fatigue"],
+  ["sensory_hypersensitivity", "Hypersensitivity"],
+  ["decision_difficulty", "Decision difficulty"],
+  ["neck_shoulder_scapula_tension", "Neck-shoulder-scapula tension"],
+  ["frozen_shoulder", "Frozen shoulder pattern"],
+  ["low_back_pain", "Low back pain"],
+  ["spinal_pain", "Spinal pain"]
+];
+
+const shaoyinAdvancedFlags = [
+  ["shaoyin_freeze", "Shaoyin freeze"],
+  ["taiyang_expansion", "Taiyang expansion"],
+  ["pericardial_lock", "Pericardial lock"],
+  ["HT_Yin_weak", "HT Yin weak"],
+  ["KD_Yin_weak", "KD Yin weak"],
+  ["KD_Yang_weak", "KD Yang weak"],
+  ["Jing_deficient", "Jing deficient"],
+  ["SI_overloaded", "SI overloaded"],
+  ["BL_congested", "BL congested"],
+  ["cold_below", "Cold below"],
+  ["diastolic_dysfunction", "Diastolic rigidity / dysfunction"],
+  ["posterior_fossa_congestion", "Posterior fossa congestion"],
+  ["blood_sludging", "Blood sludging"],
+  ["venous_stasis", "Venous stasis"],
+  ["emotional_closure", "Chest closure / autonomic holding"],
+  ["heart_heat", "Heart heat"],
+  ["tongue_red_tip", "Red tongue tip"],
+  ["urinary_complaint", "Urinary complaint"],
+  ["urinary_obstruction", "Urinary obstruction"],
+  ["sterile_haematuria", "Sterile haematuria"],
+  ["urethral_discomfort", "Urethral discomfort"],
+  ["thirst", "Thirst"],
+  ["lower_abdominal_heat", "Lower abdominal heat"],
+  ["frailty", "Frailty"],
+  ["severe_yin_deficient", "Severe Yin deficiency"],
+  ["du_huo_prescribed", "Du Huo selected"],
+  ["qiang_huo_prescribed", "Qiang Huo selected"],
+  ["taiyang_opening_needed", "Taiyang opening needed"],
+  ["bai_zhi_selected", "Bai Zhi selected"],
+  ["suan_zao_ren_tang_primary", "Suan Zao Ren Tang primary"],
+  ["sacrum_treatment", "Sacrum treatment"],
+  ["occiput_release", "Occiput release"],
+  ["posterior_fascia_release", "Posterior fascia release"],
+  ["obese_oedematous_archetype", "Oedematous cold-fatigue headache archetype"],
+  ["adrenal_fatigue", "Adrenal fatigue"],
+  ["headache", "Headache"],
+  ["debugMode", "Debug mode"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -1680,6 +1889,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("spinal")}
       >
         Spinal modes
+      </button>
+      <button
+        className={mode === "shaoyin" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("shaoyin")}
+      >
+        Meta pattern
       </button>
     </nav>
   );
@@ -2545,6 +2761,239 @@ function SpinalFailureModeSection() {
   );
 }
 
+function ShaoyinScoreBars({ result }) {
+  if (!result) return null;
+
+  const rows = [
+    ["Shaoyin freeze", result.shaoyin_freeze_score],
+    ["Taiyang expansion", result.taiyang_expansion_score],
+    ["Pericardial lock", result.pericardial_lock_score],
+    ["Jueyin-Shaoyang", result.jueyin_shaoyang_score]
+  ];
+
+  return (
+    <section>
+      <h2>Meta-pattern scores</h2>
+      <div className="av-axis-bars">
+        {rows.map(([label, score]) => (
+          <div className="av-axis-row" key={label}>
+            <div>
+              <strong>{label}</strong>
+              <span>{score}/10</span>
+            </div>
+            <div className="av-axis-track">
+              <div className="av-axis-fill" style={{ width: `${Math.min(score, 10) * 10}%` }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ShaoyinTaiyangResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient;
+  const positiveDomains = result.clinical_30_second_screen?.domains?.filter((domain) => domain.positive) || [];
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className="av-output-header">
+        <p>Shaoyin-Taiyang meta-pattern</p>
+        <strong>{patient.title}</strong>
+      </div>
+
+      <section>
+        <h2>Meta-pattern interpretation</h2>
+        <p>{patient.summary}</p>
+        <p>{patient.screen_result}</p>
+      </section>
+
+      <TagSection title="Positive 30-second screen domains" items={positiveDomains.map((domain) => domain.label)} tone="mod" empty="No screen domains positive." />
+      <TagSection title="Suggested sequence" items={result.suggested_sequence || []} tone="effect" empty="No sequencing suggested from current inputs." />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {patient.safety_notes.map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Advanced clinician view</summary>
+          <p>Primary pattern: {result.primary_pattern || "not assessed"}</p>
+          <p>Relay block: {result.relay_block}</p>
+          <p>Pericardial lock status: {result.clinician?.pericardial_lock_status ? "active" : "not dominant"}</p>
+          <p>Posterior fossa field node: {result.posterior_fossa_field_node_status?.active ? "active" : "not active"}</p>
+          <p>Treitz-Heart-SJ module: {result.treitz_heart_sj_module?.active ? "active" : "not active"} / {result.treitz_heart_sj_module?.reason}</p>
+          <p>Suan Zao Ren Tang status: {result.suan_zao_ren_tang_status}</p>
+
+          <ShaoyinScoreBars result={result} />
+
+          <TagSection title="Triggered rules" items={(result.triggered_rules || []).map((item) => `${item.id}: ${item.action}`)} tone="mod" empty="None triggered" />
+          <TagSection title="Contraindications" items={result.contraindications || []} tone="avoid" empty="None triggered" />
+          <TagSection title="Taiyang mover substitutions" items={result.taiyang_mover_safety?.substitutions || []} tone="effect" empty="None" />
+          <TagSection title="Core principles" items={result.core_phrases || []} tone="effect" empty="None listed" />
+
+          <section>
+            <h2>Qi relay map</h2>
+            <p>{(result.relay_map?.direction || []).join(" -> ")}</p>
+            <p>Critical four-gate: {(result.relay_map?.critical_four_gate || []).join(" -> ")}</p>
+          </section>
+
+          <section>
+            <h2>Shaoyin Sink Re-entry Formula</h2>
+            <p>{result.shaoyin_sink_reentry_formula?.name}</p>
+            {(result.shaoyin_sink_reentry_formula?.composition || []).map((item) => (
+              <span key={item.herb}>{titleCase(item.herb)}: {item.dose_g}g</span>
+            ))}
+          </section>
+
+          <section>
+            <h2>Posterior fossa field node protocol</h2>
+            <p>{result.posterior_fossa_field_node_status?.protocol?.indication}</p>
+            {(result.posterior_fossa_field_node_status?.protocol?.three_level_restoration || []).map((level) => (
+              <span key={level.name}>{level.level}. {titleCase(level.name)}</span>
+            ))}
+          </section>
+
+          <section>
+            <h2>Device / acupuncture logic</h2>
+            {(result.device_acupuncture_map?.device || []).map((item) => <span key={item}>{item}</span>)}
+            <p>{result.device_acupuncture_map?.acupuncture_points?.combined_opening}</p>
+          </section>
+
+          <section>
+            <h2>Concept library</h2>
+            {(result.concepts?.concepts || []).map((concept) => (
+              <span key={concept.concept}>{titleCase(concept.concept)}: {concept.summary}</span>
+            ))}
+          </section>
+
+          <section>
+            <h2>Cross-batch links</h2>
+            {(result.cross_batch_links || []).map((item) => <span key={item}>{item}</span>)}
+          </section>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function ShaoyinTaiyangSection() {
+  const [input, setInput] = useState(shaoyinInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/shaoyin-taiyang", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, debugMode: advanced || input.debugMode })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Shaoyin-Taiyang evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(shaoyinInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>Shaoyin-Taiyang Dissociation</h2>
+          <p className="av-muted">
+            Inner Freeze / Outer Expansion meta-pattern screen. This is an educational pattern-recognition tool, not a medical diagnosis.
+          </p>
+        </section>
+
+        {shaoyinFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <ToggleList
+          title="30-second clinical screen"
+          items={shaoyinScreenFlags}
+          selected={shaoyinScreenFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <ToggleList
+          title="Advanced meta-pattern and safety gates"
+          items={shaoyinAdvancedFlags}
+          selected={shaoyinAdvancedFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show clinician/meta-pattern protocol panels</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate meta-pattern"}
+        </button>
+      </form>
+
+      <ShaoyinTaiyangResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function HeadacheEngineSection() {
   const [input, setInput] = useState(headacheInitialInput);
   const [result, setResult] = useState(null);
@@ -2876,7 +3325,9 @@ export default function AvicennaApp() {
           ? "Vertical Axis & Post-Surgical Integration"
           : mode === "spinal"
             ? "Spinal & Neuro-Meningeal Failure Modes"
-            : "Wellness protocol generator";
+            : mode === "shaoyin"
+              ? "Shaoyin-Taiyang Dissociation Engine"
+              : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
       ? "Safety-first terrain scoring across nerve, fascia, gut, vessel, and energy-recovery axes"
@@ -2886,7 +3337,9 @@ export default function AvicennaApp() {
           ? "Post-surgical reintegration, KD-SP holding field, and compensatory Shaoyang logic"
           : mode === "spinal"
             ? "Functional spinal scoring across disc, fascia, neurogenic, and ligament holding layers"
-            : "Rule-based terrain assessment and tea protocol builder";
+            : mode === "shaoyin"
+              ? "Inner Freeze / Outer Expansion meta-pattern screen for chronic downstream manifestations"
+              : "Rule-based terrain assessment and tea protocol builder";
 
   return (
     <main className="av-page">
@@ -2903,6 +3356,8 @@ export default function AvicennaApp() {
         <VerticalAxisEngineSection />
       ) : mode === "spinal" ? (
         <SpinalFailureModeSection />
+      ) : mode === "shaoyin" ? (
+        <ShaoyinTaiyangSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

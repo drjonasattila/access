@@ -1,0 +1,1055 @@
+{
+  "source_batch": 3,
+  "source_files": [
+    "Taiyang_-_shaoyin_dissociation_1_pdf.pdf"
+  ],
+  "patterns": [
+    {
+      "name": "shaoyin_taiyang_dissociation",
+      "aliases": [
+        "shaoyin_freeze_taiyang_expansion",
+        "HT_KD_collapse_BL_SI_overload",
+        "shaoyin_sink_collapse"
+      ],
+      "frontend_label": "Shaoyin–Taiyang Dissociation (Inner Freeze / Outer Expansion)",
+      "core_principle": "The Shaoyin (HT-KD) inner fire weakens or freezes. The Taiyang (BL-SI) outer shell compensates by over-expanding. Energy cannot return inward. Chronic degenerative and pain conditions are downstream manifestations of this central dissociation.",
+      "master_rule": "Restore Shaoyin Yin, gently discharge Taiyang tension — the system will self-regulate.",
+      "triggers": [
+        "emotional trauma or prolonged emotional closure",
+        "pericardial locking (trauma, chronic fear, grief)",
+        "chronic Yin depletion (adrenal fatigue, overwork, post-viral)",
+        "heat above with cold below pattern",
+        "early diastolic dysfunction",
+        "posterior fossa venous congestion / blood sludging",
+        "small intestine overload (sensory hypersensitivity, hypervigilance)",
+        "bladder meridian congestion (posterior fascia / dura tension)",
+        "kidney Yin deficiency preventing downward discharge"
+      ],
+      "symptoms": {
+        "shaoyin_freeze_signs": [
+          "early diastolic dysfunction",
+          "chest tightness / emotional closure",
+          "palpitations at night / lying down",
+          "insomnia with ruminative thought",
+          "cold lower body",
+          "low energy",
+          "pericardial locking sensation"
+        ],
+        "taiyang_expansion_signs": [
+          "occipital tension / cervicothoracic stiffness",
+          "tension-type headache",
+          "occipital neuralgia",
+          "posterior fossa congestion / pressure",
+          "frozen shoulder / scapular congestion",
+          "spinal pain (all types)",
+          "sciatica / lower limb heaviness",
+          "myofascial trigger point network (trapezius, erector spinae, gluteus)",
+          "skin eruptions (eczema, psoriasis, seborrhea)",
+          "autonomic instability / panic / insomnia",
+          "sensory overload / hypervigilance",
+          "migraine (occipital to frontal wave pattern)",
+          "venous stasis / varicosities",
+          "ankle oedema",
+          "urinary difficulty / vesico-lumbar oedema"
+        ],
+        "SI_overload_signs": [
+          "sensory hypersensitivity — everything too strong",
+          "frozen shoulder / neck pain (SI meridian axis)",
+          "inability to differentiate / decision fatigue",
+          "visual field distortion / hypervigilance in perception"
+        ],
+        "KD_weakness_signs": [
+          "cold lower body",
+          "cold feet / leg cramps / heavy legs",
+          "ankle oedema",
+          "low urinary output",
+          "adrenal fatigue",
+          "Jing deficiency"
+        ]
+      },
+      "mechanism": {
+        "cascade_sequence": [
+          "1. Emotional closure / trauma → pericardium locks → HT Yin signal weakens",
+          "2. HT (Shaoyin) → SI (Taiyang): weak Yin background → SI Yang becomes self-referential, hyperactive, distorted",
+          "3. SI → visual system (LR gate): distorted Yang signal → reality perceived through fear filter; hypervigilance",
+          "4. BL meridian (dura + paravertebralis fascia): receives distorted SI Yang + no KD Yin stabilisation → BL overloads → interference discharges (paravertebralis spasm, segmental pain nodes, dura tension → headache, posterior fossa sludging)",
+          "5. KD weakness → BL cannot discharge into deep Yin → signal stalls on surface → Taiyang expands further",
+          "6. Non-local interference field forms → chronic degenerative pattern established"
+        ],
+        "qi_relay_sequence": "SP → HT → SI → BL → KD → PC",
+        "critical_transition": "HT → SI → BL → KD (the four-gate where Shaoyin-Taiyang coupling either succeeds or fails)",
+        "yin_yang_polarity_switches": [
+          "HT (Yin/fire/spiritus) ↔ SI (Yang/differentiation) — upper Shaoyin-Taiyang entry gate",
+          "KD (Yin/depth/essence) ↔ BL (Yang/surface/spinal fascia) — lower Shaoyin-Taiyang exit gate"
+        ],
+        "anatomical_bridges": {
+          "dura_paravertebral_fascia": "BL meridian = electrical network of dura + paravertebralis fascia; HT closure → BL overload → occipital headache, myogelosis, posterior fossa sludging, spinal pain",
+          "vagus_trigeminal_upper_gate": "trigeminus senses surface Taiyang pressure; vagus senses Shaoyin HT closure; mismatch → PRESS-like patterns",
+          "renin_angiotensin_NO": "KD weakness → NO dysregulation → venous return impaired → posterior congestion",
+          "symparasymp_grid": "SI overactivation = sensory overload; BL overactivation = spinal tension; HT inhibition = diastolic dysfunction; KD deficit = cold body, low energy"
+        },
+        "three_frequency_bands": {
+          "Yin_low_frequency": [
+            "HT Yin",
+            "KD Yin",
+            "Jing",
+            "EZ water",
+            "deep ground energy — provides stable foundation"
+          ],
+          "Yang_high_frequency": [
+            "SI",
+            "BL",
+            "visual system",
+            "fascia electrical field — overactivates without Yin anchor"
+          ],
+          "Jueyin_mid_frequency": [
+            "LR/PC axis",
+            "trauma, shame, suppressed emotion — modulates signal distortion"
+          ]
+        },
+        "posterior_fossa_as_field_node": {
+          "anatomical_layer": "Shaoyin–Taiyang transition zone; resonator chamber for inner and outer water fields",
+          "pathological_triad": [
+            "venous return block = etheric flow cannot discharge into body",
+            "blood sludging = thickened, information-depleted fluid",
+            "water desintegration = local EZ-grid collapse → brainstem and cerebellum field blindness"
+          ],
+          "trigeminus_role": "exterior-interior probe; detects posterior fossa sinking; amplifies vasodilatation and neurogenic inflammation → tension-type, migraine-like, PRESS episodes",
+          "diastolic_dysfunction_link": "early diastolic dysfunction = field rigidity loss; fascia-water-field system cannot expand; heat driven upward; energyless cold below"
+        }
+      },
+      "typical_patient_archetype": {
+        "description": "Modern Jueyin–Shaoyang dissociation type",
+        "profile": "Obese or oedematous, emotionally traumatised, cold, adrenal fatigue, headache, heat above and cold below — classically young woman",
+        "systemic_pattern": "Lower field unable to hold water and Yin; upper field (posterior fossa–trigeminal–limbic) overheated; oedema and blood sludging are chemical imprint of energetic overpressure",
+        "western_labels_that_are_all_same_pattern": [
+          "IIH",
+          "PRESS",
+          "Chiari",
+          "migraine",
+          "POTS",
+          "fibromyalgia",
+          "posterior fossa congestion",
+          "chronic fatigue",
+          "insomnia",
+          "CRPS",
+          "degenerative spinal disease",
+          "neuropathy",
+          "IBS"
+        ]
+      },
+      "shaoyin_sink_reboot_protocol": {
+        "description": "Full three-layer formula: Taiyang discharge + Jueyin circulation/trauma release + Shaoyin sink reactivation",
+        "layers": [
+          {
+            "layer": "Taiyang_discharge",
+            "function": "reduce surface pressure; open BL/SI stagnation; discharge trapped Yang",
+            "herbs": [
+              {
+                "name": "bai_zhu",
+                "role": "central fluid-flow regulation; directs water downward",
+                "notes": "Taiyang stabiliser; non-pungent"
+              },
+              {
+                "name": "gan_cao",
+                "role": "electrical harmonisation; field integration",
+                "notes": "electromechanical synchroniser"
+              },
+              {
+                "name": "dan_shen",
+                "role": "blood sludging resolution; venous stasis clearance",
+                "notes": "raises to 10g if blood sludging / venous stasis prominent"
+              },
+              {
+                "name": "yu_jin",
+                "role": "HT-LR Qi circulation; blood softening",
+                "notes": "6g standard; raise to 8g if patient warm and tense"
+              },
+              {
+                "name": "du_huo",
+                "role": "Taiyang channel opening; fascial sliding initiation",
+                "notes": "OPTIONAL; 2-3g only; only if Taiyang layer truly full and tense; contraindicated in Yin-deficient, dry, sensitive patients; contraindicated in sensitive women (microbleed, spotting risk); NOT a general evening formula component; not a system-initiator"
+              },
+              {
+                "name": "qiang_huo",
+                "role": "Taiyang channel opening",
+                "notes": "OPTIONAL; 2-4g; alternative to Du Huo; more pungent / moving; use Du Huo preferentially"
+              },
+              {
+                "name": "bai_zhi",
+                "role": "gentle Taiyang mover; opens BL/SI surface layer (nose, face, shoulder); Yin-sensitive",
+                "notes": "does NOT move blood; not pungent anticoagulant; does not trigger excessive movement; safe in Yin-deficient patients; suitable for evening formula special version"
+              }
+            ]
+          },
+          {
+            "layer": "Jueyin_gate_opening",
+            "function": "trauma release; pericardium decompression; circulation of emotional-somatic layer",
+            "herbs": [
+              {
+                "name": "he_huan_pi",
+                "role": "pericardium lock release; traumatic closure opening; Shaoyin gate re-entry",
+                "notes": "10g standard; raise to 8g He Huan Hua if sleep is dominant complaint"
+              },
+              {
+                "name": "he_huan_hua",
+                "role": "pericardium lock release; sleep variant",
+                "notes": "6g; preferred when insomnia is dominant"
+              },
+              {
+                "name": "yu_jin",
+                "role": "HT-LR Qi movement; heat resolution; trauma clearing",
+                "notes": "listed in both layers; dual function"
+              },
+              {
+                "name": "bai_shao_yao",
+                "role": "fascia relaxation; sympathetic tone reduction; LR-blood softening",
+                "notes": "10g; addresses Shaoyang-Jueyin sliding dysregulation"
+              },
+              {
+                "name": "chai_hu",
+                "role": "Shaoyang-Jueyin harmonisation",
+                "notes": "for posterior fossa field node; part of harmonisation layer"
+              },
+              {
+                "name": "dan_shen",
+                "role": "blood sludging resolution; heart-soul opening",
+                "notes": "dual layer herb"
+              }
+            ]
+          },
+          {
+            "layer": "Shaoyin_sink_reactivation",
+            "function": "rebuild inner light-water communication; HT-KD bridge; deep Yin hydration; Jing restoration",
+            "herbs": [
+              {
+                "name": "yuan_zhi",
+                "role": "HT-KD electrical bridge; mind-soul connection; Shaoyin axis reboot",
+                "notes": "5g; most critical herb for Shaoyin sink reactivation; 'cable repair herb'"
+              },
+              {
+                "name": "fu_shen",
+                "role": "inner water field re-synchronisation; heart calming; EZ-gel elasticity restoration",
+                "notes": "10g; Poria with root; restores water field stability"
+              },
+              {
+                "name": "wu_wei_zi",
+                "role": "Qi consolidation; centripetal direction; heart-kidney energy retention",
+                "notes": "5g; closes scattered energy; antioxidant; membrane stabiliser; adaptogen"
+              },
+              {
+                "name": "sheng_di_huang",
+                "role": "blood and Yin refreshing; heat descending; EZ water density restoration",
+                "notes": "10g; primary Yin rebuilder"
+              },
+              {
+                "name": "gou_qi_zi",
+                "role": "LR-KD Yin; blood and eye nourishment; restores light-information-carrying blood",
+                "notes": "10g"
+              },
+              {
+                "name": "he_shou_wu",
+                "role": "Jing-Yin-blood strengthening; field brightening of water body",
+                "notes": "part of deep Yin hydration stack"
+              },
+              {
+                "name": "mai_men_dong",
+                "role": "HT-LU Yin; cooling-hydrating; returns Yin to Shaoyin through lung field",
+                "notes": "10g"
+              },
+              {
+                "name": "zhi_gan_cao",
+                "role": "heart rhythm harmonisation; internal electrical synchronisation",
+                "notes": "5g; electrical charge transfer stabiliser"
+              },
+              {
+                "name": "ren_shen",
+                "role": "Qi-light generation; HT-KD axis tonification; central battery replenishment",
+                "notes": "or Tai Zi Shen as gentler alternative"
+              }
+            ]
+          },
+          {
+            "layer": "spirit_level_modulators",
+            "function": "sleep-calm-Yin bridge; return consciousness to body field",
+            "herbs": [
+              {
+                "name": "suan_zao_ren",
+                "role": "sleep bridge; Yin-calm anchor",
+                "notes": "part of spirit modulator stack; alone insufficient for Shaoyin reboot"
+              },
+              {
+                "name": "bai_zi_ren",
+                "role": "sleep and calm support",
+                "notes": "adjunct"
+              },
+              {
+                "name": "ye_jiao_teng",
+                "role": "sleep-calm-Yin bridge",
+                "notes": "adjunct"
+              }
+            ]
+          },
+          {
+            "layer": "optional_treitz_heart_SJ_gate",
+            "function": "heart heat downward discharge via urinary channel; clears SJ transformation gate",
+            "trigger": "ONLY if: heart-heat urinary obstruction pattern confirmed",
+            "use_when": [
+              "sterile haematuria",
+              "urethral discomfort with overheated upper body",
+              "chest hot + lower body cold pattern",
+              "heart-heat insomnia",
+              "excessive nocturnal rumination",
+              "dry red tongue tip",
+              "internal irritation sensation",
+              "palpitations + thirst + irritability + sensory sensitivity"
+            ],
+            "do_not_use_when": [
+              "no heart heat / no internal fire sensation",
+              "patient cold and weak",
+              "problem not on chest-Treitz axis",
+              "no urinary complaint or lower abdominal heat"
+            ],
+            "herbs": [
+              {
+                "name": "deng_xin_cao",
+                "role": "opens HT-urinary channel; discharges heart heat toward bladder; routes upward Yang downward",
+                "notes": "conditional only; targeted insertion"
+              },
+              {
+                "name": "dan_zhu_ye",
+                "role": "clears heart heat; harmonises SJ transformation gate; reduces Jueyin-Shaoyang irritation",
+                "notes": "conditional only; pair with Deng Xin Cao for specific pattern"
+              }
+            ]
+          }
+        ],
+        "reference_formula_shaoyin_yin_heart_bridge": {
+          "name": "Shaoyin Sink Re-entry Formula",
+          "indication": "Shaoyin sink reactivation; inner light-water flow restoration; Taiyang expansion resolution",
+          "composition": [
+            {
+              "herb": "yuan_zhi",
+              "dose_g": 5
+            },
+            {
+              "herb": "fu_shen",
+              "dose_g": 10
+            },
+            {
+              "herb": "wu_wei_zi",
+              "dose_g": 5
+            },
+            {
+              "herb": "dan_shen",
+              "dose_g": 10
+            },
+            {
+              "herb": "bai_shao_yao",
+              "dose_g": 10
+            },
+            {
+              "herb": "sheng_di_huang",
+              "dose_g": 10
+            },
+            {
+              "herb": "gou_qi_zi",
+              "dose_g": 10
+            },
+            {
+              "herb": "he_huan_pi",
+              "dose_g": 10
+            },
+            {
+              "herb": "mai_men_dong",
+              "dose_g": 10
+            },
+            {
+              "herb": "zhi_gan_cao",
+              "dose_g": 5
+            }
+          ],
+          "dose_adjustments": [
+            "Dan Shen: raise to 10g if blood sludging / venous stasis prominent",
+            "Yu Jin: 6g standard; raise to 8g if patient warm and tense",
+            "He Huan Hua: 6g; raise to 8g if sleep problem is primary complaint"
+          ],
+          "why_suan_zao_ren_tang_insufficient": "Suan Zao Ren Tang (Suan Zao Ren, Chuan Xiong, Fu Ling, Zhi Mu, Gan Cao) calms fire but does not: (1) open venous return, (2) resolve HT-KD dissociation, (3) adequately nourish KD Yin-blood-Jing reserves. Use only for transitional sedation, not Shaoyin reboot."
+        }
+      },
+      "posterior_fossa_field_node_protocol": {
+        "indication": "posterior fossa congestion, IIH, PRESS, Chiari-like pressure, trigeminovascular patterns, heat above cold below with venous sludging",
+        "three_level_restoration": [
+          {
+            "level": 1,
+            "name": "shaoyang_jueyin_harmonisation",
+            "herbs": [
+              "chai_hu",
+              "bai_shao_yao",
+              "dan_shen",
+              "yu_jin",
+              "fu_ling",
+              "wu_wei_zi"
+            ]
+          },
+          {
+            "level": 2,
+            "name": "water_structure_rebuilding",
+            "herbs": [
+              "di_gu_pi",
+              "zhi_mu",
+              "sheng_di_huang",
+              "shi_gao",
+              "he_shou_wu"
+            ]
+          },
+          {
+            "level": 3,
+            "name": "venous_lymphatic_drainage_stimulation",
+            "device": "craniosacral therapy; fascial release; low-frequency laser at GB20, DU16, BL10"
+          }
+        ]
+      },
+      "shaoyin_sink_herb_groups": {
+        "HT_KD_bridge_builders": [
+          {
+            "name": "yuan_zhi",
+            "function": "HT-KD harmonisation; mind-soul bridge; electrical cable repair"
+          },
+          {
+            "name": "fu_shen",
+            "function": "heart calming; water field stabilisation; inner gel elasticity"
+          },
+          {
+            "name": "wu_wei_zi",
+            "function": "Qi consolidation; HT-KD energy retention; membrane stabiliser; adaptogen"
+          },
+          {
+            "name": "dan_shen",
+            "function": "blood-light circulation; cardiac perfusion; stagnation transformation; heart-lock opening"
+          },
+          {
+            "name": "he_huan_pi_hua",
+            "function": "traumatic pericardium lock release; emotional trauma discharge"
+          },
+          {
+            "name": "zhi_gan_cao",
+            "function": "heart rhythm harmonisation; internal electrical synchronisation"
+          },
+          {
+            "name": "ren_shen_tai_zi_shen",
+            "function": "Qi-light generation; HT-KD axis tonification"
+          }
+        ],
+        "KD_Yin_builders": [
+          {
+            "name": "sheng_di_huang",
+            "function": "blood and Yin refreshing; heat descending; EZ water density"
+          },
+          {
+            "name": "xuan_shen",
+            "function": "deep Yin cooling; toxin and heat resolution; water component rebuilding"
+          },
+          {
+            "name": "gou_qi_zi",
+            "function": "LR-KD Yin; blood and eye nourishment; light-information in blood"
+          },
+          {
+            "name": "he_shou_wu",
+            "function": "Jing-Yin-blood strengthening; field brightening of water body"
+          },
+          {
+            "name": "mai_men_dong",
+            "function": "HT-LU Yin; cooling-hydrating; returns Yin via lung field"
+          },
+          {
+            "name": "tian_men_dong",
+            "function": "deep KD-Yin; internal heat quenching from within"
+          }
+        ],
+        "LR_KD_Yin_coherence_jueyin_shaoyin": [
+          {
+            "name": "bai_shao_yao",
+            "function": "LR-blood softening; fascia relaxation; Shaoyang-Jueyin sliding resolution"
+          },
+          {
+            "name": "dang_gui",
+            "function": "blood and Yin circulation; LR-KD bridge; primary female Shaoyin bridge"
+          },
+          {
+            "name": "yu_jin",
+            "function": "Qi-blood passage; heat resolution; trauma clearing; liver-line brightening"
+          },
+          {
+            "name": "dan_pi_mu_dan_pi",
+            "function": "concealed heat discharge; blood stagnation resolution; LR-Yang calming toward Shaoyin"
+          }
+        ]
+      },
+      "interventions": {
+        "device": [
+          "low-frequency laser at GB20, DU16, BL10 (posterior fossa / upper Taiyang gate)",
+          "craniosacral therapy (sacrum treatment → trigeminus improvement; occiput release → vagus calming)",
+          "fascial release (Th4-6 level for pericardium; posterior fascia BL10-BL23-BL52)",
+          "chest / breathing therapy for pericardium decompression"
+        ],
+        "acupuncture_points": {
+          "Shaoyin_reactivation": [
+            "HT7",
+            "KD6"
+          ],
+          "SI_clearing": [
+            "SI3",
+            "BL62"
+          ],
+          "combined_opening": "SI3 + BL62 + HT7 + KD6 to reopen inward spiral",
+          "Taiyang_discharge": [
+            "BL10",
+            "BL23",
+            "BL52"
+          ],
+          "posterior_fossa": [
+            "GB20",
+            "DU16",
+            "BL10"
+          ]
+        }
+      }
+    },
+    {
+      "name": "jueyin_shaoyang_dissociation",
+      "aliases": [
+        "shaoyang_jueyin_layer_slip",
+        "PC_LR_Qi_deficiency_with_GB_TB_excess"
+      ],
+      "frontend_label": "Jueyin–Shaoyang Dissociation (Sliding Layer Dysfunction)",
+      "triggers": [
+        "Jueyin (PC-LR) unable to provide Yin content from depth",
+        "Shaoyang (GB-TB) unable to discharge frequency and rhythm outward",
+        "early diastolic dysfunction",
+        "emotional-mental energy seeking form but unable to integrate"
+      ],
+      "symptoms": [
+        "early diastolic dysfunction",
+        "heart wall cannot relax (field rigidity)",
+        "heat above cold below",
+        "emotional dissociation",
+        "fatigue with hot head / cold body",
+        "oedema as chemical imprint of energetic overpressure"
+      ],
+      "mechanism": "Jueyin Yin-field cannot receive Shaoyang light-information; heart does not open into diastole because energetically there is nowhere to open into; layer slippage creates field incoherence",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "chai_hu",
+            "role": "Shaoyang-Jueyin harmonisation"
+          },
+          {
+            "name": "bai_shao_yao",
+            "role": "LR-blood softening; fascia relaxation; Jueyin anchoring"
+          },
+          {
+            "name": "dan_shen",
+            "role": "heart-blood circulation; Jueyin opening"
+          },
+          {
+            "name": "yu_jin",
+            "role": "Qi-blood passage; trauma clearing"
+          },
+          {
+            "name": "fu_ling",
+            "role": "water field stabilisation"
+          },
+          {
+            "name": "wu_wei_zi",
+            "role": "Qi consolidation; Jueyin-Shaoyin anchoring"
+          }
+        ]
+      }
+    },
+    {
+      "name": "pericardial_lock_syndrome",
+      "aliases": [
+        "PC_closure",
+        "heart_pericardium_decoupling",
+        "shaoyin_jueyin_intersection_freeze"
+      ],
+      "frontend_label": "Pericardial Lock Syndrome (PC-HT Decoupling)",
+      "triggers": [
+        "trauma (physical or emotional)",
+        "Yin exhaustion",
+        "pericardial closure from chronic fear, grief, shame"
+      ],
+      "symptoms": [
+        "dorsal vagus overactivation (immobilisation reflex, freeze state)",
+        "diastolic rigidity (heart mechanically cannot expand)",
+        "emotional dissociation — feeling without connecting",
+        "cold chest, hot head",
+        "chest tightness",
+        "palpitations",
+        "insomnia"
+      ],
+      "mechanism": "pericardium = bioelectromagnetic Faraday cage; trauma causes it to lock; dorsal vagus overactivates; heart cannot receive field information; Shaoyin-Jueyin intersection freezes; 'love movement becomes reflection rather than information' — emotional dissociation of modern era",
+      "interventions": {
+        "herbs": [
+          {
+            "name": "dan_shen",
+            "role": "blood-light circulation; heart-soul opening; stagnation transformation"
+          },
+          {
+            "name": "yu_jin",
+            "role": "heart-liver Qi circulation; blood softening"
+          },
+          {
+            "name": "bai_shao_yao",
+            "role": "Jueyin anchoring; fascia release"
+          },
+          {
+            "name": "wu_wei_zi",
+            "role": "consolidation; membrane stabiliser"
+          },
+          {
+            "name": "fu_shen",
+            "role": "heart calming; water field stabilisation"
+          },
+          {
+            "name": "he_huan_pi_hua",
+            "role": "primary pericardium lock opener; trauma release; Shaoyin gate re-entry"
+          }
+        ],
+        "device": [
+          "chest breathing therapy",
+          "pericardium release (anterior fascia Th4-6 level)",
+          "vagus-GB20-DU16 laser points"
+        ]
+      }
+    }
+  ],
+  "diagnosis_map": [
+    {
+      "diagnosis": "IIH_idiopathic_intracranial_hypertension",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation",
+        "jueyin_shaoyang_dissociation"
+      ],
+      "notes": "Western label for Taiyang duzzadás + Shaoyin sink collapse. Posterior fossa field node congestion. All these syndromes are different phases of the same field incoherence."
+    },
+    {
+      "diagnosis": "PRESS_syndrome",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Posterior reversible encephalopathy syndrome — field model: trapped Yang in cranial Taiyang zone; venous stasis + EZ fragmentation; BL-posterior congestion."
+    },
+    {
+      "diagnosis": "Chiari_malformation_symptomatic",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Posterior fossa congestion and sludging pattern. Shaoyin freeze → Taiyang duzzadás at posterior fossa. Treat via HT-KD-BL-SI axis; craniosacral + posterior fossa drainage."
+    },
+    {
+      "diagnosis": "POTS_postural_orthostatic_tachycardia",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "KD-BL Taiyang-Shaoyin transition failure; autonomic dysregulation at sympathovagal interface. Same field incoherence; different phase."
+    },
+    {
+      "diagnosis": "fibromyalgia",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "BL meridian / myofascial Taiyang overload + Shaoyin sink collapse. Non-local interference field producing distributed pain. Treat via Shaoyin sink reboot; not through local pain suppression."
+    },
+    {
+      "diagnosis": "migraine_occipital_to_frontal",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation",
+        "jueyin_shaoyang_dissociation"
+      ],
+      "notes": "Shaoyang-Taiyang transition: light wave from posterior field toward frontal. BL10-GB20 overflow + trigeminus complex overload. Posterior fossa field node as resonator chamber. Treat root: Shaoyin sink + BL-posterior drainage."
+    },
+    {
+      "diagnosis": "posterior_fossa_venous_congestion",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Blood sludging + EZ local disintegration. Brainstem and cerebellum field blindness. Trigeminus as early warning antenna; posterior fossa as resonator chamber."
+    },
+    {
+      "diagnosis": "frozen_shoulder_scapular_congestion",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Taiyang-Shaoyin axis blockage at shoulder girdle. SI meridian cold nodes; cold shoulder sensation. Common in women: somatic mirror of heart closure."
+    },
+    {
+      "diagnosis": "chronic_degenerative_spinal_disease",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "BL meridian (dura + paravertebralis fascia) = electrical pathway for Taiyang. When overloaded: vertebrae become accumulators with stagnant field and fluid. Facet pain, radiculopathy, spondylosis — all Taiyang stagnation manifestations."
+    },
+    {
+      "diagnosis": "sciatica",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "BL40-BL60 line: energy cannot return to Shaoyin (KD). Cold and stagnation pull energy downward → cold leg, muscle spasm, heavy leg sensation."
+    },
+    {
+      "diagnosis": "eczema_psoriasis_seborrhea",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Heat and stagnation pushed to surface. Taiyang heat dominance; skin as forced decompression valve. 'Cannot cry, so skin cries.' Field decompression attempt via skin."
+    },
+    {
+      "diagnosis": "autoimmune_surface_inflammation",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Dermatomyositis, SLE skin signs, urticaria — Taiyang layer loss of synchronisation between field and fascia. Immune system perceives field dissonance as external enemy."
+    },
+    {
+      "diagnosis": "allergic_reactions_hayfever",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Taiyang protective field overtensioned and reactive to everything. Field dissonance interpreted as external threat."
+    },
+    {
+      "diagnosis": "panic_disorder_insomnia",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation",
+        "pericardial_lock_syndrome"
+      ],
+      "notes": "Taiyang tension cannot resolve → hypervigilance, insomnia, anxiety. Absence of Shaoyin fire → body cannot warm from within → constant readiness state."
+    },
+    {
+      "diagnosis": "sensory_processing_disorder_autism_spectrum",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Taiyang field hyperreactive — every stimulus too strong. Shaoyin-Jueyin gate closed → no emotional integration. High frequency Yang band overactivated without Yin anchor."
+    },
+    {
+      "diagnosis": "venous_stasis_varicosities_cervical",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Taiyang-BL fascia line: circulatory backflow. Often sign of heart shadow at periphery: inner pump weak, outer shell expands."
+    },
+    {
+      "diagnosis": "congestive_heart_failure_oedema",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Ankle oedema = KD Yang + KD Yin weakness + BL stagnation + Taiyang expansion. Body cannot draw Yang back into Shaoyin depth; energy and fluid descend and stagnate."
+    },
+    {
+      "diagnosis": "early_diastolic_dysfunction",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation",
+        "jueyin_shaoyang_dissociation",
+        "pericardial_lock_syndrome"
+      ],
+      "notes": "Not only cardiac problem — early sign of fascia-water-field system rigidity loss. Body field cannot expand; heart cannot relax. Heat driven upward; cold below."
+    },
+    {
+      "diagnosis": "CRPS",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Non-local interference field pattern. Same Shaoyin sink collapse mechanism. Applies also in post-stroke, post-COVID degenerative states."
+    },
+    {
+      "diagnosis": "post_COVID_fatigue",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Shaoyin sink collapse + Taiyang expansion. HT-KD axis disruption. Shaoyin Sink Re-entry Formula applicable."
+    },
+    {
+      "diagnosis": "IBS",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation",
+        "organ_instability_visceral_neural_overload"
+      ],
+      "notes": "Non-local interference field downstream from Shaoyin-Taiyang dissociation. Visceral-neural axis involvement."
+    },
+    {
+      "diagnosis": "neuropathy_peripheral",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation",
+        "neuro_meningeal_hydration_failure"
+      ],
+      "notes": "Taiyang BL overload without Yin stabilisation → peripheral interference discharges. Non-local interference field."
+    },
+    {
+      "diagnosis": "steril_haematuria",
+      "associated_patterns": [
+        "shaoyin_taiyang_dissociation"
+      ],
+      "notes": "Heart-origin field stagnation imprint on urinary channel. Indicates Treitz-Heart-SJ gate blockage. Use Deng Xin Cao + Dan Zhu Ye (conditional module)."
+    }
+  ],
+  "rules": [
+    {
+      "condition": "heat_above == true AND cold_below == true AND emotional_closure == true",
+      "action": "assign primary pattern: shaoyin_taiyang_dissociation; initiate Shaoyin sink reboot protocol"
+    },
+    {
+      "condition": "pattern == shaoyin_taiyang_dissociation",
+      "action": "do NOT target Taiyang directly as primary; restore Shaoyin Yin first; Taiyang stagnation resolves as Shaoyin sink re-activates"
+    },
+    {
+      "condition": "HT_closed == true (diastolic dysfunction, chest tightness, emotional dissociation)",
+      "action": "assign pericardial_lock_syndrome; initiate Jueyin gate opening: He Huan Pi/Hua, Yu Jin, Bai Shao, Dan Shen"
+    },
+    {
+      "condition": "BL_congested == true (posterior fossa pressure, occipital headache, spinal pain, myogelosis)",
+      "action": "confirm Taiyang expansion; treat via Shaoyin sink reboot (Yuan Zhi, Fu Shen, Wu Wei Zi, Sheng Di, Gou Qi Zi); BL decompresses as Shaoyin refills"
+    },
+    {
+      "condition": "KD_deficient == true AND BL_cannot_discharge == true",
+      "action": "priority: KD Yin restoration (Sheng Di, Xuan Shen, He Shou Wu, Tian Men Dong); without KD Yin, BL stagnation cannot resolve"
+    },
+    {
+      "condition": "SI_overloaded == true (sensory overload, decision fatigue, frozen shoulder, neck pain)",
+      "action": "root cause: HT Yin signal absent; treat HT Yin first (Yuan Zhi, Fu Shen, Zhi Gan Cao, Ren Shen); SI overload resolves as HT Yin stabilises"
+    },
+    {
+      "condition": "western_diagnosis IN [IIH, PRESS, Chiari, POTS, fibromyalgia, migraine, CRPS, post_COVID_fatigue, posterior_fossa_congestion]",
+      "action": "all are phases of shaoyin_taiyang_dissociation; assign unified pattern; treat via Shaoyin sink reboot; do not treat each western label in isolation"
+    },
+    {
+      "condition": "du_huo OR qiang_huo prescribed AND patient == Yin_deficient",
+      "action": "contraindicated: risk of intraluminal microbleed, spotting, pelvic sensitivity; remove from formula"
+    },
+    {
+      "condition": "du_huo OR qiang_huo prescribed AND patient == sensitive_female",
+      "action": "contraindicated: risk of spotting / pelvic irritation; use Bai Zhi (gentle Taiyang mover) instead if Taiyang opening needed"
+    },
+    {
+      "condition": "taiyang_layer == full_and_tense AND patient != Yin_deficient AND patient != sensitive_female",
+      "action": "Du Huo 2-3g optional addition to formula; opens Taiyang channel; initiates fascial sliding; discharges trapped Yang; not system initiator"
+    },
+    {
+      "condition": "taiyang_opening_needed == true AND Yin_sensitivity == true",
+      "action": "use Bai Zhi instead of Du Huo / Qiang Huo; Yin-sensitive Taiyang mover; does not move blood; not pungent anticoagulant"
+    },
+    {
+      "condition": "heart_heat == true AND urinary_obstruction == true AND tongue_red_tip == true",
+      "action": "add conditional Treitz-Heart-SJ module: Deng Xin Cao + Dan Zhu Ye; routes heart heat downward via urinary channel"
+    },
+    {
+      "condition": "heart_heat == false OR patient == cold_weak",
+      "action": "contraindicate Deng Xin Cao + Dan Zhu Ye; unnecessary noise in formula"
+    },
+    {
+      "condition": "suan_zao_ren_tang prescribed as primary formula for Shaoyin sink reboot",
+      "action": "flag as insufficient: does not open venous return; does not resolve HT-KD dissociation; does not nourish KD Yin-blood-Jing; use Shaoyin Sink Re-entry Formula instead; Suan Zao Ren Tang = transitional sedation only"
+    },
+    {
+      "condition": "sacrum_treatment OR occiput_release OR posterior_fascia_release",
+      "action": "expect trigeminus improvement / vagus calming systemically; craniosacral continuity rule applies (cross-reference Batch 2)"
+    },
+    {
+      "condition": "patient_archetype == obese_oedematous_emotionally_traumatised_cold_adrenal_fatigue_headache_female",
+      "action": "confirm: modern Jueyin-Shaoyang dissociation type; primary pattern = shaoyin_taiyang_dissociation; initiate Shaoyin sink reboot + posterior fossa field node protocol"
+    },
+    {
+      "condition": "ankle_oedema == true AND fatigue_dominant == true",
+      "action": "confirm: KD Yang + KD Yin weakness + BL stagnation + Taiyang expansion; do not use strong Taiyang movers; Shaoyin sink reboot first"
+    },
+    {
+      "condition": "skin_eruption == true (eczema, psoriasis, seborrhea)",
+      "action": "interpret as Taiyang field decompression attempt; do not suppress locally; treat root: Shaoyin sink reboot"
+    },
+    {
+      "condition": "EZ_state == fragmented AND pattern == shaoyin_taiyang_dissociation",
+      "action": "confirm deep layer: chronic Yin deficiency; rebuild_yin protocol (cross-reference Batch 2 EZ rule); steroid will fail; Shaoyin Sink Re-entry Formula appropriate"
+    },
+    {
+      "condition": "30_second_clinical_screen: head_heat AND cold_feet AND emotional_closure AND insomnia AND neck_shoulder_tension AND ankle_oedema AND spinal_pain",
+      "action": "all criteria met = complete Shaoyin-Taiyang dissociation; initiate full Shaoyin Sink Re-entry Formula; laser GB20-DU16-BL10; craniosacral; BL10-BL23-BL52 fascia release"
+    },
+    {
+      "condition": "frailty == true OR Yin_deficient_severe == true",
+      "action": "use only Shaoyin sink and Jueyin gate layers; omit Taiyang movers entirely; reduce formula complexity"
+    }
+  ],
+  "input_variables": [
+    "shaoyin_freeze: boolean (HT/KD closure pattern)",
+    "taiyang_expansion: boolean (BL/SI overload pattern)",
+    "pericardial_lock: boolean",
+    "HT_Yin_weak: boolean",
+    "KD_Yin_weak: boolean",
+    "KD_Yang_weak: boolean",
+    "Jing_deficient: boolean",
+    "SI_overloaded: boolean (sensory overload, decision fatigue)",
+    "BL_congested: boolean (posterior fossa, spinal, myofascial)",
+    "heat_above: boolean",
+    "cold_below: boolean",
+    "diastolic_dysfunction: boolean",
+    "posterior_fossa_congestion: boolean",
+    "blood_sludging: boolean",
+    "venous_stasis: boolean",
+    "ankle_oedema: boolean",
+    "emotional_trauma: boolean",
+    "emotional_closure: boolean",
+    "insomnia_rumination: boolean",
+    "sensory_hypersensitivity: boolean",
+    "frozen_shoulder: boolean",
+    "occipital_tension: boolean",
+    "skin_eruption: enum(eczema, psoriasis, seborrhea, none)",
+    "heart_heat: boolean (palpitations, thirst, irritability, red tongue tip)",
+    "tongue_red_tip: boolean",
+    "urinary_complaint: boolean",
+    "steril_haematuria: boolean",
+    "patient_sex: enum(female, male, other)",
+    "patient_sensitivity: enum(Yin_deficient, cold_weak, robust, unknown)",
+    "taiyang_layer_state: enum(full_tense, lax_empty, mixed)",
+    "qi_relay_blocked_at: enum(HT_SI, SI_BL, BL_KD, KD_PC, none, multiple)",
+    "EZ_state: enum(continuous, partially_fragmented, fragmented)",
+    "western_diagnosis_group: enum(IIH, PRESS, Chiari, POTS, fibromyalgia, migraine, CRPS, post_COVID, posterior_fossa_congestion, frozen_shoulder, spinal_degenerative, skin_autoimmune, autonomic, other)"
+  ],
+  "clinical_30_second_screen": {
+    "description": "Rapid Taiyang-Shaoyin dissociation recognition tool",
+    "steps": [
+      {
+        "step": 1,
+        "question": "Head — heat, tension, pressure?",
+        "positives": [
+          "occipital tension",
+          "head heaviness",
+          "tinnitus",
+          "dizziness",
+          "eye fatigue"
+        ],
+        "signal": "Taiyang overtensioned (BL stagnation beginning)"
+      },
+      {
+        "step": 2,
+        "question": "Chest — closure or sleep disturbance?",
+        "positives": [
+          "chest tightness",
+          "emotional blockage",
+          "palpitations at bedtime",
+          "rumination insomnia"
+        ],
+        "signal": "Shaoyin frozen (PC lock, HT Yin weak)"
+      },
+      {
+        "step": 3,
+        "question": "Oliguria, ankle oedema, cold feet?",
+        "positives": [
+          "heavy/watery ankles",
+          "cold feet",
+          "reduced urination"
+        ],
+        "signal": "KD Yin weak; Taiyang energy cannot return to depth"
+      },
+      {
+        "step": 4,
+        "question": "Emotional profile — 'tele van a hócipőm' (fed up)?",
+        "positives": [
+          "irritability + fatigue",
+          "hypersensitivity",
+          "overwhelmed",
+          "decision difficulty"
+        ],
+        "signal": "SI overloaded (Yang dominance); no HT Yin background"
+      },
+      {
+        "step": 5,
+        "question": "Neck–shoulder–scapula tension?",
+        "positives": [
+          "trapezius rope-like",
+          "shoulder radiation",
+          "frozen shoulder pattern"
+        ],
+        "signal": "SI signal distorted → BL channel saturated"
+      },
+      {
+        "step": 6,
+        "question": "Low back or spine pain?",
+        "positives": [
+          "lumbar stiffness",
+          "sacroiliac sensitivity"
+        ],
+        "signal": "BL output blocked"
+      },
+      {
+        "step": 7,
+        "interpretation": "If 4+ positive: Taiyang-Shaoyin dissociation confirmed; initiate Shaoyin Sink Re-entry Formula + device protocol"
+      }
+    ],
+    "rapid_diagnosis_table": [
+      {
+        "symptom_combo": "hot head + cold feet",
+        "diagnosis": "Taiyang expansion + Shaoyin sink collapse"
+      },
+      {
+        "symptom_combo": "emotional closure + insomnia",
+        "diagnosis": "PC lock + HT Yin deficiency"
+      },
+      {
+        "symptom_combo": "ankle oedema + fatigue",
+        "diagnosis": "KD weakness → BL cannot discharge"
+      },
+      {
+        "symptom_combo": "neck tension + irritability",
+        "diagnosis": "SI overfunction → BL stagnation"
+      },
+      {
+        "symptom_combo": "all of the above",
+        "diagnosis": "Complete Taiyang–Shaoyin dissociation"
+      }
+    ]
+  },
+  "theoretical_framework_notes": [
+    {
+      "concept": "shaoyin_taiyang_as_primary_degenerative_pattern",
+      "engine_relevant": true,
+      "summary": "The majority of chronic degenerative conditions share a single field pattern: Shaoyin sink collapse (HT-KD weakness/freeze) → Taiyang expansion (BL-SI overload). All downstream manifestations (fibromyalgia, IIH, PRESS, CRPS, posterior fossa congestion, migraine, insomnia, skin eruptions, spinal disease) are phases of this central dissociation. Engine must check for this meta-pattern before assigning isolated diagnoses."
+    },
+    {
+      "concept": "qi_relay_as_directional_map",
+      "engine_relevant": true,
+      "summary": "SP → HT → SI → BL → KD → PC is the communication direction of energy when healthy. Pathology arises when the relay flows but the switching (Yin-Yang polarity transfer) fails. The critical four-gate is HT → SI → BL → KD. Engine should identify where in the relay the blockage sits."
+    },
+    {
+      "concept": "pericardium_as_bioelectromagnetic_faraday_cage",
+      "engine_relevant": true,
+      "summary": "Pericardium can lock under trauma, preventing the heart from receiving field information. Dorsal vagus overactivates. Diastolic rigidity follows. This is the Shaoyin-Jueyin intersection freeze — a specific sub-pattern of the broader Shaoyin-Taiyang dissociation."
+    },
+    {
+      "concept": "BL_meridian_as_dura_paravertebral_fascia",
+      "engine_relevant": true,
+      "summary": "BL meridian is the electromagnetic network of dura mater + paravertebralis fascia. When HT closes, BL overloads. Interference discharges produce: paravertebral spasm, segmental pain nodes, fascia flashes, dura tension → headache, occipital neuralgia, posterior fossa sludging. This is the physical substrate of chronic pain in this pattern."
+    },
+    {
+      "concept": "three_frequency_bands",
+      "engine_relevant": true,
+      "summary": "Yin (low frequency: HT Yin, KD Yin, Jing, EZ water) provides stable foundation. Yang (high frequency: SI, BL, visual system, fascia field) overactivates without Yin anchor. Jueyin (mid frequency: LR/PC, trauma, suppressed emotion) modulates signal distortion. When the three are not synchronised: non-local interference field → chronic disease."
+    },
+    {
+      "concept": "suan_zao_ren_tang_insufficiency",
+      "engine_relevant": true,
+      "summary": "Suan Zao Ren Tang calms fire but does not open venous return, resolve HT-KD dissociation, or nourish KD Yin-blood-Jing reserves. It is transitional sedation, not a Shaoyin reboot formula. Engine should flag if this formula is used as a primary Shaoyin restoration strategy."
+    },
+    {
+      "concept": "taiyang_movers_safety_gating",
+      "engine_relevant": true,
+      "summary": "Du Huo / Qiang Huo are pungent Yang-movers. Contraindicated in Yin-deficient patients and sensitive women (intraluminal microbleed, spotting risk). Bai Zhi is the safe alternative: gentle Taiyang mover, Yin-sensitive, does not move blood, suitable for evening formula. Du Huo optional only when Taiyang layer confirmed full and tense in robust patients."
+    },
+    {
+      "concept": "shaoyin_sink_reboot_as_universal_chronic_disease_entry_point",
+      "engine_relevant": true,
+      "summary": "In every chronic degenerative process, the Shaoyin sink must be rebooted first. Cellular level: mitochondria. Psychological level: hope. Spiritual level: soul-body integration. The Shaoyin Sink Re-entry Formula addresses all three simultaneously via the herb groups: HT-KD bridge, Yin builders, Jueyin openers."
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "source_batch": 13,
+  "title": "Batch 13 Taiyang-Shaoyin Concepts",
+  "patient_facing_caution": "These are educational pattern-recognition concepts, not diagnostic claims or established medical facts.",
+  "clinical_30_second_screen": {
+    "description": "Rapid Taiyang-Shaoyin dissociation recognition tool",
+    "steps": [
+      {
+        "step": 1,
+        "question": "Head — heat, tension, pressure?",
+        "positives": [
+          "occipital tension",
+          "head heaviness",
+          "tinnitus",
+          "dizziness",
+          "eye fatigue"
+        ],
+        "signal": "Taiyang overtensioned (BL stagnation beginning)"
+      },
+      {
+        "step": 2,
+        "question": "Chest — closure or sleep disturbance?",
+        "positives": [
+          "chest tightness",
+          "emotional blockage",
+          "palpitations at bedtime",
+          "rumination insomnia"
+        ],
+        "signal": "Shaoyin frozen (PC lock, HT Yin weak)"
+      },
+      {
+        "step": 3,
+        "question": "Oliguria, ankle oedema, cold feet?",
+        "positives": [
+          "heavy/watery ankles",
+          "cold feet",
+          "reduced urination"
+        ],
+        "signal": "KD Yin weak; Taiyang energy cannot return to depth"
+      },
+      {
+        "step": 4,
+        "question": "Emotional profile — 'tele van a hócipőm' (fed up)?",
+        "positives": [
+          "irritability + fatigue",
+          "hypersensitivity",
+          "overwhelmed",
+          "decision difficulty"
+        ],
+        "signal": "SI overloaded (Yang dominance); no HT Yin background"
+      },
+      {
+        "step": 5,
+        "question": "Neck–shoulder–scapula tension?",
+        "positives": [
+          "trapezius rope-like",
+          "shoulder radiation",
+          "frozen shoulder pattern"
+        ],
+        "signal": "SI signal distorted → BL channel saturated"
+      },
+      {
+        "step": 6,
+        "question": "Low back or spine pain?",
+        "positives": [
+          "lumbar stiffness",
+          "sacroiliac sensitivity"
+        ],
+        "signal": "BL output blocked"
+      },
+      {
+        "step": 7,
+        "interpretation": "If 4+ positive: Taiyang-Shaoyin dissociation confirmed; initiate Shaoyin Sink Re-entry Formula + device protocol"
+      }
+    ],
+    "rapid_diagnosis_table": [
+      {
+        "symptom_combo": "hot head + cold feet",
+        "diagnosis": "Taiyang expansion + Shaoyin sink collapse"
+      },
+      {
+        "symptom_combo": "emotional closure + insomnia",
+        "diagnosis": "PC lock + HT Yin deficiency"
+      },
+      {
+        "symptom_combo": "ankle oedema + fatigue",
+        "diagnosis": "KD weakness → BL cannot discharge"
+      },
+      {
+        "symptom_combo": "neck tension + irritability",
+        "diagnosis": "SI overfunction → BL stagnation"
+      },
+      {
+        "symptom_combo": "all of the above",
+        "diagnosis": "Complete Taiyang–Shaoyin dissociation"
+      }
+    ]
+  },
+  "concepts": [
+    {
+      "concept": "shaoyin_taiyang_as_primary_degenerative_pattern",
+      "engine_relevant": true,
+      "summary": "The majority of chronic degenerative conditions share a single field pattern: Shaoyin sink collapse (HT-KD weakness/freeze) → Taiyang expansion (BL-SI overload). All downstream manifestations (fibromyalgia, IIH, PRESS, CRPS, posterior fossa congestion, migraine, insomnia, skin eruptions, spinal disease) are phases of this central dissociation. Engine must check for this meta-pattern before assigning isolated diagnoses."
+    },
+    {
+      "concept": "qi_relay_as_directional_map",
+      "engine_relevant": true,
+      "summary": "SP → HT → SI → BL → KD → PC is the communication direction of energy when healthy. Pathology arises when the relay flows but the switching (Yin-Yang polarity transfer) fails. The critical four-gate is HT → SI → BL → KD. Engine should identify where in the relay the blockage sits."
+    },
+    {
+      "concept": "pericardium_as_bioelectromagnetic_faraday_cage",
+      "engine_relevant": true,
+      "summary": "Pericardium can lock under trauma, preventing the heart from receiving field information. Dorsal vagus overactivates. Diastolic rigidity follows. This is the Shaoyin-Jueyin intersection freeze — a specific sub-pattern of the broader Shaoyin-Taiyang dissociation."
+    },
+    {
+      "concept": "BL_meridian_as_dura_paravertebral_fascia",
+      "engine_relevant": true,
+      "summary": "BL meridian is the electromagnetic network of dura mater + paravertebralis fascia. When HT closes, BL overloads. Interference discharges produce: paravertebral spasm, segmental pain nodes, fascia flashes, dura tension → headache, occipital neuralgia, posterior fossa sludging. This is the physical substrate of chronic pain in this pattern."
+    },
+    {
+      "concept": "three_frequency_bands",
+      "engine_relevant": true,
+      "summary": "Yin (low frequency: HT Yin, KD Yin, Jing, EZ water) provides stable foundation. Yang (high frequency: SI, BL, visual system, fascia field) overactivates without Yin anchor. Jueyin (mid frequency: LR/PC, trauma, suppressed emotion) modulates signal distortion. When the three are not synchronised: non-local interference field → chronic disease."
+    },
+    {
+      "concept": "suan_zao_ren_tang_insufficiency",
+      "engine_relevant": true,
+      "summary": "Suan Zao Ren Tang calms fire but does not open venous return, resolve HT-KD dissociation, or nourish KD Yin-blood-Jing reserves. It is transitional sedation, not a Shaoyin reboot formula. Engine should flag if this formula is used as a primary Shaoyin restoration strategy."
+    },
+    {
+      "concept": "taiyang_movers_safety_gating",
+      "engine_relevant": true,
+      "summary": "Du Huo / Qiang Huo are pungent Yang-movers. Contraindicated in Yin-deficient patients and sensitive women (intraluminal microbleed, spotting risk). Bai Zhi is the safe alternative: gentle Taiyang mover, Yin-sensitive, does not move blood, suitable for evening formula. Du Huo optional only when Taiyang layer confirmed full and tense in robust patients."
+    },
+    {
+      "concept": "shaoyin_sink_reboot_as_universal_chronic_disease_entry_point",
+      "engine_relevant": true,
+      "summary": "In every chronic degenerative process, the Shaoyin sink must be rebooted first. Cellular level: mitochondria. Psychological level: hope. Spiritual level: soul-body integration. The Shaoyin Sink Re-entry Formula addresses all three simultaneously via the herb groups: HT-KD bridge, Yin builders, Jueyin openers."
+    }
+  ],
+  "qi_relay_map": {
+    "direction": [
+      "SP",
+      "HT",
+      "SI",
+      "BL",
+      "KD",
+      "PC"
+    ],
+    "critical_four_gate": [
+      "HT",
+      "SI",
+      "BL",
+      "KD"
+    ],
+    "block_locations": [
+      "HT_SI",
+      "SI_BL",
+      "BL_KD",
+      "KD_PC",
+      "multiple"
+    ]
+  },
+  "core_principles": [
+    "Restore Shaoyin Yin first; Taiyang tension discharges second.",
+    "Do not target Taiyang directly as primary in deep Shaoyin collapse.",
+    "HT -> SI -> BL -> KD is the critical switching pathway.",
+    "Pericardial lock is a Shaoyin-Jueyin intersection freeze.",
+    "Taiyang movers require safety gating.",
+    "Bai Zhi is the Yin-sensitive Taiyang mover.",
+    "Suan Zao Ren Tang is transitional sedation, not Shaoyin reboot.",
+    "The posterior fossa is a Shaoyin-Taiyang transition node."
+  ]
+}

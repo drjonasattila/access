@@ -1,0 +1,358 @@
+{
+  "source_batch": 13,
+  "title": "Batch 13 Shaoyin Sink Protocol Library",
+  "shaoyin_sink_reboot_protocol": {
+    "description": "Full three-layer formula: Taiyang discharge + Jueyin circulation/trauma release + Shaoyin sink reactivation",
+    "layers": [
+      {
+        "layer": "Taiyang_discharge",
+        "function": "reduce surface pressure; open BL/SI stagnation; discharge trapped Yang",
+        "herbs": [
+          {
+            "name": "bai_zhu",
+            "role": "central fluid-flow regulation; directs water downward",
+            "notes": "Taiyang stabiliser; non-pungent"
+          },
+          {
+            "name": "gan_cao",
+            "role": "electrical harmonisation; field integration",
+            "notes": "electromechanical synchroniser"
+          },
+          {
+            "name": "dan_shen",
+            "role": "blood sludging resolution; venous stasis clearance",
+            "notes": "raises to 10g if blood sludging / venous stasis prominent"
+          },
+          {
+            "name": "yu_jin",
+            "role": "HT-LR Qi circulation; blood softening",
+            "notes": "6g standard; raise to 8g if patient warm and tense"
+          },
+          {
+            "name": "du_huo",
+            "role": "Taiyang channel opening; fascial sliding initiation",
+            "notes": "OPTIONAL; 2-3g only; only if Taiyang layer truly full and tense; contraindicated in Yin-deficient, dry, sensitive patients; contraindicated in sensitive women (microbleed, spotting risk); NOT a general evening formula component; not a system-initiator"
+          },
+          {
+            "name": "qiang_huo",
+            "role": "Taiyang channel opening",
+            "notes": "OPTIONAL; 2-4g; alternative to Du Huo; more pungent / moving; use Du Huo preferentially"
+          },
+          {
+            "name": "bai_zhi",
+            "role": "gentle Taiyang mover; opens BL/SI surface layer (nose, face, shoulder); Yin-sensitive",
+            "notes": "does NOT move blood; not pungent anticoagulant; does not trigger excessive movement; safe in Yin-deficient patients; suitable for evening formula special version"
+          }
+        ]
+      },
+      {
+        "layer": "Jueyin_gate_opening",
+        "function": "trauma release; pericardium decompression; circulation of emotional-somatic layer",
+        "herbs": [
+          {
+            "name": "he_huan_pi",
+            "role": "pericardium lock release; traumatic closure opening; Shaoyin gate re-entry",
+            "notes": "10g standard; raise to 8g He Huan Hua if sleep is dominant complaint"
+          },
+          {
+            "name": "he_huan_hua",
+            "role": "pericardium lock release; sleep variant",
+            "notes": "6g; preferred when insomnia is dominant"
+          },
+          {
+            "name": "yu_jin",
+            "role": "HT-LR Qi movement; heat resolution; trauma clearing",
+            "notes": "listed in both layers; dual function"
+          },
+          {
+            "name": "bai_shao_yao",
+            "role": "fascia relaxation; sympathetic tone reduction; LR-blood softening",
+            "notes": "10g; addresses Shaoyang-Jueyin sliding dysregulation"
+          },
+          {
+            "name": "chai_hu",
+            "role": "Shaoyang-Jueyin harmonisation",
+            "notes": "for posterior fossa field node; part of harmonisation layer"
+          },
+          {
+            "name": "dan_shen",
+            "role": "blood sludging resolution; heart-soul opening",
+            "notes": "dual layer herb"
+          }
+        ]
+      },
+      {
+        "layer": "Shaoyin_sink_reactivation",
+        "function": "rebuild inner light-water communication; HT-KD bridge; deep Yin hydration; Jing restoration",
+        "herbs": [
+          {
+            "name": "yuan_zhi",
+            "role": "HT-KD electrical bridge; mind-soul connection; Shaoyin axis reboot",
+            "notes": "5g; most critical herb for Shaoyin sink reactivation; 'cable repair herb'"
+          },
+          {
+            "name": "fu_shen",
+            "role": "inner water field re-synchronisation; heart calming; EZ-gel elasticity restoration",
+            "notes": "10g; Poria with root; restores water field stability"
+          },
+          {
+            "name": "wu_wei_zi",
+            "role": "Qi consolidation; centripetal direction; heart-kidney energy retention",
+            "notes": "5g; closes scattered energy; antioxidant; membrane stabiliser; adaptogen"
+          },
+          {
+            "name": "sheng_di_huang",
+            "role": "blood and Yin refreshing; heat descending; EZ water density restoration",
+            "notes": "10g; primary Yin rebuilder"
+          },
+          {
+            "name": "gou_qi_zi",
+            "role": "LR-KD Yin; blood and eye nourishment; restores light-information-carrying blood",
+            "notes": "10g"
+          },
+          {
+            "name": "he_shou_wu",
+            "role": "Jing-Yin-blood strengthening; field brightening of water body",
+            "notes": "part of deep Yin hydration stack"
+          },
+          {
+            "name": "mai_men_dong",
+            "role": "HT-LU Yin; cooling-hydrating; returns Yin to Shaoyin through lung field",
+            "notes": "10g"
+          },
+          {
+            "name": "zhi_gan_cao",
+            "role": "heart rhythm harmonisation; internal electrical synchronisation",
+            "notes": "5g; electrical charge transfer stabiliser"
+          },
+          {
+            "name": "ren_shen",
+            "role": "Qi-light generation; HT-KD axis tonification; central battery replenishment",
+            "notes": "or Tai Zi Shen as gentler alternative"
+          }
+        ]
+      },
+      {
+        "layer": "spirit_level_modulators",
+        "function": "sleep-calm-Yin bridge; return consciousness to body field",
+        "herbs": [
+          {
+            "name": "suan_zao_ren",
+            "role": "sleep bridge; Yin-calm anchor",
+            "notes": "part of spirit modulator stack; alone insufficient for Shaoyin reboot"
+          },
+          {
+            "name": "bai_zi_ren",
+            "role": "sleep and calm support",
+            "notes": "adjunct"
+          },
+          {
+            "name": "ye_jiao_teng",
+            "role": "sleep-calm-Yin bridge",
+            "notes": "adjunct"
+          }
+        ]
+      },
+      {
+        "layer": "optional_treitz_heart_SJ_gate",
+        "function": "heart heat downward discharge via urinary channel; clears SJ transformation gate",
+        "trigger": "ONLY if: heart-heat urinary obstruction pattern confirmed",
+        "use_when": [
+          "sterile haematuria",
+          "urethral discomfort with overheated upper body",
+          "chest hot + lower body cold pattern",
+          "heart-heat insomnia",
+          "excessive nocturnal rumination",
+          "dry red tongue tip",
+          "internal irritation sensation",
+          "palpitations + thirst + irritability + sensory sensitivity"
+        ],
+        "do_not_use_when": [
+          "no heart heat / no internal fire sensation",
+          "patient cold and weak",
+          "problem not on chest-Treitz axis",
+          "no urinary complaint or lower abdominal heat"
+        ],
+        "herbs": [
+          {
+            "name": "deng_xin_cao",
+            "role": "opens HT-urinary channel; discharges heart heat toward bladder; routes upward Yang downward",
+            "notes": "conditional only; targeted insertion"
+          },
+          {
+            "name": "dan_zhu_ye",
+            "role": "clears heart heat; harmonises SJ transformation gate; reduces Jueyin-Shaoyang irritation",
+            "notes": "conditional only; pair with Deng Xin Cao for specific pattern"
+          }
+        ]
+      }
+    ],
+    "reference_formula_shaoyin_yin_heart_bridge": {
+      "name": "Shaoyin Sink Re-entry Formula",
+      "indication": "Shaoyin sink reactivation; inner light-water flow restoration; Taiyang expansion resolution",
+      "composition": [
+        {
+          "herb": "yuan_zhi",
+          "dose_g": 5
+        },
+        {
+          "herb": "fu_shen",
+          "dose_g": 10
+        },
+        {
+          "herb": "wu_wei_zi",
+          "dose_g": 5
+        },
+        {
+          "herb": "dan_shen",
+          "dose_g": 10
+        },
+        {
+          "herb": "bai_shao_yao",
+          "dose_g": 10
+        },
+        {
+          "herb": "sheng_di_huang",
+          "dose_g": 10
+        },
+        {
+          "herb": "gou_qi_zi",
+          "dose_g": 10
+        },
+        {
+          "herb": "he_huan_pi",
+          "dose_g": 10
+        },
+        {
+          "herb": "mai_men_dong",
+          "dose_g": 10
+        },
+        {
+          "herb": "zhi_gan_cao",
+          "dose_g": 5
+        }
+      ],
+      "dose_adjustments": [
+        "Dan Shen: raise to 10g if blood sludging / venous stasis prominent",
+        "Yu Jin: 6g standard; raise to 8g if patient warm and tense",
+        "He Huan Hua: 6g; raise to 8g if sleep problem is primary complaint"
+      ],
+      "why_suan_zao_ren_tang_insufficient": "Suan Zao Ren Tang (Suan Zao Ren, Chuan Xiong, Fu Ling, Zhi Mu, Gan Cao) calms fire but does not: (1) open venous return, (2) resolve HT-KD dissociation, (3) adequately nourish KD Yin-blood-Jing reserves. Use only for transitional sedation, not Shaoyin reboot."
+    }
+  },
+  "shaoyin_sink_reentry_formula": {
+    "name": "Shaoyin Sink Re-entry Formula",
+    "indication": "Shaoyin sink reactivation; inner light-water flow restoration; Taiyang expansion resolution",
+    "composition": [
+      {
+        "herb": "yuan_zhi",
+        "dose_g": 5
+      },
+      {
+        "herb": "fu_shen",
+        "dose_g": 10
+      },
+      {
+        "herb": "wu_wei_zi",
+        "dose_g": 5
+      },
+      {
+        "herb": "dan_shen",
+        "dose_g": 10
+      },
+      {
+        "herb": "bai_shao_yao",
+        "dose_g": 10
+      },
+      {
+        "herb": "sheng_di_huang",
+        "dose_g": 10
+      },
+      {
+        "herb": "gou_qi_zi",
+        "dose_g": 10
+      },
+      {
+        "herb": "he_huan_pi",
+        "dose_g": 10
+      },
+      {
+        "herb": "mai_men_dong",
+        "dose_g": 10
+      },
+      {
+        "herb": "zhi_gan_cao",
+        "dose_g": 5
+      }
+    ],
+    "dose_adjustments": [
+      "Dan Shen: raise to 10g if blood sludging / venous stasis prominent",
+      "Yu Jin: 6g standard; raise to 8g if patient warm and tense",
+      "He Huan Hua: 6g; raise to 8g if sleep problem is primary complaint"
+    ],
+    "why_suan_zao_ren_tang_insufficient": "Suan Zao Ren Tang (Suan Zao Ren, Chuan Xiong, Fu Ling, Zhi Mu, Gan Cao) calms fire but does not: (1) open venous return, (2) resolve HT-KD dissociation, (3) adequately nourish KD Yin-blood-Jing reserves. Use only for transitional sedation, not Shaoyin reboot."
+  },
+  "posterior_fossa_field_node_protocol": {
+    "indication": "posterior fossa congestion, IIH, PRESS, Chiari-like pressure, trigeminovascular patterns, heat above cold below with venous sludging",
+    "three_level_restoration": [
+      {
+        "level": 1,
+        "name": "shaoyang_jueyin_harmonisation",
+        "herbs": [
+          "chai_hu",
+          "bai_shao_yao",
+          "dan_shen",
+          "yu_jin",
+          "fu_ling",
+          "wu_wei_zi"
+        ]
+      },
+      {
+        "level": 2,
+        "name": "water_structure_rebuilding",
+        "herbs": [
+          "di_gu_pi",
+          "zhi_mu",
+          "sheng_di_huang",
+          "shi_gao",
+          "he_shou_wu"
+        ]
+      },
+      {
+        "level": 3,
+        "name": "venous_lymphatic_drainage_stimulation",
+        "device": "craniosacral therapy; fascial release; low-frequency laser at GB20, DU16, BL10"
+      }
+    ]
+  },
+  "device_acupuncture_map": {
+    "device": [
+      "low-frequency laser at GB20, DU16, BL10 (posterior fossa / upper Taiyang gate)",
+      "craniosacral therapy (sacrum treatment → trigeminus improvement; occiput release → vagus calming)",
+      "fascial release (Th4-6 level for pericardium; posterior fascia BL10-BL23-BL52)",
+      "chest / breathing therapy for pericardium decompression"
+    ],
+    "acupuncture_points": {
+      "Shaoyin_reactivation": [
+        "HT7",
+        "KD6"
+      ],
+      "SI_clearing": [
+        "SI3",
+        "BL62"
+      ],
+      "combined_opening": "SI3 + BL62 + HT7 + KD6 to reopen inward spiral",
+      "Taiyang_discharge": [
+        "BL10",
+        "BL23",
+        "BL52"
+      ],
+      "posterior_fossa": [
+        "GB20",
+        "DU16",
+        "BL10"
+      ]
+    }
+  },
+  "safety_note": "Reference only; not an automatic recommendation or substitute for clinician review."
+}

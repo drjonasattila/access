@@ -10,7 +10,8 @@
     "test:headache": "node scripts/test-headache-engine.cjs",
     "test:arch": "node scripts/test-pharyngeal-arch-engine.cjs",
     "test:vertical": "node scripts/test-post-surgical-integration-engine.cjs",
-    "test:spinal": "node scripts/test-spinal-failure-mode-engine.cjs"
+    "test:spinal": "node scripts/test-spinal-failure-mode-engine.cjs",
+    "test:shaoyin": "node scripts/test-shaoyin-taiyang-engine.cjs"
   },
   "dependencies": {
     "next": "^15.3.0",
