@@ -1,0 +1,468 @@
+{
+  "source_batch": 1,
+  "source_files": [
+    "post_surgical_pain_flow_chart_app_pdf.pdf",
+    "Reflexology_pdf.pdf"
+  ],
+  "patterns": [
+    {
+      "name": "shaoyang_gate_dysfunction",
+      "aliases": [
+        "guarded_shaoyang",
+        "transitional_gate_failure"
+      ],
+      "triggers": [
+        "post-surgical pain persisting beyond expected tissue healing timeline",
+        "pain disproportionate to structural findings",
+        "pain worsened by transitions (morning, evening, temperature change, weather)",
+        "irritability and guarding without collapse presentation",
+        "neurovascular mismatch: nerve activity and microcirculation out of sync",
+        "CDR3 (cell danger response phase 3) integration failure"
+      ],
+      "symptoms": [
+        "burning, pulling, or deep aching pain",
+        "discomfort along scar line",
+        "oscillating or wave-like pain pattern",
+        "partial but non-sustained response to analgesics",
+        "local tissue guarding and rigidity",
+        "sleep disturbance",
+        "irritability",
+        "heat sensitivity",
+        "stress-worsened pain (transitions, movement initiation)"
+      ],
+      "distinguishing_features": {
+        "positive": [
+          "wound/structure healed but pain persists",
+          "transitions worsen symptoms",
+          "guarding + irritability dominant (not collapse)"
+        ],
+        "red_flags_to_exclude": [
+          "signs of infection, fever (check CRP, WBC)",
+          "acute neurological deficit (requires CT)",
+          "mechanical tearing sensation or rapid deterioration",
+          "suspected DVT/PE (check D-dimer, angio-CT)"
+        ]
+      },
+      "mechanism": [
+        "fascial and water-grid fragmentation: local coherence slow to restore post-trauma, signals oscillate",
+        "neurovascular decoupling: neural activity and microcirculation desynchronised",
+        "protective guarding loop: fascia holds protective state, further degrading circulation and signal dampening",
+        "incomplete drainage: residual heat/pressure/emotional charge cannot discharge"
+      ],
+      "phase_protocol": [
+        {
+          "phase": 1,
+          "name": "calm_the_gate",
+          "duration_days": "7-14",
+          "goal": "reduce noise, restore nerve-vessel-fascia timing",
+          "actions": [
+            "establish day/night rhythm",
+            "light matrix support",
+            "noise buffering"
+          ],
+          "avoid": [
+            "aggressive mobilisation",
+            "strong blood-moving protocols"
+          ],
+          "interventions": {
+            "herbs": [
+              {
+                "name": "spirulina",
+                "role": "light matrix support",
+                "notes": "part of foundational support stack"
+              },
+              {
+                "name": "vitamin_D",
+                "role": "light matrix support",
+                "notes": "combined with Nigella"
+              },
+              {
+                "name": "nigella_sativa",
+                "role": "light matrix support",
+                "notes": "combined with Vitamin D"
+              },
+              {
+                "name": "melatonin",
+                "role": "sleep regulation",
+                "notes": "use only if evening overactivation confirmed; not automatic"
+              }
+            ],
+            "device": "laser (gentle, low-intensity fascia work) — gate-opening without system overload"
+          }
+        },
+        {
+          "phase": 2,
+          "name": "restore_flow",
+          "duration_weeks": "2-4",
+          "goal": "discharge residual pressure/heat, open microcirculation gently",
+          "interventions": {
+            "herbs": [
+              {
+                "name": "myblood",
+                "role": "mild flow support",
+                "notes": "consider only; not mandatory"
+              },
+              {
+                "name": "ginger",
+                "role": "gentle warming",
+                "notes": "apply as gentle warming laser-adjunct logic (weak ginger); exclude if dry component present (see rules)"
+              }
+            ],
+            "device": "gentle warming laser"
+          }
+        },
+        {
+          "phase": 3,
+          "name": "reintegration",
+          "duration_weeks": "2-6",
+          "goal": "restore load tolerance, dismantle guarding, structural support if needed",
+          "interventions": {
+            "herbs": [
+              {
+                "name": "procardiol",
+                "role": "additional flow support",
+                "notes": "consider for additional flow support"
+              },
+              {
+                "name": "collagen_structural_support",
+                "role": "structural support",
+                "notes": "use if instability or ligament-dominance confirmed"
+              }
+            ],
+            "device": "progressive movement; structural support as indicated"
+          }
+        }
+      ],
+      "interventions": {
+        "contraindications": [
+          "do not suppress pain without integration",
+          "do not initiate strong blood-moving protocol too early",
+          "do not force stretching into guarding fascia without diagnosis",
+          "do not treat as pure neuropathy"
+        ]
+      }
+    },
+    {
+      "name": "kd_sp_holding_field_deficiency",
+      "aliases": [
+        "shaoyin_taiyin_weakness",
+        "lower_axis_failure"
+      ],
+      "triggers": [
+        "flat foot (pes planus) as structural signal",
+        "prolapse tendency",
+        "chronic fatigue / exhaustion",
+        "ligament instability",
+        "Qi deficiency pattern",
+        "adrenal fatigue presentation"
+      ],
+      "symptoms": [
+        "flat arch / pes planus",
+        "prolapse (organ or structural)",
+        "fatigue and low energy",
+        "ligament and joint instability",
+        "hypotonia",
+        "Qi collapse signs",
+        "upward compensation: headache, neck tension, eye pressure, sensory hypersensitivity (too much light/noise)"
+      ],
+      "mechanism": [
+        "Shaoyin (KD) + Taiyin (SP) provide the holding and building field",
+        "when deficient, Shaoyang (GB/SJ fascia, ligaments, membranes) over-compensates",
+        "Shaoyang overload produces: SI joint pain, knee ligament issues, cervical fascia tension, migraine",
+        "foot is the ground-plane reference for the entire vertical axis; arch loss = field cannot hold itself",
+        "upper pole over-compensates when lower pole cannot receive and discharge",
+        "heat accumulates above, cold below (classical TCM polarity reversal)"
+      ],
+      "phase_protocol": [
+        {
+          "phase": 1,
+          "name": "mechanical_and_reflex_foundation",
+          "interventions": {
+            "device": "Whieda flat foot insole — restores mechanical axis; provides continuous low-intensity KD/SP reflexology stimulation; allows reorganisation rather than forcing cure"
+          }
+        },
+        {
+          "phase": 2,
+          "name": "surface_activation",
+          "interventions": {
+            "device": "THZ / cell-activator — superficial meridian activation only; below knee and elbow, scalp; parasympathetic opening / gate-priming; NOT a Summus substitute"
+          }
+        },
+        {
+          "phase": 3,
+          "name": "deep_field_ordering",
+          "interventions": {
+            "device": "Summus laser on KD and SP meridian lines — deep (cm penetration); information/coherence action; field-phase ordering; NOT yang-boosting"
+          }
+        }
+      ],
+      "interventions": {
+        "herbs": [
+          {
+            "name": "huang_qi",
+            "role": "Qi holding and field elevation",
+            "notes": "core herb; not yang-driving"
+          },
+          {
+            "name": "si_jun_zi_tang_formula",
+            "role": "SP-Qi stabilisation, carrier base",
+            "notes": "avoid excessive drying; prevent Qi stagnation; this is a carrier base not primary therapy"
+          },
+          {
+            "name": "liu_wei_di_huang_wan",
+            "role": "Yin nourishment, KD foundation restoration",
+            "notes": "conditional: use only if exhaustion + heat sensation + dryness present AND no strong stagnation, cold dominance, or digestive weakness. If Qi-collapse/hypotonia/prolapse dominant, stabilise Qi first then add Yin."
+          },
+          {
+            "name": "astragalus",
+            "role": "Qi holding and field elevation",
+            "notes": "same as Huang Qi; may be used interchangeably or combined"
+          }
+        ],
+        "sequencing_note": "Qi stabilisation before Yin nourishment when Qi-collapse is dominant"
+      }
+    },
+    {
+      "name": "shaoyang_overload_compensatory",
+      "aliases": [
+        "gb_sj_fascia_overload"
+      ],
+      "triggers": [
+        "secondary to KD/SP holding field deficiency",
+        "GB meridian ascends under load",
+        "chronic ligament instability",
+        "chronic post-surgical pain with fascial guarding"
+      ],
+      "symptoms": [
+        "temporal headache / migraine",
+        "SI joint pain",
+        "knee ligament issues",
+        "cervical fascia tension",
+        "lateral fascial tightness"
+      ],
+      "mechanism": [
+        "compensatory overload when lower holding field (KD/SP) is deficient",
+        "treat root deficiency first; do not target Shaoyang primarily in compensation pattern"
+      ],
+      "interventions": {
+        "note": "do not treat Shaoyang GB points first in compensatory pattern; treat KD 1-3 and SP 4-6 and plantar zones first"
+      }
+    }
+  ],
+  "diagnosis_map": [
+    {
+      "diagnosis": "post_surgical_chronic_pain",
+      "associated_patterns": [
+        "shaoyang_gate_dysfunction"
+      ],
+      "notes": "Interpreted as CDR3 integration failure — system cannot return to rest-function transition after controlled trauma. Not active tissue damage. Neurovascular mismatch + fascial guarding loop + incomplete drainage."
+    },
+    {
+      "diagnosis": "neuropathy_post_surgical",
+      "associated_patterns": [
+        "shaoyang_gate_dysfunction"
+      ],
+      "notes": "Do not treat purely as neuropathy. Shaoyang gate dysfunction may mimic neuropathy. Distinguish by: response to transitions, guarding without collapse, oscillating rather than fixed pain."
+    },
+    {
+      "diagnosis": "pes_planus_flat_foot",
+      "associated_patterns": [
+        "kd_sp_holding_field_deficiency"
+      ],
+      "notes": "Flat foot is a structural signal of KD-SP axis weakness. Not treated as isolated orthopaedic problem. Arch loss = loss of field self-holding. Whieda insole as reflexological-mechanical intervention."
+    },
+    {
+      "diagnosis": "adrenal_fatigue",
+      "associated_patterns": [
+        "kd_sp_holding_field_deficiency"
+      ],
+      "notes": "Maps to KD deficiency. LWDHW for Yin-type adrenal fatigue (exhaustion + heat + dryness). Not appropriate if cold-dominant or digestive weakness predominates."
+    },
+    {
+      "diagnosis": "migraine",
+      "associated_patterns": [
+        "kd_sp_holding_field_deficiency",
+        "shaoyang_overload_compensatory"
+      ],
+      "notes": "Head pain as upper pole overcompensation. Lower axis (KD/SP) does not receive and discharge. Heat above, cold below. Treat plantar zones and KD 1-3, SP 4-6 before addressing head GB points. Reflexology to sole effective in functional/tension/hormonal migraine; less so in acute structural or inflammatory causes."
+    },
+    {
+      "diagnosis": "tension_headache",
+      "associated_patterns": [
+        "kd_sp_holding_field_deficiency",
+        "shaoyang_overload_compensatory"
+      ],
+      "notes": "Same lower-axis mechanism as migraine. Plantar reflexology effective as entry point."
+    },
+    {
+      "diagnosis": "si_joint_dysfunction",
+      "associated_patterns": [
+        "kd_sp_holding_field_deficiency",
+        "shaoyang_overload_compensatory"
+      ],
+      "notes": "Classic presentation of Shaoyang compensation for KD/SP field weakness."
+    },
+    {
+      "diagnosis": "ligament_instability",
+      "associated_patterns": [
+        "kd_sp_holding_field_deficiency"
+      ],
+      "notes": "Ligament tissue governed by Shaoyin-Taiyin holding field. Collagen structural support as Phase 3 adjunct."
+    },
+    {
+      "diagnosis": "prolapse",
+      "associated_patterns": [
+        "kd_sp_holding_field_deficiency"
+      ],
+      "notes": "Qi-collapse / prolapse dominant presentation: stabilise Qi before Yin nourishment. Huang Qi + Si Jun Zi Tang as base."
+    }
+  ],
+  "rules": [
+    {
+      "condition": "wound healed AND pain persists AND transitions worsen symptoms AND guarding dominant",
+      "action": "assign pattern: shaoyang_gate_dysfunction; initiate Phase 1 (calm_the_gate)"
+    },
+    {
+      "condition": "red flags present (fever, acute neuro deficit, mechanical tear, DVT/PE signs)",
+      "action": "halt engine; flag for Western medical workup before pattern assignment"
+    },
+    {
+      "condition": "shaoyang_gate_dysfunction AND phase == 1",
+      "action": "avoid strong blood-moving herbs; avoid aggressive mobilisation; use light matrix support + laser gently"
+    },
+    {
+      "condition": "ginger prescribed for warming AND dry component confirmed",
+      "action": "exclude ginger from Pack 1 / Phase 2; flag conflict"
+    },
+    {
+      "condition": "phase_1 complete AND pain partially resolved",
+      "action": "advance to Phase 2 (restore_flow); add mild flow support"
+    },
+    {
+      "condition": "phase_2 complete AND guarding reduced",
+      "action": "advance to Phase 3 (reintegration); add procardiol if indicated; add collagen support if ligament-dominant"
+    },
+    {
+      "condition": "pattern == kd_sp_holding_field_deficiency AND Qi_collapse == true",
+      "action": "sequence: Qi stabilisation first (Huang Qi + Si Jun Zi Tang); delay Yin nourishment (LWDHW)"
+    },
+    {
+      "condition": "pattern == kd_sp_holding_field_deficiency AND Qi_collapse == false AND heat_sensation == true AND dryness == true",
+      "action": "add Liu Wei Di Huang Wan for Yin nourishment"
+    },
+    {
+      "condition": "pattern == kd_sp_holding_field_deficiency AND strong_stagnation == true",
+      "action": "contraindicate Liu Wei Di Huang Wan"
+    },
+    {
+      "condition": "pattern == kd_sp_holding_field_deficiency AND cold_dominance == true",
+      "action": "contraindicate Liu Wei Di Huang Wan"
+    },
+    {
+      "condition": "pattern == kd_sp_holding_field_deficiency AND digestive_weakness_dominant == true",
+      "action": "contraindicate Liu Wei Di Huang Wan; prioritise SP-Qi stabilisation"
+    },
+    {
+      "condition": "headache present AND pattern == kd_sp_holding_field_deficiency",
+      "action": "do NOT treat head GB points first; treat KD 1-3 + SP 4-6 + plantar reflex zones first"
+    },
+    {
+      "condition": "migraine type == acute_structural OR inflammatory_lesion",
+      "action": "plantar reflexology and lower-axis treatment less effective; flag for Western workup"
+    },
+    {
+      "condition": "shaoyang_overload_compensatory detected",
+      "action": "identify root: check for kd_sp_holding_field_deficiency; treat root first; do not target Shaoyang directly as primary"
+    },
+    {
+      "condition": "frailty == true",
+      "action": "reduce formula complexity; avoid multi-herb combinations; prioritise single-action base herbs"
+    },
+    {
+      "condition": "digestive_sensitivity == true",
+      "action": "review herbal formula for GI-irritating agents; simplify preparation; consider modification of Si Jun Zi Tang base"
+    },
+    {
+      "condition": "device == Summus AND pattern == kd_sp_holding_field_deficiency",
+      "action": "apply on KD 1-3-6 line and SP line; goal is field-phase ordering and mitochondrial tonal restoration, NOT yang boost"
+    },
+    {
+      "condition": "device == THZ_cell_activator",
+      "action": "restrict to superficial meridians below knee and elbow + scalp only; use as gate-priming or parasympathetic opener; NOT as deep treatment or Summus substitute"
+    },
+    {
+      "condition": "system is in chronic_rigid state (dampness, phlegm, calcification dominant)",
+      "action": "reflexology and field interventions have reduced effectiveness; flag; modify approach"
+    },
+    {
+      "condition": "system has residual adaptivity (water coherence ordering capacity intact)",
+      "action": "reflexology and field interventions more likely effective; proceed with lower-intensity stimulation"
+    }
+  ],
+  "input_variables": [
+    "wound_healing_status: enum(healed, partial, not_healed)",
+    "pain_character: enum(burning, pulling, deep_aching, fixed, moving, diffuse, oscillating)",
+    "pain_timeline: string (days post-surgery or onset)",
+    "transition_sensitivity: boolean",
+    "guarding_present: boolean",
+    "collapse_present: boolean",
+    "red_flags: boolean (fever, acute_neuro, DVT_PE, mechanical_tear)",
+    "thermal_state: enum(heat_dominant, cold_dominant, mixed)",
+    "moisture_state: enum(dry, damp, normal)",
+    "energy_state: enum(deficient, collapsed, excess, normal)",
+    "digestive_sensitivity: boolean",
+    "frailty: boolean",
+    "prolapse_present: boolean",
+    "ligament_instability: boolean",
+    "pes_planus: boolean",
+    "headache_type: enum(migraine, tension, cluster, uncertain)",
+    "heat_sensation: boolean",
+    "dryness: boolean",
+    "Qi_collapse: boolean",
+    "stagnation_level: enum(none, mild, strong)",
+    "cold_dominance: boolean",
+    "digestive_weakness_dominant: boolean",
+    "system_rigidity: enum(none, mild, moderate, severe)",
+    "adaptivity_intact: boolean",
+    "phase_current: enum(1, 2, 3, none)",
+    "emotionalConstraint: boolean",
+    "debugMode: boolean"
+  ],
+  "theoretical_framework_notes": [
+    {
+      "concept": "reflexology_mechanism",
+      "engine_relevant": true,
+      "summary": "Reflexology zones carry neural-field representational information, not organ replacement. Plantar zones reflect vertical axis tension distribution. Small stimulus can have disproportionate effect if system is open/adaptive. Works better in chronic stuck states than acute destruction."
+    },
+    {
+      "concept": "plantar_zone_as_ground_plane",
+      "engine_relevant": true,
+      "summary": "Foot is gravitationally anchored reference interface for entire vertical axis. KD-SP-BL state indicator. Treating plantar zones addresses upper pole overcompensation (headache, eye pressure, neck tension) by closing the axis loop below."
+    },
+    {
+      "concept": "meridian_as_fascia_tension_axis",
+      "engine_relevant": true,
+      "summary": "Meridians are embryologically fixed preferential tension-conduction directions within collagen-fascia continuum. Not discrete channels. Shaoyin (KD): anchors. Taiyin (SP): builds and holds. Shaoyang (GB/SJ): distributes and transitions."
+    },
+    {
+      "concept": "ear_reflexology_mechanism",
+      "engine_relevant": false,
+      "summary": "Auriculo-therapy: embryological gill-arch remnant; vagus/trigeminus/facialis/glossopharyngeus junction; autonomic gateway; rapid reset effect. Different logic from plantar. Not currently mapped to engine patterns."
+    },
+    {
+      "concept": "eye_reflexology_mechanism",
+      "engine_relevant": false,
+      "summary": "Retina is CNS tissue; eye reflexology zones have direct CNS connection; strong, fast, but potentially unstable. Precision instrument, not general application. Not currently mapped to engine patterns."
+    },
+    {
+      "concept": "CDR3_integration_failure",
+      "engine_relevant": true,
+      "summary": "Cell danger response Phase 3: integration failure — system cannot transition from repair (Yin) to function (Yang). Caused by mitochondrial weakness, water-grid contamination with inactive metabolites, or fragmented water-grid. Key mechanistic model for post-surgical chronic pain."
+    },
+    {
+      "concept": "water_grid_coherence",
+      "engine_relevant": true,
+      "summary": "Structured water in fascia-collagen continuum maintains and transmits tension pattern. Decoherence produces oscillating signals and incomplete drainage. Restoration target in Phases 1-2."
+    }
+  ]
+}

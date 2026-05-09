@@ -8,19 +8,23 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - A server-side protocol endpoint at `app/api/protocol/route.js`
 - A dedicated headache/migraine pattern endpoint at `app/api/headache/route.js`
 - A top-level Cranio-Visceral Developmental Gates endpoint at `app/api/pharyngeal-arch/route.js`
+- A Vertical Axis & Post-Surgical Integration endpoint at `app/api/vertical-axis/route.js`
 - The migrated rule engine in `lib/avicenna/engine.cjs`
 - The Batch 6 headache engine in `lib/avicenna/headacheEngine.cjs`
 - The Batch 10 pharyngeal arch engine in `lib/avicenna/pharyngealArchEngine.cjs`
+- The Batch 11 vertical-axis and post-surgical integration engine in `lib/avicenna/postSurgicalIntegrationEngine.cjs`
 - Claude-exported data files in `lib/avicenna/data/`
 - Batch 6 structured source data in `lib/avicenna/data/engines/headacheEngine.batch6.json`
 - Batch 7 headache/pain extension data in `lib/avicenna/data/engines/avicenna_engine_batch7.json`
 - Batch 8 GI-migraine-neck, CGRP support, medication-capacity, and mixed joint phase data in `lib/avicenna/data/engines/avicenna_engine_batch8.json`
 - Batch 9 neuropathy, joint, pelvic/Shaoyin, claudication, back-pain data in `lib/avicenna/data/engines/avicenna_engine_batch9.json`
 - Batch 10 Cranio-Visceral Developmental Gates / Pharyngeal Arch data in `lib/avicenna/data/engines/avicenna_engine_batch10.json` and `lib/avicenna/data/engines/pharyngealArchEngine.json`
-- Batch 9 and Batch 10 herb, cranial nerve, gate organ, developmental model, and field medicine concept libraries in `lib/avicenna/data/libraries/`
+- Batch 11 Vertical Axis & Post-Surgical Integration data in `lib/avicenna/data/engines/avicenna_engine_batch11.json` and `lib/avicenna/data/engines/postSurgicalIntegrationEngine.json`
+- Batch 9, Batch 10, and Batch 11 herb, cranial nerve, gate organ, developmental model, reflexology, vertical-axis, and field medicine concept libraries in `lib/avicenna/data/libraries/`
 - Engine regression checks in `scripts/test-engine.cjs`
 - Headache engine checks in `scripts/test-headache-engine.cjs`
 - Pharyngeal arch engine checks in `scripts/test-pharyngeal-arch-engine.cjs`
+- Vertical-axis integration checks in `scripts/test-post-surgical-integration-engine.cjs`
 - Original Claude export preserved in `avicenna-export/`
 
 ## Run locally
@@ -49,6 +53,7 @@ http://localhost:3000
 npm run test:engine
 npm run test:headache
 npm run test:arch
+npm run test:vertical
 ```
 
 ## GitHub setup

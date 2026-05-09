@@ -1031,6 +1031,211 @@ const archFlags = [
   ["internal_audit", "Internal audit mode"]
 ];
 
+const verticalInitialInput = {
+  wound_healing_status: "",
+  pain_character: [],
+  pain_timeline: "",
+  transition_sensitivity: false,
+  guarding_present: false,
+  collapse_present: false,
+  red_flags: [],
+  thermal_state: "",
+  moisture_state: "",
+  energy_state: "",
+  digestive_sensitivity: false,
+  frailty: false,
+  prolapse_present: false,
+  ligament_instability: false,
+  pes_planus: false,
+  headache_type: "uncertain",
+  heat_sensation: false,
+  dryness: false,
+  Qi_collapse: false,
+  stagnation_level: "none",
+  cold_dominance: false,
+  digestive_weakness_dominant: false,
+  system_rigidity: "none",
+  adaptivity_intact: false,
+  phase_current: "none",
+  phase_1_complete: false,
+  pain_partially_resolved: false,
+  phase_2_complete: false,
+  guarding_reduced: false,
+  ginger_requested: false,
+  dry_component_confirmed: false,
+  device_selected: [],
+  upper_compensation_signs: [],
+  debugMode: false
+};
+
+const verticalTextFields = [
+  {
+    key: "pain_timeline",
+    label: "Pain timeline",
+    placeholder: "Example: 8 weeks, 3 months, chronic"
+  }
+];
+
+const verticalFieldGroups = [
+  {
+    key: "wound_healing_status",
+    label: "Tissue / wound status",
+    options: [
+      ["healed", "Healed", "Structure appears healed but symptoms continue"],
+      ["partial", "Partial", "Recovery is still incomplete"],
+      ["not_healed", "Not healed", "Healing is still active"],
+      ["unknown", "Unknown", "Not sure"]
+    ]
+  },
+  {
+    key: "thermal_state",
+    label: "Thermal state",
+    options: [
+      ["heat_dominant", "Heat dominant", "Burning, hot, reactive"],
+      ["cold_dominant", "Cold dominant", "Cold, weak, slow recovery"],
+      ["mixed", "Mixed", "Heat above or cold below pattern"],
+      ["neutral", "Neutral", "No clear thermal direction"]
+    ]
+  },
+  {
+    key: "moisture_state",
+    label: "Moisture state",
+    options: [
+      ["dry", "Dry", "Dryness or depleted fluids"],
+      ["damp", "Damp", "Heavy, boggy, slow-clearing"],
+      ["normal", "Neutral", "No clear moisture pattern"]
+    ]
+  },
+  {
+    key: "energy_state",
+    label: "Energy state",
+    options: [
+      ["deficient", "Deficient", "Low reserve"],
+      ["collapsed", "Collapsed", "Exhausted or hypotonic"],
+      ["excess", "Overactive", "Wired or reactive"],
+      ["normal", "Stable", "No clear energy issue"]
+    ]
+  },
+  {
+    key: "headache_type",
+    label: "Headache / upper-pole pattern",
+    options: [
+      ["migraine", "Migraine-like", "Upper-pole compensation possible"],
+      ["tension", "Tension-like", "Neck/eye/holding strain"],
+      ["cluster", "Cluster-like", "Stronger cranial gate overlay"],
+      ["acute_structural", "Acute structural", "Needs medical distinction"],
+      ["inflammatory_lesion", "Inflammatory lesion", "Needs medical distinction"],
+      ["uncertain", "Uncertain", "Not sure"]
+    ]
+  },
+  {
+    key: "stagnation_level",
+    label: "Stagnation level",
+    options: [
+      ["none", "None", "No clear stagnation"],
+      ["mild", "Mild", "Some stuckness"],
+      ["strong", "Strong", "Marked stagnation or congestion"]
+    ]
+  },
+  {
+    key: "system_rigidity",
+    label: "System rigidity",
+    options: [
+      ["none", "None", "Responsive and changeable"],
+      ["mild", "Mild", "Still adaptable"],
+      ["moderate", "Moderate", "Less responsive"],
+      ["severe", "Severe", "Very rigid or calcified-feeling"]
+    ]
+  },
+  {
+    key: "phase_current",
+    label: "Current phase",
+    options: [
+      ["1", "Phase 1", "calm_the_gate"],
+      ["2", "Phase 2", "restore_flow"],
+      ["3", "Phase 3", "reintegration"],
+      ["none", "Let engine infer", "No phase selected"]
+    ]
+  }
+];
+
+const verticalMultiGroups = [
+  {
+    key: "pain_character",
+    title: "Pain character",
+    items: [
+      ["burning", "Burning"],
+      ["pulling", "Pulling"],
+      ["deep_aching", "Deep aching"],
+      ["fixed", "Fixed"],
+      ["moving", "Moving"],
+      ["diffuse", "Diffuse"],
+      ["oscillating", "Oscillating / wave-like"]
+    ]
+  },
+  {
+    key: "upper_compensation_signs",
+    title: "Upper-pole / Shaoyang compensation signs",
+    items: [
+      ["migraine", "Migraine"],
+      ["headache", "Headache"],
+      ["neck_tension", "Neck tension"],
+      ["eye_pressure", "Eye pressure"],
+      ["sensory_hypersensitivity", "Light/noise sensitivity"],
+      ["si_joint_dysfunction", "SI joint dysfunction"],
+      ["knee_ligament_instability", "Knee ligament instability"],
+      ["cervical_fascia_tension", "Cervical fascia tension"],
+      ["lateral_fascial_tightness", "Lateral fascial tightness"],
+      ["scar_line_discomfort", "Scar-line discomfort"],
+      ["partial_analgesic_response", "Partial but short-lived analgesic response"]
+    ]
+  },
+  {
+    key: "device_selected",
+    title: "Device layer selected",
+    items: [
+      ["Whieda_insole", "Whieda insole"],
+      ["THZ_cell_activator", "THZ / cell activator"],
+      ["Summus", "Summus laser"]
+    ]
+  },
+  {
+    key: "red_flags",
+    title: "Red flags",
+    items: [
+      ["fever", "Fever"],
+      ["acute_neuro_deficit", "Acute neurological deficit"],
+      ["DVT_PE", "DVT/PE signs"],
+      ["mechanical_tear", "Mechanical tear or rapid deterioration"]
+    ],
+    safety: true
+  }
+];
+
+const verticalFlags = [
+  ["transition_sensitivity", "Transition-sensitive pain"],
+  ["guarding_present", "Guarding / rigidity present"],
+  ["collapse_present", "Collapse present"],
+  ["pes_planus", "Pes planus / flat foot"],
+  ["prolapse_present", "Prolapse tendency"],
+  ["ligament_instability", "Ligament instability"],
+  ["Qi_collapse", "Qi collapse / hypotonia"],
+  ["heat_sensation", "Heat sensation"],
+  ["dryness", "Dryness"],
+  ["cold_dominance", "Cold dominance"],
+  ["digestive_weakness_dominant", "Digestive weakness dominant"],
+  ["digestive_sensitivity", "Digestive sensitivity"],
+  ["frailty", "Frailty"],
+  ["adaptivity_intact", "Adaptivity intact"],
+  ["phase_1_complete", "Phase 1 complete"],
+  ["pain_partially_resolved", "Pain partially resolved"],
+  ["phase_2_complete", "Phase 2 complete"],
+  ["guarding_reduced", "Guarding reduced"],
+  ["ginger_requested", "Ginger requested"],
+  ["dry_component_confirmed", "Dry component confirmed"],
+  ["debugMode", "Debug mode"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -1161,6 +1366,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("arch")}
       >
         Pharyngeal gates
+      </button>
+      <button
+        className={mode === "vertical" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("vertical")}
+      >
+        Vertical axis
       </button>
     </nav>
   );
@@ -1526,6 +1738,228 @@ function PharyngealArchEngineSection() {
   );
 }
 
+function VerticalAxisResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient;
+  const scoreRows = Object.entries(result.pattern_scores || {});
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className={result.stopped ? "av-output-header av-output-header-danger" : "av-output-header"}>
+        <p>{result.stopped ? "Medical safety stop" : "Vertical-axis integration"}</p>
+        <strong>{patient.title}</strong>
+      </div>
+
+      <section>
+        <h2>Reintegration interpretation</h2>
+        <p>{patient.summary}</p>
+        {!result.stopped && <p>{patient.phase}</p>}
+      </section>
+
+      <TagSection title="Suggested sequence" items={patient.sequence || []} tone="effect" empty="No sequencing suggested from current inputs." />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {patient.safety_notes.map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && !result.stopped && (
+        <details className="av-debug" open>
+          <summary>Advanced clinician view</summary>
+          <p>Detected phase: {result.detected_phase ? `Phase ${result.detected_phase} / ${result.detected_phase_name}` : "not selected"}</p>
+          <p>Gate status: {result.gate_status}</p>
+          <p>KD-SP holding status: {result.kd_sp_holding_status}</p>
+          <p>Shaoyang compensation: {result.shaoyang_compensation_status}</p>
+          <p>Root priority: {result.root_priority}</p>
+          <p>Rigidity/adaptivity: {result.rigidity_adaptivity_index?.interpretation}</p>
+          {result.why_headache_may_be_compensatory && <p>{result.why_headache_may_be_compensatory}</p>}
+          {result.why_post_surgical_pain_may_persist && <p>{result.why_post_surgical_pain_may_persist}</p>}
+
+          <section>
+            <h2>Pattern scores</h2>
+            {scoreRows.map(([name, value]) => (
+              <span key={name}>{titleCase(name)}: {value.score}</span>
+            ))}
+          </section>
+
+          <TagSection title="Triggered rules" items={(result.triggered_rules || []).map((item) => `${item.id}: ${item.action}`)} tone="mod" empty="None triggered" />
+          <TagSection title="Contraindications" items={result.contraindications || []} tone="avoid" empty="None triggered" />
+          <TagSection title="Core principles" items={result.core_phrases || []} tone="effect" empty="None listed" />
+
+          <section>
+            <h2>Reflexology concepts</h2>
+            {(result.reflexology_concepts?.concepts || []).map((concept) => (
+              <span key={concept.concept}>{titleCase(concept.concept)}: {concept.summary}</span>
+            ))}
+          </section>
+
+          <section>
+            <h2>Vertical-axis concepts</h2>
+            {(result.vertical_axis_concepts?.axes || []).map((axis) => (
+              <span key={axis.id}>{titleCase(axis.id)}: {axis.interpretation}</span>
+            ))}
+          </section>
+
+          <section>
+            <h2>Cross-batch links</h2>
+            {(result.cross_batch_links || []).map((item) => <span key={item}>{item}</span>)}
+          </section>
+        </details>
+      )}
+
+      {advanced && result.stopped && (
+        <details className="av-debug" open>
+          <summary>Advanced safety view</summary>
+          <TagSection title="Triggered rules" items={(result.triggered_rules || []).map((item) => `${item.id}: ${item.action}`)} tone="avoid" empty="None triggered" />
+          <TagSection title="Red flags" items={result.red_flag_status?.flags || []} tone="avoid" empty="None listed" />
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function VerticalAxisEngineSection() {
+  const [input, setInput] = useState(verticalInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  function toggleArray(key, value) {
+    setInput((current) => {
+      const list = current[key];
+      return {
+        ...current,
+        [key]: list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+      };
+    });
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/vertical-axis", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, debugMode: advanced || input.debugMode })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Vertical-axis evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(verticalInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>Vertical Axis & Post-Surgical Integration</h2>
+          <p className="av-muted">
+            Detects transition, holding-field, and compensatory overload patterns. This is an educational pattern-recognition tool, not a medical diagnosis.
+          </p>
+        </section>
+
+        {verticalTextFields.map((field) => (
+          <section className="av-section" key={field.key}>
+            <h2>{field.label}</h2>
+            <input
+              className="av-text-input"
+              type="text"
+              value={input[field.key]}
+              placeholder={field.placeholder}
+              onChange={(event) => setField(field.key, event.target.value)}
+            />
+          </section>
+        ))}
+
+        {verticalFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {verticalMultiGroups.map((group) => (
+          <ToggleList
+            key={group.key}
+            title={group.title}
+            items={group.items}
+            selected={input[group.key]}
+            onToggle={(value) => toggleArray(group.key, value)}
+            safety={group.safety}
+          />
+        ))}
+
+        <ToggleList
+          title="Vertical-axis flags"
+          items={verticalFlags}
+          selected={verticalFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show clinician/reflexology/vertical-axis panels</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate vertical axis"}
+        </button>
+      </form>
+
+      <VerticalAxisResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function HeadacheEngineSection() {
   const [input, setInput] = useState(headacheInitialInput);
   const [result, setResult] = useState(null);
@@ -1853,13 +2287,17 @@ export default function AvicennaApp() {
       ? "Pain pattern engine"
       : mode === "arch"
         ? "Cranio-Visceral Developmental Gates"
-        : "Wellness protocol generator";
+        : mode === "vertical"
+          ? "Vertical Axis & Post-Surgical Integration"
+          : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
       ? "Safety-first terrain scoring across nerve, fascia, gut, vessel, and energy-recovery axes"
       : mode === "arch"
         ? "Pharyngeal Arch Engine: symptom to gate to axis to reset strategy"
-        : "Rule-based terrain assessment and tea protocol builder";
+        : mode === "vertical"
+          ? "Post-surgical reintegration, KD-SP holding field, and compensatory Shaoyang logic"
+          : "Rule-based terrain assessment and tea protocol builder";
 
   return (
     <main className="av-page">
@@ -1872,6 +2310,8 @@ export default function AvicennaApp() {
 
       {mode === "arch" ? (
         <PharyngealArchEngineSection />
+      ) : mode === "vertical" ? (
+        <VerticalAxisEngineSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

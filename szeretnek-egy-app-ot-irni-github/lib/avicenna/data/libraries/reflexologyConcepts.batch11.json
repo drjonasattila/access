@@ -1,0 +1,49 @@
+{
+  "source_batch": 1,
+  "title": "Batch 11 Reflexology / Plantar Ground-Plane Concepts",
+  "patient_facing_caution": "These are educational pattern-recognition concepts, not diagnostic claims.",
+  "concepts": [
+    {
+      "concept": "reflexology_mechanism",
+      "engine_relevant": true,
+      "summary": "Reflexology zones carry neural-field representational information, not organ replacement. Plantar zones reflect vertical axis tension distribution. Small stimulus can have disproportionate effect if system is open/adaptive. Works better in chronic stuck states than acute destruction."
+    },
+    {
+      "concept": "plantar_zone_as_ground_plane",
+      "engine_relevant": true,
+      "summary": "Foot is gravitationally anchored reference interface for entire vertical axis. KD-SP-BL state indicator. Treating plantar zones addresses upper pole overcompensation (headache, eye pressure, neck tension) by closing the axis loop below."
+    },
+    {
+      "concept": "meridian_as_fascia_tension_axis",
+      "engine_relevant": true,
+      "summary": "Meridians are embryologically fixed preferential tension-conduction directions within collagen-fascia continuum. Not discrete channels. Shaoyin (KD): anchors. Taiyin (SP): builds and holds. Shaoyang (GB/SJ): distributes and transitions."
+    },
+    {
+      "concept": "CDR3_integration_failure",
+      "engine_relevant": true,
+      "summary": "Cell danger response Phase 3: integration failure — system cannot transition from repair (Yin) to function (Yang). Caused by mitochondrial weakness, water-grid contamination with inactive metabolites, or fragmented water-grid. Key mechanistic model for post-surgical chronic pain."
+    },
+    {
+      "concept": "water_grid_coherence",
+      "engine_relevant": true,
+      "summary": "Structured water in fascia-collagen continuum maintains and transmits tension pattern. Decoherence produces oscillating signals and incomplete drainage. Restoration target in Phases 1-2."
+    }
+  ],
+  "key_principles": [
+    "Small stimulus can have disproportionate effect if the system retains adaptivity.",
+    "Foot is the gravitationally anchored reference interface for the entire vertical axis.",
+    "Meridians are preferential tension-conduction directions within fascia."
+  ],
+  "non_default_concepts": [
+    {
+      "concept": "ear_reflexology_mechanism",
+      "engine_relevant": false,
+      "summary": "Auriculo-therapy: embryological gill-arch remnant; vagus/trigeminus/facialis/glossopharyngeus junction; autonomic gateway; rapid reset effect. Different logic from plantar. Not currently mapped to engine patterns."
+    },
+    {
+      "concept": "eye_reflexology_mechanism",
+      "engine_relevant": false,
+      "summary": "Retina is CNS tissue; eye reflexology zones have direct CNS connection; strong, fast, but potentially unstable. Precision instrument, not general application. Not currently mapped to engine patterns."
+    }
+  ]
+}

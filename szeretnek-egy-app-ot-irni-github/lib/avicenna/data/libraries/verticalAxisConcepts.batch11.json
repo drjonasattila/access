@@ -1,0 +1,114 @@
+{
+  "source_batch": 1,
+  "title": "Batch 11 Vertical Axis Concepts",
+  "core_principle": "Pain persists not because tissue is still damaged, but because the system failed to restore coherent transition between repair and function.",
+  "axes": [
+    {
+      "id": "shaoyang_gate",
+      "pattern": "shaoyang_gate_dysfunction",
+      "interpretation": "transitional gate failure / CDR3 integration failure",
+      "clinical_logic": "post-surgical or post-injury pain may persist because timing between repair and function has not reintegrated"
+    },
+    {
+      "id": "kd_sp_holding_field",
+      "pattern": "kd_sp_holding_field_deficiency",
+      "interpretation": "Shaoyin + Taiyin holding-field weakness",
+      "clinical_logic": "lower pole cannot receive/discharge, so the upper pole compensates"
+    },
+    {
+      "id": "compensatory_shaoyang",
+      "pattern": "shaoyang_overload_compensatory",
+      "interpretation": "GB/SJ overload secondary to KD/SP deficiency",
+      "clinical_logic": "treat KD1-3 + SP4-6 + plantar zones before treating compensatory Shaoyang overload"
+    }
+  ],
+  "phase_model": {
+    "phase_1": {
+      "id": "calm_the_gate",
+      "goal": "reduce noise and restore nerve-vessel-fascia timing",
+      "allowed": [
+        "Spirulina",
+        "Vitamin D",
+        "Nigella",
+        "gentle laser",
+        "sleep rhythm support",
+        "optional melatonin only if evening overactivation present"
+      ],
+      "avoid": [
+        "aggressive mobilisation",
+        "strong blood movers"
+      ]
+    },
+    "phase_2": {
+      "id": "restore_flow",
+      "goal": "gently reopen microcirculation and discharge residual pressure",
+      "allowed": [
+        "MyBlood",
+        "weak ginger if no dry component",
+        "warming laser"
+      ],
+      "hard_rules": [
+        "If dry component confirmed, exclude ginger."
+      ]
+    },
+    "phase_3": {
+      "id": "reintegration",
+      "goal": "restore load tolerance and structural support",
+      "allowed": [
+        "ProCardiol",
+        "collagen structural support if instability confirmed",
+        "progressive movement"
+      ]
+    }
+  },
+  "device_sequence": [
+    {
+      "phase": 1,
+      "device": "Whieda insole",
+      "role": "mechanical axis + low-intensity KD/SP reflex stimulation"
+    },
+    {
+      "phase": 2,
+      "device": "THZ / cell activator",
+      "role": "superficial gate priming only",
+      "restrictions": [
+        "below knee",
+        "below elbow",
+        "scalp only",
+        "not a Summus substitute"
+      ]
+    },
+    {
+      "phase": 3,
+      "device": "Summus laser",
+      "role": "deep field ordering and mitochondrial tonal restoration",
+      "warning": "NOT Yang boosting"
+    }
+  ],
+  "herbal_sequence": {
+    "qi_collapse_dominant": [
+      "Huang Qi",
+      "Si Jun Zi Tang base",
+      "then consider Yin restoration only after holding improves"
+    ],
+    "liu_wei_di_huang_wan_allowed_only_if": [
+      "exhaustion",
+      "heat sensation",
+      "dryness",
+      "no strong stagnation",
+      "no cold dominance",
+      "no major digestive weakness"
+    ],
+    "contraindications": [
+      "strong stagnation",
+      "cold dominance",
+      "digestive weakness dominant"
+    ]
+  },
+  "cross_batch_links": [
+    "Batch 6-8 headache migration logic: migraine may represent upper-pole compensation.",
+    "Batch 9 pelvic vertical dissociation: pelvic collapse and flat-foot can share vertical-axis instability.",
+    "Batch 10 pharyngeal/developmental gates: cranial gates can be downstream of vertical-axis holding failure.",
+    "Migraine/fascia/dysautonomia modules: cervical fascia overload may be downstream KD-SP deficiency."
+  ]
+}
