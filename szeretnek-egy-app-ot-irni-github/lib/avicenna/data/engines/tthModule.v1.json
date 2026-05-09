@@ -1,0 +1,189 @@
+{
+  "module": "TTH_MODULE_v1.0",
+  "source_module": "TRANSITION_ENGINE_v1.0 + TTH_MODULE + UNIFIED_TRANSITION_MAP",
+  "pattern": {
+    "name": "tth_static_tension",
+    "label": "Tension-Type Headache — Static Fascia Load",
+    "western_classification": [
+      "Infrequent episodic TTH",
+      "Frequent episodic TTH",
+      "Chronic TTH (>15 days/month)"
+    ],
+    "core_mechanism": "Chronic low-frequency static tension in superficial fascia. Reduced micro-movement → sustained nociceptive signalling. Static load, not inflammatory flare.",
+    "backend_axiom": "TTH = disorder of sustained tension. Migraine = disorder of failed adaptation.",
+    "triggers": [
+      "headache_quality == pressing OR tightening (non-pulsating)",
+      "headache_laterality == bilateral",
+      "aggravated_by_activity == false",
+      "nausea_present == false",
+      "photophobia_present AND phonophobia_present == false (max one allowed)",
+      "red_flag_present == false"
+    ],
+    "symptoms": [
+      "bilateral pressing or tightening headache",
+      "mild to moderate intensity",
+      "pericranial muscle tenderness",
+      "neck and shoulder tension",
+      "stress-linked onset",
+      "no vomiting"
+    ],
+    "tcm_backend_mapping": {
+      "primary_pattern": "Qi stagnation → muscle tightening",
+      "meridian": "Taiyang fascia (BL/SI)",
+      "secondary_risk": "Shaoyang/Yangming spread if untreated → nausea → migraine transition",
+      "liver_involvement": "possible in selected cases (stress-triggered Liver Qi stagnation)"
+    },
+    "progression_logic": [
+      {
+        "condition": "persistent_tension == true AND yin_support_fails == true",
+        "outcome": "progression toward migraine phenotype",
+        "markers": [
+          "photophobia",
+          "nausea",
+          "visual phenomena"
+        ]
+      },
+      {
+        "condition": "chronic_tth == true AND central_sensitisation == true",
+        "outcome": "central sensitisation established — harder to reverse with peripheral-only treatment"
+      }
+    ],
+    "red_flags": [
+      "sudden onset (thunderclap)",
+      "neurological deficit",
+      "papilloedema",
+      "neck stiffness",
+      "immunocompromised",
+      "fever or weight loss",
+      "new headache over 50 years",
+      "progressive worsening",
+      "recent head trauma",
+      "headache worse with exercise"
+    ],
+    "interventions": {
+      "western_acute": [
+        {
+          "name": "Paracetamol",
+          "role": "First-line acute analgesia",
+          "notes": ""
+        },
+        {
+          "name": "NSAIDs (ibuprofen, aspirin 500–1000mg)",
+          "role": "First-line acute analgesia",
+          "notes": "Avoid medication overuse"
+        }
+      ],
+      "western_prophylaxis": [
+        {
+          "name": "Amitriptyline",
+          "dose": "10–25mg, max 50mg",
+          "role": "First-line prophylaxis",
+          "notes": ""
+        },
+        {
+          "name": "Mirtazapine / Venlafaxine",
+          "role": "Second-line prophylaxis",
+          "notes": ""
+        }
+      ],
+      "western_avoid": [
+        "opioids",
+        "medication overuse"
+      ],
+      "western_non_pharma": [
+        "patient education",
+        "stress management",
+        "sleep hygiene",
+        "physiotherapy / posture correction"
+      ],
+      "integrative": {
+        "device": {
+          "modality": "Photobiomodulation (PBM) / HILT",
+          "target_zones": [
+            "pericranial muscles",
+            "cervical muscles"
+          ],
+          "rationale": "May reduce muscle tension and peripheral nociceptive input",
+          "evidence_note": "Potential benefit in chronic TTH; adjunctive only"
+        },
+        "supplements": [
+          {
+            "name": "Magnesium",
+            "role": "Muscle relaxation, neuromodulation",
+            "notes": ""
+          },
+          {
+            "name": "Riboflavin (B2)",
+            "role": "Mitochondrial support",
+            "notes": ""
+          },
+          {
+            "name": "Hydration + electrolytes",
+            "role": "Baseline tissue support",
+            "notes": ""
+          },
+          {
+            "name": "DuoLife Day/Night",
+            "role": "Stress-sleep rhythm support",
+            "notes": "Adjunctive only; by trained practitioner"
+          }
+        ],
+        "herbs_backend_only": [
+          {
+            "name": "Liu Wei Di Huang Wan / Zhi Bai Di Huang Wan",
+            "condition": "yin_depletion_signs == true",
+            "role": "Yin nourishment, reduce central sensitisation substrate",
+            "notes": "BACKEND ONLY — never display on front-end"
+          },
+          {
+            "name": "Huang Lian Jie Du Tang",
+            "condition": "heat_signs == true AND heat_toxicity_overlay == true",
+            "role": "Clear heat and toxicity overlay",
+            "notes": "BACKEND ONLY — never display on front-end"
+          }
+        ],
+        "lifestyle": [
+          "stress reduction",
+          "sleep optimisation",
+          "screen/neck load awareness"
+        ]
+      }
+    }
+  },
+  "classification_rule": {
+    "required": [
+      "headache_quality pressing/tightening",
+      "bilateral laterality",
+      "not aggravated by activity",
+      "nausea absent",
+      "vomiting absent",
+      "photophobia and phonophobia not both present",
+      "red flags absent"
+    ]
+  },
+  "backend_axiom": "TTH = disorder of sustained tension. Migraine = disorder of failed adaptation.",
+  "output_mapping": {
+    "load": "static fascia load",
+    "axis": "posterior sensory / Taiyang expression",
+    "expression": "mechanical-fascial expression",
+    "transition_risk": "risk of migraine transition if Yin support fails"
+  },
+  "backend_formula_rules": [
+    {
+      "name": "Liu Wei Di Huang Wan / Zhi Bai Di Huang Wan",
+      "condition": "yin_depletion_signs == true",
+      "role": "Yin nourishment, reduce central sensitisation substrate",
+      "notes": "BACKEND ONLY — never display on front-end"
+    },
+    {
+      "name": "Huang Lian Jie Du Tang",
+      "condition": "heat_signs == true AND heat_toxicity_overlay == true",
+      "role": "Clear heat and toxicity overlay",
+      "notes": "BACKEND ONLY — never display on front-end"
+    }
+  ],
+  "frontend_visibility": {
+    "hide_backend_formulas": true,
+    "hide_backend_physical_model": true
+  }
+}

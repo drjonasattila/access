@@ -12,7 +12,8 @@
     "test:vertical": "node scripts/test-post-surgical-integration-engine.cjs",
     "test:spinal": "node scripts/test-spinal-failure-mode-engine.cjs",
     "test:shaoyin": "node scripts/test-shaoyin-taiyang-engine.cjs",
-    "test:taiyang": "node scripts/test-taiyang-module.cjs"
+    "test:taiyang": "node scripts/test-taiyang-module.cjs",
+    "test:transition": "node scripts/test-transition-engine.cjs"
   },
   "dependencies": {
     "next": "^15.3.0",

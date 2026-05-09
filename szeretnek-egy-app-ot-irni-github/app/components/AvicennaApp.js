@@ -1942,6 +1942,199 @@ const taiyangSafetyFlags = [
   ["debugMode", "Debug mode"]
 ];
 
+const transitionInitialInput = {
+  systemMode: "patient",
+  headache_quality: "",
+  headache_laterality: "",
+  headache_frequency_days_per_month: "",
+  trauma_role: "none",
+  germ_layer_dominance: "unknown",
+  autonomic_state: "unknown",
+  pain_topology: "",
+  lateral_MSK_tension: "unknown",
+  visceral_sensitivity: "unknown",
+  emotional_survival_axis_features: "unknown",
+  stability_state: "unknown",
+  symptoms: [],
+  neuropathic_descriptors: [],
+  nausea_present: false,
+  vomiting_present: false,
+  photophobia_present: false,
+  phonophobia_present: false,
+  aggravated_by_activity: false,
+  red_flag_present: false,
+  yin_depletion_signs: false,
+  heat_signs: false,
+  heat_toxicity_overlay: false,
+  persistent_tension: false,
+  yin_support_fails: false,
+  exertional_intolerance: false,
+  orthostatic_symptoms: false,
+  pelvic_autonomic_symptoms: false,
+  medication_overuse_present: false,
+  trauma_roles_treated_static: false,
+  pain_syndromes_primary_keys: false
+};
+
+const transitionFieldGroups = [
+  {
+    key: "systemMode",
+    label: "Output mode",
+    options: [
+      ["patient", "Patient", "Plain educational explanation"],
+      ["clinician", "Clinician", "Axis scores, transitions, rules, module links"]
+    ]
+  },
+  {
+    key: "headache_quality",
+    label: "Headache quality",
+    options: [
+      ["pressing", "Pressing", "Static pressure quality"],
+      ["tightening", "Tightening", "Tension-type quality"],
+      ["pulsating", "Pulsating", "Migraine / vessel tendency"],
+      ["burning", "Burning", "Neurovascular or neuropathic tendency"],
+      ["none", "None", "No headache quality selected"]
+    ]
+  },
+  {
+    key: "headache_laterality",
+    label: "Headache laterality",
+    options: [
+      ["bilateral", "Bilateral", "TTH-compatible"],
+      ["unilateral", "Unilateral", "Migraine / vascular tendency"],
+      ["variable", "Variable", "Mixed or shifting pattern"],
+      ["none", "None", "Not assessed"]
+    ]
+  },
+  {
+    key: "trauma_role",
+    label: "Current role enum",
+    options: [
+      ["none", "None", "No role pattern selected"],
+      ["victim", "Victim", "Inwardly absorbed load, freeze/exhaustion"],
+      ["savior", "Savior", "Over-holding, sustained control"],
+      ["perpetrator", "Perpetrator", "Externalised load, fight/discharge"]
+    ]
+  },
+  {
+    key: "germ_layer_dominance",
+    label: "Germ-layer tendency",
+    options: [
+      ["ectoderm", "Ectoderm", "Sensory / neural load"],
+      ["mesoderm", "Mesoderm", "Fascia / vascular / musculoskeletal load"],
+      ["endoderm", "Endoderm", "Metabolic / visceral load"],
+      ["unknown", "Unknown", "Let engine infer from symptoms"]
+    ]
+  },
+  {
+    key: "autonomic_state",
+    label: "Autonomic state",
+    options: [
+      ["freeze", "Freeze", "Inward holding"],
+      ["collapse", "Collapse", "Low capacity / exhaustion"],
+      ["maintain", "Maintain", "Sustained control"],
+      ["hyperarousal", "Hyperarousal", "Spike / overactivation"],
+      ["discharge", "Discharge", "Externalised fight state"],
+      ["panic", "Panic", "Survival-axis activation"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "pain_topology",
+    label: "Pain topology",
+    options: [
+      ["posterior_neck_shoulder", "Posterior neck/shoulder", "Taiyang / mechanical-fascial"],
+      ["lateral_msk", "Lateral MSK", "Shaoyang / lateral autonomic"],
+      ["anterior_wall", "Anterior wall", "Yangming / metabolic-anterior"],
+      ["whole_body", "Whole body", "Central amplification tendency"],
+      ["pelvic_autonomic", "Pelvic autonomic", "Jueyin / Shaoyin overlap"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "lateral_MSK_tension",
+    label: "Lateral MSK tension",
+    options: [
+      ["high", "High", "Lateral antenna overload"],
+      ["moderate", "Moderate", "Some lateral tension"],
+      ["low", "Low", "Not prominent"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "visceral_sensitivity",
+    label: "Visceral sensitivity",
+    options: [
+      ["high", "High", "IBS, bloating, interoceptive load"],
+      ["moderate", "Moderate", "Some visceral sensitivity"],
+      ["low", "Low", "Not prominent"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  },
+  {
+    key: "emotional_survival_axis_features",
+    label: "Survival-axis features",
+    options: [
+      ["high", "High", "Palpitations, panic, survival activation"],
+      ["moderate", "Moderate", "Some survival-axis load"],
+      ["low", "Low", "Not prominent"],
+      ["unknown", "Unknown", "Not assessed"]
+    ]
+  }
+];
+
+const transitionSymptomItems = [
+  ["tth", "TTH / tension headache"],
+  ["migraine", "Migraine"],
+  ["aura", "Aura"],
+  ["neck_shoulder_pain", "Neck/shoulder pain"],
+  ["low_back_pain", "Low back pain"],
+  ["myofascial_pain", "Myofascial pain"],
+  ["tmj", "TMJ"],
+  ["fibromyalgia", "Fibromyalgia"],
+  ["cfs", "CFS / chronic fatigue"],
+  ["ibs", "IBS"],
+  ["bloating", "Bloating"],
+  ["panic", "Panic"],
+  ["palpitations", "Palpitations"],
+  ["sensory_overload", "Sensory overload"],
+  ["crps", "CRPS"],
+  ["pelvic_autonomic_pain", "Pelvic autonomic pain"],
+  ["metabolic_pain", "Metabolic pain"],
+  ["vascular_congestion", "Vascular congestion"]
+];
+
+const transitionNeuropathicItems = [
+  ["burning", "Burning"],
+  ["electric", "Electric"],
+  ["allodynia", "Allodynia"],
+  ["neuropathic", "Neuropathic descriptors"],
+  ["crps", "CRPS descriptor"]
+];
+
+const transitionFlags = [
+  ["nausea_present", "Nausea"],
+  ["vomiting_present", "Vomiting"],
+  ["photophobia_present", "Photophobia"],
+  ["phonophobia_present", "Phonophobia"],
+  ["aggravated_by_activity", "Aggravated by activity"],
+  ["yin_depletion_signs", "Yin depletion signs"],
+  ["heat_signs", "Heat signs"],
+  ["heat_toxicity_overlay", "Heat toxicity overlay"],
+  ["persistent_tension", "Persistent tension"],
+  ["yin_support_fails", "Yin support fails"],
+  ["exertional_intolerance", "Exertional intolerance"],
+  ["orthostatic_symptoms", "Orthostatic symptoms"],
+  ["pelvic_autonomic_symptoms", "Pelvic autonomic symptoms"],
+  ["medication_overuse_present", "Medication overuse risk"]
+];
+
+const transitionSafetyFlags = [
+  ["red_flag_present", "Red flag present"],
+  ["trauma_roles_treated_static", "Reject: static trauma role"],
+  ["pain_syndromes_primary_keys", "Reject: pain syndrome as primary key"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -2100,6 +2293,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("taiyang")}
       >
         Taiyang shell
+      </button>
+      <button
+        className={mode === "transition" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("transition")}
+      >
+        Transition router
       </button>
     </nav>
   );
@@ -3408,6 +3608,242 @@ function TaiyangModuleSection() {
   );
 }
 
+function TransitionAxisBars({ scores = {} }) {
+  const rows = Object.entries(scores);
+
+  if (!rows.length) return null;
+
+  return (
+    <section>
+      <h2>7-axis probability model</h2>
+      <div className="av-axis-bars">
+        {rows.map(([label, score]) => (
+          <div className="av-axis-row" key={label}>
+            <div>
+              <strong>{titleCase(label)}</strong>
+              <span>{score}%</span>
+            </div>
+            <div className="av-axis-track">
+              <div className="av-axis-fill" style={{ width: `${Math.min(score, 100)}%` }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TransitionResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient;
+  const stopped = result.stopped || result.rejected;
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className={stopped ? "av-output-header av-output-header-danger" : "av-output-header"}>
+        <p>{stopped ? "Transition safety stop" : "Transition engine"}</p>
+        <strong>{patient.title}</strong>
+      </div>
+
+      <section>
+        <h2>Clinical summary</h2>
+        <p>{patient.summary}</p>
+      </section>
+
+      {!stopped && (
+        <>
+          <TagSection title="Support clusters" items={patient.support || []} tone="effect" empty="Cluster output withheld by safety hierarchy." />
+          <TagSection title="Matched patterns" items={result.matched_patterns?.map(titleCase) || []} tone="mod" empty="No pattern matched." />
+          <TagSection title="Route links" items={result.cross_module_links || []} tone="effect" empty="No module route selected." />
+        </>
+      )}
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {patient.safety_notes.map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && !result.stopped && !result.rejected && (
+        <details className="av-debug" open>
+          <summary>Clinician routing view</summary>
+          <p>Primary transition: {result.transition_detection?.primary_transition?.transition || "none"}</p>
+          <p>Expression classifier: {result.expression_classifier?.name}</p>
+          <p>Primary cluster: {result.treatment_clusters?.primary?.cluster || "withheld"}</p>
+          <p>Secondary cluster: {result.treatment_clusters?.secondary?.cluster || "withheld"}</p>
+          <p>Dynamic role enum: {result.trauma_role?.current_role || "none"}; reassess over time.</p>
+          <p>Backend-only formula rules active: {result.clinician?.backend_formula_logic_hidden_from_patient || 0} hidden from patient output.</p>
+
+          <TransitionAxisBars scores={result.axis_probability_scores} />
+          <TagSection title="DO_NOT hierarchy" items={result.decision_hierarchy?.do_not_rules || []} tone="avoid" empty="No DO_NOT rules triggered." />
+          <TagSection title="DO rules" items={result.decision_hierarchy?.do_rules || []} tone="effect" empty="No role-specific DO rules." />
+          <TagSection title="Suppressed clusters" items={(result.treatment_clusters?.suppressed || []).map((item) => `${item.cluster}: ${item.reason}`)} tone="avoid" empty="None suppressed." />
+          <TagSection title="Triggered rules" items={(result.triggered_rules || []).map((item) => `${item.id}: ${item.action}`)} tone="mod" empty="None triggered." />
+          <TagSection title="Core principles" items={result.core_principles || []} tone="effect" empty="No principles listed." />
+        </details>
+      )}
+
+      {advanced && result.rejected && (
+        <details className="av-debug" open>
+          <summary>Reject reason</summary>
+          <TagSection title="Triggered rules" items={(result.triggered_rules || []).map((item) => `${item.id}: ${item.action}`)} tone="avoid" empty="None triggered." />
+          <p>{result.clinician?.reject_reason}</p>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function TransitionEngineSection() {
+  const [input, setInput] = useState(transitionInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  function toggleArray(key, value) {
+    setInput((current) => {
+      const list = current[key];
+      return {
+        ...current,
+        [key]: list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+      };
+    });
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/transition", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, systemMode: advanced ? "clinician" : input.systemMode })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Transition evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(transitionInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>TRANSITION_ENGINE_v1.0</h2>
+          <p className="av-muted">
+            Detects system-level coherence failure and routes downstream expressions. This is an educational pattern-recognition tool, not a medical diagnosis.
+          </p>
+        </section>
+
+        {transitionFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section className="av-section">
+          <h2>Headache frequency</h2>
+          <input
+            className="av-number"
+            min="0"
+            max="31"
+            type="number"
+            value={input.headache_frequency_days_per_month}
+            onChange={(event) => setField("headache_frequency_days_per_month", event.target.value)}
+          />
+        </section>
+
+        <ToggleList
+          title="Downstream expressions"
+          items={transitionSymptomItems}
+          selected={input.symptoms}
+          onToggle={(value) => toggleArray("symptoms", value)}
+        />
+
+        <ToggleList
+          title="Neuropathic descriptors"
+          items={transitionNeuropathicItems}
+          selected={input.neuropathic_descriptors}
+          onToggle={(value) => toggleArray("neuropathic_descriptors", value)}
+        />
+
+        <ToggleList
+          title="Transition inputs"
+          items={transitionFlags}
+          selected={transitionFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <ToggleList
+          title="Safety / reject rules"
+          items={transitionSafetyFlags}
+          selected={transitionSafetyFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show clinician routing, rules, and axis panels</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate transition route"}
+        </button>
+      </form>
+
+      <TransitionResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function HeadacheEngineSection() {
   const [input, setInput] = useState(headacheInitialInput);
   const [result, setResult] = useState(null);
@@ -3743,6 +4179,8 @@ export default function AvicennaApp() {
               ? "Shaoyin-Taiyang Dissociation Engine"
               : mode === "taiyang"
                 ? "TAIYANG_MODULE_v1.0"
+                : mode === "transition"
+                  ? "Transition Engine v1.0"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -3757,6 +4195,8 @@ export default function AvicennaApp() {
               ? "Inner Freeze / Outer Expansion meta-pattern screen for chronic downstream manifestations"
               : mode === "taiyang"
                 ? "Posterior shell overpressure, laser eligibility, and Herba -> HILT Laser -> DuoLife sequencing"
+                : mode === "transition"
+                  ? "High-level 7-axis routing above terrain modules and downstream symptom expressions"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
@@ -3778,6 +4218,8 @@ export default function AvicennaApp() {
         <ShaoyinTaiyangSection />
       ) : mode === "taiyang" ? (
         <TaiyangModuleSection />
+      ) : mode === "transition" ? (
+        <TransitionEngineSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

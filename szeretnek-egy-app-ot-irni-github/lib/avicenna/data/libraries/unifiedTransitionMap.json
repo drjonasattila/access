@@ -1,0 +1,312 @@
+{
+  "module": "UNIFIED_TRANSITION_MAP",
+  "core_statement": "The Transition Engine detects system-level coherence failure, not symptoms. Symptoms are downstream expressions.",
+  "role_patterns": [
+    {
+      "name": "victim_pattern",
+      "label": "Victim Role — Inwardly Absorbed Load",
+      "description": "Internalisation of load. Failed affective-autonomic integration. Freeze → exhaustion trajectory.",
+      "trauma_role": "victim",
+      "germ_layer": "Ectoderm ↔ Endoderm",
+      "meridian_axis": "Jueyin → Shaoyang (ventilation attempt) → Taiyin (support)",
+      "autonomic_state": "freeze → exhaustion",
+      "core_mechanism": "Internalisation, failed affective–autonomic integration",
+      "triggers": [
+        "trauma_role == victim",
+        "autonomic_state == freeze OR collapse",
+        "emotional_survival_axis_features == high",
+        "exertional_intolerance == true"
+      ],
+      "symptoms": [
+        "fibromyalgia",
+        "chronic fatigue syndrome",
+        "functional GI pain (IBS, dyspepsia)",
+        "migraine with aura",
+        "palpitations + chest pain (non-cardiac)",
+        "diffuse visceral or whole-body pain"
+      ],
+      "interventions": {
+        "do": [
+          "Taiyin support first (nutrition, rhythm, Yin)",
+          "Gentle Shaoyang ventilation (not breakthrough)",
+          "Body-based boundary re-learning"
+        ],
+        "do_not": [
+          "Strong stimulation or forced activation",
+          "Early confrontation or psychodynamic excavation",
+          "Excess explanation or cognitive overload"
+        ]
+      }
+    },
+    {
+      "name": "savior_pattern",
+      "label": "Savior Role — Structurally Maintained Load",
+      "description": "Over-holding, responsibility fixation. Sustained sympathetic control.",
+      "trauma_role": "savior",
+      "germ_layer": "Ectoderm → Mesoderm",
+      "meridian_axis": "Taiyang → Shaoyin",
+      "autonomic_state": "sustained sympathetic control",
+      "core_mechanism": "Over-holding, responsibility fixation",
+      "triggers": [
+        "trauma_role == savior",
+        "autonomic_state == maintain OR control",
+        "lateral_MSK_tension == high",
+        "emotional_survival_axis_features == suppressed_outward"
+      ],
+      "symptoms": [
+        "chronic neck-shoulder pain",
+        "low back / SI joint pain",
+        "tension-type headache",
+        "stress-linked neuropathic pain",
+        "insomnia-associated pain"
+      ],
+      "interventions": {
+        "do": [
+          "Gradual control release (not collapse)",
+          "Shaoyin reinforcement (deep support)",
+          "Structured non-doing / parasympathetic re-entry"
+        ],
+        "do_not": [
+          "Add responsibility or endurance framing",
+          "Continuous activation without rest",
+          "Isolated muscle-only treatment"
+        ]
+      }
+    },
+    {
+      "name": "perpetrator_pattern",
+      "label": "Perpetrator Role — Externally Displaced Load",
+      "description": "Externalisation. Delayed self-perception. Fight/discharge autonomic state.",
+      "trauma_role": "perpetrator",
+      "germ_layer": "Mesoderm → Endoderm",
+      "meridian_axis": "Yangming / Shaoyin dominance",
+      "autonomic_state": "fight / discharge",
+      "core_mechanism": "Externalisation, delayed self-perception",
+      "triggers": [
+        "trauma_role == perpetrator",
+        "autonomic_state == externalise OR discharge",
+        "inflammatory_markers == elevated",
+        "visceral_sensitivity == high"
+      ],
+      "symptoms": [
+        "inflammatory pain states",
+        "metabolic pain (NAFLD-related, diabetic)",
+        "vascular / congestion pain (pelvic congestion)",
+        "late-presenting visceral pain",
+        "relational somatisation (symptoms in others)"
+      ],
+      "interventions": {
+        "do": [
+          "Body-anchored feedback and limits",
+          "Endoderm survival pattern awareness",
+          "Delayed psychological processing"
+        ],
+        "do_not": [
+          "Moralising or early empathy forcing",
+          "Victim–savior reenactment",
+          "Pure insight-based therapy"
+        ]
+      }
+    }
+  ],
+  "axis_model": {
+    "description": "7-Axis likelihood calculator. Each symptom assigned numeric weight 0–3. Output: 0–100% probability per axis. Axes are independent but linked enums — allow state switching over time.",
+    "axes": [
+      {
+        "id": 1,
+        "name": "Posterior Sensory Axis",
+        "meridian": "Taiyang BL/SI",
+        "backend_meaning": "Posterior shell over-tension. Structural load. Static fascia.",
+        "symptom_category": "headache & sensory load, posterior MSK pain"
+      },
+      {
+        "id": 2,
+        "name": "Lateral Autonomic Axis",
+        "meridian": "Shaoyang GB/TB",
+        "backend_meaning": "Lateral antennae overloaded. Unsustainable sympathetic spike → heat above.",
+        "symptom_category": "lateral MSK/autonomic tension"
+      },
+      {
+        "id": 3,
+        "name": "Anterior Metabolic Axis",
+        "meridian": "Yangming ST/LI",
+        "backend_meaning": "Metabolic grounding insufficient → rigid fascia → microcirculation slowdown.",
+        "symptom_category": "metabolic, digestive, anterior wall pain"
+      },
+      {
+        "id": 4,
+        "name": "Midline Interoceptive Axis",
+        "meridian": "Taiyin LU/SP",
+        "backend_meaning": "Interoceptive sensing unstable → IBS, chest tightness.",
+        "symptom_category": "visceral/abdominal sensitivity, exertional intolerance"
+      },
+      {
+        "id": 5,
+        "name": "Survival/Emotional Axis",
+        "meridian": "Shaoyin HT/KD",
+        "backend_meaning": "Emotional conduction capacity reduced → palpitation, orthostasis.",
+        "symptom_category": "orthostatic symptoms, pelvic/autonomic, emotional/survival features"
+      },
+      {
+        "id": 6,
+        "name": "Deep Autonomic–Vascular Axis",
+        "meridian": "Jueyin LV/PC",
+        "backend_meaning": "Deep autonomic–vascular entanglement → CRPS later phases.",
+        "symptom_category": "neuropathic descriptors, vascular, deep autonomic"
+      },
+      {
+        "id": 7,
+        "name": "Central Integration Axis",
+        "meridian": "Ren/Du",
+        "backend_meaning": "Top-down bioinformational coherence reduction → fibromyalgia, ADHD-like overload.",
+        "symptom_category": "systemic / cross-domain symptom constellations"
+      }
+    ]
+  },
+  "transition_nodes": [
+    {
+      "transition": "Jueyin → Shaoyang",
+      "meaning": "Ventilation attempt",
+      "typical_manifestation": [
+        "migraine",
+        "IBS flare",
+        "anxiety"
+      ],
+      "backend_note": "System attempting to release internal pressure laterally"
+    },
+    {
+      "transition": "Shaoyang → Yangming",
+      "meaning": "Lateral autonomic overload + metabolic instability",
+      "typical_manifestation": [
+        "migraine",
+        "TMJ",
+        "nerve entrapments"
+      ],
+      "backend_note": "Lateral antenna overloaded, spills into anterior metabolic axis"
+    },
+    {
+      "transition": "Shaoyang → Taiyin",
+      "meaning": "Compensation — dampness accumulation",
+      "typical_manifestation": [
+        "fatigue",
+        "dampness",
+        "weight gain"
+      ],
+      "backend_note": "Lateral → midline interoceptive compensation"
+    },
+    {
+      "transition": "Taiyin collapse",
+      "meaning": "Interoceptive regulation failure",
+      "typical_manifestation": [
+        "CFS",
+        "fibromyalgia"
+      ],
+      "backend_note": "End-stage of sustained compensation failure"
+    },
+    {
+      "transition": "Taiyang → Shaoyin",
+      "meaning": "Posterior tension → cardiac/autonomic stress",
+      "typical_manifestation": [
+        "ICP-pattern",
+        "cervicogenic pressure"
+      ],
+      "backend_note": "Shell over-tension converting to deep autonomic depletion"
+    },
+    {
+      "transition": "Yangming → Taiyin",
+      "meaning": "Metabolic rigidity + visceral dysregulation",
+      "typical_manifestation": [
+        "IBS",
+        "bloating",
+        "front-wall pain"
+      ],
+      "backend_note": "Anterior metabolic → midline interoceptive collapse"
+    },
+    {
+      "transition": "Shaoyang → Jueyin",
+      "meaning": "Lateral → vascular-autonomic convergence",
+      "typical_manifestation": [
+        "CRPS II/III",
+        "pelvic autonomic pain"
+      ],
+      "backend_note": "Most severe lateral-to-deep transition"
+    },
+    {
+      "transition": "Central → Shaoyin",
+      "meaning": "Central overload + emotional/survival axis",
+      "typical_manifestation": [
+        "panic-palpitations"
+      ],
+      "backend_note": "Top-down coherence loss driving autonomic survival activation"
+    }
+  ],
+  "expression_categories": [
+    {
+      "name": "Neurovascular Expression",
+      "typical_patterns": [
+        "migraine",
+        "CRPS",
+        "pelvic autonomic pain"
+      ],
+      "axis_bias": [
+        "Jueyin",
+        "Shaoyang"
+      ]
+    },
+    {
+      "name": "Mechanical–Fascial Expression",
+      "typical_patterns": [
+        "TTH",
+        "neck/shoulder pain",
+        "low back pain",
+        "myofascial pain"
+      ],
+      "axis_bias": [
+        "Taiyang",
+        "Yangming"
+      ]
+    },
+    {
+      "name": "Autonomic–Sensory Amplification",
+      "typical_patterns": [
+        "fibromyalgia",
+        "CFS",
+        "IBS",
+        "panic",
+        "sensory overload"
+      ],
+      "axis_bias": [
+        "Taiyin",
+        "Shaoyin",
+        "Central"
+      ]
+    }
+  ],
+  "cross_module_links": [
+    {
+      "link": "TTH → Taiyang Module",
+      "note": "TTH maps directly to taiyang_pure_tension pattern. Apply Taiyang module for herbal and laser sub-protocols."
+    },
+    {
+      "link": "Savior pattern → Taiyang Module",
+      "note": "Savior role (Taiyang → Shaoyin axis) overlaps with taiyang_shaoyin_deficiency pattern when internal cold develops."
+    },
+    {
+      "link": "Victim pattern → future Jueyin module",
+      "note": "Jueyin module not yet built. Victim/freeze pattern is primary entry point."
+    },
+    {
+      "link": "Migraine → requires dedicated module",
+      "note": "TTH backend axiom: migraine = disorder of failed adaptation. Migraine module is separate from TTH. Cross-references Jueyin → Shaoyang transition."
+    },
+    {
+      "link": "Central Integration Axis -> chronic pain / fibromyalgia / CFS logic",
+      "note": "Central coherence output should route to chronic amplification logic."
+    },
+    {
+      "link": "Shaoyang -> Jueyin transition -> CRPS / pelvic autonomic pain modules",
+      "note": "Deep lateral-to-vascular transition needs microcirculatory and autonomic caution."
+    }
+  ],
+  "dynamic_enum_rule": "victim/savior/perpetrator roles are dynamic enums and must be reassessed over time."
+}

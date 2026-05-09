@@ -1,0 +1,709 @@
+{
+  "module": "TRANSITION_ENGINE_v1.0",
+  "title": "Transition Engine v1.0",
+  "source_module": "TRANSITION_ENGINE_v1.0 + TTH_MODULE + UNIFIED_TRANSITION_MAP",
+  "core_statement": "The Transition Engine detects system-level coherence failure, not symptoms. Symptoms are downstream expressions.",
+  "primary_purpose": "Detect system-level transition patterns and route toward the correct terrain module, expression category, and treatment cluster.",
+  "input_variables": [
+    "headache_quality",
+    "headache_laterality",
+    "headache_frequency_days_per_month",
+    "nausea_present",
+    "photophobia_present",
+    "phonophobia_present",
+    "aggravated_by_activity",
+    "red_flag_present",
+    "yin_depletion_signs",
+    "heat_signs",
+    "trauma_role",
+    "germ_layer_dominance",
+    "autonomic_state",
+    "pain_topology",
+    "lateral_MSK_tension",
+    "visceral_sensitivity",
+    "neuropathic_descriptors",
+    "exertional_intolerance",
+    "orthostatic_symptoms",
+    "pelvic_autonomic_symptoms",
+    "emotional_survival_axis_features",
+    "symptom_weight_scores",
+    "axis_probability_scores",
+    "stability_state",
+    "medication_overuse_present"
+  ],
+  "axis_model": {
+    "description": "7-Axis likelihood calculator. Each symptom assigned numeric weight 0–3. Output: 0–100% probability per axis. Axes are independent but linked enums — allow state switching over time.",
+    "axes": [
+      {
+        "id": 1,
+        "name": "Posterior Sensory Axis",
+        "meridian": "Taiyang BL/SI",
+        "backend_meaning": "Posterior shell over-tension. Structural load. Static fascia.",
+        "symptom_category": "headache & sensory load, posterior MSK pain"
+      },
+      {
+        "id": 2,
+        "name": "Lateral Autonomic Axis",
+        "meridian": "Shaoyang GB/TB",
+        "backend_meaning": "Lateral antennae overloaded. Unsustainable sympathetic spike → heat above.",
+        "symptom_category": "lateral MSK/autonomic tension"
+      },
+      {
+        "id": 3,
+        "name": "Anterior Metabolic Axis",
+        "meridian": "Yangming ST/LI",
+        "backend_meaning": "Metabolic grounding insufficient → rigid fascia → microcirculation slowdown.",
+        "symptom_category": "metabolic, digestive, anterior wall pain"
+      },
+      {
+        "id": 4,
+        "name": "Midline Interoceptive Axis",
+        "meridian": "Taiyin LU/SP",
+        "backend_meaning": "Interoceptive sensing unstable → IBS, chest tightness.",
+        "symptom_category": "visceral/abdominal sensitivity, exertional intolerance"
+      },
+      {
+        "id": 5,
+        "name": "Survival/Emotional Axis",
+        "meridian": "Shaoyin HT/KD",
+        "backend_meaning": "Emotional conduction capacity reduced → palpitation, orthostasis.",
+        "symptom_category": "orthostatic symptoms, pelvic/autonomic, emotional/survival features"
+      },
+      {
+        "id": 6,
+        "name": "Deep Autonomic–Vascular Axis",
+        "meridian": "Jueyin LV/PC",
+        "backend_meaning": "Deep autonomic–vascular entanglement → CRPS later phases.",
+        "symptom_category": "neuropathic descriptors, vascular, deep autonomic"
+      },
+      {
+        "id": 7,
+        "name": "Central Integration Axis",
+        "meridian": "Ren/Du",
+        "backend_meaning": "Top-down bioinformational coherence reduction → fibromyalgia, ADHD-like overload.",
+        "symptom_category": "systemic / cross-domain symptom constellations"
+      }
+    ]
+  },
+  "transition_nodes": [
+    {
+      "transition": "Jueyin → Shaoyang",
+      "meaning": "Ventilation attempt",
+      "typical_manifestation": [
+        "migraine",
+        "IBS flare",
+        "anxiety"
+      ],
+      "backend_note": "System attempting to release internal pressure laterally"
+    },
+    {
+      "transition": "Shaoyang → Yangming",
+      "meaning": "Lateral autonomic overload + metabolic instability",
+      "typical_manifestation": [
+        "migraine",
+        "TMJ",
+        "nerve entrapments"
+      ],
+      "backend_note": "Lateral antenna overloaded, spills into anterior metabolic axis"
+    },
+    {
+      "transition": "Shaoyang → Taiyin",
+      "meaning": "Compensation — dampness accumulation",
+      "typical_manifestation": [
+        "fatigue",
+        "dampness",
+        "weight gain"
+      ],
+      "backend_note": "Lateral → midline interoceptive compensation"
+    },
+    {
+      "transition": "Taiyin collapse",
+      "meaning": "Interoceptive regulation failure",
+      "typical_manifestation": [
+        "CFS",
+        "fibromyalgia"
+      ],
+      "backend_note": "End-stage of sustained compensation failure"
+    },
+    {
+      "transition": "Taiyang → Shaoyin",
+      "meaning": "Posterior tension → cardiac/autonomic stress",
+      "typical_manifestation": [
+        "ICP-pattern",
+        "cervicogenic pressure"
+      ],
+      "backend_note": "Shell over-tension converting to deep autonomic depletion"
+    },
+    {
+      "transition": "Yangming → Taiyin",
+      "meaning": "Metabolic rigidity + visceral dysregulation",
+      "typical_manifestation": [
+        "IBS",
+        "bloating",
+        "front-wall pain"
+      ],
+      "backend_note": "Anterior metabolic → midline interoceptive collapse"
+    },
+    {
+      "transition": "Shaoyang → Jueyin",
+      "meaning": "Lateral → vascular-autonomic convergence",
+      "typical_manifestation": [
+        "CRPS II/III",
+        "pelvic autonomic pain"
+      ],
+      "backend_note": "Most severe lateral-to-deep transition"
+    },
+    {
+      "transition": "Central → Shaoyin",
+      "meaning": "Central overload + emotional/survival axis",
+      "typical_manifestation": [
+        "panic-palpitations"
+      ],
+      "backend_note": "Top-down coherence loss driving autonomic survival activation"
+    }
+  ],
+  "expression_pattern_classifier": {
+    "description": "Three output categories for clinical summary. Output: 1–2 sentences for residents and specialists.",
+    "categories": [
+      {
+        "name": "Neurovascular Expression",
+        "typical_patterns": [
+          "migraine",
+          "CRPS",
+          "pelvic autonomic pain"
+        ],
+        "axis_bias": [
+          "Jueyin",
+          "Shaoyang"
+        ]
+      },
+      {
+        "name": "Mechanical–Fascial Expression",
+        "typical_patterns": [
+          "TTH",
+          "neck/shoulder pain",
+          "low back pain",
+          "myofascial pain"
+        ],
+        "axis_bias": [
+          "Taiyang",
+          "Yangming"
+        ]
+      },
+      {
+        "name": "Autonomic–Sensory Amplification",
+        "typical_patterns": [
+          "fibromyalgia",
+          "CFS",
+          "IBS",
+          "panic",
+          "sensory overload"
+        ],
+        "axis_bias": [
+          "Taiyin",
+          "Shaoyin",
+          "Central"
+        ]
+      }
+    ]
+  },
+  "treatment_cluster_selector": {
+    "description": "7 clusters. Output: 1 primary + 1 secondary cluster recommendation.",
+    "clusters": [
+      {
+        "name": "Lateral Autonomic Decompression",
+        "primary_axis": "Shaoyang",
+        "indicated_for": [
+          "Shaoyang overload",
+          "migraine",
+          "TMJ",
+          "nerve entrapments"
+        ]
+      },
+      {
+        "name": "Metabolic Rebalancing",
+        "primary_axis": "Yangming",
+        "indicated_for": [
+          "Yangming drop",
+          "metabolic pain",
+          "NAFLD-related",
+          "rigid fascia"
+        ]
+      },
+      {
+        "name": "Posterior Sensory Pressure Modulation",
+        "primary_axis": "Taiyang",
+        "indicated_for": [
+          "TTH",
+          "cervicogenic headache",
+          "ICP-pattern",
+          "myofascial pain"
+        ]
+      },
+      {
+        "name": "Microcirculatory Restoration",
+        "primary_axis": "Jueyin / Yangming",
+        "indicated_for": [
+          "blood sludging",
+          "venous stasis",
+          "CRPS",
+          "pelvic congestion"
+        ]
+      },
+      {
+        "name": "Survival-Axis Stabilization",
+        "primary_axis": "Shaoyin",
+        "indicated_for": [
+          "palpitations",
+          "orthostatic symptoms",
+          "panic",
+          "emotional conduction deficit"
+        ]
+      },
+      {
+        "name": "Interoceptive Regulation",
+        "primary_axis": "Taiyin",
+        "indicated_for": [
+          "IBS",
+          "chest tightness",
+          "CFS",
+          "exertional intolerance"
+        ]
+      },
+      {
+        "name": "Central Coherence Support",
+        "primary_axis": "Ren/Du (Central)",
+        "indicated_for": [
+          "fibromyalgia",
+          "ADHD-like overload",
+          "systemic sensitisation",
+          "top-down coherence loss"
+        ]
+      }
+    ]
+  },
+  "diagnosis_map": [
+    {
+      "diagnosis": "tension-type headache (TTH)",
+      "associated_patterns": [
+        "tth_static_tension",
+        "savior_pattern"
+      ],
+      "axis_primary": "Taiyang (Posterior Sensory)",
+      "expression_type": "Mechanical–Fascial Expression",
+      "notes": "Static NSAID-responsive muscle-fascia dominant pain. Qi stagnation → muscle tightening. Savior role common. Risk of progression to migraine phenotype if Yin support fails."
+    },
+    {
+      "diagnosis": "chronic TTH",
+      "associated_patterns": [
+        "tth_static_tension"
+      ],
+      "axis_primary": "Taiyang",
+      "notes": "Central sensitisation established. PBM/HILT adjunct indicated. Amitriptyline prophylaxis."
+    },
+    {
+      "diagnosis": "migraine (general)",
+      "associated_patterns": [
+        "victim_pattern"
+      ],
+      "axis_primary": "Jueyin / Shaoyang",
+      "expression_type": "Neurovascular Expression",
+      "transition_from": "Jueyin → Shaoyang OR TTH progression (Yin failure)",
+      "notes": "Dynamic, sensory overload, Yin fragmentation. Contrast with TTH (static). Migraine with aura maps to victim pattern / Jueyin."
+    },
+    {
+      "diagnosis": "fibromyalgia",
+      "associated_patterns": [
+        "victim_pattern"
+      ],
+      "axis_primary": "Central Integration Axis (Ren/Du)",
+      "expression_type": "Autonomic–Sensory Amplification",
+      "transition": "Taiyin collapse",
+      "notes": "Top-down bioinformational coherence reduction. Do NOT stimulate aggressively. Taiyin support first."
+    },
+    {
+      "diagnosis": "chronic fatigue syndrome (CFS/ME)",
+      "associated_patterns": [
+        "victim_pattern"
+      ],
+      "axis_primary": "Taiyin / Central",
+      "expression_type": "Autonomic–Sensory Amplification",
+      "transition": "Taiyin collapse",
+      "notes": "Interoceptive sensing unstable. Avoid forced activation."
+    },
+    {
+      "diagnosis": "IBS / functional GI pain",
+      "associated_patterns": [
+        "victim_pattern"
+      ],
+      "axis_primary": "Taiyin / Yangming",
+      "expression_type": "Autonomic–Sensory Amplification",
+      "transition": "Yangming → Taiyin OR Jueyin → Shaoyang (flare)",
+      "notes": "Functional GI — avoid cognitive overload in treatment approach."
+    },
+    {
+      "diagnosis": "palpitations / non-cardiac chest pain",
+      "associated_patterns": [
+        "victim_pattern"
+      ],
+      "axis_primary": "Shaoyin",
+      "expression_type": "Autonomic–Sensory Amplification",
+      "notes": "Emotional conduction deficit. Survival-axis stabilisation cluster."
+    },
+    {
+      "diagnosis": "chronic neck-shoulder pain",
+      "associated_patterns": [
+        "savior_pattern",
+        "tth_static_tension"
+      ],
+      "axis_primary": "Taiyang",
+      "expression_type": "Mechanical–Fascial Expression",
+      "notes": "Over-holding pattern. Taiyang → Shaoyin transition risk. Do not add responsibility framing."
+    },
+    {
+      "diagnosis": "low back / SI joint pain",
+      "associated_patterns": [
+        "savior_pattern"
+      ],
+      "axis_primary": "Taiyang",
+      "expression_type": "Mechanical–Fascial Expression",
+      "notes": "Sustained sympathetic control. Shaoyin reinforcement indicated."
+    },
+    {
+      "diagnosis": "stress-linked neuropathic pain",
+      "associated_patterns": [
+        "savior_pattern"
+      ],
+      "axis_primary": "Taiyang / Shaoyang",
+      "expression_type": "Mechanical–Fascial Expression",
+      "notes": "Insomnia-associated variant common. Parasympathetic re-entry needed."
+    },
+    {
+      "diagnosis": "inflammatory pain states",
+      "associated_patterns": [
+        "perpetrator_pattern"
+      ],
+      "axis_primary": "Yangming / Shaoyin",
+      "expression_type": "Neurovascular Expression",
+      "notes": "Externalisation mechanism. Body-anchored feedback approach."
+    },
+    {
+      "diagnosis": "metabolic pain (NAFLD-related, diabetic neuropathy)",
+      "associated_patterns": [
+        "perpetrator_pattern"
+      ],
+      "axis_primary": "Yangming",
+      "expression_type": "Mechanical–Fascial Expression",
+      "transition": "Mesoderm → Endoderm (survival takeover)",
+      "notes": "Metabolic rebalancing cluster. Delayed psychological processing."
+    },
+    {
+      "diagnosis": "pelvic congestion pain",
+      "associated_patterns": [
+        "perpetrator_pattern"
+      ],
+      "axis_primary": "Jueyin / Shaoyang",
+      "expression_type": "Neurovascular Expression",
+      "transition": "Shaoyang → Jueyin",
+      "notes": "Vascular-autonomic convergence. Microcirculatory restoration cluster."
+    },
+    {
+      "diagnosis": "CRPS II/III",
+      "associated_patterns": [
+        "perpetrator_pattern"
+      ],
+      "axis_primary": "Jueyin",
+      "expression_type": "Neurovascular Expression",
+      "transition": "Shaoyang → Jueyin",
+      "backend_meaning": "Jueyin overcharge: deep autonomic–vascular entanglement",
+      "notes": "Most severe lateral-to-deep transition. Do not use forced confrontation therapy."
+    },
+    {
+      "diagnosis": "panic disorder / panic-palpitations",
+      "associated_patterns": [
+        "victim_pattern",
+        "savior_pattern"
+      ],
+      "axis_primary": "Shaoyin / Central",
+      "expression_type": "Autonomic–Sensory Amplification",
+      "transition": "Central → Shaoyin",
+      "notes": "Central overload drives survival axis. Active panic = laser contraindicated (per Taiyang module)."
+    },
+    {
+      "diagnosis": "TMJ dysfunction",
+      "associated_patterns": [
+        "savior_pattern"
+      ],
+      "axis_primary": "Shaoyang",
+      "expression_type": "Mechanical–Fascial Expression",
+      "transition": "Shaoyang → Yangming",
+      "notes": "Lateral autonomic overload + metabolic instability."
+    },
+    {
+      "diagnosis": "nerve entrapment syndromes",
+      "associated_patterns": [
+        "savior_pattern"
+      ],
+      "axis_primary": "Shaoyang / Yangming",
+      "expression_type": "Mechanical–Fascial Expression",
+      "transition": "Shaoyang → Yangming",
+      "notes": "Lateral autonomic cluster. Not isolated muscle treatment."
+    },
+    {
+      "diagnosis": "hypertension (stress-linked)",
+      "associated_patterns": [
+        "savior_pattern"
+      ],
+      "axis_primary": "Taiyang",
+      "notes": "Taiyang overload → control rigidity. Shaoyin reinforcement and parasympathetic re-entry."
+    },
+    {
+      "diagnosis": "orthostatic intolerance / POTS-like",
+      "associated_patterns": [
+        "victim_pattern"
+      ],
+      "axis_primary": "Shaoyin",
+      "expression_type": "Autonomic–Sensory Amplification",
+      "notes": "Shaoyin deficit: emotional conduction capacity reduced. Survival-axis stabilisation."
+    }
+  ],
+  "data_flowchart": {
+    "description": "Engine processing pipeline — Base44 compatible. Safe for public/clinical-facing spec.",
+    "steps": [
+      "1. Symptom Input (structured categories, each weighted 0–3)",
+      "2. Axis Probability Model (0–100% per axis, 7 axes)",
+      "3. Transition Detection Engine (primary + optional secondary transition, with clinical explanation)",
+      "4. Expression Pattern Classifier (Neurovascular / Mechanical-Fascial / Autonomic-Sensory Amplification)",
+      "5. Treatment Cluster Selector (1 primary + 1 secondary cluster)",
+      "6. Clinical Summary (1–2 sentences for residents and specialists)"
+    ]
+  },
+  "rules": [
+    {
+      "id": "B15_R001",
+      "condition": "red_flag_present == true",
+      "action": "STOP integrative pathway. Flag for urgent western medical referral. Do not apply TCM or herbal logic until secondary cause excluded."
+    },
+    {
+      "id": "B15_R002",
+      "condition": "headache_quality == pressing AND bilateral AND aggravated_by_activity == false AND nausea == false",
+      "action": "Classify as TTH. Apply tth_static_tension pattern."
+    },
+    {
+      "id": "B15_R003",
+      "condition": "TTH AND yin_depletion_signs == true",
+      "action": "Add Liu Wei Di Huang Wan / Zhi Bai Di Huang Wan to backend formula. BACKEND ONLY — do not display on front-end."
+    },
+    {
+      "id": "B15_R004",
+      "condition": "TTH AND heat_signs == true AND heat_toxicity_overlay == true",
+      "action": "Add Huang Lian Jie Du Tang to backend formula. BACKEND ONLY — do not display on front-end."
+    },
+    {
+      "id": "B15_R005",
+      "condition": "TTH AND persistent_tension == true AND yin_support_fails == true",
+      "action": "Flag progression risk to migraine phenotype. Escalate Yin support. Monitor for photophobia, nausea, visual aura."
+    },
+    {
+      "id": "B15_R006",
+      "condition": "medication_overuse_present == true",
+      "action": "Flag medication overuse headache risk. Advise NSAID limit. Do not add further acute analgesics."
+    },
+    {
+      "id": "B15_R007",
+      "condition": "trauma_role == victim",
+      "action": "Activate victim_pattern. Primary cluster: Interoceptive Regulation or Survival-Axis Stabilization. DO NOT apply strong stimulation or forced activation."
+    },
+    {
+      "id": "B15_R008",
+      "condition": "trauma_role == savior",
+      "action": "Activate savior_pattern. Primary cluster: Posterior Sensory Pressure Modulation. DO NOT add responsibility framing or continuous activation without rest."
+    },
+    {
+      "id": "B15_R009",
+      "condition": "trauma_role == perpetrator",
+      "action": "Activate perpetrator_pattern. Primary cluster: Metabolic Rebalancing or Microcirculatory Restoration. DO NOT use moralising or early empathy forcing."
+    },
+    {
+      "id": "B15_R010",
+      "condition": "DO_NOT rules present",
+      "action": "DO NOT rules take priority over DO rules over intervention choice. This is a mandatory decision hierarchy."
+    },
+    {
+      "id": "B15_R011",
+      "condition": "axis_probability(Taiyang) == highest",
+      "action": "Primary cluster: Posterior Sensory Pressure Modulation. Cross-reference Taiyang module."
+    },
+    {
+      "id": "B15_R012",
+      "condition": "axis_probability(Shaoyang) == highest",
+      "action": "Primary cluster: Lateral Autonomic Decompression."
+    },
+    {
+      "id": "B15_R013",
+      "condition": "axis_probability(Yangming) == highest",
+      "action": "Primary cluster: Metabolic Rebalancing."
+    },
+    {
+      "id": "B15_R014",
+      "condition": "axis_probability(Taiyin) == highest",
+      "action": "Primary cluster: Interoceptive Regulation."
+    },
+    {
+      "id": "B15_R015",
+      "condition": "axis_probability(Shaoyin) == highest",
+      "action": "Primary cluster: Survival-Axis Stabilization."
+    },
+    {
+      "id": "B15_R016",
+      "condition": "axis_probability(Jueyin) == highest",
+      "action": "Primary cluster: Microcirculatory Restoration. Flag CRPS/vascular-autonomic convergence risk."
+    },
+    {
+      "id": "B15_R017",
+      "condition": "axis_probability(Central) == highest",
+      "action": "Primary cluster: Central Coherence Support."
+    },
+    {
+      "id": "B15_R018",
+      "condition": "transition detected: Jueyin → Shaoyang",
+      "action": "Flag ventilation attempt. Expect migraine, IBS flare, or anxiety as expression. Gentle ventilation only."
+    },
+    {
+      "id": "B15_R019",
+      "condition": "transition detected: Shaoyang → Jueyin",
+      "action": "Flag most severe lateral-to-deep transition. CRPS or pelvic autonomic pain risk. Microcirculatory restoration priority."
+    },
+    {
+      "id": "B15_R020",
+      "condition": "transition detected: Taiyang → Shaoyin",
+      "action": "Flag deep autonomic depletion risk. ICP-pattern or cervicogenic pressure expression. Shaoyin reinforcement urgent."
+    },
+    {
+      "id": "B15_R021",
+      "condition": "transition detected: Taiyin collapse",
+      "action": "CFS or fibromyalgia endpoint. Do NOT stimulate. Central Coherence Support cluster. Taiyin support first."
+    },
+    {
+      "id": "B15_R022",
+      "condition": "trauma_roles treated as static classifications",
+      "action": "REJECT. Roles are dynamic enums. Allow state switching over time. Re-assess at each session."
+    },
+    {
+      "id": "B15_R023",
+      "condition": "pain_syndromes used as primary classification keys",
+      "action": "REJECT. Pain syndromes are secondary attributes only. Primary keys are: trauma_role, germ_layer, meridian_axis."
+    }
+  ],
+  "decision_hierarchy": [
+    "DO_NOT rules",
+    "DO rules",
+    "intervention choice"
+  ],
+  "reject_rules": [
+    {
+      "id": "B15_R022",
+      "condition": "trauma_roles treated as static classifications",
+      "action": "REJECT. Roles are dynamic enums. Allow state switching over time. Re-assess at each session."
+    },
+    {
+      "id": "B15_R023",
+      "condition": "pain_syndromes used as primary classification keys",
+      "action": "REJECT. Pain syndromes are secondary attributes only. Primary keys are: trauma_role, germ_layer, meridian_axis."
+    }
+  ],
+  "backend_physical_model_private": {
+    "description": "Private backend only. Do not surface to front-end. Provides computational substrate for all engine calculations.",
+    "components": [
+      {
+        "element": "fascia",
+        "model": "water-structured tensegrity antenna"
+      },
+      {
+        "element": "mitochondria",
+        "model": "intracellular energy field stabilisers"
+      },
+      {
+        "element": "cerebellum/brainstem",
+        "model": "autonomic gating modulator"
+      },
+      {
+        "element": "HUN-pattern",
+        "model": "neurovisceral coherence sensing"
+      },
+      {
+        "element": "blood sludging",
+        "model": "microcirculatory field-loss compensation"
+      },
+      {
+        "element": "heat-above/cold-below",
+        "model": "energetic differential disorder"
+      }
+    ],
+    "core_statement": "The Transition Engine detects system-level coherence failure, not symptoms. Symptoms are downstream expressions."
+  },
+  "cross_module_links": [
+    {
+      "link": "TTH → Taiyang Module",
+      "note": "TTH maps directly to taiyang_pure_tension pattern. Apply Taiyang module for herbal and laser sub-protocols."
+    },
+    {
+      "link": "Savior pattern → Taiyang Module",
+      "note": "Savior role (Taiyang → Shaoyin axis) overlaps with taiyang_shaoyin_deficiency pattern when internal cold develops."
+    },
+    {
+      "link": "Victim pattern → future Jueyin module",
+      "note": "Jueyin module not yet built. Victim/freeze pattern is primary entry point."
+    },
+    {
+      "link": "Migraine → requires dedicated module",
+      "note": "TTH backend axiom: migraine = disorder of failed adaptation. Migraine module is separate from TTH. Cross-references Jueyin → Shaoyang transition."
+    },
+    {
+      "link": "Central Integration Axis -> chronic pain / fibromyalgia / CFS logic",
+      "note": "Central coherence output should route to chronic amplification logic."
+    },
+    {
+      "link": "Shaoyang -> Jueyin transition -> CRPS / pelvic autonomic pain modules",
+      "note": "Deep lateral-to-vascular transition needs microcirculatory and autonomic caution."
+    }
+  ],
+  "patient_language": {
+    "use": [
+      "pattern",
+      "axis",
+      "transition",
+      "support",
+      "overload",
+      "regulation",
+      "stabilisation"
+    ],
+    "avoid": [
+      "cure claims",
+      "deterministic trauma labels",
+      "backend formulas",
+      "esoteric backend language",
+      "meridian language unless TCM mode enabled"
+    ],
+    "required_disclaimer": "This is an educational pattern-recognition tool, not a medical diagnosis."
+  },
+  "principles": [
+    "TTH = disorder of sustained tension.",
+    "Migraine = disorder of failed adaptation.",
+    "Pain syndromes are secondary attributes.",
+    "Trauma roles are dynamic enums.",
+    "DO_NOT rules override DO rules.",
+    "The 7-axis model is the core routing mechanism.",
+    "Symptoms are downstream expressions."
+  ],
+  "notes": [
+    "Decision priority hierarchy is mandatory: DO_NOT rules > DO rules > intervention choice.",
+    "Trauma roles (victim/savior/perpetrator), germ layers, and meridian axes are INDEPENDENT but LINKED enums. Do not collapse into single classification.",
+    "Pain syndromes are SECONDARY attributes — never use as primary classification keys in engine logic.",
+    "State switching over time must be supported — no static role/axis assignment.",
+    "TCM formula logic (Liu Wei Di Huang Wan, Huang Lian Jie Du Tang) is BACKEND ONLY. Never surface to front-end output.",
+    "Transition Engine v1.0 is designed for Base44 backend. Clinical-facing spec is NYSORA-compatible and evidence-aligned.",
+    "The 7-axis model and 7-cluster selector are the core routing mechanism of the engine. Each axis/cluster pair must be implemented as a linked but independent enum.",
+    "Backend physical model (fascia as tensegrity antenna, mitochondria as field stabilisers) does not appear in any front-end output but drives all probability calculations."
+  ]
+}

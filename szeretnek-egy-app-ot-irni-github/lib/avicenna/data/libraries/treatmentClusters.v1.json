@@ -1,0 +1,82 @@
+{
+  "module": "treatmentClusters.v1",
+  "description": "7 clusters. Output: 1 primary + 1 secondary cluster recommendation.",
+  "clusters": [
+    {
+      "name": "Lateral Autonomic Decompression",
+      "primary_axis": "Shaoyang",
+      "indicated_for": [
+        "Shaoyang overload",
+        "migraine",
+        "TMJ",
+        "nerve entrapments"
+      ]
+    },
+    {
+      "name": "Metabolic Rebalancing",
+      "primary_axis": "Yangming",
+      "indicated_for": [
+        "Yangming drop",
+        "metabolic pain",
+        "NAFLD-related",
+        "rigid fascia"
+      ]
+    },
+    {
+      "name": "Posterior Sensory Pressure Modulation",
+      "primary_axis": "Taiyang",
+      "indicated_for": [
+        "TTH",
+        "cervicogenic headache",
+        "ICP-pattern",
+        "myofascial pain"
+      ]
+    },
+    {
+      "name": "Microcirculatory Restoration",
+      "primary_axis": "Jueyin / Yangming",
+      "indicated_for": [
+        "blood sludging",
+        "venous stasis",
+        "CRPS",
+        "pelvic congestion"
+      ]
+    },
+    {
+      "name": "Survival-Axis Stabilization",
+      "primary_axis": "Shaoyin",
+      "indicated_for": [
+        "palpitations",
+        "orthostatic symptoms",
+        "panic",
+        "emotional conduction deficit"
+      ]
+    },
+    {
+      "name": "Interoceptive Regulation",
+      "primary_axis": "Taiyin",
+      "indicated_for": [
+        "IBS",
+        "chest tightness",
+        "CFS",
+        "exertional intolerance"
+      ]
+    },
+    {
+      "name": "Central Coherence Support",
+      "primary_axis": "Ren/Du (Central)",
+      "indicated_for": [
+        "fibromyalgia",
+        "ADHD-like overload",
+        "systemic sensitisation",
+        "top-down coherence loss"
+      ]
+    }
+  ],
+  "selection_rule": "Highest axis probability determines primary cluster; second-highest relevant axis determines secondary cluster, unless blocked by DO_NOT rules.",
+  "decision_hierarchy": [
+    "DO_NOT rules",
+    "DO rules",
+    "intervention choice"
+  ]
+}
