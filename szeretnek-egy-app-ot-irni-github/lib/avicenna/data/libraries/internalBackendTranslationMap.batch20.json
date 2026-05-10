@@ -1,0 +1,59 @@
+{
+  "library": "internalBackendTranslationMap.batch20",
+  "source": "avicenna_engine_batch20.json",
+  "note": "Engine-internal reasoning only. Never expose in frontend output.",
+  "translations": [
+    {
+      "backend_term": "Plate collapse / REZ decoherence",
+      "frontend_term": "meningeal-EZ interface failure at the central-peripheral myelin transition zone"
+    },
+    {
+      "backend_term": "Pulse chaos / Liver Yang turbulence",
+      "frontend_term": "arterial pulse discoherence from global metabolic overdrive; high-frequency low-coherence waveforms"
+    },
+    {
+      "backend_term": "Plexus storm",
+      "frontend_term": "autonomic ganglionic amplification of field instability"
+    },
+    {
+      "backend_term": "posterior fossa resonant chamber",
+      "frontend_term": "posterior fossa neurovascular resonance with meningeal EZ fragmentation"
+    },
+    {
+      "backend_term": "tentorium as frequency filter",
+      "frontend_term": "tentorial meningeal EZ damping system"
+    },
+    {
+      "backend_term": "Yangming (cerebrum)",
+      "frontend_term": "cortical output and projection system"
+    },
+    {
+      "backend_term": "Shaoyang (cerebellum-brainstem)",
+      "frontend_term": "rhythmic temporal regulation and autonomic pivot"
+    },
+    {
+      "backend_term": "Taiyang (dura-occiput-cervical fascia)",
+      "frontend_term": "posterior cranial-fascial containment and thermoregulatory envelope"
+    },
+    {
+      "backend_term": "còu lǐ tightening (allergic / immune crowding)",
+      "frontend_term": "dermal interstice congestion with trigeminal-immune sensitisation"
+    },
+    {
+      "backend_term": "Shu-Mu meridian map",
+      "frontend_term": "neural-fascial-vascular segmental reporting system (posterior DRG-fascia / anterior visceral-fascia)"
+    },
+    {
+      "backend_term": "steroid as artificial Yang",
+      "frontend_term": "steroid as temporary EZ-organising agent (effective only when water grid is intact)"
+    },
+    {
+      "backend_term": "EZ fragmented / Yin deficient",
+      "frontend_term": "chronic perineural matrix discontinuity; steroid-resistant neuropathic state"
+    },
+    {
+      "backend_term": "pulsed RF as EZ recharger",
+      "frontend_term": "pulsed radiofrequency as field-coherence restoring intervention"
+    }
+  ]
+}

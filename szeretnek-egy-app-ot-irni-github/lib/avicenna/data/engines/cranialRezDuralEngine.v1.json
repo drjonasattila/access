@@ -1,0 +1,1019 @@
+{
+  "metadata": {
+    "source_files": [
+      "REZ_theory_long_TGN_pdf.pdf"
+    ],
+    "engine_version": "batch3_v1.0",
+    "extraction_notes": [
+      "This document introduces the Plate-Pulse-Plexus (PPP) triad as the universal operating architecture of every cranial nerve and every spinal nerve root.",
+      "The REZ (Root Entry Zone) / dural sleeve hypothesis unifies cranial neuralgias with spinal radicular pain under a single EZ-field-meningeal model.",
+      "The document provides the most clinically actionable intervention-prediction rules yet: the steroid responsiveness decision tree based on EZ continuity.",
+      "Posterior fossa anatomy receives its own field-level interpretation as a resonant chamber for Liver Yang.",
+      "Cranial anatomy is mapped to Yangming (cerebrum) / Shaoyang (cerebellum-brainstem) / Taiyang (dural-occipital shell) for the first time.",
+      "All internal backend terms must be translated; frontend language uses 'neurovascular decoupling', 'perineural matrix instability', 'meningeal EZ collapse'.",
+      "The Shu-Mu acupuncture point theory receives its biophysical justification here."
+    ],
+    "normalized_engine_name": "CRANIAL_REZ_DURAL_ENGINE_v1.0",
+    "source_file": "avicenna_engine_batch20.json",
+    "safety_visibility": "patient output must use internal_backend_translation_map and suppress backend cranial-axis terms"
+  },
+  "input_variables": [
+    "TN_type",
+    "pain_onset_duration",
+    "pain_character",
+    "EZ_continuity_state",
+    "Yin_state",
+    "steroid_response_history",
+    "morning_stiffness_pattern",
+    "nocturnal_pain",
+    "autonomic_dysfunction_present",
+    "deep_cold_sensation",
+    "paradoxical_flare_after_steroids",
+    "multi_segment_involvement",
+    "MRI_finding",
+    "cranial_nerve_affected",
+    "REZ_location",
+    "pulse_driver_vessel",
+    "plexus_ganglion",
+    "posterior_fossa_symptoms",
+    "organ_trauma_history",
+    "shu_mu_segment",
+    "dural_continuity_impaired",
+    "intervention_type_considered"
+  ],
+  "patterns": [
+    {
+      "id": "TGN_SPECTRUM",
+      "name": "Trigeminal Neuralgia EZ Spectrum",
+      "internal_tag": "REZ_EZ_collapse_spectral",
+      "frontend_language": "progressive neurovascular-meningeal interface decoherence",
+      "sub_patterns": [
+        {
+          "id": "TGN_TYPICAL",
+          "name": "Classical / Typical TN",
+          "EZ_state": "transient local EZ collapse → rapid reformation; charge grid shaken, not broken",
+          "clinical": "paroxysmal electric-shock pain, no baseline pain",
+          "Yin_state": "Yin depleted per attack but reforms between attacks",
+          "prognosis": "reversible if Yin is rebuilt before next attack cycle"
+        },
+        {
+          "id": "TGN_ATYPICAL",
+          "name": "Atypical TN",
+          "EZ_state": "partial lattice breakdown; water ordering inconsistent; fascia-nerve resonance unstable",
+          "clinical": "intermittent paroxysms with persistent background ache",
+          "Yin_state": "Yin partially deficient; unable to fully reform EZ between attacks"
+        },
+        {
+          "id": "TGN_NEUROPATHIC",
+          "name": "Trigeminal Neuropathic Pain",
+          "EZ_state": "full EZ disintegration; chronic loss of charge coherence; capillary-mitochondrial desynchronisation",
+          "clinical": "continuous burning pain, no paroxysms",
+          "Yin_state": "severe Yin deficiency; EZ layer cannot reconstitute",
+          "TCM_translation": "progressive Yin deficiency → Empty Heat → dry, continuous, self-sustaining pain"
+        }
+      ],
+      "field_destabilising_factors": [
+        {
+          "factor": "trauma (mechanical / surgical)",
+          "mechanism": "collapses fascia resonance and membrane polarity"
+        },
+        {
+          "factor": "malignancy",
+          "mechanism": "slow energetic siphoning; tumour as negative vortex draining local field charge"
+        },
+        {
+          "factor": "connective tissue disorders",
+          "mechanism": "collagen matrix stiffening; impairs EZ water generation and piezoelectric coupling"
+        },
+        {
+          "factor": "drugs (especially mitochondrial toxins or ion-channel toxins)",
+          "mechanism": "flatten oscillatory water-protein field coherence"
+        },
+        {
+          "factor": "MS",
+          "mechanism": "inflammatory demyelination = heat; myelin debris + interstitial oedema = damp; EZ disintegrates around plaques → misfiring loops, poor re-entrainment. Frontend: damp-heat in the neurovascular matrix."
+        },
+        {
+          "factor": "diabetes",
+          "mechanism": "glycation sludge + microangiopathy + low-grade inflammation = damp-heat; mitochondria desynchronise; regeneration lags. Frontend: metabolic damp-heat pattern."
+        },
+        {
+          "factor": "allergic / immune crowding (còu lǐ tightening)",
+          "mechanism": "repeated unwanted-in-the-face exposures → boundary intrusion → sympathetic drive + trigeminal-immune reflex (CGRP/Substance P); dermal mast cells and dendritic cells crowd facial interstices; oedema + histamine = damp-heat at the surface, priming nociceptors and thinning local EZ. Frontend: boundary violation driving chronic fascial damp-heat."
+        }
+      ],
+      "electromagnetic_storm_concept": {
+        "description": "During severe paroxysms, local EZ breakdown exposes the underlying ionic plasma to uncontrolled electromagnetic turbulence.",
+        "mechanism": "The region becomes 'porous' — normally protective field boundaries dissolve. The field storm propagates through meridian and fascia channels.",
+        "clinical_correlates": [
+          "pain radiation beyond trigeminal territory",
+          "sympathetic overactivity",
+          "hypersensitivity",
+          "emotional invasion / intrusive thoughts"
+        ],
+        "frontend_language": "acute boundary collapse with propagating neurovascular turbulence"
+      },
+      "neural_loop_breakdown": {
+        "description": "Normally, afferent and efferent loops maintain rhythmic feedback between nerve firing, microvascular pulsation, and mitochondrial oscillation, keeping local EZ water charged and phase-locked to heartbeat and respiration.",
+        "failure_mechanism": "Trauma or demyelination interrupts this circuit → mitochondria fall out of sync → incoherent ATP pulses and chaotic calcium transients → EZ cannot reconstitute → regeneration stalls → chronicity of neuropathic pain.",
+        "frontend_language": "loss of neurovascular coupling and mitochondrial synchrony → chronic pain maintenance"
+      },
+      "death_model": {
+        "principle": "Loss of pulsed cardiac output → loss of mitochondrial synchrony → collapse of global EZ coherence → loss of consciousness.",
+        "explanation": "The heartbeat is the rhythmic pacer that entrains mitochondrial oscillations and maintains the body's water lattice. When the pulse stops, the coherent field collapses instantly.",
+        "engine_use": "Explains why cardiac output cessation is immediately fatal — not merely due to ischaemia but due to global EZ coherence collapse."
+      },
+      "interventions": {
+        "plate_collapse": {
+          "description": "REZ inflammation, demyelination, trauma",
+          "herbs": [
+            {
+              "name": "Dan Shen",
+              "role": "Yin restoration, EZ reformation, microcirculatory support"
+            },
+            {
+              "name": "Wu Wei Zi",
+              "role": "Yin restoration, EZ reformation, mitochondrial trophic"
+            },
+            {
+              "name": "Magnesium",
+              "role": "EZ layer stabilisation, ion-phase support"
+            }
+          ],
+          "device": "IR laser / photobiomodulation (gentle red/IR over affected REZ region)"
+        },
+        "pulse_chaos": {
+          "description": "Liver Yang turbulence, arterial pulsation discoherence",
+          "herbs": [
+            {
+              "name": "Chai Hu",
+              "role": "Shaoyang harmoniser, waveform smoothing"
+            },
+            {
+              "name": "Bai Shao Yao",
+              "role": "Yin protection, Liver Yang calming, structured water layer stabilisation"
+            },
+            {
+              "name": "Qi harmonisers (Xiao Chai Hu Tang axis)",
+              "role": "smooth vascular pulse, reduce high-frequency low-coherence waveforms"
+            }
+          ],
+          "device": "cerebellar entrainment (slow rhythmic movement, breathing 6s in / 6s out)"
+        },
+        "plexus_storm": {
+          "description": "Dysautonomia, ganglionic amplification",
+          "modalities": [
+            "SPG block (sphenopalatine ganglion)",
+            "auricular vagus stimulation",
+            "breath and fascia rhythm re-entrainment",
+            "dural unwinding / craniosacral"
+          ]
+        },
+        "formula_summary": "Dan Shen + Wu Wei Zi Yin-seal (plate) + Xiao Chai Hu Tang direction (pulse) + SPG modulation / cranial nerve ganglion block (plexus)"
+      }
+    },
+    {
+      "id": "PPP_UNIVERSAL",
+      "name": "Plate-Pulse-Plexus Universal Cranial Nerve Architecture",
+      "internal_tag": "PPP_triad_all_cranial_nerves",
+      "frontend_language": "triune neurovascular coherence system — plate / pulse / plexus",
+      "core_principle": "Every cranial nerve (and every spinal nerve root) operates as a triune coherence system. When any layer decoheres, the whole triad collapses = neurovascular decoupling (Thorpe's term) = loss of EZ-pulse synchrony.",
+      "triad_definitions": {
+        "PLATE": "REZ / dural sleeve — the transition field where central and peripheral coherence meet (Schwann ↔ oligodendroglia / astrocyte / macroglia). EZ lattice + myelin transition zone. Mechanically and energetically fragile.",
+        "PULSE": "Vascular / energetic driver — rhythmic arterial pulsation that must stay harmonically coupled. Desynchronised by Liver Yang rising (excess high-frequency low-coherence excitation from global metabolic overdrive).",
+        "PLEXUS": "Autonomic or fascia-based amplifier — distributes coherence to tissue; receives mixed signals when central and peripheral compartments are out of synchrony. Ganglion + autonomic fibres + perivascular fascia."
+      },
+      "cranial_nerve_map": [
+        {
+          "nerve": "I — Olfactory",
+          "plate": "olfactory bulb–cribriform plate transition",
+          "pulse": "anterior cerebral arterial microflow; cortical respiratory pulse",
+          "plexus": "limbic interface (amygdala, orbitofrontal)",
+          "pathology": "hyposmia, parosmia, emotional invasion, post-viral anosmia (damp-heat or boundary loss)",
+          "interventions": [
+            "breath retraining",
+            "olfactory meditation",
+            "upper turbinate photobiomodulation"
+          ]
+        },
+        {
+          "nerve": "II — Optic",
+          "plate": "optic disc–retinal field (CSF–retina boundary)",
+          "pulse": "ophthalmic artery pulsation",
+          "plexus": "ciliary ganglion, hypothalamic–retinal loop",
+          "pathology": "optic neuritis, glaucoma (Yang excess / stagnation), visual migraine aura",
+          "interventions": [
+            "light modulation",
+            "microcurrent at temple",
+            "Gou Teng + Dan Shen (microcirculation restoration)"
+          ],
+          "field_note": "glaucoma: local heat and stagnation from unrelieved Yang; fluid fails to structure → intraocular pressure rises"
+        },
+        {
+          "nerve": "III — Oculomotor",
+          "plate": "midbrain REZ near posterior perforated substance",
+          "pulse": "posterior cerebral / superior cerebellar arteries",
+          "plexus": "ciliary and pterygopalatine ganglia",
+          "pathology": "ptosis, diplopia, pupil irregularity (Shaoyang field rigidity)",
+          "interventions": [
+            "gentle midline photobiostimulation",
+            "microdosing acetyl-L-carnitine",
+            "Xiao Chai Hu type harmonisation"
+          ]
+        },
+        {
+          "nerve": "IV — Trochlear",
+          "plate": "dorsal midbrain",
+          "pulse": "superior cerebellar artery",
+          "plexus": "cavernous sinus plexus",
+          "pathology": "vertical diplopia, ocular dizziness",
+          "interventions": [
+            "cranial fascial release",
+            "cerebellar recalibration (Liver-Wind calming)"
+          ]
+        },
+        {
+          "nerve": "V — Trigeminal",
+          "plate": "pons REZ (SCA impact point)",
+          "pulse": "SCA + CSF turbulence",
+          "plexus": "sphenopalatine, otic, submandibular ganglia; dura",
+          "pathology": "neuralgia, facial pain, migraine",
+          "interventions": [
+            "SPG block",
+            "Dan Shen + Wu Wei Zi Yin seal",
+            "photobiomodulation"
+          ],
+          "SCA_note": "SCA compression is the footprint of upstream timing disorder — turbulent Qi in SCA signals cerebellar field discoherence; rising Liver Yang drives high-frequency low-coherence waveforms that beat on the trigeminal REZ"
+        },
+        {
+          "nerve": "VI — Abducens",
+          "plate": "pontomedullary junction",
+          "pulse": "basilar artery",
+          "plexus": "cavernous sinus and sympathetic plexus",
+          "pathology": "diplopia, brainstem stretch headaches",
+          "interventions": [
+            "craniosacral unwinding",
+            "hydration (EZ restoration)"
+          ]
+        },
+        {
+          "nerve": "VII — Facial",
+          "plate": "pontomedullary angle",
+          "pulse": "AICA, labyrinthine artery",
+          "plexus": "geniculate and submandibular ganglia",
+          "pathology": "Bell's palsy (cold invasion → Yin collapse)",
+          "interventions": [
+            "warm laser along stylomastoid path",
+            "Shaoyang-Yin tonics",
+            "stylomastoid foramen block"
+          ]
+        },
+        {
+          "nerve": "VIII — Vestibulocochlear",
+          "plate": "pontomedullary angle",
+          "pulse": "AICA / labyrinthine artery",
+          "plexus": "vestibular ganglion, cerebellar relay",
+          "pathology": "vertigo, tinnitus, Ménière's disease (CSF-lymph decoupling)",
+          "interventions": [
+            "inner-ear photobiomodulation",
+            "Huang Qin + Zhu Ling logic (clear damp-heat)"
+          ],
+          "field_note": "Ménière's: dampness + CSF decoupling → inner-ear EZ collapse"
+        },
+        {
+          "nerve": "IX — Glossopharyngeal",
+          "plate": "medulla REZ",
+          "pulse": "PICA",
+          "plexus": "otic ganglion",
+          "pathology": "glossopharyngeal neuralgia, dysautonomia, baroreflex instability",
+          "interventions": [
+            "otic ganglion modulation",
+            "Dan Shen + Gou Teng",
+            "gentle vagal stimulation",
+            "glossopharyngeal ganglion block"
+          ]
+        },
+        {
+          "nerve": "X — Vagus",
+          "plate": "medulla REZ",
+          "pulse": "vertebral / PICA",
+          "plexus": "nodose ganglion, cardiac, enteric plexuses",
+          "pathology": "dysautonomia, POTS, arrhythmia, IBS",
+          "interventions": [
+            "auricular vagus stimulation",
+            "deep breathing",
+            "He Huan Pi + Fu Shen formulas"
+          ]
+        },
+        {
+          "nerve": "XI — Accessory",
+          "plate": "cervical cord–foramen magnum REZ",
+          "pulse": "vertebral arteries",
+          "plexus": "cervical sympathetic chain",
+          "pathology": "shoulder / neck spasm, tension headaches",
+          "interventions": [
+            "neck fascial release",
+            "GB meridian harmonisation"
+          ]
+        },
+        {
+          "nerve": "XII — Hypoglossal",
+          "plate": "medulla REZ",
+          "pulse": "vertebral / basilar branches",
+          "plexus": "lingual parasympathetic fibres",
+          "pathology": "dysarthria, tongue deviation, speech-field fatigue",
+          "interventions": [
+            "tongue grounding exercises",
+            "Yin restoratives (Sheng Di, Xuan Shen)"
+          ]
+        }
+      ],
+      "vulnerability_hierarchy": [
+        "1. High sensory load + tight vascular proximity → V (trigeminal), II (optic), VIII (vestibulocochlear) — earliest REZ failure",
+        "2. Autonomic modulation → VII (facial), X (vagus), IX (glossopharyngeal)",
+        "3. Motor-dominant nerves → later involvement unless systemic Yin exhaustion persists"
+      ],
+      "therapeutic_collapse_table": [
+        {
+          "collapse_type": "Plate collapse",
+          "description": "REZ inflammation, demyelination, trauma",
+          "principle": "Yin restoration, EZ reformation — Dan Shen, Wu Wei Zi, magnesium, IR laser"
+        },
+        {
+          "collapse_type": "Pulse chaos",
+          "description": "Liver Yang turbulence, arterial pulsation discoherence",
+          "principle": "Smooth waveforms — Chai Hu, Bai Shao Yao, Qi harmonisers, cerebellar entrainment"
+        },
+        {
+          "collapse_type": "Plexus storm",
+          "description": "Dysautonomia, ganglionic amplification",
+          "principle": "Autonomic regulation — SPG block, auricular vagus, breath and fascia rhythm"
+        }
+      ]
+    },
+    {
+      "id": "POSTERIOR_FOSSA_RESONANCE",
+      "name": "Posterior Fossa Resonant Chamber Pattern",
+      "internal_tag": "posterior_fossa_Liver_Yang_resonance",
+      "frontend_language": "posterior fossa neurovascular resonance with meningeal EZ fragmentation",
+      "cranial_axis_map": {
+        "Yangming": {
+          "structure": "cerebrum (neocortex, frontal, parietal, occipital lobes)",
+          "function": "outward projection of awareness and command; converts internal potential into directed action",
+          "analogy": "illumination toward the world"
+        },
+        "Shaoyang": {
+          "structure": "cerebellum + brainstem (pons, medulla, midbrain)",
+          "function": "rhythmic pivot; temporal stabiliser; interfaces between cortical intention (Yangming) and visceral Yin systems",
+          "analogy": "pivot of exchange and timing"
+        },
+        "Taiyang": {
+          "structure": "occipital bone, dura, atlanto-occipital fascia, cervical paraspinals, Bladder meridian plane",
+          "function": "outer stabiliser; thermoregulation; anchoring of upright tone; containment of posterior fossa resonance",
+          "analogy": "protective shell; the membranous field that anchors cranial resonance system to the body"
+        },
+        "clinical_note": "Nothing more posterior than the cerebellum in brain tissue — Taiyang is expressed by the container itself (dural-occipital-cervical fascia) rather than brain parenchyma"
+      },
+      "tentorium_as_frequency_filter": {
+        "normal_function": "Dense collagenous sheet anchored to petrous ridges and occiput; separates cerebrum (Yangming) from cerebellum-brainstem (Shaoyang). Functions as EZ resonator — biological frequency filter. Allows smooth low-frequency cardiac/respiratory/craniosacral waves while dampening high-frequency noise.",
+        "failure_mechanism": "When Liver Yang rises excessively → overcharged high-frequency low-coherence excitation arrives via arterial pulses. Tentorium vibrates sympathetically → its water lattice heats and loses order (EZ fragmentation). Once EZ charge weakens, ability to dissipate wave energy collapses → structure that once absorbed turbulence now reflects and amplifies it → standing wave cavity between occipital bone, cerebellar hemispheres, and venous sinuses.",
+        "result": "Laminar CSF-venous coupling becomes oscillatory reflux. Yang trapped in closed basin, shaking the water grid instead of dispersing through it."
+      },
+      "posterior_fossa_diseases": [
+        {
+          "diagnosis": "IIH (idiopathic intracranial hypertension)",
+          "mechanism": "venous stasis / blood sludging = charge dispersion within the venous water phase; raised ICP = conversion of vibrational pressure (Yang frequency) into static hydrostatic pressure (damp-heat)",
+          "field_note": "On imaging this appears as oedema, but energetically it is a loss of coherent drainage"
+        },
+        {
+          "diagnosis": "PRES (posterior reversible encephalopathy syndrome)",
+          "mechanism": "same — high-frequency low-coherence standing wave in posterior fossa producing chaotic micro-eddies in transverse and sigmoid sinuses"
+        },
+        {
+          "diagnosis": "Occipital neuralgia",
+          "mechanism": "Taiyang stiffening → venous outflow restriction + heat trapping + occipital tone loss"
+        },
+        {
+          "diagnosis": "Papilledema",
+          "mechanism": "optic nerve REZ involved by back-flow turbulence from posterior fossa congestion"
+        }
+      ],
+      "posterior_fossa_clinical_correlates": [
+        {
+          "symptom": "headache, visual blurring, tinnitus",
+          "mechanism": "Shaoyang gate overload between tentorium and temporal fascia"
+        },
+        {
+          "symptom": "papilledema",
+          "mechanism": "optic nerve REZ involved by back-flow turbulence"
+        },
+        {
+          "symptom": "autonomic instability",
+          "mechanism": "vagal and glossopharyngeal plexus entanglement at jugular foramen"
+        },
+        {
+          "symptom": "pulsatile tinnitus",
+          "mechanism": "REZ caught in posterior fossa oscillation"
+        },
+        {
+          "symptom": "visual aura",
+          "mechanism": "REZ caught in posterior fossa oscillation"
+        },
+        {
+          "symptom": "occipital neuralgia",
+          "mechanism": "Taiyang shell failure — dural EZ dehydration or stiffening traps rather than reflects waves"
+        }
+      ],
+      "interventions": {
+        "calm_frequency": [
+          "Chai Hu + Bai Shao Yao logic",
+          "breathing entrainment 6s in / 6s out",
+          "Gou Teng (Liver-Wind calming)"
+        ],
+        "restore_Yin_water_phase": [
+          "Dan Shen",
+          "Wu Wei Zi",
+          "Bai He",
+          "Xuan Shen",
+          "Magnesium",
+          "gentle IR / laser over occiput"
+        ],
+        "re_entrain_drainage": [
+          "positional rest",
+          "mild diaphragmatic release",
+          "occipital cranial release to reopen venous-CSF coherence"
+        ],
+        "contraindications": [
+          "avoid stimulatory visual or sound input during flare-ups",
+          "avoid cold exposure to posterior neck / occiput"
+        ]
+      },
+      "clinical_dysfunction_table": [
+        {
+          "manifestation": "posterior fossa resonance (IIH, PRES)",
+          "field_interpretation": "Shaoyang pivot collapse; tentorial EZ fragmentation (Taiyang swelling)",
+          "support": "Calm Liver Yang, restore Yin water (Dan Shen, Wu Wei Zi, Mg, occipital IR)"
+        },
+        {
+          "manifestation": "frontal overdrive / anxiety / insomnia",
+          "field_interpretation": "excess Yangming outflow without Shaoyang damping",
+          "support": "Shaoyang harmonisers (Chai Hu, Bai Shao), cerebellar entrainment via slow movement or breath"
+        },
+        {
+          "manifestation": "brain fog / dizziness",
+          "field_interpretation": "Yin stagnation blocking upward Shaoyang transmission",
+          "support": "Drain dampness, warm pivot (Fu Ling, Ban Xia, mild movement)"
+        },
+        {
+          "manifestation": "occipital neuralgia / neck spasm",
+          "field_interpretation": "Taiyang loss of fascial conductivity",
+          "support": "gentle heat, Mg, stretching, fascia release"
+        },
+        {
+          "manifestation": "vertigo / oscillating pressure",
+          "field_interpretation": "Shaoyang tentorial resonance",
+          "support": "harmonise Liver Yang, restore Yin fluid"
+        },
+        {
+          "manifestation": "frontal headache / eye pain",
+          "field_interpretation": "Yangming cortical over-drive",
+          "support": "quiet sensory inflow, slow breath, moderate Yang"
+        }
+      ]
+    },
+    {
+      "id": "DURAL_CONTINUUM",
+      "name": "Dural Continuum — Unified Spinal / Cranial Pain Model",
+      "internal_tag": "dural_sleeve_REZ_continuum_Shu_Mu",
+      "frontend_language": "unified neurovascular-meningeal interface instability across the neuraxis",
+      "core_statement": "Cranial neuralgias and spinal radicular pain are the SAME DISEASE PATTERN with different symptoms — both are expressions of EZ grid instability at the neurovascular-meningeal interface.",
+      "unified_mechanism_chain": "Organ trauma → field instability → segmental sympathetic overdrive → perineural EZ collapse → high neural traffic → DRG or REZ hyperexcitability → neuropathic pain",
+      "three_meningeal_layers": [
+        {
+          "layer": "Dura and venous sinuses",
+          "properties": "large, collagen-dense sheets; conducting low-frequency charge and venous return"
+        },
+        {
+          "layer": "Dural reflections (falx, tentorium, diaphragma sellae)",
+          "properties": "main frequency filters between cortical regions; the Yangming / Shaoyang / Taiyang separators"
+        },
+        {
+          "layer": "Perineural sleeves",
+          "properties": "micro-extensions of dura following arteries, veins, and cranial nerves through their foramina; the actual Plate of each Pulse-Plate-Plexus triad"
+        }
+      ],
+      "chain_reaction_when_EZ_collapses": [
+        "venous/CSF stagnation — oscillatory flow becomes sluggish pressure; sinuses fill; ICP rises",
+        "neurovascular turbulence — pulsations striking de-structured dura send chaotic microcurrents into adjacent REZs (Pulse-Plate link)",
+        "autonomic over-activation — ganglia embedded in these sleeves (Plexus nodes) lose hydration shell and fire erratically → dysautonomia, neuralgias, tinnitus",
+        "propagating pattern — because all meninges are continuous, loss of order spreads like ripples → multiple cranial nerves or sinuses involved simultaneously"
+      ],
+      "spinal_PPP_equivalents": {
+        "PULSE": "segmental arteries entering foramen; if EZ grid is weak, their pulsation becomes turbulent → irritates DRG; chaotic Liver Yang leak from failing organ further destabilises the grid",
+        "PLATE": "dural sleeve + ligamentum flavum + facet capsule + all fascial layers around nerve root; mechanical and energetic frequency buffer; degeneration → loss of damping",
+        "PLEXUS": "autonomic ganglia + DRG (dorsal root ganglion); hyperexcitable DRG = spinal analogue of trigeminal / glossopharyngeal neuralgia / Bell's palsy / vestibular paroxysmia"
+      },
+      "spinal_cranial_equivalence": {
+        "spinal_intervention": "epidural steroid → DRG (dural sleeve) modulation",
+        "cranial_intervention": "ganglion block (SPG, Gasserian, stylomastoid, supraorbital/supratrochlear, glossopharyngeal, occipital nerve sheath) = cranial equivalent of DRG modulation",
+        "shared_mechanism": "both restore EZ buffer and damp neurovascular turbulence at the Plate level"
+      },
+      "dural_continuity_clinical_links": [
+        {
+          "spinal_region": "cervical tension",
+          "cranial_expression": "trigeminal flare-ups (trigemino-cervical complex, Window of Heaven points, TAC)"
+        },
+        {
+          "spinal_region": "thoracic stiffness",
+          "cranial_expression": "occipital neuralgia"
+        },
+        {
+          "spinal_region": "scoliosis",
+          "cranial_expression": "facial pain or tinnitus"
+        },
+        {
+          "spinal_region": "lumbar stenosis",
+          "cranial_expression": "migraine frequency changes"
+        }
+      ],
+      "craniosacral_therapy_mechanism": "The entire craniosacral system is one continuous sheet (collagen + water channels + piezoelectric properties + venous sinuses + mechanoreceptors + EZ charge layers). Gentle deformation of the dura: improves venous sinus drainage; makes CSF oscillations laminar; harmonises arterial pulse; drops cranial REZ and tentorial tension; restores sacral pumping (tail-end grounding) = literally manually re-cohering the EZ membrane of the neuraxis.",
+      "Shu_Mu_biophysical_interpretation": {
+        "Mu_points_front": "fascia-viscera membranes with high autonomic load — the anterior fascial reporting layer of organ EZ state",
+        "Shu_points_back": "dural-fascial segments on the Bladder meridian that mirror organ conductivity — the posterior spinal REZ-plexus reporting layer",
+        "TCM_states_as_EZ_failures": [
+          {
+            "TCM": "Qi stagnation",
+            "EZ_equivalent": "reduced flow coherence in organ fascial compartment"
+          },
+          {
+            "TCM": "Blood stasis",
+            "EZ_equivalent": "microcirculatory sludging, venous EZ collapse"
+          },
+          {
+            "TCM": "Organ heat",
+            "EZ_equivalent": "excess Yang frequency without Yin damping in organ fascia"
+          },
+          {
+            "TCM": "Weak Zhang Qi",
+            "EZ_equivalent": "low EZ lattice organising capacity — insufficient mitochondrial drive to maintain structured water"
+          }
+        ],
+        "key_statement": "The sensory nerve does not create pain — it merely reports the grid/field instability."
+      },
+      "organ_to_spine_traffic_model": {
+        "mechanism": "Organ holding unresolved emotional oscillation / toxin / ischaemia / adhesion / Empty Heat → organ fascia + perivascular water grid destabilises → tense sticky tissue → altered viscerosensory feedback → increased sympathetic efferent drive → venous/lymphatic stagnation → local EZ thinning → segmental DRG sees this as continuous afferent noise = peripheral sensitisation",
+        "TCM_equivalent": "Liver Qi invading Stomach / Spleen / Heart / Lungs = local organ field destabilisation reporting up segmental spinal nerve (same as Liver Yang rising in the head, just applied to trunk)",
+        "foraminal_stenosis_reframing": "foraminal stenosis, facet arthropathy, disc bulge are DOWNSTREAM EFFECTS of EZ collapse at the dural sleeve — not root causes"
+      },
+      "causes_of_EZ_grid_instability": [
+        "Yin deficiency (water grid organising capacity loss)",
+        "emotional invasion (excessive chaotic charge)",
+        "inflammation (oxidative stress = EZ grid destruction)",
+        "venous congestion (blood sludging, resonance chamber effect)",
+        "autonomic dysregulation (emergency sympathetic compensation)",
+        "metabolic overdrive (Liver Yang rising)",
+        "trauma — scarring, fibrosis (resonance chamber formation)",
+        "dampness — metabolic waste build-up and water grid pollution"
+      ],
+      "diagnoses_explained": [
+        "CRPS (limb, abdominal, thoracic)",
+        "trigeminal neuralgia",
+        "post-herpetic neuralgia",
+        "visceral functional pain",
+        "optic neuritis",
+        "cervical radiculopathy",
+        "thoracic outlet syndrome",
+        "occipital neuralgia",
+        "menstrual pain",
+        "IBS-SIBO-gastroparesis patterns",
+        "Bell's palsy",
+        "vestibular paroxysmia",
+        "idiopathic intracranial hypertension"
+      ]
+    },
+    {
+      "id": "STEROID_RESPONSE_MODEL",
+      "name": "Epidural Steroid / Interventional Pain Responsiveness Model",
+      "internal_tag": "steroid_EZ_continuity_Yin_Yang",
+      "frontend_language": "interventional analgesic response prediction based on perineural matrix continuity",
+      "core_principle": "Steroids (and equivalent interventions) work only when the EZ water grid is damaged but still continuous. They fail when the grid is fragmented (Yin deficient). Steroids behave as artificial Yang — they organise but cannot create structure.",
+      "steroid_mechanism": [
+        "suppresses inflammation",
+        "reduces oedema",
+        "increases membrane order",
+        "reconstitutes a thin EZ layer temporarily",
+        "improves vascular tone",
+        "compresses chaotic ion signalling into coherence"
+      ],
+      "steroid_real_effect": "Steroids momentarily stabilise a partially intact EZ water grid. They organise — they do not create structure.",
+      "steroid_works_when": {
+        "EZ_state": "thinned, softened, dehydrated, noisy, disrupted, inflamed — but NOT shattered",
+        "clinical_correlates": [
+          "acute radiculitis (<3 months onset)",
+          "subacute disc herniation",
+          "recent trauma",
+          "early CRPS",
+          "recent organ inflammation",
+          "new-onset neuralgia"
+        ],
+        "clinical_signs_strong_responder": [
+          "onset < 3 months",
+          "burning pain with mechanical trigger",
+          "morning stiffness that improves with movement (Yin still present — tissue can still glide on the Yin coating)",
+          "MRI shows oedema rather than collapse",
+          "pain improves with hydration or rest",
+          "responds to gentle fascial decompression"
+        ]
+      },
+      "steroid_fails_when": {
+        "EZ_state": "broken into patches, micelles instead of sheets, irregular charge zones, chaotic piezoelectric behaviour, venous sludging, fascial fibrosis, DRG degenerative hyperexcitability",
+        "TCM_equivalent": "Yin deficiency at tissue level — the inability to hold water in a coherent matrix. Steroid = Yang without Yin → no structure to consolidate → no effect",
+        "clinical_correlates": [
+          "chronic duration >6–12 months",
+          "waking in pain during the night (severe Yin deficiency obstructs Yang movement)",
+          "severe insomnia + autonomic dysfunction (noisy fascia, sympathetically mediated pain)",
+          "deep cold sensation or dry fascia (fragmented Yin coating — morning stiffness does NOT improve with movement)",
+          "multi-segment involvement",
+          "paradoxical flare after steroids (steroids further destabilise fragmented grid with energy entrainment)",
+          "history of trauma → rumination → organ tightening",
+          "MRI shows atrophy or severe foraminal collapse"
+        ]
+      },
+      "pulsed_RF_vs_ablative_RF": {
+        "ablative_RF": "destroys tissue — eliminates signal but further damages EZ; fails in true neuropathic pain",
+        "pulsed_RF": "recharges the EZ instead of burning tissue — works better because it is cosmotropic (field coherence restoring), not destructive"
+      },
+      "why_craniosacral_beats_steroids_in_chronic": "Craniosacral therapy restores Yin water continuity (cosmotropic) rather than Yang tightening (chaotropic). In Yin-deficient / fragmented-EZ state, this is the correct intervention axis.",
+      "why_herbal_Yin_tonics_succeed_where_steroids_fail": "Herbal Yin-tonics + Shaoyang harmonisers are cosmotropic — they rebuild the structured water matrix and re-establish field coherence, which is the actual missing ingredient in chronic neuropathic pain.",
+      "rules": [
+        {
+          "condition": "pain_onset_duration < 3_months AND EZ_state == 'continuous_but_disrupted'",
+          "action": "steroid_intervention_likely_effective; proceed with epidural / ganglion injection"
+        },
+        {
+          "condition": "pain_onset_duration > 6_months AND nocturnal_pain == true AND autonomic_dysfunction == true",
+          "action": "steroid_intervention_unlikely_effective; redirect to Yin_tonic + Shaoyang_harmoniser + craniosacral + pulsed_RF"
+        },
+        {
+          "condition": "paradoxical_flare_after_steroids == true",
+          "action": "confirm EZ_fragmented_state; abandon steroid pathway; initiate Yin-rebuilding protocol"
+        },
+        {
+          "condition": "morning_stiffness_improves_with_movement == true",
+          "action": "Yin_still_present; EZ_likely_continuous; steroid_may_work"
+        },
+        {
+          "condition": "morning_stiffness_does_NOT_improve_with_movement == true AND deep_cold_sensation == true",
+          "action": "Yin_deficient; EZ_fragmented; steroid_contraindicated; use Yin_restoratives"
+        },
+        {
+          "condition": "multi_segment_involvement == true",
+          "action": "systemic_EZ_collapse; steroid_insufficient; address global Liver_Yang + Yin_deficiency first"
+        },
+        {
+          "condition": "MRI_finding == 'oedema_not_collapse'",
+          "action": "EZ_likely_continuous; steroid_effective_window"
+        },
+        {
+          "condition": "MRI_finding == 'atrophy' OR 'severe_foraminal_collapse'",
+          "action": "EZ_fragmented; steroid_will_fail; Yin_rebuilding_protocol_required"
+        }
+      ]
+    }
+  ],
+  "diagnosis_map": [
+    {
+      "diagnosis": "trigeminal neuralgia (classical / typical)",
+      "associated_patterns": [
+        "TGN_SPECTRUM",
+        "PPP_UNIVERSAL"
+      ],
+      "notes": "Transient EZ collapse with rapid reformation. Plate = pons REZ (SCA impact). Pulse = SCA turbulence from Liver Yang rising / cerebellar discoherence. Plexus = SPG + dura. Paroxysmal because EZ reforms between attacks. Intervention: Dan Shen + Wu Wei Zi (plate) + Xiao Chai Hu Tang direction (pulse) + SPG block (plexus)."
+    },
+    {
+      "diagnosis": "trigeminal neuralgia (atypical)",
+      "associated_patterns": [
+        "TGN_SPECTRUM",
+        "PPP_UNIVERSAL"
+      ],
+      "notes": "Partial lattice breakdown. Yin partially deficient. EZ reforms incompletely. Transition state — treat urgently to prevent progression to neuropathic pattern."
+    },
+    {
+      "diagnosis": "trigeminal neuropathic pain",
+      "associated_patterns": [
+        "TGN_SPECTRUM",
+        "EZW_FRAG"
+      ],
+      "notes": "Full EZ disintegration. Progressive Yin deficiency. Each attack drains Yin reservoir further. Continuous, dry, self-sustaining. Steroids ineffective. Requires deep Yin restoration + mitochondrial rebuilding + field coherence work. Long-term protocol."
+    },
+    {
+      "diagnosis": "Bell's palsy",
+      "associated_patterns": [
+        "PPP_UNIVERSAL"
+      ],
+      "notes": "CN VII: cold invasion on weakened Shaoyang plate (AICA + labyrinthine artery turbulence + geniculate/submandibular plexus). Cold-damp invasion → Yin collapse. Intervention: warm laser stylomastoid path + Shaoyang-Yin tonics + stylomastoid foramen block."
+    },
+    {
+      "diagnosis": "optic neuritis",
+      "associated_patterns": [
+        "PPP_UNIVERSAL",
+        "POSTERIOR_FOSSA_RESONANCE"
+      ],
+      "notes": "CN II: EZ collapse at retinal-CSF interface. Local heat and Yang stagnation causing fluid failure to structure. Ophthalmic artery pulse chaos. Intervention: light modulation + microcurrent at temple + Gou Teng + Dan Shen."
+    },
+    {
+      "diagnosis": "glaucoma",
+      "associated_patterns": [
+        "PPP_UNIVERSAL"
+      ],
+      "notes": "CN II: Yang excess / stagnation causing intraocular pressure rise. Local fluid fails to structure → IOP rises. Intervention: microcirculation restoration (Gou Teng, Dan Shen) + light modulation."
+    },
+    {
+      "diagnosis": "Ménière's disease",
+      "associated_patterns": [
+        "PPP_UNIVERSAL",
+        "EZW_FRAG"
+      ],
+      "notes": "CN VIII: CSF-lymph decoupling. Dampness + CSF decoupling → inner-ear EZ collapse. Labyrinthine artery turbulence. Intervention: Huang Qin + Zhu Ling (clear damp-heat) + inner-ear photobiomodulation."
+    },
+    {
+      "diagnosis": "vestibular paroxysmia",
+      "associated_patterns": [
+        "PPP_UNIVERSAL",
+        "EZW_FRAG"
+      ],
+      "notes": "CN VIII: same mechanism as TGN but in auditory-vestibular territory. AICA loop turbulence."
+    },
+    {
+      "diagnosis": "glossopharyngeal neuralgia",
+      "associated_patterns": [
+        "PPP_UNIVERSAL"
+      ],
+      "notes": "CN IX: medulla REZ + PICA pulse + otic ganglion. Same mechanism as TGN at different location. Intervention: otic ganglion modulation + Dan Shen + Gou Teng + glossopharyngeal ganglion block."
+    },
+    {
+      "diagnosis": "POTS / dysautonomia",
+      "associated_patterns": [
+        "PPP_UNIVERSAL",
+        "OSCILL_VISC"
+      ],
+      "notes": "CN X (Vagus): medulla REZ + vertebral/PICA + nodose/cardiac/enteric plexuses. Intervention: auricular vagus stimulation + He Huan Pi + Fu Shen formulas + deep breathing."
+    },
+    {
+      "diagnosis": "IIH (idiopathic intracranial hypertension)",
+      "associated_patterns": [
+        "POSTERIOR_FOSSA_RESONANCE",
+        "PSA"
+      ],
+      "notes": "Posterior fossa resonant chamber overstimulated by Liver Yang. Venous stasis = charge dispersion within venous water phase. Raised ICP = vibrational pressure converted to hydrostatic pressure (damp-heat). Intervention: calm Liver Yang + EZ stabilisers + cranial venous drainage restoration. Fully cross-linked to PSA pattern from Batch 1."
+    },
+    {
+      "diagnosis": "PRES (posterior reversible encephalopathy syndrome)",
+      "associated_patterns": [
+        "POSTERIOR_FOSSA_RESONANCE",
+        "PSA"
+      ],
+      "notes": "High-frequency low-coherence standing wave in posterior fossa → chaotic eddies in transverse/sigmoid sinuses. Energetically: loss of coherent venous drainage. Intervention: same as IIH — Yin restoration + Liver Yang calming."
+    },
+    {
+      "diagnosis": "spinal radiculopathy / cervical radiculopathy",
+      "associated_patterns": [
+        "DURAL_CONTINUUM"
+      ],
+      "notes": "Spinal PPP: Pulse = segmental artery turbulence; Plate = dural sleeve; Plexus = DRG. Organ-driven sympathetic traffic → DRG dehydration + hyperexcitability → foraminal EZ collapse. 'Foraminal stenosis' is a downstream label. Intervention: epidural steroid if EZ continuous and acute; Yin tonics + Shaoyang harmonisers if chronic/fragmented."
+    },
+    {
+      "diagnosis": "occipital neuralgia",
+      "associated_patterns": [
+        "DURAL_CONTINUUM",
+        "POSTERIOR_FOSSA_RESONANCE"
+      ],
+      "notes": "Taiyang shell failure — dural/fascial EZ stiffening in cervico-occipital region. May be triggered by thoracic stiffness propagating via dural continuum. Intervention: occipital nerve sheath block + gentle heat + Mg + cervico-occipital fascial release."
+    },
+    {
+      "diagnosis": "post-herpetic neuralgia",
+      "associated_patterns": [
+        "DURAL_CONTINUUM",
+        "TGN_SPECTRUM"
+      ],
+      "notes": "Viral injury creates REZ-equivalent local dural sleeve EZ collapse at segmental level. Same mechanism as TGN at spinal distribution. Chronic = Yin deficient / fragmented grid. Steroid ineffective in chronic phase."
+    },
+    {
+      "diagnosis": "thoracic outlet syndrome",
+      "associated_patterns": [
+        "DURAL_CONTINUUM",
+        "LAX"
+      ],
+      "notes": "Fascial plate (brachial plexus sleeve) at cervicothoracic junction. Liver Yang turbulence in subclavian + vertebral arterial territory. Links to LAX (Lateral Autonomic) pattern from Batch 1."
+    },
+    {
+      "diagnosis": "IBS / gastroparesis / SIBO",
+      "associated_patterns": [
+        "DURAL_CONTINUUM",
+        "OSCILL_VISC",
+        "MIA"
+      ],
+      "notes": "Vagal plexus + enteric plexus EZ collapse (CN X Plexus). Organ EZ instability reports via Shu-Mu segments. Spinal DRG sees continuous afferent noise from gut field instability."
+    },
+    {
+      "diagnosis": "menstrual pain / pelvic functional pain",
+      "associated_patterns": [
+        "DURAL_CONTINUUM",
+        "DAV"
+      ],
+      "notes": "Organ-based field instability (pelvic fascia + autonomic ganglia) reporting up DRG L1-S3 equivalent. Continuous EZ collapse in pelvic visceral compartment. Cross-links to DAV pattern from Batch 1."
+    },
+    {
+      "diagnosis": "acute radiculitis (steroid-responsive)",
+      "associated_patterns": [
+        "DURAL_CONTINUUM",
+        "STEROID_RESPONSE_MODEL"
+      ],
+      "notes": "EZ continuous but disrupted. Acute inflammation active. Steroid = artificial Yang → organises EZ → DRG quiets → pain relieved."
+    },
+    {
+      "diagnosis": "chronic radiculopathy (steroid-resistant)",
+      "associated_patterns": [
+        "DURAL_CONTINUUM",
+        "STEROID_RESPONSE_MODEL"
+      ],
+      "notes": "EZ fragmented. Yin deficient. Sympathetic overdrive chronic. Fibrosis replacing water structure. Steroid = Yang without Yin → no effect or paradoxical flare. Requires Yin-tonics + craniosacral + pulsed RF."
+    }
+  ],
+  "rules": [
+    {
+      "id": "B20_R001",
+      "condition": "diagnosis IN ['trigeminal_neuralgia', 'glossopharyngeal_neuralgia', 'Bell_palsy', 'Meniere', 'tinnitus', 'optic_neuritis', 'glaucoma', 'POTS', 'vestibular_paroxysmia']",
+      "action": "apply PPP_UNIVERSAL; identify cranial_nerve_affected; select PPP components from cranial_nerve_map; target: plate (Yin-EZ restoration) + pulse (Liver-Yang harmonisation) + plexus (ganglion block or auricular vagus or SPG)"
+    },
+    {
+      "id": "B20_R002",
+      "condition": "cranial_nerve_affected == 'V' AND typical_paroxysms == true",
+      "action": "assign TGN_SPECTRUM(TGN_TYPICAL); use Dan Shen + Wu Wei Zi for plate; Xiao Chai Hu direction for pulse; SPG block for plexus"
+    },
+    {
+      "id": "B20_R003",
+      "condition": "cranial_nerve_affected == 'V' AND paroxysms == true AND background_pain == true",
+      "action": "assign TGN_SPECTRUM(TGN_ATYPICAL); urgent Yin rebuilding; same PPP protocol with increased Yin emphasis"
+    },
+    {
+      "id": "B20_R004",
+      "condition": "cranial_nerve_affected == 'V' AND continuous_burning == true AND no_paroxysms == true",
+      "action": "assign TGN_SPECTRUM(TGN_NEUROPATHIC); deep Yin restoration; steroid ineffective; Long Gu + Mu Li + Dan Shen + Wu Wei Zi; photobiomodulation"
+    },
+    {
+      "id": "B20_R005",
+      "condition": "posterior_fossa_symptoms == true (headache + visual_changes + tinnitus + papilledema)",
+      "action": "assign POSTERIOR_FOSSA_RESONANCE; calm Liver Yang (Chai Hu + Bai Shao) + EZ stabilisers (Dan Shen, Wu Wei Zi, Mg) + cranial venous drainage restoration"
+    },
+    {
+      "id": "B20_R006",
+      "condition": "IIH_confirmed OR PRES_confirmed",
+      "action": "assign POSTERIOR_FOSSA_RESONANCE + PSA; Shaoyang pivot restoration is primary; systemic Yin restoration mandatory; avoid stimulatory input; occipital IR"
+    },
+    {
+      "id": "B20_R007",
+      "condition": "pain_type == 'spinal_radicular' AND onset < 3_months AND EZ_continuous_signs == true",
+      "action": "assign DURAL_CONTINUUM + STEROID_RESPONSE_MODEL(works); epidural steroid to dural sleeve is appropriate; add Yin support to prevent grid fragmentation"
+    },
+    {
+      "id": "B20_R008",
+      "condition": "pain_type == 'spinal_radicular' AND duration > 6_months AND EZ_fragmented_signs == true",
+      "action": "assign DURAL_CONTINUUM + STEROID_RESPONSE_MODEL(fails); redirect to: Yin tonics + Shaoyang harmonisers + pulsed RF + craniosacral; steroid contraindicated"
+    },
+    {
+      "id": "B20_R009",
+      "condition": "paradoxical_flare_after_steroids == true",
+      "action": "confirm EZ_fragmented; abandon steroid pathway; this is a diagnostic sign of Yin deficiency / fragmented grid"
+    },
+    {
+      "id": "B20_R010",
+      "condition": "cervical_tension == true OR thoracic_stiffness == true OR lumbar_stenosis == true",
+      "action": "check for cranial_expression via dural_continuum_clinical_links; cervical → trigeminal/TAC; thoracic → occipital; lumbar → migraine frequency"
+    },
+    {
+      "id": "B20_R011",
+      "condition": "shu_mu_segment_involved AND organ_dysfunction_present",
+      "action": "apply Shu_Mu_biophysical model; treat organ EZ instability as primary; DRG pain is secondary reporting; Mu-point fascial decompression + Back-Shu dural decompression + organ-specific formula"
+    },
+    {
+      "id": "B20_R012",
+      "condition": "craniosacral_indication (chronic_pain + multi_system + EZ_fragmented)",
+      "action": "recommend craniosacral therapy as Yin-restoring, EZ-cohering intervention; explain mechanism via dural continuum"
+    },
+    {
+      "id": "B20_R013",
+      "condition": "pulsed_RF_considered",
+      "action": "pulsed_RF preferred over ablative_RF in neuropathic pain; mechanism = EZ recharging not tissue destruction"
+    },
+    {
+      "id": "B20_R014",
+      "condition": "ablative_RF_considered AND pattern == TGN_NEUROPATHIC",
+      "action": "flag: ablative RF fails in true neuropathic / Yin-deficient / EZ-fragmented pain; use pulsed RF or cranial nerve ganglion EZ-restoration approach instead"
+    }
+  ],
+  "internal_backend_translation_map": {
+    "note": "Engine-internal reasoning only. Never expose in frontend output.",
+    "translations": [
+      {
+        "backend_term": "Plate collapse / REZ decoherence",
+        "frontend_term": "meningeal-EZ interface failure at the central-peripheral myelin transition zone"
+      },
+      {
+        "backend_term": "Pulse chaos / Liver Yang turbulence",
+        "frontend_term": "arterial pulse discoherence from global metabolic overdrive; high-frequency low-coherence waveforms"
+      },
+      {
+        "backend_term": "Plexus storm",
+        "frontend_term": "autonomic ganglionic amplification of field instability"
+      },
+      {
+        "backend_term": "posterior fossa resonant chamber",
+        "frontend_term": "posterior fossa neurovascular resonance with meningeal EZ fragmentation"
+      },
+      {
+        "backend_term": "tentorium as frequency filter",
+        "frontend_term": "tentorial meningeal EZ damping system"
+      },
+      {
+        "backend_term": "Yangming (cerebrum)",
+        "frontend_term": "cortical output and projection system"
+      },
+      {
+        "backend_term": "Shaoyang (cerebellum-brainstem)",
+        "frontend_term": "rhythmic temporal regulation and autonomic pivot"
+      },
+      {
+        "backend_term": "Taiyang (dura-occiput-cervical fascia)",
+        "frontend_term": "posterior cranial-fascial containment and thermoregulatory envelope"
+      },
+      {
+        "backend_term": "còu lǐ tightening (allergic / immune crowding)",
+        "frontend_term": "dermal interstice congestion with trigeminal-immune sensitisation"
+      },
+      {
+        "backend_term": "Shu-Mu meridian map",
+        "frontend_term": "neural-fascial-vascular segmental reporting system (posterior DRG-fascia / anterior visceral-fascia)"
+      },
+      {
+        "backend_term": "steroid as artificial Yang",
+        "frontend_term": "steroid as temporary EZ-organising agent (effective only when water grid is intact)"
+      },
+      {
+        "backend_term": "EZ fragmented / Yin deficient",
+        "frontend_term": "chronic perineural matrix discontinuity; steroid-resistant neuropathic state"
+      },
+      {
+        "backend_term": "pulsed RF as EZ recharger",
+        "frontend_term": "pulsed radiofrequency as field-coherence restoring intervention"
+      }
+    ]
+  },
+  "cross_batch_links": [
+    {
+      "batch3_pattern": "TGN_SPECTRUM",
+      "batch2_pattern": "TAC_OSCILL + EZW_FRAG",
+      "batch1_pattern": "LAX (cluster) + PSA (posterior pressure)",
+      "note": "TGN spectrum is the REZ-level prototype of the same EZ oscillator that appears as TAC (cranial), autonomic dysreflexia (visceral), and CRPS (peripheral) across batches. All share Plate-Pulse-Plexus architecture."
+    },
+    {
+      "batch3_pattern": "PPP_UNIVERSAL",
+      "batch2_pattern": "NERVE_WATER_FIELD_THEORY + CERV_PREVRT",
+      "batch1_pattern": "ALL 7 AXES",
+      "note": "The PPP triad provides the structural anatomy for the alternative nerve theory (Batch 2) and explains WHY each of the 7 functional regulatory axes (Batch 1) maps to specific cranial nerve territories."
+    },
+    {
+      "batch3_pattern": "POSTERIOR_FOSSA_RESONANCE",
+      "batch2_pattern": "TAC_OSCILL (cranial dampness)",
+      "batch1_pattern": "PSA (posterior sensory axis) + LAX (lateral autonomic)",
+      "note": "Posterior fossa resonance is the anatomical substrate for PSA pattern (IIH, PRES, posterior venous congestion) and for the cluster headache dampness-depth model in Batch 2. The tentorium is the EZ resonator whose failure links all three batches."
+    },
+    {
+      "batch3_pattern": "DURAL_CONTINUUM",
+      "batch2_pattern": "EZW_FRAG + OSCILL_VISC + FASCIA_NERVE_SYSTEM",
+      "batch1_pattern": "ALL 7 AXES",
+      "note": "The dural continuum (cranium to sacrum) is the anatomical explanation for why Batch 1 axis patterns propagate between levels and why spinal / visceral / cranial pain conditions co-occur. Shu-Mu point theory formally connects TCM segmental theory to the dural sleeve model."
+    },
+    {
+      "batch3_pattern": "STEROID_RESPONSE_MODEL",
+      "batch2_pattern": "NERVE_WATER_FIELD_THEORY (drug + formula interaction rule)",
+      "batch1_pattern": "CIA + EZW_FRAG",
+      "note": "The steroid responsiveness model is the interventional-pain-medicine application of the drug + formula interaction rule from Batch 2. Steroids = chaotropic Yang; Yin tonics = cosmotropic rebuild. The same logic applies to epidural steroids, ganglion blocks, and oral pharmaceuticals."
+    },
+    {
+      "batch3_pattern": "DURAL_CONTINUUM (Shu-Mu section)",
+      "batch2_pattern": "METASTASIS_GATE (organ instability → gate opening)",
+      "batch1_pattern": "ALL AXES",
+      "note": "The Shu-Mu biophysical interpretation in Batch 3 provides the physical anatomy underlying the Metastasis Gate model in Batch 2. Organ EZ instability reports via Shu-Mu fascial segments to the spinal cord, and the same instability determines which metastasis gate opens."
+    }
+  ],
+  "notes": [
+    "The PPP (Plate-Pulse-Plexus) triad is the most architecturally complete unifying model in the engine so far — it maps every cranial nerve AND every spinal nerve root AND every spinal level, all using the same three-component logic.",
+    "The steroid responsiveness rules are immediately clinically deployable and require no additional source material — they predict interventional pain outcomes from a simple 5-item clinical assessment (duration, nocturnal pain, morning stiffness pattern, autonomic dysfunction, MRI).",
+    "The Yangming/Shaoyang/Taiyang cranial anatomy mapping provides the first structural justification for posterior fossa pathology (IIH, PRES) within the engine's field logic. It connects directly to the PSA pattern from Batch 1.",
+    "The còu lǐ / allergic / damp-heat facial pattern is a new input variable not previously captured — it introduces immunological boundary invasion as a trigger for TGN via dermal mast cell / CGRP / substance P sensitisation.",
+    "The 12 cranial nerve table is engine-ready: each row contains plate, pulse, plexus, pathology, and interventions in structured form. It can be implemented as a lookup table keyed to cranial_nerve_affected.",
+    "Pulsed RF = EZ recharger (cosmotropic) vs ablative RF = EZ destroyer (chaotropic). This is a critical clinical decision rule not previously in the engine.",
+    "The cardiac output / global EZ coherence model has philosophical importance but limited direct engine use — it explains why global consciousness requires pulsatile cardiac output, and supports the 'heartbeat as global mitochondrial synchroniser' principle underlying all cardiac Shu-point logic."
+  ]
+}

@@ -2616,6 +2616,158 @@ const biophysicalFormulaAxes = [
   ["extra_axis", "Extra axis"]
 ];
 
+const cranialRezInitialInput = {
+  output_mode: "patient",
+  diagnosis: "",
+  cranial_nerve_affected: "",
+  pain_character: "",
+  pain_onset_duration_months: "",
+  EZ_continuity_state: "",
+  MRI_finding: "",
+  intervention_type_considered: "",
+  paroxysmal_electric_pain: false,
+  no_baseline_pain: false,
+  paroxysms: false,
+  persistent_ache: false,
+  continuous_burning_pain: false,
+  no_paroxysms: false,
+  allergic_boundary_overload: false,
+  headache: false,
+  visual_blurring: false,
+  tinnitus: false,
+  papilledema: false,
+  IIH_confirmed: false,
+  PRES_confirmed: false,
+  spinal_radicular: false,
+  onset_under_3_months: false,
+  duration_over_6_months: false,
+  EZ_continuous_signs: false,
+  EZ_fragmented_signs: false,
+  burning_mechanical_pain: false,
+  morning_stiffness_improves: false,
+  MRI_oedema: false,
+  hydration_rest_response: false,
+  gentle_decompression_response: false,
+  nocturnal_pain: false,
+  autonomic_dysfunction_present: false,
+  deep_cold_sensation: false,
+  paradoxical_flare_after_steroids: false,
+  multi_segment_involvement: false,
+  MRI_collapse_or_atrophy: false,
+  cervical_tension: false,
+  thoracic_stiffness: false,
+  lumbar_stenosis: false,
+  scoliosis: false,
+  dural_continuity_impaired: false,
+  organ_dysfunction_present: false,
+  organ_trauma_history: false,
+  shu_mu_segment: "",
+  chronic_pain: false,
+  multi_system: false,
+  craniosacral_indication: false,
+  pulsed_RF_considered: false,
+  ablative_RF_considered: false
+};
+
+const cranialRezFieldGroups = [
+  {
+    key: "output_mode",
+    label: "Output mode",
+    options: [
+      ["patient", "Patient", "Safe educational language only"],
+      ["clinician", "Clinician", "PPP triad, steroid prediction, propagation map"],
+      ["internal-audit", "Internal audit", "Includes internal theory references"]
+    ]
+  },
+  {
+    key: "cranial_nerve_affected",
+    label: "Cranial nerve",
+    options: [
+      ["", "Infer", "Infer from diagnosis or symptoms"],
+      ["CN II", "CN II", "Optic"],
+      ["CN V", "CN V", "Trigeminal"],
+      ["CN VII", "CN VII", "Facial"],
+      ["CN VIII", "CN VIII", "Vestibulocochlear"],
+      ["CN IX", "CN IX", "Glossopharyngeal"],
+      ["CN X", "CN X", "Vagus"]
+    ]
+  },
+  {
+    key: "EZ_continuity_state",
+    label: "Matrix continuity",
+    options: [
+      ["", "Not assessed", "Let clinical signs drive prediction"],
+      ["continuous", "Continuous", "Disrupted but still responsive"],
+      ["fragmented", "Fragmented", "Chronic discontinuity / steroid-resistant profile"]
+    ]
+  },
+  {
+    key: "intervention_type_considered",
+    label: "Intervention considered",
+    options: [
+      ["", "Not specified", "No RF rule"],
+      ["pulsed_RF", "Pulsed RF", "Field-coherence restoring intervention"],
+      ["ablative_RF", "Ablative RF", "Destructive signal interruption"]
+    ]
+  }
+];
+
+const cranialRezTnFlags = [
+  ["paroxysmal_electric_pain", "Paroxysmal electric pain"],
+  ["no_baseline_pain", "No baseline pain"],
+  ["paroxysms", "Paroxysms"],
+  ["persistent_ache", "Persistent ache"],
+  ["continuous_burning_pain", "Continuous burning pain"],
+  ["no_paroxysms", "No paroxysms"],
+  ["allergic_boundary_overload", "Allergic boundary overload"]
+];
+
+const cranialRezPosteriorFlags = [
+  ["headache", "Headache"],
+  ["visual_blurring", "Visual blurring"],
+  ["tinnitus", "Tinnitus"],
+  ["papilledema", "Papilledema"],
+  ["IIH_confirmed", "IIH confirmed"],
+  ["PRES_confirmed", "PRES confirmed"]
+];
+
+const cranialRezSteroidStrongFlags = [
+  ["spinal_radicular", "Spinal / radicular pain"],
+  ["onset_under_3_months", "Onset under 3 months"],
+  ["EZ_continuous_signs", "Continuity signs"],
+  ["burning_mechanical_pain", "Burning + mechanical pain"],
+  ["morning_stiffness_improves", "Morning stiffness improves"],
+  ["MRI_oedema", "MRI oedema"],
+  ["hydration_rest_response", "Responds to hydration/rest"],
+  ["gentle_decompression_response", "Responds to gentle decompression"]
+];
+
+const cranialRezSteroidPoorFlags = [
+  ["duration_over_6_months", "Duration over 6 months"],
+  ["EZ_fragmented_signs", "Fragmentation signs"],
+  ["nocturnal_pain", "Nocturnal pain"],
+  ["autonomic_dysfunction_present", "Autonomic dysfunction"],
+  ["deep_cold_sensation", "Deep cold sensation"],
+  ["paradoxical_flare_after_steroids", "Paradoxical steroid flare"],
+  ["multi_segment_involvement", "Multi-segment involvement"],
+  ["MRI_collapse_or_atrophy", "MRI atrophy / collapse"],
+  ["pulsed_RF_considered", "Pulsed RF considered"],
+  ["ablative_RF_considered", "Ablative RF considered"]
+];
+
+const cranialRezDuralFlags = [
+  ["cervical_tension", "Cervical tension"],
+  ["thoracic_stiffness", "Thoracic stiffness"],
+  ["lumbar_stenosis", "Lumbar stenosis"],
+  ["scoliosis", "Scoliosis"],
+  ["dural_continuity_impaired", "Dural continuity impaired"],
+  ["organ_dysfunction_present", "Organ dysfunction present"],
+  ["organ_trauma_history", "Organ trauma history"],
+  ["chronic_pain", "Chronic pain"],
+  ["multi_system", "Multi-system features"],
+  ["craniosacral_indication", "Craniosacral indication"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -2809,6 +2961,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("biophysical")}
       >
         Biophysical substrate
+      </button>
+      <button
+        className={mode === "cranial" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("cranial")}
+      >
+        Cranial REZ
       </button>
     </nav>
   );
@@ -5085,6 +5244,247 @@ function BiophysicalSubstrateSection() {
   );
 }
 
+function CranialRezResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient || {};
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className="av-output-header">
+        <p>Cranial REZ / dural engine</p>
+        <strong>{patient.title || "Cranial-dural interpretation"}</strong>
+      </div>
+
+      <section>
+        <h2>Educational interpretation</h2>
+        <p>{patient.summary}</p>
+        <div className="av-mini-grid">
+          <span><strong>TN subtype</strong>{result.tn_subtype || "Not selected"}</span>
+          <span><strong>Cranial nerve</strong>{result.cranial_nerve_affected || "Not selected"}</span>
+          <span><strong>PSA link</strong>{result.posterior_fossa_psa_link ? "Active" : "Inactive"}</span>
+        </div>
+      </section>
+
+      <TagSection
+        title="Pattern labels"
+        items={patient.pattern_labels || []}
+        tone="effect"
+        empty="No cranial-dural pattern selected."
+      />
+      <TagSection
+        title="Support focus"
+        items={patient.support_focus || []}
+        tone="mod"
+        empty="No support focus selected."
+      />
+      <TagSection
+        title="Dural propagation links"
+        items={result.dural_propagation_links || []}
+        tone="effect"
+        empty="No propagation link selected."
+      />
+      <TagSection
+        title="Avoid now"
+        items={patient.avoid_now || []}
+        tone="avoid"
+        empty="No additional avoid rule from this layer."
+      />
+
+      {patient.steroid_prediction && (
+        <section className="av-safety-box">
+          <h2>Steroid-response screen</h2>
+          <p>{patient.steroid_prediction}</p>
+          {patient.pulsed_rf_note && <p>{patient.pulsed_rf_note}</p>}
+        </section>
+      )}
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {(patient.safety_notes || []).map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Clinician cranial-dural panel</summary>
+          <TagSection
+            title="Triggered rules"
+            items={(result.triggered_rules || []).map((rule) => `${rule.id}: ${rule.reason || rule.action}`)}
+            tone="mod"
+            empty="No rules triggered."
+          />
+          <pre>{JSON.stringify(result.clinician || {}, null, 2)}</pre>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function CranialRezDuralSection() {
+  const [input, setInput] = useState(cranialRezInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/cranial-rez-dural", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, output_mode: advanced ? input.output_mode : "patient" })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Cranial REZ / dural evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(cranialRezInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>CRANIAL_REZ_DURAL_ENGINE_v1.0</h2>
+          <p className="av-muted">
+            Cranial nerve PPP routing, posterior fossa resonance, dural propagation, and steroid-response decision support. Educational and systems-support only.
+          </p>
+        </section>
+
+        {cranialRezFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={`${group.key}-${value || "blank"}`}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <ToggleList
+          title="Trigeminal spectrum clues"
+          items={cranialRezTnFlags}
+          selected={cranialRezTnFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+        <ToggleList
+          title="Posterior fossa resonance"
+          items={cranialRezPosteriorFlags}
+          selected={cranialRezPosteriorFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+        <ToggleList
+          title="Steroid strong-responder signs"
+          items={cranialRezSteroidStrongFlags}
+          selected={cranialRezSteroidStrongFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+        <ToggleList
+          title="Steroid poor-responder / RF caution signs"
+          items={cranialRezSteroidPoorFlags}
+          selected={cranialRezSteroidPoorFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+        <ToggleList
+          title="Dural continuum propagation"
+          items={cranialRezDuralFlags}
+          selected={cranialRezDuralFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <section className="av-section">
+          <h2>Context</h2>
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Optional diagnosis context, e.g. TGN, IIH, POTS, Meniere"
+            value={input.diagnosis}
+            onChange={(event) => setField("diagnosis", event.target.value)}
+          />
+          <input
+            className="av-number"
+            min="0"
+            type="number"
+            placeholder="Pain duration in months"
+            value={input.pain_onset_duration_months}
+            onChange={(event) => setField("pain_onset_duration_months", event.target.value)}
+          />
+          <input
+            className="av-file"
+            type="text"
+            placeholder="MRI finding"
+            value={input.MRI_finding}
+            onChange={(event) => setField("MRI_finding", event.target.value)}
+          />
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Shu-Mu / segmental context"
+            value={input.shu_mu_segment}
+            onChange={(event) => setField("shu_mu_segment", event.target.value)}
+          />
+        </section>
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show clinician PPP, steroid, and dural propagation details</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate cranial REZ / dural pattern"}
+        </button>
+      </form>
+
+      <CranialRezResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function TransitionResult({ result, advanced, onReset }) {
   if (!result) return null;
 
@@ -5641,6 +6041,8 @@ export default function AvicennaApp() {
                         ? "Treatment Cluster Engine"
                         : mode === "biophysical"
                           ? "Biophysical Substrate Engine"
+                          : mode === "cranial"
+                            ? "Cranial REZ / Dural Engine"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -5665,6 +6067,8 @@ export default function AvicennaApp() {
                         ? "7-functional-axis routing into primary and secondary treatment clusters"
                         : mode === "biophysical"
                           ? "EZ oscillator, fascia-nerve movement, cervical prevertebral, and oncology meaning-layer safety logic"
+                          : mode === "cranial"
+                            ? "Plate-Pulse-Plexus cranial routing, posterior fossa resonance, dural continuum, and steroid response prediction"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
@@ -5696,6 +6100,8 @@ export default function AvicennaApp() {
         <TreatmentClusterSection />
       ) : mode === "biophysical" ? (
         <BiophysicalSubstrateSection />
+      ) : mode === "cranial" ? (
+        <CranialRezDuralSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

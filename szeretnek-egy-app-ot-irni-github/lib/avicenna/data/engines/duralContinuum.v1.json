@@ -1,0 +1,155 @@
+{
+  "engine": "DURAL_CONTINUUM_MODEL",
+  "source": "avicenna_engine_batch20.json",
+  "pattern": {
+    "id": "DURAL_CONTINUUM",
+    "name": "Dural Continuum — Unified Spinal / Cranial Pain Model",
+    "internal_tag": "dural_sleeve_REZ_continuum_Shu_Mu",
+    "frontend_language": "unified neurovascular-meningeal interface instability across the neuraxis",
+    "core_statement": "Cranial neuralgias and spinal radicular pain are the SAME DISEASE PATTERN with different symptoms — both are expressions of EZ grid instability at the neurovascular-meningeal interface.",
+    "unified_mechanism_chain": "Organ trauma → field instability → segmental sympathetic overdrive → perineural EZ collapse → high neural traffic → DRG or REZ hyperexcitability → neuropathic pain",
+    "three_meningeal_layers": [
+      {
+        "layer": "Dura and venous sinuses",
+        "properties": "large, collagen-dense sheets; conducting low-frequency charge and venous return"
+      },
+      {
+        "layer": "Dural reflections (falx, tentorium, diaphragma sellae)",
+        "properties": "main frequency filters between cortical regions; the Yangming / Shaoyang / Taiyang separators"
+      },
+      {
+        "layer": "Perineural sleeves",
+        "properties": "micro-extensions of dura following arteries, veins, and cranial nerves through their foramina; the actual Plate of each Pulse-Plate-Plexus triad"
+      }
+    ],
+    "chain_reaction_when_EZ_collapses": [
+      "venous/CSF stagnation — oscillatory flow becomes sluggish pressure; sinuses fill; ICP rises",
+      "neurovascular turbulence — pulsations striking de-structured dura send chaotic microcurrents into adjacent REZs (Pulse-Plate link)",
+      "autonomic over-activation — ganglia embedded in these sleeves (Plexus nodes) lose hydration shell and fire erratically → dysautonomia, neuralgias, tinnitus",
+      "propagating pattern — because all meninges are continuous, loss of order spreads like ripples → multiple cranial nerves or sinuses involved simultaneously"
+    ],
+    "spinal_PPP_equivalents": {
+      "PULSE": "segmental arteries entering foramen; if EZ grid is weak, their pulsation becomes turbulent → irritates DRG; chaotic Liver Yang leak from failing organ further destabilises the grid",
+      "PLATE": "dural sleeve + ligamentum flavum + facet capsule + all fascial layers around nerve root; mechanical and energetic frequency buffer; degeneration → loss of damping",
+      "PLEXUS": "autonomic ganglia + DRG (dorsal root ganglion); hyperexcitable DRG = spinal analogue of trigeminal / glossopharyngeal neuralgia / Bell's palsy / vestibular paroxysmia"
+    },
+    "spinal_cranial_equivalence": {
+      "spinal_intervention": "epidural steroid → DRG (dural sleeve) modulation",
+      "cranial_intervention": "ganglion block (SPG, Gasserian, stylomastoid, supraorbital/supratrochlear, glossopharyngeal, occipital nerve sheath) = cranial equivalent of DRG modulation",
+      "shared_mechanism": "both restore EZ buffer and damp neurovascular turbulence at the Plate level"
+    },
+    "dural_continuity_clinical_links": [
+      {
+        "spinal_region": "cervical tension",
+        "cranial_expression": "trigeminal flare-ups (trigemino-cervical complex, Window of Heaven points, TAC)"
+      },
+      {
+        "spinal_region": "thoracic stiffness",
+        "cranial_expression": "occipital neuralgia"
+      },
+      {
+        "spinal_region": "scoliosis",
+        "cranial_expression": "facial pain or tinnitus"
+      },
+      {
+        "spinal_region": "lumbar stenosis",
+        "cranial_expression": "migraine frequency changes"
+      }
+    ],
+    "craniosacral_therapy_mechanism": "The entire craniosacral system is one continuous sheet (collagen + water channels + piezoelectric properties + venous sinuses + mechanoreceptors + EZ charge layers). Gentle deformation of the dura: improves venous sinus drainage; makes CSF oscillations laminar; harmonises arterial pulse; drops cranial REZ and tentorial tension; restores sacral pumping (tail-end grounding) = literally manually re-cohering the EZ membrane of the neuraxis.",
+    "Shu_Mu_biophysical_interpretation": {
+      "Mu_points_front": "fascia-viscera membranes with high autonomic load — the anterior fascial reporting layer of organ EZ state",
+      "Shu_points_back": "dural-fascial segments on the Bladder meridian that mirror organ conductivity — the posterior spinal REZ-plexus reporting layer",
+      "TCM_states_as_EZ_failures": [
+        {
+          "TCM": "Qi stagnation",
+          "EZ_equivalent": "reduced flow coherence in organ fascial compartment"
+        },
+        {
+          "TCM": "Blood stasis",
+          "EZ_equivalent": "microcirculatory sludging, venous EZ collapse"
+        },
+        {
+          "TCM": "Organ heat",
+          "EZ_equivalent": "excess Yang frequency without Yin damping in organ fascia"
+        },
+        {
+          "TCM": "Weak Zhang Qi",
+          "EZ_equivalent": "low EZ lattice organising capacity — insufficient mitochondrial drive to maintain structured water"
+        }
+      ],
+      "key_statement": "The sensory nerve does not create pain — it merely reports the grid/field instability."
+    },
+    "organ_to_spine_traffic_model": {
+      "mechanism": "Organ holding unresolved emotional oscillation / toxin / ischaemia / adhesion / Empty Heat → organ fascia + perivascular water grid destabilises → tense sticky tissue → altered viscerosensory feedback → increased sympathetic efferent drive → venous/lymphatic stagnation → local EZ thinning → segmental DRG sees this as continuous afferent noise = peripheral sensitisation",
+      "TCM_equivalent": "Liver Qi invading Stomach / Spleen / Heart / Lungs = local organ field destabilisation reporting up segmental spinal nerve (same as Liver Yang rising in the head, just applied to trunk)",
+      "foraminal_stenosis_reframing": "foraminal stenosis, facet arthropathy, disc bulge are DOWNSTREAM EFFECTS of EZ collapse at the dural sleeve — not root causes"
+    },
+    "causes_of_EZ_grid_instability": [
+      "Yin deficiency (water grid organising capacity loss)",
+      "emotional invasion (excessive chaotic charge)",
+      "inflammation (oxidative stress = EZ grid destruction)",
+      "venous congestion (blood sludging, resonance chamber effect)",
+      "autonomic dysregulation (emergency sympathetic compensation)",
+      "metabolic overdrive (Liver Yang rising)",
+      "trauma — scarring, fibrosis (resonance chamber formation)",
+      "dampness — metabolic waste build-up and water grid pollution"
+    ],
+    "diagnoses_explained": [
+      "CRPS (limb, abdominal, thoracic)",
+      "trigeminal neuralgia",
+      "post-herpetic neuralgia",
+      "visceral functional pain",
+      "optic neuritis",
+      "cervical radiculopathy",
+      "thoracic outlet syndrome",
+      "occipital neuralgia",
+      "menstrual pain",
+      "IBS-SIBO-gastroparesis patterns",
+      "Bell's palsy",
+      "vestibular paroxysmia",
+      "idiopathic intracranial hypertension"
+    ]
+  },
+  "rules": [
+    {
+      "id": "B20_R007",
+      "condition": "pain_type == 'spinal_radicular' AND onset < 3_months AND EZ_continuous_signs == true",
+      "action": "assign DURAL_CONTINUUM + STEROID_RESPONSE_MODEL(works); epidural steroid to dural sleeve is appropriate; add Yin support to prevent grid fragmentation"
+    },
+    {
+      "id": "B20_R008",
+      "condition": "pain_type == 'spinal_radicular' AND duration > 6_months AND EZ_fragmented_signs == true",
+      "action": "assign DURAL_CONTINUUM + STEROID_RESPONSE_MODEL(fails); redirect to: Yin tonics + Shaoyang harmonisers + pulsed RF + craniosacral; steroid contraindicated"
+    },
+    {
+      "id": "B20_R010",
+      "condition": "cervical_tension == true OR thoracic_stiffness == true OR lumbar_stenosis == true",
+      "action": "check for cranial_expression via dural_continuum_clinical_links; cervical → trigeminal/TAC; thoracic → occipital; lumbar → migraine frequency"
+    },
+    {
+      "id": "B20_R011",
+      "condition": "shu_mu_segment_involved AND organ_dysfunction_present",
+      "action": "apply Shu_Mu_biophysical model; treat organ EZ instability as primary; DRG pain is secondary reporting; Mu-point fascial decompression + Back-Shu dural decompression + organ-specific formula"
+    },
+    {
+      "id": "B20_R012",
+      "condition": "craniosacral_indication (chronic_pain + multi_system + EZ_fragmented)",
+      "action": "recommend craniosacral therapy as Yin-restoring, EZ-cohering intervention; explain mechanism via dural continuum"
+    }
+  ],
+  "cross_batch_links": [
+    {
+      "batch3_pattern": "DURAL_CONTINUUM",
+      "batch2_pattern": "EZW_FRAG + OSCILL_VISC + FASCIA_NERVE_SYSTEM",
+      "batch1_pattern": "ALL 7 AXES",
+      "note": "The dural continuum (cranium to sacrum) is the anatomical explanation for why Batch 1 axis patterns propagate between levels and why spinal / visceral / cranial pain conditions co-occur. Shu-Mu point theory formally connects TCM segmental theory to the dural sleeve model."
+    },
+    {
+      "batch3_pattern": "DURAL_CONTINUUM (Shu-Mu section)",
+      "batch2_pattern": "METASTASIS_GATE (organ instability → gate opening)",
+      "batch1_pattern": "ALL AXES",
+      "note": "The Shu-Mu biophysical interpretation in Batch 3 provides the physical anatomy underlying the Metastasis Gate model in Batch 2. Organ EZ instability reports via Shu-Mu fascial segments to the spinal cord, and the same instability determines which metastasis gate opens."
+    }
+  ]
+}

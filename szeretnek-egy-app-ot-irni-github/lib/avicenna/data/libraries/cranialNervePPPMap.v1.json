@@ -1,0 +1,162 @@
+{
+  "library": "cranialNervePPPMap.v1",
+  "source": "avicenna_engine_batch20.json",
+  "frontend_label": "triune neurovascular coherence system",
+  "cranial_nerve_map": [
+    {
+      "id": "CN_I",
+      "nerve": "I — Olfactory",
+      "plate": "olfactory bulb–cribriform plate transition",
+      "pulse": "anterior cerebral arterial microflow; cortical respiratory pulse",
+      "plexus": "limbic interface (amygdala, orbitofrontal)",
+      "pathology": "hyposmia, parosmia, emotional invasion, post-viral anosmia (damp-heat or boundary loss)",
+      "interventions": [
+        "breath retraining",
+        "olfactory meditation",
+        "upper turbinate photobiomodulation"
+      ]
+    },
+    {
+      "id": "CN_II",
+      "nerve": "II — Optic",
+      "plate": "optic disc–retinal field (CSF–retina boundary)",
+      "pulse": "ophthalmic artery pulsation",
+      "plexus": "ciliary ganglion, hypothalamic–retinal loop",
+      "pathology": "optic neuritis, glaucoma (Yang excess / stagnation), visual migraine aura",
+      "interventions": [
+        "light modulation",
+        "microcurrent at temple",
+        "Gou Teng + Dan Shen (microcirculation restoration)"
+      ],
+      "field_note": "glaucoma: local heat and stagnation from unrelieved Yang; fluid fails to structure → intraocular pressure rises"
+    },
+    {
+      "id": "CN_III",
+      "nerve": "III — Oculomotor",
+      "plate": "midbrain REZ near posterior perforated substance",
+      "pulse": "posterior cerebral / superior cerebellar arteries",
+      "plexus": "ciliary and pterygopalatine ganglia",
+      "pathology": "ptosis, diplopia, pupil irregularity (Shaoyang field rigidity)",
+      "interventions": [
+        "gentle midline photobiostimulation",
+        "microdosing acetyl-L-carnitine",
+        "Xiao Chai Hu type harmonisation"
+      ]
+    },
+    {
+      "id": "CN_IV",
+      "nerve": "IV — Trochlear",
+      "plate": "dorsal midbrain",
+      "pulse": "superior cerebellar artery",
+      "plexus": "cavernous sinus plexus",
+      "pathology": "vertical diplopia, ocular dizziness",
+      "interventions": [
+        "cranial fascial release",
+        "cerebellar recalibration (Liver-Wind calming)"
+      ]
+    },
+    {
+      "id": "CN_V",
+      "nerve": "V — Trigeminal",
+      "plate": "pons REZ (SCA impact point)",
+      "pulse": "SCA + CSF turbulence",
+      "plexus": "sphenopalatine, otic, submandibular ganglia; dura",
+      "pathology": "neuralgia, facial pain, migraine",
+      "interventions": [
+        "SPG block",
+        "Dan Shen + Wu Wei Zi Yin seal",
+        "photobiomodulation"
+      ],
+      "SCA_note": "SCA compression is the footprint of upstream timing disorder — turbulent Qi in SCA signals cerebellar field discoherence; rising Liver Yang drives high-frequency low-coherence waveforms that beat on the trigeminal REZ"
+    },
+    {
+      "id": "CN_VI",
+      "nerve": "VI — Abducens",
+      "plate": "pontomedullary junction",
+      "pulse": "basilar artery",
+      "plexus": "cavernous sinus and sympathetic plexus",
+      "pathology": "diplopia, brainstem stretch headaches",
+      "interventions": [
+        "craniosacral unwinding",
+        "hydration (EZ restoration)"
+      ]
+    },
+    {
+      "id": "CN_VII",
+      "nerve": "VII — Facial",
+      "plate": "pontomedullary angle",
+      "pulse": "AICA, labyrinthine artery",
+      "plexus": "geniculate and submandibular ganglia",
+      "pathology": "Bell's palsy (cold invasion → Yin collapse)",
+      "interventions": [
+        "warm laser along stylomastoid path",
+        "Shaoyang-Yin tonics",
+        "stylomastoid foramen block"
+      ]
+    },
+    {
+      "id": "CN_VIII",
+      "nerve": "VIII — Vestibulocochlear",
+      "plate": "pontomedullary angle",
+      "pulse": "AICA / labyrinthine artery",
+      "plexus": "vestibular ganglion, cerebellar relay",
+      "pathology": "vertigo, tinnitus, Ménière's disease (CSF-lymph decoupling)",
+      "interventions": [
+        "inner-ear photobiomodulation",
+        "Huang Qin + Zhu Ling logic (clear damp-heat)"
+      ],
+      "field_note": "Ménière's: dampness + CSF decoupling → inner-ear EZ collapse"
+    },
+    {
+      "id": "CN_IX",
+      "nerve": "IX — Glossopharyngeal",
+      "plate": "medulla REZ",
+      "pulse": "PICA",
+      "plexus": "otic ganglion",
+      "pathology": "glossopharyngeal neuralgia, dysautonomia, baroreflex instability",
+      "interventions": [
+        "otic ganglion modulation",
+        "Dan Shen + Gou Teng",
+        "gentle vagal stimulation",
+        "glossopharyngeal ganglion block"
+      ]
+    },
+    {
+      "id": "CN_X",
+      "nerve": "X — Vagus",
+      "plate": "medulla REZ",
+      "pulse": "vertebral / PICA",
+      "plexus": "nodose ganglion, cardiac, enteric plexuses",
+      "pathology": "dysautonomia, POTS, arrhythmia, IBS",
+      "interventions": [
+        "auricular vagus stimulation",
+        "deep breathing",
+        "He Huan Pi + Fu Shen formulas"
+      ]
+    },
+    {
+      "id": "CN_XI",
+      "nerve": "XI — Accessory",
+      "plate": "cervical cord–foramen magnum REZ",
+      "pulse": "vertebral arteries",
+      "plexus": "cervical sympathetic chain",
+      "pathology": "shoulder / neck spasm, tension headaches",
+      "interventions": [
+        "neck fascial release",
+        "GB meridian harmonisation"
+      ]
+    },
+    {
+      "id": "CN_XII",
+      "nerve": "XII — Hypoglossal",
+      "plate": "medulla REZ",
+      "pulse": "vertebral / basilar branches",
+      "plexus": "lingual parasympathetic fibres",
+      "pathology": "dysarthria, tongue deviation, speech-field fatigue",
+      "interventions": [
+        "tongue grounding exercises",
+        "Yin restoratives (Sheng Di, Xuan Shen)"
+      ]
+    }
+  ]
+}

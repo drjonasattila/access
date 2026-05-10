@@ -1,0 +1,209 @@
+{
+  "engine": "STEROID_RESPONSE_DECISION_ENGINE",
+  "source": "avicenna_engine_batch20.json",
+  "pattern": {
+    "id": "STEROID_RESPONSE_MODEL",
+    "name": "Epidural Steroid / Interventional Pain Responsiveness Model",
+    "internal_tag": "steroid_EZ_continuity_Yin_Yang",
+    "frontend_language": "interventional analgesic response prediction based on perineural matrix continuity",
+    "core_principle": "Steroids (and equivalent interventions) work only when the EZ water grid is damaged but still continuous. They fail when the grid is fragmented (Yin deficient). Steroids behave as artificial Yang — they organise but cannot create structure.",
+    "steroid_mechanism": [
+      "suppresses inflammation",
+      "reduces oedema",
+      "increases membrane order",
+      "reconstitutes a thin EZ layer temporarily",
+      "improves vascular tone",
+      "compresses chaotic ion signalling into coherence"
+    ],
+    "steroid_real_effect": "Steroids momentarily stabilise a partially intact EZ water grid. They organise — they do not create structure.",
+    "steroid_works_when": {
+      "EZ_state": "thinned, softened, dehydrated, noisy, disrupted, inflamed — but NOT shattered",
+      "clinical_correlates": [
+        "acute radiculitis (<3 months onset)",
+        "subacute disc herniation",
+        "recent trauma",
+        "early CRPS",
+        "recent organ inflammation",
+        "new-onset neuralgia"
+      ],
+      "clinical_signs_strong_responder": [
+        "onset < 3 months",
+        "burning pain with mechanical trigger",
+        "morning stiffness that improves with movement (Yin still present — tissue can still glide on the Yin coating)",
+        "MRI shows oedema rather than collapse",
+        "pain improves with hydration or rest",
+        "responds to gentle fascial decompression"
+      ]
+    },
+    "steroid_fails_when": {
+      "EZ_state": "broken into patches, micelles instead of sheets, irregular charge zones, chaotic piezoelectric behaviour, venous sludging, fascial fibrosis, DRG degenerative hyperexcitability",
+      "TCM_equivalent": "Yin deficiency at tissue level — the inability to hold water in a coherent matrix. Steroid = Yang without Yin → no structure to consolidate → no effect",
+      "clinical_correlates": [
+        "chronic duration >6–12 months",
+        "waking in pain during the night (severe Yin deficiency obstructs Yang movement)",
+        "severe insomnia + autonomic dysfunction (noisy fascia, sympathetically mediated pain)",
+        "deep cold sensation or dry fascia (fragmented Yin coating — morning stiffness does NOT improve with movement)",
+        "multi-segment involvement",
+        "paradoxical flare after steroids (steroids further destabilise fragmented grid with energy entrainment)",
+        "history of trauma → rumination → organ tightening",
+        "MRI shows atrophy or severe foraminal collapse"
+      ]
+    },
+    "pulsed_RF_vs_ablative_RF": {
+      "ablative_RF": "destroys tissue — eliminates signal but further damages EZ; fails in true neuropathic pain",
+      "pulsed_RF": "recharges the EZ instead of burning tissue — works better because it is cosmotropic (field coherence restoring), not destructive"
+    },
+    "why_craniosacral_beats_steroids_in_chronic": "Craniosacral therapy restores Yin water continuity (cosmotropic) rather than Yang tightening (chaotropic). In Yin-deficient / fragmented-EZ state, this is the correct intervention axis.",
+    "why_herbal_Yin_tonics_succeed_where_steroids_fail": "Herbal Yin-tonics + Shaoyang harmonisers are cosmotropic — they rebuild the structured water matrix and re-establish field coherence, which is the actual missing ingredient in chronic neuropathic pain.",
+    "rules": [
+      {
+        "condition": "pain_onset_duration < 3_months AND EZ_state == 'continuous_but_disrupted'",
+        "action": "steroid_intervention_likely_effective; proceed with epidural / ganglion injection"
+      },
+      {
+        "condition": "pain_onset_duration > 6_months AND nocturnal_pain == true AND autonomic_dysfunction == true",
+        "action": "steroid_intervention_unlikely_effective; redirect to Yin_tonic + Shaoyang_harmoniser + craniosacral + pulsed_RF"
+      },
+      {
+        "condition": "paradoxical_flare_after_steroids == true",
+        "action": "confirm EZ_fragmented_state; abandon steroid pathway; initiate Yin-rebuilding protocol"
+      },
+      {
+        "condition": "morning_stiffness_improves_with_movement == true",
+        "action": "Yin_still_present; EZ_likely_continuous; steroid_may_work"
+      },
+      {
+        "condition": "morning_stiffness_does_NOT_improve_with_movement == true AND deep_cold_sensation == true",
+        "action": "Yin_deficient; EZ_fragmented; steroid_contraindicated; use Yin_restoratives"
+      },
+      {
+        "condition": "multi_segment_involvement == true",
+        "action": "systemic_EZ_collapse; steroid_insufficient; address global Liver_Yang + Yin_deficiency first"
+      },
+      {
+        "condition": "MRI_finding == 'oedema_not_collapse'",
+        "action": "EZ_likely_continuous; steroid_effective_window"
+      },
+      {
+        "condition": "MRI_finding == 'atrophy' OR 'severe_foraminal_collapse'",
+        "action": "EZ_fragmented; steroid_will_fail; Yin_rebuilding_protocol_required"
+      }
+    ]
+  },
+  "rules": [
+    {
+      "id": "B20_R004",
+      "condition": "cranial_nerve_affected == 'V' AND continuous_burning == true AND no_paroxysms == true",
+      "action": "assign TGN_SPECTRUM(TGN_NEUROPATHIC); deep Yin restoration; steroid ineffective; Long Gu + Mu Li + Dan Shen + Wu Wei Zi; photobiomodulation"
+    },
+    {
+      "id": "B20_R007",
+      "condition": "pain_type == 'spinal_radicular' AND onset < 3_months AND EZ_continuous_signs == true",
+      "action": "assign DURAL_CONTINUUM + STEROID_RESPONSE_MODEL(works); epidural steroid to dural sleeve is appropriate; add Yin support to prevent grid fragmentation"
+    },
+    {
+      "id": "B20_R008",
+      "condition": "pain_type == 'spinal_radicular' AND duration > 6_months AND EZ_fragmented_signs == true",
+      "action": "assign DURAL_CONTINUUM + STEROID_RESPONSE_MODEL(fails); redirect to: Yin tonics + Shaoyang harmonisers + pulsed RF + craniosacral; steroid contraindicated"
+    },
+    {
+      "id": "B20_R009",
+      "condition": "paradoxical_flare_after_steroids == true",
+      "action": "confirm EZ_fragmented; abandon steroid pathway; this is a diagnostic sign of Yin deficiency / fragmented grid"
+    },
+    {
+      "id": "B20_R012",
+      "condition": "craniosacral_indication (chronic_pain + multi_system + EZ_fragmented)",
+      "action": "recommend craniosacral therapy as Yin-restoring, EZ-cohering intervention; explain mechanism via dural continuum"
+    },
+    {
+      "id": "B20_R013",
+      "condition": "pulsed_RF_considered",
+      "action": "pulsed_RF preferred over ablative_RF in neuropathic pain; mechanism = EZ recharging not tissue destruction"
+    },
+    {
+      "id": "B20_R014",
+      "condition": "ablative_RF_considered AND pattern == TGN_NEUROPATHIC",
+      "action": "flag: ablative RF fails in true neuropathic / Yin-deficient / EZ-fragmented pain; use pulsed RF or cranial nerve ganglion EZ-restoration approach instead"
+    },
+    {
+      "id": "B20_STEROID_001",
+      "condition": "pain_onset_duration < 3_months AND EZ_state == 'continuous_but_disrupted'",
+      "action": "steroid_intervention_likely_effective; proceed with epidural / ganglion injection"
+    },
+    {
+      "id": "B20_STEROID_002",
+      "condition": "pain_onset_duration > 6_months AND nocturnal_pain == true AND autonomic_dysfunction == true",
+      "action": "steroid_intervention_unlikely_effective; redirect to Yin_tonic + Shaoyang_harmoniser + craniosacral + pulsed_RF"
+    },
+    {
+      "id": "B20_STEROID_003",
+      "condition": "paradoxical_flare_after_steroids == true",
+      "action": "confirm EZ_fragmented_state; abandon steroid pathway; initiate Yin-rebuilding protocol"
+    },
+    {
+      "id": "B20_STEROID_004",
+      "condition": "morning_stiffness_improves_with_movement == true",
+      "action": "Yin_still_present; EZ_likely_continuous; steroid_may_work"
+    },
+    {
+      "id": "B20_STEROID_005",
+      "condition": "morning_stiffness_does_NOT_improve_with_movement == true AND deep_cold_sensation == true",
+      "action": "Yin_deficient; EZ_fragmented; steroid_contraindicated; use Yin_restoratives"
+    },
+    {
+      "id": "B20_STEROID_006",
+      "condition": "multi_segment_involvement == true",
+      "action": "systemic_EZ_collapse; steroid_insufficient; address global Liver_Yang + Yin_deficiency first"
+    },
+    {
+      "id": "B20_STEROID_007",
+      "condition": "MRI_finding == 'oedema_not_collapse'",
+      "action": "EZ_likely_continuous; steroid_effective_window"
+    },
+    {
+      "id": "B20_STEROID_008",
+      "condition": "MRI_finding == 'atrophy' OR 'severe_foraminal_collapse'",
+      "action": "EZ_fragmented; steroid_will_fail; Yin_rebuilding_protocol_required"
+    }
+  ],
+  "response_profiles": {
+    "strong_responder": {
+      "EZ_state": "thinned, softened, dehydrated, noisy, disrupted, inflamed — but NOT shattered",
+      "clinical_correlates": [
+        "acute radiculitis (<3 months onset)",
+        "subacute disc herniation",
+        "recent trauma",
+        "early CRPS",
+        "recent organ inflammation",
+        "new-onset neuralgia"
+      ],
+      "clinical_signs_strong_responder": [
+        "onset < 3 months",
+        "burning pain with mechanical trigger",
+        "morning stiffness that improves with movement (Yin still present — tissue can still glide on the Yin coating)",
+        "MRI shows oedema rather than collapse",
+        "pain improves with hydration or rest",
+        "responds to gentle fascial decompression"
+      ]
+    },
+    "poor_responder": {
+      "EZ_state": "broken into patches, micelles instead of sheets, irregular charge zones, chaotic piezoelectric behaviour, venous sludging, fascial fibrosis, DRG degenerative hyperexcitability",
+      "TCM_equivalent": "Yin deficiency at tissue level — the inability to hold water in a coherent matrix. Steroid = Yang without Yin → no structure to consolidate → no effect",
+      "clinical_correlates": [
+        "chronic duration >6–12 months",
+        "waking in pain during the night (severe Yin deficiency obstructs Yang movement)",
+        "severe insomnia + autonomic dysfunction (noisy fascia, sympathetically mediated pain)",
+        "deep cold sensation or dry fascia (fragmented Yin coating — morning stiffness does NOT improve with movement)",
+        "multi-segment involvement",
+        "paradoxical flare after steroids (steroids further destabilise fragmented grid with energy entrainment)",
+        "history of trauma → rumination → organ tightening",
+        "MRI shows atrophy or severe foraminal collapse"
+      ]
+    },
+    "pulsed_RF_vs_ablative_RF": {
+      "ablative_RF": "destroys tissue — eliminates signal but further damages EZ; fails in true neuropathic pain",
+      "pulsed_RF": "recharges the EZ instead of burning tissue — works better because it is cosmotropic (field coherence restoring), not destructive"
+    }
+  }
+}

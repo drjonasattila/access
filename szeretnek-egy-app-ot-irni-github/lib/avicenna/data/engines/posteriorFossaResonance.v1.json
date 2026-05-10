@@ -1,0 +1,169 @@
+{
+  "engine": "POSTERIOR_FOSSA_RESONANCE_ENGINE",
+  "source": "avicenna_engine_batch20.json",
+  "pattern": {
+    "id": "POSTERIOR_FOSSA_RESONANCE",
+    "name": "Posterior Fossa Resonant Chamber Pattern",
+    "internal_tag": "posterior_fossa_Liver_Yang_resonance",
+    "frontend_language": "posterior fossa neurovascular resonance with meningeal EZ fragmentation",
+    "cranial_axis_map": {
+      "Yangming": {
+        "structure": "cerebrum (neocortex, frontal, parietal, occipital lobes)",
+        "function": "outward projection of awareness and command; converts internal potential into directed action",
+        "analogy": "illumination toward the world"
+      },
+      "Shaoyang": {
+        "structure": "cerebellum + brainstem (pons, medulla, midbrain)",
+        "function": "rhythmic pivot; temporal stabiliser; interfaces between cortical intention (Yangming) and visceral Yin systems",
+        "analogy": "pivot of exchange and timing"
+      },
+      "Taiyang": {
+        "structure": "occipital bone, dura, atlanto-occipital fascia, cervical paraspinals, Bladder meridian plane",
+        "function": "outer stabiliser; thermoregulation; anchoring of upright tone; containment of posterior fossa resonance",
+        "analogy": "protective shell; the membranous field that anchors cranial resonance system to the body"
+      },
+      "clinical_note": "Nothing more posterior than the cerebellum in brain tissue — Taiyang is expressed by the container itself (dural-occipital-cervical fascia) rather than brain parenchyma"
+    },
+    "tentorium_as_frequency_filter": {
+      "normal_function": "Dense collagenous sheet anchored to petrous ridges and occiput; separates cerebrum (Yangming) from cerebellum-brainstem (Shaoyang). Functions as EZ resonator — biological frequency filter. Allows smooth low-frequency cardiac/respiratory/craniosacral waves while dampening high-frequency noise.",
+      "failure_mechanism": "When Liver Yang rises excessively → overcharged high-frequency low-coherence excitation arrives via arterial pulses. Tentorium vibrates sympathetically → its water lattice heats and loses order (EZ fragmentation). Once EZ charge weakens, ability to dissipate wave energy collapses → structure that once absorbed turbulence now reflects and amplifies it → standing wave cavity between occipital bone, cerebellar hemispheres, and venous sinuses.",
+      "result": "Laminar CSF-venous coupling becomes oscillatory reflux. Yang trapped in closed basin, shaking the water grid instead of dispersing through it."
+    },
+    "posterior_fossa_diseases": [
+      {
+        "diagnosis": "IIH (idiopathic intracranial hypertension)",
+        "mechanism": "venous stasis / blood sludging = charge dispersion within the venous water phase; raised ICP = conversion of vibrational pressure (Yang frequency) into static hydrostatic pressure (damp-heat)",
+        "field_note": "On imaging this appears as oedema, but energetically it is a loss of coherent drainage"
+      },
+      {
+        "diagnosis": "PRES (posterior reversible encephalopathy syndrome)",
+        "mechanism": "same — high-frequency low-coherence standing wave in posterior fossa producing chaotic micro-eddies in transverse and sigmoid sinuses"
+      },
+      {
+        "diagnosis": "Occipital neuralgia",
+        "mechanism": "Taiyang stiffening → venous outflow restriction + heat trapping + occipital tone loss"
+      },
+      {
+        "diagnosis": "Papilledema",
+        "mechanism": "optic nerve REZ involved by back-flow turbulence from posterior fossa congestion"
+      }
+    ],
+    "posterior_fossa_clinical_correlates": [
+      {
+        "symptom": "headache, visual blurring, tinnitus",
+        "mechanism": "Shaoyang gate overload between tentorium and temporal fascia"
+      },
+      {
+        "symptom": "papilledema",
+        "mechanism": "optic nerve REZ involved by back-flow turbulence"
+      },
+      {
+        "symptom": "autonomic instability",
+        "mechanism": "vagal and glossopharyngeal plexus entanglement at jugular foramen"
+      },
+      {
+        "symptom": "pulsatile tinnitus",
+        "mechanism": "REZ caught in posterior fossa oscillation"
+      },
+      {
+        "symptom": "visual aura",
+        "mechanism": "REZ caught in posterior fossa oscillation"
+      },
+      {
+        "symptom": "occipital neuralgia",
+        "mechanism": "Taiyang shell failure — dural EZ dehydration or stiffening traps rather than reflects waves"
+      }
+    ],
+    "interventions": {
+      "calm_frequency": [
+        "Chai Hu + Bai Shao Yao logic",
+        "breathing entrainment 6s in / 6s out",
+        "Gou Teng (Liver-Wind calming)"
+      ],
+      "restore_Yin_water_phase": [
+        "Dan Shen",
+        "Wu Wei Zi",
+        "Bai He",
+        "Xuan Shen",
+        "Magnesium",
+        "gentle IR / laser over occiput"
+      ],
+      "re_entrain_drainage": [
+        "positional rest",
+        "mild diaphragmatic release",
+        "occipital cranial release to reopen venous-CSF coherence"
+      ],
+      "contraindications": [
+        "avoid stimulatory visual or sound input during flare-ups",
+        "avoid cold exposure to posterior neck / occiput"
+      ]
+    },
+    "clinical_dysfunction_table": [
+      {
+        "manifestation": "posterior fossa resonance (IIH, PRES)",
+        "field_interpretation": "Shaoyang pivot collapse; tentorial EZ fragmentation (Taiyang swelling)",
+        "support": "Calm Liver Yang, restore Yin water (Dan Shen, Wu Wei Zi, Mg, occipital IR)"
+      },
+      {
+        "manifestation": "frontal overdrive / anxiety / insomnia",
+        "field_interpretation": "excess Yangming outflow without Shaoyang damping",
+        "support": "Shaoyang harmonisers (Chai Hu, Bai Shao), cerebellar entrainment via slow movement or breath"
+      },
+      {
+        "manifestation": "brain fog / dizziness",
+        "field_interpretation": "Yin stagnation blocking upward Shaoyang transmission",
+        "support": "Drain dampness, warm pivot (Fu Ling, Ban Xia, mild movement)"
+      },
+      {
+        "manifestation": "occipital neuralgia / neck spasm",
+        "field_interpretation": "Taiyang loss of fascial conductivity",
+        "support": "gentle heat, Mg, stretching, fascia release"
+      },
+      {
+        "manifestation": "vertigo / oscillating pressure",
+        "field_interpretation": "Shaoyang tentorial resonance",
+        "support": "harmonise Liver Yang, restore Yin fluid"
+      },
+      {
+        "manifestation": "frontal headache / eye pain",
+        "field_interpretation": "Yangming cortical over-drive",
+        "support": "quiet sensory inflow, slow breath, moderate Yang"
+      }
+    ]
+  },
+  "rules": [
+    {
+      "id": "B20_R001",
+      "condition": "diagnosis IN ['trigeminal_neuralgia', 'glossopharyngeal_neuralgia', 'Bell_palsy', 'Meniere', 'tinnitus', 'optic_neuritis', 'glaucoma', 'POTS', 'vestibular_paroxysmia']",
+      "action": "apply PPP_UNIVERSAL; identify cranial_nerve_affected; select PPP components from cranial_nerve_map; target: plate (Yin-EZ restoration) + pulse (Liver-Yang harmonisation) + plexus (ganglion block or auricular vagus or SPG)"
+    },
+    {
+      "id": "B20_R005",
+      "condition": "posterior_fossa_symptoms == true (headache + visual_changes + tinnitus + papilledema)",
+      "action": "assign POSTERIOR_FOSSA_RESONANCE; calm Liver Yang (Chai Hu + Bai Shao) + EZ stabilisers (Dan Shen, Wu Wei Zi, Mg) + cranial venous drainage restoration"
+    },
+    {
+      "id": "B20_R006",
+      "condition": "IIH_confirmed OR PRES_confirmed",
+      "action": "assign POSTERIOR_FOSSA_RESONANCE + PSA; Shaoyang pivot restoration is primary; systemic Yin restoration mandatory; avoid stimulatory input; occipital IR"
+    },
+    {
+      "id": "B20_R010",
+      "condition": "cervical_tension == true OR thoracic_stiffness == true OR lumbar_stenosis == true",
+      "action": "check for cranial_expression via dural_continuum_clinical_links; cervical → trigeminal/TAC; thoracic → occipital; lumbar → migraine frequency"
+    },
+    {
+      "id": "B20_R011",
+      "condition": "shu_mu_segment_involved AND organ_dysfunction_present",
+      "action": "apply Shu_Mu_biophysical model; treat organ EZ instability as primary; DRG pain is secondary reporting; Mu-point fascial decompression + Back-Shu dural decompression + organ-specific formula"
+    }
+  ],
+  "cross_batch_links": [
+    {
+      "batch3_pattern": "POSTERIOR_FOSSA_RESONANCE",
+      "batch2_pattern": "TAC_OSCILL (cranial dampness)",
+      "batch1_pattern": "PSA (posterior sensory axis) + LAX (lateral autonomic)",
+      "note": "Posterior fossa resonance is the anatomical substrate for PSA pattern (IIH, PRES, posterior venous congestion) and for the cluster headache dampness-depth model in Batch 2. The tentorium is the EZ resonator whose failure links all three batches."
+    }
+  ]
+}
