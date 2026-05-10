@@ -1,0 +1,168 @@
+{
+  "id": "METABOLIC_RHYTHM_MODULE_v1.0",
+  "label": "Metabolic Rhythm and Visceral Tissue Regeneration (40+)",
+  "description": "Early metabolic dysfunction protocol. Focus: circadian rhythm restoration, fascia-peritoneum health, autonomic recalibration, mitochondrial recovery. NOT weight loss or cosmetic medicine.",
+  "core_hypothesis": {
+    "statement": "Visceral fat is a stress-adaptation marker, not a primary fat disorder.",
+    "primary_drivers": [
+      "circadian rhythm collapse",
+      "peritoneal and abdominal fascia hypometabolism ('cold tissue')",
+      "autonomic imbalance (sympathetic dominance)",
+      "mitochondrial energy debt (Qi/Yang + Yin depletion)"
+    ],
+    "fat_accumulation_model": "protective buffering state — body adapts to energy/rhythm deficit",
+    "tcm_backend": "Yangming + Taiyin axis hypometabolism. Spleen-Stomach insufficient to process and transform. Yang deficiency → cold tissue accumulation.",
+    "ayurvedic_backend": "Ama accumulation (undigested metabolic waste). Kapha excess. Agni (metabolic fire) reduced. Pachaka Pitta insufficiency."
+  },
+  "clinical_entry_point": {
+    "who_fits": [
+      "age 40+",
+      "central weight gain / increased waist circumference",
+      "poor sleep quality or circadian drift",
+      "low back pain / morning stiffness",
+      "fatigue, reduced concentration",
+      "stress dominance / burnout features",
+      "functional GI symptoms",
+      "early insulin resistance or dyslipidaemia (optional)"
+    ],
+    "exclusions": [
+      "structural abdominal wall defects (hernia, significant diastasis)",
+      "advanced metabolic disease requiring pharmacologic management"
+    ]
+  },
+  "therapeutic_strategy": {
+    "layer_1": {
+      "name": "Rhythm Restoration (Foundation — mandatory first)",
+      "intervention": "circadian nutritional support",
+      "day_function": "Qi/Yang mobilisation without overstimulation",
+      "night_function": "Yin, mitochondrial recovery, autonomic down-regulation",
+      "primary_intent": [
+        "restore day-night signalling",
+        "improve nocturnal regeneration capacity"
+      ]
+    },
+    "layer_2": {
+      "name": "Autonomic and Fascial Support (Non-invasive)",
+      "focus": "Paraspinal / thoracolumbar fascia",
+      "acupoints_functional_intent": [
+        {
+          "point": "BL18",
+          "function": "Liver Back-Shu — hepatic metabolic regulation"
+        },
+        {
+          "point": "BL20",
+          "function": "Spleen Back-Shu — digestive metabolism"
+        },
+        {
+          "point": "BL21",
+          "function": "Stomach Back-Shu — gut motility and tone"
+        },
+        {
+          "point": "BL23",
+          "function": "Kidney Back-Shu — deep energy reserve"
+        }
+      ],
+      "note": "Functional intent — not classic tonification. Legal label: paraspinal fascial support.",
+      "device": {
+        "modality": "Laser (HILT)",
+        "target": "Paraspinal / lower thoracic-lumbar",
+        "optional": true
+      },
+      "breathing_guidance": "prolonged exhalation, diaphragmatic-pelvic coordination",
+      "goals": [
+        "improve peritoneal perfusion",
+        "reduce sympathetic overdrive",
+        "enable metabolic flexibility"
+      ]
+    },
+    "layer_3": {
+      "name": "Laboratory-Guided Targeting (Add-ons only)",
+      "base_always": "circadian nutritional support",
+      "conditional_supplements": [
+        {
+          "name": "generic supplement support metabolic support",
+          "condition": "insulin_resistance == true (lab-confirmed)"
+        },
+        {
+          "name": "generic supplement support lipid-metabolic support",
+          "condition": "dyslipidaemia == true (lab-confirmed)"
+        },
+        {
+          "name": "generic supplement support restorative sleep support",
+          "condition": "sleep_fragmentation == true OR stress_dominance == true",
+          "timing": "evening only"
+        },
+        {
+          "name": "circulatory support (backend clinical decision)",
+          "condition": "blood_stasis_signs == true",
+          "note": "cautious — clinical decision, backend only"
+        }
+      ],
+      "principle": "Layered support, not polypharmacy."
+    }
+  },
+  "measurable_outcomes": {
+    "primary": [
+      "sleep quality (subjective score / wearable data)",
+      "energy level (daytime stamina)",
+      "concentration / cognitive clarity",
+      "low back pain intensity / morning stiffness"
+    ],
+    "secondary": [
+      "waist circumference (low-key, non-promotional)"
+    ]
+  },
+  "positioning_language": {
+    "use": [
+      "Metabolic rhythm restoration",
+      "Day-night recovery and energy reset",
+      "Autonomic and tissue regeneration support"
+    ],
+    "avoid": [
+      "fat loss claims",
+      "visceral fat targeting",
+      "cosmetic promises",
+      "surgical replacement language"
+    ],
+    "core_sentence": "We address early metabolic dysfunction by restoring circadian rhythm, tissue energy and autonomic balance rather than targeting fat directly."
+  },
+  "diagnosis_map_entry": {
+    "diagnosis": "metabolic syndrome (early / pre-disease)",
+    "associated_patterns": [
+      "perpetrator_pattern",
+      "savior_pattern"
+    ],
+    "axis_primary": "YangMing (Anterior Metabolic) / Taiyin (Midline Interoceptive)",
+    "expression_type": "Metabolic–Fascial Expression",
+    "tcm_pattern": "Spleen-Stomach Qi deficiency + Phlegm-Damp accumulation. Yang deficiency → cold tissue.",
+    "ayurvedic_pattern": "Ama + Kapha excess + Agni insufficiency",
+    "western_correlate": "Sympathetic dominance, insulin resistance, circadian dysregulation, mitochondrial debt",
+    "notes": "Visceral fat = protective adaptation, not primary target. Restore rhythm and autonomic balance first. Waist circumference is secondary outcome, not primary target."
+  },
+  "rules": [
+    {
+      "condition": "metabolic_module AND supplement_selected WITHOUT lab_confirmation",
+      "action": "Only Day/Night is permitted without labs. All other add-ons require lab-confirmed indication."
+    },
+    {
+      "condition": "metabolic_module AND positioning_language includes fat_loss_claims",
+      "action": "REJECT. Replace with approved positioning language."
+    },
+    {
+      "condition": "metabolic_module AND abdominal_wall_defect == true",
+      "action": "EXCLUDE from protocol. Structural issue requires surgical assessment."
+    },
+    {
+      "condition": "metabolic_module AND advanced_metabolic_disease == true",
+      "action": "EXCLUDE. Pharmacological management required. This protocol is pre-disease / early dysfunction only."
+    },
+    {
+      "condition": "laser_eligible == true AND target == paraspinal_thoracolumbar",
+      "action": "Permit laser as optional adjunct for fascial support. Legal label: paraspinal fascial support / autonomic recalibration."
+    },
+    {
+      "condition": "sleep_quality == improving AND energy == improving",
+      "action": "Primary outcome achieved. May cautiously introduce Layer 3 add-ons if lab-indicated."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "headache_grid_states",
+  "backend_variable": "grid_state",
+  "possible_values": [
+    "continuous_grid",
+    "fragmented_grid"
+  ],
+  "states": {
+    "continuous_grid": {
+      "description": "Intact water-EZ tensegrity. Pressure or discharge expression. Pain is sustained, dull, or pressure-dominant.",
+      "associated_axes": [
+        "TaiYang",
+        "YangMing"
+      ],
+      "ayurvedic_correlate": "Vata/Kapha (TaiYang) or Pitta±Vata (YangMing)"
+    },
+    "fragmented_grid": {
+      "description": "EZ instability, sparking edges. Cortical spreading depression substrate. Pain is wave-like, episodic, with sensory phenomena.",
+      "associated_axes": [
+        "ShaoYang",
+        "AURA suprasystem"
+      ],
+      "ayurvedic_correlate": "Pitta±Vata (ShaoYang) or Prana-Vata + Sadhaka Pitta (AURA)"
+    }
+  },
+  "principle": "The grid state determines the severity trajectory."
+}

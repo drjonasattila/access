@@ -1,0 +1,395 @@
+{
+  "id": "TRIGEMINAL_NEURALGIA_MODULE_v1.0",
+  "description": "Trigeminal Neuralgia — full three-layer protocol (Western / Integrative / Backend). Includes carbamazepine-to-herb transition logic and laser protocol.",
+  "western_classification": {
+    "ICHD3_types": [
+      {
+        "type": "Typical TGN",
+        "mechanism": "Neurovascular compression (superior cerebellar artery) at trigeminal root entry zone (REZ) → demyelination",
+        "features": "Sudden, severe, brief electric-shock pain triggered by non-painful stimuli (touch, chewing)"
+      },
+      {
+        "type": "Atypical TGN",
+        "mechanism": "Intermediate between typical TGN and trigeminal neuropathic pain",
+        "features": "Brief attacks + background concomitant pain"
+      },
+      {
+        "type": "Trigeminal neuropathic pain",
+        "mechanism": "uncertain",
+        "features": "Continuous dull pain in trigeminal distribution"
+      },
+      {
+        "type": "Secondary TGN",
+        "mechanism": "Tumour, multiple sclerosis, Lyme disease",
+        "features": "Red flag — requires neuroimaging"
+      },
+      {
+        "type": "Idiopathic TGN",
+        "mechanism": "No identifiable neurovascular conflict",
+        "features": "As typical TGN clinically"
+      }
+    ],
+    "anatomical_note": "REZ = Root Entry Zone. Pulse-Plate-Plexus principle. Three branches: V1 (ophthalmic), V2 (maxillary), V3 (mandibular)."
+  },
+  "western_treatment": {
+    "acute": [
+      "Paracetamol",
+      "NSAIDs",
+      "Oxygen",
+      "Triptans (limited evidence)"
+    ],
+    "prophylaxis_first_line": [
+      {
+        "name": "Carbamazepine",
+        "efficacy": "90%",
+        "mechanism": "Na channel blocker",
+        "dose": "100–200 mg BD",
+        "metabolism": "CYP3A4 inducer — induces own metabolism to 10,11-epoxide via cytochrome P450",
+        "side_effects": [
+          "drowsiness",
+          "dizziness",
+          "double vision",
+          "ataxia",
+          "nausea",
+          "liver damage",
+          "Stevens-Johnson syndrome",
+          "agranulocytosis",
+          "bone marrow suppression",
+          "cutaneous hypersensitivity",
+          "teratogenic"
+        ],
+        "monitoring": "blood levels (toxic >12 mg/L), LFTs, FBC",
+        "protein_binding": "70-80%",
+        "time_to_steady_state": "2-4 weeks",
+        "drug_interactions": "reduces statins, NOACs, hormones, benzodiazepines"
+      },
+      {
+        "name": "Oxcarbazepine",
+        "preferred": true,
+        "dose": "300 mg BD",
+        "mechanism": "Na channel blocker — active metabolite monohydroxyl derivative",
+        "metabolism": "Minimal CYP450, weaker inducer, does not induce own metabolism",
+        "advantages": [
+          "fewer drug interactions",
+          "better tolerated",
+          "fewer severe side effects"
+        ],
+        "side_effects": [
+          "hyponatraemia",
+          "hypersensitivity"
+        ]
+      }
+    ],
+    "prophylaxis_other": [
+      {
+        "name": "Baclofen",
+        "note": "If TGN + Multiple Sclerosis"
+      },
+      {
+        "name": "Lamotrigine",
+        "note": "Second line"
+      },
+      {
+        "name": "Gabapentin / Pregabalin",
+        "note": "For trigeminal neuropathic pain subtype"
+      },
+      {
+        "name": "Botulinum toxin A",
+        "note": "Emerging evidence"
+      },
+      {
+        "name": "Verapamil",
+        "note": "ECG monitoring required"
+      },
+      {
+        "name": "Lithium",
+        "note": "LFT/KD monitoring required"
+      },
+      {
+        "name": "Topiramate",
+        "dose": "300–400 mg/day"
+      },
+      {
+        "name": "Sphenopalatine block",
+        "note": "Interventional option"
+      }
+    ],
+    "surgical_options": [
+      "microvascular decompression",
+      "rhizotomy",
+      "stereotactic radiosurgery (gamma knife)"
+    ],
+    "non_pharma": [
+      "patient education",
+      "stress management",
+      "sleep hygiene",
+      "manual therapy"
+    ]
+  },
+  "integrative_treatment": {
+    "device": {
+      "modality": "Photobiomodulation (PBM) / HILT",
+      "target_zones": [
+        "periorbital",
+        "maxillary fascia"
+      ],
+      "rationale": "May reduce muscle tension and peripheral nociceptive input",
+      "note": "Adjunctive only"
+    },
+    "supplements": [
+      {
+        "name": "Magnesium (glycinate or malate — NOT oxide)",
+        "role": "Membrane stabilisation, reduce electrical discharge",
+        "notes": "Specifically reduces neural electrical discharge"
+      },
+      {
+        "name": "Riboflavin (B2)",
+        "role": "Mitochondrial support",
+        "notes": ""
+      },
+      {
+        "name": "Omega-3 / RegEnOil / generic supplement support",
+        "role": "Membrane fluidity",
+        "notes": "Good for nerve membrane EZ layer"
+      },
+      {
+        "name": "Nigella sativa",
+        "role": "Anti-inflammatory, not Shaoyang-blocking",
+        "notes": "Good choice — does not worsen Shaoyang congestion"
+      },
+      {
+        "name": "Vitamin D",
+        "role": "Immune/nerve support",
+        "notes": "CAUTION: moderate dose only — excess can cause neural over-tension"
+      },
+      {
+        "name": "generic supplement support fascia-noise support",
+        "role": "Dampens fascia noise",
+        "notes": ""
+      },
+      {
+        "name": "generic supplement support neural noise support",
+        "role": "Dampens neural noise",
+        "notes": ""
+      },
+      {
+        "name": "generic supplement support restorative sleep support",
+        "role": "Promotes physiological restorative sleep",
+        "notes": "Evening only"
+      },
+      {
+        "name": "generic supplement support cardiometabolic flow support",
+        "role": "Circulation and tissue perfusion",
+        "notes": ""
+      }
+    ],
+    "herbal_timing": {
+      "morning": "Xiao Chai Hu Tang + Mai Men Dong, Bai He, Wu Wei Zi, Bai Shao Yao, Xuan Shen",
+      "evening": "Liu Wei Di Huang Wan derivative"
+    },
+    "lifestyle": [
+      "stress reduction",
+      "sleep optimisation",
+      "screen/neck load awareness"
+    ]
+  },
+  "backend_logic": {
+    "field_model": {
+      "core_mechanism": "NOT classical nerve pain. Shaoyang gate entrapment (GB–SJ–BL fascia line). Local EZ collapse + Yin deficit → electrical discharges. Nerve = antenna, not the error source.",
+      "three_level_treatment": [
+        "1. Shaoyang ventilation",
+        "2. Yin–EZ support",
+        "3. Local field stabilisation (laser)"
+      ]
+    },
+    "progression_logic": [
+      {
+        "condition": "persistent_tension == true",
+        "outcome": "central sensitisation"
+      },
+      {
+        "condition": "yin_support_fails == true",
+        "outcome": "progression toward migraine phenotype (photophobia, nausea, visual phenomena)"
+      },
+      {
+        "condition": "local_EZ_instability == true",
+        "outcome": "electrical discharge → TGN attack"
+      },
+      {
+        "condition": "shaoyang_yangming_transition == active",
+        "outcome": "nausea, migraine-type overlay"
+      }
+    ],
+    "carbamazepine_field_effects": {
+      "CYP3A4": "strong inducer — reduces other medications (statins, NOACs, hormones, benzodiazepines)",
+      "liver_shaoyang_mitochondria": "high load",
+      "long_term_effects": [
+        "Yin drying",
+        "fascia-EZ instability",
+        "nerve membrane silencing without true resolution"
+      ],
+      "rule": "Cannot be stopped suddenly. Cannot be replaced with cooling formula alone."
+    },
+    "formula_logic": {
+      "NOT_recommended": {
+        "formula": "Huang Lian Jie Du Tang",
+        "reason": "Too cold. Does not release Shaoyang. Long term risks worsening nerve EZ layer. After carbamazepine → further Yin drying. Acceptable in acute inflammation only — NOT for TGN withdrawal."
+      },
+      "RECOMMENDED": {
+        "formula": "Xiao Chai Hu Tang (modified)",
+        "rationale": "Best axis formula. Releases Shaoyang congestion. Supports liver → CYP system re-regulates. Does not suppress nerve — repositions it.",
+        "base_herbs": [
+          "Chai Hu",
+          "Bai Shao",
+          "Ban Xia",
+          "Chen Pi",
+          "Fu Ling",
+          "Gan Cao",
+          "Sheng Jiang",
+          "Da Zao"
+        ],
+        "yin_ez_additions": [
+          {
+            "name": "Mai Men Dong",
+            "role": "Yin moistening"
+          },
+          {
+            "name": "Bai He",
+            "role": "Lung-heart calming, Yin support"
+          },
+          {
+            "name": "Sheng Di OR Xuan Shen",
+            "role": "Deep Yin nourishment"
+          },
+          {
+            "name": "Wu Wei Zi",
+            "role": "KEY — nerve membrane stabilisation"
+          }
+        ],
+        "trigeminal_specific_additions": [
+          {
+            "name": "Gou Teng",
+            "role": "Shaoyang shell release, neural calming"
+          },
+          {
+            "name": "Dan Shen",
+            "role": "Microcirculation, fascia support"
+          },
+          {
+            "name": "Yu Jin",
+            "role": "Local field release"
+          }
+        ],
+        "classification": "Field-stabilising Shaoyang formula — NOT a classical recipe"
+      }
+    },
+    "laser_protocol": {
+      "wavelength": "830 nm",
+      "energy": "low to medium",
+      "approach": "fascia-gate points, NOT direct nerve burning",
+      "goal": "EZ reordering — not nociceptor block",
+      "recommended_points": [
+        {
+          "point": "GB20",
+          "rationale": "Shaoyang gate — posterior"
+        },
+        {
+          "point": "GB14 / Taiyang",
+          "rationale": "Frontal Shaoyang convergence"
+        },
+        {
+          "point": "SJ17",
+          "rationale": "Lateral jaw / auricular Shaoyang"
+        },
+        {
+          "point": "LI4",
+          "rationale": "Only if NOT too Yang — peripheral grounding"
+        },
+        {
+          "point": "Local trigger points on face",
+          "rationale": "NOT directly over nerve trunk"
+        }
+      ],
+      "do_not": [
+        "direct nerve burning",
+        "too strong / too short impulse"
+      ],
+      "legal_safe_label": "Peripheral neurofascial modulation at Shaoyang convergence zones and facial fascia-gate points"
+    },
+    "carbamazepine_withdrawal_logic": {
+      "sequence": [
+        "1. Start Shaoyang release FIRST (Xiao Chai Hu Tang modified)",
+        "2. Ensure Yin support is established and stable",
+        "3. ONLY THEN: slow dose reduction of carbamazepine"
+      ],
+      "monitoring_during_withdrawal": [
+        "facial electrical discharge frequency",
+        "nocturnal restlessness",
+        "signs of liver load"
+      ],
+      "pain_character_indicators": [
+        {
+          "character": "sharp electrical",
+          "interpretation": "Yin insufficient — increase Yin support before further reduction"
+        },
+        {
+          "character": "pressing or migrating",
+          "interpretation": "Shaoyang still locked — increase ventilation before reduction"
+        }
+      ]
+    },
+    "tcm_backend_mapping": {
+      "primary_pattern": "Qi stagnation → muscle tightening; Taiyang fascia involvement",
+      "secondary_risk": "Shaoyang → Yangming spread → nausea, migraine transition",
+      "formula_backend_only_note": "Liu Wei Di Huang Wan / Zhi Bai Di Huang Wan if Yin depletion. Huang Lian Jie Du Tang if heat/toxicity overlay (NOT for TGN long-term). Never front-end."
+    }
+  },
+  "diagnosis_map_entry": {
+    "diagnosis": "trigeminal neuralgia (TGN)",
+    "associated_patterns": [
+      "taiyang_pure_tension",
+      "shaoyang_yangming_transition"
+    ],
+    "axis_primary": "YangMing (ST/LI) — Shaoyang gate entrapment",
+    "expression_type": "Mechanical–Fascial + Neurovascular Expression",
+    "notes": "TGN maps to Yangming node in headache triangle. Field mechanism: Shaoyang gate locked, local EZ collapse, Yin deficit → electrical discharge. Nerve is antenna not error source. Carbamazepine = CYP3A4 inducer — herb interactions critical."
+  },
+  "rules": [
+    {
+      "condition": "TGN AND formula_selected == Huang_Lian_Jie_Du_Tang",
+      "action": "REJECT for long-term use. Too cold. Risks worsening nerve EZ. Acceptable acute inflammation only."
+    },
+    {
+      "condition": "TGN AND carbamazepine_current == true AND herb_formula_starting == true",
+      "action": "Start Shaoyang release and Yin support FIRST. Do NOT reduce carbamazepine until herbal foundation is stable."
+    },
+    {
+      "condition": "TGN AND pain_character == sharp_electrical",
+      "action": "Yin insufficient. Increase Yin support (Mai Men Dong, Wu Wei Zi, Sheng Di). Do NOT reduce carbamazepine yet."
+    },
+    {
+      "condition": "TGN AND pain_character == pressing_or_migrating",
+      "action": "Shaoyang still locked. Increase Shaoyang ventilation (Chai Hu, Yu Jin). Do NOT reduce carbamazepine yet."
+    },
+    {
+      "condition": "TGN AND laser_target == direct_nerve_trunk",
+      "action": "FORBIDDEN. Target fascia-gate points only. Goal: EZ reordering, not nociceptor block."
+    },
+    {
+      "condition": "TGN AND Vitamin_D_supplementation == high_dose",
+      "action": "CAUTION. High Vitamin D can cause neural over-tension. Moderate dose only."
+    },
+    {
+      "condition": "TGN_type == secondary AND neuroimaging_not_done == true",
+      "action": "FLAG. Secondary TGN (MS, tumour, Lyme) must be excluded before integrative pathway."
+    }
+  ],
+  "notes": [
+    "TGN maps to the Yangming node in the headache triangle but has its own dedicated module with carbamazepine transition logic — this is clinically critical and must not be merged with general Yangming pattern.",
+    "Carbamazepine-herb interactions are a critical safety rule: carbamazepine is a strong CYP3A4 inducer and reduces multiple drug classes. Any herb formula co-prescription must account for this.",
+    "Wu Wei Zi is flagged as KEY for nerve membrane stabilisation in TGN — this should be a required herb whenever EZ instability is the primary mechanism.",
+    "The Vitamin D caution (moderate dose only — excess causes neural over-tension) is a new rule not present in earlier modules.",
+    "Nigella sativa is flagged as a safe anti-inflammatory that does NOT block Shaoyang — useful when anti-inflammatory support is needed without compromising the ventilation axis.",
+    "generic supplement support fascia-noise support (fascia noise), neural noise support (neural noise), restorative sleep support (sleep), cardiometabolic flow support (circulation) are added to the supplement library from TGN module — new products not previously catalogued."
+  ]
+}

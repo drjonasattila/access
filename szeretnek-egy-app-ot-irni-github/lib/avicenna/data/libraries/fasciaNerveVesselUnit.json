@@ -1,0 +1,24 @@
+{
+  "id": "CORE_UNIT",
+  "title": "Fascia–Nerve–Vessel UNIT",
+  "one_liner": "Fascia–Nerve–Vessel unit is the gearbox connecting axes.",
+  "description": "Central hub where all three axes converge. State of this unit determines which axis is dominant and whether the grid is continuous or fragmented.",
+  "teaching_mode_note": "Herbs rebuild grid; Laser dampens chaotic oscillations + recharges grid.",
+  "connections": [
+    "MIGRAINE_GB_TB",
+    "AURA_SUPRA",
+    "YANGMING_ST_LI_TAC_TGN",
+    "TAIYANG_BL_SI_TTH_IIH"
+  ],
+  "backend_mechanism": {
+    "fascia": "water-structured tensegrity antenna — primary EZ carrier",
+    "nerve": "antenna not the source of error — reflects field state",
+    "vessel": "microcirculatory field-loss compensation — blood sludging indicator"
+  },
+  "backend": {
+    "fascia": "water-structured tensegrity antenna",
+    "nerve": "antenna, not primary source",
+    "vessel": "microcirculatory compensation / blood sludging indicator"
+  },
+  "principle": "Fascia-Nerve-Vessel unit is the gearbox connecting axes."
+}

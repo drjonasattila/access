@@ -1,0 +1,58 @@
+[
+  {
+    "diagnosis": "cluster headache",
+    "associated_patterns": [
+      "yangming_hyper_energised"
+    ],
+    "axis_primary": "YangMing (ST/LI)",
+    "expression_type": "Neurovascular Expression",
+    "tcm": "Shaoyang → Yangming transition. Excess membrane charge exits via intact water grid (eye, ear, nasal).",
+    "notes": "100% O2 first-line acute. Verapamil prophylaxis. Autonomic signs mandatory."
+  },
+  {
+    "diagnosis": "paroxysmal hemicrania",
+    "associated_patterns": [
+      "yangming_hyper_energised"
+    ],
+    "axis_primary": "YangMing (ST/LI)",
+    "expression_type": "Neurovascular Expression",
+    "notes": "Indomethacin absolute response is diagnostic. Shorter attacks than cluster."
+  },
+  {
+    "diagnosis": "hemicrania continua",
+    "associated_patterns": [
+      "yangming_hyper_energised"
+    ],
+    "axis_primary": "YangMing (ST/LI)",
+    "expression_type": "Neurovascular Expression",
+    "notes": "Continuous unilateral. Indomethacin absolute response is diagnostic."
+  },
+  {
+    "diagnosis": "IIH / idiopathic intracranial hypertension",
+    "associated_patterns": [
+      "taiyang_water_sludging"
+    ],
+    "axis_primary": "TaiYang (BL/SI)",
+    "expression_type": "Mechanical–Fascial Expression",
+    "notes": "Papilloedema = urgent. Acetazolamide first-line. LP if refractory. See Taiyang module."
+  },
+  {
+    "diagnosis": "PRES / posterior reversible encephalopathy syndrome",
+    "associated_patterns": [
+      "taiyang_water_sludging"
+    ],
+    "axis_primary": "TaiYang (BL/SI)",
+    "expression_type": "Neurovascular Expression",
+    "notes": "Hypertension-related. Urgent neuroimaging required. Red flag — do not apply integrative pathway until stabilised."
+  },
+  {
+    "diagnosis": "visceral obesity / early metabolic syndrome",
+    "associated_patterns": [
+      "perpetrator_pattern",
+      "savior_pattern"
+    ],
+    "axis_primary": "YangMing / Taiyin",
+    "expression_type": "Metabolic–Fascial Expression",
+    "notes": "Visceral fat = stress-adaptation marker. Restore circadian rhythm first. Not a cosmetic target."
+  }
+]

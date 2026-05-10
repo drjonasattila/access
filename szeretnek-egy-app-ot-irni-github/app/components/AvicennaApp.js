@@ -2188,6 +2188,183 @@ const platformAdvancedFlags = [
   ["case_free_text_only", "Case is free text only"]
 ];
 
+const triAxialInitialInput = {
+  module_focus: "headache",
+  output_mode: "patient",
+  grid_state: "",
+  headache_character: "",
+  aura_duration_minutes: "",
+  age: "",
+  formula_selected: "",
+  laser_target: "",
+  vitamin_D_supplementation: "",
+  symptoms: [],
+  headache_features: [],
+  autonomic_signs: [],
+  metabolic_features: [],
+  requested_interventions: [],
+  autonomic_signs_present: false,
+  aura_present: false,
+  visual_aura: false,
+  sensory_march: false,
+  pressure_pattern: false,
+  valsalva_worse: false,
+  papilloedema_present: false,
+  severe_valsava_worsening: false,
+  first_aura_over_50: false,
+  motor_aura: false,
+  thunderclap_headache: false,
+  neuro_deficit: false,
+  fever_meningism: false,
+  pregnancy_postpartum_severe_headache: false,
+  new_onset_over_50: false,
+  cancer_immunosuppression: false,
+  progressive_worsening: false,
+  exertional_valsava_new_pattern: false,
+  electric_shock_pain: false,
+  brief_attacks: false,
+  trigger_zones: false,
+  background_concomitant_pain: false,
+  continuous_trigeminal_pain: false,
+  secondary_tgn_suspected: false,
+  neuroimaging_done: false,
+  carbamazepine_current: false,
+  carbamazepine_taper_requested: false,
+  shaoyang_release_stable: false,
+  yin_support_stable: false,
+  herb_formula_starting: false,
+  nigella_selected: false,
+  central_weight_gain: false,
+  fatigue: false,
+  low_back_stiffness: false,
+  poor_sleep: false,
+  concentration_decline: false,
+  stress_dominance: false,
+  early_insulin_resistance: false,
+  advanced_metabolic_disease: false,
+  structural_abdominal_wall_defect: false,
+  lab_confirmation: false,
+  lab_guided_addon_requested: false,
+  supplement_selected_without_lab: false,
+  positioning_language: ""
+};
+
+const triAxialFieldGroups = [
+  {
+    key: "module_focus",
+    label: "Batch 17 module",
+    options: [
+      ["headache", "Headache tri-axial", "TaiYang / ShaoYang / YangMing routing"],
+      ["tgn", "Trigeminal neuralgia", "Dedicated TGN safety and transition logic"],
+      ["metabolic", "Metabolic rhythm", "Circadian and autonomic restoration entry"],
+      ["auto", "Connected view", "Evaluate all connected modules"]
+    ]
+  },
+  {
+    key: "output_mode",
+    label: "Output mode",
+    options: [
+      ["patient", "Patient", "Plain educational explanation"],
+      ["practitioner", "Practitioner", "Axis, grid, formula, laser and rule trace"]
+    ]
+  },
+  {
+    key: "grid_state",
+    label: "Grid state",
+    options: [
+      ["", "Infer", "Let the engine infer from the pattern"],
+      ["continuous_grid", "Continuous grid", "Pressure, sustained discharge, fluid overload"],
+      ["fragmented_grid", "Fragmented grid", "Aura, sparking edges, episodic instability"]
+    ]
+  },
+  {
+    key: "headache_character",
+    label: "Pain character",
+    options: [
+      ["throbbing", "Throbbing", "Migraine / ShaoYang rhythm signal"],
+      ["pressure", "Pressure", "TaiYang pressure-fluid pattern"],
+      ["sharp_electrical", "Sharp electrical", "TGN / Yin support signal"],
+      ["pressing_or_migrating", "Pressing / migrating", "Shaoyang ventilation signal"],
+      ["none", "None", "No dominant pain character"]
+    ]
+  },
+  {
+    key: "vitamin_D_supplementation",
+    label: "Vitamin D context",
+    options: [
+      ["", "Not assessed", "No Vitamin D rule applied"],
+      ["moderate", "Moderate", "Moderate dosing only"],
+      ["high_dose", "High dose", "May worsen neural over-tension"]
+    ]
+  }
+];
+
+const triAxialHeadacheFlags = [
+  ["autonomic_signs_present", "Autonomic signs"],
+  ["aura_present", "Aura"],
+  ["visual_aura", "Visual aura"],
+  ["sensory_march", "Sensory march"],
+  ["pressure_pattern", "Pressure / occipital pattern"],
+  ["valsalva_worse", "Valsalva worse"],
+  ["severe_valsava_worsening", "Severe Valsalva worsening"],
+  ["papilloedema_present", "Papilloedema"],
+  ["first_aura_over_50", "First aura over 50"],
+  ["motor_aura", "Motor aura"],
+  ["anti_inflammatory_only_selected", "Anti-inflammatory only selected"],
+  ["vasodilator_selected", "Vasodilator selected"]
+];
+
+const triAxialAutonomicItems = [
+  ["tearing", "Tearing"],
+  ["rhinorrhea", "Rhinorrhea"],
+  ["ptosis", "Ptosis"],
+  ["miosis", "Miosis"],
+  ["restlessness", "Restlessness"],
+  ["circadian", "Circadian / seasonal pattern"]
+];
+
+const triAxialRedFlags = [
+  ["thunderclap_headache", "Thunderclap headache"],
+  ["neuro_deficit", "New neurological deficit"],
+  ["fever_meningism", "Fever + meningism"],
+  ["pregnancy_postpartum_severe_headache", "Pregnancy/postpartum severe headache"],
+  ["new_onset_over_50", "New onset over 50"],
+  ["cancer_immunosuppression", "Cancer/immunosuppression"],
+  ["progressive_worsening", "Progressive worsening"],
+  ["exertional_valsava_new_pattern", "New exertional/Valsalva pattern"]
+];
+
+const triAxialTgnFlags = [
+  ["electric_shock_pain", "Electric shock pain"],
+  ["brief_attacks", "Brief attacks"],
+  ["trigger_zones", "Trigger zones"],
+  ["background_concomitant_pain", "Background pain"],
+  ["continuous_trigeminal_pain", "Continuous trigeminal pain"],
+  ["secondary_tgn_suspected", "Secondary TGN suspected"],
+  ["neuroimaging_done", "Neuroimaging done"],
+  ["carbamazepine_current", "Carbamazepine current"],
+  ["carbamazepine_taper_requested", "Taper requested"],
+  ["shaoyang_release_stable", "Shaoyang release stable"],
+  ["yin_support_stable", "Yin support stable"],
+  ["herb_formula_starting", "Herbal support starting"],
+  ["nigella_selected", "Nigella selected"]
+];
+
+const triAxialMetabolicFlags = [
+  ["central_weight_gain", "Central weight gain"],
+  ["fatigue", "Fatigue"],
+  ["low_back_stiffness", "Low back stiffness"],
+  ["poor_sleep", "Poor sleep"],
+  ["concentration_decline", "Concentration decline"],
+  ["stress_dominance", "Stress dominance"],
+  ["early_insulin_resistance", "Early insulin resistance"],
+  ["advanced_metabolic_disease", "Advanced metabolic disease"],
+  ["structural_abdominal_wall_defect", "Structural abdominal wall defect"],
+  ["lab_confirmation", "Lab indication present"],
+  ["lab_guided_addon_requested", "Lab-guided add-on requested"],
+  ["supplement_selected_without_lab", "Supplement selected without labs"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -2360,6 +2537,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("platform")}
       >
         Platform UX
+      </button>
+      <button
+        className={mode === "triaxial" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("triaxial")}
+      >
+        Tri-axial + metabolic
       </button>
     </nav>
   );
@@ -3928,6 +4112,255 @@ function PlatformArchitectureSection() {
   );
 }
 
+function TriAxialResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const focused =
+    result.selected_focus === "metabolic"
+      ? result.metabolic_rhythm
+      : result.selected_focus === "tgn"
+        ? result.trigeminal_neuralgia
+        : result.headache_tri_axial;
+  const patient = focused?.patient || result.patient || {};
+  const stopped = focused?.stopped;
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className={stopped ? "av-output-header av-output-header-danger" : "av-output-header"}>
+        <p>{stopped ? "Batch 17 safety stop" : "Batch 17 modules"}</p>
+        <strong>{patient.title || "Connected module output"}</strong>
+      </div>
+
+      <section>
+        <h2>Educational interpretation</h2>
+        <p>{patient.summary}</p>
+        {focused?.grid_state && (
+          <div className="av-mini-grid">
+            <span><strong>Grid state</strong>{focused.grid_state}</span>
+            <span><strong>Selected node</strong>{focused.selected_node || "Not selected"}</span>
+            <span><strong>Routing</strong>{focused.triage_wizard?.probability || "Not assessed"}</span>
+          </div>
+        )}
+        {focused?.tgn_type && (
+          <div className="av-mini-grid">
+            <span><strong>TGN type</strong>{focused.tgn_type}</span>
+            <span><strong>Taper status</strong>{focused.carbamazepine_safety?.taper_status}</span>
+            <span><strong>Laser goal</strong>{focused.laser_protocol?.goal}</span>
+          </div>
+        )}
+        {focused?.entry_score !== undefined && (
+          <div className="av-mini-grid">
+            <span><strong>Entry score</strong>{focused.entry_score}%</span>
+            <span><strong>Layer 1</strong>Rhythm restoration</span>
+            <span><strong>Layer 3</strong>{focused.therapeutic_layers?.[2]?.status}</span>
+          </div>
+        )}
+      </section>
+
+      <TagSection title="Support focus" items={patient.support || []} tone="effect" empty="No support output while safety stops are active." />
+      <TagSection title="Cautions" items={focused?.contraindications || focused?.cautions || []} tone="avoid" />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {(patient.safety_notes || result.patient?.safety_notes || []).map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Practitioner view</summary>
+          <pre>{JSON.stringify(result, null, 2)}</pre>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function TriAxialModulesSection() {
+  const [input, setInput] = useState(triAxialInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  function toggleArray(key, value) {
+    setInput((current) => {
+      const list = current[key];
+      return {
+        ...current,
+        [key]: list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+      };
+    });
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/headache-triaxial", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, output_mode: advanced ? "practitioner" : input.output_mode })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Batch 17 module evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(triAxialInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>Batch 17 connected modules</h2>
+          <p className="av-muted">
+            Headache tri-axial routing, trigeminal neuralgia safeguards, and metabolic rhythm restoration. Educational only, not diagnosis.
+          </p>
+        </section>
+
+        {triAxialFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={value}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <ToggleList
+          title="Headache triage wizard inputs"
+          items={triAxialHeadacheFlags}
+          selected={triAxialHeadacheFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <ToggleList
+          title="Autonomic signs"
+          items={triAxialAutonomicItems}
+          selected={input.autonomic_signs}
+          onToggle={(value) => toggleArray("autonomic_signs", value)}
+        />
+
+        <ToggleList
+          title="Headache red flags"
+          items={triAxialRedFlags}
+          selected={triAxialRedFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <ToggleList
+          title="Trigeminal neuralgia module"
+          items={triAxialTgnFlags}
+          selected={triAxialTgnFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <ToggleList
+          title="Metabolic rhythm module"
+          items={triAxialMetabolicFlags}
+          selected={triAxialMetabolicFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <section className="av-section">
+          <h2>Details</h2>
+          <input
+            className="av-number"
+            min="0"
+            type="number"
+            placeholder="Age"
+            value={input.age}
+            onChange={(event) => setField("age", event.target.value)}
+          />
+          <input
+            className="av-number"
+            min="0"
+            type="number"
+            placeholder="Aura duration minutes"
+            value={input.aura_duration_minutes}
+            onChange={(event) => setField("aura_duration_minutes", event.target.value)}
+          />
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Formula selected"
+            value={input.formula_selected}
+            onChange={(event) => setField("formula_selected", event.target.value)}
+          />
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Laser target"
+            value={input.laser_target}
+            onChange={(event) => setField("laser_target", event.target.value)}
+          />
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Metabolic positioning language"
+            value={input.positioning_language}
+            onChange={(event) => setField("positioning_language", event.target.value)}
+          />
+        </section>
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show practitioner backend logic and rule trace</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate Batch 17 modules"}
+        </button>
+      </form>
+
+      <TriAxialResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function TransitionResult({ result, advanced, onReset }) {
   if (!result) return null;
 
@@ -4478,6 +4911,8 @@ export default function AvicennaApp() {
                   ? "Transition Engine v1.0"
                   : mode === "platform"
                     ? "Platform Philosophy & Architecture"
+                    : mode === "triaxial"
+                      ? "Headache Tri-Axial / TGN / Metabolic Rhythm"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -4496,6 +4931,8 @@ export default function AvicennaApp() {
                   ? "High-level 7-axis routing above terrain modules and downstream symptom expressions"
                   : mode === "platform"
                     ? "Three-question UX, instability routing, case-quality architecture, and cross-system translation rules"
+                    : mode === "triaxial"
+                      ? "Grid-state headache routing, trigeminal neuralgia safeguards, and metabolic rhythm restoration"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
@@ -4521,6 +4958,8 @@ export default function AvicennaApp() {
         <TransitionEngineSection />
       ) : mode === "platform" ? (
         <PlatformArchitectureSection />
+      ) : mode === "triaxial" ? (
+        <TriAxialModulesSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

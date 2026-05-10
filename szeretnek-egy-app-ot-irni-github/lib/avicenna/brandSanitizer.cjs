@@ -16,7 +16,13 @@ const BRAND_REPLACEMENTS = [
   [/\bMyGastrin\b/g, "GI mucosal support"],
   [/\bMyBlood\b/g, "microcirculatory support"],
   [/\bProCardiol\b/g, "cardiometabolic flow support"],
+  [/\bProcardiol\b/g, "cardiometabolic flow support"],
   [/\bProSugar Balance\b/g, "metabolic support"],
+  [/\bProsugar\b/g, "metabolic support"],
+  [/\bProcholterol\b/g, "lipid-metabolic support"],
+  [/\bProrelaxin\b/g, "restorative sleep support"],
+  [/\bProselect\b/g, "neural noise support"],
+  [/\bProdeacid\b/g, "fascia-noise support"],
   [/\bPromigraine\b/g, "headache membrane support"]
 ];
 

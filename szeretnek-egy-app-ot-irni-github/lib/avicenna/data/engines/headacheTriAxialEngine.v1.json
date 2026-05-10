@@ -1,0 +1,462 @@
+{
+  "id": "HEADACHE_TRI_AXIAL_ENGINE_v1.0",
+  "description": "Headache Engine — Tri-Axial Model. Three axes (TaiYang, ShaoYang, YangMing) map headache syndromes onto a shared Fascia-Nerve-Vessel UNIT core. Grid state (continuous vs fragmented) is the primary backend discriminator. Aura = suprasystem overlay.",
+  "backend_axiom": "All headache is neurovascular desynchronisation. The axis determines the pattern; the grid state determines the severity trajectory.",
+  "grid_states": {
+    "continuous_grid": {
+      "description": "Intact water-EZ tensegrity. Pressure or discharge expression. Pain is sustained, dull, or pressure-dominant.",
+      "associated_axes": [
+        "TaiYang",
+        "YangMing"
+      ],
+      "ayurvedic_correlate": "Vata/Kapha (TaiYang) or Pitta±Vata (YangMing)"
+    },
+    "fragmented_grid": {
+      "description": "EZ instability, sparking edges. Cortical spreading depression substrate. Pain is wave-like, episodic, with sensory phenomena.",
+      "associated_axes": [
+        "ShaoYang",
+        "AURA suprasystem"
+      ],
+      "ayurvedic_correlate": "Pitta±Vata (ShaoYang) or Prana-Vata + Sadhaka Pitta (AURA)"
+    }
+  },
+  "nodes": [
+    {
+      "id": "MIGRAINE_GB_TB",
+      "title": "Migraine",
+      "axis_vent": "ShaoYang (GB/TB) vent",
+      "pattern": "Pitta ± Vata",
+      "ayurvedic_detail": "Pitta = Heat, Vascular; Vata = Nerve, Rhythm",
+      "grid_state": "fragmented_grid",
+      "one_liner": "Neurovascular rhythm instability (Pitta heat + Vata rhythm).",
+      "tags": [
+        "ShaoYang",
+        "PittaVata",
+        "rhythm",
+        "neurovascular"
+      ],
+      "meds_one_word": "CGRP",
+      "med_families": [
+        "Triptans (5-HT1B/D) — vascular reset",
+        "CGRP inhibitors: gepants / mAbs — TG vascular overcharge",
+        "Beta-blockers (prophylaxis) — rhythm attenuation",
+        "Topiramate / valproate — excitability reduction"
+      ],
+      "key_clinical_clues": [
+        "unilateral or bilateral throbbing headache",
+        "nausea or vomiting",
+        "photophobia and/or phonophobia",
+        "worsened by routine activity",
+        "may have prodrome (yawning, mood change)",
+        "often hormonal or stress-linked trigger"
+      ],
+      "differentiators": [
+        "pulsating quality distinguishes from TTH",
+        "autonomic signs absent or mild (unlike cluster)",
+        "aura may or may not precede",
+        "indomethacin does NOT abort",
+        "not strictly unilateral (unlike TAC)"
+      ],
+      "what_to_check_next": [
+        "aura features? → activate AURA node",
+        "autonomic signs (tearing, ptosis, rhinorrhea)? → consider TAC overlap",
+        "frequency >15 days/month? → chronic migraine pathway",
+        "red flags? → escalate urgently"
+      ],
+      "western_neurostabilisers": [
+        "Triptans",
+        "CGRP inhibitors",
+        "beta-blockers",
+        "topiramate/valproate"
+      ],
+      "tcm_backend": {
+        "primary_pattern": "Shaoyang Qi stagnation → heat rising",
+        "transition_risk": "Shaoyang → Yangming if untreated (nausea, vomiting escalation)",
+        "formula_backend_only": "Xiao Chai Hu Tang variant + Yin support if depletion present"
+      }
+    },
+    {
+      "id": "AURA_SUPRA",
+      "title": "Aura",
+      "axis_vent": "Suprasystem overlay (not a standalone axis)",
+      "pattern": "Prana-Vata + Sadhaka Pitta",
+      "grid_state": "fragmented_grid — active sparking",
+      "one_liner": "Fragmented grid, 'sparking edges' (cortical spreading depression).",
+      "tags": [
+        "PranaVata",
+        "SadhakaPitta",
+        "fragmentation",
+        "cortical_spreading_depression"
+      ],
+      "meds_one_word": "Lamotrigine",
+      "med_families": [
+        "Lamotrigine — grid stabilisation",
+        "Topiramate — excitability reduction",
+        "Magnesium — membrane stabilisation",
+        "Verapamil — vascular rhythm",
+        "Benzodiazepines — rare, acute only"
+      ],
+      "key_clinical_clues": [
+        "visual phenomena (scotoma, zigzag lines, flashes)",
+        "sensory spread over 20-60 minutes",
+        "fully reversible neurological symptoms",
+        "precedes or accompanies headache",
+        "speech disturbance (rare)"
+      ],
+      "differentiators": [
+        "gradual march of symptoms (not sudden like TIA)",
+        "positive phenomena (lights/tingling) vs negative (loss of vision/sensation)",
+        "duration 5–60 min distinguishes from stroke",
+        "if >60 min or motor symptoms → red flag"
+      ],
+      "what_to_check_next": [
+        "first-ever aura in patient >50? → red flag, exclude stroke",
+        "aura without headache? → acephalgic migraine, consider cardiac PFO",
+        "prolonged aura >60 min? → escalate",
+        "motor aura? → haemiplegic migraine, specialist referral"
+      ],
+      "relationship": "AURA overlays and triggers MIGRAINE_GB_TB",
+      "tcm_backend": {
+        "mechanism": "Local EZ instability/collapse → electrical discharge propagation",
+        "formula_backend_only": "Wu Wei Zi, Bai He, Mai Men Dong for nerve membrane stabilisation"
+      }
+    },
+    {
+      "id": "YANGMING_ST_LI_TAC_TGN",
+      "title": "YangMing — TAC / TGN / Cluster / PH / HC",
+      "axis_vent": "YangMing (ST/LI) vent",
+      "pattern": "Pitta ± Vata",
+      "ayurvedic_detail": "Hyper-energised Pachaka Pitta; autonomic discharge",
+      "grid_state": "continuous_grid — hyper-energised with autonomic discharge",
+      "one_liner": "Hyper-energised continuous grid with autonomic discharge.",
+      "tags": [
+        "YangMing",
+        "PittaVata",
+        "autonomic",
+        "discharge"
+      ],
+      "meds_one_word": "Indomethacin",
+      "med_families": [
+        "100% O2 — cluster: acute discharge",
+        "Verapamil — autonomic stability",
+        "Lithium — periodicity",
+        "Indomethacin — PH/HC inflammation (pathognomonic response)",
+        "Steroid bridge — acute cluster series",
+        "Carbamazepine / oxcarbazepine — TGN (Na channel)"
+      ],
+      "sub_syndromes": {
+        "cluster_headache": {
+          "western": "TAC — trigeminal autonomic cephalalgia",
+          "features": [
+            "strictly unilateral",
+            "periorbital/temporal",
+            "severe/excruciating",
+            "autonomic features mandatory (tearing, ptosis, rhinorrhea)",
+            "restlessness/agitation",
+            "duration 15-180 min",
+            "episodic or chronic"
+          ],
+          "first_line_acute": "100% O2 + triptan",
+          "first_line_prophylaxis": "Verapamil"
+        },
+        "paroxysmal_hemicrania": {
+          "western": "PH — TAC subtype",
+          "features": [
+            "strictly unilateral",
+            "shorter attacks 2-30 min",
+            "higher frequency >5/day",
+            "indomethacin ABSOLUTE response (diagnostic)"
+          ],
+          "first_line": "Indomethacin"
+        },
+        "hemicrania_continua": {
+          "western": "HC — continuous unilateral",
+          "features": [
+            "continuous unilateral baseline pain",
+            "autonomic features",
+            "indomethacin ABSOLUTE response (diagnostic)"
+          ],
+          "first_line": "Indomethacin"
+        },
+        "trigeminal_neuralgia": {
+          "id_cross_ref": "TRIGEMINAL_NEURALGIA_MODULE",
+          "western": "TGN — see dedicated module",
+          "features": [
+            "electric shock/lancinating brief pain",
+            "V2/V3 distribution usually",
+            "trigger zones (touch, chewing, wind)",
+            "no autonomic features"
+          ],
+          "first_line": "Carbamazepine / oxcarbazepine"
+        }
+      },
+      "key_clinical_clues": [
+        "autonomic signs mandatory for TAC (tearing, rhinorrhea, ptosis, miosis)",
+        "strictly unilateral and fixed side",
+        "severe to excruciating intensity",
+        "restlessness or agitation during attack",
+        "circadian/seasonal periodicity (cluster)",
+        "trigger zones (TGN)"
+      ],
+      "what_to_check_next": [
+        "indomethacin trial → if complete response: PH or HC",
+        "100% O2 trial → if response: cluster",
+        "MRI to exclude secondary cause (especially TGN)",
+        "ECG before verapamil",
+        "LFTs and renal function before lithium"
+      ],
+      "tcm_backend": {
+        "primary_pattern": "Shaoyang overload → Yangming discharge. Excess membrane charge exits on intact water grid (eye, ear, nasal discharge).",
+        "transition": "Shaoyang → Yangming hyper-energisation",
+        "mechanism": "Vegetative dysautonomia — excess membrane charge exits via intact water grid",
+        "formula_backend_only": "Huang Lian Jie Du Tang IF acute heat/toxicity. Avoid long term — too cold, risks Yin drying."
+      }
+    },
+    {
+      "id": "TAIYANG_BL_SI_TTH_IIH",
+      "title": "TaiYang — TTH / PRES / IIH",
+      "axis_vent": "TaiYang (BL/SI) vent",
+      "pattern": "Vata / Kapha",
+      "ayurvedic_detail": "Fluid/pressure dominant; blood sludging in posterior fossa",
+      "grid_state": "continuous_grid — pressure/fluid dominant",
+      "one_liner": "Continuous grid with pressure/fluid dominance (Vata/Kapha).",
+      "tags": [
+        "TaiYang",
+        "VataKapha",
+        "pressure",
+        "dorsal"
+      ],
+      "meds_one_word": "Acetazolamide",
+      "med_families": [
+        "Acetazolamide — IIH/PRES CSF pressure reduction",
+        "CSF pressure management (LP, shunt if refractory)",
+        "Diuretics — fluid management",
+        "NSAIDs — TTH acute",
+        "Amitriptyline / duloxetine — chronic TTH tone reset",
+        "Botulinum toxin — chronic TTH",
+        "Muscle relaxants — TTH fascial component"
+      ],
+      "sub_syndromes": {
+        "TTH_occipital": {
+          "features": [
+            "bilateral pressing/tightening",
+            "mild-moderate",
+            "not worsened by activity",
+            "no nausea, max one photophobia/phonophobia"
+          ],
+          "see_also": "TTH_MODULE"
+        },
+        "IIH": {
+          "features": [
+            "headache worse lying/bending/Valsalva",
+            "papilloedema",
+            "visual obscurations",
+            "pulsatile tinnitus",
+            "associated with obesity/certain meds"
+          ],
+          "red_flag": "papilloedema — urgent ophthalmology + LP"
+        },
+        "PRES": {
+          "features": [
+            "posterior reversible encephalopathy",
+            "hypertension association",
+            "visual disturbance",
+            "seizures",
+            "confusion"
+          ],
+          "red_flag": "requires urgent neuroimaging"
+        }
+      },
+      "key_clinical_clues": [
+        "occipital or global pressure sensation",
+        "worse with Valsalva/lying flat (IIH)",
+        "bilateral, non-pulsating (TTH)",
+        "associated with poor posture, screen load (TTH)",
+        "visual changes/papilloedema (IIH red flag)",
+        "posterior fossa blood sludging in backend model"
+      ],
+      "what_to_check_next": [
+        "fundoscopy — papilloedema? → urgent IIH pathway",
+        "postural component? → LP opening pressure",
+        "medication overuse? → TTH chronification risk",
+        "neuroimaging if new, progressive, or atypical"
+      ],
+      "tcm_backend": {
+        "primary_pattern": "Taiyang shell over-tension. Shaoyin return blocked. Water-energy cannot descend.",
+        "see_also": "TAIYANG_MODULE_v1.0",
+        "formula_backend_only": "Fu Ling, Zhu Ling, Mai Men Dong for water-field conduction. Liu Wei Di Huang Wan if Yin depletion."
+      }
+    },
+    {
+      "id": "CORE_UNIT",
+      "title": "Fascia–Nerve–Vessel UNIT",
+      "one_liner": "Fascia–Nerve–Vessel unit is the gearbox connecting axes.",
+      "description": "Central hub where all three axes converge. State of this unit determines which axis is dominant and whether the grid is continuous or fragmented.",
+      "teaching_mode_note": "Herbs rebuild grid; Laser dampens chaotic oscillations + recharges grid.",
+      "connections": [
+        "MIGRAINE_GB_TB",
+        "AURA_SUPRA",
+        "YANGMING_ST_LI_TAC_TGN",
+        "TAIYANG_BL_SI_TTH_IIH"
+      ],
+      "backend_mechanism": {
+        "fascia": "water-structured tensegrity antenna — primary EZ carrier",
+        "nerve": "antenna not the source of error — reflects field state",
+        "vessel": "microcirculatory field-loss compensation — blood sludging indicator"
+      }
+    }
+  ],
+  "triage_wizard": {
+    "description": "3-question binary triage. Suggests most likely node with confidence label. Guidance only — not diagnosis.",
+    "questions": [
+      {
+        "id": "Q1",
+        "question": "Prominent autonomic signs (tearing / rhinorrhea / ptosis / miosis)?",
+        "yes": "→ HIGH probability: YANGMING_ST_LI_TAC_TGN (TAC subgroup)",
+        "no": "→ proceed to Q2"
+      },
+      {
+        "id": "Q2",
+        "question": "Aura or visual phenomena before headache?",
+        "yes": "→ HIGH probability: MIGRAINE_GB_TB with AURA_SUPRA overlay",
+        "no": "→ proceed to Q3"
+      },
+      {
+        "id": "Q3",
+        "question": "Pressure / occipital heaviness worse with lying down or Valsalva?",
+        "yes": "→ HIGH probability: TAIYANG_BL_SI_TTH_IIH (IIH variant)",
+        "no": "→ MEDIUM probability: TAIYANG_BL_SI_TTH_IIH (TTH) or MIGRAINE_GB_TB (without aura)"
+      }
+    ]
+  },
+  "red_flags": [
+    "worst headache of life (thunderclap)",
+    "new neurological deficit",
+    "fever + neck stiffness (meningism)",
+    "papilloedema on fundoscopy",
+    "severe headache in pregnancy or postpartum",
+    "new onset over 50 years",
+    "known cancer or immunosuppression",
+    "progressive worsening over days/weeks",
+    "headache worse with exertion or Valsalva (new pattern)"
+  ],
+  "glossary": {
+    "TAC": "Trigeminal Autonomic Cephalalgia — group of headaches with unilateral pain + ipsilateral autonomic features",
+    "TGN": "Trigeminal Neuralgia — brief, electric shock-like facial pain in trigeminal distribution",
+    "TTH": "Tension-Type Headache — bilateral pressing headache, muscle-fascia dominant",
+    "IIH": "Idiopathic Intracranial Hypertension — raised CSF pressure without structural cause",
+    "PRES": "Posterior Reversible Encephalopathy Syndrome — hypertension-related vasogenic oedema",
+    "PH": "Paroxysmal Hemicrania — TAC subtype, indomethacin-responsive",
+    "HC": "Hemicrania Continua — continuous unilateral headache, indomethacin-responsive",
+    "CGRP": "Calcitonin Gene-Related Peptide — key mediator in migraine; target of modern prophylaxis",
+    "cortical_spreading_depression": "Wave of neural depolarisation followed by suppression — physical substrate of aura",
+    "Pitta": "Ayurvedic concept: heat, metabolism, transformation — excess = inflammation, vascular overcharge",
+    "Vata": "Ayurvedic concept: movement, rhythm, nerve — excess = erratic pain, instability",
+    "Kapha": "Ayurvedic concept: structure, fluid, slowness — excess = pressure, congestion, dampness",
+    "ShaoYang": "Lateral autonomic axis (GB/TB) — pivot between interior and exterior; lateral antennae",
+    "YangMing": "Anterior metabolic axis (ST/LI) — digestion, bulk metabolism, inflammatory discharge",
+    "TaiYang": "Posterior sensory axis (BL/SI) — external defence, posterior fascia, pressure/fluid",
+    "grid_fragmentation": "Loss of EZ coherence in fascia-water matrix — substrate for aura, sparking, cortical spreading depression",
+    "continuous_grid": "Intact EZ tensegrity — pressure or sustained discharge expression rather than fragmentation"
+  },
+  "disclaimer": "Educational model — not a substitute for clinical assessment. Escalate urgent red flags.",
+  "shared_diagnosis_map_additions": [
+    {
+      "diagnosis": "cluster headache",
+      "associated_patterns": [
+        "yangming_hyper_energised"
+      ],
+      "axis_primary": "YangMing (ST/LI)",
+      "expression_type": "Neurovascular Expression",
+      "tcm": "Shaoyang → Yangming transition. Excess membrane charge exits via intact water grid (eye, ear, nasal).",
+      "notes": "100% O2 first-line acute. Verapamil prophylaxis. Autonomic signs mandatory."
+    },
+    {
+      "diagnosis": "paroxysmal hemicrania",
+      "associated_patterns": [
+        "yangming_hyper_energised"
+      ],
+      "axis_primary": "YangMing (ST/LI)",
+      "expression_type": "Neurovascular Expression",
+      "notes": "Indomethacin absolute response is diagnostic. Shorter attacks than cluster."
+    },
+    {
+      "diagnosis": "hemicrania continua",
+      "associated_patterns": [
+        "yangming_hyper_energised"
+      ],
+      "axis_primary": "YangMing (ST/LI)",
+      "expression_type": "Neurovascular Expression",
+      "notes": "Continuous unilateral. Indomethacin absolute response is diagnostic."
+    },
+    {
+      "diagnosis": "IIH / idiopathic intracranial hypertension",
+      "associated_patterns": [
+        "taiyang_water_sludging"
+      ],
+      "axis_primary": "TaiYang (BL/SI)",
+      "expression_type": "Mechanical–Fascial Expression",
+      "notes": "Papilloedema = urgent. Acetazolamide first-line. LP if refractory. See Taiyang module."
+    },
+    {
+      "diagnosis": "PRES / posterior reversible encephalopathy syndrome",
+      "associated_patterns": [
+        "taiyang_water_sludging"
+      ],
+      "axis_primary": "TaiYang (BL/SI)",
+      "expression_type": "Neurovascular Expression",
+      "notes": "Hypertension-related. Urgent neuroimaging required. Red flag — do not apply integrative pathway until stabilised."
+    },
+    {
+      "diagnosis": "visceral obesity / early metabolic syndrome",
+      "associated_patterns": [
+        "perpetrator_pattern",
+        "savior_pattern"
+      ],
+      "axis_primary": "YangMing / Taiyin",
+      "expression_type": "Metabolic–Fascial Expression",
+      "notes": "Visceral fat = stress-adaptation marker. Restore circadian rhythm first. Not a cosmetic target."
+    }
+  ],
+  "shared_rules_additions": [
+    {
+      "condition": "headache AND autonomic_signs_present == true",
+      "action": "Route to YANGMING_ST_LI_TAC_TGN node. Consider TAC subtype. Indomethacin trial if attacks short and frequent."
+    },
+    {
+      "condition": "headache AND aura_present == true",
+      "action": "Activate AURA_SUPRA overlay on MIGRAINE_GB_TB node."
+    },
+    {
+      "condition": "headache AND worse_with_Valsalva == true AND papilloedema_present == true",
+      "action": "URGENT RED FLAG. IIH pathway. Ophthalmology and LP urgently. Do not apply integrative protocol until stabilised."
+    },
+    {
+      "condition": "headache AND red_flag_present == true",
+      "action": "STOP all integrative pathway. Western medical assessment mandatory first."
+    },
+    {
+      "condition": "indomethacin_trial AND complete_response == true",
+      "action": "Diagnosis: PH or HC confirmed. Maintain indomethacin. Integrative as adjunct only."
+    },
+    {
+      "condition": "grid_state == fragmented AND treatment_selected == anti-inflammatory_only",
+      "action": "Insufficient. Fragmented grid requires EZ stabilisation (membrane support, Yin nourishment, Wu Wei Zi)."
+    },
+    {
+      "condition": "grid_state == continuous AND treatment_selected == vasodilator",
+      "action": "Check axis first. Continuous grid (TaiYang) needs pressure reduction not vasodilation. Continuous grid (YangMing) needs discharge reduction."
+    }
+  ],
+  "notes": [
+    "The Headache Tri-Axial model introduces 'grid state' (continuous vs fragmented) as a new backend variable not present in earlier modules. This must be added to the shared input_variables list.",
+    "The Core Unit (Fascia-Nerve-Vessel) is the convergence point of all three axes and should be implemented as a shared node that all headache patterns reference.",
+    "TGN maps to the Yangming node in the headache triangle but has its own dedicated module with carbamazepine transition logic — this is clinically critical and must not be merged with general Yangming pattern.",
+    "The Metabolic Rhythm module introduces a new clinical entry point (age 40+, pre-disease metabolic dysfunction) and a new positioning language constraint. Fat loss claims are explicitly prohibited.",
+    "Carbamazepine-herb interactions are a critical safety rule: carbamazepine is a strong CYP3A4 inducer and reduces multiple drug classes. Any herb formula co-prescription must account for this.",
+    "Wu Wei Zi is flagged as KEY for nerve membrane stabilisation in TGN — this should be a required herb whenever EZ instability is the primary mechanism.",
+    "The Vitamin D caution (moderate dose only — excess causes neural over-tension) is a new rule not present in earlier modules.",
+    "Nigella sativa is flagged as a safe anti-inflammatory that does NOT block Shaoyang — useful when anti-inflammatory support is needed without compromising the ventilation axis.",
+    "generic supplement support fascia-noise support (fascia noise), neural noise support (neural noise), restorative sleep support (sleep), cardiometabolic flow support (circulation) are added to the supplement library from TGN module — new products not previously catalogued."
+  ]
+}
