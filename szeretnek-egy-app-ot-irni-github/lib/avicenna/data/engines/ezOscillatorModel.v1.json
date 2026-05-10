@@ -1,0 +1,246 @@
+{
+  "engine": "EZ_OSCILLATOR_MODEL",
+  "source": "avicenna_engine_batch19.json",
+  "patterns": [
+    {
+      "id": "EZW_FRAG",
+      "name": "EZ Water Fragmentation / Structured Water Collapse",
+      "internal_tag": "bulk_water_dominance",
+      "frontend_language": "impaired tissue buffering / neurovascular oscillator instability",
+      "triggers": [
+        "trauma or ischemia to tissue",
+        "chronic mitochondrial underdrive",
+        "chronic inflammation",
+        "sustained autonomic overload",
+        "dampness accumulation in target tissue"
+      ],
+      "symptoms": [
+        "pain oscillates rather than being constant and localised",
+        "small stimulus produces disproportionate response",
+        "urgency at low bladder volume (OAB)",
+        "paroxysmal autonomic surges (autonomic dysreflexia)",
+        "night-time worsening (reduced mitochondrial maintenance)",
+        "stress-sensitivity of symptoms",
+        "paradoxical drug responses",
+        "allodynia-like sensitivity without structural nerve injury"
+      ],
+      "mechanism": "When EZ water (structured, gel-phase water surrounding fascia, nerves, and mitochondria) fragments into bulk water, the tissue loses its oscillation-damping function. Afferent signals are no longer attenuated — they amplify into self-sustaining oscillators. This is not neural over-firing; it is a phase-transition failure in the tissue matrix.",
+      "interventions": {
+        "modalities": [
+          "slow rhythmic breathing (reduces bulk-water oscillation amplitude)",
+          "warmth application (restores structured water phase)",
+          "grounding movement (low-amplitude, slow cycles)",
+          "fascial work (myofascial decompression, gentle laser)",
+          "PEMF (field coherence restoration)",
+          "structured water support (collagen-rich broths, hydration quality)"
+        ],
+        "device": "low-level laser (fascial reset), PEMF (field coherence)",
+        "herbs": [
+          {
+            "name": "Wen Dan Tang axis",
+            "role": "phlegm-dampness resolution, reverse-flow dampening, vagal oscillation calming",
+            "notes": "First-line for bulk-water dominance with ascending counterflow. Components: Ban Xia, Chen Pi, Fu Ling, Zhi Shi, Zhu Ru, Sheng Jiang."
+          },
+          {
+            "name": "Long Gu + Mu Li",
+            "role": "mineralisation, zeta potential stabilisation, structured water layer rebuilding, proton-accumulator stabilisation",
+            "notes": "Combines with Chai Hu for field-release + field-rebuild sequence."
+          }
+        ],
+        "contraindications": [
+          "avoid aggressive mechanical tissue release during active EZ fragmentation — frequency-based approaches preferred",
+          "avoid cold and desiccating agents"
+        ]
+      }
+    },
+    {
+      "id": "OSCILL_VISC",
+      "name": "Visceral Oscillator Instability (Autonomic Dysreflexia / OAB pattern)",
+      "internal_tag": "dampness_resonance_visceral",
+      "frontend_language": "visceral-fascial-matrix self-sustaining oscillatory instability",
+      "triggers": [
+        "spinal cord injury or neurodegeneration (removes descending inhibitory control)",
+        "bladder filling (mechanical fissure of EZ layer)",
+        "bowel distension",
+        "catheter insertion (mechanical EZ disruption)",
+        "cold exposure",
+        "stress or adrenergic surge"
+      ],
+      "symptoms": [
+        "sudden severe hypertension",
+        "bradycardia or tachycardia",
+        "headache (posterior)",
+        "profuse sweating above level of injury",
+        "flushing",
+        "pilomotor responses",
+        "urgency-incontinence at low bladder volume",
+        "sleep-related worsening"
+      ],
+      "mechanism": "Not simply 'loss of descending inhibitory control.' The EZ water matrix in bladder, bowel, and skin loses its buffering (damping) function as bulk water ratio increases. Afferent input is amplified rather than attenuated → self-sustaining runaway resonance propagates up the sympathetic chain. The bladder is a gravity-dependent dampness reservoir; the bowel a fermentation-driven internal oscillator; the skin may share embryological field coupling with gut (ectoderm-endoderm co-induction).",
+      "CRPS_analogy": "Autonomic dysreflexia = CRPS of the bladder-bowel-skin axis; trigger is internal dampness resonance rather than peripheral trauma.",
+      "interventions": {
+        "modalities": [
+          "warmth (promotes EZ phase recovery)",
+          "slow diaphragmatic breathing (reduces oscillation amplitude)",
+          "grounding techniques",
+          "fascial work (pelvic floor, posterior chain)",
+          "PEMF",
+          "structured water and mineral support (Mg, K)"
+        ],
+        "device": "PEMF, low-level laser (pelvic)",
+        "herbs": [
+          {
+            "name": "Wen Dan Tang axis",
+            "role": "phlegm and dampness resolution, vagal oscillation dampening",
+            "notes": "Primary for bulk-water dominance in bladder-bowel axis."
+          },
+          {
+            "name": "Wu Mei Wan",
+            "role": "warming-stabilising, ion-phase regulation, oscillator calming",
+            "notes": "Ion-phase disorder with cold-heat complex. Relevant when heat above / cold below pattern present."
+          }
+        ],
+        "contraindications": [
+          "anticholinergics and spasmolytics give only partial relief — do not address matrix root",
+          "cold exposure worsens",
+          "dehydration worsens",
+          "stimulating agents worsen"
+        ]
+      }
+    },
+    {
+      "id": "TAC_OSCILL",
+      "name": "Cranial Autonomic Oscillator Instability (TAC spectrum)",
+      "internal_tag": "cranial_dampness_trigeminal_loop",
+      "frontend_language": "frequency-dependent trigeminal-autonomic oscillator dysregulation",
+      "sub_patterns": [
+        {
+          "name": "Cluster headache",
+          "frequency": "medium-high, pulsatile",
+          "dominant_gate": "parasympathetic amplitude (SPG) + trigeminal trigger",
+          "dampness_pattern": "deep cranial dampness (sinus / cavernous region)",
+          "clinical_note": "longer brutal attacks, circadian-locked, night predominance (reduced mitochondrial maintenance)"
+        },
+        {
+          "name": "Paroxysmal hemicrania",
+          "frequency": "medium, fast reset",
+          "dominant_gate": "vascular-meningeal gate",
+          "dampness_pattern": "shallow, well-coupled to vascular-meningeal matrix",
+          "clinical_note": "short frequent attacks, indometacin-responsive (membrane-matrix tension rapid reset)"
+        },
+        {
+          "name": "SUNCT / SUNA",
+          "frequency": "very high, spike-like",
+          "dominant_gate": "trigeminal microcircuit (Aδ/C burst)",
+          "dampness_pattern": "minimal bulk water, extreme instability",
+          "clinical_note": "needle-like, hundreds per day, minimal autonomic build-up; responds to anticonvulsants not triptans"
+        }
+      ],
+      "triggers": [
+        "alcohol (EZ grid destabiliser)",
+        "sleep (reduced mitochondrial maintenance → matrix-feedback loss)",
+        "nitroglycerin (NO donor, chaotropic to water matrix)",
+        "histamine",
+        "barometric pressure change"
+      ],
+      "mechanism": "Same core motor as CRPS and autonomic dysreflexia: EZ fragmentation → matrix feedback loss → self-sustaining oscillator. Localised to the closed cranial resonance chamber (meninges, sinuses, cavernous region). Frequency and gate determine which TAC subtype emerges. Hypothalamus is a phase-synchroniser, not a generator.",
+      "interventions": {
+        "acute": {
+          "oxygen_high_flow": {
+            "mechanism": "mitochondrial redox reset + NO oxidation + bulk water amplitude reduction",
+            "notes": "12–15 L/min non-rebreather. Effective in cluster (bulk-water dominant), less in SUNCT (spike-dominant). Not primarily vasoconstrictive."
+          },
+          "triptan": {
+            "mechanism": "emergency phase-clamp on trigeminal oscillator; amplitude cut, not cure",
+            "notes": "Effective in cluster; limited in SUNCT (wrong gate)."
+          },
+          "indometacin": {
+            "mechanism": "membrane-matrix tension rapid reset; vascular-meningeal gate reset",
+            "notes": "PH-specific. Cluster: not effective (dampness too deep). May also induce autophagy."
+          }
+        },
+        "prophylaxis": {
+          "verapamil": {
+            "mechanism": "oscillatory bandwidth narrowing; parasympathetic amplitude dampening; matrix-feedback stabilisation",
+            "notes": "Low-pass filter + stabiliser. Gold standard cluster prophylaxis. Needs time — field recalibration."
+          },
+          "lithium": {
+            "mechanism": "global coherence enhancer; EZ water stability increase; circadian phase synchronisation",
+            "notes": "Global coherence modulator. Chronic cluster. Slow but deep reset."
+          }
+        },
+        "herbs": [
+          {
+            "name": "Wen Dan Tang axis",
+            "role": "phlegm resolution, cranial dampness reduction, reverse-flow dampening",
+            "notes": "Primary for deep cranial dampness (cluster, HC)."
+          },
+          {
+            "name": "Xiao Chai Hu Tang direction",
+            "role": "lateral gate opening, GB tension release",
+            "notes": "Adjunct for Shaoyang-dominant TAC presentations."
+          },
+          {
+            "name": "Long Gu + Mu Li",
+            "role": "field stabilisation, structured water rebuild, global coherence",
+            "notes": "Prophylaxis phase; combine with Chai Hu for formula: Chai Hu Jia Long Gu Mu Li Tang direction."
+          }
+        ]
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "B19_R001",
+      "condition": "symptom oscillates rather than being fixed and dermatomal",
+      "action": "flag_EZW_FRAG pattern; prioritise oscillation-damping interventions over nerve blocks"
+    },
+    {
+      "id": "B19_R002",
+      "condition": "small trigger → disproportionately large autonomic response",
+      "action": "assign OSCILL_VISC or TAC_OSCILL depending on location; avoid aggressive structural intervention"
+    },
+    {
+      "id": "B19_R003",
+      "condition": "autonomic_dysreflexia AND bladder_dominant",
+      "action": "assign OSCILL_VISC; primary intervention is EZ stabilisation (warmth, PEMF, Wen Dan Tang), not anticholinergics alone"
+    },
+    {
+      "id": "B19_R004",
+      "condition": "headache_type == 'cluster' AND circadian == true",
+      "action": "assign TAC_OSCILL(cluster); add Long Gu + Mu Li + Chai Hu direction for prophylaxis; consider verapamil as low-pass filter"
+    },
+    {
+      "id": "B19_R005",
+      "condition": "headache_type == 'paroxysmal_hemicrania' AND indometacin_responsive == true",
+      "action": "assign TAC_OSCILL(PH); gate = vascular-meningeal; dampness = shallow"
+    },
+    {
+      "id": "B19_R006",
+      "condition": "headache_type == 'SUNCT' OR 'SUNA'",
+      "action": "assign TAC_OSCILL(SUNCT); gate = trigeminal microcircuit; anticonvulsant line preferred; triptans insufficient"
+    },
+    {
+      "id": "B19_R019",
+      "condition": "oxygen_therapy AND diagnosis == 'cluster_headache'",
+      "action": "mechanism = mitochondrial redox reset + NO dampening + bulk water oscillation reduction; 12–15 L/min non-rebreather protocol"
+    }
+  ],
+  "cross_batch_links": [
+    {
+      "batch2_pattern": "EZW_FRAG",
+      "batch1_pattern": "All 7 clusters",
+      "note": "EZ water fragmentation is the shared biophysical substrate for all Batch 1 cluster patterns. The 7 axes represent different anatomical localisation of the same fundamental EZW collapse phenomenon."
+    },
+    {
+      "batch2_pattern": "OSCILL_VISC",
+      "batch1_pattern": "DAV + MIA",
+      "note": "Visceral oscillator instability maps to the Deep Autonomic-Vascular axis (DAV) and Midline Interoceptive axis (MIA) from Batch 1. CRPS analogy confirmed across both batches."
+    },
+    {
+      "batch2_pattern": "TAC_OSCILL",
+      "batch1_pattern": "LAX + PSA",
+      "note": "Cranial TAC oscillator has shared mechanism with Lateral Autonomic (LAX) and Posterior Sensory (PSA) clusters from Batch 1. All are expressions of the same EZ oscillator in different geometric locations."
+    }
+  ]
+}

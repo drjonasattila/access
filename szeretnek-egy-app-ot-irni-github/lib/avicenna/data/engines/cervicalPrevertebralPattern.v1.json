@@ -1,0 +1,150 @@
+{
+  "engine": "CERVICAL_PREVERTEBRAL_PATTERN",
+  "source": "avicenna_engine_batch19.json",
+  "patterns": [
+    {
+      "id": "CERV_PREVRT",
+      "name": "Cervical Prevertebral Fascia Oscillation Pattern",
+      "internal_tag": "GB_SI_prevrtbrl_fascia",
+      "frontend_language": "prevertebral-visceral fascial oscillatory dysfunction with GB/SI axis dominance",
+      "triggers": [
+        "ascending visceral pressure (abdominal/thoracic → cervical)",
+        "SP-overload with phlegm and Qi reversal (descending mental overdrive)",
+        "chronic stress and rumination (descending pattern)",
+        "often both directions simultaneously"
+      ],
+      "symptoms": [
+        "hoarseness / voice fatigue during speech",
+        "globus pharyngis (lump in throat sensation)",
+        "dysphagia (lower component)",
+        "posterior neck-ear tension",
+        "shoulder-scapular tension (GB/SI myofascial chain)",
+        "headache and dizziness",
+        "somatisation of directional conflict ('cannot turn away / cannot speak truth')"
+      ],
+      "anatomical_basis": "Pharyngeal arch (embryological origin: mesoderm + neural crest) → transforms into prevertebral and visceral fascia layers. This fascia connects skull base ↔ neck ↔ mediastinum ↔ diaphragm ↔ retroperitoneum. It is a vertical resonance channel, not a discrete anatomical boundary. The stellate ganglion sits embedded in prevertebral fascial layers between longus colli and longus capitis — it is a sensor, not the primary cause.",
+      "cervical_levels": {
+        "C2_C3": {
+          "theme": "suppressed truth / directional prohibition",
+          "clinical": "hoarseness, globus, occipital-retroauricular tension, headache, dizziness",
+          "channel_logic": "GB = which direction; SI = can it be spoken"
+        },
+        "C5_C6": {
+          "theme": "identity vs obligation fracture point",
+          "clinical": "shoulder tension, arm radiation, lower dysphagia component, voice fatigue",
+          "channel_logic": "GB = I would change direction; SI = but I am told I cannot"
+        }
+      },
+      "pathological_directions": {
+        "ascending": "visceral pressure from abdomen/thorax rises via prevertebral fascia → cervical symptoms (Wen Dan Tang pattern)",
+        "descending": "SP overload, phlegm, mental rumination → Qi reversal ascending counterflow → vagal irritation, globus, upper mediastinal symptoms"
+      },
+      "interventions": {
+        "formula_logic": "1 base + 1 direction + 1 guide herb — if more needed, axis is wrong",
+        "TCM": [
+          {
+            "name": "Wen Dan Tang (base — always)",
+            "role": "phlegm resolution, reverse-flow, vagal oscillation dampening",
+            "components": [
+              "Ban Xia",
+              "Chen Pi",
+              "Fu Ling",
+              "Zhu Ru",
+              "Sheng Jiang"
+            ],
+            "notes": "Mandatory base regardless of direction"
+          },
+          {
+            "name": "Xiao Chai Hu Tang direction (if GB dominance)",
+            "role": "lateral tension release, decision-block release",
+            "components": [
+              "Chai Hu",
+              "Huang Qin",
+              "Sheng Jiang"
+            ],
+            "notes": "Choose if GB direction dominant"
+          },
+          {
+            "name": "Qing Hao or Yin Chen Hao (if hidden heat / GB stagnation)",
+            "role": "fascial heat dampening",
+            "notes": "Select if stagnant heat pattern present"
+          },
+          {
+            "name": "Guide herbs (mandatory — choose 1)",
+            "role": "drainage / directional control",
+            "options": [
+              {
+                "name": "Jie Geng",
+                "for": "LU guide — hoarseness"
+              },
+              {
+                "name": "Hou Po",
+                "for": "ST guide — dysphagia, fullness"
+              }
+            ]
+          }
+        ],
+        "Ayurveda": [
+          {
+            "TCM_function": "phlegm + reverse flow",
+            "equivalent": "Trikatu (small dose)"
+          },
+          {
+            "TCM_function": "GB opening",
+            "equivalent": "Kalmegh (Andrographis)"
+          },
+          {
+            "TCM_function": "hidden heat",
+            "equivalent": "Neem or Musta"
+          },
+          {
+            "TCM_function": "LU guide",
+            "equivalent": "Vasa (for hoarseness)"
+          },
+          {
+            "TCM_function": "ST guide",
+            "equivalent": "Ajwain + Hing (for dysphagia)"
+          },
+          {
+            "TCM_function": "stabilisation",
+            "equivalent": "Guduchi"
+          }
+        ],
+        "device": "low-level laser — static hold, low energy, target: longus colli / prevertebral projection — NOT sweeping, NOT destructive — vibration reset only",
+        "contraindications": [
+          "aggressive cervical manipulation is contraindicated when: active dysphagia or hoarseness, unstable autonomic symptoms (dizziness, palpitation), strong scapular rebound was previously triggered, symptoms change with speech or breathing",
+          "stellate ganglion block is contraindicated when: symptom does not resolve with directional change; phlegm/SP overload dominant; cervical symptoms worsen with visceral triggers"
+        ]
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "B19_R007",
+      "condition": "cervical_symptoms AND (hoarseness OR globus OR dysphagia OR shoulder_tension)",
+      "action": "assign CERV_PREVRT; do NOT treat as structural cervical pathology alone; assess direction (ascending vs descending); apply 1-base + 1-direction + 1-guide formula logic"
+    },
+    {
+      "id": "B19_R008",
+      "condition": "cervical_level == 'C2_C3'",
+      "action": "theme = suppressed truth; primary guide = Jie Geng (LU); primary direction = Xiao Chai Hu Tang"
+    },
+    {
+      "id": "B19_R009",
+      "condition": "cervical_level == 'C5_C6'",
+      "action": "theme = identity vs obligation; primary guide = Hou Po (ST); primary direction = Xiao Chai Hu Tang"
+    },
+    {
+      "id": "B19_R010",
+      "condition": "stellate_ganglion_block considered AND (phlegm_dominant == true OR visceral_trigger_worsens == true)",
+      "action": "contra-indicate SGB; use Wen Dan Tang + laser prevertebral axis instead"
+    }
+  ],
+  "cross_batch_links": [
+    {
+      "batch2_pattern": "CERV_PREVRT",
+      "batch1_pattern": "LAX + MIA",
+      "note": "Cervical prevertebral pattern sits at the intersection of Lateral Autonomic (GB/SI) and Midline Interoceptive (ascending counterflow / Taiyin) axes from Batch 1."
+    }
+  ]
+}

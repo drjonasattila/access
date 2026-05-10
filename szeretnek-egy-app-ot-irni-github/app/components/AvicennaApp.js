@@ -2471,6 +2471,151 @@ const treatmentClusterReviewFlags = [
   ["generate_pdf_summary", "Generate PDF summary flag"]
 ];
 
+const biophysicalInitialInput = {
+  output_mode: "patient",
+  diagnosis: "",
+  headache_type: "",
+  cervical_level: "",
+  metastasis_site: "",
+  formula_components_count: "",
+  formula_axis: [],
+  symptom_oscillation: false,
+  night_worsening: false,
+  stress_sensitivity: false,
+  allodynia_like_sensitivity: false,
+  paradoxical_drug_response: false,
+  small_trigger_disproportionate: false,
+  bladder_dominant: false,
+  autonomic_dysreflexia: false,
+  acute_severe_hypertension: false,
+  spinal_cord_emergency_features: false,
+  circadian: false,
+  indomethacin_responsive: false,
+  oxygen_therapy: false,
+  cervical_symptoms_present: false,
+  hoarseness: false,
+  globus: false,
+  dysphagia: false,
+  shoulder_tension: false,
+  ascending_visceral_pressure: false,
+  descending_sp_overload: false,
+  phlegm_dominant: false,
+  stellate_ganglion_block_considered: false,
+  visceral_trigger_worsens: false,
+  symptom_resolves_with_directional_change: true,
+  aggressive_cervical_manipulation_considered: false,
+  passive_movement_restricted: false,
+  active_movement_restricted: false,
+  passive_movement_available: false,
+  active_movement_absent: false,
+  movement_failure: "",
+  neuroprotection_only: false,
+  practitioner_requests_integrative_layer: false,
+  western_pharmaceutical: false,
+  concurrent_TCM_formula: false,
+  pungent_herbs_used: false,
+  Yin_support_absent: false,
+  theory_reference_requested: false
+};
+
+const biophysicalFieldGroups = [
+  {
+    key: "output_mode",
+    label: "Output mode",
+    options: [
+      ["patient", "Patient", "Safe educational language only"],
+      ["practitioner", "Practitioner", "Shows substrate logic and safety wrappers"],
+      ["internal-audit", "Internal audit", "Includes translation map and theory references"]
+    ]
+  },
+  {
+    key: "headache_type",
+    label: "TAC / headache type",
+    options: [
+      ["", "Not assessed", "No TAC oscillator routing"],
+      ["cluster", "Cluster", "Circadian/night attacks can activate cluster oscillator"],
+      ["paroxysmal_hemicrania", "Paroxysmal hemicrania", "Indomethacin-responsive short attacks"],
+      ["SUNCT", "SUNCT / SUNA", "Spike-like trigeminal-autonomic attacks"],
+      ["hemicrania_continua", "Hemicrania continua", "Continuous unilateral oscillator"]
+    ]
+  },
+  {
+    key: "cervical_level",
+    label: "Cervical level",
+    options: [
+      ["", "Not specified", "No level theme"],
+      ["C2_C3", "C2-C3", "Practitioner theme and Jie Geng guide logic"],
+      ["C5_C6", "C5-C6", "Practitioner theme and Hou Po guide logic"]
+    ]
+  },
+  {
+    key: "movement_failure",
+    label: "Movement failure",
+    options: [
+      ["", "Not assessed", "No movement subtype selected"],
+      ["intermittent", "Intermittent", "Ion-phase disorder"],
+      ["fixed", "Fixed", "Use active/passive movement flags to classify"]
+    ]
+  }
+];
+
+const biophysicalSubstrateFlags = [
+  ["symptom_oscillation", "Symptoms oscillate"],
+  ["night_worsening", "Night worsening"],
+  ["stress_sensitivity", "Stress sensitivity"],
+  ["allodynia_like_sensitivity", "Allodynia-like sensitivity"],
+  ["paradoxical_drug_response", "Paradoxical drug response"],
+  ["small_trigger_disproportionate", "Small trigger, large response"]
+];
+
+const biophysicalVisceralTacFlags = [
+  ["bladder_dominant", "Bladder dominant"],
+  ["autonomic_dysreflexia", "Autonomic dysreflexia context"],
+  ["circadian", "Circadian/night attacks"],
+  ["indomethacin_responsive", "Indomethacin responsive"],
+  ["oxygen_therapy", "Oxygen therapy context"]
+];
+
+const biophysicalCervicalFlags = [
+  ["cervical_symptoms_present", "Cervical symptoms"],
+  ["hoarseness", "Hoarseness / voice fatigue"],
+  ["globus", "Globus"],
+  ["dysphagia", "Dysphagia"],
+  ["shoulder_tension", "Shoulder-scapular tension"],
+  ["ascending_visceral_pressure", "Ascending visceral pressure"],
+  ["descending_sp_overload", "Descending interoceptive overload"],
+  ["phlegm_dominant", "Phlegm / heaviness dominant"],
+  ["stellate_ganglion_block_considered", "SGB considered"],
+  ["visceral_trigger_worsens", "Visceral triggers worsen symptoms"],
+  ["aggressive_cervical_manipulation_considered", "Aggressive cervical manipulation considered"]
+];
+
+const biophysicalMovementFlags = [
+  ["passive_movement_restricted", "Passive movement restricted"],
+  ["active_movement_restricted", "Active movement restricted"],
+  ["passive_movement_available", "Passive movement available"],
+  ["active_movement_absent", "Active movement absent"],
+  ["neuroprotection_only", "Neuroprotection-only strategy"]
+];
+
+const biophysicalSafetyFlags = [
+  ["acute_severe_hypertension", "Acute severe hypertension"],
+  ["spinal_cord_emergency_features", "Spinal cord emergency features"],
+  ["practitioner_requests_integrative_layer", "Practitioner oncology meaning-layer request"],
+  ["western_pharmaceutical", "Western pharmaceutical in use"],
+  ["concurrent_TCM_formula", "Concurrent formula"],
+  ["pungent_herbs_used", "Pungent herbs used"],
+  ["Yin_support_absent", "Yin support absent"],
+  ["theory_reference_requested", "Internal theory reference requested"]
+];
+
+const biophysicalFormulaAxes = [
+  ["base", "Base"],
+  ["direction", "Direction"],
+  ["guide", "Guide"],
+  ["extra_axis", "Extra axis"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -2657,6 +2802,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("cluster")}
       >
         Treatment clusters
+      </button>
+      <button
+        className={mode === "biophysical" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("biophysical")}
+      >
+        Biophysical substrate
       </button>
     </nav>
   );
@@ -4686,6 +4838,253 @@ function TreatmentClusterSection() {
   );
 }
 
+function BiophysicalSubstrateResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient || {};
+  const stopped = result.stopped;
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className={stopped ? "av-output-header av-output-header-danger" : "av-output-header"}>
+        <p>{stopped ? "Substrate safety stop" : "Biophysical substrate"}</p>
+        <strong>{patient.title || "Substrate interpretation"}</strong>
+      </div>
+
+      <section>
+        <h2>Educational interpretation</h2>
+        <p>{patient.summary}</p>
+      </section>
+
+      <TagSection
+        title="Pattern labels"
+        items={patient.pattern_labels || []}
+        tone="effect"
+        empty="No substrate pattern selected."
+      />
+      <TagSection
+        title="Support focus"
+        items={patient.support_focus || []}
+        tone="mod"
+        empty="Support output withheld or not selected."
+      />
+      <TagSection
+        title="Avoid now"
+        items={patient.avoid_now || []}
+        tone="avoid"
+        empty="No additional avoid rule from this layer."
+      />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {(patient.safety_notes || []).map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Practitioner / internal substrate panel</summary>
+          <TagSection
+            title="Matched pattern IDs"
+            items={result.matched_patterns || []}
+            tone="effect"
+            empty="No patterns matched."
+          />
+          <TagSection
+            title="Triggered rules"
+            items={(result.triggered_rules || []).map((rule) => `${rule.id}: ${rule.reason || rule.action}`)}
+            tone="mod"
+            empty="No rules triggered."
+          />
+          <TagSection
+            title="Clinician review flags"
+            items={result.clinician_review_flags || []}
+            tone="avoid"
+            empty="No clinician review flag."
+          />
+          <section>
+            <h2>Cluster routing</h2>
+            <pre>{JSON.stringify(result.seven_cluster_routes || {}, null, 2)}</pre>
+          </section>
+          <pre>{JSON.stringify(result.clinician || {}, null, 2)}</pre>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function BiophysicalSubstrateSection() {
+  const [input, setInput] = useState(biophysicalInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  function toggleArray(key, value) {
+    setInput((current) => {
+      const list = current[key];
+      return {
+        ...current,
+        [key]: list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+      };
+    });
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/biophysical-substrate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...input, output_mode: advanced ? input.output_mode : "patient" })
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Biophysical substrate evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(biophysicalInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>BIOPHYSICAL_SUBSTRATE_ENGINE_v1.0</h2>
+          <p className="av-muted">
+            Substrate-level routing for tissue buffering, oscillator patterns, dual-channel movement logic, cervical prevertebral coordination, and practitioner-only oncology meaning layers.
+          </p>
+        </section>
+
+        {biophysicalFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={`${group.key}-${value || "blank"}`}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <ToggleList
+          title="Substrate buffering signs"
+          items={biophysicalSubstrateFlags}
+          selected={biophysicalSubstrateFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+        <ToggleList
+          title="Visceral / TAC oscillator signs"
+          items={biophysicalVisceralTacFlags}
+          selected={biophysicalVisceralTacFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+        <ToggleList
+          title="Cervical prevertebral signs"
+          items={biophysicalCervicalFlags}
+          selected={biophysicalCervicalFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+        <ToggleList
+          title="Fascia / nerve movement assessment"
+          items={biophysicalMovementFlags}
+          selected={biophysicalMovementFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+        <ToggleList
+          title="Safety and clinician-only modifiers"
+          items={biophysicalSafetyFlags}
+          selected={biophysicalSafetyFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+        <ToggleList
+          title="Formula axes used"
+          items={biophysicalFormulaAxes}
+          selected={input.formula_axis}
+          onToggle={(value) => toggleArray("formula_axis", value)}
+        />
+
+        <section className="av-section">
+          <h2>Context</h2>
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Optional diagnosis context, e.g. cluster headache, ALS, overactive bladder"
+            value={input.diagnosis}
+            onChange={(event) => setField("diagnosis", event.target.value)}
+          />
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Metastasis site, practitioner/internal only"
+            value={input.metastasis_site}
+            onChange={(event) => setField("metastasis_site", event.target.value)}
+          />
+          <input
+            className="av-number"
+            min="0"
+            type="number"
+            placeholder="Formula component count"
+            value={input.formula_components_count}
+            onChange={(event) => setField("formula_components_count", event.target.value)}
+          />
+        </section>
+
+        <section className="av-section">
+          <h2>Advanced view</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show practitioner substrate logic and rule trace</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate substrate pattern"}
+        </button>
+      </form>
+
+      <BiophysicalSubstrateResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function TransitionResult({ result, advanced, onReset }) {
   if (!result) return null;
 
@@ -5240,6 +5639,8 @@ export default function AvicennaApp() {
                       ? "Headache Tri-Axial / TGN / Metabolic Rhythm"
                       : mode === "cluster"
                         ? "Treatment Cluster Engine"
+                        : mode === "biophysical"
+                          ? "Biophysical Substrate Engine"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -5262,6 +5663,8 @@ export default function AvicennaApp() {
                       ? "Grid-state headache routing, trigeminal neuralgia safeguards, and metabolic rhythm restoration"
                       : mode === "cluster"
                         ? "7-functional-axis routing into primary and secondary treatment clusters"
+                        : mode === "biophysical"
+                          ? "EZ oscillator, fascia-nerve movement, cervical prevertebral, and oncology meaning-layer safety logic"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
@@ -5291,6 +5694,8 @@ export default function AvicennaApp() {
         <TriAxialModulesSection />
       ) : mode === "cluster" ? (
         <TreatmentClusterSection />
+      ) : mode === "biophysical" ? (
+        <BiophysicalSubstrateSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

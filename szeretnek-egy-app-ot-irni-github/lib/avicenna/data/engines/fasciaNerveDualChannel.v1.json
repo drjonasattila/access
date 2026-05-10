@@ -1,0 +1,296 @@
+{
+  "engine": "FASCIA_NERVE_DUAL_CHANNEL_MODEL",
+  "source": "avicenna_engine_batch19.json",
+  "patterns": [
+    {
+      "id": "FASCIA_NERVE_SYSTEM",
+      "name": "Fascia-Nerve Dual-Channel Movement System",
+      "internal_tag": "field_hologram_water_phase_trigger",
+      "frontend_language": "fascial holographic pattern disruption / neural trigger failure / ion-phase coherence disorder",
+      "sub_patterns": [
+        {
+          "id": "FASCIA_BLOCK",
+          "name": "Fascia channel block (holographic pattern frozen)",
+          "frontend": "fascial movement blueprint disrupted",
+          "passive_finding": "passive movement also restricted (rigidity, spasm)",
+          "clinical_examples": [
+            "CRPS without nerve injury",
+            "frozen shoulder (adhesive capsulitis)",
+            "chronic movement restriction",
+            "chronic pelvic pain",
+            "myofascial pain syndrome",
+            "referred pain",
+            "post-surgical transition pain",
+            "post-stroke spasticity",
+            "Parkinson freezing episodes"
+          ],
+          "herbs": [
+            {
+              "name": "Chai Hu type formulas",
+              "role": "Liver Qi stagnation release, fascial pattern release, structured water transient dissolution then reset",
+              "examples": [
+                "Chai Hu Shu Gan San",
+                "Xiao Chai Hu Tang",
+                "Ge Gen Tang"
+              ]
+            },
+            {
+              "name": "Chai Ling Tang / Juan Bi Tang",
+              "role": "Wind-dampness resolution, fascia gel state restoration"
+            }
+          ]
+        },
+        {
+          "id": "NERVE_BLOCK",
+          "name": "Nerve trigger channel failure (local phase trigger absent)",
+          "frontend": "neural local trigger absent; pattern present but unexecutable",
+          "passive_finding": "passive movement possible, active movement absent or severely reduced",
+          "clinical_examples": [
+            "peripheral paralysis",
+            "neuropathies",
+            "ALS",
+            "post-stroke peripheral paralysis",
+            "diabetic neuropathy",
+            "traumatic nerve section"
+          ],
+          "herbs": [
+            {
+              "name": "Blood and Yin tonics",
+              "role": "neural trigger support, mitochondrial field restoration",
+              "examples": [
+                "Dang Gui Bu Xue Tang",
+                "Ci Wu Jia",
+                "Shu Di",
+                "Wu Wei Zi",
+                "Cordyceps"
+              ]
+            },
+            {
+              "name": "Ling Zhi + Shu Di",
+              "role": "mitochondrial support, biofield rebuilding"
+            }
+          ]
+        },
+        {
+          "id": "ION_PHASE_DISORDER",
+          "name": "Ion-phase coherence disorder (intermittent / oscillatory failure)",
+          "frontend": "oscillatory movement failure; intermittent loss of phase coupling",
+          "passive_finding": "fluctuating — sometimes available, sometimes not",
+          "clinical_examples": [
+            "periodic paralysis (intermittent)",
+            "epileptic motor aura",
+            "transient spasticity episodes",
+            "ALS with mixed features",
+            "long COVID motor sequelae"
+          ],
+          "herbs": [
+            {
+              "name": "Wu Mei Wan",
+              "role": "warming-stabilising, ion-phase regulation"
+            },
+            {
+              "name": "Mineralisation support",
+              "role": "Mg, K, Ca electrolyte restoration"
+            },
+            {
+              "name": "Biofield/PEMF therapy",
+              "role": "phase coherence restoration"
+            }
+          ]
+        }
+      ],
+      "unified_mechanism": "Movement = fascia pattern (WHAT) + nerve trigger (WHEN/WHERE) + structured water (HOW energy is released) + field (WHY it happens). Fascia and nerve are expressions of the same field system at different structural densities. Schwann cells and perineurial fascia are continuous with surrounding connective fascia — nerve is specialised fascia.",
+      "pathophysiological_sequence": [
+        "1. Trauma or psycho-emotional imprint",
+        "2. Qi stagnation in meridian (field coherence disruption)",
+        "3. Chaotropic hologram (cannot maintain structured water)",
+        "4. Structured water layer collapses",
+        "5. Tissue oedema, proton leakage, ion balance disruption",
+        "6. Fascia tightens (not gel-phase, but swollen bulk water)",
+        "7. Pain (mechanical + ionotoxic + biofoton noise)",
+        "8. Movement restriction (fascia cannot work elastically)",
+        "9. Neural trigger cannot produce local water-phase collapse → movement loss"
+      ]
+    },
+    {
+      "id": "MUSCLE_FIELD_COLLAPSE",
+      "name": "Muscle Field Coil Collapse (ALS / Critical Care Myopathy pattern)",
+      "internal_tag": "fascia_izom_mez_coil_bom",
+      "frontend_language": "primary fascial-muscle field coherence failure with secondary denervation",
+      "triggers": [
+        "mitochondrial depletion",
+        "calcium homeostasis disruption",
+        "oxidative stress",
+        "prolonged ICU inactivity",
+        "hypoxia",
+        "insulin resistance"
+      ],
+      "key_insight": "Denervation is SECONDARY, not primary. The muscle-fascial field (electromagnetic coil holding structured water and ionic potential) collapses first. Once the coil loses its field-holding capacity, peripheral neural connection and Schwann cell coherence deteriorate. Neuronal death follows collapse of the muscle field — not vice versa.",
+      "clinical_examples": [
+        "ALS",
+        "Critical Care Myopathy",
+        "ICU-acquired weakness"
+      ],
+      "interventions": {
+        "modalities": [
+          "long slow movement (Tai Chi, slow physiotherapy)",
+          "phototherapy / light stimulation",
+          "PEMF (field coherence restoration)",
+          "alternating warm-cold (phase-switching stimulus)",
+          "collagen and water quality support (gelatin, structured water)"
+        ],
+        "herbs": [
+          {
+            "name": "Wu Wei Zi",
+            "role": "field and Yin rebuilding, mitochondrial trophic support"
+          },
+          {
+            "name": "Shu Di",
+            "role": "Yin and Blood nourishment, field matrix rebuilding"
+          },
+          {
+            "name": "Ling Zhi",
+            "role": "mitochondrial support, biofoton emission enhancement"
+          },
+          {
+            "name": "Ci Wu Jia",
+            "role": "nerve-field trigger support, adaptogenic mitochondrial action"
+          }
+        ],
+        "contraindications": [
+          "neuroprotection alone is insufficient — fascial field coherence must be restored simultaneously",
+          "aggressive stimulation worsens if matrix is not ready"
+        ]
+      }
+    },
+    {
+      "id": "NERVE_WATER_FIELD_THEORY",
+      "name": "Alternative Nerve Theory — EZ Water Phase Trigger Model",
+      "internal_tag": "nerve_as_field_transducer_EZ_collapse",
+      "frontend_language": "nerve as field-phase transducer; structured water phase-collapse as energy source for movement and regeneration",
+      "core_propositions": [
+        {
+          "id": "NWT_1",
+          "statement": "The nerve does not simply conduct electrical current — it initiates a local, directed EZ-to-bulk water phase collapse.",
+          "mechanism": "Acetylcholine / noradrenaline release → local EZ → bulk water phase transition → proton accumulator collapse → potential energy released → mechanical movement or biofoton emission.",
+          "frontend_safe": "Neural signalling involves directed tissue-level phase transitions that release stored potential energy, not only electrochemical current flow."
+        },
+        {
+          "id": "NWT_2",
+          "statement": "The action potential is a field-gate opener, not merely an information carrier.",
+          "mechanism": "The electromagnetic field generated by ionic current (Ampère's law) creates local magnetic field → aligns water dipoles and electron spins → coherent phase-shift → gel-to-bulk collapse → energy release.",
+          "frontend_safe": "Neural firing coordinates local field-phase events that drive movement with minimal ATP expenditure."
+        },
+        {
+          "id": "NWT_3",
+          "statement": "Fascia = holographic field memory and pattern projector (WHAT to move). Nerve = local magnetic field transducer (WHEN and WHERE). Structured water = energy store and transformer (HOW). Field = source of intention and energy (WHY).",
+          "clinical_consequence": "Fascia damage → movement pattern frozen (spasticity). Nerve damage → pattern exists but no energy trigger (flaccid paralysis). Ion-phase disorder → intermittent failure (periodic paralysis, epileptic aura)."
+        },
+        {
+          "id": "NWT_4",
+          "statement": "No regeneration in neuropathy because: without neural signal, no local field-triggered EZ collapse, no potential energy release, no regeneration stimulus.",
+          "applies_to": [
+            "diabetic neuropathy",
+            "traumatic nerve section",
+            "ALS (secondary to muscle coil collapse)"
+          ],
+          "frontend_safe": "Neural regeneration requires restoration of field-phase coupling, not only structural repair."
+        },
+        {
+          "id": "NWT_5",
+          "statement": "Western drug + Chinese formula combination is more effective because: the drug provides rapid chaotropic disruption of over-rigid structure (fast path); the formula restores coherent structured water and field pattern (slow rebuild). Together: shorter drug course, lower dose, fewer side effects, faster return of function.",
+          "mechanism": "Western drug = chaotropic impulse (breaks stuck structure). Chinese formula = cosmotropic ordering force (rebuilds coherent water, gives direction). Combined: fast noise reduction + directed healing."
+        }
+      ],
+      "parallel_models": {
+        "Hameroff_Orch_OR": {
+          "microtubule_quantum_coherence": "↔ structured water coherent phase",
+          "superradiance": "↔ field-pressure induced water collapse",
+          "self_induced_transparency": "↔ coherent energy and information flow through the system",
+          "collapse_as_conscious_moment": "↔ collapse as movement / regeneration trigger"
+        },
+        "Szent_Gyorgyi": "Muscle contraction as protein-water quantum state transition, not purely ATP-actin-myosin chemistry",
+        "Pollack_EZ": "EZ water as the primary medium; structured hydration as prerequisite for all biological energy transactions"
+      },
+      "clinical_applications": [
+        {
+          "condition": "diabetic neuropathy",
+          "intervention": "restore neural field coupling (acupuncture, TENS, PEMF) + structured water support + mitochondrial support (Q10, PQQ, NADH, photostimulation) + herbs (Wu Wei Zi, Shu Di, Ci Wu Jia, Chai Hu-type for regeneration trigger)"
+        },
+        {
+          "condition": "post-stroke spasticity",
+          "intervention": "fascial pattern release (Chai Hu Jia Long Gu Mu Li Tang direction, acupuncture, fascia work) + structured water support"
+        },
+        {
+          "condition": "post-stroke flaccid paralysis",
+          "intervention": "nerve trigger rebuilding (Dang Gui Bu Xue Tang, Shu Di, Yin tonics, phototherapy, PEMF)"
+        },
+        {
+          "condition": "ALS / critical care myopathy",
+          "intervention": "muscle field coil rebuild (slow movement, PEMF, Ling Zhi, Wu Wei Zi, Shu Di, Ci Wu Jia, collagen, structured water) — neuroprotection alone insufficient"
+        },
+        {
+          "condition": "frozen shoulder",
+          "intervention": "holographic fascial pattern release (Chai Hu type, fascia work, slow movement, field reset)"
+        },
+        {
+          "condition": "phantom limb pain",
+          "intervention": "field pattern closure (mirror therapy; field-based coherence work); the field pattern persists without physical feedback"
+        },
+        {
+          "condition": "tinnitus",
+          "intervention": "auditory fascia-nerve field oscillation damping (field coherence work, Wen Dan Tang, Long Gu + Mu Li)"
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "B19_R007",
+      "condition": "cervical_symptoms AND (hoarseness OR globus OR dysphagia OR shoulder_tension)",
+      "action": "assign CERV_PREVRT; do NOT treat as structural cervical pathology alone; assess direction (ascending vs descending); apply 1-base + 1-direction + 1-guide formula logic"
+    },
+    {
+      "id": "B19_R011",
+      "condition": "passive_movement_restricted == true AND active_movement_restricted == true",
+      "action": "assign FASCIA_NERVE_SYSTEM(FASCIA_BLOCK); treat with fascial pattern release (Chai Hu type, fascia work, slow movement)"
+    },
+    {
+      "id": "B19_R012",
+      "condition": "passive_movement_available == true AND active_movement_absent == true",
+      "action": "assign FASCIA_NERVE_SYSTEM(NERVE_BLOCK); treat with Yin/Blood rebuild + mitochondrial support"
+    },
+    {
+      "id": "B19_R013",
+      "condition": "movement_failure == 'intermittent'",
+      "action": "assign FASCIA_NERVE_SYSTEM(ION_PHASE_DISORDER); treat with Wu Mei Wan + mineralisation + PEMF"
+    },
+    {
+      "id": "B19_R014",
+      "condition": "diagnosis IN ['ALS', 'critical_care_myopathy'] AND neuroprotection_only == true",
+      "action": "flag_insufficient; add MUSCLE_FIELD_COLLAPSE treatment — fascia-field coherence restoration mandatory"
+    },
+    {
+      "id": "B19_R016",
+      "condition": "western_pharmaceutical AND concurrent_TCM_formula",
+      "action": "drug = chaotropic rapid path; formula = cosmotropic rebuild; reduce drug dose and duration; monitor for accelerated recovery"
+    },
+    {
+      "id": "B19_R017",
+      "condition": "pungent_herbs_used AND Yin_support_absent == true",
+      "action": "flag_risk: pungent herbs injure Yin if not balanced; add Bai Shao Yao or stabilising Yin component"
+    },
+    {
+      "id": "B19_R018",
+      "condition": "formula_components > 3_axes",
+      "action": "flag: if more than 1-base + 1-direction + 1-guide needed, re-evaluate dominant axis; complexity indicates axis misidentification"
+    }
+  ],
+  "cross_batch_links": [
+    {
+      "batch2_pattern": "NERVE_WATER_FIELD_THEORY",
+      "batch1_pattern": "ALL",
+      "note": "The alternative nerve theory provides the biophysical foundation for ALL Batch 1 patterns. The EZ water-field model explains why 'fascia responds to frequency not amplitude' (Batch 1 note about neck), why low-level laser works, and why formula logic follows axis not symptom."
+    }
+  ]
+}

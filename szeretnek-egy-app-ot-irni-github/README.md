@@ -16,6 +16,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - A Platform Philosophy & Architecture endpoint at `app/api/platform/route.js`
 - A Batch 17 connected tri-axial headache / TGN / metabolic rhythm endpoint at `app/api/headache-triaxial/route.js`
 - A Batch 18 Treatment Cluster / 7-functional-axis routing endpoint at `app/api/treatment-cluster/route.js`
+- A Batch 19 Biophysical Substrate endpoint at `app/api/biophysical-substrate/route.js`
 - The migrated rule engine in `lib/avicenna/engine.cjs`
 - The Batch 6 headache engine in `lib/avicenna/headacheEngine.cjs`
 - The Batch 10 pharyngeal arch engine in `lib/avicenna/pharyngealArchEngine.cjs`
@@ -27,6 +28,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - The Batch 16 platform philosophy, three-question UX, instability classifier, and case-quality architecture in `lib/avicenna/platformArchitecture.cjs`
 - The Batch 17 Headache Tri-Axial, Trigeminal Neuralgia, and Metabolic Rhythm modules in `lib/avicenna/headacheTriAxialEngine.cjs`
 - The Batch 18 Treatment Cluster Engine in `lib/avicenna/treatmentClusterEngine.cjs`
+- The Batch 19 Biophysical Substrate Engine in `lib/avicenna/biophysicalSubstrateEngine.cjs`
 - Claude-exported data files in `lib/avicenna/data/`
 - Batch 6 structured source data in `lib/avicenna/data/engines/headacheEngine.batch6.json`
 - Batch 7 headache/pain extension data in `lib/avicenna/data/engines/avicenna_engine_batch7.json`
@@ -41,7 +43,8 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - Batch 16 platform data in `lib/avicenna/data/platform/platformPhilosophy.v1.json`, `lib/avicenna/data/libraries/sixCompartmentCommunicationMap.json`, `lib/avicenna/data/libraries/threeSystemIntegrationModel.json`, `lib/avicenna/data/libraries/instabilityClassifier.v1.json`, and `lib/avicenna/data/caseLibrary/dataQualityArchitecture.v1.json`
 - Batch 17 data in `lib/avicenna/data/engines/headacheTriAxialEngine.v1.json`, `lib/avicenna/data/engines/trigeminalNeuralgiaModule.v1.json`, `lib/avicenna/data/engines/metabolicRhythmModule.v1.json`, `lib/avicenna/data/libraries/headacheGridStates.json`, and `lib/avicenna/data/libraries/fasciaNerveVesselUnit.json`
 - Batch 18 data in `lib/avicenna/data/engines/treatmentClusterEngine.v1.json`, `lib/avicenna/data/libraries/sevenFunctionalAxes.v1.json`, and `lib/avicenna/data/libraries/clusterRoutingRules.v1.json`
-- Batch 9, Batch 10, Batch 11, Batch 12, Batch 13, Batch 14, Batch 15, Batch 16, Batch 17, and Batch 18 herb, cranial nerve, gate organ, developmental model, reflexology, vertical-axis, spinal, neuro-meningeal, Shaoyin sink, Taiyang-Shaoyin, Taiyang laser eligibility, transition map, treatment cluster, platform, tri-axial headache, functional axes, and field medicine concept libraries in `lib/avicenna/data/libraries/`
+- Batch 19 data in `lib/avicenna/data/engines/biophysicalSubstrateEngine.v1.json`, `lib/avicenna/data/engines/ezOscillatorModel.v1.json`, `lib/avicenna/data/engines/fasciaNerveDualChannel.v1.json`, `lib/avicenna/data/engines/cervicalPrevertebralPattern.v1.json`, and `lib/avicenna/data/libraries/internalBackendTranslationMap.batch19.json`
+- Batch 9, Batch 10, Batch 11, Batch 12, Batch 13, Batch 14, Batch 15, Batch 16, Batch 17, Batch 18, and Batch 19 herb, cranial nerve, gate organ, developmental model, reflexology, vertical-axis, spinal, neuro-meningeal, Shaoyin sink, Taiyang-Shaoyin, Taiyang laser eligibility, transition map, treatment cluster, platform, tri-axial headache, functional axes, internal translation, and field medicine concept libraries in `lib/avicenna/data/libraries/`
 - A neutral supplement compatibility layer in `lib/avicenna/brandSanitizer.cjs`; active UI and engine outputs use generic support categories rather than named proprietary product recommendations.
 - Engine regression checks in `scripts/test-engine.cjs`
 - Headache engine checks in `scripts/test-headache-engine.cjs`
@@ -54,6 +57,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - Platform architecture checks in `scripts/test-platform-architecture.cjs`
 - Batch 17 tri-axial/TGN/metabolic checks in `scripts/test-headache-triaxial-engine.cjs`
 - Batch 18 treatment cluster routing checks in `scripts/test-treatment-cluster-engine.cjs`
+- Batch 19 biophysical substrate checks in `scripts/test-biophysical-substrate-engine.cjs`
 - Original Claude export preserved in `avicenna-export/`
 
 ## Run locally
@@ -90,6 +94,7 @@ npm run test:transition
 npm run test:platform
 npm run test:triaxial
 npm run test:clusters
+npm run test:biophysical
 ```
 
 ## GitHub setup

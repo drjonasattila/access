@@ -1,0 +1,55 @@
+{
+  "library": "internalBackendTranslationMap.batch19",
+  "source": "avicenna_engine_batch19.json",
+  "note": "Engine-internal reasoning only. Never expose in frontend output.",
+  "translations": [
+    {
+      "backend_term": "EZ water collapse / gel-bulk phase transition",
+      "frontend_term": "impaired tissue buffering / neurovascular oscillator instability"
+    },
+    {
+      "backend_term": "field hologram frozen / fascia pattern lock",
+      "frontend_term": "fascial movement blueprint disrupted / chronic motor pattern fixation"
+    },
+    {
+      "backend_term": "nerve as field-gate opener / etheric magnetic influx gate",
+      "frontend_term": "neural field-phase transducer / directed tissue phase trigger"
+    },
+    {
+      "backend_term": "proton accumulator collapse",
+      "frontend_term": "directed potential energy release from structured tissue matrix"
+    },
+    {
+      "backend_term": "Shaoyin gap",
+      "frontend_term": "survival-axis identity-coherence loss (Batch 1: SVA)"
+    },
+    {
+      "backend_term": "Jueyin slip",
+      "frontend_term": "deep autonomic-vascular compensatory over-drive (Batch 1: DAV)"
+    },
+    {
+      "backend_term": "Taiyin phlegm overload",
+      "frontend_term": "midline interoceptive dysregulation with ascending counterflow (Batch 1: MIA)"
+    },
+    {
+      "backend_term": "Shaoyang gate instability",
+      "frontend_term": "lateral autonomic gating failure (Batch 1: LAX)"
+    },
+    {
+      "backend_term": "muscle field coil",
+      "frontend_term": "fascial-muscle bioelectromagnetic coherence system"
+    },
+    {
+      "backend_term": "dampness",
+      "frontend_term": "bulk water excess / tissue matrix hydration incoherence"
+    },
+    {
+      "backend_term": "cosmotropic herbs",
+      "frontend_term": "structured-water coherence promoting botanicals"
+    },
+    {
+      "backend_term": "chaotropic drug effect",
+      "frontend_term": "rapid matrix disruption with short-term symptom reduction"
+    }
+  ]
+}

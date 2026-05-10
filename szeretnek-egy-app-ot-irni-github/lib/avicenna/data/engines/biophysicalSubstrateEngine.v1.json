@@ -1,0 +1,1080 @@
+{
+  "metadata": {
+    "source_files": [
+      "metastasis_2.docx",
+      "autonomic_dysreflexia.docx",
+      "alternativ_ideg_elmelet.docx"
+    ],
+    "engine_version": "batch2_v1.0",
+    "extraction_notes": [
+      "All three documents contain deep theoretical models that operate at the interface of biophysics, TCM, and integrative medicine.",
+      "Core unifying concept across all three files: EZ water (exclusion zone structured water) as the primary medium of signal conduction, fascial coherence, and tissue repair.",
+      "Internal backend terms (etheric field, field pressure, HUN, Qi) must not appear in frontend output.",
+      "Frontend clinical language translations are provided in internal_backend_translation_map.",
+      "Metastasis model is explicitly framed as a complementary meaning-layer — never a replacement for oncological diagnosis or treatment.",
+      "TAC oscillator model and autonomic dysreflexia model share a unified mechanism.",
+      "Alternative nerve theory provides the biophysical substrate for all prior Batch 1 engine logic."
+    ],
+    "normalized_engine_name": "BIOPHYSICAL_SUBSTRATE_ENGINE_v1.0",
+    "source_file": "avicenna_engine_batch19.json",
+    "safety_visibility": "patient output must use internal_backend_translation_map and suppress backend terms"
+  },
+  "input_variables": [
+    "EZ_water_integrity",
+    "bulk_water_ratio",
+    "fascial_coherence_state",
+    "mitochondrial_drive",
+    "dampness_location",
+    "dampness_depth",
+    "oscillator_frequency_range",
+    "gate_dominant",
+    "trauma_layer",
+    "metastasis_site",
+    "primary_tumor_site",
+    "spinal_level_involved",
+    "paralysis_type",
+    "trigger_type",
+    "pharmaceutical_class",
+    "formula_axis",
+    "resonance_stability",
+    "phase_transition_capacity",
+    "field_coupling_integrity",
+    "cervical_level"
+  ],
+  "patterns": [
+    {
+      "id": "EZW_FRAG",
+      "name": "EZ Water Fragmentation / Structured Water Collapse",
+      "internal_tag": "bulk_water_dominance",
+      "frontend_language": "impaired tissue buffering / neurovascular oscillator instability",
+      "triggers": [
+        "trauma or ischemia to tissue",
+        "chronic mitochondrial underdrive",
+        "chronic inflammation",
+        "sustained autonomic overload",
+        "dampness accumulation in target tissue"
+      ],
+      "symptoms": [
+        "pain oscillates rather than being constant and localised",
+        "small stimulus produces disproportionate response",
+        "urgency at low bladder volume (OAB)",
+        "paroxysmal autonomic surges (autonomic dysreflexia)",
+        "night-time worsening (reduced mitochondrial maintenance)",
+        "stress-sensitivity of symptoms",
+        "paradoxical drug responses",
+        "allodynia-like sensitivity without structural nerve injury"
+      ],
+      "mechanism": "When EZ water (structured, gel-phase water surrounding fascia, nerves, and mitochondria) fragments into bulk water, the tissue loses its oscillation-damping function. Afferent signals are no longer attenuated — they amplify into self-sustaining oscillators. This is not neural over-firing; it is a phase-transition failure in the tissue matrix.",
+      "interventions": {
+        "modalities": [
+          "slow rhythmic breathing (reduces bulk-water oscillation amplitude)",
+          "warmth application (restores structured water phase)",
+          "grounding movement (low-amplitude, slow cycles)",
+          "fascial work (myofascial decompression, gentle laser)",
+          "PEMF (field coherence restoration)",
+          "structured water support (collagen-rich broths, hydration quality)"
+        ],
+        "device": "low-level laser (fascial reset), PEMF (field coherence)",
+        "herbs": [
+          {
+            "name": "Wen Dan Tang axis",
+            "role": "phlegm-dampness resolution, reverse-flow dampening, vagal oscillation calming",
+            "notes": "First-line for bulk-water dominance with ascending counterflow. Components: Ban Xia, Chen Pi, Fu Ling, Zhi Shi, Zhu Ru, Sheng Jiang."
+          },
+          {
+            "name": "Long Gu + Mu Li",
+            "role": "mineralisation, zeta potential stabilisation, structured water layer rebuilding, proton-accumulator stabilisation",
+            "notes": "Combines with Chai Hu for field-release + field-rebuild sequence."
+          }
+        ],
+        "contraindications": [
+          "avoid aggressive mechanical tissue release during active EZ fragmentation — frequency-based approaches preferred",
+          "avoid cold and desiccating agents"
+        ]
+      }
+    },
+    {
+      "id": "OSCILL_VISC",
+      "name": "Visceral Oscillator Instability (Autonomic Dysreflexia / OAB pattern)",
+      "internal_tag": "dampness_resonance_visceral",
+      "frontend_language": "visceral-fascial-matrix self-sustaining oscillatory instability",
+      "triggers": [
+        "spinal cord injury or neurodegeneration (removes descending inhibitory control)",
+        "bladder filling (mechanical fissure of EZ layer)",
+        "bowel distension",
+        "catheter insertion (mechanical EZ disruption)",
+        "cold exposure",
+        "stress or adrenergic surge"
+      ],
+      "symptoms": [
+        "sudden severe hypertension",
+        "bradycardia or tachycardia",
+        "headache (posterior)",
+        "profuse sweating above level of injury",
+        "flushing",
+        "pilomotor responses",
+        "urgency-incontinence at low bladder volume",
+        "sleep-related worsening"
+      ],
+      "mechanism": "Not simply 'loss of descending inhibitory control.' The EZ water matrix in bladder, bowel, and skin loses its buffering (damping) function as bulk water ratio increases. Afferent input is amplified rather than attenuated → self-sustaining runaway resonance propagates up the sympathetic chain. The bladder is a gravity-dependent dampness reservoir; the bowel a fermentation-driven internal oscillator; the skin may share embryological field coupling with gut (ectoderm-endoderm co-induction).",
+      "CRPS_analogy": "Autonomic dysreflexia = CRPS of the bladder-bowel-skin axis; trigger is internal dampness resonance rather than peripheral trauma.",
+      "interventions": {
+        "modalities": [
+          "warmth (promotes EZ phase recovery)",
+          "slow diaphragmatic breathing (reduces oscillation amplitude)",
+          "grounding techniques",
+          "fascial work (pelvic floor, posterior chain)",
+          "PEMF",
+          "structured water and mineral support (Mg, K)"
+        ],
+        "device": "PEMF, low-level laser (pelvic)",
+        "herbs": [
+          {
+            "name": "Wen Dan Tang axis",
+            "role": "phlegm and dampness resolution, vagal oscillation dampening",
+            "notes": "Primary for bulk-water dominance in bladder-bowel axis."
+          },
+          {
+            "name": "Wu Mei Wan",
+            "role": "warming-stabilising, ion-phase regulation, oscillator calming",
+            "notes": "Ion-phase disorder with cold-heat complex. Relevant when heat above / cold below pattern present."
+          }
+        ],
+        "contraindications": [
+          "anticholinergics and spasmolytics give only partial relief — do not address matrix root",
+          "cold exposure worsens",
+          "dehydration worsens",
+          "stimulating agents worsen"
+        ]
+      }
+    },
+    {
+      "id": "TAC_OSCILL",
+      "name": "Cranial Autonomic Oscillator Instability (TAC spectrum)",
+      "internal_tag": "cranial_dampness_trigeminal_loop",
+      "frontend_language": "frequency-dependent trigeminal-autonomic oscillator dysregulation",
+      "sub_patterns": [
+        {
+          "name": "Cluster headache",
+          "frequency": "medium-high, pulsatile",
+          "dominant_gate": "parasympathetic amplitude (SPG) + trigeminal trigger",
+          "dampness_pattern": "deep cranial dampness (sinus / cavernous region)",
+          "clinical_note": "longer brutal attacks, circadian-locked, night predominance (reduced mitochondrial maintenance)"
+        },
+        {
+          "name": "Paroxysmal hemicrania",
+          "frequency": "medium, fast reset",
+          "dominant_gate": "vascular-meningeal gate",
+          "dampness_pattern": "shallow, well-coupled to vascular-meningeal matrix",
+          "clinical_note": "short frequent attacks, indometacin-responsive (membrane-matrix tension rapid reset)"
+        },
+        {
+          "name": "SUNCT / SUNA",
+          "frequency": "very high, spike-like",
+          "dominant_gate": "trigeminal microcircuit (Aδ/C burst)",
+          "dampness_pattern": "minimal bulk water, extreme instability",
+          "clinical_note": "needle-like, hundreds per day, minimal autonomic build-up; responds to anticonvulsants not triptans"
+        }
+      ],
+      "triggers": [
+        "alcohol (EZ grid destabiliser)",
+        "sleep (reduced mitochondrial maintenance → matrix-feedback loss)",
+        "nitroglycerin (NO donor, chaotropic to water matrix)",
+        "histamine",
+        "barometric pressure change"
+      ],
+      "mechanism": "Same core motor as CRPS and autonomic dysreflexia: EZ fragmentation → matrix feedback loss → self-sustaining oscillator. Localised to the closed cranial resonance chamber (meninges, sinuses, cavernous region). Frequency and gate determine which TAC subtype emerges. Hypothalamus is a phase-synchroniser, not a generator.",
+      "interventions": {
+        "acute": {
+          "oxygen_high_flow": {
+            "mechanism": "mitochondrial redox reset + NO oxidation + bulk water amplitude reduction",
+            "notes": "12–15 L/min non-rebreather. Effective in cluster (bulk-water dominant), less in SUNCT (spike-dominant). Not primarily vasoconstrictive."
+          },
+          "triptan": {
+            "mechanism": "emergency phase-clamp on trigeminal oscillator; amplitude cut, not cure",
+            "notes": "Effective in cluster; limited in SUNCT (wrong gate)."
+          },
+          "indometacin": {
+            "mechanism": "membrane-matrix tension rapid reset; vascular-meningeal gate reset",
+            "notes": "PH-specific. Cluster: not effective (dampness too deep). May also induce autophagy."
+          }
+        },
+        "prophylaxis": {
+          "verapamil": {
+            "mechanism": "oscillatory bandwidth narrowing; parasympathetic amplitude dampening; matrix-feedback stabilisation",
+            "notes": "Low-pass filter + stabiliser. Gold standard cluster prophylaxis. Needs time — field recalibration."
+          },
+          "lithium": {
+            "mechanism": "global coherence enhancer; EZ water stability increase; circadian phase synchronisation",
+            "notes": "Global coherence modulator. Chronic cluster. Slow but deep reset."
+          }
+        },
+        "herbs": [
+          {
+            "name": "Wen Dan Tang axis",
+            "role": "phlegm resolution, cranial dampness reduction, reverse-flow dampening",
+            "notes": "Primary for deep cranial dampness (cluster, HC)."
+          },
+          {
+            "name": "Xiao Chai Hu Tang direction",
+            "role": "lateral gate opening, GB tension release",
+            "notes": "Adjunct for Shaoyang-dominant TAC presentations."
+          },
+          {
+            "name": "Long Gu + Mu Li",
+            "role": "field stabilisation, structured water rebuild, global coherence",
+            "notes": "Prophylaxis phase; combine with Chai Hu for formula: Chai Hu Jia Long Gu Mu Li Tang direction."
+          }
+        ]
+      }
+    },
+    {
+      "id": "CERV_PREVRT",
+      "name": "Cervical Prevertebral Fascia Oscillation Pattern",
+      "internal_tag": "GB_SI_prevrtbrl_fascia",
+      "frontend_language": "prevertebral-visceral fascial oscillatory dysfunction with GB/SI axis dominance",
+      "triggers": [
+        "ascending visceral pressure (abdominal/thoracic → cervical)",
+        "SP-overload with phlegm and Qi reversal (descending mental overdrive)",
+        "chronic stress and rumination (descending pattern)",
+        "often both directions simultaneously"
+      ],
+      "symptoms": [
+        "hoarseness / voice fatigue during speech",
+        "globus pharyngis (lump in throat sensation)",
+        "dysphagia (lower component)",
+        "posterior neck-ear tension",
+        "shoulder-scapular tension (GB/SI myofascial chain)",
+        "headache and dizziness",
+        "somatisation of directional conflict ('cannot turn away / cannot speak truth')"
+      ],
+      "anatomical_basis": "Pharyngeal arch (embryological origin: mesoderm + neural crest) → transforms into prevertebral and visceral fascia layers. This fascia connects skull base ↔ neck ↔ mediastinum ↔ diaphragm ↔ retroperitoneum. It is a vertical resonance channel, not a discrete anatomical boundary. The stellate ganglion sits embedded in prevertebral fascial layers between longus colli and longus capitis — it is a sensor, not the primary cause.",
+      "cervical_levels": {
+        "C2_C3": {
+          "theme": "suppressed truth / directional prohibition",
+          "clinical": "hoarseness, globus, occipital-retroauricular tension, headache, dizziness",
+          "channel_logic": "GB = which direction; SI = can it be spoken"
+        },
+        "C5_C6": {
+          "theme": "identity vs obligation fracture point",
+          "clinical": "shoulder tension, arm radiation, lower dysphagia component, voice fatigue",
+          "channel_logic": "GB = I would change direction; SI = but I am told I cannot"
+        }
+      },
+      "pathological_directions": {
+        "ascending": "visceral pressure from abdomen/thorax rises via prevertebral fascia → cervical symptoms (Wen Dan Tang pattern)",
+        "descending": "SP overload, phlegm, mental rumination → Qi reversal ascending counterflow → vagal irritation, globus, upper mediastinal symptoms"
+      },
+      "interventions": {
+        "formula_logic": "1 base + 1 direction + 1 guide herb — if more needed, axis is wrong",
+        "TCM": [
+          {
+            "name": "Wen Dan Tang (base — always)",
+            "role": "phlegm resolution, reverse-flow, vagal oscillation dampening",
+            "components": [
+              "Ban Xia",
+              "Chen Pi",
+              "Fu Ling",
+              "Zhu Ru",
+              "Sheng Jiang"
+            ],
+            "notes": "Mandatory base regardless of direction"
+          },
+          {
+            "name": "Xiao Chai Hu Tang direction (if GB dominance)",
+            "role": "lateral tension release, decision-block release",
+            "components": [
+              "Chai Hu",
+              "Huang Qin",
+              "Sheng Jiang"
+            ],
+            "notes": "Choose if GB direction dominant"
+          },
+          {
+            "name": "Qing Hao or Yin Chen Hao (if hidden heat / GB stagnation)",
+            "role": "fascial heat dampening",
+            "notes": "Select if stagnant heat pattern present"
+          },
+          {
+            "name": "Guide herbs (mandatory — choose 1)",
+            "role": "drainage / directional control",
+            "options": [
+              {
+                "name": "Jie Geng",
+                "for": "LU guide — hoarseness"
+              },
+              {
+                "name": "Hou Po",
+                "for": "ST guide — dysphagia, fullness"
+              }
+            ]
+          }
+        ],
+        "Ayurveda": [
+          {
+            "TCM_function": "phlegm + reverse flow",
+            "equivalent": "Trikatu (small dose)"
+          },
+          {
+            "TCM_function": "GB opening",
+            "equivalent": "Kalmegh (Andrographis)"
+          },
+          {
+            "TCM_function": "hidden heat",
+            "equivalent": "Neem or Musta"
+          },
+          {
+            "TCM_function": "LU guide",
+            "equivalent": "Vasa (for hoarseness)"
+          },
+          {
+            "TCM_function": "ST guide",
+            "equivalent": "Ajwain + Hing (for dysphagia)"
+          },
+          {
+            "TCM_function": "stabilisation",
+            "equivalent": "Guduchi"
+          }
+        ],
+        "device": "low-level laser — static hold, low energy, target: longus colli / prevertebral projection — NOT sweeping, NOT destructive — vibration reset only",
+        "contraindications": [
+          "aggressive cervical manipulation is contraindicated when: active dysphagia or hoarseness, unstable autonomic symptoms (dizziness, palpitation), strong scapular rebound was previously triggered, symptoms change with speech or breathing",
+          "stellate ganglion block is contraindicated when: symptom does not resolve with directional change; phlegm/SP overload dominant; cervical symptoms worsen with visceral triggers"
+        ]
+      }
+    },
+    {
+      "id": "FASCIA_NERVE_SYSTEM",
+      "name": "Fascia-Nerve Dual-Channel Movement System",
+      "internal_tag": "field_hologram_water_phase_trigger",
+      "frontend_language": "fascial holographic pattern disruption / neural trigger failure / ion-phase coherence disorder",
+      "sub_patterns": [
+        {
+          "id": "FASCIA_BLOCK",
+          "name": "Fascia channel block (holographic pattern frozen)",
+          "frontend": "fascial movement blueprint disrupted",
+          "passive_finding": "passive movement also restricted (rigidity, spasm)",
+          "clinical_examples": [
+            "CRPS without nerve injury",
+            "frozen shoulder (adhesive capsulitis)",
+            "chronic movement restriction",
+            "chronic pelvic pain",
+            "myofascial pain syndrome",
+            "referred pain",
+            "post-surgical transition pain",
+            "post-stroke spasticity",
+            "Parkinson freezing episodes"
+          ],
+          "herbs": [
+            {
+              "name": "Chai Hu type formulas",
+              "role": "Liver Qi stagnation release, fascial pattern release, structured water transient dissolution then reset",
+              "examples": [
+                "Chai Hu Shu Gan San",
+                "Xiao Chai Hu Tang",
+                "Ge Gen Tang"
+              ]
+            },
+            {
+              "name": "Chai Ling Tang / Juan Bi Tang",
+              "role": "Wind-dampness resolution, fascia gel state restoration"
+            }
+          ]
+        },
+        {
+          "id": "NERVE_BLOCK",
+          "name": "Nerve trigger channel failure (local phase trigger absent)",
+          "frontend": "neural local trigger absent; pattern present but unexecutable",
+          "passive_finding": "passive movement possible, active movement absent or severely reduced",
+          "clinical_examples": [
+            "peripheral paralysis",
+            "neuropathies",
+            "ALS",
+            "post-stroke peripheral paralysis",
+            "diabetic neuropathy",
+            "traumatic nerve section"
+          ],
+          "herbs": [
+            {
+              "name": "Blood and Yin tonics",
+              "role": "neural trigger support, mitochondrial field restoration",
+              "examples": [
+                "Dang Gui Bu Xue Tang",
+                "Ci Wu Jia",
+                "Shu Di",
+                "Wu Wei Zi",
+                "Cordyceps"
+              ]
+            },
+            {
+              "name": "Ling Zhi + Shu Di",
+              "role": "mitochondrial support, biofield rebuilding"
+            }
+          ]
+        },
+        {
+          "id": "ION_PHASE_DISORDER",
+          "name": "Ion-phase coherence disorder (intermittent / oscillatory failure)",
+          "frontend": "oscillatory movement failure; intermittent loss of phase coupling",
+          "passive_finding": "fluctuating — sometimes available, sometimes not",
+          "clinical_examples": [
+            "periodic paralysis (intermittent)",
+            "epileptic motor aura",
+            "transient spasticity episodes",
+            "ALS with mixed features",
+            "long COVID motor sequelae"
+          ],
+          "herbs": [
+            {
+              "name": "Wu Mei Wan",
+              "role": "warming-stabilising, ion-phase regulation"
+            },
+            {
+              "name": "Mineralisation support",
+              "role": "Mg, K, Ca electrolyte restoration"
+            },
+            {
+              "name": "Biofield/PEMF therapy",
+              "role": "phase coherence restoration"
+            }
+          ]
+        }
+      ],
+      "unified_mechanism": "Movement = fascia pattern (WHAT) + nerve trigger (WHEN/WHERE) + structured water (HOW energy is released) + field (WHY it happens). Fascia and nerve are expressions of the same field system at different structural densities. Schwann cells and perineurial fascia are continuous with surrounding connective fascia — nerve is specialised fascia.",
+      "pathophysiological_sequence": [
+        "1. Trauma or psycho-emotional imprint",
+        "2. Qi stagnation in meridian (field coherence disruption)",
+        "3. Chaotropic hologram (cannot maintain structured water)",
+        "4. Structured water layer collapses",
+        "5. Tissue oedema, proton leakage, ion balance disruption",
+        "6. Fascia tightens (not gel-phase, but swollen bulk water)",
+        "7. Pain (mechanical + ionotoxic + biofoton noise)",
+        "8. Movement restriction (fascia cannot work elastically)",
+        "9. Neural trigger cannot produce local water-phase collapse → movement loss"
+      ]
+    },
+    {
+      "id": "MUSCLE_FIELD_COLLAPSE",
+      "name": "Muscle Field Coil Collapse (ALS / Critical Care Myopathy pattern)",
+      "internal_tag": "fascia_izom_mez_coil_bom",
+      "frontend_language": "primary fascial-muscle field coherence failure with secondary denervation",
+      "triggers": [
+        "mitochondrial depletion",
+        "calcium homeostasis disruption",
+        "oxidative stress",
+        "prolonged ICU inactivity",
+        "hypoxia",
+        "insulin resistance"
+      ],
+      "key_insight": "Denervation is SECONDARY, not primary. The muscle-fascial field (electromagnetic coil holding structured water and ionic potential) collapses first. Once the coil loses its field-holding capacity, peripheral neural connection and Schwann cell coherence deteriorate. Neuronal death follows collapse of the muscle field — not vice versa.",
+      "clinical_examples": [
+        "ALS",
+        "Critical Care Myopathy",
+        "ICU-acquired weakness"
+      ],
+      "interventions": {
+        "modalities": [
+          "long slow movement (Tai Chi, slow physiotherapy)",
+          "phototherapy / light stimulation",
+          "PEMF (field coherence restoration)",
+          "alternating warm-cold (phase-switching stimulus)",
+          "collagen and water quality support (gelatin, structured water)"
+        ],
+        "herbs": [
+          {
+            "name": "Wu Wei Zi",
+            "role": "field and Yin rebuilding, mitochondrial trophic support"
+          },
+          {
+            "name": "Shu Di",
+            "role": "Yin and Blood nourishment, field matrix rebuilding"
+          },
+          {
+            "name": "Ling Zhi",
+            "role": "mitochondrial support, biofoton emission enhancement"
+          },
+          {
+            "name": "Ci Wu Jia",
+            "role": "nerve-field trigger support, adaptogenic mitochondrial action"
+          }
+        ],
+        "contraindications": [
+          "neuroprotection alone is insufficient — fascial field coherence must be restored simultaneously",
+          "aggressive stimulation worsens if matrix is not ready"
+        ]
+      }
+    },
+    {
+      "id": "METASTASIS_GATE",
+      "name": "Metastasis Receptive Field / Gate Model",
+      "internal_tag": "metastasis_soil_gate_shaoyin_jueyin",
+      "frontend_language": "secondary oncological pattern modelling — meaning-layer only, not diagnostic",
+      "critical_safety_note": "This pattern is a COMPLEMENTARY MEANING LAYER for integrative practitioners only. It does NOT replace oncological diagnosis, staging, or treatment. It MUST NOT be communicated as disease causation to patients.",
+      "core_principle": "Metastasis site is not determined solely by biological spread mechanics. The receptive field (tissue readiness to receive) is modulated by the phase of the patient's life after the primary diagnosis. Primary tumor ≠ metastasis in terms of psycho-emotional content.",
+      "gates": [
+        {
+          "id": "GATE_1_SHAOYIN",
+          "name": "Shaoyin Gap (identity-light / source-coherence weakening)",
+          "clinical_question": "When did you first feel you were no longer living your own life?",
+          "typical_localisation": [
+            "bone",
+            "bone marrow",
+            "myeloma",
+            "vertebral column (load-bearing)"
+          ],
+          "key_experience": "identity surrendered for relationship or system; 'who carries whom, and for how long?'",
+          "TCM_direction": "Shaoyin stabilisation (Yin + Blood + anchor)",
+          "Ayurveda_direction": "Ojas building, Vata grounding"
+        },
+        {
+          "id": "GATE_2_JUEYIN",
+          "name": "Jueyin Slip (compensatory over-drive, trapped movement)",
+          "clinical_question": "What is the decision you could not make — and has been spinning inside you since?",
+          "typical_localisation": [
+            "liver",
+            "lateral structures",
+            "frequently secondary metastasis"
+          ],
+          "key_experience": "unresolvable decision, anger, frustration, internal spinning without release",
+          "TCM_direction": "Jueyin relaxation, GB opening",
+          "Ayurveda_direction": "Pitta-Vata harmonisation"
+        },
+        {
+          "id": "GATE_3_TAIYIN",
+          "name": "Taiyin Phlegm / SP Overload (undigestible event, fog, reversal)",
+          "clinical_question": "What was too much to absorb at once — and there was no time to process?",
+          "typical_localisation": [
+            "neck (prevertebral fascia)",
+            "mediastinum",
+            "ascending patterns"
+          ],
+          "key_experience": "cognitive overload, rumination, 'cannot swallow / cannot process'",
+          "TCM_direction": "Wen Dan Tang axis, Qi reversal drainage",
+          "Ayurveda_direction": "Kapha-Vata reduction, Agni gentle strengthening"
+        },
+        {
+          "id": "GATE_4_SHAOYANG",
+          "name": "Shaoyang Gate Instability (direction-switching zone failure)",
+          "clinical_question": "When did you first lose the sense that you could see the way forward?",
+          "typical_localisation": [
+            "brain",
+            "lateral / cervical region",
+            "multi-focal spread"
+          ],
+          "key_experience": "trapped between two worlds, cannot turn away, cannot move forward",
+          "TCM_direction": "Shaoyang harmonisation (GB/SJ)",
+          "Ayurveda_direction": "Vata direction ordering, neural rhythm support"
+        }
+      ],
+      "spinal_metastasis_map": {
+        "thoracic": {
+          "field_meaning": "support, heart-field, emotional load",
+          "typical_trauma": "abandonment, emotional isolation",
+          "biological_route": "Batson's valveless vertebral venous plexus (breast → intercostal → vertebral plexus → spine)"
+        },
+        "cervical": {
+          "field_meaning": "direction, voice, identity, orientation",
+          "typical_trauma": "cannot say / cannot turn away",
+          "biological_route": "same valveless vertebral plexus — no local Shu point required",
+          "clinical_safe_language": "Breast cancer can metastasize to the cervical spine via the valveless vertebral venous plexus. Cervical involvement is clinically associated with severe disease burden and loss of functional orientation, often accompanied by neck pain, reduced mobility and significant psychological distress."
+        },
+        "lumbar": {
+          "field_meaning": "safety, survival, existential grounding",
+          "typical_trauma": "financial, existential fear"
+        }
+      },
+      "3_step_clinical_inquiry": [
+        "Before primary: 'What was the first fracture in your life?'",
+        "Around diagnosis: 'What changed in your relationships / role at that time?'",
+        "3–9 months before metastasis: 'What was the thing you could not say / release / carry / absorb at that point?'"
+      ],
+      "rules": [
+        {
+          "condition": "metastasis_site identified",
+          "action": "do NOT derive gate from primary tumor; derive gate from patient's life phase AFTER diagnosis"
+        },
+        {
+          "condition": "gate selected",
+          "action": "apply TCM/Ayurveda direction for that gate as adjunct to oncological care"
+        },
+        {
+          "condition": "any uncertainty about gate",
+          "action": "use 3-step clinical inquiry before assigning gate"
+        }
+      ]
+    },
+    {
+      "id": "NERVE_WATER_FIELD_THEORY",
+      "name": "Alternative Nerve Theory — EZ Water Phase Trigger Model",
+      "internal_tag": "nerve_as_field_transducer_EZ_collapse",
+      "frontend_language": "nerve as field-phase transducer; structured water phase-collapse as energy source for movement and regeneration",
+      "core_propositions": [
+        {
+          "id": "NWT_1",
+          "statement": "The nerve does not simply conduct electrical current — it initiates a local, directed EZ-to-bulk water phase collapse.",
+          "mechanism": "Acetylcholine / noradrenaline release → local EZ → bulk water phase transition → proton accumulator collapse → potential energy released → mechanical movement or biofoton emission.",
+          "frontend_safe": "Neural signalling involves directed tissue-level phase transitions that release stored potential energy, not only electrochemical current flow."
+        },
+        {
+          "id": "NWT_2",
+          "statement": "The action potential is a field-gate opener, not merely an information carrier.",
+          "mechanism": "The electromagnetic field generated by ionic current (Ampère's law) creates local magnetic field → aligns water dipoles and electron spins → coherent phase-shift → gel-to-bulk collapse → energy release.",
+          "frontend_safe": "Neural firing coordinates local field-phase events that drive movement with minimal ATP expenditure."
+        },
+        {
+          "id": "NWT_3",
+          "statement": "Fascia = holographic field memory and pattern projector (WHAT to move). Nerve = local magnetic field transducer (WHEN and WHERE). Structured water = energy store and transformer (HOW). Field = source of intention and energy (WHY).",
+          "clinical_consequence": "Fascia damage → movement pattern frozen (spasticity). Nerve damage → pattern exists but no energy trigger (flaccid paralysis). Ion-phase disorder → intermittent failure (periodic paralysis, epileptic aura)."
+        },
+        {
+          "id": "NWT_4",
+          "statement": "No regeneration in neuropathy because: without neural signal, no local field-triggered EZ collapse, no potential energy release, no regeneration stimulus.",
+          "applies_to": [
+            "diabetic neuropathy",
+            "traumatic nerve section",
+            "ALS (secondary to muscle coil collapse)"
+          ],
+          "frontend_safe": "Neural regeneration requires restoration of field-phase coupling, not only structural repair."
+        },
+        {
+          "id": "NWT_5",
+          "statement": "Western drug + Chinese formula combination is more effective because: the drug provides rapid chaotropic disruption of over-rigid structure (fast path); the formula restores coherent structured water and field pattern (slow rebuild). Together: shorter drug course, lower dose, fewer side effects, faster return of function.",
+          "mechanism": "Western drug = chaotropic impulse (breaks stuck structure). Chinese formula = cosmotropic ordering force (rebuilds coherent water, gives direction). Combined: fast noise reduction + directed healing."
+        }
+      ],
+      "parallel_models": {
+        "Hameroff_Orch_OR": {
+          "microtubule_quantum_coherence": "↔ structured water coherent phase",
+          "superradiance": "↔ field-pressure induced water collapse",
+          "self_induced_transparency": "↔ coherent energy and information flow through the system",
+          "collapse_as_conscious_moment": "↔ collapse as movement / regeneration trigger"
+        },
+        "Szent_Gyorgyi": "Muscle contraction as protein-water quantum state transition, not purely ATP-actin-myosin chemistry",
+        "Pollack_EZ": "EZ water as the primary medium; structured hydration as prerequisite for all biological energy transactions"
+      },
+      "clinical_applications": [
+        {
+          "condition": "diabetic neuropathy",
+          "intervention": "restore neural field coupling (acupuncture, TENS, PEMF) + structured water support + mitochondrial support (Q10, PQQ, NADH, photostimulation) + herbs (Wu Wei Zi, Shu Di, Ci Wu Jia, Chai Hu-type for regeneration trigger)"
+        },
+        {
+          "condition": "post-stroke spasticity",
+          "intervention": "fascial pattern release (Chai Hu Jia Long Gu Mu Li Tang direction, acupuncture, fascia work) + structured water support"
+        },
+        {
+          "condition": "post-stroke flaccid paralysis",
+          "intervention": "nerve trigger rebuilding (Dang Gui Bu Xue Tang, Shu Di, Yin tonics, phototherapy, PEMF)"
+        },
+        {
+          "condition": "ALS / critical care myopathy",
+          "intervention": "muscle field coil rebuild (slow movement, PEMF, Ling Zhi, Wu Wei Zi, Shu Di, Ci Wu Jia, collagen, structured water) — neuroprotection alone insufficient"
+        },
+        {
+          "condition": "frozen shoulder",
+          "intervention": "holographic fascial pattern release (Chai Hu type, fascia work, slow movement, field reset)"
+        },
+        {
+          "condition": "phantom limb pain",
+          "intervention": "field pattern closure (mirror therapy; field-based coherence work); the field pattern persists without physical feedback"
+        },
+        {
+          "condition": "tinnitus",
+          "intervention": "auditory fascia-nerve field oscillation damping (field coherence work, Wen Dan Tang, Long Gu + Mu Li)"
+        }
+      ]
+    }
+  ],
+  "diagnosis_map": [
+    {
+      "diagnosis": "autonomic dysreflexia",
+      "associated_patterns": [
+        "OSCILL_VISC",
+        "EZW_FRAG"
+      ],
+      "notes": "Not purely loss of descending inhibitory control. EZ water fragmentation in bladder-bowel-skin axis creates self-sustaining visceral oscillator. Dampness (bulk water) accumulation is the medium. CRPS-equivalent mechanism in visceral domain."
+    },
+    {
+      "diagnosis": "overactive bladder (OAB)",
+      "associated_patterns": [
+        "OSCILL_VISC",
+        "EZW_FRAG"
+      ],
+      "notes": "Urgency at low volume = EZ buffer collapse in bladder wall. Bladder is gravity-dependent dampness accumulator. Not excess nerve impulses — absent damping."
+    },
+    {
+      "diagnosis": "cluster headache",
+      "associated_patterns": [
+        "TAC_OSCILL"
+      ],
+      "notes": "Cranial autonomic oscillator — medium-high frequency, SPG amplifier, deep cranial dampness. Night-predominant (mitochondrial maintenance nadir). Responds to O2 (oscillator energy drain via redox reset), verapamil (bandwidth narrowing), lithium (global coherence)."
+    },
+    {
+      "diagnosis": "paroxysmal hemicrania",
+      "associated_patterns": [
+        "TAC_OSCILL"
+      ],
+      "notes": "Same oscillator, shallower dampness, vascular-meningeal gate dominant. Fast reset → short frequent attacks. Indometacin resets membrane-matrix tension (not COX inhibition per se)."
+    },
+    {
+      "diagnosis": "SUNCT / SUNA",
+      "associated_patterns": [
+        "TAC_OSCILL"
+      ],
+      "notes": "Trigeminal microcircuit burst dominance. Minimal bulk water, extreme spike frequency. Responds to anticonvulsants (neural burst suppression), not triptans or O2."
+    },
+    {
+      "diagnosis": "hemicrania continua",
+      "associated_patterns": [
+        "TAC_OSCILL"
+      ],
+      "notes": "Indometacin-responsive continuous TAC variant. Shallow, well-coupled dampness. Sustained oscillator (not paroxysmal). May involve autophagic induction as adjunct mechanism."
+    },
+    {
+      "diagnosis": "migraine",
+      "associated_patterns": [
+        "TAC_OSCILL",
+        "EZW_FRAG"
+      ],
+      "notes": "Shares trigeminovascular mechanism with cluster. Fragmented EZ water grid (aura = edge sparking on fragmented grid). More water-structure fragmentation, less deep dampness than cluster. O2 partially helpful. CGRP blockade — possible mitochondrial tuning effect (not purely vasodilation)."
+    },
+    {
+      "diagnosis": "RCVS (reversible cerebral vasoconstriction syndrome)",
+      "associated_patterns": [
+        "TAC_OSCILL",
+        "EZW_FRAG"
+      ],
+      "notes": "Extreme vascular tone instability; possible transition from TAC via field destabilisation. Days-weeks timescale. Thunderclap headache. Connected to the migraine-TAC-RCVS spectrum."
+    },
+    {
+      "diagnosis": "CRPS (all phases)",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM",
+        "EZW_FRAG"
+      ],
+      "notes": "Phase I → LAX (from Batch 1). Phase II/III → DAV (from Batch 1). All phases involve EZ fragmentation + fascial hologram disruption. Western analogy: CRPS = regional EZ oscillator; autonomic dysreflexia = visceral EZ oscillator; TAC = cranial EZ oscillator. Same mechanism, different geometry."
+    },
+    {
+      "diagnosis": "ALS (amyotrophic lateral sclerosis)",
+      "associated_patterns": [
+        "MUSCLE_FIELD_COLLAPSE",
+        "FASCIA_NERVE_SYSTEM"
+      ],
+      "notes": "Primary: muscle field coil collapse (mitochondrial depletion, oxidative stress, calcium dysregulation). Secondary: denervation follows loss of muscle field. Mixed fascia-block + nerve-trigger failure. Neuroprotection alone insufficient."
+    },
+    {
+      "diagnosis": "critical care myopathy / ICU-acquired weakness",
+      "associated_patterns": [
+        "MUSCLE_FIELD_COLLAPSE"
+      ],
+      "notes": "Hypoxia + inactivity + inflammation → muscle field coil collapse → secondary denervation. Fascia-field restoration (slow movement, PEMF, phototherapy) is primary intervention."
+    },
+    {
+      "diagnosis": "diabetic neuropathy",
+      "associated_patterns": [
+        "NERVE_WATER_FIELD_THEORY",
+        "FASCIA_NERVE_SYSTEM"
+      ],
+      "notes": "Glucotoxicity + oxidative stress → impaired neural bioelectric + biomagnetic activity → EZ phase transition blocked → no local regeneration trigger → scarring only. If movement loss > structural damage, additional field-water-fascia destabilisation must be addressed."
+    },
+    {
+      "diagnosis": "stroke (ischaemic)",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM",
+        "EZW_FRAG"
+      ],
+      "notes": "Pre-stroke: chronic fascia-field tension (Liver Qi stagnation) → microcirculatory slowing → zeta potential collapse → thrombocyte aggregation → local thrombus. Field-phase collapse precedes the vascular event. True prevention targets fascial field coherence, not only risk factors."
+    },
+    {
+      "diagnosis": "stroke (haemorrhagic)",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM",
+        "EZW_FRAG"
+      ],
+      "notes": "Same field-tension mechanism as ischaemic, with local vessel wall weakness + acute Liver Yang Rising → biophysical decompensation → haemorrhage."
+    },
+    {
+      "diagnosis": "post-stroke spasticity",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM"
+      ],
+      "notes": "Fascia hologram frozen in a pattern. Passive movement also restricted. Fascia channel block. Requires pattern release (Chai Hu type + fascial work)."
+    },
+    {
+      "diagnosis": "post-stroke flaccid paralysis",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM"
+      ],
+      "notes": "Holographic pattern intact, neural trigger absent. Passive movement possible, active absent. Nerve trigger channel failure. Requires Yin / Blood rebuilding + mitochondrial support."
+    },
+    {
+      "diagnosis": "Parkinson's disease (freezing episodes)",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM"
+      ],
+      "notes": "Field cannot find correct trigger point for coherent movement — frozen holographic pattern. Not purely dopaminergic."
+    },
+    {
+      "diagnosis": "frozen shoulder (adhesive capsulitis)",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM"
+      ],
+      "notes": "Fascial hologram frozen. Passive also restricted (confirms fascia-channel block, not nerve-channel). Chai Hu type, slow movement, fascial work."
+    },
+    {
+      "diagnosis": "phantom limb pain",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM",
+        "NERVE_WATER_FIELD_THEORY"
+      ],
+      "notes": "Field hologram of amputated limb persists without physical feedback. Field tries to generate movement → pain and sensation. Mirror therapy closes the field pattern."
+    },
+    {
+      "diagnosis": "tinnitus",
+      "associated_patterns": [
+        "FASCIA_NERVE_SYSTEM",
+        "EZW_FRAG"
+      ],
+      "notes": "Auditory fascia-nerve field network becomes chaotic oscillator. Constant trigger signal → perceived noise. Wen Dan Tang + Long Gu + Mu Li for field oscillation dampening."
+    },
+    {
+      "diagnosis": "cervicogenic symptoms (hoarseness, globus, dysphagia, shoulder tension)",
+      "associated_patterns": [
+        "CERV_PREVRT"
+      ],
+      "notes": "Prevertebral fascial oscillatory dysfunction. GB/SI axis dominant (direction + clarity gates). Two-directional: ascending visceral pressure OR descending SP-phlegm-Qi reversal. Stellate ganglion is a sensor in this system, not the primary cause."
+    },
+    {
+      "diagnosis": "breast cancer with cervical spine metastasis",
+      "associated_patterns": [
+        "METASTASIS_GATE"
+      ],
+      "notes": "Biological route: valveless Batson vertebral venous plexus. Field meaning layer: direction / orientation collapse (Gate 4 Shaoyang instability). Complementary framework only. Clinical safe language: 'cervical involvement associated with severe disease burden and loss of functional orientation.'"
+    },
+    {
+      "diagnosis": "breast cancer with thoracic spine metastasis",
+      "associated_patterns": [
+        "METASTASIS_GATE"
+      ],
+      "notes": "Field meaning layer: Gate 1 (Shaoyin gap — emotional support loss, identity erosion). Shu point territory of Heart axis. Complementary framework only."
+    },
+    {
+      "diagnosis": "myeloma / bone metastasis",
+      "associated_patterns": [
+        "METASTASIS_GATE"
+      ],
+      "notes": "Gate 1 (Shaoyin gap). 'Who carries whom, and for how long?' — long-carried burden erodes the structural holding matrix. Complementary framework only."
+    },
+    {
+      "diagnosis": "liver metastasis",
+      "associated_patterns": [
+        "METASTASIS_GATE"
+      ],
+      "notes": "Gate 2 (Jueyin slip). Trapped unresolvable decision. Anger and frustration spinning without release. Complementary framework only."
+    },
+    {
+      "diagnosis": "brain metastasis",
+      "associated_patterns": [
+        "METASTASIS_GATE"
+      ],
+      "notes": "Gate 4 (Shaoyang instability). Orientation collapse — loss of 'where to next.' Complementary framework only."
+    },
+    {
+      "diagnosis": "neck / mediastinal metastasis",
+      "associated_patterns": [
+        "METASTASIS_GATE"
+      ],
+      "notes": "Gate 3 (Taiyin phlegm overload). Undigestible event; ascending phlegm-reversal pattern. Complementary framework only."
+    }
+  ],
+  "rules": [
+    {
+      "id": "B19_R001",
+      "condition": "symptom oscillates rather than being fixed and dermatomal",
+      "action": "flag_EZW_FRAG pattern; prioritise oscillation-damping interventions over nerve blocks"
+    },
+    {
+      "id": "B19_R002",
+      "condition": "small trigger → disproportionately large autonomic response",
+      "action": "assign OSCILL_VISC or TAC_OSCILL depending on location; avoid aggressive structural intervention"
+    },
+    {
+      "id": "B19_R003",
+      "condition": "autonomic_dysreflexia AND bladder_dominant",
+      "action": "assign OSCILL_VISC; primary intervention is EZ stabilisation (warmth, PEMF, Wen Dan Tang), not anticholinergics alone"
+    },
+    {
+      "id": "B19_R004",
+      "condition": "headache_type == 'cluster' AND circadian == true",
+      "action": "assign TAC_OSCILL(cluster); add Long Gu + Mu Li + Chai Hu direction for prophylaxis; consider verapamil as low-pass filter"
+    },
+    {
+      "id": "B19_R005",
+      "condition": "headache_type == 'paroxysmal_hemicrania' AND indometacin_responsive == true",
+      "action": "assign TAC_OSCILL(PH); gate = vascular-meningeal; dampness = shallow"
+    },
+    {
+      "id": "B19_R006",
+      "condition": "headache_type == 'SUNCT' OR 'SUNA'",
+      "action": "assign TAC_OSCILL(SUNCT); gate = trigeminal microcircuit; anticonvulsant line preferred; triptans insufficient"
+    },
+    {
+      "id": "B19_R007",
+      "condition": "cervical_symptoms AND (hoarseness OR globus OR dysphagia OR shoulder_tension)",
+      "action": "assign CERV_PREVRT; do NOT treat as structural cervical pathology alone; assess direction (ascending vs descending); apply 1-base + 1-direction + 1-guide formula logic"
+    },
+    {
+      "id": "B19_R008",
+      "condition": "cervical_level == 'C2_C3'",
+      "action": "theme = suppressed truth; primary guide = Jie Geng (LU); primary direction = Xiao Chai Hu Tang"
+    },
+    {
+      "id": "B19_R009",
+      "condition": "cervical_level == 'C5_C6'",
+      "action": "theme = identity vs obligation; primary guide = Hou Po (ST); primary direction = Xiao Chai Hu Tang"
+    },
+    {
+      "id": "B19_R010",
+      "condition": "stellate_ganglion_block considered AND (phlegm_dominant == true OR visceral_trigger_worsens == true)",
+      "action": "contra-indicate SGB; use Wen Dan Tang + laser prevertebral axis instead"
+    },
+    {
+      "id": "B19_R011",
+      "condition": "passive_movement_restricted == true AND active_movement_restricted == true",
+      "action": "assign FASCIA_NERVE_SYSTEM(FASCIA_BLOCK); treat with fascial pattern release (Chai Hu type, fascia work, slow movement)"
+    },
+    {
+      "id": "B19_R012",
+      "condition": "passive_movement_available == true AND active_movement_absent == true",
+      "action": "assign FASCIA_NERVE_SYSTEM(NERVE_BLOCK); treat with Yin/Blood rebuild + mitochondrial support"
+    },
+    {
+      "id": "B19_R013",
+      "condition": "movement_failure == 'intermittent'",
+      "action": "assign FASCIA_NERVE_SYSTEM(ION_PHASE_DISORDER); treat with Wu Mei Wan + mineralisation + PEMF"
+    },
+    {
+      "id": "B19_R014",
+      "condition": "diagnosis IN ['ALS', 'critical_care_myopathy'] AND neuroprotection_only == true",
+      "action": "flag_insufficient; add MUSCLE_FIELD_COLLAPSE treatment — fascia-field coherence restoration mandatory"
+    },
+    {
+      "id": "B19_R015",
+      "condition": "metastasis_site identified AND practitioner_requests_integrative_layer == true",
+      "action": "apply METASTASIS_GATE model; use 3-step clinical inquiry; NEVER present gate as causation to patient; ensure oncological care is primary"
+    },
+    {
+      "id": "B19_R016",
+      "condition": "western_pharmaceutical AND concurrent_TCM_formula",
+      "action": "drug = chaotropic rapid path; formula = cosmotropic rebuild; reduce drug dose and duration; monitor for accelerated recovery"
+    },
+    {
+      "id": "B19_R017",
+      "condition": "pungent_herbs_used AND Yin_support_absent == true",
+      "action": "flag_risk: pungent herbs injure Yin if not balanced; add Bai Shao Yao or stabilising Yin component"
+    },
+    {
+      "id": "B19_R018",
+      "condition": "formula_components > 3_axes",
+      "action": "flag: if more than 1-base + 1-direction + 1-guide needed, re-evaluate dominant axis; complexity indicates axis misidentification"
+    },
+    {
+      "id": "B19_R019",
+      "condition": "oxygen_therapy AND diagnosis == 'cluster_headache'",
+      "action": "mechanism = mitochondrial redox reset + NO dampening + bulk water oscillation reduction; 12–15 L/min non-rebreather protocol"
+    }
+  ],
+  "internal_backend_translation_map": {
+    "note": "Engine-internal reasoning only. Never expose in frontend output.",
+    "translations": [
+      {
+        "backend_term": "EZ water collapse / gel-bulk phase transition",
+        "frontend_term": "impaired tissue buffering / neurovascular oscillator instability"
+      },
+      {
+        "backend_term": "field hologram frozen / fascia pattern lock",
+        "frontend_term": "fascial movement blueprint disrupted / chronic motor pattern fixation"
+      },
+      {
+        "backend_term": "nerve as field-gate opener / etheric magnetic influx gate",
+        "frontend_term": "neural field-phase transducer / directed tissue phase trigger"
+      },
+      {
+        "backend_term": "proton accumulator collapse",
+        "frontend_term": "directed potential energy release from structured tissue matrix"
+      },
+      {
+        "backend_term": "Shaoyin gap",
+        "frontend_term": "survival-axis identity-coherence loss (Batch 1: SVA)"
+      },
+      {
+        "backend_term": "Jueyin slip",
+        "frontend_term": "deep autonomic-vascular compensatory over-drive (Batch 1: DAV)"
+      },
+      {
+        "backend_term": "Taiyin phlegm overload",
+        "frontend_term": "midline interoceptive dysregulation with ascending counterflow (Batch 1: MIA)"
+      },
+      {
+        "backend_term": "Shaoyang gate instability",
+        "frontend_term": "lateral autonomic gating failure (Batch 1: LAX)"
+      },
+      {
+        "backend_term": "muscle field coil",
+        "frontend_term": "fascial-muscle bioelectromagnetic coherence system"
+      },
+      {
+        "backend_term": "dampness",
+        "frontend_term": "bulk water excess / tissue matrix hydration incoherence"
+      },
+      {
+        "backend_term": "cosmotropic herbs",
+        "frontend_term": "structured-water coherence promoting botanicals"
+      },
+      {
+        "backend_term": "chaotropic drug effect",
+        "frontend_term": "rapid matrix disruption with short-term symptom reduction"
+      }
+    ]
+  },
+  "cross_batch_links": [
+    {
+      "batch2_pattern": "EZW_FRAG",
+      "batch1_pattern": "All 7 clusters",
+      "note": "EZ water fragmentation is the shared biophysical substrate for all Batch 1 cluster patterns. The 7 axes represent different anatomical localisation of the same fundamental EZW collapse phenomenon."
+    },
+    {
+      "batch2_pattern": "OSCILL_VISC",
+      "batch1_pattern": "DAV + MIA",
+      "note": "Visceral oscillator instability maps to the Deep Autonomic-Vascular axis (DAV) and Midline Interoceptive axis (MIA) from Batch 1. CRPS analogy confirmed across both batches."
+    },
+    {
+      "batch2_pattern": "TAC_OSCILL",
+      "batch1_pattern": "LAX + PSA",
+      "note": "Cranial TAC oscillator has shared mechanism with Lateral Autonomic (LAX) and Posterior Sensory (PSA) clusters from Batch 1. All are expressions of the same EZ oscillator in different geometric locations."
+    },
+    {
+      "batch2_pattern": "CERV_PREVRT",
+      "batch1_pattern": "LAX + MIA",
+      "note": "Cervical prevertebral pattern sits at the intersection of Lateral Autonomic (GB/SI) and Midline Interoceptive (ascending counterflow / Taiyin) axes from Batch 1."
+    },
+    {
+      "batch2_pattern": "METASTASIS_GATE",
+      "batch1_pattern": "SVA + DAV + MIA + LAX",
+      "note": "The four gates map directly to Shaoyin (SVA), Jueyin (DAV), Taiyin (MIA), and Shaoyang (LAX) patterns from Batch 1. The metastasis gate model is the Batch 1 axis system applied to oncological context."
+    },
+    {
+      "batch2_pattern": "NERVE_WATER_FIELD_THEORY",
+      "batch1_pattern": "ALL",
+      "note": "The alternative nerve theory provides the biophysical foundation for ALL Batch 1 patterns. The EZ water-field model explains why 'fascia responds to frequency not amplitude' (Batch 1 note about neck), why low-level laser works, and why formula logic follows axis not symptom."
+    }
+  ],
+  "notes": [
+    "Metastasis Gate model must carry a mandatory safety wrapper in any output: 'This is a complementary meaning-layer framework for integrative practitioners. It does not replace oncological diagnosis, staging, or treatment.'",
+    "The TAC oscillator model (cluster/PH/SUNCT) is the most fully developed mechanistic model in this batch — it is directly engine-implementable for headache pattern routing.",
+    "Wen Dan Tang is the most frequently indicated base formula across this batch: cervical prevertebral, TAC, OAB/autonomic dysreflexia, ascending phlegm. It bridges all dampness-dominant oscillation patterns.",
+    "The drug + formula interaction rule (chaotropic + cosmotropic) is a high-value clinical rule: allows dose reduction and faster recovery. Flag for clinical output when both are being considered.",
+    "The stellate ganglion block contraindication rules are clinically critical and should be flagged prominently when the system detects phlegm-dominant or visceral-trigger-worsens patterns in the cervical zone.",
+    "Fascia channel vs nerve channel distinction (spastic vs flaccid) is a simple but powerful engine rule that determines whether to prescribe pattern-release or Yin/trigger-rebuild herbs.",
+    "The three-file batch shares one unified biophysical theory: structured water (EZ) as the medium, field as the organiser, fascia as the holographic memory, nerve as the local trigger. All clinical manifestations are expressions of this system at different anatomical scales and frequencies."
+  ]
+}
