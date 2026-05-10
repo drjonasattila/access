@@ -1,0 +1,264 @@
+{
+  "id": "7_FUNCTIONAL_AXES_ROUTING_LAYER",
+  "visibility": "frontend_cluster_only_practitioner_axis_optional",
+  "axes": {
+    "LAX": {
+      "id": "LAX",
+      "name": "Lateral Autonomic Dysfunction",
+      "axis": "Lateral Autonomic Axis",
+      "cluster": "Lateral Autonomic Decompression",
+      "internal_tag": "Shaoyang_GB_TB",
+      "anatomical_domain": "lateral neck/shoulder loop → TMJ → thoracolumbar lateral line",
+      "triggers": [
+        "unilateral headache",
+        "TMJ tension",
+        "stress-triggered pain flares",
+        "lateral neck or shoulder pain",
+        "autonomic switching instability"
+      ],
+      "symptoms": [
+        "migraine",
+        "TMJ-temporal tension",
+        "shoulder GB-line pain",
+        "CRPS phase I (autonomic-dominant)",
+        "nerve entrapment patterns (radial tunnel, tarsal tunnel, ACNES, peroneal, TTS, PFS)",
+        "hip/shoulder bursitis (GTPS patterns)",
+        "frozen shoulder",
+        "subacromial bursitis",
+        "cervical-brachial tension patterns",
+        "carpal tunnel syndrome",
+        "thoracic outlet presentation",
+        "rib-cage lateral tension",
+        "QL / lateral chain dysfunction",
+        "stress-triggered pain flares",
+        "lateral fascia overload"
+      ],
+      "bidirectional_coupling": [
+        "PC ↔ TB (autonomic modulation)",
+        "LV ↔ GB (tension distribution, irritability patterns)"
+      ]
+    },
+    "PSA": {
+      "id": "PSA",
+      "name": "Posterior Sensory Overload",
+      "axis": "Posterior Sensory Axis",
+      "cluster": "Posterior Pressure Modulation",
+      "internal_tag": "Taiyang_BL_SI",
+      "anatomical_domain": "occiput → posterior neck → paraspinals → dura → venous sinuses",
+      "triggers": [
+        "pressure-type headache",
+        "bending/strain-induced worsening",
+        "overweight with metabolic underdrive",
+        "internal coldness sensation",
+        "Chiari-like loading pattern"
+      ],
+      "symptoms": [
+        "occipital headache",
+        "cervicogenic pain / cervicogenic pressure headache",
+        "neck tension",
+        "visual-postural mismatch",
+        "raised intracranial pressure (ICP, IIH, PRES)",
+        "Arnold-Chiari malformation type I",
+        "posterior fossa venous congestion / blood sludging",
+        "impaired venous return (posterior chain)",
+        "jugular venous outflow obstruction",
+        "PDPH (post-dural puncture headache)",
+        "mechanical CSF-venous coupling disorders",
+        "postural intracranial hypertension",
+        "early diastolic dysfunction (venous pressure pattern)",
+        "suboccipital tension → autonomic overshoot",
+        "CSF-venous mismatch",
+        "neck-tension-driven pressure sensitivity"
+      ],
+      "bidirectional_coupling": [
+        "HT ↔ SI (central arousal, vigilance)",
+        "KD ↔ BL (posture-autonomic coupling)"
+      ]
+    },
+    "AMA": {
+      "id": "AMA",
+      "name": "Anterior Metabolic Imbalance",
+      "axis": "Anterior Metabolic Axis",
+      "cluster": "Anterior Metabolic Rebalancing",
+      "internal_tag": "Yangming_ST_LI",
+      "anatomical_domain": "anterior fascia → gut-metabolism interface",
+      "triggers": [
+        "post-meal pain flares",
+        "metabolic rigidity",
+        "heaviness/sedimentation sensation",
+        "abdominal wall pain",
+        "IBS-like symptoms"
+      ],
+      "symptoms": [
+        "diabetic-pattern pain / SFN root (small-fiber neuropathy metabolic pattern)",
+        "abdominal wall pain",
+        "IBS front-type pain",
+        "post-meal flares / post-prandial malaise",
+        "metabolic rigidity",
+        "heaviness / sedimentation sensation",
+        "biofilm / ECM thickening (damp pattern clinical-equivalent)"
+      ],
+      "bidirectional_coupling": [
+        "LU ↔ LI (immune-metabolic interface)",
+        "ST ↔ SP (metabolic flexibility)"
+      ]
+    },
+    "MIA": {
+      "id": "MIA",
+      "name": "Midline Interoceptive Dysregulation",
+      "axis": "Midline Interoceptive Axis",
+      "cluster": "Midline Interoceptive Regulation",
+      "internal_tag": "Taiyin_LU_SP",
+      "anatomical_domain": "diaphragm → gut-lung axis → abdominal wall",
+      "triggers": [
+        "chest tightness without cardiopulmonary cause",
+        "bloating combined with chest symptoms",
+        "stress-sensitive abdominal symptoms",
+        "breathing-posture mismatch"
+      ],
+      "symptoms": [
+        "chest tightness (non-cardiac)",
+        "bloating",
+        "viscerally amplified pain states",
+        "stress-sensitive abdominal symptoms",
+        "breathing-posture mismatch",
+        "fatigue",
+        "visceral sensitivity",
+        "vagal-gut dysregulation",
+        "abdominal wall inhibition",
+        "deep fascia slowing"
+      ],
+      "bidirectional_coupling": [
+        "LU ↔ LI part 2 (viscero-somatic feedback)",
+        "SP ↔ ST (digestive/metabolic load vs. interoception)"
+      ]
+    },
+    "SVA": {
+      "id": "SVA",
+      "name": "Survival Axis Instability",
+      "axis": "Survival / Emotional Axis",
+      "cluster": "Survival Axis Stabilization",
+      "internal_tag": "Shaoyin_HT_KD",
+      "anatomical_domain": "central autonomic → heart-kidney coordination",
+      "triggers": [
+        "panic episodes",
+        "stress-labile tachycardia",
+        "orthostatic headache",
+        "sleep fragmentation",
+        "sensory overload",
+        "autonomic lability"
+      ],
+      "symptoms": [
+        "panic episodes",
+        "stress-labile tachycardia / palpitations",
+        "orthostatic headaches",
+        "sleep fragmentation",
+        "sensory overload",
+        "autonomic lability (fight/flight locked-in state)",
+        "heat-cold intolerance",
+        "stress-triggered autonomic shifts",
+        "heat above / cold below endophenotype (upper-body sympathetic overdrive + lower-body circulatory underdrive)"
+      ],
+      "bidirectional_coupling": [
+        "HT ↔ SI (central vigilance → sensory modulation)",
+        "KD ↔ BL (stress load → posture + pelvic tension)"
+      ]
+    },
+    "DAV": {
+      "id": "DAV",
+      "name": "Deep Autonomic-Vascular Dysregulation",
+      "axis": "Deep Autonomic-Vascular Axis",
+      "cluster": "Deep Autonomic-Vascular Cluster",
+      "internal_tag": "Jueyin_LV_PC",
+      "anatomical_domain": "abdominal wall → pelvic loop → neurovascular convergence",
+      "triggers": [
+        "CRPS phase II/III pattern",
+        "burning neuropathy",
+        "pelvic autonomic loops",
+        "cyclic pelvic pain",
+        "cold pelvis + distal burning",
+        "severe sensory-autonomic mismatch"
+      ],
+      "symptoms": [
+        "CRPS phase II/III",
+        "burning neuropathy (autonomic-vascular type)",
+        "pelvic autonomic loops",
+        "cyclic pelvic pain",
+        "cold pelvis + distal burning",
+        "severe sensory-autonomic mismatch",
+        "functional abdominal pain syndromes",
+        "chronic visceral-somatic pain loops",
+        "chronic pelvic pain",
+        "endometriosis pain amplification",
+        "chronic bladder-pelvic floor tension",
+        "ischemic-type neural pain",
+        "chronic venous congestion with sensory hypersensitivity",
+        "post-surgical adhesion pain with deep sensory component",
+        "peripelvic congestion (cold pelvis endophenotype)"
+      ],
+      "bidirectional_coupling": [
+        "LV ↔ GB (tension distribution)",
+        "PC ↔ TB (deep autonomic-vascular integration)"
+      ]
+    },
+    "CIA": {
+      "id": "CIA",
+      "name": "Central Integration Failure",
+      "axis": "Central Integration Axis",
+      "cluster": "Central Coherence Support",
+      "internal_tag": "Ren_Du_CNS_ANS",
+      "anatomical_domain": "midline fascia → brainstem-ANS synchrony → postural coherence",
+      "triggers": [
+        "fibromyalgia-like widespread pain",
+        "multiple failed prior treatments",
+        "sensory hypersensitivity",
+        "post-stress central fatigue",
+        "cognitive overload"
+      ],
+      "symptoms": [
+        "fibromyalgia central pattern",
+        "widespread pain",
+        "cognitive overload",
+        "multiple failed prior treatments",
+        "sensory hypersensitivity",
+        "post-stress central fatigue",
+        "ADHD-like stress intolerance",
+        "autonomic dissociation",
+        "midline stress intolerance",
+        "unresolved axial tension",
+        "hot head / cold pelvis integration failure pattern",
+        "midline dissociation",
+        "widespread sensitization"
+      ],
+      "bidirectional_coupling": [
+        "All axes converge here → brainstem, midline ANS, interoception"
+      ]
+    }
+  },
+  "canonical_clusters": {
+    "LAX": "Lateral Autonomic Decompression",
+    "PSA": "Posterior Pressure Modulation",
+    "AMA": "Anterior Metabolic Rebalancing",
+    "MIA": "Midline Interoceptive Regulation",
+    "SVA": "Survival Axis Stabilization",
+    "DAV": "Deep Autonomic-Vascular Cluster",
+    "CIA": "Central Coherence Support"
+  },
+  "axis_aliases": {
+    "shaoyang": "LAX",
+    "lateral": "LAX",
+    "taiyang": "PSA",
+    "posterior": "PSA",
+    "yangming": "AMA",
+    "anterior": "AMA",
+    "taiyin": "MIA",
+    "midline": "MIA",
+    "shaoyin": "SVA",
+    "survival": "SVA",
+    "jueyin": "DAV",
+    "deep_autonomic_vascular": "DAV",
+    "vascular": "DAV",
+    "central": "CIA",
+    "ren_du": "CIA"
+  }
+}

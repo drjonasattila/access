@@ -15,7 +15,8 @@
     "test:taiyang": "node scripts/test-taiyang-module.cjs",
     "test:transition": "node scripts/test-transition-engine.cjs",
     "test:platform": "node scripts/test-platform-architecture.cjs",
-    "test:triaxial": "node scripts/test-headache-triaxial-engine.cjs"
+    "test:triaxial": "node scripts/test-headache-triaxial-engine.cjs",
+    "test:clusters": "node scripts/test-treatment-cluster-engine.cjs"
   },
   "dependencies": {
     "next": "^15.3.0",

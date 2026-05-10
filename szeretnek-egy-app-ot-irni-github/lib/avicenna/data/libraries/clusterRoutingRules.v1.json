@@ -1,0 +1,525 @@
+{
+  "id": "clusterRoutingRules.v1",
+  "routing_rules": [
+    {
+      "id": "B18_R001",
+      "condition": "primary_axis == 'LAX' AND laterality == 'unilateral'",
+      "action": "assign_primary_cluster('Lateral Autonomic Decompression')"
+    },
+    {
+      "id": "B18_R002",
+      "condition": "primary_axis == 'PSA' AND pressure_sensitivity == true",
+      "action": "assign_primary_cluster('Posterior Pressure Modulation')"
+    },
+    {
+      "id": "B18_R003",
+      "condition": "primary_axis == 'AMA' AND post_meal_flare == true",
+      "action": "assign_primary_cluster('Anterior Metabolic Rebalancing')"
+    },
+    {
+      "id": "B18_R004",
+      "condition": "primary_axis == 'MIA' AND chest_tightness_noncardiac == true",
+      "action": "assign_primary_cluster('Midline Interoceptive Regulation')"
+    },
+    {
+      "id": "B18_R005",
+      "condition": "primary_axis == 'SVA' AND panic_or_palpitations == true",
+      "action": "assign_primary_cluster('Survival Axis Stabilization')"
+    },
+    {
+      "id": "B18_R006",
+      "condition": "primary_axis == 'DAV' AND burning_neuropathy == true OR pelvic_pain_chronic == true",
+      "action": "assign_primary_cluster('Deep Autonomic-Vascular')"
+    },
+    {
+      "id": "B18_R007",
+      "condition": "primary_axis == 'CIA' AND widespread_pain == true AND failed_treatments >= 2",
+      "action": "assign_primary_cluster('Central Coherence Support')"
+    },
+    {
+      "id": "B18_R008",
+      "condition": "frailty == true",
+      "action": "reduce_intervention_complexity; prefer_gentlest_modalities; flag_for_clinician_review"
+    },
+    {
+      "id": "B18_R009",
+      "condition": "emotional_constraint == true",
+      "action": "prioritise_autonomic_retraining; add_behavioral_support_component"
+    },
+    {
+      "id": "B18_R010",
+      "condition": "digestive_sensitivity == true",
+      "action": "avoid_oral_botanical_interventions; use_external_modalities_only"
+    },
+    {
+      "id": "B18_R011",
+      "condition": "pattern == 'PSA' AND overweight == true AND internal_cold_sensation == true",
+      "action": "flag_archetype('posterior_cold_damp_load'); prioritise_metabolic_warming_support"
+    },
+    {
+      "id": "B18_R012",
+      "condition": "CRPS_phase == 'I'",
+      "action": "assign_pattern('LAX'); avoid_thermal_provocation"
+    },
+    {
+      "id": "B18_R013",
+      "condition": "CRPS_phase == 'II' OR CRPS_phase == 'III'",
+      "action": "assign_pattern('DAV'); consider_pharmacologic_vascular_adjunct"
+    },
+    {
+      "id": "B18_R014",
+      "condition": "system_mode == 'integrative-neutral'",
+      "action": "output_cluster_and_modalities_only; suppress_TCM_terminology; suppress_internal_tags"
+    },
+    {
+      "id": "B18_R015",
+      "condition": "system_mode == 'TCM'",
+      "action": "output_cluster_and_axis_with_TCM_pairs; include_internal_tag_for_practitioner_view"
+    },
+    {
+      "id": "B18_R016",
+      "condition": "debugMode == true OR systemMode == 'internal-audit'",
+      "action": "enable_rule_trace; expose_internal_tags; show_bidirectional_coupling"
+    },
+    {
+      "id": "B18_R017",
+      "condition": "transition_engine_output.primary_axis == transition_engine_output.secondary_axis",
+      "action": "flag_as_single_axis_dominant; secondary_cluster = closest_adjacent_axis"
+    },
+    {
+      "id": "B18_R018",
+      "condition": "multiple_prior_failed_treatments == true AND axis != 'CIA'",
+      "action": "escalate_to_CIA_evaluation; do_not_auto_assign_CIA_without_widespread_pain"
+    },
+    {
+      "id": "B18_R019",
+      "condition": "diagnosis IN ['IIH', 'PRES', 'Arnold-Chiari', 'PDPH']",
+      "action": "assign_pattern('PSA'); mandatory_clinician_review_before_intervention"
+    },
+    {
+      "id": "B18_R020",
+      "condition": "adjunctive_pharmacology_considered == true",
+      "action": "flag_for_prescriber_review; do_not_auto_recommend"
+    }
+  ],
+  "diagnosis_map": [
+    {
+      "diagnosis": "migraine",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Unilateral, stress-triggered, with TMJ involvement → Lateral Autonomic Axis overload. Autonomic switching instability is the primary mechanism."
+    },
+    {
+      "diagnosis": "migraine with autonomic features",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Same as migraine; autonomic features (lacrimation, ptosis, rhinorrhea) increase Lateral Autonomic pattern confidence."
+    },
+    {
+      "diagnosis": "tension-migraine hybrid",
+      "associated_patterns": [
+        "LAX",
+        "PSA"
+      ],
+      "notes": "Primary: lateral autonomic; Secondary: posterior sensory involvement when occipital component is present."
+    },
+    {
+      "diagnosis": "TMJ dysfunction",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Masseter overdrive + lateral autonomic gating dysfunction. Stress amplification common."
+    },
+    {
+      "diagnosis": "occipital headache",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "Posterior sensory axis overload; assess CSF/venous dynamics."
+    },
+    {
+      "diagnosis": "cervicogenic headache",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "Posterior fascia → dural tension → cervicogenic pain. CSF pressure sensitivity may be present."
+    },
+    {
+      "diagnosis": "IIH (idiopathic intracranial hypertension)",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "Classic posterior sensory axis overload. Overweight/metabolic underdrive archetype common. Venous outflow impairment is a key mechanism."
+    },
+    {
+      "diagnosis": "PRES (posterior reversible encephalopathy syndrome)",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "Posterior fossa vascular-pressure dysregulation. Maps to posterior sensory axis."
+    },
+    {
+      "diagnosis": "Arnold-Chiari malformation type I",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "Posterior fossa loading pattern; Chiari-like mechanical CSF disruption."
+    },
+    {
+      "diagnosis": "PDPH (post-dural puncture headache)",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "CSF-venous mismatch post-procedure. Posterior axis pressure sensitivity."
+    },
+    {
+      "diagnosis": "jugular venous outflow obstruction",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "Impaired posterior venous return; contributes to posterior sensory axis overload."
+    },
+    {
+      "diagnosis": "CRPS phase I",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Autonomic-dominant phase. Lateral autonomic gating is the primary pattern. Microvascular fluctuation under autonomic load."
+    },
+    {
+      "diagnosis": "CRPS phase II/III",
+      "associated_patterns": [
+        "DAV"
+      ],
+      "notes": "Deep autonomic-vascular pattern. Visceral afferents amplifying somatic pain. Autonomic recovery impaired."
+    },
+    {
+      "diagnosis": "frozen shoulder",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Lateral kinetic chain tension; shoulder girdle autonomic loading pattern."
+    },
+    {
+      "diagnosis": "subacromial bursitis",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Lateral chain dysfunction; GB-line anatomical territory."
+    },
+    {
+      "diagnosis": "hip bursitis (GTPS)",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Greater trochanteric pain syndrome; lateral lower limb kinetic chain."
+    },
+    {
+      "diagnosis": "carpal tunnel syndrome",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Peripheral nerve entrapment in lateral kinetic chain territory."
+    },
+    {
+      "diagnosis": "radial tunnel syndrome",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Lateral upper limb nerve entrapment pattern."
+    },
+    {
+      "diagnosis": "tarsal tunnel syndrome",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Lower limb lateral entrapment pattern."
+    },
+    {
+      "diagnosis": "plantar fasciitis",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Lower limb lateral chain overload. Peroneal irritation often co-present."
+    },
+    {
+      "diagnosis": "peroneal nerve irritation",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Lateral lower limb nerve pattern."
+    },
+    {
+      "diagnosis": "ACNES (anterior cutaneous nerve entrapment syndrome)",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Thoracolumbar lateral fascial territory; lateral autonomic axis."
+    },
+    {
+      "diagnosis": "thoracic outlet syndrome presentation",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Cervical-brachial lateral tension; lateral autonomic axis."
+    },
+    {
+      "diagnosis": "cervical-brachial tension pattern",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Lateral neck-shoulder loop dysfunction."
+    },
+    {
+      "diagnosis": "QL / lateral chain dysfunction",
+      "associated_patterns": [
+        "LAX"
+      ],
+      "notes": "Thoracolumbar lateral line; lateral autonomic axis."
+    },
+    {
+      "diagnosis": "small fiber neuropathy (SFN root, metabolic pattern)",
+      "associated_patterns": [
+        "AMA"
+      ],
+      "notes": "Metabolic driver dominant. Anterior metabolic axis; gut-metabolism interface dysfunction."
+    },
+    {
+      "diagnosis": "diabetic-pattern pain",
+      "associated_patterns": [
+        "AMA"
+      ],
+      "notes": "Metabolic drive impairment; anterior metabolic axis. May co-present with SFN root."
+    },
+    {
+      "diagnosis": "IBS (front-type / abdominal wall)",
+      "associated_patterns": [
+        "AMA",
+        "MIA"
+      ],
+      "notes": "Primary: anterior metabolic axis (metabolic rigidity, biofilm); Secondary: midline interoceptive (vagal-gut dysregulation) if chest tightness or bloating dominant."
+    },
+    {
+      "diagnosis": "abdominal wall pain",
+      "associated_patterns": [
+        "AMA"
+      ],
+      "notes": "Anterior fascia and metabolic gut interface territory."
+    },
+    {
+      "diagnosis": "post-prandial malaise",
+      "associated_patterns": [
+        "AMA"
+      ],
+      "notes": "Post-meal flare pattern; metabolic rigidity; anterior metabolic axis."
+    },
+    {
+      "diagnosis": "bloating",
+      "associated_patterns": [
+        "MIA"
+      ],
+      "notes": "Midline interoceptive axis; gut-lung feedback disruption. May overlap with AMA if metabolic component strong."
+    },
+    {
+      "diagnosis": "chest tightness (non-cardiopulmonary)",
+      "associated_patterns": [
+        "MIA"
+      ],
+      "notes": "Midline interoceptive axis; diaphragm-rib mobility impairment, viscerosomatic amplification."
+    },
+    {
+      "diagnosis": "visceral hypersensitivity / viscerally amplified pain",
+      "associated_patterns": [
+        "MIA"
+      ],
+      "notes": "Interoceptive axis; vagal-gut dysregulation. May escalate to DAV if deep pelvic involvement."
+    },
+    {
+      "diagnosis": "panic disorder / panic episodes",
+      "associated_patterns": [
+        "SVA"
+      ],
+      "notes": "Survival axis activation; autonomic buffering range collapse. HT-KD integration deficit."
+    },
+    {
+      "diagnosis": "stress-labile tachycardia",
+      "associated_patterns": [
+        "SVA"
+      ],
+      "notes": "Survival axis instability; autonomic range narrowing."
+    },
+    {
+      "diagnosis": "orthostatic headache",
+      "associated_patterns": [
+        "SVA",
+        "PSA"
+      ],
+      "notes": "Primary: survival axis (orthostatic component); Secondary: posterior sensory axis if CSF/venous component present."
+    },
+    {
+      "diagnosis": "heat-cold intolerance",
+      "associated_patterns": [
+        "SVA"
+      ],
+      "notes": "Survival/emotional axis; autonomic thermoregulation failure. Upper-body sympathetic overdrive + lower-body circulatory underdrive."
+    },
+    {
+      "diagnosis": "sleep fragmentation",
+      "associated_patterns": [
+        "SVA"
+      ],
+      "notes": "Survival axis; central arousal dysregulation."
+    },
+    {
+      "diagnosis": "sensory overload / sensory hypersensitivity",
+      "associated_patterns": [
+        "SVA",
+        "CIA"
+      ],
+      "notes": "Survival axis if autonomic-dominant; Central Integration axis if widespread and multi-system."
+    },
+    {
+      "diagnosis": "chronic pelvic pain",
+      "associated_patterns": [
+        "DAV"
+      ],
+      "notes": "Deep autonomic-vascular axis; pelvic loop activation. Visceral-somatic convergence."
+    },
+    {
+      "diagnosis": "endometriosis pain amplification",
+      "associated_patterns": [
+        "DAV"
+      ],
+      "notes": "Deep pelvic visceral afferent amplification; DAV axis."
+    },
+    {
+      "diagnosis": "chronic bladder / pelvic floor tension",
+      "associated_patterns": [
+        "DAV"
+      ],
+      "notes": "Pelvic autonomic loop; deep autonomic-vascular axis."
+    },
+    {
+      "diagnosis": "burning neuropathy (autonomic-vascular type)",
+      "associated_patterns": [
+        "DAV"
+      ],
+      "notes": "Ischemic-type neural pain; vascular tone instability; deep autonomic-vascular axis."
+    },
+    {
+      "diagnosis": "functional abdominal pain syndrome",
+      "associated_patterns": [
+        "DAV",
+        "MIA"
+      ],
+      "notes": "If visceral-somatic loops and deep pelvic → DAV primary. If bloating/diaphragm/vagal → MIA primary."
+    },
+    {
+      "diagnosis": "chronic venous congestion with sensory hypersensitivity",
+      "associated_patterns": [
+        "DAV"
+      ],
+      "notes": "Deep autonomic-vascular axis; vascular tone instability."
+    },
+    {
+      "diagnosis": "post-surgical adhesion pain (deep sensory component)",
+      "associated_patterns": [
+        "DAV"
+      ],
+      "notes": "Deep fascia contraction under chronic load; visceral afferent amplification."
+    },
+    {
+      "diagnosis": "fibromyalgia",
+      "associated_patterns": [
+        "CIA"
+      ],
+      "notes": "Central integration axis failure; multi-axis overload. Often the terminal state of unresolved other-axis patterns."
+    },
+    {
+      "diagnosis": "widespread pain / central sensitization",
+      "associated_patterns": [
+        "CIA"
+      ],
+      "notes": "Central integration axis; network-level desynchrony. Multiple failed treatments expected."
+    },
+    {
+      "diagnosis": "ADHD-like stress intolerance",
+      "associated_patterns": [
+        "CIA"
+      ],
+      "notes": "Central integration failure; midline ANS-brainstem synchrony disrupted."
+    },
+    {
+      "diagnosis": "post-stress central fatigue / CFS-like",
+      "associated_patterns": [
+        "CIA",
+        "MIA"
+      ],
+      "notes": "Primary: central integration axis (multi-axis overload). Midline interoceptive involvement if gut-lung-fatigue triad present."
+    },
+    {
+      "diagnosis": "early diastolic dysfunction",
+      "associated_patterns": [
+        "PSA"
+      ],
+      "notes": "Reduced ventricular relaxation → venous pressure pattern feeding into posterior sensory axis overload."
+    }
+  ],
+  "internal_backend_translation_map": {
+    "note": "This section is for internal engine reasoning only. Never expose these terms on frontend.",
+    "translations": [
+      {
+        "frontend_term": "neurovascular electromechanical coherence",
+        "backend_concept": "Etheric blood-field / cardiac field coupling"
+      },
+      {
+        "frontend_term": "chronic autonomic patterning / fascia-based trauma imprint",
+        "backend_concept": "Trauma imprinting in fascia, EZ-water, mitochondria"
+      },
+      {
+        "frontend_term": "survival-axis capacity reduction / reduced autonomic buffering range",
+        "backend_concept": "Shaoyin capacity collapse (HT/KD)"
+      },
+      {
+        "frontend_term": "mitochondrial underdrive / metabolic slowing",
+        "backend_concept": "Mitochondria-Yang relationship failure"
+      },
+      {
+        "frontend_term": "network-level synchrony vs. desynchrony",
+        "backend_concept": "Field coherence / incoherence"
+      },
+      {
+        "frontend_term": "top-down meaning integration via limbic-cardiac axis",
+        "backend_concept": "HUN-Heart conduction"
+      },
+      {
+        "frontend_term": "restored intrinsic metabolic drive / improved microcirculation",
+        "backend_concept": "Warm from within physiology"
+      }
+    ]
+  },
+  "frontend_visibility_rules": {
+    "integrative_neutral": [
+      "cluster name",
+      "short rationale",
+      "general modality categories"
+    ],
+    "hidden": [
+      "internal_tag",
+      "meridian names",
+      "TCM pairs",
+      "backend translation map",
+      "herb formulas"
+    ],
+    "tcm_practitioner": [
+      "axis with TCM pair"
+    ],
+    "debug_internal_audit": [
+      "rule trace",
+      "internal tags",
+      "bidirectional coupling"
+    ]
+  }
+}

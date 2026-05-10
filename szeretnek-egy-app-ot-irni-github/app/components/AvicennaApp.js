@@ -2365,6 +2365,112 @@ const triAxialMetabolicFlags = [
   ["supplement_selected_without_lab", "Supplement selected without labs"]
 ];
 
+const treatmentClusterInitialInput = {
+  system_mode: "integrative-neutral",
+  functional_axis_primary: "LAX",
+  functional_axis_secondary: "",
+  pain_laterality: "",
+  diagnosis: "",
+  crps_phase: "",
+  failed_treatments: "",
+  pressure_sensitivity: false,
+  post_meal_flare: false,
+  chest_tightness_noncardiac: false,
+  panic_or_palpitations: false,
+  burning_neuropathy: false,
+  pelvic_pain_chronic: false,
+  widespread_pain: false,
+  multi_system_features: false,
+  multiple_prior_failed_treatments: false,
+  frailty: false,
+  digestive_sensitivity: false,
+  emotional_constraint: false,
+  overweight: false,
+  internal_cold_sensation: false,
+  adjunctive_pharmacology_considered: false,
+  generate_pdf_summary: false
+};
+
+const treatmentClusterFieldGroups = [
+  {
+    key: "system_mode",
+    label: "Output mode",
+    options: [
+      ["integrative-neutral", "Integrative-neutral", "Cluster and modality categories only"],
+      ["TCM", "Practitioner TCM", "Adds axis pairs without exposing backend maps"],
+      ["internal-audit", "Internal audit", "Shows rule trace, internal tags, and couplings"]
+    ]
+  },
+  {
+    key: "functional_axis_primary",
+    label: "Primary functional axis",
+    options: [
+      ["LAX", "LAX", "Lateral autonomic dysfunction"],
+      ["PSA", "PSA", "Posterior sensory overload"],
+      ["AMA", "AMA", "Anterior metabolic imbalance"],
+      ["MIA", "MIA", "Midline interoceptive dysregulation"],
+      ["SVA", "SVA", "Survival axis instability"],
+      ["DAV", "DAV", "Deep autonomic-vascular dysregulation"],
+      ["CIA", "CIA", "Central integration failure"]
+    ]
+  },
+  {
+    key: "functional_axis_secondary",
+    label: "Secondary functional axis",
+    options: [
+      ["", "Infer / adjacent", "Use the closest adjacent axis if none is clear"],
+      ["LAX", "LAX", "Lateral autonomic dysfunction"],
+      ["PSA", "PSA", "Posterior sensory overload"],
+      ["AMA", "AMA", "Anterior metabolic imbalance"],
+      ["MIA", "MIA", "Midline interoceptive dysregulation"],
+      ["SVA", "SVA", "Survival axis instability"],
+      ["DAV", "DAV", "Deep autonomic-vascular dysregulation"],
+      ["CIA", "CIA", "Central integration failure"]
+    ]
+  },
+  {
+    key: "pain_laterality",
+    label: "Laterality",
+    options: [
+      ["", "Not specified", "No laterality rule"],
+      ["unilateral", "Unilateral", "Supports lateral autonomic routing"],
+      ["bilateral", "Bilateral", "No LAX unilateral rule"]
+    ]
+  },
+  {
+    key: "crps_phase",
+    label: "CRPS phase",
+    options: [
+      ["", "Not relevant", "No CRPS phase rule"],
+      ["I", "Phase I", "Routes toward LAX"],
+      ["II", "Phase II", "Routes toward DAV"],
+      ["III", "Phase III", "Routes toward DAV"]
+    ]
+  }
+];
+
+const treatmentClusterFlags = [
+  ["pressure_sensitivity", "Pressure sensitivity"],
+  ["post_meal_flare", "Post-meal flare"],
+  ["chest_tightness_noncardiac", "Non-cardiac chest tightness"],
+  ["panic_or_palpitations", "Panic or palpitations"],
+  ["burning_neuropathy", "Burning neuropathy"],
+  ["pelvic_pain_chronic", "Chronic pelvic pain"],
+  ["widespread_pain", "Widespread pain"],
+  ["multi_system_features", "Multi-system central features"],
+  ["multiple_prior_failed_treatments", "At least 2 failed treatments"],
+  ["overweight", "Overweight / posterior load"],
+  ["internal_cold_sensation", "Internal cold sensation"]
+];
+
+const treatmentClusterReviewFlags = [
+  ["frailty", "Frailty"],
+  ["digestive_sensitivity", "Digestive sensitivity"],
+  ["emotional_constraint", "Emotional constraint"],
+  ["adjunctive_pharmacology_considered", "Adjunctive pharmacology considered"],
+  ["generate_pdf_summary", "Generate PDF summary flag"]
+];
+
 function titleCase(value) {
   return String(value || "Unknown")
     .replace(/_/g, " ")
@@ -2544,6 +2650,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("triaxial")}
       >
         Tri-axial + metabolic
+      </button>
+      <button
+        className={mode === "cluster" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("cluster")}
+      >
+        Treatment clusters
       </button>
     </nav>
   );
@@ -4361,6 +4474,218 @@ function TriAxialModulesSection() {
   );
 }
 
+function TreatmentClusterResult({ result, advanced, onReset }) {
+  if (!result) return null;
+
+  const patient = result.patient || {};
+  const output = result.per_patient_output || {};
+
+  return (
+    <aside className="av-output av-headache-output" aria-live="polite">
+      <div className={result.clinician_review_required ? "av-output-header av-output-header-danger" : "av-output-header"}>
+        <p>Treatment cluster routing</p>
+        <strong>{output.primary_cluster || result.primary_cluster}</strong>
+      </div>
+
+      <section>
+        <h2>Clinical direction</h2>
+        <p>{output.clinical_rationale || patient.summary}</p>
+        <div className="av-mini-grid">
+          <span><strong>Primary</strong>{output.primary_cluster}</span>
+          <span><strong>Secondary</strong>{output.secondary_cluster}</span>
+          <span><strong>Single-axis</strong>{result.single_axis_dominance ? "Yes" : "No"}</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Non-prescriptive overview</h2>
+        <p>{output.intervention_overview}</p>
+      </section>
+
+      <TagSection
+        title="Clinician review flags"
+        items={result.clinician_review_flags || []}
+        tone="avoid"
+        empty="No clinician review flag from this routing layer."
+      />
+      <TagSection
+        title="Contraindications"
+        items={result.contraindications || []}
+        tone="avoid"
+        empty="No additional contraindication from this routing layer."
+      />
+
+      <section className="av-safety-box">
+        <h2>Safety notes</h2>
+        {(patient.safety_notes || []).map((note) => <p key={note}>{note}</p>)}
+      </section>
+
+      {advanced && (
+        <details className="av-debug" open>
+          <summary>Practitioner / internal audit panel</summary>
+          <section>
+            <h2>Mode</h2>
+            <p>{result.system_mode}</p>
+          </section>
+          <TagSection
+            title="Triggered rules"
+            items={(result.triggered_rules || []).map((rule) => `${rule.id}: ${rule.reason || rule.action}`)}
+            tone="mod"
+            empty="No rules triggered."
+          />
+          <TagSection
+            title="Core principles"
+            items={result.key_principles || []}
+            tone="effect"
+            empty="No principles listed."
+          />
+          <TagSection
+            title="Cross-module links"
+            items={result.cross_module_links || []}
+            tone="effect"
+            empty="No cross-module links listed."
+          />
+          <pre>{JSON.stringify(result.clinician || output.internal_debug || {}, null, 2)}</pre>
+        </details>
+      )}
+
+      <button className="av-secondary-button" type="button" onClick={onReset}>
+        Start again
+      </button>
+    </aside>
+  );
+}
+
+function TreatmentClusterSection() {
+  const [input, setInput] = useState(treatmentClusterInitialInput);
+  const [result, setResult] = useState(null);
+  const [advanced, setAdvanced] = useState(false);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setField(key, value) {
+    setInput((current) => ({ ...current, [key]: value }));
+  }
+
+  async function submit(event) {
+    event.preventDefault();
+    setError("");
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/treatment-cluster", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(input)
+      });
+      const body = await response.json();
+
+      if (!response.ok) throw new Error(body.error || "Treatment cluster evaluation failed");
+      setResult(body);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function reset() {
+    setInput(treatmentClusterInitialInput);
+    setResult(null);
+    setError("");
+  }
+
+  return (
+    <div className="av-workspace av-headache-workspace">
+      <form className="av-form" onSubmit={submit}>
+        <section className="av-section">
+          <h2>TREATMENT_CLUSTER_ENGINE_v1.0</h2>
+          <p className="av-muted">
+            Converts Transition Engine output into one primary and one secondary clinical direction. Clusters are not diagnoses.
+          </p>
+        </section>
+
+        {treatmentClusterFieldGroups.map((group) => (
+          <section className="av-section" key={group.key}>
+            <h2>{group.label}</h2>
+            <div className="av-options">
+              {group.options.map(([value, label, description]) => (
+                <label className="av-option" key={`${group.key}-${value || "blank"}`}>
+                  <input
+                    type="radio"
+                    name={group.key}
+                    value={value}
+                    checked={input[group.key] === value}
+                    onChange={() => setField(group.key, value)}
+                  />
+                  <span>
+                    <strong>{label}</strong>
+                    <small>{description}</small>
+                  </span>
+                </label>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <ToggleList
+          title="Routing features"
+          items={treatmentClusterFlags}
+          selected={treatmentClusterFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+        />
+
+        <ToggleList
+          title="Safety / review modifiers"
+          items={treatmentClusterReviewFlags}
+          selected={treatmentClusterReviewFlags.filter(([key]) => input[key]).map(([key]) => key)}
+          onToggle={(value) => setField(value, !input[value])}
+          safety
+        />
+
+        <section className="av-section">
+          <h2>Diagnosis routing context</h2>
+          <input
+            className="av-file"
+            type="text"
+            placeholder="Optional diagnosis context, e.g. IIH, CRPS, fibromyalgia"
+            value={input.diagnosis}
+            onChange={(event) => setField("diagnosis", event.target.value)}
+          />
+          <input
+            className="av-number"
+            min="0"
+            type="number"
+            placeholder="Failed treatment count"
+            value={input.failed_treatments}
+            onChange={(event) => setField("failed_treatments", event.target.value)}
+          />
+          <p className="av-muted">Diagnosis is used only as a routing hint; the functional axis remains primary.</p>
+        </section>
+
+        <section className="av-section">
+          <h2>Advanced panel</h2>
+          <label className="av-check">
+            <input
+              type="checkbox"
+              checked={advanced}
+              onChange={(event) => setAdvanced(event.target.checked)}
+            />
+            <span>Show practitioner/internal routing details</span>
+          </label>
+        </section>
+
+        {error && <p className="av-error">{error}</p>}
+
+        <button className="av-primary-button" type="submit" disabled={isLoading}>
+          {isLoading ? "Evaluating..." : "Evaluate treatment clusters"}
+        </button>
+      </form>
+
+      <TreatmentClusterResult result={result} advanced={advanced} onReset={reset} />
+    </div>
+  );
+}
+
 function TransitionResult({ result, advanced, onReset }) {
   if (!result) return null;
 
@@ -4913,6 +5238,8 @@ export default function AvicennaApp() {
                     ? "Platform Philosophy & Architecture"
                     : mode === "triaxial"
                       ? "Headache Tri-Axial / TGN / Metabolic Rhythm"
+                      : mode === "cluster"
+                        ? "Treatment Cluster Engine"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -4933,6 +5260,8 @@ export default function AvicennaApp() {
                     ? "Three-question UX, instability routing, case-quality architecture, and cross-system translation rules"
                     : mode === "triaxial"
                       ? "Grid-state headache routing, trigeminal neuralgia safeguards, and metabolic rhythm restoration"
+                      : mode === "cluster"
+                        ? "7-functional-axis routing into primary and secondary treatment clusters"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
@@ -4960,6 +5289,8 @@ export default function AvicennaApp() {
         <PlatformArchitectureSection />
       ) : mode === "triaxial" ? (
         <TriAxialModulesSection />
+      ) : mode === "cluster" ? (
+        <TreatmentClusterSection />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (
