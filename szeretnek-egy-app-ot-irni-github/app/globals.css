@@ -478,30 +478,63 @@ input[type="number"] {
 }
 
 .av-damp-cold-stage {
+  aspect-ratio: 16 / 9;
   background: #040a10;
   border: 1px solid rgba(174, 210, 216, 0.13);
   border-radius: 8px;
   box-shadow:
     0 36px 120px rgba(0, 0, 0, 0.48),
     inset 0 0 90px rgba(11, 35, 52, 0.42);
-  min-height: min(820px, calc(100vh - 168px));
   overflow: hidden;
   position: relative;
 }
 
-.av-damp-cold-video {
+.av-damp-cold-video-shell {
   height: 100%;
   inset: 0;
-  object-fit: cover;
   opacity: 0;
   position: absolute;
-  transform: scale(1.001);
   transition: opacity 2200ms ease;
   width: 100%;
 }
 
-.av-damp-cold-stage-ready .av-damp-cold-video {
+.av-damp-cold-stage-ready .av-damp-cold-video-shell {
   opacity: 0.94;
+}
+
+.av-damp-cold-video {
+  border: 0;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.av-damp-cold-play-state {
+  background: rgba(5, 15, 22, 0.5);
+  border: 1px solid rgba(208, 230, 232, 0.14);
+  border-radius: 999px;
+  color: rgba(225, 236, 236, 0.74);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  left: clamp(24px, 7vw, 92px);
+  padding: 8px 11px;
+  position: absolute;
+  right: auto;
+  text-decoration: none;
+  top: clamp(22px, 5vw, 62px);
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+  z-index: 4;
+}
+
+.av-damp-cold-play-state:hover {
+  background: rgba(9, 24, 34, 0.72);
+  border-color: rgba(218, 182, 93, 0.34);
+  color: #f5ead1;
 }
 
 .av-damp-cold-gradient,
@@ -667,28 +700,6 @@ input[type="number"] {
   opacity: 0.26;
 }
 
-.av-damp-cold-fallback {
-  background: rgba(4, 12, 19, 0.82);
-  border: 1px solid rgba(210, 232, 236, 0.16);
-  border-radius: 8px;
-  color: rgba(236, 245, 245, 0.84);
-  display: grid;
-  gap: 5px;
-  left: 50%;
-  max-width: min(420px, calc(100% - 48px));
-  padding: 16px 18px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-}
-
-.av-damp-cold-fallback span {
-  color: rgba(218, 230, 231, 0.64);
-  font-size: 14px;
-}
-
 @keyframes dampColdFlow {
   0% {
     opacity: 0.16;
@@ -714,13 +725,14 @@ input[type="number"] {
   }
 
   .av-damp-cold-stage {
-    min-height: 78vh;
+    aspect-ratio: auto;
+    min-height: 76vh;
   }
 
   .av-terrain-coordinate {
     left: 18px;
     right: 18px;
-    top: 18px;
+    top: 58px;
   }
 
   .av-proton-flow {

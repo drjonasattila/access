@@ -1942,6 +1942,12 @@ const taiyangSafetyFlags = [
   ["debugMode", "Debug mode"]
 ];
 
+const DAMP_COLD_YOUTUBE_ID = "ImpMLWzXdIM";
+const DAMP_COLD_YOUTUBE_URL = `https://youtu.be/${DAMP_COLD_YOUTUBE_ID}`;
+const DAMP_COLD_YOUTUBE_EMBED =
+  `https://www.youtube-nocookie.com/embed/${DAMP_COLD_YOUTUBE_ID}` +
+  `?autoplay=1&mute=1&loop=1&playlist=${DAMP_COLD_YOUTUBE_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`;
+
 const transitionInitialInput = {
   systemMode: "patient",
   headache_quality: "",
@@ -5493,25 +5499,30 @@ function CranialRezDuralSection() {
 }
 
 function DampColdTerrainModule() {
-  const [videoReady, setVideoReady] = useState(false);
-  const [videoError, setVideoError] = useState(false);
-
   return (
     <section className="av-damp-cold-module" aria-label="Damp-Cold cinematic terrain state">
-      <div className={videoReady ? "av-damp-cold-stage av-damp-cold-stage-ready" : "av-damp-cold-stage"}>
-        <video
-          aria-label="Damp-Cold terrain-state video"
-          autoPlay
-          className="av-damp-cold-video"
-          loop
-          muted
-          playsInline
-          preload="auto"
-          onCanPlay={() => setVideoReady(true)}
-          onError={() => setVideoError(true)}
+      <div className="av-damp-cold-stage av-damp-cold-stage-ready">
+        <div className="av-damp-cold-video-shell">
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            aria-label="Damp-Cold terrain-state video"
+            className="av-damp-cold-video"
+            loading="eager"
+            referrerPolicy="strict-origin-when-cross-origin"
+            src={DAMP_COLD_YOUTUBE_EMBED}
+            title="Damp-Cold terrain-state cinematic video"
+          />
+        </div>
+
+        <a
+          className="av-damp-cold-play-state"
+          href={DAMP_COLD_YOUTUBE_URL}
+          rel="noreferrer"
+          target="_blank"
         >
-          <source src="/api/terrain-video/damp-cold" type="video/quicktime" />
-        </video>
+          Play cinematic state
+        </a>
 
         <div className="av-damp-cold-gradient" aria-hidden="true" />
         <div className="av-damp-cold-depth" aria-hidden="true" />
@@ -5520,8 +5531,10 @@ function DampColdTerrainModule() {
           <p>Terrain State</p>
           <h2>Damp-Cold</h2>
           <div className="av-damp-cold-labels" aria-label="Terrain descriptors">
-            <span>Slowed conduction</span>
+            <span>Slowed biological conduction</span>
+            <span>Dampened low-energy terrain</span>
             <span>Reduced biological responsiveness</span>
+            <span>Cold submerged fascia-water dynamics</span>
           </div>
         </div>
 
@@ -5553,13 +5566,6 @@ function DampColdTerrainModule() {
           <span />
           <span />
         </div>
-
-        {videoError && (
-          <div className="av-damp-cold-fallback">
-            <strong>Damp-Cold video unavailable</strong>
-            <span>Connect the external media drive or update the local terrain-video path.</span>
-          </div>
-        )}
       </div>
     </section>
   );
@@ -6152,7 +6158,7 @@ export default function AvicennaApp() {
                           : mode === "cranial"
                             ? "Plate-Pulse-Plexus cranial routing, posterior fossa resonance, dural continuum, and steroid response prediction"
                             : mode === "dampCold"
-                              ? "Slowed conduction, dampened fascia-water dynamics, and reduced biological responsiveness"
+                              ? "Slowed biological conduction, dampened low-energy terrain, and cold submerged fascia-water dynamics"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
