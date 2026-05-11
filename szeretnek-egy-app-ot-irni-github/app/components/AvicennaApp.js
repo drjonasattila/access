@@ -2969,6 +2969,13 @@ function ModeTabs({ mode, onChange }) {
       >
         Cranial REZ
       </button>
+      <button
+        className={mode === "dampCold" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("dampCold")}
+      >
+        Damp-Cold
+      </button>
     </nav>
   );
 }
@@ -5485,6 +5492,79 @@ function CranialRezDuralSection() {
   );
 }
 
+function DampColdTerrainModule() {
+  const [videoReady, setVideoReady] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+
+  return (
+    <section className="av-damp-cold-module" aria-label="Damp-Cold cinematic terrain state">
+      <div className={videoReady ? "av-damp-cold-stage av-damp-cold-stage-ready" : "av-damp-cold-stage"}>
+        <video
+          aria-label="Damp-Cold terrain-state video"
+          autoPlay
+          className="av-damp-cold-video"
+          loop
+          muted
+          playsInline
+          preload="auto"
+          onCanPlay={() => setVideoReady(true)}
+          onError={() => setVideoError(true)}
+        >
+          <source src="/api/terrain-video/damp-cold" type="video/quicktime" />
+        </video>
+
+        <div className="av-damp-cold-gradient" aria-hidden="true" />
+        <div className="av-damp-cold-depth" aria-hidden="true" />
+
+        <div className="av-damp-cold-overlay">
+          <p>Terrain State</p>
+          <h2>Damp-Cold</h2>
+          <div className="av-damp-cold-labels" aria-label="Terrain descriptors">
+            <span>Slowed conduction</span>
+            <span>Reduced biological responsiveness</span>
+          </div>
+        </div>
+
+        <div className="av-terrain-coordinate" aria-label="Biomechanical terrain coordinate">
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Damp</span>
+            <i />
+            <span>Dry</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Cold</span>
+            <i />
+            <span>Heat</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Undercharged</span>
+            <i />
+            <span>Overcharged</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Collapse</span>
+            <i />
+            <span>Coherent</span>
+          </div>
+        </div>
+
+        <div className="av-proton-flow" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+
+        {videoError && (
+          <div className="av-damp-cold-fallback">
+            <strong>Damp-Cold video unavailable</strong>
+            <span>Connect the external media drive or update the local terrain-video path.</span>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function TransitionResult({ result, advanced, onReset }) {
   if (!result) return null;
 
@@ -6043,6 +6123,8 @@ export default function AvicennaApp() {
                           ? "Biophysical Substrate Engine"
                           : mode === "cranial"
                             ? "Cranial REZ / Dural Engine"
+                            : mode === "dampCold"
+                              ? "Damp-Cold Terrain State"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -6069,11 +6151,13 @@ export default function AvicennaApp() {
                           ? "EZ oscillator, fascia-nerve movement, cervical prevertebral, and oncology meaning-layer safety logic"
                           : mode === "cranial"
                             ? "Plate-Pulse-Plexus cranial routing, posterior fossa resonance, dural continuum, and steroid response prediction"
+                            : mode === "dampCold"
+                              ? "Slowed conduction, dampened fascia-water dynamics, and reduced biological responsiveness"
               : "Rule-based terrain assessment and tea protocol builder";
 
   return (
-    <main className="av-page">
-      <header className="av-header">
+    <main className={mode === "dampCold" ? "av-page av-page-cinematic" : "av-page"}>
+      <header className={mode === "dampCold" ? "av-header av-header-cinematic" : "av-header"}>
         <p>Avicenna Clinical Engine</p>
         <h1>{title}</h1>
         <span>{subtitle}</span>
@@ -6102,6 +6186,8 @@ export default function AvicennaApp() {
         <BiophysicalSubstrateSection />
       ) : mode === "cranial" ? (
         <CranialRezDuralSection />
+      ) : mode === "dampCold" ? (
+        <DampColdTerrainModule />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (

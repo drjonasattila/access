@@ -18,6 +18,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - A Batch 18 Treatment Cluster / 7-functional-axis routing endpoint at `app/api/treatment-cluster/route.js`
 - A Batch 19 Biophysical Substrate endpoint at `app/api/biophysical-substrate/route.js`
 - A Batch 20 Cranial REZ / Dural Continuum endpoint at `app/api/cranial-rez-dural/route.js`
+- A cinematic Damp-Cold terrain-state video stream endpoint at `app/api/terrain-video/damp-cold/route.js`
 - The migrated rule engine in `lib/avicenna/engine.cjs`
 - The Batch 6 headache engine in `lib/avicenna/headacheEngine.cjs`
 - The Batch 10 pharyngeal arch engine in `lib/avicenna/pharyngealArchEngine.cjs`
@@ -31,6 +32,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - The Batch 18 Treatment Cluster Engine in `lib/avicenna/treatmentClusterEngine.cjs`
 - The Batch 19 Biophysical Substrate Engine in `lib/avicenna/biophysicalSubstrateEngine.cjs`
 - The Batch 20 Cranial REZ / Dural Engine in `lib/avicenna/cranialRezDuralEngine.cjs`
+- An immersive Damp-Cold terrain module in `app/components/AvicennaApp.js`; it streams the local source movie from `/Volumes/Extreme SSD/Kling videos/Avicenna videos/Avicenna Damp-Cold.mov` rather than committing the large media file into Git. Set `AVICENNA_DAMP_COLD_VIDEO_PATH` to override that local media path.
 - Claude-exported data files in `lib/avicenna/data/`
 - Batch 6 structured source data in `lib/avicenna/data/engines/headacheEngine.batch6.json`
 - Batch 7 headache/pain extension data in `lib/avicenna/data/engines/avicenna_engine_batch7.json`
