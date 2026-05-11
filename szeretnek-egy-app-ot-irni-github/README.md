@@ -31,7 +31,7 @@ Next.js wrapper for the Claude-exported Avicenna wellness rule engine.
 - The Batch 18 Treatment Cluster Engine in `lib/avicenna/treatmentClusterEngine.cjs`
 - The Batch 19 Biophysical Substrate Engine in `lib/avicenna/biophysicalSubstrateEngine.cjs`
 - The Batch 20 Cranial REZ / Dural Engine in `lib/avicenna/cranialRezDuralEngine.cjs`
-- Immersive Damp-Cold, Damp-Heat, and Dry-Cold terrain modules in `app/components/AvicennaApp.js`; they embed externally hosted YouTube terrain films at `https://youtu.be/ImpMLWzXdIM`, `https://youtu.be/uzDIVfpVBNI`, and `https://youtu.be/PekqIFDvagU` and do not store video media in Git.
+- Immersive Damp-Cold, Damp-Heat, Dry-Cold, and Dry-Heat terrain modules in `app/components/AvicennaApp.js`; they embed externally hosted YouTube terrain films at `https://youtu.be/ImpMLWzXdIM`, `https://youtu.be/uzDIVfpVBNI`, `https://youtu.be/PekqIFDvagU`, and `https://youtu.be/mO-b_CEx5X8` and do not store video media in Git.
 - Claude-exported data files in `lib/avicenna/data/`
 - Batch 6 structured source data in `lib/avicenna/data/engines/headacheEngine.batch6.json`
 - Batch 7 headache/pain extension data in `lib/avicenna/data/engines/avicenna_engine_batch7.json`
