@@ -516,6 +516,15 @@ input[type="number"] {
     inset 0 0 34px rgba(216, 126, 62, 0.1);
 }
 
+.av-tension-release-stage {
+  background: #030a0f;
+  border-color: rgba(176, 216, 209, 0.15);
+  box-shadow:
+    0 34px 120px rgba(0, 0, 0, 0.48),
+    inset 0 0 92px rgba(10, 45, 50, 0.28),
+    inset 0 0 34px rgba(188, 164, 86, 0.09);
+}
+
 .av-damp-cold-video-shell {
   height: 100%;
   inset: 0;
@@ -581,6 +590,12 @@ input[type="number"] {
   color: #f1dfbf;
 }
 
+.av-tension-release-play-state:hover {
+  background: rgba(8, 28, 31, 0.72);
+  border-color: rgba(176, 216, 209, 0.3);
+  color: rgba(235, 244, 239, 0.92);
+}
+
 .av-damp-cold-gradient,
 .av-damp-cold-depth {
   inset: 0;
@@ -641,6 +656,20 @@ input[type="number"] {
     linear-gradient(298deg, rgba(221, 126, 63, 0.13), transparent 46%),
     linear-gradient(0deg, rgba(214, 167, 78, 0.06), transparent 56%);
   opacity: 0.5;
+}
+
+.av-tension-release-module .av-damp-cold-gradient {
+  background:
+    linear-gradient(90deg, rgba(2, 7, 11, 0.68), rgba(8, 23, 24, 0.18) 46%, rgba(3, 7, 9, 0.62)),
+    linear-gradient(180deg, rgba(3, 9, 13, 0.46), rgba(5, 19, 20, 0.05) 42%, rgba(2, 6, 8, 0.76));
+}
+
+.av-tension-release-module .av-damp-cold-depth {
+  background:
+    linear-gradient(116deg, rgba(109, 172, 166, 0.14), transparent 42%),
+    linear-gradient(306deg, rgba(202, 176, 92, 0.08), transparent 48%),
+    linear-gradient(0deg, rgba(141, 190, 197, 0.07), transparent 60%);
+  opacity: 0.46;
 }
 
 .av-damp-cold-overlay {
@@ -820,6 +849,29 @@ input[type="number"] {
   left: 38%;
 }
 
+.av-tension-release-module .av-terrain-axis i {
+  background: linear-gradient(90deg, rgba(168, 214, 211, 0.52), rgba(205, 177, 91, 0.24));
+  opacity: 0.64;
+}
+
+.av-tension-release-module .av-terrain-axis i::after {
+  background: #d8ebe7;
+  box-shadow: 0 0 16px rgba(161, 215, 208, 0.5);
+  left: 50%;
+}
+
+.av-tension-release-module .av-terrain-axis:nth-child(2) i::after {
+  left: 48%;
+}
+
+.av-tension-release-module .av-terrain-axis:nth-child(3) i::after {
+  left: 48%;
+}
+
+.av-tension-release-module .av-terrain-axis:nth-child(4) i::after {
+  left: 62%;
+}
+
 .av-proton-flow {
   bottom: 36px;
   display: grid;
@@ -943,6 +995,36 @@ input[type="number"] {
   opacity: 0.16;
 }
 
+.av-tension-release-module .av-proton-flow {
+  gap: 15px;
+  opacity: 0.52;
+  width: 224px;
+}
+
+.av-tension-release-module .av-proton-flow span {
+  background: linear-gradient(90deg, transparent, rgba(166, 216, 210, 0.62), rgba(215, 187, 98, 0.36), transparent);
+  opacity: 0.3;
+}
+
+.av-tension-release-module .av-proton-flow span:nth-child(1) {
+  animation: tensionReleaseFlow 10.5s ease-in-out infinite;
+}
+
+.av-tension-release-module .av-proton-flow span:nth-child(2) {
+  animation: tensionReleaseFlow 12s ease-in-out infinite;
+  opacity: 0.26;
+}
+
+.av-tension-release-module .av-proton-flow span:nth-child(3) {
+  animation: tensionReleaseFlow 13.5s ease-in-out infinite;
+  opacity: 0.22;
+}
+
+.av-tension-release-module .av-proton-flow span:nth-child(4) {
+  animation: tensionReleaseFlow 15s ease-in-out infinite;
+  opacity: 0.18;
+}
+
 @keyframes dampColdFlow {
   0% {
     opacity: 0.16;
@@ -955,6 +1037,25 @@ input[type="number"] {
   100% {
     opacity: 0.12;
     transform: scaleX(0.22);
+  }
+}
+
+@keyframes tensionReleaseFlow {
+  0% {
+    opacity: 0.12;
+    transform: scaleX(0.2);
+  }
+  44% {
+    opacity: 0.48;
+    transform: scaleX(1);
+  }
+  76% {
+    opacity: 0.28;
+    transform: scaleX(0.74);
+  }
+  100% {
+    opacity: 0.16;
+    transform: scaleX(0.42);
   }
 }
 

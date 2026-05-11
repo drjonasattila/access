@@ -1962,6 +1962,11 @@ const DRY_HEAT_YOUTUBE_URL = `https://youtu.be/${DRY_HEAT_YOUTUBE_ID}`;
 const DRY_HEAT_YOUTUBE_EMBED =
   `https://www.youtube-nocookie.com/embed/${DRY_HEAT_YOUTUBE_ID}` +
   `?autoplay=1&mute=1&loop=1&playlist=${DRY_HEAT_YOUTUBE_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`;
+const TENSION_RELEASE_YOUTUBE_ID = "3jI6X8e2J18";
+const TENSION_RELEASE_YOUTUBE_URL = `https://youtu.be/${TENSION_RELEASE_YOUTUBE_ID}`;
+const TENSION_RELEASE_YOUTUBE_EMBED =
+  `https://www.youtube-nocookie.com/embed/${TENSION_RELEASE_YOUTUBE_ID}` +
+  `?autoplay=1&mute=1&loop=1&playlist=${TENSION_RELEASE_YOUTUBE_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`;
 
 const transitionInitialInput = {
   systemMode: "patient",
@@ -3017,6 +3022,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("dryHeat")}
       >
         Dry-Heat
+      </button>
+      <button
+        className={mode === "tensionRelease" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("tensionRelease")}
+      >
+        Tension Release
       </button>
     </nav>
   );
@@ -5827,6 +5839,79 @@ function DryHeatTerrainModule() {
   );
 }
 
+function TensionReleaseModule() {
+  return (
+    <section className="av-damp-cold-module av-tension-release-module" aria-label="Tension Release cinematic transition state">
+      <div className="av-damp-cold-stage av-damp-cold-stage-ready av-tension-release-stage">
+        <div className="av-damp-cold-video-shell">
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            aria-label="Tension Release transition-state video"
+            className="av-damp-cold-video"
+            loading="eager"
+            referrerPolicy="strict-origin-when-cross-origin"
+            src={TENSION_RELEASE_YOUTUBE_EMBED}
+            title="Tension Release cinematic transition-state video"
+          />
+        </div>
+
+        <a
+          className="av-damp-cold-play-state av-tension-release-play-state"
+          href={TENSION_RELEASE_YOUTUBE_URL}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Play transition state
+        </a>
+
+        <div className="av-damp-cold-gradient" aria-hidden="true" />
+        <div className="av-damp-cold-depth" aria-hidden="true" />
+
+        <div className="av-damp-cold-overlay">
+          <p>Transition State</p>
+          <h2>Tension Release</h2>
+          <div className="av-damp-cold-labels" aria-label="Transition descriptors">
+            <span>Biologic decompression</span>
+            <span>Restoring adaptive flow</span>
+            <span>Pressure begins to dissolve</span>
+          </div>
+        </div>
+
+        <div className="av-terrain-coordinate" aria-label="Biomechanical terrain coordinate">
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Damp</span>
+            <i />
+            <span>Dry</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Cold</span>
+            <i />
+            <span>Heat</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Undercharged</span>
+            <i />
+            <span>Overcharged</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Collapse</span>
+            <i />
+            <span>Coherent</span>
+          </div>
+        </div>
+
+        <div className="av-proton-flow" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TransitionResult({ result, advanced, onReset }) {
   if (!result) return null;
 
@@ -6393,6 +6478,8 @@ export default function AvicennaApp() {
                                   ? "Dry-Cold Terrain State"
                                   : mode === "dryHeat"
                                     ? "Dry-Heat Terrain State"
+                                    : mode === "tensionRelease"
+                                      ? "Tension Release Transition State"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -6427,8 +6514,15 @@ export default function AvicennaApp() {
                                   ? "Depleted biological hydration, brittle low-energy terrain, and weakened conduction pathways"
                                   : mode === "dryHeat"
                                     ? "Metabolic stress, reduced tissue hydration, and overstimulated biological terrain"
+                                    : mode === "tensionRelease"
+                                      ? "Biologic decompression, adaptive flow restoration, and gradual pressure release"
               : "Rule-based terrain assessment and tea protocol builder";
-  const isCinematicTerrain = mode === "dampCold" || mode === "dampHeat" || mode === "dryCold" || mode === "dryHeat";
+  const isCinematicTerrain =
+    mode === "dampCold"
+    || mode === "dampHeat"
+    || mode === "dryCold"
+    || mode === "dryHeat"
+    || mode === "tensionRelease";
 
   return (
     <main className={isCinematicTerrain ? "av-page av-page-cinematic" : "av-page"}>
@@ -6469,6 +6563,8 @@ export default function AvicennaApp() {
         <DryColdTerrainModule />
       ) : mode === "dryHeat" ? (
         <DryHeatTerrainModule />
+      ) : mode === "tensionRelease" ? (
+        <TensionReleaseModule />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (
