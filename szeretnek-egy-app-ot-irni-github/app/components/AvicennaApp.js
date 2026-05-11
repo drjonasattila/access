@@ -1952,6 +1952,11 @@ const DAMP_HEAT_YOUTUBE_URL = `https://youtu.be/${DAMP_HEAT_YOUTUBE_ID}`;
 const DAMP_HEAT_YOUTUBE_EMBED =
   `https://www.youtube-nocookie.com/embed/${DAMP_HEAT_YOUTUBE_ID}` +
   `?autoplay=1&mute=1&loop=1&playlist=${DAMP_HEAT_YOUTUBE_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`;
+const DRY_COLD_YOUTUBE_ID = "PekqIFDvagU";
+const DRY_COLD_YOUTUBE_URL = `https://youtu.be/${DRY_COLD_YOUTUBE_ID}`;
+const DRY_COLD_YOUTUBE_EMBED =
+  `https://www.youtube-nocookie.com/embed/${DRY_COLD_YOUTUBE_ID}` +
+  `?autoplay=1&mute=1&loop=1&playlist=${DRY_COLD_YOUTUBE_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`;
 
 const transitionInitialInput = {
   systemMode: "patient",
@@ -2993,6 +2998,13 @@ function ModeTabs({ mode, onChange }) {
         onClick={() => onChange("dampHeat")}
       >
         Damp-Heat
+      </button>
+      <button
+        className={mode === "dryCold" ? "av-mode-tab av-mode-tab-active" : "av-mode-tab"}
+        type="button"
+        onClick={() => onChange("dryCold")}
+      >
+        Dry-Cold
       </button>
     </nav>
   );
@@ -5658,6 +5670,78 @@ function DampHeatTerrainModule() {
   );
 }
 
+function DryColdTerrainModule() {
+  return (
+    <section className="av-damp-cold-module av-dry-cold-module" aria-label="Dry-Cold cinematic terrain state">
+      <div className="av-damp-cold-stage av-damp-cold-stage-ready av-dry-cold-stage">
+        <div className="av-damp-cold-video-shell">
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            aria-label="Dry-Cold terrain-state video"
+            className="av-damp-cold-video"
+            loading="eager"
+            referrerPolicy="strict-origin-when-cross-origin"
+            src={DRY_COLD_YOUTUBE_EMBED}
+            title="Dry-Cold terrain-state cinematic video"
+          />
+        </div>
+
+        <a
+          className="av-damp-cold-play-state av-dry-cold-play-state"
+          href={DRY_COLD_YOUTUBE_URL}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Play cinematic state
+        </a>
+
+        <div className="av-damp-cold-gradient" aria-hidden="true" />
+        <div className="av-damp-cold-depth" aria-hidden="true" />
+
+        <div className="av-damp-cold-overlay">
+          <p>Terrain State</p>
+          <h2>Dry-Cold</h2>
+          <div className="av-damp-cold-labels" aria-label="Terrain descriptors">
+            <span>Reduced tissue adaptability</span>
+            <span>Fragile low-energy terrain</span>
+            <span>Weakened biological conduction</span>
+          </div>
+        </div>
+
+        <div className="av-terrain-coordinate" aria-label="Biomechanical terrain coordinate">
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Damp</span>
+            <i />
+            <span>Dry</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Cold</span>
+            <i />
+            <span>Heat</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Undercharged</span>
+            <i />
+            <span>Overcharged</span>
+          </div>
+          <div className="av-terrain-axis av-terrain-axis-horizontal">
+            <span>Collapse</span>
+            <i />
+            <span>Coherent</span>
+          </div>
+        </div>
+
+        <div className="av-proton-flow" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TransitionResult({ result, advanced, onReset }) {
   if (!result) return null;
 
@@ -6217,9 +6301,11 @@ export default function AvicennaApp() {
                           : mode === "cranial"
                             ? "Cranial REZ / Dural Engine"
                             : mode === "dampCold"
-                              ? "Damp-Cold Terrain State"
+                            ? "Damp-Cold Terrain State"
                               : mode === "dampHeat"
                                 ? "Damp-Heat Terrain State"
+                                : mode === "dryCold"
+                                  ? "Dry-Cold Terrain State"
               : "Wellness protocol generator";
   const subtitle =
     mode === "headache"
@@ -6247,11 +6333,13 @@ export default function AvicennaApp() {
                           : mode === "cranial"
                             ? "Plate-Pulse-Plexus cranial routing, posterior fossa resonance, dural continuum, and steroid response prediction"
                             : mode === "dampCold"
-                              ? "Slowed biological conduction, dampened low-energy terrain, and cold submerged fascia-water dynamics"
+                            ? "Slowed biological conduction, dampened low-energy terrain, and cold submerged fascia-water dynamics"
                               : mode === "dampHeat"
                                 ? "Trapped inflammatory pressure, congested terrain, and reduced adaptive flow"
+                                : mode === "dryCold"
+                                  ? "Depleted biological hydration, brittle low-energy terrain, and weakened conduction pathways"
               : "Rule-based terrain assessment and tea protocol builder";
-  const isCinematicTerrain = mode === "dampCold" || mode === "dampHeat";
+  const isCinematicTerrain = mode === "dampCold" || mode === "dampHeat" || mode === "dryCold";
 
   return (
     <main className={isCinematicTerrain ? "av-page av-page-cinematic" : "av-page"}>
@@ -6288,6 +6376,8 @@ export default function AvicennaApp() {
         <DampColdTerrainModule />
       ) : mode === "dampHeat" ? (
         <DampHeatTerrainModule />
+      ) : mode === "dryCold" ? (
+        <DryColdTerrainModule />
       ) : mode === "headache" ? (
         <HeadacheEngineSection />
       ) : (
