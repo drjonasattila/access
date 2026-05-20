@@ -3030,6 +3030,12 @@ function ModeTabs({ mode, onChange }) {
       >
         Tension Release
       </button>
+      <a className="av-mode-tab" href="/walkthroughs/water-colloid-fragmentation">
+        Fragmentation walkthrough
+      </a>
+      <a className="av-mode-tab" href="/walkthroughs/signal-propagation-fragmented-media">
+        Signal propagation
+      </a>
     </nav>
   );
 }
