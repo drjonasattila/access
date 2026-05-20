@@ -3054,6 +3054,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/receptor-to-field-responsiveness">
         Receptor to field
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/liver-yang-posterior-fossa">
+        Liver Yang map
+      </a>
     </nav>
   );
 }

@@ -1651,6 +1651,154 @@ export const imageWalkthroughs = [
         text: "The final message is that receptor-targeting therapies alter pathways, while tissue organisation determines how stable, adaptable, and resilient those pathways become. The image frames chronic dysregulation as a systems-level coherence problem rather than a single isolated signalling defect."
       }
     ]
+  },
+  {
+    id: "liver-yang-posterior-fossa-dysregulation",
+    title: "Liver Yang Rising and Posterior Fossa Dysregulation",
+    subtitle: "A guided systems-map exploration of descending control failure, posterior fossa gating and compensatory bottom-up signalling",
+    image: "/images/walkthroughs/liver-yang-posterior-fossa.jpeg",
+    imageAlt: "Conceptual systems map of Liver Yang rising, posterior fossa brainstem gate dysregulation, pulse-plate-plexus interfaces and organ-level expression patterns.",
+    defaultHotspot: "core-concept",
+    narrative: true,
+    narrativeOrder: [
+      "core-concept",
+      "multi-axial-model",
+      "posterior-fossa-brainstem-gate",
+      "pulse-plate-plexus",
+      "central-sensitization",
+      "dominant-aberrant-afferent-signalling",
+      "high-frequency-low-coherence-propagation",
+      "reduced-efferent-inhibition",
+      "organ-expression-patterns",
+      "fascia-interstitial-fluid",
+      "final-integration"
+    ],
+    disclaimer: "Educational model only. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "1",
+        x: 50,
+        y: 5,
+        width: 54,
+        height: 9,
+        title: "Liver Yang rising and loss of coordinated control",
+        text: "This diagram presents a systems-level model of dysregulated top-down control. In this framework, loss of coordinated descending regulation leads to compensatory bottom-up amplification through vascular, fascial, autonomic, and neural interfaces."
+      },
+      {
+        id: "multi-axial-model",
+        label: "2",
+        x: 17,
+        y: 12,
+        width: 29,
+        height: 13,
+        title: "Multi-axial signalling organisation",
+        text: "The image proposes three interacting signalling axes: vertical brain-liver signalling, horizontal organ-fascia signalling, and depth-based arterial-REZ interface signalling. The model frames symptoms as failures of synchronisation across these axes rather than isolated organ pathology."
+      },
+      {
+        id: "posterior-fossa-brainstem-gate",
+        label: "3",
+        shape: "circle",
+        x: 51,
+        y: 27,
+        width: 30,
+        height: 25,
+        title: "Posterior fossa brainstem gate",
+        text: "The posterior fossa is presented as a major autonomic integration zone. Dysregulation here may disturb vagal coordination, vascular rhythm, autonomic tone, and neurovascular synchronisation.",
+        details: [
+          "Diaphragm-vagus desynchronisation reflects disturbed rhythm between breath, autonomic tone and visceral regulation.",
+          "Autonomic integration failure means descending control is poorly coordinated.",
+          "Vascular dysregulation links rhythm, pressure and neurovascular synchronisation."
+        ]
+      },
+      {
+        id: "pulse-plate-plexus",
+        label: "4",
+        shape: "circle",
+        x: 77,
+        y: 20,
+        width: 33,
+        height: 26,
+        title: "Pulse-plate-plexus interface",
+        text: "The Pulse-Plate-Plexus model represents interaction between arterial pulsation, dura-Schwann interfaces, and nerve entry zones. These interfaces are presented as vulnerable transition points where mechanical, vascular, and neural signalling converge."
+      },
+      {
+        id: "central-sensitization",
+        label: "5",
+        x: 19,
+        y: 31,
+        width: 30,
+        height: 20,
+        title: "Central sensitization",
+        text: "Low signal-to-noise ratio, ectopic firing, and failed neurovascular coupling may amplify incoming signals. The system becomes hypersensitive and poorly regulated."
+      },
+      {
+        id: "dominant-aberrant-afferent-signalling",
+        label: "6",
+        x: 20,
+        y: 47,
+        width: 31,
+        height: 15,
+        title: "Dominant aberrant afferent signalling",
+        text: "The liver is presented as generating compensatory high-frequency low-coherence signalling in response to failed descending regulation. Excessive afferent drive may reinforce instability within the network."
+      },
+      {
+        id: "high-frequency-low-coherence-propagation",
+        label: "7",
+        x: 50,
+        y: 59,
+        width: 47,
+        height: 19,
+        title: "High-frequency low-coherence propagation",
+        text: "Signals propagate through arterial, fascial, and interstitial interfaces. In unstable states, propagation becomes noisy, fragmented, and poorly synchronised.",
+        details: [
+          "Pulsatile propagation follows rhythmic vascular and pressure waves.",
+          "Arterial transmission distributes signal through vessel-linked interfaces.",
+          "Fascia-linked conduction spreads information through connective tissue continuity.",
+          "Coherence loss converts organised communication into noisy amplification."
+        ]
+      },
+      {
+        id: "reduced-efferent-inhibition",
+        label: "8",
+        x: 79,
+        y: 47,
+        width: 31,
+        height: 16,
+        title: "Reduced efferent inhibition",
+        text: "Descending autonomic and parasympathetic regulation become impaired. The system loses inhibitory control and becomes dominated by uncontrolled amplification and instability."
+      },
+      {
+        id: "organ-expression-patterns",
+        label: "9",
+        x: 50,
+        y: 76,
+        width: 92,
+        height: 24,
+        title: "Organ-level expression patterns",
+        text: "The image links unstable signalling states to functional organ expressions including stress-induced asthma, IBS-like symptoms, reflux, palpitations, insomnia, and stress-related gastric dysfunction. These are presented as downstream manifestations of failed systems coordination."
+      },
+      {
+        id: "fascia-interstitial-fluid",
+        label: "10",
+        x: 50,
+        y: 91,
+        width: 77,
+        height: 8,
+        title: "Fascia and interstitial fluid as signalling media",
+        text: "The fascia network is presented as a biological distribution grid, while interstitial fluid functions as a signalling medium. Communication is treated as distributed across tissue interfaces rather than isolated to nerves alone."
+      },
+      {
+        id: "final-integration",
+        label: "11",
+        x: 50,
+        y: 97,
+        width: 79,
+        height: 6,
+        title: "Compensatory liver electromagnetic support",
+        text: "The final message is that compensatory bottom-up signalling emerges when descending regulation fails. The model frames chronic dysregulation as a systems-level coherence problem involving vascular, autonomic, fascial, and organ-level communication networks."
+      }
+    ]
   }
 ];
 
