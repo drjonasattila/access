@@ -860,6 +860,228 @@ export const imageWalkthroughs = [
         text: "Health is presented as coordinated communication across the whole biological network. When energy flow, water structure, blood movement, and nerve signalling remain coherent, tissues can function more effectively."
       }
     ]
+  },
+  {
+    id: "six-compartment-communication-map",
+    title: "Six-Compartment Communication Map",
+    subtitle: "A guided Avicenna teaching map linking Chinese and Ayurvedic terminology through tissue-signal communication",
+    image: "/images/walkthroughs/six-compartment-communication-map.jpg",
+    imageAlt: "Conceptual six-compartment communication map comparing Chinese and Ayurvedic terminology with dorsal, ventral, branch and pivot organisation.",
+    defaultHotspot: "core-concept",
+    disclaimer: "Educational model only. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "Core",
+        x: 50,
+        y: 7,
+        width: 55,
+        height: 8,
+        title: "Six-compartment communication map",
+        text: "This diagram presents a conceptual bridge between Chinese and Ayurvedic frameworks using a communication-network model. The image focuses on tissue organisation, metabolic signalling, fascia communication, and directional flow between internal and external biological layers."
+      },
+      {
+        id: "pitta-yang-qi",
+        label: "Pitta/Yang",
+        x: 50,
+        y: 13.5,
+        width: 43,
+        height: 5,
+        title: "Pitta as Yang Qi",
+        text: "The top axis links Pitta with Yang Qi and tissue metabolism. In this model, Yang represents dynamic signalling, energy movement, heat generation, and active biological communication."
+      },
+      {
+        id: "dhatu-yin",
+        label: "Dhatu/Yin",
+        x: 50,
+        y: 82,
+        width: 35,
+        height: 6,
+        title: "Dhatu as Yin tissue structure",
+        text: "The lower axis links Dhatu with Yin tissue organisation. Yin represents structural tissue integrity, water-grid stability, and the coherent biological substrate supporting communication."
+      },
+      {
+        id: "root-instability",
+        label: "Root",
+        x: 50,
+        y: 88,
+        width: 44,
+        height: 7,
+        title: "Root instability and empty heat",
+        text: "The diagram presents chronic instability as arising from deep tissue water-grid electrical instability. In this framework, “empty heat” reflects unstable signalling emerging from depleted or poorly organised tissue environments."
+      },
+      {
+        id: "dorsal-side",
+        label: "Dorsal",
+        x: 50,
+        y: 24,
+        width: 31,
+        height: 10,
+        title: "Dorsal signalling organisation",
+        text: "The dorsal side is associated with outward communication, vigilance, structural defence, and neural-fascial organisation. It reflects interaction with the external environment."
+      },
+      {
+        id: "ventral-side",
+        label: "Ventral",
+        x: 50,
+        y: 76,
+        width: 28,
+        height: 8,
+        title: "Ventral tissue organisation",
+        text: "The ventral side is associated with nourishment, metabolism, digestion, and internal tissue maintenance. It reflects inward regulation and restorative processes."
+      },
+      {
+        id: "tai-yang",
+        label: "TaiYang",
+        x: 15,
+        y: 34,
+        width: 19,
+        height: 22,
+        title: "TaiYang branch",
+        text: "TaiYang is associated with skin, nerves, occiput, spine, and neural crest organisation. In this model, it functions as a surface defence and external communication branch."
+      },
+      {
+        id: "shao-yang",
+        label: "ShaoYang",
+        x: 15,
+        y: 55,
+        width: 19,
+        height: 19,
+        title: "ShaoYang pivot",
+        text: "ShaoYang is presented as a membrane-fascia pivot between internal and external environments. It acts as a routing hub regulating communication, adaptation, and transition states."
+      },
+      {
+        id: "yang-ming",
+        label: "YangMing",
+        x: 15,
+        y: 75,
+        width: 19,
+        height: 22,
+        title: "YangMing metabolic layer",
+        text: "YangMing is linked to digestion, inflammation, and bulk metabolism. It processes large-scale energetic and material throughput within the biological system."
+      },
+      {
+        id: "bhrajaka-pitta-apana",
+        label: "Bhrajaka",
+        x: 85,
+        y: 34,
+        width: 19,
+        height: 22,
+        title: "Bhrajaka Pitta and Apana",
+        text: "This layer corresponds to skin regulation, immune surveillance, external defence, and heat dissipation. It mirrors the outward protective communication layer."
+      },
+      {
+        id: "samana-vyana-prana-pivot",
+        label: "Prana pivot",
+        x: 85,
+        y: 55,
+        width: 19,
+        height: 18,
+        title: "Prana redistribution pivot",
+        text: "This section represents redistribution and routing of biological signalling. It functions as a communication hub coordinating movement between compartments."
+      },
+      {
+        id: "pachaka-pitta",
+        label: "Pachaka",
+        x: 85,
+        y: 75,
+        width: 19,
+        height: 22,
+        title: "Pachaka Pitta",
+        text: "Pachaka Pitta is associated with digestion, microbiome activity, metabolic waste processing, and emotional digestion. It reflects transformation and elimination processes."
+      },
+      {
+        id: "shao-yin",
+        label: "ShaoYin",
+        x: 42,
+        y: 38,
+        width: 16,
+        height: 18,
+        title: "ShaoYin - deep reserve",
+        text: "ShaoYin represents deep reserve systems linked to Kidney and Heart organisation. In this model, it supports long-term coherence, electrical stability, and restorative capacity."
+      },
+      {
+        id: "jue-yin",
+        label: "JueYin",
+        x: 42,
+        y: 54,
+        width: 16,
+        height: 18,
+        title: "JueYin - adaptive regulation",
+        text: "JueYin is associated with adaptive regulation, emotional signalling, vascular coordination, and internal transition dynamics between Yin and Yang states."
+      },
+      {
+        id: "tai-yin",
+        label: "TaiYin",
+        x: 42,
+        y: 68,
+        width: 16,
+        height: 17,
+        title: "TaiYin - nourishment and interface stability",
+        text: "TaiYin represents nourishment, tissue hydration, and interface integrity. It supports coherent transport, fluid balance, and stable tissue organisation."
+      },
+      {
+        id: "ojas-majja-shukra",
+        label: "Ojas",
+        x: 58,
+        y: 38,
+        width: 16,
+        height: 18,
+        title: "Ojas, Majja and Shukra",
+        text: "These concepts represent deep reserve, regenerative potential, and structural vitality within the Ayurvedic framework. They parallel coherence reserve concepts in the Avicenna model."
+      },
+      {
+        id: "sadhaka-ranjaka-pitta",
+        label: "Sadhaka",
+        x: 58,
+        y: 54,
+        width: 16,
+        height: 18,
+        title: "Sadhaka and Ranjaka Pitta",
+        text: "This layer is associated with emotional processing, transformation, circulation, and energetic integration between metabolism and signalling systems."
+      },
+      {
+        id: "rasa-dhatu-kapha",
+        label: "Rasa",
+        x: 58,
+        y: 68,
+        width: 16,
+        height: 17,
+        title: "Rasa Dhatu and Kapha",
+        text: "This section represents fluid structure, nourishment, lubrication, and tissue stability. It reflects the coherent substrate supporting biological communication."
+      },
+      {
+        id: "central-circle-dynamics",
+        label: "Loops",
+        shape: "circle",
+        x: 50,
+        y: 53,
+        width: 35,
+        height: 48,
+        title: "Dynamic communication loops",
+        text: "The circular arrows indicate continuous bidirectional interaction between compartments. Biological signalling is presented as cyclical, adaptive, and self-regulating rather than linear."
+      },
+      {
+        id: "outer-branch-arrows",
+        label: "Branches",
+        x: 50,
+        y: 50,
+        width: 62,
+        height: 49,
+        title: "Bidirectional branch communication",
+        text: "The branches are shown as bidirectional pathways. Outbound signalling may function as release or discharge, while inbound signalling may carry physical or emotional environmental inputs."
+      },
+      {
+        id: "final-message",
+        label: "Final",
+        x: 50,
+        y: 94,
+        width: 82,
+        height: 8,
+        title: "Branches are bidirectional",
+        text: "The final message is that biological communication systems function in two directions simultaneously: outward for regulation and release, inward for perception, adaptation, and response."
+      }
+    ]
   }
 ];
 

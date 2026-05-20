@@ -3042,6 +3042,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/connection-of-life-energy">
         Life energy
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/six-compartment-map">
+        Six compartments
+      </a>
     </nav>
   );
 }
