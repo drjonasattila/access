@@ -1082,6 +1082,220 @@ export const imageWalkthroughs = [
         text: "The final message is that biological communication systems function in two directions simultaneously: outward for regulation and release, inward for perception, adaptation, and response."
       }
     ]
+  },
+  {
+    id: "trigeminovascular-headache-pathways",
+    title: "Trigeminovascular Headache Pathways",
+    subtitle: "A guided Avicenna teaching map for trigeminal activation, vascular signalling, autonomic discharge and headache syndromes",
+    image: "/images/walkthroughs/trigeminovascular-headache-pathways.png",
+    imageAlt: "Conceptual trigeminovascular headache pathways diagram connecting hypothalamus, trigeminal nerve, CGRP blockers, vascular clamps, interface coolers, autonomic reflex arc and headache syndromes.",
+    defaultHotspot: "core-concept",
+    disclaimer: "Educational model only. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "Core",
+        x: 50,
+        y: 7,
+        width: 70,
+        height: 9,
+        title: "Trigeminovascular headache pathways",
+        text: "This diagram presents a simplified systems-level overview of trigeminovascular headache pathways. It connects hypothalamic regulation, trigeminal activation, vascular signalling, autonomic discharge, and headache syndromes into one integrated framework."
+      },
+      {
+        id: "hypothalamus-brainstem",
+        label: "Brainstem",
+        shape: "circle",
+        x: 51,
+        y: 19,
+        width: 34,
+        height: 16,
+        title: "Hypothalamus and brainstem",
+        text: "The hypothalamus and brainstem act as central rhythm and modulation centres. They influence circadian timing, autonomic tone, pain thresholds, and trigeminovascular activation patterns."
+      },
+      {
+        id: "cycle-modulators",
+        label: "Cycles",
+        x: 50,
+        y: 31,
+        width: 28,
+        height: 11,
+        title: "Cycle modulators",
+        text: "Verapamil, lithium, and steroids are presented as cycle modulators. These therapies may reduce rhythmic instability, suppress attack cycles, or alter central excitability states in headache disorders."
+      },
+      {
+        id: "trigeminal-nerve",
+        label: "Trigeminal",
+        x: 21,
+        y: 45,
+        width: 28,
+        height: 21,
+        title: "Trigeminal nerve activation",
+        text: "The trigeminal system is a major sensory pathway involved in headache generation. Hyperexcitability and abnormal firing within trigeminal pathways may contribute to pain propagation and facial pain syndromes."
+      },
+      {
+        id: "spark-suppressors",
+        label: "Suppress",
+        x: 21,
+        y: 53,
+        width: 28,
+        height: 13,
+        title: "Spark suppressors",
+        text: "Carbamazepine, lamotrigine, topiramate, and valproate are shown as excitability suppressors. These medications reduce abnormal neuronal firing and help stabilise hyperexcitable networks."
+      },
+      {
+        id: "cgrp-blockers",
+        label: "CGRP",
+        x: 78,
+        y: 45,
+        width: 28,
+        height: 21,
+        title: "CGRP signalling blockade",
+        text: "CGRP-targeted therapies reduce trigeminovascular signalling and neurogenic inflammatory amplification. Gepants and monoclonal antibodies are presented as pathway-specific modulators."
+      },
+      {
+        id: "gepants-cgrp-mabs",
+        label: "Gepants",
+        x: 78,
+        y: 53,
+        width: 28,
+        height: 12,
+        title: "Modern CGRP therapies",
+        text: "Gepants and CGRP monoclonal antibodies target calcitonin gene-related peptide signalling. These therapies are widely used in migraine prevention and acute migraine modulation."
+      },
+      {
+        id: "central-vascular-interface",
+        label: "Interface",
+        shape: "circle",
+        x: 50,
+        y: 50,
+        width: 31,
+        height: 23,
+        title: "Neurovascular interface",
+        text: "The central vessel represents the neurovascular interface where trigeminal nerves, vascular tone, endothelial signalling, and inflammatory mediators interact dynamically."
+      },
+      {
+        id: "vascular-clamps",
+        label: "Clamps",
+        x: 23,
+        y: 66,
+        width: 30,
+        height: 13,
+        title: "Vascular clamps",
+        text: "Triptans and oxygen are shown as rapid vascular modulators. They may reduce vascular dilation and suppress trigeminovascular activation during acute headache attacks."
+      },
+      {
+        id: "interface-coolers",
+        label: "Coolers",
+        x: 76,
+        y: 66,
+        width: 30,
+        height: 13,
+        title: "Interface coolers",
+        text: "Indomethacin and NSAIDs are presented as interface coolers that reduce inflammatory signalling and dampen neurovascular activation."
+      },
+      {
+        id: "autonomic-reflex-arc",
+        label: "Reflex",
+        shape: "circle",
+        x: 50,
+        y: 72,
+        width: 30,
+        height: 18,
+        title: "Autonomic reflex arc",
+        text: "The autonomic reflex arc links trigeminal activation with parasympathetic discharge. This contributes to tearing, congestion, ptosis, and other cranial autonomic symptoms."
+      },
+      {
+        id: "autonomic-discharge",
+        label: "Discharge",
+        x: 50,
+        y: 82,
+        width: 34,
+        height: 10,
+        title: "Cranial autonomic discharge",
+        text: "Lacrimation, nasal congestion, and ptosis are examples of autonomic discharge patterns commonly associated with trigeminal autonomic cephalalgias."
+      },
+      {
+        id: "headache-syndromes",
+        label: "Spectrum",
+        x: 50,
+        y: 91,
+        width: 78,
+        height: 7,
+        title: "Headache syndrome spectrum",
+        text: "The diagram places trigeminal neuralgia, SUNCT/SUNA, paroxysmal hemicrania, hemicrania continua, cluster headache, and migraine along a connected trigeminovascular spectrum."
+      },
+      {
+        id: "tgn",
+        label: "TGN",
+        x: 14,
+        y: 94,
+        width: 10,
+        height: 6,
+        title: "Trigeminal neuralgia",
+        text: "Trigeminal neuralgia is characterised by brief, severe, shock-like facial pain often triggered by sensory stimulation. Hyperexcitable trigeminal firing is a key mechanism."
+      },
+      {
+        id: "sunct-suna",
+        label: "SUNCT",
+        x: 31,
+        y: 94,
+        width: 16,
+        height: 6,
+        title: "SUNCT and SUNA",
+        text: "SUNCT and SUNA are ultra-short trigeminal autonomic headache syndromes associated with rapid repetitive attacks and strong autonomic activation."
+      },
+      {
+        id: "ph-hc",
+        label: "PH/HC",
+        x: 49,
+        y: 94,
+        width: 12,
+        height: 6,
+        title: "Paroxysmal hemicrania and hemicrania continua",
+        text: "Paroxysmal hemicrania and hemicrania continua are highly indomethacin-responsive headache disorders associated with trigeminal-autonomic pathway activation."
+      },
+      {
+        id: "cluster-headache",
+        label: "Cluster",
+        x: 66,
+        y: 94,
+        width: 14,
+        height: 6,
+        title: "Cluster headache",
+        text: "Cluster headache is strongly associated with hypothalamic rhythmicity, autonomic discharge, and trigeminovascular activation. Circadian timing is a major feature."
+      },
+      {
+        id: "migraine",
+        label: "Migraine",
+        x: 85,
+        y: 94,
+        width: 15,
+        height: 6,
+        title: "Migraine",
+        text: "Migraine is presented as a broad trigeminovascular network disorder involving cortical excitability, vascular signalling, neuroinflammatory amplification, and sensory hypersensitivity."
+      },
+      {
+        id: "flow-arrows",
+        label: "Arrows",
+        x: 50,
+        y: 57,
+        width: 62,
+        height: 47,
+        title: "Dynamic bidirectional signalling",
+        text: "The arrows emphasise that signalling within the trigeminovascular system is dynamic and bidirectional. Neural, vascular, inflammatory, and autonomic components continuously influence each other."
+      },
+      {
+        id: "overall-system-logic",
+        label: "Network",
+        x: 50,
+        y: 58,
+        width: 74,
+        height: 66,
+        title: "Integrated headache network",
+        text: "The overall model frames headache syndromes as network disorders involving excitability, vascular interfaces, autonomic loops, and signal amplification rather than isolated single-point diseases."
+      }
+    ]
   }
 ];
 

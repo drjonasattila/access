@@ -3045,6 +3045,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/six-compartment-map">
         Six compartments
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/trigeminovascular-headache-pathways">
+        Headache pathways
+      </a>
     </nav>
   );
 }
