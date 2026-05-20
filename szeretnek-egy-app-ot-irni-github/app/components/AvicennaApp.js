@@ -3036,6 +3036,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/signal-propagation-fragmented-media">
         Signal propagation
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/dampening-signal-fidelity">
+        Dampening fidelity
+      </a>
     </nav>
   );
 }

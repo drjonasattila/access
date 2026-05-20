@@ -465,6 +465,217 @@ export const imageWalkthroughs = [
         text: "The final message is that restoring water-colloid coherence may support signal fidelity and biological communication. In Avicenna language, the goal is not only symptom suppression but restoration of tissue-level signalling order."
       }
     ]
+  },
+  {
+    id: "dampening-metabolic-waste-signal-fidelity",
+    title: "Dampening, Metabolic Waste and Signal Fidelity",
+    subtitle: "A guided Avicenna teaching map for dampness, water-charge organisation and biological signal fidelity",
+    image: "/images/walkthroughs/dampening-metabolic-waste-signal-fidelity.jpg",
+    imageAlt: "Conceptual illustration of dampening, metabolic waste and signal fidelity across self-similar biological water-colloid organisation.",
+    defaultHotspot: "core-concept",
+    disclaimer: "Educational model only. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "Core",
+        x: 49,
+        y: 3,
+        width: 66,
+        height: 5,
+        title: "Dampening, metabolic waste and signal fidelity",
+        text: "This diagram explains how metabolic waste (“dampness”) interacts with self-similar water-colloid organisation across biological scales. Small amounts of damping help stabilise signalling, while excessive waste accumulation may distort communication and reduce signal fidelity."
+      },
+      {
+        id: "recurring-principle",
+        label: "Principle",
+        x: 6.5,
+        y: 17.5,
+        width: 11,
+        height: 21,
+        title: "The recurring principle at every scale",
+        text: "Across all biological scales, coherent signalling depends on structured water lattices, proton-enriched interfaces, charge separation, and stable communication boundaries. Metabolic waste alters these interfaces and changes signal behaviour."
+      },
+      {
+        id: "scale-transition-row",
+        label: "Scale row",
+        x: 46,
+        y: 17.2,
+        width: 64,
+        height: 19,
+        title: "Self-similar organisation across scales",
+        text: "The same organising logic is shown from molecular and mitochondrial levels through membrane, endothelial, microvascular, and tissue scales. Local disturbances at small scales may propagate upward into system-level dysfunction."
+      },
+      {
+        id: "organised-vs-disorganised-panel",
+        label: "States",
+        x: 90,
+        y: 17.5,
+        width: 17,
+        height: 21,
+        title: "Organised versus fragmented signalling",
+        text: "The organised state is associated with stable gradients, clear signalling, proper damping, and efficient waste clearance. The fragmented state shows unstable gradients, noisy signalling, excess damping, and waste accumulation."
+      },
+      {
+        id: "optimal-damping-panel",
+        label: "Optimal",
+        x: 13,
+        y: 52,
+        width: 24,
+        height: 45,
+        title: "Optimal damping - healthy state",
+        text: "A healthy amount of metabolic damping supports signal stability. Proper damping prevents runaway excitation and reverberation while maintaining coherent communication and tissue responsiveness."
+      },
+      {
+        id: "excess-dampening-panel",
+        label: "Excess",
+        x: 40,
+        y: 52,
+        width: 27,
+        height: 45,
+        title: "Excess dampening - dysfunctional state",
+        text: "In low-energy environments, excessive metabolic waste accumulates at interfaces and disrupts coherent gradients. Signals become attenuated, noisy, delayed, or randomly shunted."
+      },
+      {
+        id: "restore-clean-interfaces-panel",
+        label: "Restore",
+        x: 67,
+        y: 52,
+        width: 25,
+        height: 45,
+        title: "Restore clean interfaces",
+        text: "The restoration phase emphasises waste clearance, autophagy, lymphatic flow, and reorganisation of water-charge interfaces. As coherence returns, signal fidelity and communication improve."
+      },
+      {
+        id: "how-dampness-disrupts-signalling",
+        label: "Disrupts",
+        x: 90,
+        y: 54,
+        width: 17,
+        height: 39,
+        title: "How dampness disrupts signalling",
+        text: "Excess metabolic waste increases resistive load at interfaces, disrupts water lattices and charge separation, interferes with ion flow, increases noise and reverberation, and contributes to fatigue, pain, brain fog, and dysautonomia."
+      },
+      {
+        id: "healthy-damping-wave",
+        label: "Stable wave",
+        x: 14,
+        y: 61.5,
+        width: 20,
+        height: 8,
+        title: "Stable signal damping",
+        text: "The smooth waveform represents stable biological damping. Signals remain coherent, organised, and appropriately regulated without excessive amplification or reverberation."
+      },
+      {
+        id: "disrupted-signal-wave",
+        label: "Noise wave",
+        x: 40,
+        y: 61.5,
+        width: 22,
+        height: 8,
+        title: "Distorted signalling",
+        text: "The irregular waveform represents disrupted signalling in fragmented media. Excess waste and unstable interfaces create attenuation, signal distortion, and noisy propagation."
+      },
+      {
+        id: "restored-signal-wave",
+        label: "Restored",
+        x: 67,
+        y: 61.5,
+        width: 21,
+        height: 8,
+        title: "Restored signal fidelity",
+        text: "As waste clears and interfaces reorganise, signalling becomes cleaner and more coherent again. The system regains stability, responsiveness, and communication efficiency."
+      },
+      {
+        id: "waste-accumulation-interfaces",
+        label: "Waste",
+        x: 40,
+        y: 47,
+        width: 25,
+        height: 19,
+        title: "Waste accumulation at interfaces",
+        text: "The image highlights metabolic waste accumulating at critical biological interfaces such as membranes, glycocalyx layers, and extracellular spaces. These regions strongly influence conductivity and signalling behaviour."
+      },
+      {
+        id: "autophagy",
+        label: "Autophagy",
+        x: 47,
+        y: 88,
+        width: 8,
+        height: 10,
+        title: "Autophagy and intracellular recycling",
+        text: "Autophagy is presented as a core cellular recycling process. It helps remove intracellular waste and restore organised biological structure."
+      },
+      {
+        id: "glymphatic-flow",
+        label: "Glymphatic",
+        x: 55,
+        y: 88,
+        width: 8,
+        height: 10,
+        title: "Glymphatic clearance",
+        text: "The glymphatic system supports fluid movement and waste clearance in the nervous system. Efficient flow may help maintain cleaner signalling environments."
+      },
+      {
+        id: "lymphatic-drainage",
+        label: "Lymphatic",
+        x: 63,
+        y: 88,
+        width: 8,
+        height: 10,
+        title: "Lymphatic drainage",
+        text: "Lymphatic circulation removes extracellular waste and supports fluid balance. Poor clearance may contribute to stagnation and increased biological noise."
+      },
+      {
+        id: "movement-mechanical-flow",
+        label: "Movement",
+        x: 70.5,
+        y: 88,
+        width: 8,
+        height: 10,
+        title: "Mechanical flow and movement",
+        text: "Movement supports fluid circulation, fascia gliding, vascular flow, and lymphatic transport. Mechanical flow helps prevent stagnation and excessive damping."
+      },
+      {
+        id: "herbal-medicine",
+        label: "Herbal",
+        x: 78,
+        y: 88,
+        width: 8,
+        height: 10,
+        title: "Herbal support for detox and coherence",
+        text: "Herbal medicine is presented as supporting detoxification, interface stability, circulation, and tissue organisation within the broader Avicenna terrain model."
+      },
+      {
+        id: "where-dampness-comes-from",
+        label: "Sources",
+        x: 21.5,
+        y: 88,
+        width: 40,
+        height: 11,
+        title: "Sources of dampness",
+        text: "The image identifies multiple contributors to metabolic waste accumulation: mitochondrial by-products, inflammation, hypoxia, poor circulation, low-energy tissue states, dysbiosis, toxins, and chronic stress."
+      },
+      {
+        id: "key-takeaway",
+        label: "Takeaway",
+        x: 90,
+        y: 88,
+        width: 17,
+        height: 15,
+        title: "Dampness is excess retained waste",
+        text: "The key message is that dampness is not simply retained fluid but excess metabolic waste within a fragmented low-energy environment. Clearing waste and restoring coherent interfaces improves signal fidelity."
+      },
+      {
+        id: "final-message",
+        label: "Final",
+        x: 51,
+        y: 97.4,
+        width: 72,
+        height: 3.6,
+        title: "Restore coherence and signalling",
+        text: "The final sequence summarises the model: clear waste, reorganise water-charge networks, restore signal fidelity, and support biological signalling and tissue responsiveness."
+      }
+    ]
   }
 ];
 
