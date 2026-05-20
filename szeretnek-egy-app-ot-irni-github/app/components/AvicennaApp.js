@@ -3051,6 +3051,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/receptor-vs-field-responsiveness">
         Field responsiveness
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/receptor-to-field-responsiveness">
+        Receptor to field
+      </a>
     </nav>
   );
 }

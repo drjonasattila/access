@@ -17,6 +17,8 @@ function getHotspotStyle(hotspot) {
 export default function ImageHotspotWalkthrough({ walkthrough }) {
   const [selectedId, setSelectedId] = useState(walkthrough.defaultHotspot);
   const panelRef = useRef(null);
+  const narrativeOrder = walkthrough.narrativeOrder || walkthrough.hotspots.map((hotspot) => hotspot.id);
+  const isNarrative = Boolean(walkthrough.narrative);
 
   const selectedHotspot = useMemo(() => {
     return (
@@ -25,6 +27,8 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
       walkthrough.hotspots[0]
     );
   }, [selectedId, walkthrough]);
+
+  const selectedIndex = Math.max(0, narrativeOrder.indexOf(selectedHotspot.id));
 
   function selectHotspot(id) {
     setSelectedId(id);
@@ -36,21 +40,27 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
     }
   }
 
+  function selectNextHotspot() {
+    const nextIndex = (selectedIndex + 1) % narrativeOrder.length;
+    selectHotspot(narrativeOrder[nextIndex]);
+  }
+
   return (
-    <main className="image-walkthrough-page">
+    <main className={isNarrative ? "image-walkthrough-page image-walkthrough-page-narrative" : "image-walkthrough-page"}>
       <header className="image-walkthrough-hero">
-        <p>Guided Walkthrough</p>
+        <p>{isNarrative ? "Guided Concept Journey" : "Guided Walkthrough"}</p>
         <h1>{walkthrough.title}</h1>
         <span>{walkthrough.subtitle}</span>
       </header>
 
       <article className="image-walkthrough-shell">
         <figure className="image-walkthrough-figure">
-          <div className="image-walkthrough-image-wrap">
+          <div className={isNarrative ? "image-walkthrough-image-wrap image-walkthrough-image-wrap-narrative" : "image-walkthrough-image-wrap"}>
             <img src={walkthrough.image} alt={walkthrough.imageAlt} />
             {walkthrough.hotspots.map((hotspot) => {
               const isActive = selectedHotspot.id === hotspot.id;
               const shapeClass = hotspot.shape === "circle" ? "image-hotspot-circle" : "image-hotspot-rect";
+              const isNarrativeStep = narrativeOrder.includes(hotspot.id);
 
               return (
                 <button
@@ -59,7 +69,10 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
                   className={[
                     "image-hotspot",
                     shapeClass,
-                    isActive ? "image-hotspot-active" : ""
+                    isActive ? "image-hotspot-active" : "",
+                    isNarrative ? "image-hotspot-narrative" : "",
+                    isNarrative && !isActive ? "image-hotspot-muted" : "",
+                    isNarrativeStep ? "image-hotspot-step" : ""
                   ].filter(Boolean).join(" ")}
                   key={hotspot.id}
                   onClick={() => selectHotspot(hotspot.id)}
@@ -88,9 +101,25 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
         </section>
 
         <section className="image-walkthrough-panel" ref={panelRef} aria-live="polite">
-          <p>Selected region</p>
+          <p>
+            {isNarrative ? `Concept ${selectedIndex + 1} of ${narrativeOrder.length}` : "Selected region"}
+          </p>
           <h2>{selectedHotspot.title}</h2>
           <span>{selectedHotspot.text}</span>
+          {selectedHotspot.details?.length ? (
+            <ul className="image-walkthrough-detail-list">
+              {selectedHotspot.details.map((detail) => (
+                <li key={detail}>{detail}</li>
+              ))}
+            </ul>
+          ) : null}
+          {isNarrative ? (
+            <div className="image-walkthrough-panel-actions">
+              <button type="button" onClick={selectNextHotspot}>
+                Next Concept
+              </button>
+            </div>
+          ) : null}
           <small>{walkthrough.disclaimer}</small>
         </section>
       </article>

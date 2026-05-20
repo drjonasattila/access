@@ -1270,6 +1270,38 @@ input[type="number"] {
   transform: translateY(0);
 }
 
+.image-walkthrough-page-narrative .image-walkthrough-hero {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 185, 78, 0.2), transparent 18rem),
+    radial-gradient(circle at 20% 24%, rgba(85, 180, 255, 0.16), transparent 16rem),
+    #08121d;
+}
+
+.image-walkthrough-image-wrap-narrative img {
+  transition: filter 220ms ease;
+}
+
+.image-hotspot-narrative {
+  background: rgba(7, 20, 33, 0.04);
+  border-color: rgba(255, 248, 230, 0.16);
+}
+
+.image-hotspot-narrative.image-hotspot-muted {
+  opacity: 0.34;
+}
+
+.image-hotspot-narrative.image-hotspot-active {
+  background: rgba(255, 184, 72, 0.18);
+  border-color: rgba(255, 248, 230, 0.98);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 198, 92, 0.95),
+    0 0 34px rgba(255, 184, 72, 0.5),
+    0 0 80px rgba(86, 190, 255, 0.16);
+  opacity: 1;
+  transform: scale(1.018);
+  z-index: 2;
+}
+
 .image-walkthrough-region-list {
   display: flex;
   flex-wrap: wrap;
@@ -1334,6 +1366,24 @@ input[type="number"] {
   max-width: 980px;
 }
 
+.image-walkthrough-detail-list {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  max-width: 900px;
+  padding: 0;
+}
+
+.image-walkthrough-detail-list li {
+  background: #f8f4ea;
+  border-left: 3px solid #c9a85b;
+  color: #263647;
+  display: block;
+  font-size: 14px;
+  line-height: 1.45;
+  padding: 9px 11px;
+}
+
 .image-walkthrough-panel small {
   background: #eee7dd;
   border-radius: 8px;
@@ -1344,6 +1394,29 @@ input[type="number"] {
   line-height: 1.4;
   margin-top: 16px;
   padding: 10px 12px;
+}
+
+.image-walkthrough-panel-actions {
+  display: flex;
+  margin-top: 18px;
+}
+
+.image-walkthrough-panel-actions button {
+  background: #0f2238;
+  border: 1px solid #c9a85b;
+  border-radius: 999px;
+  color: #fff8e6;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 16px;
+}
+
+.image-walkthrough-panel-actions button:hover,
+.image-walkthrough-panel-actions button:focus-visible {
+  background: #c9a85b;
+  color: #071421;
+  outline: none;
 }
 
 @media (max-width: 920px) {

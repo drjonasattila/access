@@ -1518,6 +1518,139 @@ export const imageWalkthroughs = [
         text: "The final message is that receptor-level interventions modify signalling pathways, but deeper biological responsiveness depends on tissue organisation, coherence, flow, and adaptive reserve."
       }
     ]
+  },
+  {
+    id: "receptor-targeting-to-field-responsiveness",
+    title: "From Receptor Targeting to Field Responsiveness",
+    subtitle: "A guided concept journey from receptor-level modulation toward field responsiveness and coherence restoration",
+    image: "/images/walkthroughs/receptor-targeting-to-field-responsiveness.png",
+    imageAlt: "Conceptual diagram moving from receptor targeting through nerve-vessel-fascia coupling to field responsiveness and restoration of coherence.",
+    defaultHotspot: "core-concept",
+    narrative: true,
+    narrativeOrder: [
+      "core-concept",
+      "receptor-targeting",
+      "decoherence",
+      "nerve-vessel-fascia-complex",
+      "synchronicity",
+      "coherence",
+      "field-responsiveness",
+      "mitochondrial-flow-support",
+      "final-integration"
+    ],
+    disclaimer: "Educational model only. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "1",
+        x: 50,
+        y: 5.5,
+        width: 58,
+        height: 8,
+        title: "From receptor targeting to field responsiveness",
+        text: "This image contrasts receptor-level symptom targeting with restoration of broader biological responsiveness. The central message is that receptors modify signalling pathways, but tissue organisation determines how responsive and adaptable the system becomes overall."
+      },
+      {
+        id: "receptor-targeting",
+        label: "2",
+        x: 16,
+        y: 34,
+        width: 25,
+        height: 48,
+        title: "Receptor-level modulation",
+        text: "The left side represents conventional receptor-targeting approaches. Different medications alter specific signalling pathways such as serotonin transmission, descending inhibition, or opioid signalling to reduce symptoms or suppress excessive activation.",
+        details: [
+          "5-HT1B/1D: triptan-linked serotonin receptor modulation.",
+          "5-HT1F: ditan-linked modulation of trigeminal excitability.",
+          "5-HT3: nausea and autonomic signalling modulation.",
+          "SNRI/TCA: descending inhibition and pain processing support.",
+          "Opioids: receptor-level analgesic signalling, shown here as symptom modulation."
+        ]
+      },
+      {
+        id: "decoherence",
+        label: "3",
+        x: 22,
+        y: 73,
+        width: 30,
+        height: 31,
+        title: "Decoherence",
+        text: "Decoherence represents fragmentation of organised signalling. Neural firing, vascular tone, fluid organisation, and fascia communication become unstable, noisy, and poorly synchronised."
+      },
+      {
+        id: "nerve-vessel-fascia-complex",
+        label: "4",
+        shape: "circle",
+        x: 52,
+        y: 43,
+        width: 41,
+        height: 47,
+        title: "Nerve-vessel-fascia complex",
+        text: "The centre of the image presents nerves, blood vessels, fascia, and fluid interfaces as one integrated communication system. Biological signalling emerges from interaction between these layers rather than from isolated receptors alone.",
+        details: [
+          "Neurovascular coupling links nerve activity with vascular tone.",
+          "Fascia conductivity links mechanical, electrical and fluid signalling.",
+          "Interface signalling occurs where membranes, vessels, fascia and fluids meet.",
+          "Dynamic feedback means each layer continuously changes the others."
+        ]
+      },
+      {
+        id: "synchronicity",
+        label: "5",
+        x: 51,
+        y: 83,
+        width: 38,
+        height: 17,
+        title: "Synchrony and signal fidelity",
+        text: "Between decoherence and coherence lies synchrony. Biological systems regain rhythm, timing, and coordinated signalling before deeper restoration becomes possible."
+      },
+      {
+        id: "coherence",
+        label: "6",
+        x: 78,
+        y: 73,
+        width: 31,
+        height: 31,
+        title: "Coherence",
+        text: "Coherence represents organised signalling, adaptive regulation, stable communication, and efficient energy distribution. The system becomes more resilient, responsive, and less prone to pathological amplification."
+      },
+      {
+        id: "field-responsiveness",
+        label: "7",
+        x: 84,
+        y: 39,
+        width: 27,
+        height: 55,
+        title: "Field responsiveness",
+        text: "The right side represents restoration-oriented support strategies. Instead of suppressing isolated signals, the focus shifts toward improving tissue responsiveness, mitochondrial reserve, fluid organisation, autonomic rhythm, and adaptive capacity. This is not presented as anti-medication; it is presented as a broader systems-level layer."
+      },
+      {
+        id: "mitochondrial-flow-support",
+        label: "8",
+        x: 83,
+        y: 54,
+        width: 27,
+        height: 57,
+        title: "Energy and flow restoration",
+        text: "Mitochondrial support, antioxidant reserve, fascia hydration, movement, and autonomic regulation are presented as ways of improving biological responsiveness and restoring organised communication across tissues.",
+        details: [
+          "ATP and NAD represent energy availability and metabolic reserve.",
+          "Hydration and fascia flow support interface conductivity.",
+          "Autonomic rhythm supports sleep-wake timing and regulation.",
+          "Restorative practices support safety, calm and adaptive tone."
+        ]
+      },
+      {
+        id: "final-integration",
+        label: "9",
+        x: 50,
+        y: 93,
+        width: 78,
+        height: 9,
+        title: "Receptors modulate responses - fields determine responsiveness",
+        text: "The final message is that receptor-targeting therapies alter pathways, while tissue organisation determines how stable, adaptable, and resilient those pathways become. The image frames chronic dysregulation as a systems-level coherence problem rather than a single isolated signalling defect."
+      }
+    ]
   }
 ];
 
