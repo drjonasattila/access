@@ -1296,6 +1296,228 @@ export const imageWalkthroughs = [
         text: "The overall model frames headache syndromes as network disorders involving excitability, vascular interfaces, autonomic loops, and signal amplification rather than isolated single-point diseases."
       }
     ]
+  },
+  {
+    id: "receptor-modulation-vs-field-responsiveness",
+    title: "Receptor Modulation vs Field Responsiveness",
+    subtitle: "A guided Avicenna teaching map for receptor pharmacology, coherence, field responsiveness and tissue organisation",
+    image: "/images/walkthroughs/receptor-modulation-vs-field-responsiveness.png",
+    imageAlt: "Conceptual diagram contrasting receptor-level modulation with field responsiveness, coherence, nerve-vessel-fascia coupling and restoration of biological organisation.",
+    defaultHotspot: "core-concept",
+    disclaimer: "Educational model only. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "Core",
+        x: 50,
+        y: 10,
+        width: 44,
+        height: 12,
+        title: "Receptor modulation versus field responsiveness",
+        text: "This diagram contrasts receptor-level symptom modulation with broader restoration of tissue responsiveness and biological coherence. The central message is that receptors modulate responses, while tissue fields determine how responsive the system is overall."
+      },
+      {
+        id: "coherence",
+        label: "Coherence",
+        x: 42,
+        y: 10,
+        width: 23,
+        height: 13,
+        title: "Coherence",
+        text: "Coherence represents synchronised signalling, adaptive regulation, and organised biological communication. In coherent states, systems maintain rhythm, responsiveness, and efficient recovery."
+      },
+      {
+        id: "decoherence",
+        label: "Decoherence",
+        x: 61,
+        y: 10,
+        width: 25,
+        height: 13,
+        title: "Decoherence",
+        text: "Decoherence represents fragmentation, stagnation, noise, and pain amplification. Signals lose fidelity, coupling weakens, and biological systems become unstable."
+      },
+      {
+        id: "nerve-vessel-fascia-complex",
+        label: "Complex",
+        shape: "circle",
+        x: 50,
+        y: 46,
+        width: 37,
+        height: 39,
+        title: "Nerve-vessel-fascia complex",
+        text: "The diagram presents nerves, blood vessels, and fascia as one functional communication unit. Neural activity, vascular tone, and connective tissue signalling continuously interact."
+      },
+      {
+        id: "neural-activity",
+        label: "Neural",
+        x: 36,
+        y: 43,
+        width: 15,
+        height: 18,
+        title: "Neural activity",
+        text: "Neural activity represents electrical signalling, sensory processing, and excitability. Excessive activation may contribute to hypersensitivity, ectopic firing, and pain propagation."
+      },
+      {
+        id: "vasomotor-tone",
+        label: "Tone",
+        x: 65,
+        y: 43,
+        width: 16,
+        height: 18,
+        title: "Vasomotor tone",
+        text: "Vasomotor tone reflects regulation of vascular diameter, flow distribution, and neurovascular coupling. Stable tone supports coherent tissue perfusion and signalling."
+      },
+      {
+        id: "fascia-matrix",
+        label: "Fascia",
+        x: 50,
+        y: 60,
+        width: 26,
+        height: 14,
+        title: "Fascia matrix",
+        text: "The fascia matrix is presented as a communication substrate linking mechanical, fluidic, electrical, and biochemical signalling across tissues."
+      },
+      {
+        id: "loss-of-coupling",
+        label: "Coupling",
+        x: 50,
+        y: 73,
+        width: 32,
+        height: 12,
+        title: "Loss of coupling",
+        text: "Loss of coupling represents breakdown of coordinated communication between nerves, vessels, fascia, and metabolism. This may contribute to persistent pain and dysregulation."
+      },
+      {
+        id: "restoration-of-coherence",
+        label: "Restore",
+        x: 50,
+        y: 84,
+        width: 42,
+        height: 12,
+        title: "Restoration of coherence",
+        text: "The restoration phase represents rebuilding coordinated signalling, tissue responsiveness, and adaptive biological rhythms rather than only suppressing symptoms."
+      },
+      {
+        id: "triptans-5ht1b-1d",
+        label: "5-HT1B",
+        x: 14,
+        y: 25,
+        width: 20,
+        height: 12,
+        title: "5-HT1B/1D receptor modulation",
+        text: "Triptans target serotonin receptor pathways involved in migraine signalling and vascular modulation. They may suppress acute trigeminovascular activation."
+      },
+      {
+        id: "ditans-5ht1f",
+        label: "5-HT1F",
+        x: 14,
+        y: 36,
+        width: 20,
+        height: 12,
+        title: "5-HT1F modulation",
+        text: "Ditans act on 5-HT1F receptors and reduce trigeminal excitability without strong vasoconstrictive effects."
+      },
+      {
+        id: "ondansetron-5ht3",
+        label: "5-HT3",
+        x: 14,
+        y: 47,
+        width: 20,
+        height: 12,
+        title: "5-HT3 signalling modulation",
+        text: "5-HT3 pathways are associated with nausea signalling and autonomic responses. Ondansetron is presented as a receptor-level modulation strategy."
+      },
+      {
+        id: "snri-tca",
+        label: "SNRI/TCA",
+        x: 14,
+        y: 60,
+        width: 20,
+        height: 14,
+        title: "Descending inhibition pathways",
+        text: "SNRIs and TCAs enhance descending inhibitory pathways and alter pain processing dynamics within the nervous system."
+      },
+      {
+        id: "short-term-relief",
+        label: "Relief",
+        x: 14,
+        y: 78,
+        width: 22,
+        height: 16,
+        title: "Short-term symptom relief",
+        text: "The diagram emphasises that receptor modulation may provide short-term relief without necessarily restoring deeper tissue organisation or coherence."
+      },
+      {
+        id: "mitochondrial-support",
+        label: "Mito",
+        x: 84,
+        y: 26,
+        width: 24,
+        height: 12,
+        title: "Mitochondrial support",
+        text: "Mitochondrial support is presented as improving energy availability, coherence reserve, and biological responsiveness."
+      },
+      {
+        id: "antioxidant-energy",
+        label: "ATP",
+        x: 84,
+        y: 37,
+        width: 24,
+        height: 12,
+        title: "Antioxidant and energy support",
+        text: "Energy support strategies aim to stabilise metabolic signalling, reduce oxidative stress, and improve tissue-level adaptive capacity."
+      },
+      {
+        id: "fascia-hydration-flow",
+        label: "Hydration",
+        x: 84,
+        y: 48,
+        width: 25,
+        height: 12,
+        title: "Fascia hydration and flow",
+        text: "Hydration and fluid flow help maintain fascia glide, interface conductivity, and coherent tissue communication."
+      },
+      {
+        id: "autonomic-rhythm",
+        label: "Rhythm",
+        x: 84,
+        y: 61,
+        width: 25,
+        height: 15,
+        title: "Autonomic rhythm regulation",
+        text: "Sleep-wake rhythm and autonomic balance strongly influence tissue restoration, pain thresholds, inflammatory tone, and neural regulation."
+      },
+      {
+        id: "neuro-sedation",
+        label: "Calm",
+        x: 84,
+        y: 78,
+        width: 26,
+        height: 17,
+        title: "Neuro-sedation and safety",
+        text: "Calm, safety, and reduced sympathetic overactivation are presented as stabilising influences supporting recovery and biological regulation."
+      },
+      {
+        id: "flow-arrows",
+        label: "Arrows",
+        x: 51,
+        y: 53,
+        width: 67,
+        height: 70,
+        title: "Dynamic feedback loops",
+        text: "The arrows represent continuous bidirectional feedback between neural activity, vascular tone, fascia organisation, metabolic support, and autonomic rhythm."
+      },
+      {
+        id: "final-message",
+        label: "Final",
+        x: 50,
+        y: 93.5,
+        width: 75,
+        height: 7,
+        title: "Fields determine responsiveness",
+        text: "The final message is that receptor-level interventions modify signalling pathways, but deeper biological responsiveness depends on tissue organisation, coherence, flow, and adaptive reserve."
+      }
+    ]
   }
 ];
 

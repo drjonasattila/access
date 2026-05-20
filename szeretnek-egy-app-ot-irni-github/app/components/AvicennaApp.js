@@ -3048,6 +3048,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/trigeminovascular-headache-pathways">
         Headache pathways
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/receptor-vs-field-responsiveness">
+        Field responsiveness
+      </a>
     </nav>
   );
 }
