@@ -676,6 +676,190 @@ export const imageWalkthroughs = [
         text: "The final sequence summarises the model: clear waste, reorganise water-charge networks, restore signal fidelity, and support biological signalling and tissue responsiveness."
       }
     ]
+  },
+  {
+    id: "connection-of-life-energy",
+    title: "The Connection of Life Energy",
+    subtitle: "A guided Avicenna teaching map for light, water, membranes, mitochondria, fascia, blood vessels and nerves",
+    image: "/images/walkthroughs/connection-of-life-energy.jpg",
+    imageAlt: "Conceptual illustration of life energy moving through light, heat, mitochondria, microtubules, fascia, blood vessels and nerves.",
+    defaultHotspot: "core-concept",
+    disclaimer: "Educational model only. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "Core",
+        x: 50,
+        y: 7,
+        width: 72,
+        height: 11,
+        title: "The connection of life energy",
+        text: "This diagram presents a continuous biological energy pathway: light and heat influence water structure, membrane charge, mitochondrial activation, microtubule organisation, fascia communication, blood flow, and nerve signalling. The core idea is that life energy moves through connected biological layers rather than isolated organs."
+      },
+      {
+        id: "light",
+        label: "Light",
+        shape: "circle",
+        x: 7,
+        y: 28,
+        width: 13,
+        height: 22,
+        title: "Light - information and energy",
+        text: "Light is shown as the first organising input. In this model, light carries energy and information that can influence biological water, charge separation, and cellular communication."
+      },
+      {
+        id: "water-structuring",
+        label: "Water",
+        x: 18,
+        y: 27,
+        width: 16,
+        height: 24,
+        title: "Water structuring - EZ formation",
+        text: "Light and charge organise water into structured exclusion-zone layers. This creates negative charge near surfaces and a surrounding proton-rich region, forming a biological charge reservoir."
+      },
+      {
+        id: "membrane-structuring",
+        label: "Membrane",
+        x: 32,
+        y: 27,
+        width: 15,
+        height: 24,
+        title: "Membrane structuring - charge and potential",
+        text: "Ordered water spreads along membranes and supports membrane potential. This connects water organisation with cellular excitability, communication, and boundary function."
+      },
+      {
+        id: "mitochondria-activation",
+        label: "Mitochondria",
+        shape: "circle",
+        x: 45,
+        y: 27,
+        width: 15,
+        height: 24,
+        title: "Mitochondria - energy conversion",
+        text: "Membrane potential activates mitochondria and supports ATP production. In the Avicenna model, mitochondria are not only energy producers but also organisers of local water, charge, and cellular coherence."
+      },
+      {
+        id: "microtubule-network",
+        label: "Microtubules",
+        x: 57,
+        y: 27,
+        width: 14,
+        height: 23,
+        title: "Microtubules - intracellular communication",
+        text: "Mitochondria supply energy to the microtubule network, which is shown as an internal communication scaffold. Microtubules carry and process information within the cell."
+      },
+      {
+        id: "fascia-network",
+        label: "Fascia",
+        x: 69,
+        y: 27,
+        width: 14,
+        height: 23,
+        title: "Fascia - continuous conductive matrix",
+        text: "The fascia matrix is presented as a body-wide communication network. Energy and information may travel through connective tissue, linking local cellular processes with whole-body coordination."
+      },
+      {
+        id: "blood-vessels",
+        label: "Blood",
+        x: 82,
+        y: 27,
+        width: 14,
+        height: 24,
+        title: "Blood vessels - flow and oxygen delivery",
+        text: "Structured water and energy organisation support blood flow and oxygen delivery. When this becomes disturbed, blood sludging or impaired microcirculation may reduce tissue responsiveness."
+      },
+      {
+        id: "nerves",
+        label: "Nerves",
+        x: 94,
+        y: 27,
+        width: 12,
+        height: 24,
+        title: "Nerves - distant communication",
+        text: "Nerves are shown as the final long-distance communication layer. Energy and information reach distant tissues to support coordination, sensation, movement, and full-body function."
+      },
+      {
+        id: "large-membrane-section",
+        label: "Interface",
+        x: 30,
+        y: 60,
+        width: 46,
+        height: 29,
+        title: "Membrane as water-charge interface",
+        text: "The large membrane illustration shows how structured water, charge separation, and proton clouds form around biological membranes. This is the physical interface where water, electricity, heat, and cellular function meet."
+      },
+      {
+        id: "mitochondria-lower-pathway",
+        label: "Cell sun",
+        shape: "circle",
+        x: 54,
+        y: 60,
+        width: 16,
+        height: 22,
+        title: "Mitochondria as central sun",
+        text: "The mitochondrion is shown as a central light source within the cell. It converts biological potential into usable energy while helping maintain coherent charge and water organisation."
+      },
+      {
+        id: "fascia-microtubule-continuity",
+        label: "Continuity",
+        x: 68,
+        y: 60,
+        width: 23,
+        height: 29,
+        title: "From microtubules to fascia",
+        text: "The image links intracellular microtubules with the broader fascia matrix. This suggests a continuity between cellular architecture and whole-body connective tissue communication."
+      },
+      {
+        id: "blood-sludging",
+        label: "Sludging",
+        x: 81,
+        y: 52,
+        width: 18,
+        height: 45,
+        title: "Blood sludging and loss of flow",
+        text: "Blood sludging represents impaired separation, flow, and oxygen delivery. In this model, reduced water structure and charge organisation may contribute to poor microcirculatory movement."
+      },
+      {
+        id: "charge-legend",
+        label: "Charge",
+        x: 6,
+        y: 66,
+        width: 11,
+        height: 13,
+        title: "Negative and positive charge zones",
+        text: "The diagram distinguishes negative charge associated with EZ water from positive charge in the proton-rich inner space. This charge separation is treated as a foundation of biological energy storage and signalling."
+      },
+      {
+        id: "bottom-sequence",
+        label: "Sequence",
+        x: 51,
+        y: 86,
+        width: 65,
+        height: 16,
+        title: "Life energy pathway",
+        text: "The bottom row summarises the sequence: light, ordered water, membrane potential, mitochondria, microtubules, fascia matrix, blood vessels, and nerves. This is the simplified Avicenna pathway of energy communication."
+      },
+      {
+        id: "essence-box",
+        label: "Essence",
+        x: 9,
+        y: 86,
+        width: 16,
+        height: 16,
+        title: "The essence",
+        text: "The essence of the diagram is that life energy flows through a continuous network of water, membranes, mitochondria, microtubules, fascia, blood vessels, and nerves to nourish and charge every cell."
+      },
+      {
+        id: "final-message",
+        label: "Health",
+        x: 91,
+        y: 86,
+        width: 15,
+        height: 16,
+        title: "Life energy, communication and health",
+        text: "Health is presented as coordinated communication across the whole biological network. When energy flow, water structure, blood movement, and nerve signalling remain coherent, tissues can function more effectively."
+      }
+    ]
   }
 ];
 

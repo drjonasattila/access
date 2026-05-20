@@ -3039,6 +3039,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/dampening-signal-fidelity">
         Dampening fidelity
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/connection-of-life-energy">
+        Life energy
+      </a>
     </nav>
   );
 }
