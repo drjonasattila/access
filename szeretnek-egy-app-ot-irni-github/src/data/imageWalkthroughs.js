@@ -1799,6 +1799,213 @@ export const imageWalkthroughs = [
         text: "The final message is that compensatory bottom-up signalling emerges when descending regulation fails. The model frames chronic dysregulation as a systems-level coherence problem involving vascular, autonomic, fascial, and organ-level communication networks."
       }
     ]
+  },
+  {
+    id: "extended-central-sensitisation-map",
+    title: "Extended Central Sensitisation Map",
+    subtitle: "A cinematic systems narrative for oscillatory instability, discharge pathways and somatic amplification",
+    image: "/images/walkthroughs/extended-central-sensitisation-map.jpg",
+    imageAlt: "Conceptual systems map of extended central sensitisation, oscillatory instability, vagus-mediated interfaces and symptom discharge pathways.",
+    defaultHotspot: "core-concept",
+    narrative: true,
+    narrativeOrder: [
+      "core-concept",
+      "root-instability",
+      "brain-oscillation",
+      "crps-node",
+      "ptsd-node",
+      "vagus-mediated-interface",
+      "affective-autonomic-failure",
+      "bidirectional-feedback-instability",
+      "fascia-network",
+      "jueyin-field-dysregulation",
+      "migraine-node",
+      "ibs-node",
+      "peritoneal-oscillatory-reservoir",
+      "dominant-discharge-pathway",
+      "final-message"
+    ],
+    disclaimer: "Educational model only. Conceptual systems model. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "1",
+        phase: "Phase 1 - Root Instability",
+        x: 51,
+        y: 6,
+        width: 54,
+        height: 8,
+        title: "Extended central sensitisation map",
+        text: "This diagram presents chronic dysregulation as a systems-level oscillatory instability rather than a single isolated lesion. Symptoms emerge through amplification, transmission, feedback instability, and discharge pathways across interconnected biological systems."
+      },
+      {
+        id: "root-instability",
+        label: "2",
+        phase: "Phase 1 - Root Instability",
+        x: 13,
+        y: 9,
+        width: 24,
+        height: 16,
+        title: "Root - unresolved oscillatory patterns",
+        text: "The map begins with unresolved oscillatory instability. Instead of returning to baseline after stress or injury, signalling loops remain active, fragmented, and self-reinforcing."
+      },
+      {
+        id: "brain-oscillation",
+        label: "3",
+        phase: "Phase 1 - Root Instability",
+        shape: "circle",
+        x: 51,
+        y: 20,
+        width: 31,
+        height: 22,
+        title: "Pathological oscillation",
+        text: "The brain is presented as an oscillatory coordination system. When coherent regulation weakens, signalling becomes amplified, noisy, and poorly synchronised across networks.",
+        details: [
+          "Central sensitisation amplifies incoming signals.",
+          "Unstable coherence weakens rhythm and timing.",
+          "Amplification increases biological gain.",
+          "Signal trapping keeps loops active after the original trigger."
+        ]
+      },
+      {
+        id: "crps-node",
+        label: "4",
+        phase: "Phase 2 - Oscillatory Propagation",
+        x: 24,
+        y: 24,
+        width: 40,
+        height: 17,
+        title: "CRPS discharge pathways",
+        text: "CRPS is presented as a discharge-amplification state involving fascia, autonomic signalling, vascular instability, and persistent oscillatory trapping."
+      },
+      {
+        id: "ptsd-node",
+        label: "5",
+        phase: "Phase 2 - Oscillatory Propagation",
+        x: 78,
+        y: 32,
+        width: 34,
+        height: 18,
+        title: "PTSD and maladaptive loop stabilisation",
+        text: "Traumatic states may stabilise maladaptive feedback loops. The nervous system becomes biased toward threat amplification, autonomic hypervigilance, and persistent dysregulation."
+      },
+      {
+        id: "vagus-mediated-interface",
+        label: "6",
+        phase: "Phase 3 - Affective-Autonomic Failure",
+        shape: "circle",
+        x: 51,
+        y: 42,
+        width: 36,
+        height: 25,
+        title: "Vagus-mediated integration interface",
+        text: "The vagus interface acts as a bridge between affective state, visceral regulation, autonomic rhythm, and tissue responsiveness. Instability here may amplify multi-system dysregulation."
+      },
+      {
+        id: "affective-autonomic-failure",
+        label: "7",
+        phase: "Phase 3 - Affective-Autonomic Failure",
+        x: 50,
+        y: 50,
+        width: 79,
+        height: 9,
+        title: "Affective-autonomic integration failure",
+        text: "The diagram frames chronic dysregulation as a breakdown of coordinated emotional, autonomic, visceral, and somatic integration."
+      },
+      {
+        id: "bidirectional-feedback-instability",
+        label: "8",
+        phase: "Phase 3 - Affective-Autonomic Failure",
+        x: 52,
+        y: 58,
+        width: 50,
+        height: 12,
+        title: "Bidirectional feedback instability",
+        text: "Signals continuously travel between body, viscera, fascia, autonomic systems, and brain networks. When coherence is lost, these feedback loops may amplify rather than regulate activity."
+      },
+      {
+        id: "fascia-network",
+        label: "9",
+        phase: "Phase 4 - Discharge Pathways",
+        x: 49,
+        y: 65,
+        width: 35,
+        height: 11,
+        title: "Fascia communication network",
+        text: "Fascia is presented as a distributed signalling matrix linking mechanical, fluidic, autonomic, vascular, and sensory information across tissues."
+      },
+      {
+        id: "jueyin-field-dysregulation",
+        label: "10",
+        phase: "Phase 4 - Discharge Pathways",
+        x: 48,
+        y: 72,
+        width: 53,
+        height: 12,
+        title: "Jueyin field dysregulation",
+        text: "The liver-peritoneal axis is presented as an oscillatory regulation hub involved in stress adaptation, discharge routing, vascular tone, and autonomic coordination."
+      },
+      {
+        id: "migraine-node",
+        label: "11",
+        phase: "Phase 4 - Discharge Pathways",
+        x: 20,
+        y: 76,
+        width: 35,
+        height: 17,
+        title: "Migraine as cranial discharge pathway",
+        text: "Migraine is presented as a cranial discharge pattern emerging from unstable oscillatory regulation and impaired network buffering."
+      },
+      {
+        id: "ibs-node",
+        label: "12",
+        phase: "Phase 4 - Discharge Pathways",
+        x: 79,
+        y: 67,
+        width: 32,
+        height: 23,
+        title: "Functional GI and visceral integration failure",
+        text: "Functional gastrointestinal symptoms are framed as visceral expressions of integration failure involving autonomic regulation, vagal signalling, fascia connectivity, and oscillatory instability."
+      },
+      {
+        id: "peritoneal-oscillatory-reservoir",
+        label: "13",
+        phase: "Phase 5 - Somatic Amplification",
+        x: 77,
+        y: 86,
+        width: 34,
+        height: 16,
+        title: "Peritoneal oscillatory reservoir",
+        text: "The abdominal-peritoneal region is presented as a large oscillatory buffering and propagation zone capable of influencing autonomic, vascular, fascial, and visceral signalling patterns."
+      },
+      {
+        id: "dominant-discharge-pathway",
+        label: "14",
+        phase: "Phase 5 - Somatic Amplification",
+        x: 18,
+        y: 85,
+        width: 32,
+        height: 12,
+        title: "Dominant discharge pathways",
+        text: "Different patients may express instability through different dominant pathways while the underlying systems instability may remain similar.",
+        details: [
+          "Vascular discharge may dominate in some states.",
+          "Neural discharge may dominate in others.",
+          "Fascial, visceral and autonomic pathways can become the main expression channel."
+        ]
+      },
+      {
+        id: "final-message",
+        label: "15",
+        phase: "Phase 5 - Somatic Amplification",
+        x: 50,
+        y: 97,
+        width: 86,
+        height: 6,
+        title: "Somatic amplification without structural pathology",
+        text: "The final message is that substantial symptoms may emerge through amplification, dysregulation, oscillatory trapping, and coherence failure even when conventional structural pathology is limited or absent."
+      }
+    ]
   }
 ];
 

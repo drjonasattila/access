@@ -102,7 +102,9 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
 
         <section className="image-walkthrough-panel" ref={panelRef} aria-live="polite">
           <p>
-            {isNarrative ? `Concept ${selectedIndex + 1} of ${narrativeOrder.length}` : "Selected region"}
+            {isNarrative
+              ? `${selectedHotspot.phase ? `${selectedHotspot.phase} - ` : ""}Concept ${selectedIndex + 1} of ${narrativeOrder.length}`
+              : "Selected region"}
           </p>
           <h2>{selectedHotspot.title}</h2>
           <span>{selectedHotspot.text}</span>

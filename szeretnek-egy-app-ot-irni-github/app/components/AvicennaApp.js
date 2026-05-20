@@ -3057,6 +3057,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/liver-yang-posterior-fossa">
         Liver Yang map
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/extended-central-sensitisation">
+        Central sensitisation
+      </a>
     </nav>
   );
 }
