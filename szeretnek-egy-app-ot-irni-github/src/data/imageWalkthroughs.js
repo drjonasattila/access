@@ -2441,6 +2441,223 @@ export const imageWalkthroughs = [
         text: "The final integration frames the whole image as a cinematic atlas of chronic pain propagation: surface buffering weakens, resonance bottlenecks amplify instability, root entry zones lose signal fidelity, and core recovery systems fail to return stable flow."
       }
     ]
+  },
+  {
+    id: "shaoyang-jueyin-dissociation",
+    title: "Shaoyang-Jueyin Dissociation",
+    subtitle: "Failure of transitional emotional buffering and lateral Shaoyang escape routing",
+    image: "/images/walkthroughs/shaoyang-jueyin-dissociation.jpg",
+    imageAlt: "Conceptual mechanism map showing Jueyin emotional integration failure, pressure accumulation and Shaoyang GB/TB escape routes.",
+    defaultHotspot: "core-mechanism",
+    narrative: true,
+    narrativeOrder: [
+      "core-mechanism",
+      "jueyin-blockade",
+      "pericardium",
+      "liver",
+      "portal-system",
+      "gb-tb-axis",
+      "excess-qi-pressure-flow",
+      "emotional-integration-process",
+      "restore-containment"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-mechanism",
+        label: "1",
+        phase: "Mechanism",
+        x: 51,
+        y: 85,
+        width: 55,
+        height: 16,
+        title: "Core mechanism",
+        text: "The central sequence shows the whole process: emotional experience enters, Jueyin fails to contain and transform it, pressure accumulates, Shaoyang opens as an escape route, and symptoms may appear across multiple tissues and regions."
+      },
+      {
+        id: "jueyin-blockade",
+        label: "2",
+        phase: "Deep Buffering Failure",
+        x: 58,
+        y: 48,
+        width: 27,
+        height: 26,
+        title: "Jueyin blockade",
+        text: "Jueyin is presented as the deep emotional-visceral buffering system. It includes the Pericardium, Liver, portal circulation, and visceral containment. When this system cannot integrate experience, pressure cannot complete its internal transformation cycle."
+      },
+      {
+        id: "pericardium",
+        label: "3",
+        phase: "Deep Buffering Failure",
+        shape: "circle",
+        x: 49,
+        y: 42,
+        width: 15,
+        height: 19,
+        title: "Pericardium - emotional container",
+        text: "The Pericardium is shown as the emotional container. When it constricts, emotional pressure may be held rather than circulated, contributing to chest oppression, sighing, alertness, or difficulty settling."
+      },
+      {
+        id: "liver",
+        label: "4",
+        phase: "Deep Buffering Failure",
+        shape: "circle",
+        x: 49,
+        y: 61,
+        width: 18,
+        height: 17,
+        title: "Liver - stores, filters, smooths, plans",
+        text: "The Liver represents smoothing, filtering, planning, and distributing internal pressure. When Liver regulation is blocked, pressure may become frustrated, restless, or forced into lateral discharge pathways."
+      },
+      {
+        id: "portal-system",
+        label: "5",
+        phase: "Visceral Flow Field",
+        x: 48,
+        y: 73,
+        width: 19,
+        height: 12,
+        title: "Portal system - visceral flow field",
+        text: "The portal system represents the visceral flow and buffering axis. It connects gut, liver, blood, and emotional processing. When this axis becomes congested, pressure may accumulate in the abdomen and seek another route."
+      },
+      {
+        id: "gb-tb-axis",
+        label: "6",
+        phase: "Shaoyang Exit Route",
+        shape: "circle",
+        x: 32,
+        y: 22,
+        width: 23,
+        height: 24,
+        title: "GB/TB axis - Shaoyang exit turbine",
+        text: "The Gallbladder-Triple Burner axis is shown as the Shaoyang exit route. When Jueyin cannot contain and transform pressure, the Shaoyang pathway may push the unresolved signal outward through lateral fascia, nerves, vessels, and membranes."
+      },
+      {
+        id: "excess-qi-pressure-flow",
+        label: "7",
+        phase: "Shaoyang Exit Route",
+        x: 30,
+        y: 52,
+        width: 31,
+        height: 55,
+        title: "Excess Qi pressure flow",
+        text: "The orange pathway represents unresolved pressure escaping laterally. It can travel through Shaoyang-like corridors: temporal head, jaw, neck, shoulder, ribs, hip, lateral thigh, ankle, and vestibular or ENT interfaces."
+      },
+      {
+        id: "emotional-integration-process",
+        label: "8",
+        phase: "Normal Integration",
+        x: 72,
+        y: 50,
+        width: 21,
+        height: 44,
+        title: "Normal emotional integration",
+        text: "In the healthy process, experience is received, recognised, processed by the Liver, held and soothed by the Pericardium, and then Qi and Blood flow freely. This is the normal completion of the cycle."
+      },
+      {
+        id: "restore-containment",
+        label: "9",
+        phase: "Integration",
+        x: 51,
+        y: 96,
+        width: 55,
+        height: 7,
+        title: "Restore containment and complete the cycle",
+        text: "The goal of the model is not simply to suppress symptoms, but to restore containment, rebuild coherence, and complete the emotional-visceral transformation cycle."
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Typical Shaoyang Escape Routes",
+        items: [
+          {
+            id: "route-migraine",
+            title: "Migraine",
+            text: "Migraine is presented as a cranial Shaoyang discharge pattern. Unresolved pressure may travel upward through temporal, trigeminal, vascular, and sensory pathways."
+          },
+          {
+            id: "route-frozen-shoulder",
+            title: "Frozen shoulder",
+            text: "Frozen shoulder is shown as upper lateral channel obstruction. It may reflect failed lateral discharge through shoulder fascia, capsule, and the GB/TB interface."
+          },
+          {
+            id: "route-intercostal-neuralgia",
+            title: "Intercostal neuralgia",
+            text: "Intercostal neuralgia represents rib-side pressure trapped in the lateral thoracic corridor, especially where diaphragm, ribs, fascia, and autonomic signalling meet."
+          },
+          {
+            id: "route-gtps",
+            title: "Greater trochanteric pain syndrome",
+            text: "GTPS is shown as lower lateral hip expression. The lateral hip fascia and tendon interface may become a discharge zone for unresolved Shaoyang tension."
+          },
+          {
+            id: "route-meralgia-paresthetica",
+            title: "Meralgia paresthetica",
+            text: "Meralgia paresthetica is presented as lateral femoral cutaneous nerve irritation within a compressed or electrically unstable lateral fascia corridor."
+          },
+          {
+            id: "route-ankle-joint-pain",
+            title: "Ankle joint pain",
+            text: "Ankle pain is shown as a terminal discharge point where lateral pressure reaches the lower transition zone and weak return pathways."
+          },
+          {
+            id: "route-tmj-jaw-tension",
+            title: "TMJ / jaw tension",
+            text: "Jaw tension is a Shaoyang interface pattern involving GB, ST, and TB coordination. It may appear when pressure rises through the neck, temporal region, and masticatory system."
+          },
+          {
+            id: "route-tinnitus-vestibular",
+            title: "Tinnitus / vestibular instability",
+            text: "Tinnitus and vestibular symptoms are presented as half-in / half-out gate instability, where cranial fluid, membrane, sensory, and Shaoyang signalling rhythms become unstable."
+          },
+          {
+            id: "route-autonomic-fluctuation",
+            title: "Autonomic fluctuation",
+            text: "Autonomic fluctuation reflects cycling regulation: flare and remission, heat and cold shifts, irritability, sweating, sleep disturbance, or unstable rhythm."
+          }
+        ]
+      },
+      {
+        title: "When Jueyin Fails",
+        items: [
+          {
+            id: "failure-pericardial-constriction",
+            title: "Pericardial constriction",
+            text: "Pericardial constriction represents emotional containment failure. The chest may feel tight, protected, restricted, or unable to expand emotionally."
+          },
+          {
+            id: "failure-liver-qi-stagnation",
+            title: "Liver Qi stagnation",
+            text: "Liver Qi stagnation represents frustrated internal movement. Pressure builds when experience cannot be transformed, planned, expressed, or smoothly distributed."
+          },
+          {
+            id: "failure-portal-congestion",
+            title: "Portal congestion",
+            text: "Portal congestion represents visceral heaviness, fullness, bloating, and impaired abdominal flow. It links gut, liver, blood, and emotional buffering."
+          },
+          {
+            id: "failure-cold-pelvis",
+            title: "Cold pelvis",
+            text: "Cold pelvis reflects poor circulation, damp stagnation, reproductive fatigue, and weak lower terrain responsiveness."
+          },
+          {
+            id: "failure-ibs-visceral-hypersensitivity",
+            title: "IBS / visceral hypersensitivity",
+            text: "IBS-like sensitivity represents a visceral expression of integration failure: gut reactivity, irregular rhythm, spasm, bloating, and altered autonomic tone."
+          },
+          {
+            id: "failure-sleep-disturbance",
+            title: "Sleep disturbance 2-4 AM",
+            text: "Early morning waking is presented as Liver-Pericardium interface instability, where unresolved processing returns during the night cycle."
+          },
+          {
+            id: "failure-emotional-overflow",
+            title: "Emotional overflow without container",
+            text: "This pattern represents anxiety, worry, swallowing emotions, emotional pressure, and lack of a stable inner container."
+          }
+        ]
+      }
+    ]
   }
 ];
 

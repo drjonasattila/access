@@ -1343,6 +1343,75 @@ input[type="number"] {
   width: 22px;
 }
 
+.image-walkthrough-reference-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.image-walkthrough-reference-section {
+  background: rgba(15, 34, 56, 0.96);
+  border: 1px solid rgba(201, 168, 91, 0.38);
+  border-radius: 8px;
+  box-shadow: 0 16px 42px rgba(7, 20, 33, 0.16);
+  padding: 14px;
+}
+
+.image-walkthrough-reference-section h3 {
+  color: #fff8e6;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  margin: 0 0 11px;
+  text-transform: uppercase;
+}
+
+.image-walkthrough-reference-section > div {
+  display: grid;
+  gap: 7px;
+}
+
+.image-reference-chip {
+  align-items: center;
+  background: rgba(255, 248, 230, 0.06);
+  border: 1px solid rgba(255, 248, 230, 0.16);
+  border-radius: 999px;
+  color: #fff8e6;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  gap: 8px;
+  justify-content: flex-start;
+  line-height: 1.25;
+  min-height: 34px;
+  padding: 8px 11px;
+  text-align: left;
+}
+
+.image-reference-chip:hover,
+.image-reference-chip:focus-visible,
+.image-reference-chip-active {
+  background: rgba(255, 184, 72, 0.16);
+  border-color: rgba(255, 198, 92, 0.72);
+  box-shadow: 0 0 22px rgba(255, 184, 72, 0.2);
+  outline: none;
+}
+
+.image-reference-chip span {
+  align-items: center;
+  background: rgba(86, 190, 255, 0.18);
+  border: 1px solid rgba(86, 190, 255, 0.48);
+  border-radius: 999px;
+  color: #fff8e6;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
+}
+
 .image-walkthrough-panel {
   background: #ffffff;
   border: 1px solid #ded8c9;
@@ -1502,5 +1571,9 @@ input[type="number"] {
   .image-region-chip span {
     height: 20px;
     width: 20px;
+  }
+
+  .image-walkthrough-reference-grid {
+    grid-template-columns: 1fr;
   }
 }

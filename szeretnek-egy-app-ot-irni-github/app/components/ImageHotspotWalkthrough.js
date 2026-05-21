@@ -19,16 +19,25 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
   const panelRef = useRef(null);
   const narrativeOrder = walkthrough.narrativeOrder || walkthrough.hotspots.map((hotspot) => hotspot.id);
   const isNarrative = Boolean(walkthrough.narrative);
+  const allConcepts = useMemo(() => {
+    const referenceItems = (walkthrough.referenceSections || []).flatMap((section) =>
+      section.items.map((item) => ({ ...item, referenceSectionTitle: section.title }))
+    );
+
+    return [...walkthrough.hotspots, ...referenceItems];
+  }, [walkthrough]);
 
   const selectedHotspot = useMemo(() => {
     return (
-      walkthrough.hotspots.find((hotspot) => hotspot.id === selectedId) ||
+      allConcepts.find((hotspot) => hotspot.id === selectedId) ||
       walkthrough.hotspots.find((hotspot) => hotspot.id === walkthrough.defaultHotspot) ||
       walkthrough.hotspots[0]
     );
-  }, [selectedId, walkthrough]);
+  }, [allConcepts, selectedId, walkthrough]);
 
-  const selectedIndex = Math.max(0, narrativeOrder.indexOf(selectedHotspot.id));
+  const selectedNarrativeIndex = narrativeOrder.indexOf(selectedHotspot.id);
+  const selectedIndex = Math.max(0, selectedNarrativeIndex);
+  const isReferenceSelection = selectedNarrativeIndex === -1;
 
   function selectHotspot(id) {
     setSelectedId(id);
@@ -41,7 +50,7 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
   }
 
   function selectNextHotspot() {
-    const nextIndex = (selectedIndex + 1) % narrativeOrder.length;
+    const nextIndex = isReferenceSelection ? 0 : (selectedIndex + 1) % narrativeOrder.length;
     selectHotspot(narrativeOrder[nextIndex]);
   }
 
@@ -100,10 +109,33 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
           ))}
         </section>
 
+        {walkthrough.referenceSections?.length ? (
+          <section className="image-walkthrough-reference-grid" aria-label="Clickable mechanism reference lists">
+            {walkthrough.referenceSections.map((section) => (
+              <div className="image-walkthrough-reference-section" key={section.title}>
+                <h3>{section.title}</h3>
+                <div>
+                  {section.items.map((item) => (
+                    <button
+                      className={selectedHotspot.id === item.id ? "image-reference-chip image-reference-chip-active" : "image-reference-chip"}
+                      key={item.id}
+                      onClick={() => selectHotspot(item.id)}
+                      type="button"
+                    >
+                      <span aria-hidden="true">i</span>
+                      {item.title}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        ) : null}
+
         <section className="image-walkthrough-panel" ref={panelRef} aria-live="polite">
           <p>
             {isNarrative
-              ? `${selectedHotspot.phase ? `${selectedHotspot.phase} - ` : ""}Concept ${selectedIndex + 1} of ${narrativeOrder.length}`
+              ? `${selectedHotspot.phase || selectedHotspot.referenceSectionTitle ? `${selectedHotspot.phase || selectedHotspot.referenceSectionTitle} - ` : ""}${isReferenceSelection ? "Reference" : `Concept ${selectedIndex + 1} of ${narrativeOrder.length}`}`
               : "Selected region"}
           </p>
           <h2>{selectedHotspot.title}</h2>
