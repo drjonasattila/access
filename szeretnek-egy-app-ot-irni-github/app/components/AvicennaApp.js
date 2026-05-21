@@ -3063,6 +3063,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/visceral-fat-internal-swamp">
         Internal swamp
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/taiyang-shaoyin-dissociation">
+        Taiyang-Shaoyin
+      </a>
     </nav>
   );
 }

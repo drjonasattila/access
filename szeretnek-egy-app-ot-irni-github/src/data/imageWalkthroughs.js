@@ -2212,6 +2212,235 @@ export const imageWalkthroughs = [
         text: "The full image teaches a transition: stagnant density can be understood as a loss of coherent internal movement. The restoration pathway begins by reintroducing flow, warmth, clearance, and biological responsiveness."
       }
     ]
+  },
+  {
+    id: "taiyang-shaoyin-dissociation",
+    title: "TAIYANG - SHAOYIN DISSOCIATION",
+    subtitle: "Dysfunctional Heart-Kidney communication and failure of core-to-surface emotional ventilation",
+    image: "/images/walkthroughs/taiyang-shaoyin-dissociation.jpeg",
+    imageAlt: "Conceptual atlas showing Taiyang-Shaoyin dissociation, posterior fossa resonance, root entry zone instability and failed Yin return.",
+    defaultHotspot: "core-concept",
+    narrative: true,
+    narrativeOrder: [
+      "core-concept",
+      "taiyang-surface-failure",
+      "occipital-pain",
+      "frozen-shoulder-pressure",
+      "posterior-fossa-resonance",
+      "root-entry-zone-instability",
+      "trigeminal-glossopharyngeal-neuralgia",
+      "spinal-nerve-root-compression",
+      "pulse-plate-plexus-desynchronization",
+      "shaoyin-collapse",
+      "pericardial-defensive-constriction",
+      "failed-yin-return",
+      "bilateral-ankle-oedema",
+      "chronic-pain-emergence",
+      "final-integration"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "1",
+        phase: "Core Atlas",
+        x: 50,
+        y: 6,
+        width: 70,
+        height: 11,
+        title: "Taiyang-Shaoyin dissociation",
+        text: "This walkthrough presents a conceptual resonance-map of dysfunctional Heart-Kidney communication. The key teaching is that when the surface fails to discharge the core, pressure may return inward through vascular, neural, fascial and autonomic interfaces."
+      },
+      {
+        id: "taiyang-surface-failure",
+        label: "2",
+        phase: "Chapter 1 - Taiyang Surface Failure",
+        x: 21,
+        y: 21,
+        width: 35,
+        height: 12,
+        title: "Taiyang surface failure",
+        text: "The surface buffering system is shown as losing its ability to dissipate overload. Mechanical, emotional and vascular pressure begin returning inward instead of venting through the outer layer."
+      },
+      {
+        id: "occipital-pain",
+        label: "3",
+        phase: "Chapter 1 - Taiyang Surface Failure",
+        x: 15,
+        y: 28,
+        width: 25,
+        height: 9,
+        title: "Occipital pain",
+        text: "Occipital pain is presented as a surface-to-cranial expression of failed offloading. In this model, local tension becomes part of a broader pressure-return pattern."
+      },
+      {
+        id: "frozen-shoulder-pressure",
+        label: "4",
+        phase: "Chapter 1 - Taiyang Surface Failure",
+        x: 19,
+        y: 35,
+        width: 34,
+        height: 11,
+        title: "Frozen shoulder and pressure tension",
+        text: "Neck-shoulder stiffness and frozen-shoulder patterns are framed as surface buffering failure. The diagram uses them as examples of mechanical pressure becoming poorly ventilated."
+      },
+      {
+        id: "posterior-fossa-resonance",
+        label: "5",
+        phase: "Chapter 2 - Posterior Fossa Resonance Chamber",
+        shape: "circle",
+        x: 53,
+        y: 24,
+        width: 41,
+        height: 24,
+        title: "Posterior fossa resonance chamber",
+        text: "The posterior fossa is presented as a vulnerable resonance bottleneck where venous congestion, pulsatile mismatch and impaired outflow may amplify instability.",
+        details: [
+          "Venous outflow mismatch is presented here as a conceptual contributor to IIH, PRES, Chiari-related crowding and venous congestion states.",
+          "This is an educational systems framework, not a statement of direct causation.",
+          "Reference themes include cerebral venous congestion, posterior circulation vulnerability, vascular autoregulatory mismatch and venous outflow disturbance concepts."
+        ]
+      },
+      {
+        id: "root-entry-zone-instability",
+        label: "6",
+        phase: "Chapter 3 - Root Entry Zone Instability",
+        x: 24,
+        y: 47,
+        width: 40,
+        height: 11,
+        title: "Root entry zone instability",
+        text: "Excessive incoherent neural traffic on destabilised tissue interfaces may increase vulnerability at root entry zones.",
+        details: [
+          "Reduced signal-to-noise ratio may contribute to ectopic firing.",
+          "Interface instability may increase hypersensitivity and neural amplification.",
+          "The model uses root entry zones as vulnerable transition points for multifocal pain propagation."
+        ]
+      },
+      {
+        id: "trigeminal-glossopharyngeal-neuralgia",
+        label: "7",
+        phase: "Chapter 3 - Root Entry Zone Instability",
+        x: 24,
+        y: 58,
+        width: 41,
+        height: 12,
+        title: "Trigeminal and glossopharyngeal pathways",
+        text: "Trigeminal and glossopharyngeal neuralgia are shown as examples of neural pathways that may become vulnerable when root entry zone signalling becomes noisy and unstable."
+      },
+      {
+        id: "spinal-nerve-root-compression",
+        label: "8",
+        phase: "Chapter 3 - Root Entry Zone Instability",
+        x: 24,
+        y: 68,
+        width: 42,
+        height: 10,
+        title: "Spinal nerve root compression",
+        text: "Spinal nerve root compression is framed as a local interface failure where oedema, tissue fragmentation and excessive traffic may reduce signal fidelity."
+      },
+      {
+        id: "pulse-plate-plexus-desynchronization",
+        label: "9",
+        phase: "Chapter 4 - Pulse-Plate-Plexus Desynchronization",
+        x: 27,
+        y: 79,
+        width: 47,
+        height: 17,
+        title: "Pulse-plate-plexus desynchronization",
+        text: "Loss of phase coherence between vascular pulse, dural interface and neural plexus organisation may destabilise signal propagation.",
+        details: [
+          "The CNS is presented here as a resonant chamber unit.",
+          "Chaotic high-frequency propagation arriving through arterial systems may disturb peripheral-central synchrony.",
+          "The visual logic is wave desynchronisation and interference, not a diagnostic or causal claim."
+        ]
+      },
+      {
+        id: "shaoyin-collapse",
+        label: "10",
+        phase: "Chapter 5 - Shaoyin Collapse",
+        x: 79,
+        y: 33,
+        width: 36,
+        height: 19,
+        title: "Shaoyin core collapse",
+        text: "When restorative reserve becomes depleted, the organism may enter a persistent alert state with impaired recovery and failed inward stabilisation."
+      },
+      {
+        id: "pericardial-defensive-constriction",
+        label: "11",
+        phase: "Chapter 5 - Shaoyin Collapse",
+        x: 81,
+        y: 49,
+        width: 35,
+        height: 17,
+        title: "Pericardial defensive constriction",
+        text: "Heart-Kidney communication failure is presented as impaired restorative recovery, chronic autonomic activation, reduced peripheral responsiveness and sleep fragmentation.",
+        details: [
+          "Insomnia and palpitations are shown as alert-state expressions.",
+          "Adrenal depletion is framed as reduced restorative reserve.",
+          "Reduced tissue responsiveness indicates a core-to-periphery communication problem in the model."
+        ]
+      },
+      {
+        id: "failed-yin-return",
+        label: "12",
+        phase: "Chapter 6 - Failed Yin Return",
+        x: 80,
+        y: 64,
+        width: 39,
+        height: 13,
+        title: "Failed Yin return",
+        text: "Failed fluid return and instability at lower polarity transition zones may impair microvascular flow and promote oedema in this conceptual model.",
+        details: [
+          "The image links lower transition vulnerability with weakened coherent polarity transitions.",
+          "Local signal stability, zeta potential, blood separation and fluid coherence are treated as interacting ideas.",
+          "This is a conceptual educational model, not established medical doctrine."
+        ]
+      },
+      {
+        id: "bilateral-ankle-oedema",
+        label: "13",
+        phase: "Chapter 6 - Failed Yin Return",
+        x: 80,
+        y: 84,
+        width: 40,
+        height: 18,
+        title: "Bilateral ankle oedema",
+        text: "Bilateral ankle oedema is presented as a lower-terrain expression of failed fluid return, impaired microvascular flow and weakened coherent circulation.",
+        details: [
+          "Relevant transition interfaces in the model include BL to KD, GB to LV and ST to SP.",
+          "The walkthrough presents these as symbolic systems associations rather than diagnostic categories."
+        ]
+      },
+      {
+        id: "chronic-pain-emergence",
+        label: "14",
+        phase: "Chapter 7 - Chronic Pain Emergence",
+        x: 79,
+        y: 78,
+        width: 34,
+        height: 10,
+        title: "Chronic pain emergence",
+        text: "When coherence repeatedly fails at vulnerable interfaces, chronic pain may emerge at the weakest adaptive points.",
+        details: [
+          "Proposed progression: Taiyang offload failure.",
+          "Continued inward pressure and posterior fossa congestion.",
+          "REZ instability, PPP desynchronization, failed Yin return and multifocal pain amplification."
+        ]
+      },
+      {
+        id: "final-integration",
+        label: "15",
+        phase: "Integration",
+        x: 50,
+        y: 51,
+        width: 88,
+        height: 83,
+        title: "Surface fails to discharge the core",
+        text: "The final integration frames the whole image as a cinematic atlas of chronic pain propagation: surface buffering weakens, resonance bottlenecks amplify instability, root entry zones lose signal fidelity, and core recovery systems fail to return stable flow."
+      }
+    ]
   }
 ];
 
