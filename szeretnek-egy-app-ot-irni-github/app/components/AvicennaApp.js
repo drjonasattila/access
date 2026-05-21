@@ -3060,6 +3060,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/extended-central-sensitisation">
         Central sensitisation
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/visceral-fat-internal-swamp">
+        Internal swamp
+      </a>
     </nav>
   );
 }

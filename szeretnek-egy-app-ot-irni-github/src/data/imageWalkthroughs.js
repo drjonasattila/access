@@ -2006,6 +2006,212 @@ export const imageWalkthroughs = [
         text: "The final message is that substantial symptoms may emerge through amplification, dysregulation, oscillatory trapping, and coherence failure even when conventional structural pathology is limited or absent."
       }
     ]
+  },
+  {
+    id: "visceral-fat-internal-swamp",
+    title: "Visceral Fat as a Stagnant Internal Swamp",
+    subtitle: "A cinematic terrain exploration of dampness, visceral density, slow drainage and restored coherent flow",
+    image: "/images/walkthroughs/visceral-fat-internal-swamp.png",
+    imageAlt: "Conceptual terrain artwork showing visceral fat as a stagnant internal swamp with drainage rivers, cold pelvis, slow lymphatic flow and restoration themes.",
+    defaultHotspot: "core-concept",
+    narrative: true,
+    narrativeOrder: [
+      "core-concept",
+      "internal-swamp",
+      "coherent-flow-lost",
+      "living-drainage-river",
+      "slow-lymphatic-flow",
+      "mesenterium",
+      "low-metabolic-reserve",
+      "cold-pelvis",
+      "visceral-fat",
+      "oedema",
+      "herbal-clearance",
+      "gi-patterns",
+      "gynaecology-patterns",
+      "urology-patterns",
+      "restoration-sentence",
+      "final-integration"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "1",
+        phase: "Dark Swamp",
+        x: 61,
+        y: 4,
+        width: 52,
+        height: 8,
+        title: "Visceral fat as a stagnant internal swamp",
+        text: "This image presents visceral fat as a symbolic internal swamp: a terrain where flow, drainage, metabolic responsiveness, and emotional expression have slowed. The body stores density where coherent movement has been lost."
+      },
+      {
+        id: "internal-swamp",
+        label: "2",
+        phase: "Dark Swamp",
+        x: 13,
+        y: 8,
+        width: 24,
+        height: 13,
+        title: "Internal swamp terrain",
+        text: "The swamp represents a low-flow internal environment where water, waste, emotion, and density accumulate. It is a metaphor for stagnation rather than a literal anatomical claim."
+      },
+      {
+        id: "coherent-flow-lost",
+        label: "3",
+        phase: "Dark Swamp",
+        x: 50,
+        y: 49,
+        width: 38,
+        height: 15,
+        title: "The body stores density where coherent flow is lost",
+        text: "This is the central teaching sentence. When circulation, lymphatic movement, metabolic flexibility, and emotional processing slow down, the system may store density instead of transforming and clearing it."
+      },
+      {
+        id: "living-drainage-river",
+        label: "4",
+        phase: "Golden Drainage River",
+        x: 49,
+        y: 52,
+        width: 34,
+        height: 69,
+        title: "Living drainage river",
+        text: "The golden river represents preserved flow memory inside the stagnant terrain. It shows that even dense, slow systems may contain a pathway back toward movement, drainage, and reorganisation."
+      },
+      {
+        id: "slow-lymphatic-flow",
+        label: "5",
+        phase: "Golden Drainage River",
+        x: 23,
+        y: 43,
+        width: 31,
+        height: 19,
+        title: "Slow lymphatic flow",
+        text: "Slow lymphatic movement is shown as a contributor to bulk water retention, metabolic waste accumulation, and emotional storage. In this model, drainage is central to restoring terrain responsiveness."
+      },
+      {
+        id: "mesenterium",
+        label: "6",
+        phase: "Golden Drainage River",
+        x: 58,
+        y: 29,
+        width: 28,
+        height: 20,
+        title: "Mesenterium as adaptive signalling membrane",
+        text: "The mesenterium is presented as a large adaptive membrane network involved in visceral communication, gut feeling, vascular flow, and internal terrain sensing."
+      },
+      {
+        id: "low-metabolic-reserve",
+        label: "7",
+        phase: "Pelvic Basin",
+        x: 13,
+        y: 64,
+        width: 26,
+        height: 17,
+        title: "Low metabolic reserve",
+        text: "Low metabolic reserve means the system has less capacity to generate heat, movement, and transformation. This may contribute to cold, damp, slow, and poorly responsive tissue states."
+      },
+      {
+        id: "cold-pelvis",
+        label: "8",
+        phase: "Pelvic Basin",
+        x: 13,
+        y: 51,
+        width: 21,
+        height: 13,
+        title: "Cold pelvis terrain",
+        text: "Cold pelvis represents reduced warmth, low circulation, slow tissue exchange, and static fluid behaviour in the lower terrain. It is a symbolic terrain pattern, not a diagnosis."
+      },
+      {
+        id: "visceral-fat",
+        label: "9",
+        phase: "Dense Storage Terrain",
+        x: 84,
+        y: 20,
+        width: 24,
+        height: 13,
+        title: "Visceral fat as dense storage terrain",
+        text: "Visceral fat is shown as dense, stagnant, and slow. In this model, it reflects storage of metabolic density in a terrain where flow and transformation have become insufficient."
+      },
+      {
+        id: "oedema",
+        label: "10",
+        phase: "Dense Storage Terrain",
+        x: 79,
+        y: 41,
+        width: 17,
+        height: 13,
+        title: "Oedema and tissue puffiness",
+        text: "Oedema represents retained fluid and reduced tissue exchange. It is part of the broader swamp metaphor: water is present, but not moving coherently."
+      },
+      {
+        id: "herbal-clearance",
+        label: "11",
+        phase: "Restoration",
+        x: 91,
+        y: 31,
+        width: 18,
+        height: 18,
+        title: "Herbs and autophagic clearance",
+        text: "Herbs are presented as supporting metabolic clearance, autophagic recycling, circulation, and terrain reorganisation. This is educational framing, not a treatment instruction."
+      },
+      {
+        id: "gi-patterns",
+        label: "12",
+        phase: "Pelvic Basin",
+        x: 17,
+        y: 83,
+        width: 29,
+        height: 20,
+        title: "Cold pelvis GI patterns",
+        text: "The GI examples represent possible low-flow or inflammatory terrain expressions such as IBS-like symptoms, inflammatory bowel patterns, and motility dysfunction."
+      },
+      {
+        id: "gynaecology-patterns",
+        label: "13",
+        phase: "Pelvic Basin",
+        x: 89,
+        y: 57,
+        width: 22,
+        height: 23,
+        title: "Cold pelvis gynaecology patterns",
+        text: "The gynaecology examples are shown as possible symbolic terrain associations involving stagnation, density, and altered pelvic flow. They should be presented as conceptual associations only."
+      },
+      {
+        id: "urology-patterns",
+        label: "14",
+        phase: "Pelvic Basin",
+        x: 84,
+        y: 77,
+        width: 27,
+        height: 17,
+        title: "Cold pelvis urology patterns",
+        text: "The urology examples represent possible lower-terrain stagnation patterns involving recurrent irritation, poor flow, and tissue density."
+      },
+      {
+        id: "restoration-sentence",
+        label: "15",
+        phase: "Restoration",
+        x: 50,
+        y: 96,
+        width: 93,
+        height: 7,
+        title: "Reorganising stagnant terrain",
+        text: "Movement, warming, drainage, and coherent circulation may gradually reorganise stagnant terrain. The direction of the model is not suppression, but restoration of flow and responsiveness."
+      },
+      {
+        id: "final-integration",
+        label: "16",
+        phase: "Restoration",
+        x: 50,
+        y: 52,
+        width: 91,
+        height: 88,
+        title: "From swamp to flow",
+        text: "The full image teaches a transition: stagnant density can be understood as a loss of coherent internal movement. The restoration pathway begins by reintroducing flow, warmth, clearance, and biological responsiveness."
+      }
+    ]
   }
 ];
 
