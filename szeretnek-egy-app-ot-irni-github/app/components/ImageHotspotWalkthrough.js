@@ -63,6 +63,7 @@ export default function ImageHotspotWalkthrough({ walkthrough }) {
       </header>
 
       <article className="image-walkthrough-shell">
+        <div className="image-walkthrough-watermark" aria-hidden="true" />
         <figure className="image-walkthrough-figure">
           <div className={isNarrative ? "image-walkthrough-image-wrap image-walkthrough-image-wrap-narrative" : "image-walkthrough-image-wrap"}>
             <img src={walkthrough.image} alt={walkthrough.imageAlt} />

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Avicenna bird watermark</title>
+  <desc id="desc">Transparent golden bird watermark with a circular field and soft glow.</desc>
+  <defs>
+    <radialGradient id="fieldGlow" cx="50%" cy="42%" r="56%">
+      <stop offset="0%" stop-color="#ffd985" stop-opacity="0.26"/>
+      <stop offset="48%" stop-color="#c9a85b" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#c9a85b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldWing" x1="14%" x2="91%" y1="12%" y2="88%">
+      <stop offset="0%" stop-color="#ffe7a6" stop-opacity="0.66"/>
+      <stop offset="42%" stop-color="#c9a85b" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#7c5b24" stop-opacity="0.22"/>
+    </linearGradient>
+    <filter id="softGlow" x="-18%" y="-18%" width="136%" height="136%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.96 0 1 0 0 0.72 0 0 1 0 0.28 0 0 0 0.48 0" result="goldBlur"/>
+      <feMerge>
+        <feMergeNode in="goldBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="600" cy="494" r="382" fill="url(#fieldGlow)"/>
+  <circle cx="600" cy="494" r="382" fill="none" stroke="#c9a85b" stroke-opacity="0.34" stroke-width="18"/>
+  <g filter="url(#softGlow)">
+    <path fill="url(#goldWing)" d="M224 488c118-32 220-103 333-229 28-31 65-78 85-115-4 74-35 148-82 207 93-31 176-82 254-152-25 85-81 163-153 216 83-14 160-44 233-88-46 74-112 132-194 173 65 6 126 0 183-15-72 57-159 91-260 101-116 12-243-14-399-98Z"/>
+    <path fill="url(#goldWing)" d="M230 567c156 55 296 69 423 41 102-22 186-70 261-146-37 92-105 167-197 218-91 50-204 68-330 53-69-8-139-29-207-62 60 3 125-5 195-25-55-15-104-41-145-79Z"/>
+    <path fill="url(#goldWing)" d="M580 498c82-66 181-90 290-72 49 8 95 24 137 48-58 0-107 11-149 33 51 17 91 46 120 86-61-26-122-36-183-31 28 33 48 72 59 116-52-48-108-79-168-93-54-12-103-6-147 18 0-39 14-74 41-105Z"/>
+    <path fill="#c9a85b" fill-opacity="0.36" d="M825 477c74-12 138 1 192 39-48 3-89 17-123 43-22-37-45-64-69-82Z"/>
+    <path fill="none" stroke="#ffdf94" stroke-linecap="round" stroke-opacity="0.42" stroke-width="10" d="M268 491c113-17 215-74 307-171M284 565c129 30 249 27 360-10M652 502c82-36 168-40 259-13"/>
+  </g>
+  <g fill="#c9a85b" fill-opacity="0.18" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="600" y="796" font-size="150">JONAS</text>
+    <text x="600" y="928" font-size="138">THERAPY</text>
+    <text x="600" y="1047" font-size="116">CLINIC</text>
+  </g>
+</svg>

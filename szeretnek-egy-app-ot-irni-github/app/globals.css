@@ -1187,6 +1187,21 @@ input[type="number"] {
 .image-walkthrough-shell {
   display: grid;
   gap: 14px;
+  position: relative;
+}
+
+.image-walkthrough-watermark {
+  background-image: url("/images/brand/avicenna-bird-watermark.svg");
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  background-size: min(72%, 760px) auto;
+  filter: drop-shadow(0 0 26px rgba(201, 168, 91, 0.16));
+  inset: 0;
+  mix-blend-mode: screen;
+  opacity: 0.12;
+  pointer-events: none;
+  position: absolute;
+  z-index: 6;
 }
 
 .image-walkthrough-figure {
@@ -1197,6 +1212,7 @@ input[type="number"] {
   margin: 0;
   overflow: hidden;
   padding: 10px;
+  position: relative;
 }
 
 .image-walkthrough-image-wrap {
@@ -1223,6 +1239,7 @@ input[type="number"] {
   padding: 0;
   position: absolute;
   transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  z-index: 7;
 }
 
 .image-hotspot-rect {
@@ -1299,13 +1316,15 @@ input[type="number"] {
     0 0 80px rgba(86, 190, 255, 0.16);
   opacity: 1;
   transform: scale(1.018);
-  z-index: 2;
+  z-index: 8;
 }
 
 .image-walkthrough-region-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  position: relative;
+  z-index: 4;
 }
 
 .image-region-chip {
@@ -1347,6 +1366,8 @@ input[type="number"] {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+  z-index: 4;
 }
 
 .image-walkthrough-reference-section {
@@ -1417,6 +1438,8 @@ input[type="number"] {
   border: 1px solid #ded8c9;
   border-radius: 8px;
   padding: clamp(18px, 3vw, 28px);
+  position: relative;
+  z-index: 4;
 }
 
 .image-walkthrough-panel h2 {
