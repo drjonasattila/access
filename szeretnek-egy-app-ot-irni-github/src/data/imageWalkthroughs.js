@@ -2658,6 +2658,294 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "yangming-taiyin-disconnection",
+    title: "Yangming - Taiyin Disconnection",
+    subtitle: "A cinematic living atlas of energetic output, structural water, terrain coherence and metabolic regulation",
+    image: "/images/walkthroughs/yangming-taiyin-disconnection.jpg",
+    imageAlt: "Conceptual systems biology map of Yangming and Taiyin disconnection with fire energy, structured water, terrain states and metabolic water-grid axis.",
+    defaultHotspot: "core-concept",
+    narrative: true,
+    narrativeOrder: [
+      "core-concept",
+      "yangming-overload",
+      "sensory-congestion",
+      "terrain-fragmentation",
+      "taiyin-collapse",
+      "water-grid-destabilization",
+      "mitochondrial-weakness",
+      "restoring-coherence"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-concept",
+        label: "1",
+        phase: "Living Atlas",
+        shape: "circle",
+        x: 50,
+        y: 28,
+        width: 22,
+        height: 28,
+        title: "Fire energy and structured water",
+        text: "The centre presents Yang as energetic movement and Yin as structural informational stability. Disease is framed as a mismatch: energy exceeds the system's structural buffering capacity, so charge becomes trapped and fluid coordination fails."
+      },
+      {
+        id: "yangming-overload",
+        label: "2",
+        phase: "Guided Tour - Yangming Overload",
+        x: 19,
+        y: 28,
+        width: 35,
+        height: 32,
+        title: "Yangming overload",
+        text: "Yangming is presented as a drainage and transformation system. When it fails to drain, pressure, heat and charge accumulate, creating a dry high-energy sensory terrain.",
+        details: [
+          "Yangming heat translates here as overloaded high-energy dry sensory terrain.",
+          "Stomach meridian drainage failure translates as failed downward fluid-energy movement.",
+          "The model links dryness, trapped energy, failed discharge and pressure accumulation."
+        ]
+      },
+      {
+        id: "sensory-congestion",
+        label: "3",
+        phase: "Guided Tour - Sensory Congestion",
+        x: 15,
+        y: 29,
+        width: 24,
+        height: 28,
+        title: "Sensory congestion",
+        text: "Post-herpetic neuralgia, frontal headache and small-fibre neuropathy are used as sensory-dominant examples. Burning, tingling, allodynia and frontal pressure are framed as overloaded circuits with poor fluid descent."
+      },
+      {
+        id: "terrain-fragmentation",
+        label: "4",
+        phase: "Guided Tour - Terrain Fragmentation",
+        x: 17,
+        y: 62,
+        width: 28,
+        height: 28,
+        title: "Dry-heat and damp-heat terrain",
+        text: "The terrain cards contrast dry electrical irritation with damp inflammatory heaviness. Both are water-grid imbalance states: one lacks moisture and lubrication, the other has fluid that is present but stagnant."
+      },
+      {
+        id: "taiyin-collapse",
+        label: "5",
+        phase: "Guided Tour - Taiyin Collapse",
+        x: 78,
+        y: 28,
+        width: 39,
+        height: 32,
+        title: "Taiyin collapse",
+        text: "Taiyin is not treated as digestion alone. It is the deep infrastructure that maintains coherent organisation: structured water, boundary stability, fascia hydration, mitochondrial support and ground-state restoration."
+      },
+      {
+        id: "water-grid-destabilization",
+        label: "6",
+        phase: "Guided Tour - Water-Grid Destabilization",
+        x: 72,
+        y: 28,
+        width: 26,
+        height: 28,
+        title: "Water-grid destabilization",
+        text: "Structured water, bulk water and boundary systems are shown as dynamic phase states. When the water grid loses charge and coherence, fascia, ECM, glia, interstitium and tissue boundaries become less stable.",
+        details: [
+          "The model links colloid stability, zeta potential and coherent water organisation.",
+          "Fascia hydration and ECM integrity support boundary stability.",
+          "Microtubules, collagen and glia are treated as structural communication substrates."
+        ]
+      },
+      {
+        id: "mitochondrial-weakness",
+        label: "7",
+        phase: "Guided Tour - Mitochondrial Weakness",
+        x: 43,
+        y: 64,
+        width: 47,
+        height: 25,
+        title: "Metabolic water-grid axis",
+        text: "The Spleen-Lung axis is reframed as a metabolic water-grid axis. Mitochondria act as local processors that integrate water-grid disturbances into biological responses, charge generation, immune responsiveness and repair coordination.",
+        details: [
+          "The thyroid sets mitochondrial metabolic rate and energetic throughput.",
+          "The respiratory chain is framed as an intelligent traffic light and motorway system.",
+          "Iron acts like access road and fast lane, copper like the oxygen toll gate, manganese like maintenance rescue, and zinc like structural asphalt."
+        ]
+      },
+      {
+        id: "restoring-coherence",
+        label: "8",
+        phase: "Guided Tour - Restoring Coherence",
+        x: 52,
+        y: 89,
+        width: 70,
+        height: 17,
+        title: "Restore drainage and strengthen foundation",
+        text: "The final direction is to restore drainage, strengthen foundation and harmonise the axis. When energy flows freely and water holds structure, the model predicts a return toward coherence, resilience and vitality."
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Yangming Zone",
+        items: [
+          {
+            id: "yangming-postherpetic-neuralgia",
+            title: "Post-herpetic neuralgia",
+            text: "Post-herpetic neuralgia is presented as local small-fibre pain in a high-charge dry terrain, with burning, stabbing, tingling and allodynia as sensory overload expressions."
+          },
+          {
+            id: "yangming-frontal-headaches",
+            title: "Frontal headaches",
+            text: "Frontal headache is framed as frontal Yangming overload: trigeminal sensory congestion, sinus or supraorbital pressure, eye strain and dry-heat terrain."
+          },
+          {
+            id: "yangming-small-fibre-neuropathy",
+            title: "Small fibre neuropathy",
+            text: "Small-fibre neuropathy is shown as sensory-dominant pain in which high charge density and poor fluid descent may amplify burning, tingling and hypersensitivity."
+          },
+          {
+            id: "yangming-overloaded-circuits",
+            title: "Overloaded circuits",
+            text: "Overloaded circuits represent high charge energy that cannot descend or discharge, leaving sensory pathways pressurised and noisy."
+          },
+          {
+            id: "yangming-dry-heat-terrain",
+            title: "Dry-heat terrain",
+            text: "Dry-heat terrain means high chaotic energy with low moisture, irritation, heat, constipation, poor lubrication and sharp burning sensations."
+          },
+          {
+            id: "yangming-emotional-digestion",
+            title: "Emotional digestion",
+            text: "Stomach and large intestine processing are translated as emotional digestion and release: the ability to take in, transform, descend and let go."
+          }
+        ]
+      },
+      {
+        title: "Taiyin Zone",
+        items: [
+          {
+            id: "taiyin-water-grid",
+            title: "Water grid",
+            text: "The water grid is the structural charge field that supports communication, boundary integrity, tissue volume and energy-in-water coherence."
+          },
+          {
+            id: "taiyin-structured-water",
+            title: "Structured water",
+            text: "Structured water is presented as an organised phase that supports adaptability, boundary stability and biological communication."
+          },
+          {
+            id: "taiyin-boundary-stability",
+            title: "Boundary stability",
+            text: "Boundary stability means that membranes, ECM, fascia, glia and interstitial spaces remain coherent enough to transmit signals cleanly."
+          },
+          {
+            id: "taiyin-mitochondria",
+            title: "Mitochondria",
+            text: "Mitochondria provide water-grid charge and integrate local water-grid disturbance into biological responses, energy distribution and repair coordination."
+          },
+          {
+            id: "taiyin-fascia-hydration",
+            title: "Fascia hydration",
+            text: "Hydrated fascia behaves as a flexible, resilient network. When hydration and charge coherence weaken, fascia becomes less adaptive."
+          },
+          {
+            id: "taiyin-phase-transition",
+            title: "Phase transition",
+            text: "Phase transition describes the shift between structured and bulk water states. Healthy transition supports life and adaptability."
+          },
+          {
+            id: "taiyin-coherence",
+            title: "Coherence",
+            text: "Coherence is the glue-like stabiliser of the terrain: it lets structure, energy and information remain coordinated."
+          }
+        ]
+      },
+      {
+        title: "Terrain Dynamics",
+        items: [
+          {
+            id: "terrain-dry-heat",
+            title: "Dry-heat",
+            text: "Dry-heat is a cracked terrain metaphor: high chaotic energy, low moisture, irritation, burning, constipation and sensory overload."
+          },
+          {
+            id: "terrain-damp-heat",
+            title: "Damp-heat",
+            text: "Damp-heat is a swamp metaphor: stagnation, heaviness, obstruction, inflammatory moisture, poor drainage and slowed movement."
+          },
+          {
+            id: "terrain-water-grid-imbalance",
+            title: "Water-grid imbalance",
+            text: "Both dry-heat and damp-heat are shown as failures of water-grid dynamics: either too little coherent moisture or too much stagnant fluid."
+          }
+        ]
+      },
+      {
+        title: "Metabolic Water-Grid Axis",
+        items: [
+          {
+            id: "axis-mitochondria",
+            title: "Mitochondria panel",
+            text: "Mitochondria transform fluid, generate water-grid charge, maintain colloid stability, integrate local signals, distribute energy and coordinate repair."
+          },
+          {
+            id: "axis-thyroid",
+            title: "Thyroid panel",
+            text: "The thyroid sets mitochondrial metabolic rate, regulates energetic throughput, supports temperature control, shapes oxygen demand and paces metabolism."
+          },
+          {
+            id: "axis-respiratory-chain",
+            title: "Metal respiratory chain",
+            text: "The respiratory chain is simplified as an intelligent traffic light and motorway system using iron, copper, manganese and zinc."
+          },
+          {
+            id: "axis-iron",
+            title: "Iron",
+            text: "Iron is the access road and fast lane: it supports electron movement through the metabolic transport system."
+          },
+          {
+            id: "axis-copper",
+            title: "Copper",
+            text: "Copper is the toll gate connecting electrons and oxygen, supporting the generation of metabolic water."
+          },
+          {
+            id: "axis-manganese",
+            title: "Manganese",
+            text: "Manganese is the maintenance and antioxidant rescue system that helps protect the terrain from oxidative stress."
+          },
+          {
+            id: "axis-zinc",
+            title: "Zinc",
+            text: "Zinc is the structural asphalt and concrete stabiliser, supporting tissue architecture and enzyme coordination."
+          },
+          {
+            id: "axis-lung-thyroid-thymus",
+            title: "Lung-Thyroid-Thymus axis",
+            text: "Lungs, thyroid and thymus are presented as developmentally linked systems that coordinate macro respiration, pH regulation, oxygen distribution, immune timing and water-grid stability."
+          }
+        ]
+      },
+      {
+        title: "Case Walkthroughs",
+        items: [
+          {
+            id: "case-frontal-headache",
+            title: "Frontal headache",
+            text: "Frontal headache is explored as frontal Yangming overload with trigeminal sensory congestion and dry-heat terrain pressure."
+          },
+          {
+            id: "case-diabetes",
+            title: "Diabetes",
+            text: "Diabetes is framed as Taiyin collapse: mitochondrial weakness, impaired water-grid charging and poor fluid-energy coordination."
+          },
+          {
+            id: "case-immune-dysfunction",
+            title: "Immune dysfunction",
+            text: "Immune dysfunction is presented as unstable water-grid signalling, mitochondrial dysregulation and glial or interstitial incoherence."
+          }
+        ]
+      }
+    ]
   }
 ];
 

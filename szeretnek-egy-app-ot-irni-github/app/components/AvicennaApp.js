@@ -3069,6 +3069,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/shaoyang-jueyin-dissociation">
         Shaoyang-Jueyin
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/yangming-taiyin-disconnection">
+        Yangming-Taiyin
+      </a>
     </nav>
   );
 }
