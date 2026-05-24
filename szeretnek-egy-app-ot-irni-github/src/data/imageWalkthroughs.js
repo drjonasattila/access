@@ -2946,6 +2946,262 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "lysosomotropic-agents-phase-transition-protocol",
+    title: "Lysosomotropic Agents - Adaptive Phase-Transition Protocol",
+    subtitle: "Restoring adaptive capacity: from chaotic overload to coherent flow to sustainable rebuilding",
+    image: "/images/walkthroughs/lysosomotropic-agents-phase-transition-protocol.jpg",
+    imageAlt: "Systems medicine diagram showing stagnant heat, lysosomotropic absorber phase, monitoring, exit criteria and rebuilding phase.",
+    defaultHotspot: "core-principle",
+    narrative: true,
+    narrativeOrder: [
+      "core-principle",
+      "stagnant-heat-chaotic-overload",
+      "absorber-phase",
+      "natural-matrix-logic",
+      "agent-cards",
+      "monitoring",
+      "exit-criteria",
+      "rebuilding-phase",
+      "footer-message"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "core-principle",
+        label: "1",
+        phase: "Core Principle",
+        x: 21,
+        y: 95,
+        width: 27,
+        height: 8,
+        title: "Restore coherent state transition",
+        text: "The core principle is to restore the ability to transition coherently between states. The protocol is not a single bullet; it is a systems medicine approach that moves from chaotic overload to modulation, then rebuilding."
+      },
+      {
+        id: "stagnant-heat-chaotic-overload",
+        label: "2",
+        phase: "Phase 1",
+        x: 14,
+        y: 31,
+        width: 27,
+        height: 43,
+        title: "Stagnant heat / chaotic overload",
+        text: "This is not simple energy deficiency. It is chaotic overload: the system is hot, noisy, reactive, and poorly coordinated. The priority is to reduce signal noise, calm inflammatory overload, and create a window for reorganisation before stronger charging or tonification is introduced.",
+        details: [
+          "Typical signs include anxiety, restlessness, difficult sleep onset, 5-palm heat, irritability, neuropathic overfiring and inflammatory congestion.",
+          "Tracking may show high signal noise, low HRV, low or falling Raman score trend and poor PEMF tolerance."
+        ]
+      },
+      {
+        id: "absorber-phase",
+        label: "3",
+        phase: "Phase 2",
+        x: 49,
+        y: 31,
+        width: 38,
+        height: 44,
+        title: "Lysosomotropic absorber phase",
+        text: "The absorber phase is pulsed, short-term and feedback-guided. Its purpose is to reduce chaotic overload and create a window for reorganisation.",
+        details: [
+          "Key functions include reducing chaotic excitability and inflammation, supporting lysosomal clearance and autophagy, improving membrane fluidity and phase transition, protecting mitochondria and lowering signal noise.",
+          "Use short pulses, lowest effective dose, start low, avoid continuous long-term use and reassess frequently."
+        ]
+      },
+      {
+        id: "natural-matrix-logic",
+        label: "4",
+        phase: "Natural Matrix Logic",
+        x: 14,
+        y: 60,
+        width: 27,
+        height: 15,
+        title: "Natural Matrix Logic",
+        text: "Plants combine synergistic layers for deeper regulation: redox buffer plus lipid interface support plus membrane stabilisation.",
+        details: [
+          "Natural compounds rarely work as isolated molecules.",
+          "Many plant or biological matrices combine redox-buffering molecules, lipid or PUFA-rich matrices and membrane-stabilising agents.",
+          "This creates adaptive phase-transition capacity rather than single-target suppression."
+        ]
+      },
+      {
+        id: "agent-cards",
+        label: "5",
+        phase: "Agent Cards",
+        x: 49,
+        y: 29,
+        width: 36,
+        height: 28,
+        title: "Agent cards as transition tools",
+        text: "These agents are transition tools, not continuous long-term suppressive therapies. They are pulsed, feedback-guided tools used when signs of chaotic overload are present."
+      },
+      {
+        id: "monitoring",
+        label: "6",
+        phase: "Monitoring",
+        x: 49,
+        y: 64,
+        width: 42,
+        height: 13,
+        title: "Monitoring and decision guidance",
+        text: "Track HRV, Raman score, sleep quality, sleep onset, night heat or 5-palm heat, anxiety, neuropathic pain, digestive function, inflammation and PEMF tolerance.",
+        details: [
+          "If markers are not improving, remain in gentle absorber or pulse mode and reassess.",
+          "If markers improve, exit absorber phase and begin rebuilding."
+        ]
+      },
+      {
+        id: "exit-criteria",
+        label: "7",
+        phase: "Exit Criteria",
+        x: 84,
+        y: 61,
+        width: 29,
+        height: 18,
+        title: "Move to rebuilding phase when markers improve",
+        text: "Move to rebuilding when HRV trend improves, Raman score improves, sleep onset becomes easier, night wakings reduce, 5-palm heat calms, anxiety and neuropathic overfiring reduce, inflammation decreases and PEMF tolerance improves."
+      },
+      {
+        id: "rebuilding-phase",
+        label: "8",
+        phase: "Phase 3",
+        x: 84,
+        y: 31,
+        width: 28,
+        height: 44,
+        title: "Empty heat / recovery and rebuilding",
+        text: "Empty heat is different from stagnant heat. The system is still unstable, but the main issue is low reserve, low Yin, weak tissue resilience and reduced rebuilding capacity. The goal is nourishment, scaffold restoration and coherent charging.",
+        details: [
+          "Focus includes Yin nourishment, scaffold support, collagen, silicon, vitamin C, essential amino acids, hydration, sleep, gentle movement, gradual PEMF charging and adaptive loading.",
+          "Once chaotic overload has responded, stop or reduce the absorber phase and begin rebuilding."
+        ]
+      },
+      {
+        id: "footer-message",
+        label: "9",
+        phase: "Key Message",
+        x: 50,
+        y: 96,
+        width: 48,
+        height: 7,
+        title: "Not a single bullet - a systems medicine approach",
+        text: "Use the absorber phase only while signs of chaotic overload are present. Once markers improve, exit the suppressive phase and begin Yin rebuilding, scaffold restoration, and cautious PEMF charging."
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Agent Cards",
+        items: [
+          {
+            id: "agent-thymoquinone-nigella",
+            title: "Thymoquinone / Nigella",
+            text: "Nigella oil works as a multi-target phase-transition support agent: thymoquinone provides redox-buffering and transition-catalyst activity, while the unsaturated lipid matrix supports membrane flexibility and may reduce excessive bulk-water tension at the membrane interface.",
+            details: [
+              "Nigella oil contains thymoquinone together with a lipid matrix rich in unsaturated fatty acids, including PUFA components. This makes Nigella different from an isolated thymoquinone molecule.",
+              "Thymoquinone is a redox-buffering quinone molecule that helps absorb chaotic electron/proton leakage, supports transition out of stagnant heat or chaotic overload, and acts as an adaptive transition catalyst.",
+              "The PUFA-rich Nigella oil matrix supports membrane flexibility, may reduce excessive tension at the membrane-bulk-water interface, softens rigid lipid packing, and supports phase-transition capacity between bulk water and structured hydration layers.",
+              "The combined effect includes membrane fluidity support, redox buffering, inflammatory signal-noise reduction, water-interface modulation, and improved cellular communication and flow."
+            ]
+          },
+          {
+            id: "agent-berberine",
+            title: "Berberine",
+            text: "Berberine is framed as a transition tool for inflammation modulation, metabolic pressure reduction and lysosomal stress support. It is not presented as a cure or long-term suppressive strategy."
+          },
+          {
+            id: "agent-artemisinin",
+            title: "Artemisinin / Qing Hao",
+            text: "Artemisinin is presented as a high-reactivity terrain modulator that may help reduce inflammatory overload and chaotic signal intensity during a feedback-guided absorber phase."
+          },
+          {
+            id: "agent-hydroxychloroquine",
+            title: "Hydroxychloroquine",
+            text: "Hydroxychloroquine is presented as a lysosomal pH and immune-overactivation modulator. It belongs in a monitored medical context and is not framed as a casual supplement."
+          },
+          {
+            id: "agent-astaxanthin",
+            title: "Astaxanthin",
+            text: "Astaxanthin is framed as membrane stabilisation and lipid-interface coherence support, with emphasis on reducing oxidative signal noise and protecting membrane communication."
+          },
+          {
+            id: "agent-glutathione",
+            title: "Glutathione",
+            text: "Glutathione is presented as redox recovery support that helps neutralise leaking electrons and protons, reduce oxidative noise and support cellular communication."
+          }
+        ]
+      },
+      {
+        title: "Monitoring",
+        items: [
+          {
+            id: "monitor-hrv",
+            title: "HRV",
+            text: "HRV is used as a broad autonomic flexibility marker. A improving trend suggests the system may be moving out of chaotic overload."
+          },
+          {
+            id: "monitor-raman-score",
+            title: "Raman score",
+            text: "Raman score trend is treated as a membrane and antioxidant status signal. Improvement supports moving toward rebuilding."
+          },
+          {
+            id: "monitor-sleep-onset",
+            title: "Sleep onset",
+            text: "Easier sleep onset and fewer night wakings suggest heat, anxiety and signal-noise load are calming."
+          },
+          {
+            id: "monitor-five-palm-heat",
+            title: "5-palm heat",
+            text: "Reduced 5-palm heat suggests chaotic heat and inflammatory overfiring are settling."
+          },
+          {
+            id: "monitor-anxiety",
+            title: "Anxiety",
+            text: "Lower anxiety and irritability suggest reduced autonomic and inflammatory signal noise."
+          },
+          {
+            id: "monitor-neuropathic-irritability",
+            title: "Neuropathic irritability",
+            text: "Calmer neuropathic pain or overfiring suggests the absorber phase is reducing chaotic excitability."
+          },
+          {
+            id: "monitor-pemf-tolerance",
+            title: "PEMF tolerance",
+            text: "Better PEMF tolerance suggests the system may be ready for cautious coherent charging and rebuilding."
+          }
+        ]
+      },
+      {
+        title: "Rebuilding Phase",
+        items: [
+          {
+            id: "rebuild-yin-nourishment",
+            title: "Yin nourishment",
+            text: "Yin nourishment supports reserve, hydration-layer coherence and low-noise rebuilding after chaotic heat has settled."
+          },
+          {
+            id: "rebuild-scaffold",
+            title: "Scaffold rebuilding",
+            text: "Scaffold rebuilding includes collagen support, silicon, vitamin C and essential amino acids to restore tissue resilience."
+          },
+          {
+            id: "rebuild-pemf",
+            title: "Gradual PEMF charging",
+            text: "PEMF is increased gradually only when overload markers improve, because premature charging may worsen chaotic signal noise."
+          },
+          {
+            id: "rebuild-lifestyle",
+            title: "Hydration, sleep, movement",
+            text: "Hydration, sleep, breath, light and gentle movement rebuild adaptive capacity slowly and consistently."
+          },
+          {
+            id: "rebuild-adaptive-loading",
+            title: "Adaptive loading",
+            text: "Adaptive loading means building capacity slowly after the absorber phase, not forcing stimulation while the terrain remains unstable."
+          }
+        ]
+      }
+    ]
   }
 ];
 
