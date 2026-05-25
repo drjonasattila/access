@@ -3087,6 +3087,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/microtubule-hydration-shell">
         Microtubule shell
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/cell-membrane-hydration-shell">
+        Membrane shell
+      </a>
     </nav>
   );
 }

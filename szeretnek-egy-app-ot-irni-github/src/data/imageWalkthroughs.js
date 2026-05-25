@@ -4363,6 +4363,260 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "cell-membrane-hydration-shell",
+    title: "Cell Membrane Hydration Shell",
+    subtitle: "The living Josephson interface",
+    image: "/images/walkthroughs/cell-membrane-hydration-shell.png",
+    imageAlt: "Cinematic cell membrane hydration shell artwork showing lipid bilayer hydration shells, structured water lattices, delocalised pi electrons, Josephson-like interface metaphor, anesthetic effects, PEMF, herbs and Wood element correspondences.",
+    defaultHotspot: "cell-membrane-josephson-interface",
+    narrative: true,
+    narrativeOrder: [
+      "cell-membrane-josephson-interface",
+      "phosphate-hydration-shells",
+      "structured-water-vs-bulk-water",
+      "josephson-like-tunnelling-metaphor",
+      "delocalised-pi-electron-cloud",
+      "membrane-viscosity-anesthetics",
+      "membrane-wood-element",
+      "liver-yin-herbs-membranes",
+      "pemf-restoring-membrane-coherence",
+      "key-insight-membrane"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "cell-membrane-josephson-interface",
+        label: "1",
+        phase: "Guided Tour - Enter the Membrane Interface",
+        x: 12,
+        y: 19,
+        width: 24,
+        height: 24,
+        title: "Cell membrane as Josephson-like interface",
+        text: "The membrane may behave like a phase-sensitive biological interface.",
+        details: [
+          "The phospholipid bilayer separates structured water layers on both sides.",
+          "In this conceptual model, the membrane acts like a biological Josephson-like interface where phase relationships, tunnelling-like behaviour and coherent charge movement may contribute to cellular communication.",
+          "This is a metaphorical systems-biology framing, not an assertion that the membrane is literally a superconducting device."
+        ]
+      },
+      {
+        id: "phosphate-hydration-shells",
+        label: "2",
+        phase: "Guided Tour - Phosphate Hydration Shells",
+        x: 85,
+        y: 14,
+        width: 26,
+        height: 32,
+        title: "Phosphate hydration shells",
+        text: "Phosphate groups organise water on both membrane surfaces.",
+        details: [
+          "Phosphate heads attract and structure surrounding water, forming coherent hydration shells inside and outside the cell.",
+          "These layers help stabilize membrane potential, signal propagation and local phase organisation."
+        ]
+      },
+      {
+        id: "structured-water-vs-bulk-water",
+        label: "3",
+        phase: "Guided Tour - Structured Water vs Bulk Water",
+        x: 54,
+        y: 10,
+        width: 28,
+        height: 39,
+        title: "Structured water versus bulk water",
+        text: "Ordered water supports coherent signalling; bulk water is more noisy.",
+        details: [
+          "The membrane exists between structured water layers and more dynamic bulk water.",
+          "Transient shifts between these phases may influence excitability, signalling and biological responsiveness."
+        ]
+      },
+      {
+        id: "josephson-like-tunnelling-metaphor",
+        label: "4",
+        phase: "Guided Tour - Josephson-like Tunnelling Metaphor",
+        x: 14,
+        y: 28,
+        width: 20,
+        height: 14,
+        title: "Josephson-like tunnelling metaphor",
+        text: "Phase-sensitive tunnelling is used here as a metaphor for coherent interface behaviour.",
+        details: [
+          "The diagram uses Josephson-junction language to imagine how membrane-separated phases might preserve timing, coupling and low-noise charge behaviour.",
+          "The practical teaching point is phase coherence at the water-lipid-electron boundary, not literal electronics."
+        ]
+      },
+      {
+        id: "delocalised-pi-electron-cloud",
+        label: "5",
+        phase: "Guided Tour - Delocalised Pi-Electron Cloud",
+        x: 64,
+        y: 25,
+        width: 27,
+        height: 18,
+        title: "Delocalised pi-electron cloud",
+        text: "Aromatic and lipid-associated electron clouds may support resonance.",
+        details: [
+          "Delocalised pi-electron systems may help support resonance, charge mobility and information transfer across membrane-associated structures.",
+          "The visual language shows a golden electron cloud spreading across lipid heads and membrane proteins."
+        ]
+      },
+      {
+        id: "information-flow-consciousness-anchoring",
+        label: "6",
+        phase: "Information Flow",
+        x: 61,
+        y: 58,
+        width: 24,
+        height: 21,
+        title: "Information flow and consciousness anchoring",
+        text: "The membrane may help anchor coherent body-field communication.",
+        details: [
+          "In this model, the membrane is not only a barrier but a responsive information plane integrating hydration, electricity, photonic signalling and cellular awareness.",
+          "The artwork keeps this as a coherent light-wave metaphor across the membrane rather than a literal personified image."
+        ]
+      },
+      {
+        id: "membrane-viscosity-anesthetics",
+        label: "7",
+        phase: "Guided Tour - Membrane Viscosity and Anesthetics",
+        x: 38,
+        y: 58,
+        width: 24,
+        height: 21,
+        title: "Alteration of membrane viscosity",
+        text: "Anesthetics may alter lipid dynamics and hydration coherence.",
+        details: [
+          "Propofol, isoflurane and related agents may insert into membrane environments, altering viscosity, fluidity and lipid dynamics.",
+          "In this framework, this can disturb structured water layers and phase-coherent signalling.",
+          "References: Hwang, Cui, Fraser and Pollack, PLOS ONE (2016); Craddock, Hameroff et al., Scientific Reports (2017)."
+        ]
+      },
+      {
+        id: "membrane-wood-element",
+        label: "8",
+        phase: "Guided Tour - Wood Element and Xylem Analogy",
+        x: 87,
+        y: 59,
+        width: 24,
+        height: 22,
+        title: "Membrane Wood element",
+        text: "Wood represents flexibility, growth and adaptive flow.",
+        details: [
+          "The Wood element can be linked to biological flexibility, growth, communication and detoxification.",
+          "There is a conceptual similarity between structured water in plant xylem and structured hydration shells around cell membranes.",
+          "Both systems support conduction, nourishment and long-distance information flow."
+        ]
+      },
+      {
+        id: "liver-yin-herbs-membranes",
+        label: "9",
+        phase: "Guided Tour - Liver Yin Herbs and Membrane Building",
+        x: 65,
+        y: 85,
+        width: 33,
+        height: 13,
+        title: "Herbs building Liver Yin - building membranes",
+        text: "Liver Yin herbs may support membrane hydration and structural integrity.",
+        details: [
+          "Herbs traditionally used to nourish Liver Yin may also be interpreted as supporting biological membranes, hydration, elasticity and receptor function.",
+          "Examples in this conceptual model include Paeonia lactiflora, Asparagus racemosus, Rehmannia glutinosa, Spirulina, Lycium barbarum and Polygonum multiflorum."
+        ]
+      },
+      {
+        id: "pemf-restoring-membrane-coherence",
+        label: "10",
+        phase: "Guided Tour - PEMF Coherence Restoration",
+        x: 39,
+        y: 84,
+        width: 22,
+        height: 14,
+        title: "PEMF - restoring coherence",
+        text: "PEMF may support membrane potential and phase organisation.",
+        details: [
+          "Pulsed electromagnetic fields may support hydration structure, membrane potential, reduced noise and improved cellular communication.",
+          "The image frames PEMF as blue-gold wave entrainment reordering the membrane lattice."
+        ]
+      },
+      {
+        id: "traditional-medical-schools-link-membrane",
+        label: "11",
+        phase: "Traditional Medical Bridge",
+        x: 13,
+        y: 84,
+        width: 25,
+        height: 14,
+        title: "Traditional medical schools link",
+        text: "Symbolic medical languages can be used as conceptual bridges for membrane coherence.",
+        details: [
+          "Qi flow, meridians, Shen, Yin fluids and Wood are used here as teaching metaphors for hydration, bioelectricity, information flow and membrane coherence.",
+          "The goal is translation between symbolic medicine and systems biology without turning metaphor into diagnostic doctrine."
+        ]
+      },
+      {
+        id: "key-insight-membrane",
+        label: "12",
+        phase: "Guided Tour - Final Synthesis",
+        x: 88,
+        y: 84,
+        width: 23,
+        height: 15,
+        title: "The membrane is a living water-electron interface",
+        text: "The membrane is a living water-electron interface.",
+        details: [
+          "In this model, the cell membrane is not a passive wall.",
+          "It is a dynamic interface where structured water, lipid viscosity, delocalised electrons and phase transitions create the conditions for signalling, adaptation and mind-body integration."
+        ]
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Legend",
+        items: [
+          {
+            id: "legend-membrane-structured-water",
+            title: "Structured water",
+            text: "Structured water represents ordered hydration layers on both sides of the phospholipid bilayer."
+          },
+          {
+            id: "legend-membrane-phosphate-group",
+            title: "Phosphate group",
+            text: "Phosphate groups are shown as charged membrane head groups that organize local water and support hydration shells."
+          },
+          {
+            id: "legend-membrane-pi-electron",
+            title: "Delocalised pi electron",
+            text: "Delocalised pi electrons represent resonance and charge mobility in membrane-associated molecular structures."
+          },
+          {
+            id: "legend-membrane-copper-pair",
+            title: "Copper pair",
+            text: "Copper pair symbols are used as a conceptual visual language for tunnelling-like coupling and phase-sensitive interface behaviour."
+          },
+          {
+            id: "legend-membrane-biophoton",
+            title: "Biophoton",
+            text: "Biophotons represent light-like signalling used here as a metaphor for coherent information transfer across hydrated interfaces."
+          },
+          {
+            id: "legend-membrane-information-flow",
+            title: "Information flow",
+            text: "Information flow indicates directional coherence across structured water, lipid, electron and protein layers."
+          },
+          {
+            id: "legend-membrane-phase-transition",
+            title: "Phase transition",
+            text: "Phase transition represents dynamic movement between structured water, bulk water, lipid fluidity and signal-ready states."
+          },
+          {
+            id: "legend-membrane-pemf-wave",
+            title: "PEMF wave",
+            text: "PEMF waves represent external coherence-supporting inputs for membrane potential and hydration organization."
+          }
+        ]
+      }
+    ]
   }
 ];
 
