@@ -3078,6 +3078,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/dna-hydration-shell">
         DNA hydration shell
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/mitochondrial-hydration-shell">
+        Mito hydration shell
+      </a>
     </nav>
   );
 }

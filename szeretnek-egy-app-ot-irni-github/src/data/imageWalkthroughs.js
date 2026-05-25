@@ -3457,6 +3457,350 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "mitochondrial-hydration-shell-inner-sun",
+    title: "Mitochondrial Hydration Shell",
+    subtitle: "The inner sun and light distribution network",
+    image: "/images/walkthroughs/mitochondrial-hydration-shell-inner-sun.png",
+    imageAlt: "Cinematic mitochondrial hydration shell artwork showing structured water, proton cycling, biophoton emission, microtubule light cables, Five Element correspondences, PEMF and herbal support.",
+    defaultHotspot: "mitochondrion-inner-sun",
+    narrative: true,
+    narrativeOrder: [
+      "mitochondrion-inner-sun",
+      "mitochondrial-hydration-shell",
+      "proton-cycling",
+      "microtubule-light-cables",
+      "biophoton-emission",
+      "membrane-resonance-system",
+      "five-element-interface",
+      "pemf-and-herbs",
+      "restore-water-restore-life"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "mitochondrion-inner-sun",
+        label: "1",
+        phase: "Guided Tour - The Inner Sun",
+        shape: "circle",
+        x: 46,
+        y: 42,
+        width: 24,
+        height: 32,
+        title: "Mitochondrion - the inner sun",
+        text: "The mitochondrion acts as a biological energy and light-emitting core.",
+        details: [
+          "In this model, mitochondria are not merely ATP factories.",
+          "They generate proton gradients, charge separation, heat and ultraweak biophotonic emissions contributing to cellular organization and responsiveness."
+        ]
+      },
+      {
+        id: "mitochondrial-hydration-shell",
+        label: "2",
+        phase: "Guided Tour - Hydration Shell",
+        shape: "circle",
+        x: 45,
+        y: 36,
+        width: 54,
+        height: 58,
+        title: "Mitochondrial hydration shell",
+        text: "Structured water surrounds mitochondrial membranes forming a coherent energy interface.",
+        details: [
+          "The hydration shell may stabilize proton flow, electrical gradients, membrane potential and metabolic timing.",
+          "This structured water architecture acts as a dynamic energetic scaffold around the mitochondrion."
+        ]
+      },
+      {
+        id: "proton-cycling",
+        label: "3",
+        phase: "Guided Tour - Proton Flow",
+        x: 34,
+        y: 29,
+        width: 18,
+        height: 18,
+        title: "Proton cycling",
+        text: "Protons continuously move across mitochondrial membranes generating energy.",
+        details: [
+          "Proton flow through the inner mitochondrial membrane creates charge separation and powers ATP synthesis.",
+          "The hydration shell may help organize and guide this proton movement."
+        ]
+      },
+      {
+        id: "proton-return-flow",
+        label: "4",
+        phase: "Proton Return",
+        x: 33,
+        y: 50,
+        width: 19,
+        height: 18,
+        title: "Proton return flow",
+        text: "Protons return through ATP synthase completing the energetic cycle.",
+        details: [
+          "The return proton flow converts electrochemical potential into biological work, heat and ordered cellular energy."
+        ]
+      },
+      {
+        id: "microtubule-light-cables",
+        label: "5",
+        phase: "Guided Tour - Microtubule Light Cables",
+        x: 78,
+        y: 18,
+        width: 31,
+        height: 23,
+        title: "Microtubule light cables",
+        text: "Microtubules distribute light, charge and information through the cell.",
+        details: [
+          "In this conceptual model, microtubules function like intracellular fiber-optic cables receiving organized energy from mitochondria and distributing coherence throughout the cellular architecture.",
+          "Some researchers have proposed that microtubules may participate in photonic and resonance-based cellular signaling."
+        ]
+      },
+      {
+        id: "biophoton-emission",
+        label: "6",
+        phase: "Guided Tour - Biophotons",
+        x: 66,
+        y: 13,
+        width: 26,
+        height: 17,
+        title: "Biophoton emission",
+        text: "Mitochondria may emit ultraweak coherent light signals.",
+        details: [
+          "Biophotonic emissions generated during mitochondrial metabolism may contribute to intracellular communication, synchronization and organization."
+        ]
+      },
+      {
+        id: "structured-water-lattice",
+        label: "7",
+        phase: "Structured Water",
+        x: 49,
+        y: 11,
+        width: 30,
+        height: 16,
+        title: "Structured water lattice",
+        text: "Water forms an interconnected conductive matrix throughout the cell.",
+        details: [
+          "Structured water may support signal conduction, proton organization, mechanical stabilization, phase synchronization and information transfer.",
+          "The cellular water matrix connects mitochondria, membranes, cytoskeleton and nucleus into a unified responsive system."
+        ]
+      },
+      {
+        id: "light-charge-transfer",
+        label: "8",
+        phase: "Light and Charge",
+        x: 76,
+        y: 40,
+        width: 22,
+        height: 16,
+        title: "Light and charge transfer",
+        text: "Charge and photonic energy move from mitochondria into cellular networks.",
+        details: [
+          "The hydration shell and cytoskeleton may cooperate to distribute organized energetic states throughout the cell."
+        ]
+      },
+      {
+        id: "membrane-resonance-system",
+        label: "9",
+        phase: "Guided Tour - Membrane Resonance",
+        x: 69,
+        y: 52,
+        width: 25,
+        height: 18,
+        title: "Membrane resonance system",
+        text: "Membranes regulate electrical responsiveness and cellular communication.",
+        details: [
+          "Phospholipid membranes and hydration layers stabilize membrane potential, ion flow and signal transmission.",
+          "Loss of membrane coherence may contribute to fatigue, inflammation and impaired responsiveness."
+        ]
+      },
+      {
+        id: "five-element-interface",
+        label: "10",
+        phase: "Guided Tour - Five Elements",
+        x: 88,
+        y: 48,
+        width: 22,
+        height: 31,
+        title: "Five Element interface",
+        text: "The Five Element wheel translates organelle functions into a systems-medicine language.",
+        details: [
+          "Metal corresponds to mitochondria, Wood to endoplasmic reticulum, Fire to microtubules, Earth to lysosomes and Water to kidneys.",
+          "These correspondences are presented as conceptual teaching bridges, not literal anatomical doctrine."
+        ]
+      },
+      {
+        id: "metal-mitochondria",
+        label: "11",
+        phase: "Metal",
+        shape: "circle",
+        x: 88,
+        y: 42,
+        width: 12,
+        height: 12,
+        title: "Metal - mitochondria",
+        text: "Metal governs refinement, respiration and energetic extraction.",
+        details: [
+          "Mitochondria refine oxygen and nutrients into usable biological energy.",
+          "This parallels the Metal function of extraction, purification and energetic respiration.",
+          "Linked concepts include iron, copper, zinc, the electron transport chain and oxygen utilization."
+        ]
+      },
+      {
+        id: "wood-endoplasmic-reticulum",
+        label: "12",
+        phase: "Wood",
+        shape: "circle",
+        x: 85,
+        y: 51,
+        width: 12,
+        height: 12,
+        title: "Wood - endoplasmic reticulum",
+        text: "The ER regulates adaptation, growth and protein organization.",
+        details: [
+          "The endoplasmic reticulum functions as a dynamic intracellular organizer coordinating protein folding, calcium storage and membrane synthesis.",
+          "In this framework, Wood represents flexibility, adaptation and intracellular expansion."
+        ]
+      },
+      {
+        id: "fire-microtubules",
+        label: "13",
+        phase: "Fire",
+        shape: "circle",
+        x: 92,
+        y: 51,
+        width: 12,
+        height: 12,
+        title: "Fire - microtubules",
+        text: "Microtubules distribute light, timing and intracellular movement.",
+        details: [
+          "Fire represents communication, transformation and signal propagation.",
+          "Microtubules transmit organized intracellular dynamics and may support coherent cellular timing."
+        ]
+      },
+      {
+        id: "earth-lysosomes",
+        label: "14",
+        phase: "Earth",
+        shape: "circle",
+        x: 91,
+        y: 60,
+        width: 12,
+        height: 12,
+        title: "Earth - lysosomes",
+        text: "Lysosomes transform, recycle and stabilize cellular terrain.",
+        details: [
+          "Earth represents nourishment and transformation.",
+          "Lysosomes digest damaged structures and recycle biological material, preserving intracellular order."
+        ]
+      },
+      {
+        id: "water-kidneys",
+        label: "15",
+        phase: "Water",
+        shape: "circle",
+        x: 85,
+        y: 60,
+        width: 12,
+        height: 12,
+        title: "Water - kidneys",
+        text: "Water governs storage, depth and long-term energetic reserve.",
+        details: [
+          "The Water principle relates to fluid regulation, energetic reserve and structural depth.",
+          "Kidney-water dynamics influence hydration stability and long-term biological resilience."
+        ]
+      },
+      {
+        id: "pemf-support",
+        label: "16",
+        phase: "Guided Tour - PEMF and Herbs",
+        x: 50,
+        y: 75,
+        width: 22,
+        height: 20,
+        title: "PEMF support",
+        text: "PEMF may help restore biological responsiveness and coherence.",
+        details: [
+          "Pulsed electromagnetic fields may support membrane repolarization, proton organization, mitochondrial dynamics, hydration shell stability, charge distribution and microcirculation."
+        ]
+      },
+      {
+        id: "herbal-water-scaffold-support",
+        label: "17",
+        phase: "Herbal Scaffold",
+        x: 69,
+        y: 74,
+        width: 22,
+        height: 20,
+        title: "Herbal water-scaffold support",
+        text: "Certain herbs may help stabilize hydration architecture and resilience.",
+        details: [
+          "Astragalus, Rhodiola, Schisandra, Cordyceps and related herbs may support hydrogel organization, mitochondrial responsiveness, redox balance, membrane integrity and energetic resilience.",
+          "They are represented here as biological water scaffold support systems."
+        ]
+      },
+      {
+        id: "pemf-and-herbs",
+        label: "18",
+        phase: "Guided Tour - PEMF and Herbs",
+        x: 59,
+        y: 75,
+        width: 42,
+        height: 21,
+        title: "PEMF and herbal interactions",
+        text: "PEMF, herbs, minerals, hydration and breath are presented as complementary inputs for restoring mitochondrial responsiveness.",
+        details: [
+          "The walkthrough treats these inputs as coherence-supporting layers rather than isolated interventions.",
+          "They are used here to explain how membrane charge, water scaffolds, microcirculation and mitochondrial dynamics may be supported together."
+        ]
+      },
+      {
+        id: "restore-water-restore-life",
+        label: "19",
+        phase: "Guided Tour - Restore the Water",
+        x: 58,
+        y: 92,
+        width: 31,
+        height: 13,
+        title: "Restore the water - restore life",
+        text: "Hydration, minerals, PEMF, herbs and breath work together to restore the mitochondrial hydration shell and the inner sun of life.",
+        details: [
+          "The final integration is not about forcing energy.",
+          "It is about rebuilding a coherent hydration shell so charge, light, membrane potential and biological timing can recover together."
+        ]
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Legend",
+        items: [
+          {
+            id: "legend-mito-structured-water",
+            title: "Structured water",
+            text: "Structured water represents ordered hydration layers that stabilize membranes, proton gradients and cellular coherence."
+          },
+          {
+            id: "legend-mito-proton",
+            title: "Proton (H+)",
+            text: "Protons represent charge movement, electrochemical potential and mitochondrial energy cycling."
+          },
+          {
+            id: "legend-mito-biophoton",
+            title: "Bio-photon",
+            text: "Bio-photons represent ultraweak light-like emissions used here as a visual metaphor for cellular timing and communication."
+          },
+          {
+            id: "legend-mito-microtubule",
+            title: "Microtubule",
+            text: "Microtubules are presented as structural and informational cables linking mitochondria with the wider cellular network."
+          },
+          {
+            id: "legend-mito-energy-flow",
+            title: "Energy flow",
+            text: "Energy flow indicates movement of charge, heat, proton organization and photonic signalling through the mitochondrial-cellular system."
+          }
+        ]
+      }
+    ]
   }
 ];
 
