@@ -4085,6 +4085,284 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "microtubule-hydration-shell",
+    title: "Microtubule Hydration Shell",
+    subtitle: "The light cables of consciousness",
+    image: "/images/walkthroughs/microtubule-hydration-shell.png",
+    imageAlt: "Cinematic microtubule hydration shell artwork showing mitochondrial biophotons, microtubule light conduction, structured water, quantum-state concepts, anesthetic disruption, PEMF, herbs and traditional medical systems links.",
+    defaultHotspot: "mitochondrial-biophotons-microtubule",
+    narrative: true,
+    narrativeOrder: [
+      "inner-mitochondrial-sun-microtubule",
+      "mitochondrial-biophotons-microtubule",
+      "microtubule-light-cables",
+      "structured-water-core",
+      "superradiance",
+      "phase-transition-signaling",
+      "impact-of-anesthetics",
+      "consciousness-decoupling",
+      "pemf-restoring-coherence",
+      "herbal-nutritional-support",
+      "traditional-medical-schools-link-microtubule"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "inner-mitochondrial-sun-microtubule",
+        label: "1",
+        phase: "Guided Tour - Inner Mitochondrial Sun",
+        shape: "circle",
+        x: 24,
+        y: 19,
+        width: 20,
+        height: 18,
+        title: "The inner mitochondrial sun",
+        text: "Mitochondria are shown as the inner energetic source feeding the microtubule light network.",
+        details: [
+          "This opening step frames the cellular system as a linked architecture: mitochondria generate organized energetic activity, structured water helps preserve coherence, and microtubules distribute signals through the intracellular landscape.",
+          "The experience is presented as advanced speculative systems biology, not consensus neuroscience."
+        ]
+      },
+      {
+        id: "mitochondrial-biophotons-microtubule",
+        label: "2",
+        phase: "Guided Tour - Biophoton Emission",
+        x: 39,
+        y: 12,
+        width: 23,
+        height: 17,
+        title: "Mitochondrial biophotons",
+        text: "Mitochondria may emit ultraweak coherent light.",
+        details: [
+          "In this framework, mitochondria function not only as ATP generators but also as sources of organized energetic activity including ultraweak biophotonic emissions.",
+          "These emissions may contribute to intracellular synchronization and signaling.",
+          "Related concepts are discussed by Hameroff and Penrose (2014) and in biophotonic research traditions."
+        ]
+      },
+      {
+        id: "microtubule-light-cables",
+        label: "3",
+        phase: "Guided Tour - Microtubule Light Cables",
+        x: 58,
+        y: 18,
+        width: 55,
+        height: 34,
+        title: "Microtubule light cables",
+        text: "Microtubules may guide light-like intracellular signaling.",
+        details: [
+          "Microtubules are hollow cytoskeletal cylinders composed of tubulin proteins.",
+          "Some researchers proposed that their internal structure may support coherent electromagnetic or photonic-like processes.",
+          "Reference: Jibu, Hagan, Hameroff et al., Quantum optical coherence in cytoskeletal microtubules, BioSystems (1994)."
+        ]
+      },
+      {
+        id: "structured-water-core",
+        label: "4",
+        phase: "Guided Tour - Structured Water Core",
+        shape: "circle",
+        x: 43,
+        y: 50,
+        width: 30,
+        height: 29,
+        title: "Structured water core",
+        text: "Ordered water inside microtubules may preserve coherence.",
+        details: [
+          "The inner water layer of microtubules may form an electrically ordered environment helping reduce signal loss and stabilize coherent oscillatory states.",
+          "References include Pollack's Cells, Gels and the Engines of Life and Jibu et al. (1994)."
+        ]
+      },
+      {
+        id: "superradiance",
+        label: "5",
+        phase: "Guided Tour - Superradiance",
+        x: 61,
+        y: 42,
+        width: 18,
+        height: 21,
+        title: "Superradiance",
+        text: "Collective coherent oscillations amplify organized signals.",
+        details: [
+          "Some theoretical models propose that structured water molecules inside microtubules may enter coherent collective states known as superradiance.",
+          "This may allow synchronized signal amplification.",
+          "Reference: Jibu et al., BioSystems (1994)."
+        ]
+      },
+      {
+        id: "self-induced-transparency",
+        label: "6",
+        phase: "Quantum State",
+        x: 73,
+        y: 42,
+        width: 18,
+        height: 21,
+        title: "Self-induced transparency",
+        text: "The medium becomes temporarily transparent to coherent light.",
+        details: [
+          "Self-induced transparency describes a state in which coherent energy pulses propagate through an ordered medium with minimal energy loss.",
+          "Reference: Jibu et al. (1994)."
+        ]
+      },
+      {
+        id: "phase-transition-signaling",
+        label: "7",
+        phase: "Guided Tour - Phase Transition Signaling",
+        x: 43,
+        y: 74,
+        width: 39,
+        height: 19,
+        title: "Phase transition signaling",
+        text: "Structured water may undergo rapid sol-gel phase transitions.",
+        details: [
+          "In this conceptual model, signaling may emerge not only from ion-channel activity but also from rapid structural phase changes in intracellular water networks.",
+          "Reference: Gerald Pollack, Cells, Gels and the Engines of Life."
+        ]
+      },
+      {
+        id: "impact-of-anesthetics",
+        label: "8",
+        phase: "Guided Tour - Anesthetic Disruption",
+        x: 89,
+        y: 34,
+        width: 23,
+        height: 28,
+        title: "The impact of anesthetics",
+        text: "Certain anesthetics may disrupt structured water and coherent oscillations.",
+        details: [
+          "Research by Pollack and collaborators demonstrated that anesthetics such as propofol and isoflurane reduce exclusion-zone water organization.",
+          "Other theoretical work proposed that anesthetics may suppress collective oscillatory behavior in tubulin structures.",
+          "References: Hwang, Cui, Fraser and Pollack, Effect of Local and General Anesthetics on Interfacial Water, PLOS ONE (2016); Craddock, Hameroff et al., Anesthetic Alterations of Collective Terahertz Oscillations in a Microtubule Subunit Predict Clinical Potency, Scientific Reports (2017)."
+        ]
+      },
+      {
+        id: "consciousness-decoupling",
+        label: "9",
+        phase: "Guided Tour - Consciousness Decoupling",
+        x: 78,
+        y: 70,
+        width: 41,
+        height: 21,
+        title: "Consciousness decoupling",
+        text: "Anesthesia may disrupt coherent biological coupling.",
+        details: [
+          "In this framework, consciousness is not viewed as disappearing, but as becoming temporarily decoupled from coherent biological organization when intracellular coherence collapses.",
+          "This is presented as a conceptual systems model, not established consensus neuroscience.",
+          "Reference: Hameroff and Penrose, Consciousness in the Universe: A Review of the Orch OR Theory, Physics of Life Reviews (2014)."
+        ]
+      },
+      {
+        id: "pemf-restoring-coherence",
+        label: "10",
+        phase: "Guided Tour - PEMF Restoration",
+        x: 55,
+        y: 87,
+        width: 23,
+        height: 12,
+        title: "PEMF - restoring coherence",
+        text: "PEMF may help support biological phase organization.",
+        details: [
+          "Pulsed electromagnetic fields may help restore membrane potential, support hydration structure, reduce signal noise, improve intracellular synchronization and support biological responsiveness."
+        ]
+      },
+      {
+        id: "herbal-nutritional-support",
+        label: "11",
+        phase: "Guided Tour - Herbal Support",
+        x: 76,
+        y: 87,
+        width: 25,
+        height: 12,
+        title: "Herbal and nutritional support",
+        text: "Certain herbs may support microtubule and hydration integrity.",
+        details: [
+          "Potential supportive systems include Lion's Mane, Bacopa, Gotu Kola, Rehmannia, magnesium and trace minerals.",
+          "Conceptual actions include hydration support, membrane stabilization, neuroplasticity, mitochondrial support and intracellular resilience."
+        ]
+      },
+      {
+        id: "traditional-medical-schools-link-microtubule",
+        label: "12",
+        phase: "Guided Tour - Ancient Systems Bridge",
+        x: 21,
+        y: 86,
+        width: 39,
+        height: 14,
+        title: "Traditional medical schools link",
+        text: "Ancient systems described similar patterns symbolically.",
+        details: [
+          "Traditional medical systems often associated consciousness, dreaming, imagination, Qi flow, Shen, HUN and meridian communication with subtle internal energetic organization.",
+          "Modern systems biology may rediscover fragments of these ideas through hydration dynamics, bioelectricity, phase transitions, calcium signaling and intracellular coherence."
+        ]
+      },
+      {
+        id: "wood-element-growth-flexibility",
+        label: "13",
+        phase: "Wood Element",
+        x: 7,
+        y: 87,
+        width: 22,
+        height: 12,
+        title: "Wood element - growth and flexibility",
+        text: "Microtubules reflect adaptability and communication.",
+        details: [
+          "In Five Element language, microtubules may symbolize growth, expansion, intracellular communication, adaptive movement and coherent information flow.",
+          "The Wood framing is used here as a poetic systems bridge rather than a literal anatomical mapping."
+        ]
+      },
+      {
+        id: "key-insight-microtubule",
+        label: "14",
+        phase: "Key Insight",
+        x: 15,
+        y: 96,
+        width: 28,
+        height: 8,
+        title: "Coherence and biological responsiveness",
+        text: "Coherence may be central to biological responsiveness.",
+        details: [
+          "This model proposes that mitochondria, structured water, microtubules, membranes and electromagnetic organization form an interconnected intracellular architecture supporting signaling, adaptation and conscious integration.",
+          "When coherence weakens, signaling becomes noisy, energy declines and organization destabilizes."
+        ]
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Legend",
+        items: [
+          {
+            id: "legend-microtubule-biophoton",
+            title: "Biophoton",
+            text: "Biophotons represent ultraweak light-like emissions used here as a visual language for intracellular synchronization and mitochondrial signalling."
+          },
+          {
+            id: "legend-microtubule-structured-water",
+            title: "Structured water",
+            text: "Structured water represents ordered hydration layers inside and around microtubules that may support coherence and reduce signal loss."
+          },
+          {
+            id: "legend-microtubule-cylinder",
+            title: "Microtubule",
+            text: "Microtubules are hollow cytoskeletal structures presented here as mechanical supports and possible intracellular information conduits."
+          },
+          {
+            id: "legend-microtubule-information-flow",
+            title: "Information flow",
+            text: "Information flow indicates directional movement of charge, light-like signalling and organized phase relationships across the intracellular network."
+          },
+          {
+            id: "legend-microtubule-phase-transition",
+            title: "Phase transition",
+            text: "Phase transition represents rapid sol-gel shifts in structured water and intracellular materials used here to explain fast adaptive signalling."
+          },
+          {
+            id: "legend-microtubule-pemf-wave",
+            title: "PEMF wave",
+            text: "PEMF waves represent external entrainment inputs that may support membrane potential, hydration structure and intracellular synchronization."
+          }
+        ]
+      }
+    ]
   }
 ];
 
