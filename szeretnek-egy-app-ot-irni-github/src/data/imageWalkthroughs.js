@@ -3202,6 +3202,261 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "dna-hydration-shell-nuclear-light-architecture",
+    title: "DNA Hydration Shell - The Nuclear Light Architecture",
+    subtitle: "A cinematic guided exploration of structured water, proton clouds, biophotonic signalling and nuclear information coherence",
+    image: "/images/walkthroughs/dna-hydration-shell-nuclear-light-architecture.png",
+    imageAlt: "Cinematic DNA hydration shell artwork showing structured water, proton clouds, biophotonic pulses, sacred geometry and telomere relevance.",
+    defaultHotspot: "dna-hydration-shell",
+    narrative: true,
+    narrativeOrder: [
+      "dna-hydration-shell",
+      "structured-water",
+      "proton-reservoir",
+      "photon-mirror-base-pairs",
+      "mitochondrial-biophoton-connection",
+      "holographic-redundancy",
+      "telomeres-astragalus"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "dna-hydration-shell",
+        label: "1",
+        phase: "Guided Tour - DNA Hydration Shell",
+        shape: "circle",
+        x: 50,
+        y: 49,
+        width: 42,
+        height: 60,
+        title: "DNA hydration shell",
+        text: "The artwork frames DNA as a living nuclear information architecture surrounded by structured hydration layers, proton organisation and biophotonic ambience. The helix remains chemical, electrical and water-mediated at the same time."
+      },
+      {
+        id: "cooling-thermal-regulation",
+        label: "2",
+        phase: "Thermal Regulation",
+        x: 13,
+        y: 14,
+        width: 24,
+        height: 16,
+        title: "Cooling and thermal regulation",
+        text: "Structured water absorbs and dissipates thermal stress around DNA.",
+        details: [
+          "DNA functions inside an extremely active energetic environment.",
+          "Hydration layers may help stabilize local temperature fluctuations, reducing thermal noise and preserving coherent biological signaling."
+        ]
+      },
+      {
+        id: "information-conduction",
+        label: "3",
+        phase: "Signal Conduction",
+        x: 15,
+        y: 30,
+        width: 25,
+        height: 17,
+        title: "Information conduction",
+        text: "Water layers may guide bioelectrical and vibrational signals across the genome.",
+        details: [
+          "In this model, DNA is not viewed as an isolated chemical structure.",
+          "It is part of a dynamic information network where structured water participates in signal transmission and resonance."
+        ]
+      },
+      {
+        id: "electrical-insulation-noise-filtering",
+        label: "4",
+        phase: "Noise Filtering",
+        x: 16,
+        y: 47,
+        width: 27,
+        height: 15,
+        title: "Electrical insulation and noise filtering",
+        text: "Hydration shells stabilize charge distribution and reduce electrical noise.",
+        details: [
+          "Structured water may function as a biological dielectric layer.",
+          "This may help preserve local electrical coherence around DNA and chromatin structures."
+        ]
+      },
+      {
+        id: "mechanical-cushioning",
+        label: "5",
+        phase: "Mechanical Buffering",
+        x: 15,
+        y: 61,
+        width: 26,
+        height: 15,
+        title: "Mechanical cushioning",
+        text: "Water acts as a viscoelastic shock absorber around the genome.",
+        details: [
+          "Hydration layers may buffer microscopic vibrations and mechanical stress.",
+          "This helps preserve chromatin topology and structural organization in the model."
+        ]
+      },
+      {
+        id: "proton-reservoir",
+        label: "6",
+        phase: "Guided Tour - Proton Clouds",
+        x: 16,
+        y: 76,
+        width: 27,
+        height: 16,
+        title: "Proton reservoir and energy storage",
+        text: "Structured water stores charge and organizes proton gradients.",
+        details: [
+          "The hydration shell may function like a microscopic energy-buffering system.",
+          "It regulates charge separation and proton organization near DNA."
+        ]
+      },
+      {
+        id: "timing-synchronization",
+        label: "7",
+        phase: "Timing",
+        x: 16,
+        y: 89,
+        width: 27,
+        height: 14,
+        title: "Timing and synchronization",
+        text: "Hydration patterns may help synchronize biological timing.",
+        details: [
+          "Living systems require not only information but timing.",
+          "Structured water may contribute to phase synchronization and coordinated cellular rhythms."
+        ]
+      },
+      {
+        id: "repair-guidance-medium",
+        label: "8",
+        phase: "Repair Guidance",
+        x: 53,
+        y: 87,
+        width: 30,
+        height: 14,
+        title: "Repair guidance medium",
+        text: "Water structure may help guide DNA repair systems.",
+        details: [
+          "Structured hydration layers may assist molecular recognition.",
+          "They may support stabilization during DNA repair and chromatin remodeling."
+        ]
+      },
+      {
+        id: "holographic-redundancy",
+        label: "9",
+        phase: "Guided Tour - Holographic Organization",
+        x: 82,
+        y: 12,
+        width: 30,
+        height: 14,
+        title: "Holographic redundancy and information storage",
+        text: "Interference patterns may distribute biological information holographically.",
+        details: [
+          "In holographic systems, information is distributed across the field rather than localized in a single point.",
+          "Structured water may support distributed phase relationships and biological pattern organization."
+        ]
+      },
+      {
+        id: "photon-mirror-base-pairs",
+        label: "10",
+        phase: "Guided Tour - Photon Mirror Base Pairs",
+        x: 52,
+        y: 69,
+        width: 25,
+        height: 16,
+        title: "Photon mirror base pairs",
+        text: "Base pairs behave like resonant molecular mirrors interacting with light.",
+        details: [
+          "Photons entering the DNA helix reflect and spiral across purine and pyrimidine base pairs, generating interference-like wave patterns.",
+          "This visualization represents DNA as a dynamic light-interacting structure rather than a static chemical code."
+        ]
+      },
+      {
+        id: "mitochondrial-biophoton-connection",
+        label: "11",
+        phase: "Guided Tour - Mitochondrial Biophotons",
+        x: 72,
+        y: 61,
+        width: 28,
+        height: 21,
+        title: "Mitochondrial biophoton connection",
+        text: "Biophotonic energy may originate from mitochondria and travel through microtubules toward the nucleus.",
+        details: [
+          "In this conceptual model, mitochondria function as cellular light generators.",
+          "Microtubules and cytoskeletal structures act as intracellular light-guiding cables transporting organized energy and information toward the DNA hydration shell."
+        ]
+      },
+      {
+        id: "morphogenetic-field-interface",
+        label: "12",
+        phase: "Morphogenetic Field",
+        x: 84,
+        y: 58,
+        width: 28,
+        height: 18,
+        title: "Morphogenetic field interface",
+        text: "DNA may participate in larger biological organization fields.",
+        details: [
+          "This model proposes that DNA interacts not only chemically but also through dynamic spatial and informational relationships.",
+          "These relationships are presented as contributing to embryological organization and tissue coordination."
+        ]
+      },
+      {
+        id: "telomeres-astragalus",
+        label: "13",
+        phase: "Guided Tour - Telomeres and Astragalus",
+        x: 82,
+        y: 82,
+        width: 32,
+        height: 14,
+        title: "Telomeres and Astragalus",
+        text: "Telomeres may depend on hydration shell stability.",
+        details: [
+          "Rather than functioning only as chromosome caps, telomeres may reflect the stability of the surrounding DNA water architecture.",
+          "Astragalus polysaccharides may support biological hydrogel organization and cellular resilience."
+        ]
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Bottom Legend",
+        items: [
+          {
+            id: "legend-structured-water-network",
+            title: "Structured water network",
+            text: "The structured water network represents ordered hydration layers that support boundary coherence, signal conduction and chromatin stability."
+          },
+          {
+            id: "legend-proton-clouds",
+            title: "Proton clouds",
+            text: "Proton clouds represent local charge organisation and microscopic energy storage around the DNA hydration shell."
+          },
+          {
+            id: "legend-biophotonic-pulses",
+            title: "Biophotonic pulses",
+            text: "Biophotonic pulses represent organized light-like signalling that may interact with hydration layers and molecular resonant structures."
+          },
+          {
+            id: "legend-sacred-geometry-patterns",
+            title: "Sacred geometry patterns",
+            text: "Geometry patterns are used as a visual language for phase relationships, interference, symmetry and biological pattern organization."
+          },
+          {
+            id: "legend-mitochondria",
+            title: "Mitochondria",
+            text: "Mitochondria are shown as energy and light-generating organelles that may influence nuclear signalling through cytoskeletal and metabolic pathways."
+          },
+          {
+            id: "legend-microtubules",
+            title: "Microtubules",
+            text: "Microtubules are presented as intracellular structural cables that may support communication between mitochondria, cytoskeleton and nucleus."
+          },
+          {
+            id: "legend-morphogenetic-field",
+            title: "Morphogenetic field",
+            text: "The morphogenetic field icon represents larger-scale spatial organization, embryological patterning and tissue coordination in this conceptual model."
+          }
+        ]
+      }
+    ]
   }
 ];
 
