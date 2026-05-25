@@ -3090,6 +3090,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/cell-membrane-hydration-shell">
         Membrane shell
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/glycocalyx-ecm-fascia">
+        Glycocalyx ECM Fascia
+      </a>
     </nav>
   );
 }

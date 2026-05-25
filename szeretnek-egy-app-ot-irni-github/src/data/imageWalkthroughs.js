@@ -4617,6 +4617,237 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "glycocalyx-ecm-fascia-water-body",
+    title: "Glycocalyx - ECM - Fascia",
+    subtitle: "The continuous water body - the biological river delta",
+    image: "/images/walkthroughs/glycocalyx-ecm-fascia-water-body.png",
+    imageAlt: "Cinematic structured-water river delta artwork showing glycocalyx, extracellular matrix, fascia, phase synchronization, trauma interference, hydrogel architects and restoration of biological communication.",
+    defaultHotspot: "continuous-water-body",
+    narrative: true,
+    narrativeOrder: [
+      "continuous-water-body",
+      "glycocalyx-endothelial-water-forest",
+      "ecm-biological-hydrogel-terrain",
+      "fascia-tension-communication-fabric",
+      "structured-electrolyte-ocean",
+      "phase-synchronisation",
+      "trauma-interference-patterns",
+      "body-as-river-delta",
+      "hydrogel-architects",
+      "restore-flow-communication-life"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "continuous-water-body",
+        label: "1",
+        phase: "Guided Tour - Enter the Continuous Water Body",
+        x: 46,
+        y: 20,
+        width: 36,
+        height: 16,
+        title: "The continuous water body",
+        text: "The body is one connected structured-water field.",
+        details: [
+          "Glycocalyx, ECM, fascia, lymph, membranes and vascular flow form one continuous hydration network.",
+          "Coherence in this water body supports communication, adaptation and repair."
+        ]
+      },
+      {
+        id: "glycocalyx-endothelial-water-forest",
+        label: "2",
+        phase: "Guided Tour - Glycocalyx Forest",
+        x: 15,
+        y: 24,
+        width: 30,
+        height: 29,
+        title: "Glycocalyx - the endothelial water forest",
+        text: "The glycocalyx translates blood flow into biological signals.",
+        details: [
+          "The glycocalyx acts like riverbank vegetation inside the vascular system.",
+          "It senses shear stress, reduces turbulence, supports nitric oxide signalling and helps structure water at the blood-vessel interface."
+        ]
+      },
+      {
+        id: "ecm-biological-hydrogel-terrain",
+        label: "3",
+        phase: "Guided Tour - ECM Hydrogel Ocean",
+        x: 49,
+        y: 32,
+        width: 28,
+        height: 25,
+        title: "ECM - the biological hydrogel terrain",
+        text: "The ECM is a structured electrolyte ocean connecting cells.",
+        details: [
+          "The extracellular matrix is not empty space.",
+          "It is a hydrated gel matrix of collagen, elastin, hyaluronic acid and proteoglycans that stores water, ions and bioelectric charge."
+        ]
+      },
+      {
+        id: "fascia-tension-communication-fabric",
+        label: "4",
+        phase: "Guided Tour - Fascia Tension Fabric",
+        x: 72,
+        y: 35,
+        width: 27,
+        height: 31,
+        title: "Fascia - the tension-sensitive communication fabric",
+        text: "Fascia senses, stores and transmits mechanical information.",
+        details: [
+          "Fascia behaves as a dynamic tension network.",
+          "Collagen fibres, hydration layers and piezoelectric effects may help convert movement and compression into biological information."
+        ]
+      },
+      {
+        id: "structured-electrolyte-ocean",
+        label: "5",
+        phase: "Guided Tour - Structured Electrolyte Ocean",
+        x: 48,
+        y: 50,
+        width: 27,
+        height: 19,
+        title: "Structured electrolyte ocean",
+        text: "Ordered water plus ions creates biological conductivity.",
+        details: [
+          "The ECM hydration field stores and conducts ions, protons and charges.",
+          "This creates a conductive biological terrain supporting signalling and tissue coordination."
+        ]
+      },
+      {
+        id: "phase-synchronisation",
+        label: "6",
+        phase: "Guided Tour - Phase Synchronisation",
+        x: 52,
+        y: 4,
+        width: 27,
+        height: 15,
+        title: "Phase synchronisation",
+        text: "PEMF may support coherent phase relationships across the hydration continuum.",
+        details: [
+          "Pulsed electromagnetic fields may help entrain membrane potential, hydration structure and tissue-level communication.",
+          "The model frames this as support for phase coherence across the continuous water network."
+        ]
+      },
+      {
+        id: "trauma-interference-patterns",
+        label: "7",
+        phase: "Guided Tour - Trauma Interference",
+        x: 89,
+        y: 58,
+        width: 23,
+        height: 22,
+        title: "Trauma and interference patterns",
+        text: "Unresolved interference may persist inside fascia-ECM hydration networks.",
+        details: [
+          "Mechanical stress, emotional trauma or inflammation may disturb hydration structure and leave persistent interference patterns inside the fascia-ECM field.",
+          "These may appear conceptually as tension, pain, stagnation or poor signalling."
+        ]
+      },
+      {
+        id: "body-as-river-delta",
+        label: "8",
+        phase: "Guided Tour - River Delta Metaphor",
+        x: 82,
+        y: 6,
+        width: 34,
+        height: 26,
+        title: "The body as a river delta",
+        text: "Blood, lymph, ECM and fascia form a living delta system.",
+        details: [
+          "Blood is the river. The glycocalyx is the riverbank forest. ECM is the floodplain hydrogel. Fascia is the irrigation and routing network. Lymph is the cleansing stream.",
+          "Together they create a living delta that is adaptive, self-organizing and resilient."
+        ]
+      },
+      {
+        id: "hydrogel-architects",
+        label: "9",
+        phase: "Guided Tour - Hydrogel Architects",
+        x: 82,
+        y: 82,
+        width: 35,
+        height: 14,
+        title: "Hydrogel architects",
+        text: "Certain natural compounds help build, protect and hydrate the matrix.",
+        details: [
+          "This module includes Astragalus as glycocalyx scaffold, Paeonia lactiflora for elasticity and softness, Rehmannia glutinosa as deep hydration reservoir, Spirulina as blue-green algae matrix support, Lycium barbarum as antioxidant fluid support, Polygonum multiflorum as structural nourishment and Laminaria japonica for sulfate groups and seaweed matrix support.",
+          "They are presented as conceptual hydrogel-supporting inputs, not as treatment claims."
+        ]
+      },
+      {
+        id: "continuum-collapse",
+        label: "10",
+        phase: "Continuum Collapse",
+        x: 15,
+        y: 83,
+        width: 31,
+        height: 14,
+        title: "When the continuum collapses",
+        text: "Loss of hydration coherence may appear as stagnation and dysfunction.",
+        details: [
+          "When the structured-water continuum collapses, tissues may develop dehydration, oedema, fibrosis, inflammation, chronic pain, poor signalling and fatigue.",
+          "The artwork shows the bright coherent network dimming into fragmented red-blue noise."
+        ]
+      },
+      {
+        id: "restore-flow-communication-life",
+        label: "11",
+        phase: "Guided Tour - Restore Flow and Communication",
+        x: 48,
+        y: 82,
+        width: 29,
+        height: 15,
+        title: "Restore flow - restore communication - restore life",
+        text: "Restore the water body to restore biological responsiveness.",
+        details: [
+          "Hydration, PEMF, minerals, herbs, fascia release and membrane support may help restore flow, coherence and tissue communication.",
+          "The final visual direction is a chaotic field reorganising into a clean blue-gold river network."
+        ]
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Legend",
+        items: [
+          {
+            id: "legend-glyco-structured-water",
+            title: "Structured water",
+            text: "Structured water represents ordered hydration layers that connect glycocalyx, ECM, fascia and membranes into one communication continuum."
+          },
+          {
+            id: "legend-glyco-water-flow",
+            title: "Water flow",
+            text: "Water flow represents blood, lymph and interstitial movement through the biological river-delta system."
+          },
+          {
+            id: "legend-glyco-information-flow",
+            title: "Information flow",
+            text: "Information flow represents mechanical, bioelectric, photonic and electromagnetic signals moving through hydrated tissue networks."
+          },
+          {
+            id: "legend-glyco-phase-coherence",
+            title: "Phase coherence",
+            text: "Phase coherence represents synchronized relationships between water structure, membrane potential, fascia tension and cellular response."
+          },
+          {
+            id: "legend-glyco-pemf-wave",
+            title: "PEMF wave",
+            text: "PEMF waves represent external phase-synchronizing inputs used conceptually to support tissue-level communication."
+          },
+          {
+            id: "legend-glyco-lymph",
+            title: "Lymph streams",
+            text: "Lymph streams represent cleansing flow, drainage and transport through the hydrated tissue terrain."
+          },
+          {
+            id: "legend-glyco-cells-mitochondria",
+            title: "Cells and mitochondria",
+            text: "Cells and mitochondria are shown as local suns embedded in the hydration continuum, receiving and responding to flow, tension and charge."
+          }
+        ]
+      }
+    ]
   }
 ];
 
