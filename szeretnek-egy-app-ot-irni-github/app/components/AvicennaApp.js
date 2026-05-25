@@ -3081,6 +3081,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/mitochondrial-hydration-shell">
         Mito hydration shell
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/endoplasmic-reticulum-hydration-shell">
+        ER hydration shell
+      </a>
     </nav>
   );
 }

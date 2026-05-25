@@ -3801,6 +3801,290 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "endoplasmic-reticulum-hydration-shell",
+    title: "Endoplasmic Reticulum Hydration Shell",
+    subtitle: "The cellular memory capacitor",
+    image: "/images/walkthroughs/endoplasmic-reticulum-hydration-shell.png",
+    imageAlt: "Cinematic endoplasmic reticulum hydration shell artwork showing calcium waves, ER lumen, protein folding, microtubules, UPR, PEMF, herbs and Five Element correspondences.",
+    defaultHotspot: "er-lumen-memory-lake",
+    narrative: true,
+    narrativeOrder: [
+      "er-lumen-memory-lake",
+      "calcium-oscillations",
+      "hydration-shell-er",
+      "protein-folding-chamber",
+      "microtubule-connection-er",
+      "trauma-destructive-interference",
+      "upr-dampness",
+      "pemf-phase-entrainment",
+      "herbal-support-er-calcium-yin",
+      "traditional-medical-schools-link"
+    ],
+    disclaimer: "Educational model only. Conceptual systems map. Not a diagnostic or treatment recommendation.",
+    hotspots: [
+      {
+        id: "er-lumen-memory-lake",
+        label: "1",
+        phase: "Guided Tour - Enter the ER Lumen",
+        shape: "circle",
+        x: 47,
+        y: 35,
+        width: 38,
+        height: 30,
+        title: "The ER lumen - the cellular memory lake",
+        text: "The ER lumen is the cell's largest calcium reservoir and hydration chamber.",
+        details: [
+          "The endoplasmic reticulum contains a highly hydrated internal environment where calcium waves, protein folding and dynamic intracellular coordination occur.",
+          "In this conceptual framework, the ER behaves like a living phase-buffer and biological memory capacitor."
+        ]
+      },
+      {
+        id: "calcium-oscillations",
+        label: "2",
+        phase: "Guided Tour - Calcium Waves",
+        shape: "circle",
+        x: 40,
+        y: 15,
+        width: 18,
+        height: 18,
+        title: "Calcium oscillations",
+        text: "Calcium waves help coordinate cellular timing and adaptation.",
+        details: [
+          "Calcium ions continuously oscillate inside the ER lumen creating dynamic electromagnetic and phase conditions that regulate signaling, adaptation and protein organization.",
+          "These oscillations may contribute to rhythm, responsiveness and biological coherence."
+        ]
+      },
+      {
+        id: "hydration-shell-er",
+        label: "3",
+        phase: "Guided Tour - Hydration Shell",
+        shape: "circle",
+        x: 50,
+        y: 14,
+        width: 20,
+        height: 18,
+        title: "Hydration shell",
+        text: "Structured water stabilizes ER membranes and signaling.",
+        details: [
+          "The hydration shell surrounding ER membranes may regulate electrical gradients, calcium dynamics, protein folding conditions, membrane flexibility and intracellular coherence.",
+          "The visual language uses a crystalline water lattice shimmer to represent a stabilizing hydration boundary."
+        ]
+      },
+      {
+        id: "protein-folding-chamber",
+        label: "4",
+        phase: "Guided Tour - Protein Folding",
+        x: 30,
+        y: 54,
+        width: 24,
+        height: 19,
+        title: "Protein folding chamber",
+        text: "Proteins fold inside a hydrated and electrically sensitive environment.",
+        details: [
+          "Protein folding inside the ER depends on hydration, charge distribution and calcium balance.",
+          "Chaperone proteins guide proper folding while structured water may stabilize transient folding states."
+        ]
+      },
+      {
+        id: "calcium-gateways",
+        label: "5",
+        phase: "Calcium Gateways",
+        x: 41,
+        y: 63,
+        width: 19,
+        height: 18,
+        title: "Calcium gateways",
+        text: "Calcium channels regulate intelligent intracellular release patterns.",
+        details: [
+          "IP3 and ryanodine receptors open and close dynamically, releasing calcium pulses throughout the cell.",
+          "These calcium waves influence metabolism, signaling and adaptation."
+        ]
+      },
+      {
+        id: "microtubule-connection-er",
+        label: "6",
+        phase: "Guided Tour - Microtubule Communication",
+        x: 78,
+        y: 11,
+        width: 31,
+        height: 20,
+        title: "Microtubule connection",
+        text: "Microtubules connect the ER to intracellular communication networks.",
+        details: [
+          "Microtubules may act as intracellular light and information cables linking mitochondria, ER and nucleus into a coordinated signaling architecture.",
+          "The ER continuously exchanges signals and cargo with the cytoskeletal network."
+        ]
+      },
+      {
+        id: "phase-buffer-memory-field",
+        label: "7",
+        phase: "Memory Field",
+        x: 70,
+        y: 56,
+        width: 28,
+        height: 20,
+        title: "Phase buffer and memory field",
+        text: "The ER may function as a biological phase-buffer system.",
+        details: [
+          "In this model, the ER hydration shell stabilizes intracellular timing and phase relationships, helping maintain coherent signaling and adaptive flexibility.",
+          "Traditional medical systems often linked similar functions to dreaming, imagination, memory and emotional fluidity."
+        ]
+      },
+      {
+        id: "trauma-destructive-interference",
+        label: "8",
+        phase: "Guided Tour - Trauma Interference",
+        x: 89,
+        y: 12,
+        width: 22,
+        height: 25,
+        title: "Trauma and destructive interference",
+        text: "Chronic stress may destabilize intracellular coherence.",
+        details: [
+          "Persistent stress, trauma, inflammation or metabolic overload may disturb calcium rhythm, hydration structure, protein folding and microtubule signaling.",
+          "The intracellular field becomes noisy and biologically inefficient."
+        ]
+      },
+      {
+        id: "upr-dampness",
+        label: "9",
+        phase: "Guided Tour - UPR and Dampness",
+        x: 89,
+        y: 51,
+        width: 22,
+        height: 26,
+        title: "UPR and Dampness",
+        text: "Misfolded proteins accumulate when the folding environment collapses.",
+        details: [
+          "When hydration structure and calcium balance become unstable, proteins may fold incorrectly, activating the unfolded protein response.",
+          "Traditional medical schools described similar states symbolically as Dampness: stagnation, heaviness, unresolved burden and toxic accumulation."
+        ]
+      },
+      {
+        id: "pemf-phase-entrainment",
+        label: "10",
+        phase: "Guided Tour - PEMF Restoration",
+        x: 39,
+        y: 78,
+        width: 26,
+        height: 20,
+        title: "PEMF - phase entrainment support",
+        text: "PEMF may help restore calcium rhythm and cellular responsiveness.",
+        details: [
+          "Pulsed electromagnetic fields may support calcium oscillation coherence, membrane potential, hydration structure, intracellular synchronization and adaptive flexibility.",
+          "The artwork frames PEMF as external wave entrainment that may reorder chaotic calcium patterns."
+        ]
+      },
+      {
+        id: "herbal-support-er-calcium-yin",
+        label: "11",
+        phase: "Guided Tour - Herbal Support",
+        x: 55,
+        y: 78,
+        width: 25,
+        height: 20,
+        title: "Herbal support for ER and Calcium-Yin",
+        text: "Certain herbs may support hydration, folding and adaptive recovery.",
+        details: [
+          "Traditional herbs associated with Yin nourishment and adaptive regulation may support hydration stability, calcium balance, membrane resilience, protein folding conditions and recovery from ER stress.",
+          "Suggested examples in this model include Bai Shao, Schisandra, Rehmannia, Gan Cao, magnesium and trace minerals."
+        ]
+      },
+      {
+        id: "traditional-medical-schools-link",
+        label: "12",
+        phase: "Guided Tour - Traditional Medical Bridge",
+        x: 72,
+        y: 78,
+        width: 24,
+        height: 20,
+        title: "Traditional medical schools link",
+        text: "Ancient systems described similar patterns using symbolic language.",
+        details: [
+          "Traditional medical systems often linked imagination, dreaming, emotional regulation, creativity, fluid balance and adaptive flexibility to dynamic internal fluid and energetic states.",
+          "Modern biology may rediscover fragments of these concepts through calcium signaling, ER stress, hydration dynamics, phase organization and protein folding biology."
+        ]
+      },
+      {
+        id: "five-element-interface-er",
+        label: "13",
+        phase: "Five Element Interface",
+        x: 12,
+        y: 78,
+        width: 24,
+        height: 22,
+        title: "Five Element interface",
+        text: "The Five Element wheel translates organelle functions into a systems-medicine language.",
+        details: [
+          "Metal corresponds to mitochondria, Wood to endoplasmic reticulum, Fire to microtubules, Earth to lysosomes and Water to kidneys.",
+          "Wood and ER are used here to represent growth, flexibility, adaptation, protein organization, detoxification, unfolding and regeneration."
+        ]
+      },
+      {
+        id: "key-insight-er",
+        label: "14",
+        phase: "Key Insight",
+        x: 91,
+        y: 79,
+        width: 18,
+        height: 21,
+        title: "The ER is more than a factory",
+        text: "The Endoplasmic Reticulum may function as a calcium ocean, hydration capacitor, folding intelligence field, biological timing regulator and cellular adaptation system.",
+        details: [
+          "When coherent, creativity, flexibility and vitality emerge in the symbolic language of this model.",
+          "When disturbed, stress, confusion, fatigue and dysfunction accumulate."
+        ]
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Legend",
+        items: [
+          {
+            id: "legend-er-structured-water",
+            title: "Structured water",
+            text: "Structured water represents ordered hydration layers around ER membranes that support calcium rhythm, membrane flexibility and coherent folding conditions."
+          },
+          {
+            id: "legend-er-calcium-ion",
+            title: "Calcium ion (Ca2+)",
+            text: "Calcium ions represent rhythmic intracellular signals that coordinate adaptation, protein organization and cellular timing."
+          },
+          {
+            id: "legend-er-protein",
+            title: "Protein",
+            text: "Protein icons mark the folding workload of the ER and the importance of hydration, charge and chaperone guidance."
+          },
+          {
+            id: "legend-er-chaperone",
+            title: "Chaperone protein",
+            text: "Chaperone proteins guide folding and help prevent misfolded protein accumulation during stress."
+          },
+          {
+            id: "legend-er-microtubule",
+            title: "Microtubule",
+            text: "Microtubules are presented as cytoskeletal communication cables linking the ER with mitochondria, nucleus and cellular transport systems."
+          },
+          {
+            id: "legend-er-bioelectric-signal",
+            title: "Bioelectric signal",
+            text: "Bioelectric signals represent charge movement, calcium gating and phase communication inside the intracellular landscape."
+          },
+          {
+            id: "legend-er-pemf-wave",
+            title: "PEMF wave",
+            text: "PEMF waves represent external phase-entrainment inputs used conceptually to support calcium rhythm and cellular responsiveness."
+          },
+          {
+            id: "legend-er-energy-flow",
+            title: "Energy and information flow",
+            text: "Energy and information flow indicates directional communication between hydration shells, calcium waves, membranes and the cytoskeletal network."
+          }
+        ]
+      }
+    ]
   }
 ];
 
