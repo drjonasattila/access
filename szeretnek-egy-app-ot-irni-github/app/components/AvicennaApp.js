@@ -3115,6 +3115,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/glycocalyx-ecm-fascia">
         Glycocalyx ECM Fascia
       </a>
+      <a className="av-mode-tab" href="/self-observation">
+        Self observation
+      </a>
     </nav>
   );
 }
@@ -6616,6 +6619,10 @@ export default function AvicennaApp() {
         <h1>{title}</h1>
         <span>{subtitle}</span>
         <ModeTabs mode={mode} onChange={setMode} />
+        <a className="av-launcher-card" href="/self-observation">
+          <strong>Self Observation</strong>
+          <span>Track daily signals, interventions and biological responsiveness over time.</span>
+        </a>
       </header>
 
       {mode === "arch" ? (

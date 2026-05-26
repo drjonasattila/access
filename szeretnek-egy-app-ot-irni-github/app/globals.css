@@ -29,7 +29,9 @@ body {
 }
 
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -106,11 +108,44 @@ input[type="number"] {
   color: white;
 }
 
+.av-launcher-card {
+  background: linear-gradient(135deg, #fffaf3, #edf5e9);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  display: grid;
+  gap: 5px;
+  margin-top: 18px;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.av-launcher-card:hover {
+  border-color: var(--accent);
+}
+
+.av-launcher-card strong {
+  color: var(--accent-dark);
+  font-size: 18px;
+}
+
+.av-launcher-card span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
 .av-workspace {
   align-items: start;
   display: grid;
   gap: 28px;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.85fr);
+}
+
+.av-self-observation-grid {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.85fr);
 }
 
 .av-form,
@@ -193,6 +228,56 @@ input[type="number"] {
   display: grid;
   gap: 8px;
   padding: 10px 12px;
+}
+
+.av-score-field span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.av-score-field input[type="range"] {
+  accent-color: var(--accent);
+}
+
+.av-notes-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.av-self-save-message {
+  color: var(--accent-dark);
+  margin: 18px 22px 0;
+}
+
+.av-self-output {
+  position: sticky;
+  top: 20px;
+}
+
+.av-self-timeline {
+  display: grid;
+  gap: 10px;
+}
+
+.av-self-entry {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+.av-self-entry div {
+  display: grid;
+  gap: 3px;
+}
+
+.av-self-entry span,
+.av-self-entry p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
 }
 
 .av-mini-grid {
@@ -1512,7 +1597,8 @@ input[type="number"] {
 }
 
 @media (max-width: 920px) {
-  .av-workspace {
+  .av-workspace,
+  .av-self-observation-grid {
     grid-template-columns: 1fr;
   }
 
