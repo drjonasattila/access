@@ -22,13 +22,15 @@ const initialEntry = {
 };
 
 const interventions = [
-  ["olylife_pemf", "Olylife / PEMF"],
+  ["olylife_pemf", "PEMF / Olylife"],
   ["herbs", "Herbs"],
+  ["supplements", "Supplements"],
   ["hydration", "Hydration"],
   ["walking_movement", "Walking / movement"],
   ["breathing", "Breathing"],
   ["heat_exposure", "Heat exposure"],
   ["cold_exposure", "Cold exposure"],
+  ["medication", "Medication"],
   ["other", "Other"]
 ];
 
@@ -136,9 +138,9 @@ function generateTrendIndicators(entries) {
   return indicators.length
     ? indicators
     : [{
-      id: "stable_observation",
-      title: "Stable observation window",
-      text: "No strong trend is visible yet. Continue observing daily pattern, response and pacing."
+      id: "stable_mixed",
+      title: "Stable / mixed",
+      text: "No strong trend is visible yet. Continue observing daily pattern, response, terrain trend and pacing."
     }];
 }
 
