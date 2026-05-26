@@ -3115,6 +3115,9 @@ function ModeTabs({ mode, onChange }) {
       <a className="av-mode-tab" href="/walkthroughs/glycocalyx-ecm-fascia">
         Glycocalyx ECM Fascia
       </a>
+      <a className="av-mode-tab" href="/walkthroughs/lysosome-cellular-alchemical-stomach">
+        Lysosome stomach
+      </a>
       <a className="av-mode-tab" href="/self-observation">
         Self observation
       </a>

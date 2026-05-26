@@ -4848,6 +4848,252 @@ export const imageWalkthroughs = [
         ]
       }
     ]
+  },
+  {
+    id: "lysosome-cellular-alchemical-stomach",
+    title: "Lysosome — The Cellular Alchemical Stomach",
+    subtitle: "A cinematic guided tour of lysosomes, autophagy, proton gradients, redox congestion and adaptive transformation",
+    image: "/images/walkthroughs/lysosome-cellular-alchemical-stomach.png",
+    imageAlt: "Dark sci-biological infographic showing the lysosome as a cellular alchemical stomach with autophagy, proton pumps, redox shuttles and transformation support systems.",
+    defaultHotspot: "cellular-earth-chamber",
+    narrative: true,
+    narrativeOrder: [
+      "cellular-earth-chamber",
+      "autophagy-flow",
+      "mitochondria-lysosome-coupling",
+      "taiyin-axis",
+      "stomach-lysosome-mitochondria-axis",
+      "proton-pump-inhibitors",
+      "local-anaesthetics-steroids",
+      "lysosomotropic-repurposing",
+      "redox-shuttles",
+      "ask-better-questions"
+    ],
+    disclaimer: "Educational systems model only. Not diagnosis, prescribing, off-label guidance or a treatment recommendation.",
+    hotspots: [
+      {
+        id: "cellular-earth-chamber",
+        label: "1",
+        phase: "Guided Tour - Cellular Earth Chamber",
+        shape: "circle",
+        x: 47,
+        y: 27,
+        width: 28,
+        height: 28,
+        title: "Lysosome - the cellular alchemical stomach",
+        text: "The lysosome is not merely a waste container. It is a low-pH transformation chamber where damaged, chaotic or unresolved biological material may be broken down, neutralised, recycled and reintegrated.",
+        details: [
+          "The image highlights acidic environment, hydrolases, proton pumps, autophagy, recycling and transformation.",
+          "Key insight: detoxification is not removal. It is transformation.",
+          "Traditional medical systems often described similar patterns symbolically as damp accumulation, phlegm, impaired transformative fire and stagnation."
+        ]
+      },
+      {
+        id: "autophagy-flow",
+        label: "2",
+        phase: "Guided Tour - Autophagy Flow",
+        x: 35,
+        y: 52,
+        width: 43,
+        height: 13,
+        title: "Autophagy flow",
+        text: "Autophagy is the cell's self-renewal and recycling system.",
+        details: [
+          "Damaged proteins, dysfunctional mitochondria, aggregates, biofilm debris and oxidative burden can be captured and routed toward breakdown.",
+          "The walkthrough frames vesicle capture, fusion, degradation and reintegration as one transformation sequence.",
+          "Key insight: unresolved information may gradually become biological mass."
+        ]
+      },
+      {
+        id: "mitochondria-lysosome-coupling",
+        label: "3",
+        phase: "Guided Tour - Transformation-Energy Axis",
+        x: 56,
+        y: 48,
+        width: 29,
+        height: 17,
+        title: "The transformation-energy axis",
+        text: "Mitochondria and lysosomes function as a tightly coupled transformation axis.",
+        details: [
+          "Lysosomes clear damaged components while mitochondria provide ATP and energetic support for transformation.",
+          "Proton gradients connect both systems as biological organising tools.",
+          "Impaired coupling is presented conceptually as a terrain vulnerability that may appear alongside fatigue, fibrosis, neuroinflammation, degeneration or chronic pain.",
+          "Key insight: transformation requires energy. Energy requires transformation."
+        ]
+      },
+      {
+        id: "taiyin-axis",
+        label: "4",
+        phase: "Guided Tour - TaiYin Axis",
+        x: 92,
+        y: 94,
+        width: 14,
+        height: 9,
+        title: "TaiYin - the transformation-respiration continuum",
+        text: "This section bridges traditional terrain language with systems biology through Spleen, mitochondria and Lung functions.",
+        details: [
+          "Spleen: transformation, nutrient extraction, fluid organisation, autophagy regulation and ECM nourishment.",
+          "Mitochondria: energetic refinement, proton gradients, ATP, redox balance and biophotons.",
+          "Lung: oxygen distribution, endothelial rhythm, glycocalyx, signal distribution and nitric oxide balance.",
+          "Key insight: Earth -> refinement -> Metal."
+        ]
+      },
+      {
+        id: "stomach-lysosome-mitochondria-axis",
+        label: "5",
+        phase: "Guided Tour - Multi-Scale Digestion",
+        x: 44,
+        y: 71,
+        width: 34,
+        height: 23,
+        title: "Stomach-lysosome-mitochondria axis",
+        text: "The bottom-left transformation chain introduces multi-scale digestion logic.",
+        details: [
+          "Stomach represents extracellular digestion.",
+          "Lysosome represents intracellular digestion.",
+          "Mitochondria represent energy extraction and refinement.",
+          "Key insight: proton gradients are fundamental organisational tools in biology."
+        ]
+      },
+      {
+        id: "proton-pump-inhibitors",
+        label: "6",
+        phase: "Guided Tour - Proton-Gradient Ecology",
+        x: 49,
+        y: 70,
+        width: 27,
+        height: 23,
+        title: "Proton-gradient ecology alteration",
+        text: "Chronic suppression of proton dynamics may influence terrain relationships across gastric acidification, microbiome ecology, lysosomal acidification, autophagy efficiency, ECM turnover and adaptive resilience.",
+        details: [
+          "This is balanced educational systems-biology framing, not fear-based messaging.",
+          "Key insight: every intervention shifts terrain dynamics.",
+          "Do not stop prescribed medication based on this module. Medication decisions belong with the prescribing clinician."
+        ]
+      },
+      {
+        id: "local-anaesthetics-steroids",
+        label: "7",
+        phase: "Guided Tour - Reset and Stabilisation",
+        x: 27,
+        y: 71,
+        width: 31,
+        height: 23,
+        title: "Local anaesthetics and steroids",
+        text: "This section presents a conceptual systems model for temporary reduction of hyper-reactive signalling and membrane-level stabilisation.",
+        details: [
+          "Local anaesthetics are framed as possible transient reducers of inflammatory noise, hyper-reactive signalling and membrane reactivity.",
+          "Steroids are framed as membrane-stabilising and cytokine-modulating supports within a broader terrain model.",
+          "Combined effect: reset plus stabilisation.",
+          "This is conceptual educational interpretation, not an established clinical mechanism or recommendation."
+        ]
+      },
+      {
+        id: "lysosomotropic-repurposing",
+        label: "8",
+        phase: "Guided Tour - Lysosomotropic Repurposing",
+        x: 85,
+        y: 12,
+        width: 28,
+        height: 20,
+        title: "Lysosomotropic drug repurposing",
+        text: "Certain weak-base or amphiphilic molecules have been investigated for their tendency to accumulate inside acidic lysosomal compartments and influence intracellular trafficking, autophagy, lysosomal stress, membrane dynamics and inflammatory signalling.",
+        details: [
+          "Background reference: Frontiers in Pharmacology doi: 10.3389/fphar.2020.584881.",
+          "Examples shown include amitriptyline, sertraline, fluoxetine, paroxetine, citalopram, amlodipine, propranolol, metoprolol, chlorpromazine, promethazine, chloroquine and hydroxychloroquine.",
+          "Neutral language matters: investigated, explored, may influence.",
+          "This module does not recommend off-label use and does not imply cures."
+        ]
+      },
+      {
+        id: "redox-shuttles",
+        label: "9",
+        phase: "Guided Tour - Redox Shuttles",
+        x: 83,
+        y: 7,
+        width: 32,
+        height: 12,
+        title: "Redox shuttles",
+        text: "Redox-active compounds may help redistribute trapped electrons, reduce redox congestion, support transformation flow and reduce oxidative chaos.",
+        details: [
+          "Natural examples include thymoquinone, curcumin, quinones, sulfur compounds and flavonoids.",
+          "Synthetic examples include methylene blue and other electron-cycling molecules.",
+          "Key insight: redox shuttles act like lightning rods inside the cell."
+        ]
+      },
+      {
+        id: "ask-better-questions",
+        label: "10",
+        phase: "Guided Tour - Better Questions",
+        x: 48,
+        y: 94,
+        width: 27,
+        height: 9,
+        title: "Ask better questions",
+        text: "The goal is not merely suppression. The goal is restoration of adaptive transformation.",
+        details: [
+          "What is blocking transformation?",
+          "Where is charge, debris or stagnation accumulating?",
+          "Which pathways restore flow and clearance?",
+          "Is the system overloaded, exhausted or disconnected?",
+          "How are hydration, proton gradients and signalling linked?"
+        ]
+      }
+    ],
+    referenceSections: [
+      {
+        title: "Science Foundations",
+        items: [
+          {
+            id: "science-pollack-cells-gels",
+            title: "Pollack - Cells, Gels and the Engines of Life",
+            text: "Pollack's work is included as a conceptual foundation for thinking about structured water, gels and cellular phase behaviour."
+          },
+          {
+            id: "science-hwang-anesthetics",
+            title: "Hwang et al. PLOS ONE 2016",
+            text: "This reference is used for educational context around local and general anesthetics and interfacial water."
+          },
+          {
+            id: "science-frontiers-lysosomotropic",
+            title: "Frontiers in Pharmacology doi:10.3389/fphar.2020.584881",
+            text: "This reference supports the neutral educational discussion of lysosomotropic drug repurposing and acidic compartment accumulation."
+          },
+          {
+            id: "science-hameroff-penrose",
+            title: "Hameroff and Penrose Orch-OR review",
+            text: "Included as a speculative systems-biology bridge for coherence, intracellular organisation and consciousness-related theory."
+          },
+          {
+            id: "science-autophagy-literature",
+            title: "Lysosomal and autophagy literature",
+            text: "Autophagy and lysosomal biology provide the mainstream cellular foundation for recycling, clearance, stress response and intracellular renewal."
+          },
+          {
+            id: "science-ecm-glycocalyx",
+            title: "Systems biology, ECM and glycocalyx literature",
+            text: "These literatures support the broader Avicenna framing of tissues as responsive hydration, matrix and signalling systems."
+          }
+        ]
+      },
+      {
+        title: "Displayed Lysosomotropic Compounds",
+        items: [
+          { id: "compound-amitriptyline", title: "Amitriptyline", text: "Amitriptyline is listed as an investigated lysosomotropic compound in educational drug-repurposing discussions." },
+          { id: "compound-sertraline", title: "Sertraline", text: "Sertraline is listed as an investigated lysosomotropic compound. This is not a recommendation for off-label use." },
+          { id: "compound-fluoxetine", title: "Fluoxetine", text: "Fluoxetine is listed as an investigated lysosomotropic compound in the context of acidic compartment biology." },
+          { id: "compound-paroxetine", title: "Paroxetine", text: "Paroxetine is included as an educational example of a compound explored in lysosomal accumulation frameworks." },
+          { id: "compound-citalopram", title: "Citalopram", text: "Citalopram is included as an educational example only, without therapeutic claims." },
+          { id: "compound-amlodipine", title: "Amlodipine", text: "Amlodipine is shown as an investigated compound in lysosomotropic repurposing literature." },
+          { id: "compound-propranolol", title: "Propranolol", text: "Propranolol is displayed as an educational example of a compound discussed in lysosomal compartment contexts." },
+          { id: "compound-metoprolol", title: "Metoprolol", text: "Metoprolol is displayed as an educational example only, not as guidance." },
+          { id: "compound-chlorpromazine", title: "Chlorpromazine", text: "Chlorpromazine is a classic amphiphilic compound discussed in lysosomal accumulation contexts." },
+          { id: "compound-promethazine", title: "Promethazine", text: "Promethazine is included as an educational lysosomotropic example without clinical instruction." },
+          { id: "compound-chloroquine", title: "Chloroquine", text: "Chloroquine is a well-known lysosomotropic compound often discussed in relation to lysosomal pH and autophagy." },
+          { id: "compound-hydroxychloroquine", title: "Hydroxychloroquine", text: "Hydroxychloroquine is included for educational lysosomal pH and autophagy context only." }
+        ]
+      }
+    ]
   }
 ];
 
