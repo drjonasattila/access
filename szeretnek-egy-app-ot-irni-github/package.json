@@ -18,7 +18,8 @@
     "test:triaxial": "node scripts/test-headache-triaxial-engine.cjs",
     "test:clusters": "node scripts/test-treatment-cluster-engine.cjs",
     "test:biophysical": "node scripts/test-biophysical-substrate-engine.cjs",
-    "test:cranial": "node scripts/test-cranial-rez-dural-engine.cjs"
+    "test:cranial": "node scripts/test-cranial-rez-dural-engine.cjs",
+    "test:adaptive-monitoring": "node scripts/test-adaptive-monitoring-engine.cjs"
   },
   "dependencies": {
     "next": "^15.3.0",

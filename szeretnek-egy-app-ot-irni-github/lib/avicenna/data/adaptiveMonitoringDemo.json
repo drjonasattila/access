@@ -1,0 +1,59 @@
+{
+  "id": "post-herpetic-burning-neuropathic-pain-demo",
+  "title": "Demo case - post-herpetic burning neuropathic pain pattern",
+  "rawInput": {
+    "symptoms": [
+      "burning pain",
+      "electric shock pain",
+      "allodynia",
+      "dry stool",
+      "dry skin",
+      "afternoon worsening",
+      "palpitations",
+      "insomnia"
+    ],
+    "interventions": ["PEMF / Olylife"],
+    "goals": [
+      "sleep better",
+      "reduce burning flares",
+      "build PEMF tolerance",
+      "improve hydration"
+    ],
+    "notes": "Post-herpetic style burning neuropathic pain pattern with sensitivity to stimulation."
+  },
+  "exampleGeneratedSchema": {
+    "version": "adaptive-monitoring-v1",
+    "disease_independent": true,
+    "terrain_dimensions": {
+      "hydration": "dry",
+      "thermal_tendency": "heat",
+      "energetic_reserve": "depleted",
+      "nervous_system": "hyperexcitable",
+      "fascial_tension": "relaxed",
+      "autonomic_stability": "unstable"
+    },
+    "symptom_clusters": [
+      "neuropathic irritability",
+      "sensory sensitisation",
+      "dryness",
+      "low reserve",
+      "autonomic activation",
+      "sleep disruption",
+      "intervention sensitivity"
+    ],
+    "intervention_risks": ["stimulation tolerance risk"],
+    "requiredMonitoringFieldIds": [
+      "burning_pain",
+      "electric_shock",
+      "allodynia",
+      "sleep_quality",
+      "hydration_intake",
+      "stool_dryness",
+      "palpitations",
+      "pemf_duration_intensity",
+      "next_day_overstimulation"
+    ],
+    "educationalSummaryHeadline": "Based on the information provided, this pattern resembles a dry hyperexcitable low reserve heat-leaning autonomically unstable terrain.",
+    "validationNote": "Human professional validation is advised."
+  }
+}
