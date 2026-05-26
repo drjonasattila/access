@@ -2854,6 +2854,7 @@ function ProtocolOutput({ protocol, onReset }) {
       <TagSection title="What this supports" items={protocol.field_effects} tone="effect" />
       <TagSection title="Adjustments applied" items={protocol.modifications_applied} tone="mod" />
       <TagSection title="Avoid for now" items={protocol.avoid} tone="avoid" empty="None" />
+      <MonitoringSchemaSection schema={protocol.monitoring_schema} />
 
       {protocol.safety_notes.length > 0 && (
         <section className="av-safety-box">
@@ -2883,6 +2884,27 @@ function ProtocolOutput({ protocol, onReset }) {
         Start again
       </button>
     </aside>
+  );
+}
+
+function MonitoringSchemaSection({ schema }) {
+  if (!schema?.fields?.length) return null;
+
+  return (
+    <section>
+      <h2>Dynamic monitoring</h2>
+      <p className="av-muted">{schema.principle}</p>
+      <div className="av-ingredients">
+        {schema.fields.map((field) => (
+          <div className="av-ingredient" key={field.id}>
+            <strong>{field.label}</strong>
+            <span>{field.cadence}</span>
+            <small>{field.prompt}</small>
+          </div>
+        ))}
+      </div>
+      <p className="av-muted">{schema.summary}</p>
+    </section>
   );
 }
 

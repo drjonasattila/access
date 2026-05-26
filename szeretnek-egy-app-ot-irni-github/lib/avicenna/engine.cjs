@@ -4,6 +4,7 @@ const {
   PRIMARY_CONFLICTS,
   NEUTRAL_BASELINE
 } = require("./data/protocols.json");
+const { generateMonitoringSchema } = require("./monitoringSchema.cjs");
 
 function identifyPattern(thermal, moisture, energyState) {
   if (thermal === "cold" && moisture === "damp") return "damp_cold";
@@ -306,7 +307,7 @@ function generateProtocol(input) {
 
     trace.push("STEP 15: Output assembled");
 
-    return {
+    const result = {
       primary_pattern: "neutral_baseline",
       secondary_pattern: null,
       formula_strength: "baseline",
@@ -320,6 +321,8 @@ function generateProtocol(input) {
       safety_notes: safetyNotes,
       debug_trace: trace
     };
+    result.monitoring_schema = generateMonitoringSchema(input, result);
+    return result;
   }
 
   let primary = rawPattern;
@@ -390,7 +393,7 @@ function generateProtocol(input) {
 
   trace.push("STEP 15: Output assembled");
 
-  return {
+  const result = {
     primary_pattern: primary,
     secondary_pattern: secondary,
     formula_strength: strength === "frailty_floor" ? "minimal (frailty)" : strength,
@@ -406,6 +409,8 @@ function generateProtocol(input) {
     safety_notes: safetyNotes,
     debug_trace: trace
   };
+  result.monitoring_schema = generateMonitoringSchema(input, result);
+  return result;
 }
 
 module.exports = {
@@ -419,5 +424,6 @@ module.exports = {
   applySafetyFlags,
   dedup,
   cap,
-  getPreparation
+  getPreparation,
+  generateMonitoringSchema
 };

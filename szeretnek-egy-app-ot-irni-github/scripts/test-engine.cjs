@@ -57,6 +57,47 @@ for (const testCase of testCases) {
       `${testCase.id}: expected at most ${expected.follow_up_max} follow-up questions`
     );
   }
+
+  assert.equal(protocol.monitoring_schema.mode, "dynamic_runtime", `${testCase.id}: expected runtime monitoring`);
+  assert.ok(
+    Array.isArray(protocol.monitoring_schema.fields),
+    `${testCase.id}: expected monitoring fields array`
+  );
 }
+
+const dynamicMonitoring = generateProtocol({
+  thermal: "heat",
+  moisture: "dry",
+  energy_state: "overcharged",
+  symptom_intensity: "moderate",
+  digestive_sensitivity: "medium",
+  symptoms: ["palpitations"],
+  safety_flags: [],
+  pemf_use: true,
+  user_goals: ["sleep", "hydration"]
+});
+
+const monitoringFieldIds = dynamicMonitoring.monitoring_schema.fields.map((field) => field.id);
+for (const fieldId of [
+  "sleep",
+  "burning_pain",
+  "allodynia",
+  "hydration",
+  "stool_dryness",
+  "palpitations",
+  "pemf_tolerance",
+  "next_day_overstimulation"
+]) {
+  assert.ok(
+    monitoringFieldIds.includes(fieldId),
+    `dynamic monitoring should include ${fieldId}`
+  );
+}
+
+assert.equal(dynamicMonitoring.monitoring_schema.mode, "dynamic_runtime");
+assert.ok(
+  dynamicMonitoring.monitoring_schema.principle.includes("not disease categories"),
+  "monitoring schema should not be disease-pathway based"
+);
 
 console.log(`Engine tests passed: ${testCases.length}/${testCases.length}`);
